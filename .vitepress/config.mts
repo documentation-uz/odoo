@@ -19,9 +19,37 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             {text: 'Home', link: '/'},
-            {text: 'Documentation', link: '/docs/get-started/introduction'},
-            {text: 'Examples', link: '/examples/table-of-contents'},
+            {
+                text: 'User Docs',
+                // link: '/user-docs/get-started/introduction',
+                items: [
+                    {
+                        text: 'Contacts',
+                        link: '/user-docs/contacts',
+                    },
+                    {
+                        text: 'CRM',
+                        link: '/user-docs/crm',
+                    },
+                    {
+                        text: 'Sales',
+                        link: '/user-docs/sales',
+                    },
+                    {
+                        text: 'Point of Sale',
+                        link: '/user-docs/point-of-sale',
+                    }
+                ]
+            },
+            {text: 'Developer', link: '/developer/table-of-contents'},
             {text: 'API Reference', link: '/api-reference/print'},
+            {
+                text: 'Versions',
+                items: [
+                    {text: '18.0', link: '/18.0'},
+                    {text: '17.0', link: '/17.0'}
+                ]
+            }
         ],
 
         sidebar: {

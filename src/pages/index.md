@@ -17,15 +17,26 @@ hero:
       link: /api-examples
 
 features:
-  - icon: 🚀
-    title: Qulay
-    details: O'rganish va foydalanish uchun qulay yozilgan
-  - icon: 🔄
-    title: Yangilanuvchan
-    details: Doimiy yangilanib, ma'lumotlar boyitiladi
-  - icon: 🧑🏻‍💻
-    title: Hamjamiyat
-    details: Tashqi foydalanuvchilar o'z xissasini qo'shish imkoniyati
+  - icon: <img src="https://download.odoocdn.com/icons/contacts/static/description/icon.svg"/>
+    title: Contacts
+    details: Centralize your address book
+    link: /guide/
+    linkText: Learn more
+  - icon: <img src="https://download.odoocdn.com/icons/crm/static/description/icon.svg"/>
+    title: CRM
+    details: Track leads and close opportunities
+    link: /guide/
+    linkText: Learn more
+  - icon: <img src="https://download.odoocdn.com/icons/sale/static/description/icon.svg"/>
+    title: Sales
+    details: From quotations to invoices
+    link: /guide/
+    linkText: Learn more
+  - icon: <img src="https://download.odoocdn.com/icons/point_of_sale/static/description/icon.svg"/>
+    title: Point of Sale
+    details: User-friendly PoS interface for shops and restaurants
+    link: /guide/
+    linkText: Learn more
 ---
 
 <script setup>
