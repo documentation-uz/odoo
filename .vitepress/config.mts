@@ -1,4 +1,4 @@
-import {defineConfig} from 'vitepress'
+import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -6,7 +6,7 @@ export default defineConfig({
     description: "Learn today, work tomorrow!",
     srcDir: "src/pages/",
     head: [
-        ['link', {rel: 'icon', href: 'https://i.imgur.com/qo0NNF9.png'}],
+        ['link', { rel: 'icon', href: 'https://i.imgur.com/qo0NNF9.png' }],
     ],
     themeConfig: {
         search: {
@@ -18,7 +18,7 @@ export default defineConfig({
         },
         // https://vitepress.dev/reference/default-theme-config
         nav: [
-            {text: 'Home', link: '/'},
+            { text: 'Home', link: '/' },
             {
                 text: 'User Docs',
                 // link: '/user-docs/get-started/introduction',
@@ -38,16 +38,20 @@ export default defineConfig({
                     {
                         text: 'Point of Sale',
                         link: '/user-docs/point-of-sale',
+                    },
+                    {
+                        text: 'Manufacturing',
+                        link: '/user-docs/manufacturing/get-started/introduction',
                     }
                 ]
             },
-            {text: 'Developer', link: '/developer/table-of-contents'},
-            {text: 'API Reference', link: '/api-reference/print'},
+            { text: 'Developer', link: '/developer/table-of-contents' },
+            { text: 'API Reference', link: '/api-reference/print' },
             {
                 text: 'Versions',
                 items: [
-                    {text: '18.0', link: '/18.0'},
-                    {text: '17.0', link: '/17.0'}
+                    { text: '18.0', link: '/18.0' },
+                    { text: '17.0', link: '/17.0' }
                 ]
             }
         ],
@@ -57,33 +61,33 @@ export default defineConfig({
                 {
                     text: 'Get started',
                     items: [
-                        {text: 'Introduction', link: '/docs/get-started/introduction'},
-                        {text: 'Installation', link: '/docs/get-started/installation'},
+                        { text: 'Introduction', link: '/docs/get-started/introduction' },
+                        { text: 'Installation', link: '/docs/get-started/installation' },
                     ],
                     collapsed: false
                 },
                 {
                     text: 'Quick start',
                     items: [
-                        {text: 'Create a project', link: '/docs/quick-start/create-a-project'},
-                        {text: 'Connect database', link: '/docs/quick-start/connect-database'},
-                        {text: 'Create an addon', link: '/docs/quick-start/create-an-addon'},
-                        {text: 'Configuration file', link: '/docs/quick-start/configuration-file'},
-                        {text: 'Create first model', link: '/docs/quick-start/create-first-model'},
-                        {text: 'Upgrade addon', link: '/docs/quick-start/upgrade-addon'},
-                        {text: 'Security', link: '/docs/quick-start/security'},
-                        {text: 'Write xml view', link: '/docs/quick-start/write-xml-view'},
+                        { text: 'Create a project', link: '/docs/quick-start/create-a-project' },
+                        { text: 'Connect database', link: '/docs/quick-start/connect-database' },
+                        { text: 'Create an addon', link: '/docs/quick-start/create-an-addon' },
+                        { text: 'Configuration file', link: '/docs/quick-start/configuration-file' },
+                        { text: 'Create first model', link: '/docs/quick-start/create-first-model' },
+                        { text: 'Upgrade addon', link: '/docs/quick-start/upgrade-addon' },
+                        { text: 'Security', link: '/docs/quick-start/security' },
+                        { text: 'Write xml view', link: '/docs/quick-start/write-xml-view' },
                     ],
                     collapsed: false
                 },
                 {
                     text: 'Models',
                     items: [
-                        {text: 'Special attributes', link: '/docs/essentials/models/special-attributes'},
-                        {text: 'Fields', link: '/docs/essentials/models/fields'},
-                        {text: 'Compute fields', link: '/docs/essentials/models/compute-fields'},
-                        {text: 'Onchange methods', link: '/docs/essentials/models/on-change-methods'},
-                        {text: 'API model methods', link: '/docs/essentials/models/api-model-methods'},
+                        { text: 'Special attributes', link: '/docs/essentials/models/special-attributes' },
+                        { text: 'Fields', link: '/docs/essentials/models/fields' },
+                        { text: 'Compute fields', link: '/docs/essentials/models/compute-fields' },
+                        { text: 'Onchange methods', link: '/docs/essentials/models/on-change-methods' },
+                        { text: 'API model methods', link: '/docs/essentials/models/api-model-methods' },
                     ],
                     collapsed: false
                 }
@@ -92,17 +96,88 @@ export default defineConfig({
                 {
                     text: 'Todo app',
                     items: [
-                        {text: 'Get started', link: '/examples/todo-app/get-started'},
-                        {text: 'Create models', link: '/examples/todo-app/create-models'}
+                        { text: 'Get started', link: '/examples/todo-app/get-started' },
+                        { text: 'Create models', link: '/examples/todo-app/create-models' }
                     ]
                 },
+            ],
+            '/user-docs/manufacturing/': [
+                {
+                    text: 'Get started',
+                    items: [
+                        { text: 'Introduction', link: '/user-docs/manufacturing/get-started/introduction' },
+                        { text: 'Installation', link: '/user-docs/manufacturing/get-started/installation' }
+                    ],
+                    collapsed: false
+                },
+                {
+                    text: 'Basic Setup',
+                    items: [
+                        { text: 'Manufacturing product configuration', link: '/user-docs/manufacturing/basic-setup/manufacturing-product-configuration' },
+                        { text: 'Bill of materials', link: '/user-docs/manufacturing/basic-setup/bill-of-materials' },
+                        { text: 'One-step manufacturing', link: '/user-docs/manufacturing/basic-setup/one-step-manufacturing' },
+                        { text: 'Two-step manufacturing', link: '/user-docs/manufacturing/basic-setup/two-step-manufacturing' },
+                        { text: 'Three-step manufacturing', link: '/user-docs/manufacturing/basic-setup/three-step-manufacturing' },
+                        { text: 'Manufacturing order costs', link: '/user-docs/manufacturing/basic-setup/manufacturing-order-costs' },
+                    ]
+                },
+                {
+                    text: 'Advanced Configuration',
+                    items: [
+                        { text: 'Managing BoMs for product variants', link: '/user-docs/manufacturing/advanced-configuration/managing-boms-for-product-variants' },
+                        { text: 'Kits', link: '/user-docs/manufacturing/advanced-configuration/kits' },
+                        { text: 'Multilevel BoMs', link: '/user-docs/manufacturing/advanced-configuration/multilevel-boms' },
+                        { text: 'Manage work orders using work center', link: '/user-docs/manufacturing/advanced-configuration/manage-work-orders-using-work-center' },
+                        { text: 'Work order dependencies', link: '/user-docs/manufacturing/advanced-configuration/work-order-dependencies' },
+                    ]
+                },
+                {
+                    text: 'Workflows',
+                    items: [
+                        { text: 'Master production schedule', link: '/user-docs/manufacturing/workflows/master-production-schedule' },
+                        { text: 'Work center time off', link: '/user-docs/manufacturing/workflows/work-center-time-off' },
+                        { text: 'Scrap during manufacturing', link: '/user-docs/manufacturing/workflows/scrap-during-manufacturing' },
+                        { text: 'Manufacturing backorders', link: '/user-docs/manufacturing/workflows/manufacturing-backorders' },
+                        { text: 'Split and merge manufacturing orders', link: '/user-docs/manufacturing/workflows/split-and-merge-manufacturing-orders' },
+                        { text: 'Unbuild orders', link: '/user-docs/manufacturing/workflows/unbuild-orders' },
+                        { text: 'By-Products', link: '/user-docs/manufacturing/workflows/by-products' },
+                        { text: 'Continuous product improvement', link: '/user-docs/manufacturing/workflows/continuous-product-improvement' },
+                        { text: 'Manufacture with lots and serial numbers', link: '/user-docs/manufacturing/workflows/manufacture-with-lots-and-serial-numbers' },
+                    ]
+                },
+                {
+                    text: 'Shop Floor',
+                    items: [
+                        { text: 'Shop Floor overview', link: '/user-docs/manufacturing/shop-floor/shop-floor-overview' },
+                        { text: 'Shop Floor time tracking', link: '/user-docs/manufacturing/shop-floor/shop-floor-time-tracking' },
+                    ]
+                },
+                {
+                    text: 'Subcontracting',
+                    items: [
+                        { text: 'Basic subcontracting', link: '/user-docs/manufacturing/subcontracting/basic-subcontracting' },
+                        { text: 'Basic subcontracting lead times', link: '/user-docs/manufacturing/subcontracting/basic-subcontracting-lead-times' },
+                        { text: 'Resupply subcontractor', link: '/user-docs/manufacturing/subcontracting/resupply-subcontractor' },
+                        { text: 'Resupply subcontracting lead times', link: '/user-docs/manufacturing/subcontracting/resupply-subcontracting-lead-times' },
+                        { text: 'Dropship to subcontractor', link: '/user-docs/manufacturing/subcontracting/dropship-to-subcontractor' },
+                        { text: 'Dropship subcontracting lead times', link: '/user-docs/manufacturing/subcontracting/dropship-subcontracting-lead-times' },
+                    ]
+                },
+                {
+                    text: 'Reporting',
+                    items: [
+                        { text: 'Allocation reports', link: '/user-docs/manufacturing/reporting/allocation-reports' },
+                        { text: 'Overall equipment effectiveness', link: '/user-docs/manufacturing/reporting/overall-equipment-effectiveness' },
+                        { text: 'Production analysis', link: '/user-docs/manufacturing/reporting/production-analysis' },
+                    ]
+                }
             ]
         },
 
         socialLinks: [
-            {icon: 'youtube', link: 'https://youtube.com/documentation-uz'},
-            {icon: 'x', link: 'https://twitter.com/documentation-uz'},
-            {icon: 'github', link: 'https://github.com/documentation-uz/odoo'}
+            { icon: 'youtube', link: 'https://youtube.com/documentation-uz' },
+            { icon: 'x', link: 'https://twitter.com/documentation-uz' },
+            { icon: 'github', link: 'https://github.com/documentation-uz/odoo' }
         ]
     }
 })

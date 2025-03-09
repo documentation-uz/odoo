@@ -37,6 +37,11 @@ features:
     details: User-friendly PoS interface for shops and restaurants
     link: /guide/
     linkText: Learn more
+  - icon: <img src="https://download.odoocdn.com/icons/mrp/static/description/icon.svg"/>
+    title: Manufacturing
+    details: Manufacturing Orders & BOMs
+    link: /user-docs/manufacturing/get-started/introduction
+    linkText: Learn more
 ---
 
 <script setup>
