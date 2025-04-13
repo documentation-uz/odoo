@@ -52,7 +52,8 @@
     --vp-c-indigo-1: #a24689;
     --vp-c-indigo-2: #c6349e;
     --vp-c-indigo-3: #a24689;
-    --vp-c-indigo-soft: rgb(255, 95, 210);
+    --vp-c-indigo-soft: rgba(100, 108, 255, .14);
+    /*--vp-c-indigo-soft: rgb(255, 95, 210);*/
 
     --vp-c-purple-1: #ae4491;
     --vp-c-purple-2: #ca4ba8;

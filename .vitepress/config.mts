@@ -285,6 +285,17 @@ export default defineConfig({
                         {text: 'Installation', link: '/user-docs/hr/get-started/installation'}
                     ],
                     collapsed: false
+                },
+                {
+                    text: 'Essentials',
+                    items: [
+                        {text: 'New employees', link: '/user-docs/hr/essentials/new-employees'},
+                        {text: 'Departments', link: '/user-docs/hr/essentials/departments'},
+                        {text: 'Certifications', link: '/user-docs/hr/essentials/certifications'},
+                        {text: 'Equipment', link: '/user-docs/hr/essentials/equipment'},
+                        {text: 'Offboarding', link: '/user-docs/hr/essentials/offboarding'},
+                        {text: 'Employee retention report', link: '/user-docs/hr/essentials/employee-retention-report'},
+                    ]
                 }
             ],
             '/user-docs/hr_attendance/': [
