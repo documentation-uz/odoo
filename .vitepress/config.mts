@@ -277,96 +277,96 @@ export default defineConfig({
                     ]
                 }
             ],
-            // '/user-docs/hr/': [
-            //     {
-            //         text: 'Get started',
-            //         items: [
-            //             {text: 'Introduction', link: '/user-docs/hr/get-started/introduction'},
-            //             {text: 'Installation', link: '/user-docs/hr/get-started/installation'}
-            //         ],
-            //         collapsed: false
-            //     }
-            // ],
-            // '/user-docs/hr_attendance/': [
-            //     {
-            //         text: 'Get started',
-            //         items: [
-            //             {text: 'Introduction', link: '/user-docs/hr_attendance/get-started/introduction'},
-            //             {text: 'Installation', link: '/user-docs/hr_attendance/get-started/installation'}
-            //         ],
-            //         collapsed: false
-            //     }
-            // ],
-            // '/user-docs/hr_payroll/': [
-            //     {
-            //         text: 'Get started',
-            //         items: [
-            //             {text: 'Introduction', link: '/user-docs/hr_payroll/get-started/introduction'},
-            //             {text: 'Installation', link: '/user-docs/hr_payroll/get-started/installation'}
-            //         ],
-            //         collapsed: false
-            //     }
-            // ],
-            // '/user-docs/hr_holidays/': [
-            //     {
-            //         text: 'Get started',
-            //         items: [
-            //             {text: 'Introduction', link: '/user-docs/hr_holidays/get-started/introduction'},
-            //             {text: 'Installation', link: '/user-docs/hr_holidays/get-started/installation'}
-            //         ],
-            //         collapsed: false
-            //     }
-            // ],
-            // '/user-docs/hr_recruitment/': [
-            //     {
-            //         text: 'Get started',
-            //         items: [
-            //             {text: 'Introduction', link: '/user-docs/hr_recruitment/get-started/introduction'},
-            //             {text: 'Installation', link: '/user-docs/hr_recruitment/get-started/installation'}
-            //         ],
-            //         collapsed: false
-            //     }
-            // ],
-            // '/user-docs/hr_contract/': [
-            //     {
-            //         text: 'Get started',
-            //         items: [
-            //             {text: 'Introduction', link: '/user-docs/hr_contract/get-started/introduction'},
-            //             {text: 'Installation', link: '/user-docs/hr_contract/get-started/installation'}
-            //         ],
-            //         collapsed: false
-            //     }
-            // ],
-            // '/user-docs/hr_appraisal/': [
-            //     {
-            //         text: 'Get started',
-            //         items: [
-            //             {text: 'Introduction', link: '/user-docs/hr_appraisal/get-started/introduction'},
-            //             {text: 'Installation', link: '/user-docs/hr_appraisal/get-started/installation'}
-            //         ],
-            //         collapsed: false
-            //     }
-            // ],
-            // '/user-docs/hr_referral/': [
-            //     {
-            //         text: 'Get started',
-            //         items: [
-            //             {text: 'Introduction', link: '/user-docs/hr_referral/get-started/introduction'},
-            //             {text: 'Installation', link: '/user-docs/hr_referral/get-started/installation'}
-            //         ],
-            //         collapsed: false
-            //     }
-            // ],
-            // '/user-docs/hr_skills/': [
-            //     {
-            //         text: 'Get started',
-            //         items: [
-            //             {text: 'Introduction', link: '/user-docs/hr_skills/get-started/introduction'},
-            //             {text: 'Installation', link: '/user-docs/hr_skills/get-started/installation'}
-            //         ],
-            //         collapsed: false
-            //     }
-            // ],
+            '/user-docs/hr/': [
+                {
+                    text: 'Get started',
+                    items: [
+                        {text: 'Introduction', link: '/user-docs/hr/get-started/introduction'},
+                        {text: 'Installation', link: '/user-docs/hr/get-started/installation'}
+                    ],
+                    collapsed: false
+                }
+            ],
+            '/user-docs/hr_attendance/': [
+                {
+                    text: 'Get started',
+                    items: [
+                        {text: 'Introduction', link: '/user-docs/hr_attendance/get-started/introduction'},
+                        {text: 'Installation', link: '/user-docs/hr_attendance/get-started/installation'}
+                    ],
+                    collapsed: false
+                }
+            ],
+            '/user-docs/hr_payroll/': [
+                {
+                    text: 'Get started',
+                    items: [
+                        {text: 'Introduction', link: '/user-docs/hr_payroll/get-started/introduction'},
+                        {text: 'Installation', link: '/user-docs/hr_payroll/get-started/installation'}
+                    ],
+                    collapsed: false
+                }
+            ],
+            '/user-docs/hr_holidays/': [
+                {
+                    text: 'Get started',
+                    items: [
+                        {text: 'Introduction', link: '/user-docs/hr_holidays/get-started/introduction'},
+                        {text: 'Installation', link: '/user-docs/hr_holidays/get-started/installation'}
+                    ],
+                    collapsed: false
+                }
+            ],
+            '/user-docs/hr_recruitment/': [
+                {
+                    text: 'Get started',
+                    items: [
+                        {text: 'Introduction', link: '/user-docs/hr_recruitment/get-started/introduction'},
+                        {text: 'Installation', link: '/user-docs/hr_recruitment/get-started/installation'}
+                    ],
+                    collapsed: false
+                }
+            ],
+            '/user-docs/hr_contract/': [
+                {
+                    text: 'Get started',
+                    items: [
+                        {text: 'Introduction', link: '/user-docs/hr_contract/get-started/introduction'},
+                        {text: 'Installation', link: '/user-docs/hr_contract/get-started/installation'}
+                    ],
+                    collapsed: false
+                }
+            ],
+            '/user-docs/hr_appraisal/': [
+                {
+                    text: 'Get started',
+                    items: [
+                        {text: 'Introduction', link: '/user-docs/hr_appraisal/get-started/introduction'},
+                        {text: 'Installation', link: '/user-docs/hr_appraisal/get-started/installation'}
+                    ],
+                    collapsed: false
+                }
+            ],
+            '/user-docs/hr_referral/': [
+                {
+                    text: 'Get started',
+                    items: [
+                        {text: 'Introduction', link: '/user-docs/hr_referral/get-started/introduction'},
+                        {text: 'Installation', link: '/user-docs/hr_referral/get-started/installation'}
+                    ],
+                    collapsed: false
+                }
+            ],
+            '/user-docs/hr_skills/': [
+                {
+                    text: 'Get started',
+                    items: [
+                        {text: 'Introduction', link: '/user-docs/hr_skills/get-started/introduction'},
+                        {text: 'Installation', link: '/user-docs/hr_skills/get-started/installation'}
+                    ],
+                    collapsed: false
+                }
+            ],
         },
 
         socialLinks: [
