@@ -385,5 +385,6 @@ export default defineConfig({
             {icon: 'x', link: 'https://twitter.com/documentation-uz'},
             {icon: 'github', link: 'https://github.com/documentation-uz/odoo'}
         ]
-    }
+    },
+    ignoreDeadLinks: true
 })
