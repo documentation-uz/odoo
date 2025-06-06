@@ -1,0 +1,114 @@
+[
+  {
+    "name": "get-started",
+    "items": [
+      {
+        "header": "Introduction"
+      }
+    ]
+  },
+  {
+    "name": "sales-quotations",
+    "items": [
+      {
+        "name": "index.md",
+        "header": "Sales Quotations"
+      },
+      {
+        "header": "Create quotations"
+      },
+      {
+        "header": "Quotation Templates"
+      },
+      {
+        "header": "Optional products"
+      },
+      {
+        "header": "Online signatures for order confirmations"
+      },
+      {
+        "header": "Online payment order confirmation"
+      },
+      {
+        "header": "Quotation deadlines"
+      },
+      {
+        "header": "Deliveries and invoices to different addresses"
+      },
+      {
+        "header": "Product variants on quotations and sales orders"
+      },
+      {
+        "header": "PDF quote builder"
+      }
+    ]
+  },
+  {
+    "name": "invoicing-method",
+    "items": [
+      {
+        "header": "Invoice based on delivered or ordered quantities"
+      },
+      {
+        "header": "Down payments"
+      },
+      {
+        "header": "Pro-forma invoices"
+      },
+      {
+        "header": "Invoicing based on time and materials"
+      },
+      {
+        "header": "Invoice project milestones"
+      },
+      {
+        "header": "Reinvoice expenses to customers"
+      }
+    ]
+  },
+  {
+    "name": "products-prices",
+    "items": [
+      {
+        "name": "manage-your-products",
+        "items": [
+          {
+            "header": "Import products"
+          },
+          {
+            "header": "Product variants"
+          },
+          {
+            "header": "Product images with Google Images"
+          }
+        ]
+      },
+      {
+        "name": "manage-your-pricing",
+        "items": [
+          {
+            "header": "Pricelists"
+          },
+          {
+            "header": "Foreign currencies"
+          },
+          {
+            "header": "Discounts"
+          }
+        ]
+      },
+      {
+        "header": "Returns and refunds"
+      },
+      {
+        "header": "Use eWallets and gift cards"
+      },
+      {
+        "header": "Discount and loyalty programs"
+      }
+    ]
+  },
+  {
+    "header": "Commissions"
+  }
+]

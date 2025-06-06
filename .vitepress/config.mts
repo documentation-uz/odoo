@@ -137,6 +137,146 @@ export default defineConfig({
                     ]
                 },
             ],
+            '/user-docs/sale-management': [
+                {
+                    text: 'Get Started',
+                    items: [
+                        {
+                            text: 'Introduction',
+                            link: '/user-docs/sale-management/get-started/introduction'
+                        },
+                    ]
+                },
+                {
+                    text: 'Sales Quotations',
+                    items: [
+                        {
+                            text: 'Sales Quotations',
+                            link: '/user-docs/sale-management/sales-quotations/index'
+                        },
+                        {
+                            text: 'Create quotations',
+                            link: '/user-docs/sale-management/sales-quotations/create-quotations'
+                        },
+                        {
+                            text: 'Quotation Templates',
+                            link: '/user-docs/sale-management/sales-quotations/quotation-templates'
+                        },
+                        {
+                            text: 'Optional products',
+                            link: '/user-docs/sale-management/sales-quotations/optional-products'
+                        },
+                        {
+                            text: 'Online signatures for order confirmations',
+                            link: '/user-docs/sale-management/sales-quotations/online-signatures-for-order-confirmations'
+                        },
+                        {
+                            text: 'Online payment order confirmation',
+                            link: '/user-docs/sale-management/sales-quotations/online-payment-order-confirmation'
+                        },
+                        {
+                            text: 'Quotation deadlines',
+                            link: '/user-docs/sale-management/sales-quotations/quotation-deadlines'
+                        },
+                        {
+                            text: 'Deliveries and invoices to different addresses',
+                            link: '/user-docs/sale-management/sales-quotations/deliveries-and-invoices-to-different-addresses'
+                        },
+                        {
+                            text: 'Product variants on quotations and sales orders',
+                            link: '/user-docs/sale-management/sales-quotations/product-variants-on-quotations-and-sales-orders'
+                        },
+                        {
+                            text: 'PDF quote builder',
+                            link: '/user-docs/sale-management/sales-quotations/pdf-quote-builder'
+                        },
+                    ]
+                },
+                {
+                    text: 'Invoicing Method',
+                    items: [
+                        {
+                            text: 'Invoice based on delivered or ordered quantities',
+                            link: '/user-docs/sale-management/invoicing-method/invoice-based-on-delivered-or-ordered-quantities'
+                        },
+                        {
+                            text: 'Down payments',
+                            link: '/user-docs/sale-management/invoicing-method/down-payments'
+                        },
+                        {
+                            text: 'Pro-forma invoices',
+                            link: '/user-docs/sale-management/invoicing-method/pro-forma-invoices'
+                        },
+                        {
+                            text: 'Invoicing based on time and materials',
+                            link: '/user-docs/sale-management/invoicing-method/invoicing-based-on-time-and-materials'
+                        },
+                        {
+                            text: 'Invoice project milestones',
+                            link: '/user-docs/sale-management/invoicing-method/invoice-project-milestones'
+                        },
+                        {
+                            text: 'Reinvoice expenses to customers',
+                            link: '/user-docs/sale-management/invoicing-method/reinvoice-expenses-to-customers'
+                        },
+                    ]
+                },
+                {
+                    text: 'Products Prices',
+                    items: [
+                        {
+                            text: 'Manage Your Products',
+                            items: [
+                                {
+                                    text: 'Import products',
+                                    link: '/user-docs/sale-management/products-prices/manage-your-products/import-products'
+                                },
+                                {
+                                    text: 'Product variants',
+                                    link: '/user-docs/sale-management/products-prices/manage-your-products/product-variants'
+                                },
+                                {
+                                    text: 'Product images with Google Images',
+                                    link: '/user-docs/sale-management/products-prices/manage-your-products/product-images-with-google-images'
+                                },
+                            ]
+                        },
+                        {
+                            text: 'Manage Your Pricing',
+                            items: [
+                                {
+                                    text: 'Pricelists',
+                                    link: '/user-docs/sale-management/products-prices/manage-your-pricing/pricelists'
+                                },
+                                {
+                                    text: 'Foreign currencies',
+                                    link: '/user-docs/sale-management/products-prices/manage-your-pricing/foreign-currencies'
+                                },
+                                {
+                                    text: 'Discounts',
+                                    link: '/user-docs/sale-management/products-prices/manage-your-pricing/discounts'
+                                },
+                            ]
+                        },
+                        {
+                            text: 'Returns and refunds',
+                            link: '/user-docs/sale-management/products-prices/returns-and-refunds'
+                        },
+                        {
+                            text: 'Use eWallets and gift cards',
+                            link: '/user-docs/sale-management/products-prices/use-ewallets-and-gift-cards'
+                        },
+                        {
+                            text: 'Discount and loyalty programs',
+                            link: '/user-docs/sale-management/products-prices/discount-and-loyalty-programs'
+                        },
+                    ]
+                },
+                {
+                    text: 'Commissions',
+                    link: '/user-docs/sale-management/commissions'
+                },
+            ],
             '/user-docs/manufacturing/': [
                 {
                     text: 'Get started',

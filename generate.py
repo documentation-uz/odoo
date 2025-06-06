@@ -2,6 +2,11 @@ import os.path
 
 apps = [
     {
+        "name": "Accounting",
+        "technical_name": "account_accountant",
+        "details": "Centralize employee information"
+    },
+    {
         "name": "Employees",
         "technical_name": "hr",
         "details": "Centralize employee information"
@@ -61,8 +66,10 @@ for app in apps:
     linkText: Learn more
 """
     folder = f"{BASE_DIR}/frontend/{app['technical_name']}/get-started/introduction"
-    if not os.path.exists(folder):
-        os.makedirs(folder)
+    if os.path.exists(folder):
+        continue
+
+    os.makedirs(folder)
 
     with open(f"{folder}/introduction.md", "w") as f:
         f.write(f"""# Introduction
