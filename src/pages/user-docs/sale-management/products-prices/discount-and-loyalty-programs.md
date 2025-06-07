@@ -1,1 +1,0 @@
-# Discount and loyalty programs

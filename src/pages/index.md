@@ -20,7 +20,7 @@ features:
   - icon: <img src="https://download.odoocdn.com/icons/sale_management/static/description/icon.svg"/>
     title: Sales
     details: From quotations to invoices
-    link: /user-docs/sale-management/get-started/introduction
+    link: /user-docs/sales/sales_quotations
     linkText: Learn more
   - icon: <img src="https://download.odoocdn.com/icons/hr/static/description/icon.svg"/>
     title: Employees
