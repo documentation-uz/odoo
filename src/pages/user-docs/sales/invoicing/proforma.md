@@ -1,59 +1,45 @@
 # Pro-forma hisob-fakturalar
 
-**Pro-forma hisob-faktura** — bu tovar yetkazib berilishidan oldin yuboriladigan qisqacha yoki taxminiy hisob-faktura hisoblanadi. Unda tovarlarning turi va miqdori, ularning qiymati hamda boshqa muhim ma'lumotlar, masalan, og'irligi va tashish xarajatlari ko'rsatiladi.
+*Pro-forma hisob-faktura* - bu tovarlar yetkazib berilishidan oldin yuborilgan qisqartirilgan yoki taxminiy hisob-faktura. Unda tovarlarning turi va miqdori, ularning qiymati va boshqa muhim ma'lumotlar, masalan, og'irligi va transport to'lovlari ko'rsatiladi.
 
----
+Pro-forma hisob-fakturalar odatda taklifnoma bilan birga dastlabki hisob-faktura sifatida ishlatiladi. Ular, shuningdek, bojxona maqsadlari uchun import qilishda ham ishlatiladi. Ular oddiy hisob-fakturadan farq qiladi, chunki ular to'lov talabi (yoki so'rovi) *emas*.
 
-Pro-forma hisob-fakturalar odatda kotirovka (taklif) bilan birga dastlabki hisob-faktura sifatida ishlatiladi. Shuningdek, ularni import jarayonlarida bojxona maqsadida ham ishlatishadi.
+## Sozlash
 
-Pro-forma hisob-faktura odatiy hisob-fakturadan farq qiladi, chunki **unda to'lov so'ralmaydi yoki talab qilinmaydi** — bu faqat axborot uchun beriladi.
+Pro-forma hisob-fakturalardan foydalanish uchun *Pro-Forma Invoice* funksiyasi **albatta** faollashtirilishi kerak.
 
-## Sozlamalar
+Bu funksiyani yoqish uchun `Sales app ‣ Configuration ‣ Settings` ga o'ting va `Quotations & Orders` bo'limida `Pro-Forma Invoice` yonidagi katakchani belgilang. Keyin barcha o'zgarishlarni saqlash uchun `Save` ni bosing.
 
-Pro-forma hisob-fakturalardan foydalanish uchun **Pro-forma hisob-faktura** funksiyasi yoqilgan bo'lishi **shart**.
+![Odoo Sales dasturidagi Pro-Forma Invoice funksiyasi sozlamasi.](proforma/pro-forma-setting.png)
 
-Ushbu funksiyani yoqish uchun quyidagi amallarni bajaring:
+## Pro-forma hisob-faktura yuborish
 
-`Savdo (Sales)` ilovasiga kiring → `Sozlamalar (Configuration)` → `Sozlamalar (Settings)` bo'limiga o'ting.  
-So'ng, `Kotirovkalar va Buyurtmalar (Quotations & Orders)` bo'limida  
-`Pro-forma hisob-faktura (Pro-Forma Invoice)` yonidagi katakchani belgilab qo'ying.
+`Pro-Forma Invoice` funksiyasi faollashtirilgan holda, pro-forma hisob-faktura yuborish imkoniyati endi `Send Pro-Forma Invoice` tugmasi orqali har qanday taklifnoma yoki sotuv buyurtmasida mavjud.
 
-Shundan so'ng, pastdagi `Saqlash (Save)` tugmasini bosing.
-
-![Odoo Sales ilovasida Pro-forma hisob-faktura funksiyasini yoqish sozlamasi.](proforma/pro-forma-setting.png)
-
-## Pro-forma hisob-fakturani yuborish
-
-`Pro-forma hisob-faktura` funksiyasi yoqilganidan so'ng, har qanday kotirovka yoki savdo buyurtmasidan pro-forma hisob-fakturani yuborish imkoni paydo bo'ladi. Buning uchun `Pro-forma hisob-fakturani yuborish (Send Pro-Forma Invoice)` tugmasidan foydalaniladi.
-
-![Odoo Sales'dagi savdo buyurtmasida joylashgan "Send Pro-Forma Invoice" tugmasi.](proforma/send-pro-forma-invoice-button.png)
+![Odoo Sales dasturidagi oddiy sotuv buyurtmasidagi Send Pro-Forma Invoice tugmasi.](proforma/send-pro-forma-invoice-button.png)
 
 ::: tip
 
-Agar oldindan to'lov (down payment) uchun hisob-faktura yuborilgan bo'lsa yoki buyurtma obuna (subscription) asosida bo'lsa,  
-**pro-forma hisob-fakturani yuborish mumkin emas**. Bu holatda `Send Pro-Forma Invoice` tugmasi ko'rinmaydi.
+Agar oldindan to'lov uchun hisob-faktura allaqachon yuborilgan bo'lsa yoki takrorlanuvchi obuna uchun bo'lsa, sotuv buyurtmasi yoki taklifnoma uchun pro-forma hisob-faktura yuborish **mumkin emas**.
 
-Biroq xizmatlar, tadbirga ro'yxatdan o'tishlar, kurslar yoki yangi obunalar uchun pro-forma hisob-fakturani yuborish mumkin.  
-Pro-forma hisob-fakturalar faqat jismoniy mahsulotlar (iste'mol qilinadigan yoki saqlanadigan) bilan cheklanmaydi.
-:::
+Ikkala holatda ham `Send Pro-Froma Invoice` tugmasi **ko'rinmaydi**.
 
-`Send Pro-Forma Invoice` tugmasi bosilganda, email yuborish oynasi ochiladi.
+Biroq, xizmatlar, tadbir ro'yxatdan o'tkazishlari, kurslar va/yoki yangi obunalar uchun pro-forma hisob-fakturalar **yuborilishi mumkin**. Pro-forma hisob-fakturalar faqat jismoniy, iste'mol qilinadigan yoki saqlanadigan tovarlarga cheklanmaydi.
+::::
 
-Ochilgan pop-up oynada:
+`Send Pro-Forma Invoice` tugmasi bosilganida elektron pochta yuborilishi mumkin bo'lgan oyna paydo bo'ladi.
 
-- `Qabul qiluvchi (Recipients)` maydoni avtomatik ravishda kotirovka yoki savdo buyurtmasidagi mijoz ma'lumotlari bilan to'ldiriladi.
-- `Mavzu (Subject)` maydoni va xat matnini kerak bo'lsa, o'zgartirish mumkin.
+Oynada `Recipients` maydoni sotuv buyurtmasi yoki taklifnomadagi mijoz bilan avtomatik to'ldiriladi. `Subject` maydoni va elektron pochta matni kerak bo'lsa o'zgartirilishi mumkin.
 
-Pro-forma hisob-faktura avtomatik ravishda xatga ilova sifatida biriktiriladi.
+Pro-forma hisob-faktura avtomatik ravishda elektron pochtaga ilova sifatida qo'shiladi.
 
-Barchasi tayyor bo'lgach, `Yuborish (Send)` tugmasini bosing. Odoo mijozga xatni pro-forma hisob-faktura bilan birga yuboradi.
+Tayyor bo'lganda `Send` ni bosing va Odoo ilova qilingan pro-forma hisob-faktura bilan elektron pochtani mijozga darhol yuboradi.
 
-![Pro-forma hisob-faktura ilova qilingan email oynasi.](proforma/pro-forma-email-message-pop-up.png)
+![Odoo Sales dasturida pro-forma hisob-faktura ilova qilingan elektron pochta oynasi.](proforma/pro-forma-email-message-pop-up.png)
 
 ::: tip
 
-Pro-forma hisob-fakturaning qanday ko'rinishini oldindan ko'rish uchun, email oynasining pastidagi PDF faylga bosish kifoya.  
-Bu PDF fayl darhol yuklanadi. Faylni oching va ko'rib chiqing.
+Pro-forma hisob-faktura qanday ko'rinishini oldindan ko'rish uchun `Send` ni bosishdan *oldin* elektron pochta oynasining pastki qismidagi PDF ni bosing. Bosilganda pro-forma hisob-faktura darhol yuklab olinadi. Pro-forma hisob-fakturani ko'rish (va ko'rib chiqish) uchun PDF ni oching.
 
-![Odoo Sales tizimidagi pro-forma hisob-faktura namunasi.](proforma/pro-forma-pdf.png)
-:::
+![Odoo Sales dasturidagi namunaviy pro-forma hisob-faktura PDF.](proforma/pro-forma-pdf.png)
+::::

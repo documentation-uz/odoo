@@ -1,86 +1,53 @@
-# Yetkazib berilgan yoki buyurtma qilingan miqdor asosida hisob-faktura
+# Yetkazib berilgan yoki buyurtma qilingan miqdor asosida hisob-faktura berish
 
-Turli xil biznes siyosatlari har xil hisob-fakturalash variantlarini talab qilishi mumkin:
+Turli biznes siyosatlari hisob-faktura berish uchun turli variantlarni talab qilishi mumkin:
 
-- **Buyurtma qilingan miqdor asosida hisob-faktura qilish** — bu Odoo *Sales* (Sotuvlar) modulida standart bo'lib keladi. Ya'ni, mijozlar sotuv buyurtmasi tasdiqlangandan so'ng hisob-faktura qilinadi.
-- **Yetkazib berilgan miqdor asosida hisob-faktura qilish** — bu usul mijozlar faqat mahsulot yetkazib berilgach hisob-faktura qilinadi. Ushbu usul odatda katta miqdorda materiallar, suyuqliklar yoki oziq-ovqat mahsulotlarini sotuvchi korxonalar tomonidan qo'llaniladi. Bunday holatlarda buyurtma qilingan miqdor va real yetkazib berilgan miqdor o'rtasida ozgina farq bo'lishi mumkin, shuning uchun real yetkazib berilgan miqdorga asoslangan hisob-faktura afzal bo'ladi.
+- *Buyurtma qilingan narsaga hisob-faktura berish* qoidasi Odoo *Sales* dasturida standart rejim sifatida ishlatiladi, ya'ni mijozlarga sotuv buyurtmasi tasdiqlangandan so'ng hisob-faktura beriladi.
+- *Yetkazib berilgan narsaga hisob-faktura berish* qoidasi mijozlarga yetkazib berish amalga oshirilgandan so'ng hisob-faktura beradi. Bu qoida ko'pincha katta miqdorda materiallar, suyuqliklar yoki oziq-ovqat mahsulotlarini sotadigan korxonalar uchun ishlatiladi. Bunday hollarda buyurtma qilingan miqdor yetkazib berilgan miqdordan biroz farq qilishi mumkin, shuning uchun haqiqatda yetkazib berilgan miqdorga hisob-faktura berish afzalroq bo'ladi.
 
-Turli hisob-fakturalash variantlariga ega bo'lish biznes uchun ko'proq moslashuvchanlikni ta'minlaydi.
+Turli hisob-faktura variantlariga ega bo'lish ko'proq moslashuvchanlik beradi.
 
-## Hisob-fakturalash siyosati sozlamalari
+## Hisob-faktura siyosati xususiyatlari
 
-Zarur hisob-fakturalash siyosatini faollashtirish uchun quyidagi yo'nalishda harakat qiling:  
-`Sotuvlar ilovasi ‣ Sozlamalar ‣ Konfiguratsiya`,  
-va `Hisob-fakturalash (Invoicing)` sarlavhasi ostida quyidagi qoidalardan birini tanlang:
+Kerakli hisob-faktura siyosati xususiyatlarini faollashtirish uchun `Sales app ‣ Configuration ‣ Settings` bo'limiga o'ting va `Invoicing` sarlavhasi ostida `Invoicing Policy` qoidasini tanlang: `Invoice what is ordered` yoki `Invoice what is delivered`.
 
-- `Buyurtma asosida hisob-faktura qilish (Invoice what is ordered)`
-- `Yetkazib berilgan mahsulot asosida hisob-faktura qilish (Invoice what is delivered)`
-
-![Odoo Sales'da hisob-faktura siyosatini tanlash.](invoicing_policy/invoicing-policy-setting.png)
+![Odoo Sales dasturida hisob-faktura siyosatini tanlash.](invoicing_policy/invoicing-policy-setting.png)
 
 ::: warning
 
-Agar siz `Yetkazib berilgan mahsulot asosida hisob-faktura qilish` qoidasi tanlansa,  
-`Avtomatik hisob-faktura (Automatic Invoice)` funksiyasini **yoqib bo'lmaydi**.  
-Bu funksiya onlayn to'lov tasdiqlanganda avtomatik hisob-faktura yaratadi.
-:::
+Agar `Invoice what is delivered` qoidasi tanlangan bo'lsa, onlayn to'lov tasdiqlanganida avtomatik ravishda hisob-faktura yaratadigan `Automatic Invoice` funksiyasini faollashtirish **mumkin emas**.
+::::
 
-## Mahsulot formasida hisob-fakturalash siyosati
+## Mahsulot formasidagi hisob-faktura siyosati
 
-Har qanday mahsulot sahifasida, quyidagicha yo'l tuting:  
-`Sotuvlar ilovasi ‣ Mahsulotlar ‣ Mahsulotlar boshqaruv paneli`,  
-shu yerda `Umumiy ma'lumotlar (General Information)` tabi ostida  
-`Hisob-fakturalash siyosati (Invoicing Policy)` opsiyasini toping.
+`Sales app ‣ Products ‣ Products` boshqaruv paneli orqali istalgan mahsulot sahifasida `General Information` yorlig'i ostida joylashgan `Invoicing Policy` variantini toping. Uni ochiladigan menyu yordamida qo'lda o'zgartirish mumkin.
 
-Bu maydon orqali siyosatni qo'lda, ochiluvchi ro'yxatdan tanlab o'zgartirish mumkin.
+![Odoo Sales dasturida mahsulot formasida hisob-faktura siyosatini qanday o'zgartirish.](invoicing_policy/invoicing-policy-general-info-tab.png)
 
-![Odoo Sales'da mahsulot formasida hisob-faktura siyosatini o'zgartirish.](invoicing_policy/invoicing-policy-general-info-tab.png)
+## Sotuv jarayoniga ta'siri
 
-## Savdo jarayoniga ta'siri
+Odoo *Sales* dasturida asosiy sotuv jarayoni taklifnoma yaratishdan boshlanadi. Keyin bu taklifnoma mijozga yuboriladi. So'ngra uni tasdiqlash kerak, bu taklifnomani sotuv buyurtmasiga aylantiradi. Bu o'z navbatida hisob-faktura yaratadi.
 
-Odoo *Sales* ilovasida asosiy savdo jarayoni kotirovka (quotation) yaratishdan boshlanadi.  
-Keyin bu kotirovka mijozga yuboriladi. So'ngra, bu kotirovka tasdiqlanishi kerak  
-va tasdiqlangach, savdo buyurtmasiga (sales order) aylanadi.  
-Bu esa o'z navbatida hisob-faktura (invoice) yaratishga olib keladi.
+Quyida hisob-faktura siyosati qoidalarining yuqorida aytilgan sotuv jarayoniga qanday ta'sir qilishi haqida ma'lumot:
 
-Quyida hisob-fakturalash siyosatining yuqoridagi savdo jarayoniga qanday ta'sir qilishi ko'rsatilgan:
-
-- `Buyurtma asosida hisob-faktura (Invoice what is ordered)`:
-  Asosiy savdo jarayoniga hech qanday ta'sir qilmaydi.  
-  Sotuv tasdiqlangandan so'ng darhol hisob-faktura yaratiladi.
-
-- `Yetkazib berilgan miqdor asosida hisob-faktura (Invoice what is delivered)`:
-  Savdo jarayoniga biroz ta'siri bor, chunki yetkazib berilgan miqdor
-  savdo buyurtmasida qo'lda kiritilishi kerak.  
-  Yoki, *Ombor (Inventory)* ilovasidan foydalanib,  
-  yetkazilgan miqdorni tasdiqlash orqali hisob-faktura yaratish mumkin.
+- `Invoice what is ordered`: Asosiy sotuv jarayoniga ta'sir qilmaydi. Sotuv tasdiqlanishi bilanoq hisob-faktura yaratiladi.
+- `Invoice what is delivered`: Sotuv jarayoniga ozgina ta'sir qiladi, chunki yetkazib berilgan miqdorni sotuv buyurtmasiga qo'lda kiritish kerak. Yoki *Inventory* dasturini o'rnatib, *Sales* dasturi bilan hisob-faktura yaratishdan oldin yetkazib berilgan miqdorni tasdiqlash uchun ishlatish mumkin.
 
 :::: warning
 
-Agar foydalanuvchi yetkazib berilgan miqdorni tasdiqlamasdan hisob-faktura yaratmoqchi bo'lsa,  
-quyidagi xato xabari paydo bo'ladi:
+Agar foydalanuvchi yetkazib berilgan miqdorni tasdiqlamasdan hisob-faktura yaratishga harakat qilsa, quyidagi xato xabari paydo bo'ladi:
+`There is no invoiceable line. If a product has a Delivered quantities invoicing policy, please make sure that a quantity has been delivered.`
 
-`Hisoblanadigan bandlar yo'q. Agar mahsulotda 'Yetkazib berilgan miqdor asosida' siyosati tanlangan bo'lsa, iltimos, yetkazilgan miqdorni kiritganingizga ishonch hosil qiling.`
-
-![Agar "Yetkazib berilgan miqdor asosida" siyosati tanlansa, miqdor kiritilishi kerak.](invoicing_policy/invoicing-policy-error-message.png)
+![Agar Yetkazib berilgan miqdorlar hisob-faktura siyosati tanlangan bo'lsa, miqdor yetkazib berilganiga ishonch hosil qiling.](invoicing_policy/invoicing-policy-error-message.png)
 ::::
 
 ::: tip
 
-Kotirovka tasdiqlangandan so'ng, holati `Kotirovka yuborildi (Quotation sent)`  
-dan `Savdo buyurtmasi (Sales order)` ga o'zgaradi.  
-Shundan so'ng, yetkazilgan va hisoblangan miqdorlarni bevosita  
-savdo buyurtmasida ko'rish mumkin bo'ladi.  
-Bu ikkala hisob-faktura siyosati uchun ham amal qiladi.
+Taklifnoma tasdiqlanganidan so'ng va holat `Quotation sent`dan `Sales order`ga o'zgargandan so'ng, yetkazib berilgan va hisob-faktura qilingan miqdorlarni to'g'ridan-to'g'ri sotuv buyurtmasidan ko'rish mumkin. Bu ikkala hisob-faktura siyosati qoidasi variantlari uchun ham to'g'ri.
 
-![Odoo Sales'da yetkazilgan va hisoblangan miqdorlarni qanday ko'rish mumkin.](invoicing_policy/invoicing-policy-order-lines.png)
+![Odoo Sales dasturida yetkazib berilgan va hisob-faktura qilingan miqdorlaringizni qanday ko'rish.](invoicing_policy/invoicing-policy-order-lines.png)
 
-Odoo kotirovka tasdiqlangach, hatta qisman yetkazib berilgan bo'lsa ham,  
-hisob-fakturaga `Yetkazilgan (Delivered)` va `Hisoblangan (Invoiced)` miqdorlarni avtomatik tarzda qo'shadi.
+Odoo taklifnoma tasdiqlanganida, qisman yetkazib berish bo'lsa ham, `Delivered` va `Invoiced` miqdorlarini avtomatik ravishda hisob-fakturaga qo'shadi.
 ::::
 
-Yakunda, hisob-faktura yaratish uchun bir nechta variantlar mavjud:
-
-- `Oddiy hisob-faktura (Regular invoice)`
-- `Oldindan to'lov — foizda (Down payment - percentage)`
-- `Oldindan to'lov — qat'iy summada (Down payment - fixed amount)`
+Nihoyat, hisob-faktura yaratish uchun bir nechta turli variantlar mavjud: `Regular invoice`, `Down payment (percentage)` yoki `Down payment (fixed amount)`.

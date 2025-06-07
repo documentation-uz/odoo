@@ -1,163 +1,144 @@
-# Loyihadagi bosqichlar (milestones) asosida hisob-faktura yuborish
+# Loyiha bosqichlariga hisob-faktura berish
 
-Loyihadagi bosqichlar (milestones) asosida hisob-faktura yuborish usuli qimmat yoki katta hajmdagi loyihalar uchun ishlatiladi. Loyiha davomida belgilangan bir nechta bosqichlar — butun loyiha yoki shartnoma yakunlanishiga olib keladigan aniq ishlar ketma-ketligidan iborat bo'ladi.
+Loyiha bosqichlariga asoslangan hisob-faktura berish qimmat yoki keng ko'lamli loyihalar uchun ishlatilishi mumkin. Loyihadagi bosqichlar ketma-ketligi loyiha va/yoki shartnomaning yakunlanishiga olib keladigan aniq ish ketma-ketligini ifodalaydi.
 
-Hisob-faktura yuborishning ushbu usuli kompaniyaga loyiha davomida muntazam ravishda pul oqimini ta'minlaydi. Mijozlar esa loyiha rivojlanishining har bir bosqichini bevosita kuzatib borishlari, shuningdek, umumiy summani birdan to'lamasdan, bosqichma-bosqich to'lashlari mumkin bo'ladi.
+Hisob-faktura berishning bu usuli kompaniyaga loyiha davomida barqaror pul oqimi ta'minlaydi. Mijozlar loyiha rivojlanishining har bir bosqichini yaqindan kuzatib borishlari mumkin, shuningdek, katta hisobni bir vaqtning o'zida emas, balki bir necha bo'lib to'lashlari mumkin.
 
-## Loyihadagi bosqichlar uchun mahsulotlar yaratish
+## Bosqich mahsulotlarini yaratish
 
-Odoo'da loyiha bosqichlarining har biri alohida mahsulot sifatida qaraladi.
+Odoo dasturida loyihaning har bir bosqichi alohida mahsulot sifatida qaraladi.
 
-Bunday mahsulotlarni yaratish yoki sozlash uchun quyidagi yo'nalishga o'ting:
-`Savdo ilovasi ‣ Mahsulotlar ‣ Mahsulotlar`.
+Bunday ishlash uchun mahsulotlarni yaratish va/yoki sozlash uchun avval `Sales app ‣ Products ‣ Products` bo'limiga o'ting. Keyin mahsulotni bosing yoki `New` tugmasini bosib yangisini yarating.
 
-Keyin mavjud mahsulotni tanlang yoki `Yangi` tugmasini bosib yangi mahsulot yarating.
+Bosqichlarga asoslangan hisob-faktura berish variantlari faqat ma'lum mahsulot turlari uchun mavjud.
 
-Bosqichlar asosida hisob-faktura yuborish imkoniyati faqat ayrim mahsulot turlarida mavjud.
+Mahsulot formasida, `General Information` yorlig'i ostida, `Product Type` maydoni quyidagi variantlardan birida *bo'lishi kerak*: `Service`, `Event Ticket`, `Event Booth` yoki `Course`.
 
-Mahsulot formasi ichida, `Umumiy ma'lumotlar` tabida, `Mahsulot turi` (Product Type) quyidagi variantlardan biriga o'rnatilgan bo'lishi **shart**:
+![Mahsulot formasidagi hisob-faktura siyosati maydoni ochiladigan menyusi variantlari bilan.](milestone/product-type-field.png)
 
-- `Xizmat (Service)`
-- `Tadbir uchun chipta (Event Ticket)`
-- `Tadbir uchun stend (Event Booth)`
-- `Kurs (Course)`
+Ushbu `Product Type` variantlaridan birini tanlab, `Invoicing Policy` ochiladigan menyusidan `Based on Milestones` ni tanlang.
 
-![Mahsulot formasida mahsulot turi ochiladigan menyu.](milestone/product-type-field.png)
+![Mahsulot formasidagi hisob-faktura siyosati maydoni ochiladigan menyusi variantlari bilan.](milestone/invoicing-policy-field.png)
 
-Yuqoridagi `Mahsulot turi` tanlanganidan so'ng, `Hisob-faktura siyosati` (Invoicing Policy) menyusidan `Bosqichlar asosida` (`Based on Milestones`) tanlanadi.
+Uning ostida `Create on Order` maydoni bor.
 
-![Mahsulot formasida hisob-faktura siyosati maydoni.](milestone/invoicing-policy-field.png)
-
-Shu maydon ostida `Buyurtma orqali yaratiladi` (`Create on Order`) maydoni mavjud.
-
-Ish jarayonlari silliq bo'lishi uchun, bu maydonda ham biror variant tanlanishi tavsiya qilinadi.
+Ish jarayonlarining iloji boricha muammosiz bo'lishini ta'minlash uchun `Create on Order` maydonida variant tanlash tavsiya etiladi.
 
 ::: tip
 
-Agar bu maydon `Hech narsa` (`Nothing`) holatida qoldirilsa ham ishga xalal bermaydi. Ammo bu holda loyiha **sotuv buyurtmasidan qo'lda** yaratilishi kerak bo'ladi. Loyiha yaratilgach, undagi bosqichlar va vazifalarni qo'shish va sozlash mumkin bo'ladi.
-:::
+Uni standart `Nothing` variantida qoldirish kerakli ish jarayoniga salbiy ta'sir qilmaydi. Biroq, loyiha o'sha maxsus mahsulot bilan sotuv buyurtmasi formasidan bevosita yaratilishi *kerak*. Loyiha yaratilgandan *so'ng* bosqichlar va vazifalarni yaratish va sozlash mumkin.
+::::
 
-`Buyurtma orqali yaratiladi` (`Create on Order`) maydonida standart qiymat `Hech narsa` (`Nothing`) bo'lib, ustiga bosilganda quyidagi variantlar ochiladi:
+`Create on Order` standart varianti `Nothing` bosilganida ochiladigan menyu quyidagi variantlar bilan ko'rinadi:
 
-- `Vazifa (Task)`: Ushbu mahsulot buyurtma qilinganda, unga tegishli vazifa *Loyihalar* ilovasida yaratiladi.
-- `Loyiha va vazifa (Project & Task)`: Ushbu mahsulot buyurtma qilinganda, unga tegishli loyiha **va** vazifa *Loyihalar* ilovasida yaratiladi.
-- `Loyiha (Project)`: Ushbu mahsulot buyurtma qilinganda, unga tegishli loyiha *Loyihalar* ilovasida yaratiladi.
+- `Task`: Bu maxsus mahsulot buyurtma qilinganida Odoo *Projects* dasturida ushbu bosqich mahsuloti bilan bog'liq vazifa yaratadi.
+- `Project & Task`: Bu maxsus mahsulot buyurtma qilinganida Odoo *Projects* dasturida ushbu bosqich mahsuloti bilan bog'liq loyiha va vazifa yaratadi.
+- `Project`: Bu maxsus mahsulot buyurtma qilinganida Odoo *Projects* dasturida ushbu bosqich mahsuloti bilan bog'liq loyiha yaratadi.
 
-Agar `Vazifa (Task)` tanlansa, yangi `Loyiha` (`Project`) maydoni paydo bo'ladi. Bu yerda ushbu yaratiladigan vazifa qaysi mavjud loyihaga biriktirilishini tanlash mumkin.
+`Task` tanlanganda `Project` maydoni paydo bo'ladi. Bu maydon orqali yaratilgan vazifa *Projects* dasturidagi qaysi mavjud loyihaga ulanishi kerakligini tanlang.
 
-![Vazifa tanlanganda ochiladigan Loyiha maydoni.](milestone/task-option-project-field.png)
+![Create on Order maydonida Task varianti tanlanganida Project maydoni paydo bo'ladi.](milestone/task-option-project-field.png)
 
-Agar `Loyiha va vazifa (Project & Task)` yoki faqat `Loyiha (Project)` tanlansa, ikki yangi maydon paydo bo'ladi:
+`Project & Task` yoki `Project` tanlanganda ikkita yangi maydon paydo bo'ladi: `Project Template` va `Workspace Template`.
 
-- `Loyiha shabloni (Project Template)`
-- `Ishchi makon shabloni (Workspace Template)`
+![Bosqich mahsulotida paydo bo'ladigan loyiha andozasi va ish maydoni andozasi maydonlari.](milestone/project-task-option-project-workspace-fields.png)
 
-![Loyiha va ishchi makon shabloni maydonlari.](milestone/project-task-option-project-workspace-fields.png)
+`Project Template` maydoni bu maxsus mahsulot buyurtma qilinganida yaratilishi kerak bo'lgan loyiha uchun foydalaniladigan andoza variantlarini taqdim etadi.
 
-- `Loyiha shabloni` maydonida, mahsulot buyurtma qilinganda avtomatik yaratiladigan loyiha uchun ishlatiladigan shablon tanlanadi.
-- `Ishchi makon shabloni` esa *Hujjatlar (Documents)* ilovasida avtomatik yaratiladigan ishchi maydon uchun shablon tanlash imkonini beradi (bu *Loyihalar* ilovasiga emas, balki *Hujjatlar* ilovasiga tegishli).
+`Workspace Template` maydoni bu maxsus mahsulot buyurtma qilinganida loyiha uchun avtomatik yaratilishi kerak bo'lgan ish maydoni (*Documents* dasturi uchun, *Projects* dasturi uchun emas) uchun andoza variantlarini taqdim etadi.
 
 ::: tip
 
-Tartib-intizomni saqlash uchun mahsulot formasining `Savdo` (`Sales`) tabiga o'ting va `Savdo tavsifi` (`Sales Description`) maydoniga maxsus **bosqich nomini** yoki izohini yozing. Bu ma'lumot sotuv buyurtmasining `Buyurtma elementlari` (`Order Lines`) tabidagi `Tavsif` (`Description`) ustunida ko'rinadi.
+Tashkiliy maqsadlar uchun mahsulot formasidagi `Sales` yorlig'ini bosing va `Sales Description` maydoniga maxsus 'Bosqich' bilan bog'liq tavsifni kiriting. Bu ma'lumot sotuv buyurtmasining `Order Lines` yorlig'idagi `Description` ustunida ko'rinadi.
 
-Yoki istasangiz, to'g'ridan-to'g'ri `Buyurtma elementlari` ichidagi `Tavsif` ustunini o'zgartirishingiz ham mumkin.
+Yoki sotuv buyurtmasining `Order Lines` yorlig'idagi `Description` maydonini to'g'ridan-to'g'ri tahrirlang/o'zgartiring.
 
-Bu majburiy emas.
-:::
+Bu *majburiy* emas.
+::::
 
-## Bosqichlar bo'yicha hisob-faktura qilish
+## Bosqichlarga hisob-faktura berish
 
 ::: tip
 
-Quyidagi jarayonda uchta bosqichli mahsulot mavjud bo'lib, ularning:
+Quyidagi jarayon `Product Type` sifatida `Service` o'rnatilgan va `Create on Order` maydonida `Task` o'rnatilgan uchta bosqich mahsulotini o'z ichiga oladi.
 
-- `Mahsulot turi (Product Type)` — `Xizmat (Service)` deb belgilangan;
-- `Buyurtma orqali yaratiladi (Create on Order)` — `Vazifa (Task)` deb belgilangandir.
+![Formada "Service" "Product Type" va Create on Order maydonida "Task" bilan mahsulot.](milestone/settings-for-workflow.png)
 
-![Xizmat mahsuloti va Buyurtma orqali yaratiladigan qiymat sifatida Vazifa tanlangan mahsulot formasi.](milestone/settings-for-workflow.png)
+Keyin bu vazifalar oldindan mavjud `Project`ga biriktiriladi, bu holda u `Rebranding Projects` deb nomlanadi.
+::::
 
-Bu vazifalar oldindan mavjud bo'lgan `Loyiha`ga biriktirilgan bo'lib, bizning holatda bu loyiha `Rebrending loyihalari` deb nomlangan.
-:::
+Bosqichlarga hisob-faktura berish uchun bosqich mahsulot(lar)i bilan sotuv buyurtmasi yarating. Buning uchun `Sales app ‣ New` ga o'ting. Bunda bo'sh taklifnoma formasi ochiladi.
 
-Bosqichlar bo'yicha hisob-faktura qilish uchun, avvalo bosqich mahsulotlarini o'z ichiga olgan **sotuv buyurtmasi** yaratiladi.
+Ushbu taklifnoma formasidan `Customer` qo'shing. Keyin `Order Lines` yorlig'ida `Add a product` ni bosing. So'ngra bosqich mahsulot(lar)ini `Order Lines` yorlig'iga qo'shing.
 
-Buning uchun `Savdo` ilovasiga o'ting → `Yangi`. Natijada bo'sh taklifnoma formasi ochiladi.
+Tegishli bosqich mahsulot(lar)i qo'shilgandan so'ng buyurtmani tasdiqlash uchun `Confirm` ni bosing, bu taklifnomani sotuv buyurtmasiga aylantiradi.
 
-Bu formaga `Mijoz` qo'shing. So'ng `Buyurtma elementlari (Order Lines)` tabida `Mahsulot qo'shish (Add a product)` tugmasini bosing va bosqich mahsulotlarini qo'shing.
+Buyurtma tasdiqlanganida mahsulot formasidagi `Create on Order` maydonida tanlanganlarga asosan sotuv buyurtmasining yuqori qismida yangi aqlli tugmalar paydo bo'ladi.
 
-Tegishli mahsulotlar qo'shilgandan so'ng, `Tasdiqlash (Confirm)` tugmasini bosing. Bu taklifnomani **sotuv buyurtmasiga** aylantiradi.
+Sotuv buyurtmasidan `Milestones` aqlli tugmasini bosing. Bunda bo'sh `Milestones` sahifasi ochiladi. Bosqichlar qo'shish uchun `New` ni bosing.
 
-Buyurtma tasdiqlangandan so'ng, mahsulot formadagi `Buyurtma orqali yaratiladi` (`Create on Order`) maydoniga qarab, yuqorida yangi `aqlli tugmalar (smart buttons)` paydo bo'ladi.
+![Bosqich mahsulotlari bilan sotuv buyurtmasiga bosqichlar qo'shish.](milestone/adding-milestones.png)
 
-Bu tugmalardan `Bosqichlar (Milestones)` tugmasini bosing. Natijada bo'sh `Bosqichlar` sahifasi ochiladi. Bu yerda `Yangi (New)` tugmasini bosib, bosqichlarni qo'shing.
+Bosqich uchun `Name` kiriting. Keyin uni tegishli `Sales Order Item`ga qo'llang. Nihoyat, agar kerak bo'lsa, bosqichga `Deadline` belgilang.
 
-![Bosqich mahsulotlari bilan sotuv buyurtmasiga bosqich qo'shish.](milestone/adding-milestones.png)
+Ushbu jarayonni barcha bosqich sotuv buyurtmasi elementlari uchun takrorlang.
 
-Har bir bosqich uchun quyidagilarni belgilang:
+Keyin sotuv buyurtmasiga orqaga qaytish havolalari orqali qayting. Sotuv buyurtmasidan `Tasks` aqlli tugmasini bosing. Bunda `Create on Order` maydonida ushbu variant belgilangan har bir sotuv buyurtmasi elementi uchun vazifa bilan `Tasks` sahifasi ochiladi.
 
-- `Nomi (Name)` — bosqich nomi;
-- `Sotuv buyurtma elementi (Sales Order Item)` — ushbu bosqich tegishli bo'lgan mahsulot;
-- `Tugash sanasi (Deadline)` — ixtiyoriy maydon, bosqichning bajarilishi kerak bo'lgan muddat.
+![Bosqich mahsulotlari bilan sotuv buyurtmasidan aqlli tugma orqali ochiladigan namunaviy vazifalar sahifasi.](milestone/tasks-page.png)
 
-Bu jarayonni barcha bosqich mahsulotlari uchun takrorlang.
+Sozlangan bosqichni vazifaga qo'lda tayinlash uchun kerakli vazifani bosing, bu vazifa formasini ochadi. Vazifa formasida `Milestone` maydonida bu vazifa qaysi bosqichga ulanishi kerakligini tanlang.
 
-So'ng, sahifaning yuqori qismidagi `breadcrumbs` orqali sotuv buyurtmasiga qayting. Buyurtmadan `Vazifalar (Tasks)` aqlli tugmasini bosing. Bu orqali har bir bosqich mahsuloti uchun yaratilgan vazifalarni ko'rish mumkin bo'lgan `Vazifalar` sahifasi ochiladi.
+![Odoo Sales dasturida bosqich mahsulotlari bilan ishlashda vazifa formasidagi bosqich maydoni.](milestone/milestone-field-on-task-form.png)
 
-![Bosqich mahsulotlari bo'lgan sotuv buyurtmasidan ochilgan vazifalar sahifasi.](milestone/tasks-page.png)
+Ushbu jarayonni barcha bosqich vazifalari uchun takrorlang.
 
-Har bir vazifaga tegishli bosqichni qo'lda biriktirish uchun, kerakli vazifani bosing. Bu orqali vazifa formasi ochiladi. Shu formadagi `Bosqich (Milestone)` maydonida ushbu vazifaga tegishli bo'lgan bosqichni tanlang.
+Ushbu vazifalar to'g'ri sozlangandan so'ng xodimlar vazifa ustida ishlayotganda o'z rivojlanishlarini qayd qiladilar va vazifaga bog'liq izohlar qo'shadilar.
 
-![Odoo Sales tizimida bosqich mahsulotlari bilan ishlaganda, vazifa formasidagi Bosqich maydoni.](milestone/milestone-field-on-task-form.png)
+Keyin, bu vazifa tugaganda, bu bosqichga erishilganligini anglatadi. Shu paytda ushbu bosqichga hisob-faktura berish vaqti keladi.
 
-Bu amalni barcha bosqich vazifalari uchun takrorlang.
+Bosqichga hisob-faktura berish uchun avval orqaga qaytish havolalari orqali yoki `Sales app ‣ Orders ‣ Orders` ga o'tib tegishli sotuv buyurtmasini tanlab sotuv buyurtmasiga qayting.
 
-Vazifalar to'g'ri sozlangach, xodimlar o'zlarining ish jarayonlarini va tegishli izohlarini vazifa ichida qayd etishadi.
+Sotuv buyurtmasi formasiga qaytib, `Milestones` aqlli tugmasini bosing va o'sha vazifa uchun `Reached` ustunidagi katakchani belgilang.
 
-Vazifa yakunlanganda, bu bosqich bajarilganini anglatadi. Shu nuqtada, bosqich bo'yicha hisob-faktura qilish vaqti keladi.
+![Bosqich aqlli tugmasi orqali bosqichni erishilgan deb belgilash qanday ko'rinadi.](milestone/reached-milestone.png)
 
-Bosqich bo'yicha hisob-faktura qilish uchun, avvalo sotuv buyurtmasiga qayting — bu breadcrumb linklari orqali yoki `Savdo (Sales)` ilovasi → `Buyurtmalar (Orders)` → `Buyurtmalar (Orders)` bo'limidan tegishli buyurtmani tanlash orqali amalga oshiriladi.
+Keyin sotuv buyurtmasiga qayting --- `Milestones` sahifasida `View Sales Order` ni bosib yoki orqaga qaytish havolalari orqali.
 
-Sotuv buyurtmasi formasida, `Bosqichlar (Milestones)` aqlli tugmasini bosing va tegishli vazifa uchun `Erishilgan (Reached)` ustunidagi katakchani belgilang.
+Sotuv buyurtmasiga qaytib, erishilgan bosqichning qator elementi `Delivered` ustuni to'ldirilgan. Buning sababi bosqichga erishilgan va shuning uchun yetkazib berilgan.
 
-![Bosqichga erishilganini belgilash ko'rinishi (Milestones tugmasi orqali).](milestone/reached-milestone.png)
+![Odoo dasturida sotuv buyurtmasida yetkazib berilgan deb belgilangan erishilgan bosqich mahsuloti.](milestone/delivered-milestone-product-sales-order.png)
 
-Keyin, sotuv buyurtmasiga qayting — bu `Bosqichlar` sahifasidagi `Sotuv buyurtmasini ko'rish (View Sales Order)` tugmasini bosish yoki yuqoridagi `breadcrumbs` havolalari orqali amalga oshiriladi.
+Yuqori chap burchakdagi `Create Invoice` ni bosing. Bunda `Create invoices` oynasi ochiladi.
 
-Sotuv buyurtmasida, erishilgan bosqichga tegishli mahsulot qatorining `Yetkazilgan (Delivered)` ustuni to'ldirilgan holatda ko'rinadi. Buning sababi — bosqich bajarilgan, ya'ni mahsulot yetkazilgan deb hisoblanadi.
+![Hisob-faktura yaratish tugmasi bosilganida paydo bo'ladigan hisob-faktura yaratish oynasi.](milestone/create-invoices-pop-up.png)
 
-![Erishilgan bosqich mahsuloti `Yetkazilgan` deb belgilangan holatda sotuv buyurtmasida.](milestone/delivered-milestone-product-sales-order.png)
+`Create invoices` oynasida `Create Invoice` variantini standart `Regular Invoice` tanlovida qoldiring va `Create Draft Invoice` tugmasini bosing.
 
-Chap yuqoridagi `Hisob-faktura yaratish (Create Invoice)` tugmasini bosing. Bu orqali `Hisob-faktura yaratish (Create Invoices)` oynasi ochiladi.
+`Create Draft Invoice` bosilgandan so'ng Odoo `Customer Invoice Draft` ni ko'rsatadi, faqat `Invoice Lines` yorlig'ida erishilgan bosqichni ko'rsatadi.
 
-![Hisob-faktura yaratish tugmasi bosilganda ochiladigan oyna.](milestone/create-invoices-pop-up.png)
+![Faqat erishilgan bosqich mahsulotini ko'rsatadigan mijoz hisob-faktura qoralamasi.](milestone/invoice-draft-milestone.png)
 
-Ochilgan `Create invoices` oynasida `Create Invoice` maydonini standart holatda (`Regular Invoice`) qoldiring va `Create Draft Invoice` tugmasini bosing.
+Ushbu hisob-faktura sahifasidan hisob-fakturani tasdiqlash uchun `Confirm` tugmasini bosing. Keyin mijoz ushbu bosqich uchun to'lov qilganida `Register Payment` ni bosing.
 
-`Create Draft Invoice` tugmasi bosilgach, Odoo `Mijoz hisob-fakturasi (Customer Invoice Draft)` sahifasini ochadi. Unda faqatgina bajarilgan bosqich mahsuloti `Hisob-faktura qatorlari (Invoice Lines)` bo'limida ko'rsatiladi.
+`Register Payment` bosilganda `Register Payment` oynasi paydo bo'ladi.
 
-![Faqat erishilgan bosqich mahsulotini ko'rsatgan mijoz hisob-fakturasi loyihasi.](milestone/invoice-draft-milestone.png)
+![Register Payment bosilganida paydo bo'ladigan To'lovni ro'yxatdan o'tkazish oynasi.](milestone/register-payment-pop-up.png)
 
-Ushbu hisob-faktura sahifasida `Tasdiqlash (Confirm)` tugmasini bosib hisob-fakturani tasdiqlang. Mijoz bosqich uchun to'lovni amalga oshirgach, `To'lovni ro'yxatga olish (Register Payment)` tugmasini bosing.
+Ushbu oynada avtomatik to'ldirilgan maydonlarning to'g'riligini tasdiqlang, keyin `Create Payment` ni bosing.
 
-`Register Payment` tugmasi bosilganda, `To'lovni ro'yxatga olish` uchun pop-up oyna ochiladi.
+Bosilganda oyna yo'qoladi va Odoo o'sha bosqich uchun hisob-fakturaga qaytadi, endi yuqori o'ng burchakda yashil `In Payment` banneri bor. Bu banner hisob-faktura to'langanligini bildiradi.
 
-![To'lovni ro'yxatga olish tugmasi bosilganda ochiladigan pop-up oyna.](milestone/register-payment-pop-up.png)
+![To'langan bosqich mahsuloti bilan hisob-faktura va In Payment banneri.](milestone/in-payment-invoice.png)
 
-Ushbu pop-up oynada avtomatik to'ldirilgan maydonlar to'g'riligini tekshiring, so'ng `To'lovni yaratish (Create Payment)` tugmasini bosing.
+Keyin orqaga qaytish havolalari orqali sotuv buyurtmasiga qayting. Sotuv buyurtmasiga qaytib, `Order Lines` yorlig'ida hisob-faktura qilingan va to'langan erishilgan bosqich endi `Invoiced` ustuni to'ldirilgan.
 
-Ushbu tugma bosilgach, pop-up oyna yopiladi va Odoo sizni bosqich uchun chiqarilgan hisob-fakturaga qaytaradi. Endi hisob-faktura sahifasining yuqori o'ng burchagida yashil `To'lanmoqda (In Payment)` banneri paydo bo'lganini ko'rasiz. Bu banner — hisob-faktura to'langanini bildiradi.
+![To'langan bosqich mahsulotining Invoiced ustuni to'ldirilgan.](milestone/invoiced-column-filled-milestone.png)
 
-![To'langan bosqich mahsuloti bilan hisob-faktura va `To'lanmoqda` banneri.](milestone/in-payment-invoice.png)
+Sotuv buyurtmasining yuqori qismida yangi `Invoices` aqlli tugmasi ham bor. Uni bosish ushbu sotuv buyurtmasiga ulangan barcha hisob-fakturalarni ko'rsatadi.
 
-Keyin, yuqoridagi `breadcrumbs` havolalari orqali sotuv buyurtmasiga qayting. Sotuv buyurtmasida, `Buyurtma qatorlari (Order Lines)` bo'limida, hisob-fakturasi chiqarilgan va to'lab bo'lingan bosqich mahsulotining `Hisob-fakturasi chiqarildi (Invoiced)` ustuni to'ldirilgan bo'ladi.
+![Bosqichlar bilan sotuv buyurtmasining yuqori qismida paydo bo'ladigan hisob-fakturalar aqlli tugmasi.](milestone/invoices-smart-button.png)
 
-![To'lab bo'lingan bosqich mahsuloti uchun `Hisob-fakturasi chiqarildi` ustuni to'ldirilgan.](milestone/invoiced-column-filled-milestone.png)
+Har bir bosqich ustida ishlanayotganda va keyinchalik yakunlanayotganda yuqoridagi jarayonni oddiy takrorlang.
 
-Shuningdek, sotuv buyurtmasi sahifasining yuqorisida yangi `Hisob-fakturalar (Invoices)` aqlli tugmasi (smart button) paydo bo'ladi. Ushbu tugmani bosish orqali mazkur sotuv buyurtmasiga bog'langan barcha hisob-fakturalarni ko'rish mumkin.
-
-![Bosqichli sotuv buyurtmasida paydo bo'ladigan `Hisob-fakturalar` aqlli tugmasi.](milestone/invoices-smart-button.png)
-
-Har bir bosqich ustida ish olib borilgan sayin, va u yakunlanganidan so'ng yuqoridagi jarayonni takrorlang.
-
-Ushbu jarayonni butun loyiha yakunlangunga qadar davom ettiring — ya'ni barcha bosqichlar hisob-fakturalangan va umumiy buyurtma to'liq to'lab bo'lingan bo'ladi.
+Butun loyiha yakunlanguncha, har bir bosqichga hisob-faktura berilguncha va butun buyurtma to'liq to'languncha ushbu jarayonni davom ettiring.

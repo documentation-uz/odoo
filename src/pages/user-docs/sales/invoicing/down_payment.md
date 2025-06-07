@@ -1,254 +1,189 @@
-# Oldindan to'lovlar (Down payments)
+# Oldindan to'lovlar
 
-Oldindan to'lov — bu savdo bitimi tasdiqlangan vaqtda amalga oshiriladigan dastlabki,  
-ya'ni avans to'lovidir. Bu turdagi to'lovlar savdogar va xaridor uchun xavfni kamaytiradi,  
-chunki ular ikki tomonning bitimni yakunlashga bo'lgan o'zaro majburiyatini bildiradi.
+Oldindan to'lov - bu sotish bitimini tasdiqlash paytida amalga oshiriladigan dastlabki, oldindan to'lovdir. Oldindan to'lovlar har ikkala tomon (sotuvchi va xaridor) uchun xavfni kamaytiradi, chunki ular sotish bitimini yakunlash uchun o'zaro majburiyatni ko'rsatadi.
 
-Oldindan to'lov orqali xaridor umumiy summaning bir qismini avvaldan to'laydi,  
-qolgan qismini esa keyinchalik to'lashga rozi bo'ladi.  
-Buning evaziga, sotuvchi xaridorga mahsulot yoki xizmatni to'lov vaqtida yoki undan so'ng taqdim etdi  
-va qolgan to'lovni keyinchalik olishiga ishonadi.
+Oldindan to'lov bilan xaridor to'lanishi kerak bo'lgan umumiy summaning bir qismini to'laydi va qolgan summani keyinroq to'lashga rozi bo'ladi. O'z navbatida, sotuvchi oldindan to'lovni qabul qilgandan keyin yoki undan keyin xaridorga tovarlar yoki xizmatlarni taqdim etadi va qolgan summa keyinroq to'lanishiga ishonadi.
 
-Odoo `Sales` ilovasida oldindan to'lovlar har bir savdo bitimi ehtiyojiga qarab moslashtirilishi mumkin.
+Odoo **Sales** ilovasida oldindan to'lovlar har bir alohida sotish bitimining ehtiyojlariga mos ravishda sozlanishi mumkin.
 
-## Hisob-fakturalarni yaratish
+## Hisob-kitoblarni yaratish
 
-Sotuv buyurtmasi (sales order) tasdiqlangandan so'ng, hisob-faktura yaratish imkoniyati  
-`Hisob-faktura yaratish (Create Invoice)` tugmasi orqali mavjud bo'ladi.  
-U bosilganda, `Hisob-faktura(lar)ni yaratish (Create invoice(s))` nomli ko'rinuvchi oynacha chiqadi.
+Sotish buyurtmasi tasdiqlanganda, `Create Invoice` tugmasi orqali hisob-kitob yaratish imkoniyati paydo bo'ladi. Bosilganda, `Create invoice(s)` oynasi paydo bo'ladi.
 
-![Odoo Sales'da chiqadigan hisob-faktura yaratish oynachasi.](down_payment/create-invoices-popup-form.png)
+![Odoo Sales da paydo bo'ladigan hisob-kitoblar yaratish pop-up formasi.](down_payment/create-invoices-popup-form.png)
 
 ::: tip
 
-Hisob-fakturalar avtomatik tarzda *qoralama (draft)* holatida yaratiladi,  
-shuning uchun tasdiqlashdan oldin ularni ko'rib chiqish mumkin.
-:::
+Hisob-kitoblar avtomatik ravishda qoralama sifatida yaratiladi, shuning uchun ular tasdiqlashdan oldin ko'rib chiqilishi mumkin.
+::::
 
-`Create invoices` oynachasida `Hisob-faktura yaratish` maydonida tanlash mumkin bo'lgan 3 xil variant mavjud:
+`Create invoices` pop-up oynasida `Create Invoice` maydonida tanlash uchun 3 ta variant mavjud:
 
-- `Oddiy hisob-faktura (Regular invoice)`
-- `Oldindan to'lov (foiz) (Down payment - percentage)`
-- `Oldindan to'lov (qat'iy miqdor) (Down payment - fixed amount)`
+- `Regular invoice`
+- `Down payment (percentage)`
+- `Down payment (fixed amount)`
 
-## Boshlang'ich oldindan to'lovni so'rash
+## Dastlabki oldindan to'lov so'rovi
 
-`Hisob-faktura(lar)ni yaratish` oynachasida quyidagi oldindan to'lov variantlari mavjud:
+`Create invoice(s)` pop-up oynasida oldindan to'lov variantlari quyidagilar:
 
-- `Oldindan to'lov (foiz)`
-- `Oldindan to'lov (qat'iy miqdor)`
+- `Down payment (percentage)`
+- `Down payment (fixed amount)`
 
-Istalgan oldindan to'lov turini tanlang, so'ng `Oldindan to'lov summasi (Down Payment Amount)` maydonida  
-foiz yoki qat'iy miqdor ko'rsatiladi.
+Kerakli oldindan to'lov variantini tanlang, so'ngra `Down Payment Amount` maydonida kerakli summani foiz yoki qat'iy summa sifatida belgilang.
 
-Barcha maydonlar to'ldirilgandan so'ng, `Qoralama yaratish (Create Draft)` tugmasini bosing.  
-U bosilgach, Odoo `Mijoz hisob-fakturasi qoralamasi (Customer Invoice Draft)`ni ko'rsatadi.
+Barcha maydonlar to'ldirilgandan so'ng, `Create Draft` tugmasini bosing. Ushbu tugmani bosgandan so'ng, Odoo `Customer Invoice Draft`ni ko'rsatadi.
 
 ::: warning
 
-Agar `Noto'g'ri amal (Invalid Operation)` xatosi paydo bo'lsa,  
-`sotuv siyosati (invoicing policy)` to'g'ri sozlanganini tekshirib chiqing.  
-Masalan, ba'zida hisob-faktura yaratishdan oldin mahsulot yetkazilishi talab qilinadi.
-:::
+Agar `Invalid Operation` xatosi paydo bo'lsa, `invoicing policy` to'g'ri sozlanganligini ikki marta tekshiring. Ba'zi hollarda, masalan, hisob-kitob siyosati hisob-kitobdan oldin yetkazib berishni talab qilish uchun sozlangan.
+::::
 
-`Mijoz hisob-fakturasi qoralamasi`ning `Hisob-faktura qatorlari (Invoice Lines)` tabida,  
-`Hisob-faktura yaratish` oynasida belgilangan oldindan to'lov `Mahsulot (Product)` sifatida ko'rsatiladi.
+`Customer Invoice Draft`ning `Invoice Lines` bo'limida `Create invoices` pop-up formasida hozirda sozlangan oldindan to'lov `Product` sifatida ko'rinadi.
 
 ## Misol: 50% oldindan to'lov so'rash
 
 ::: tip
 
-Quyidagi misolda mahsulot (`Eshikli shkaf`) uchun 50% miqdorida oldindan to'lov mavjud.  
-Bu mahsulotda `Buyurtma qilingan miqdorlar` invoicing policy sifatida tanlangan.
+Quyidagi misol `Cabinet with Doors` mahsulotida 50% miqdordagi oldindan to'lovni o'z ichiga oladi, uning `Invoicing Policy`si `Ordered quantities` sifatida belgilangan.
 
-![Eshikli shkaf mahsuloti uchun turli maydonlarni aks ettiruvchi mahsulot shakli.](down_payment/cabinet-product-details.png)
-:::
+![Turli xil tafsilotlar va maydonlarni ko'rsatadigan eshikli shkaf mahsuloti formasi.](down_payment/cabinet-product-details.png)
+::::
 
-Avval `Savdo (Sales)` ilovasiga o'ting va `Yangi (New)` tugmasini bosib,  
-taklifnoma yarating hamda `Mijoz (Customer)`ni tanlang.
+Birinchidan, `Sales app ‣ New`ga o'ting va taklifnomaga `Customer` qo'shing.
 
-So'ng `Buyurtma qatorlari (Order Lines)` bo'limida `Mahsulot qo'shish (Add a product)` tugmasini bosib,  
-`Eshikli shkaf (Cabinet with Doors)` mahsulotini tanlang.
+Keyin, `Order Lines` bo'limida `Add a product`ni bosing va `Cabinet with Doors` mahsulotini tanlang.
 
-Buyurtma `Tasdiqlash (Confirm)` tugmasi orqali tasdiqlangach, taklifnoma savdo buyurtmasiga aylanadi.  
-Shundan so'ng, `Hisob-faktura yaratish (Create Invoice)` tugmasi orqali hisob-faktura yarating.
+Buyurtma tasdiqlanganda (`Confirm` tugmasi orqali), taklifnoma sotish buyurtmasiga aylanadi. Bu sodir bo'lgandan so'ng, `Create Invoice`ni bosish orqali hisob-kitobni yarating va ko'ring.
 
-![Eshikli shkaf buyurtmasi tasdiqlanganidan keyingi holat.](down_payment/cabinet-sales-orders-confirmed.png)
+![Odoo Sales ilovasida tasdiqlangan eshikli shkafning sotish buyurtmasi.](down_payment/cabinet-sales-orders-confirmed.png)
 
-Keyin ochilgan `Hisob-faktura yaratish (Create invoices)` oynasida  
-`Oldindan to'lov (foiz)` variantini tanlang va `Oldindan to'lov miqdori (Down Payment Amount)` maydoniga **50** deb yozing.
+Keyin, paydo bo'ladigan `Create invoices` pop-up oynasida `Down payment (percentage)`ni tanlang va `Down Payment Amount` maydoniga [50] ni kiriting.
 
 ::: tip
 
-`Oldindan to'lov (Down payment)` mahsulotiga biriktirilgan `Daromad hisobi (Income Account)`ni o'zgartirish mumkin.
+`Down payment` mahsulotiga biriktirilgan `Income Account`ni o'zgartirish mumkin.
 
-Qo'shimcha ma'lumot uchun `Oldindan to'lov daromad hisobini o'zgartirish` hujjatini ko'rib chiqing.
+Qo'shimcha ma'lumot uchun `income account modification on down payments` hujjatlarini ko'rib chiqing.
 
-Shuningdek, mahsulot kategoriyasida `Oldindan to'lov hisobi (Down payment Account)` belgilansa, u ustuvor bo'ladi.
-:::
+`Down payment Account`ni mahsulot kategoriyasida ham o'rnatish mumkin. Agar o'rnatilgan bo'lsa, bu hisob ustuvor hisoblanadi.
+::::
 
-So'ng `Hisob-faktura qoralamasini yaratish (Create Draft Invoice)` tugmasini bosing.
+Nihoyat, hisob-kitob qoralamasini yaratish va ko'rish uchun `Create Draft Invoice`ni bosing.
 
-Bu amaldan so'ng `Hisob-faktura qoralamasi (Draft Invoice)` ochiladi.  
-Unda `Hisob-faktura qatorlari (Invoice Lines)` bo'limida oldindan to'lov mahsuloti ko'rsatilgan bo'ladi.
+`Create Draft Invoice`ni bosish qoralama hisob-kitobni ko'rsatadi, u `Invoice Lines` bo'limida oldindan to'lovni `Product` sifatida o'z ichiga oladi.
 
-Keyin, `Tasdiqlash (Confirm)` tugmasini bosib, hisob-fakturani tasdiqlang.  
-Tasdiqlangach, uning holati `Qoralama (Draft)`dan `Tasdiqlangan (Posted)`ga o'zgaradi  
-va sahifaning yuqorisida yangi tugmalar paydo bo'ladi.
+Undan keyin hisob-kitobni `Confirm`ni bosish orqali tasdiqlash va e'lon qilish mumkin. Hisob-kitobni tasdiqlash holati `Draft`dan `Posted`ga o'zgaradi. Shuningdek, u sahifaning yuqori qismida yangi tugmalar qatorini ko'rsatadi.
 
-![Odoo Sales'da oldindan to'lov ko'rsatilgan hisob-faktura qoralamasi namunasini ko'rsatuvchi rasm.](down_payment/draft-invoice-sample.png)
+![Odoo Sales da oldindan to'lov aytib o'tilgan namunaviy qoralama hisob-kitob.](down_payment/draft-invoice-sample.png)
 
-Hisob-fakturani tasdiqlaganingizdan so'ng, sahifaning yuqori qismidagi tugmalar orqali to'lovni ro'yxatdan o'tkazish mumkin.  
-Buning uchun `To'lovni ro'yxatdan o'tkazish (Register Payment)` tugmasini bosing.
+Ushbu tugmalardan `Register Payment`ni bosish orqali to'lovni ro'yxatdan o'tkazish mumkin.
 
-![Tasdiqlangan hisob-fakturadagi Register Payment tugmasi.](down_payment/register-payment-button.png)
+![Tasdiqlangan mijoz hisob-kitobida Register Payment tugmasining namoyishi.](down_payment/register-payment-button.png)
 
-Shunda `To'lovni ro'yxatdan o'tkazish (Register Payment)` oynasi ochiladi.  
-U kerakli ma'lumotlar bilan avtomatik to'ldirilgan bo'ladi.  
-Ma'lumotlar to'g'riligini tekshiring va kerak bo'lsa, tuzatish kiriting.  
-Hammasi tayyor bo'lsa, `To'lovni yaratish (Create Payment)` tugmasini bosing.
+Shunday qilish kerakli ma'lumotlar bilan avtomatik to'ldirilgan `Register Payment` pop-up formasini ko'rsatadi. Berilgan ma'lumotlar to'g'riligini tasdiqlang va kerakli o'zgarishlarni kiriting. Tayyor bo'lganda, `Create Payment` tugmasini bosing.
 
-![To'lov oynasi va Create Payment tugmasi.](down_payment/register-payment-pop-up-window.png)
+![Create payment tugmasi bilan Register Payment pop-up oynasining namoyishi.](down_payment/register-payment-pop-up-window.png)
 
-`To'lovni yaratish (Create Payment)` bosilgach, sahifaning yuqori o'ng burchagida yashil rangli  
-`To'lanmoqda (In Payment)` belgilari paydo bo'ladi.
+`Create Payment`ni bosgandan so'ng, Odoo mijoz hisob-kitobini ko'rsatadi, endi yuqori o'ng burchakda yashil `In Payment` banner bilan.
 
-![To'lov holati In Payment ko'rinishida ko'rsatilgan hisob-faktura.](down_payment/customer-invoice-green-payment-banner.png)
+![Yuqori o'ng burchakda joylashgan yashil In Payment banner bilan mijoz hisob-kitobi.](down_payment/customer-invoice-green-payment-banner.png)
 
-Endi mijoz buyurtmaning qolgan qismini to'lashni xohlasa, yana bir hisob-faktura yaratilishi kerak.  
-Buning uchun `Savdo buyurtmasi (Sales Order)` sahifasiga breadcrumb havolalari orqali qayting.
+Endi, mijoz buyurtmaning qolgan summasini to'lamoqchi bo'lganda, yana bir hisob-kitob yaratilishi kerak. Buning uchun breadcrumb havolalar orqali sotish buyurtmasiga qayting.
 
-Buyurtma sahifasida, `Buyurtma qatorlari (Order Lines)` bo'limida `Oldindan to'lovlar (Down Payments)`  
-deb nomlangan yangi bo'lim paydo bo'ladi. Unda hozirgina yaratilgan va tasdiqlangan oldindan to'lov ko'rsatiladi.
+Sotish buyurtmasiga qaytgandan so'ng, `Order Lines` bo'limida yangi `Down Payments` bo'limi, shuningdek, hozirgina hisob-kitob qilingan va e'lon qilingan oldindan to'lov mavjud.
 
-![Buyurtma sahifasidagi Down Payments bo'limi.](down_payment/down-payments-section-order-lines.png)
+![Sotish buyurtmasining order lines bo'limidagi down payments bo'limi.](down_payment/down-payments-section-order-lines.png)
 
-Endi, `Hisob-faktura yaratish (Create Invoice)` tugmasini yana bosing.
+Keyin, `Create Invoice` tugmasini bosing.
 
-Ochiladigan `Hisob-faktura yaratish (Create invoices)` oynasida ikkita yangi maydon paydo bo'ladi:  
-`Allaqachon hisoblangan (Already invoiced)` va `Hisoblanishi kerak (Amount to invoice)`.
+Paydo bo'ladigan `Create invoices` pop-up oynasida ikkita yangi maydon mavjud: `Already invoiced` va `Amount to invoice`.
 
-![Hisobdan oldindan to'lovni ayirish opsiyasi.](down_payment/create-invoices-pop-up-already-invoiced.png)
+![Odoo Sales da create invoices pop up da oldindan to'lovni chegirma qilish varianti.](down_payment/create-invoices-pop-up-already-invoiced.png)
 
-Agar qolgan summani to'lashga tayyor bo'lsangiz, `Oddiy hisob-faktura (Regular Invoice)` opsiyasini tanlang.  
-Odoo to'liq to'lovni yakunlash uchun kerakli summaga hisob-faktura yaratadi — bu `Hisoblanishi kerak (Amount to invoice)` maydonida ko'rsatilgan.
+Agar qolgan summa to'lashga tayyor bo'lsa, `Regular Invoice` variantini tanlang. Odoo `Amount to invoice` maydonida ko'rsatilganidek, umumiy to'lovni yakunlash uchun kerak bo'lgan aniq summa uchun hisob-kitob yaratadi.
 
-So'ng, `Hisob-faktura qoralamasini yaratish (Create Draft Invoice)` tugmasini bosing.
+Tayyor bo'lganda, `Create Draft Invoice`ni bosing.
 
-Natijada yangi `Mijoz hisob-fakturasi qoralamasi (Customer Invoice Draft)` sahifasi ochiladi.  
-Unda bu savdo buyurtmasiga bog'langan *barcha* hisob-fakturalar `Hisob-faktura qatorlari (Invoice Lines)` bo'limida ko'rsatiladi.  
-Har bir qator tegishli hisob-faktura haqida barcha kerakli ma'lumotlarni o'z ichiga oladi.
+Shunday qilish `Invoice Lines` bo'limida o'sha aniq sotish buyurtmasi uchun *barcha* hisob-kitoblarni ro'yxatlaydigan yana bir `Customer Invoice Draft` sahifasini ko'rsatadi. Har bir hisob-kitob qatori har bir hisob-kitob bilan bog'liq barcha kerakli ma'lumotlarni ko'rsatadi.
 
-Oxirgi bosqichni yakunlash uchun `Tasdiqlash (Confirm)` tugmasini bosing.  
-Bu hisob-fakturaning holatini `Qoralama (Draft)`dan `Yaratilgan (Posted)`ga o'zgartiradi.  
-So'ngra `To'lovni ro'yxatdan o'tkazish (Register Payment)` tugmasini bosing.
+Oqimni yakunlash uchun hisob-kitob holatini `Draft`dan `Posted`ga o'zgartiradigan `Confirm`ni bosing. Keyin, `Register Payment`ni bosing.
 
-Shunda yana `To'lovni ro'yxatdan o'tkazish (Register Payment)` oynasi ochiladi.  
-Bu safar ham barcha maydonlar kerakli ma'lumotlar bilan avtomatik to'ldirilgan bo'ladi —  
-shu jumladan buyurtmaning qolgan to'lanishi kerak bo'lgan summasi.
+Yana bir bor, `Register Payment` paydo bo'ladi, barcha maydonlar buyurtmada to'lanishi kerak bo'lgan qolgan summa bilan birga kerakli ma'lumotlar bilan avtomatik to'ldiriladi.
 
-![Odoo Sales'dagi ikkinchi to'lov oynasi.](down_payment/second-register-payment-popup.png)
+![Odoo sales da ikkinchi register payment pop-up formasi.](down_payment/second-register-payment-popup.png)
 
-Ma'lumotlar to'g'riligini tasdiqlaganingizdan so'ng, `To'lovni yaratish (Create Payment)` tugmasini bosing.
+Ushbu ma'lumotni tasdiqlagandan so'ng, `Create Payment`ni bosing. Shunday qilish yuqori o'ng burchakda yashil `In Payment` banner bilan yakuniy `Customer Invoice`ni ko'rsatadi. Shuningdek, `Invoice Lines` bo'limida ikkala oldindan to'lov ham mavjud.
 
-Natijada, mijoz hisob-fakturasi sahifasi ochiladi. Sahifaning yuqori o'ng burchagida yashil `To'lanmoqda (In Payment)` belgisi paydo bo'ladi.  
-Shuningdek, `Hisob-faktura qatorlari (Invoice Lines)` bo'limida har ikkala oldindan to'lovlar ham ko'rsatiladi.
+![Odoo Sales da in payment banner bilan ikkinchi oldindan to'lov hisob-kitobi.](down_payment/second-down-payment-in-payment-invoice.png)
 
-![Ikkinchi to'lovli hisob-faktura va In Payment belgisi.](down_payment/second-down-payment-in-payment-invoice.png)
-
-Bu bilan butun jarayon yakunlanadi ✅
+Shu nuqtada oqim endi yakunlandi.
 
 ::: tip
-Ushbu jarayon `Qat'iy miqdor (Fixed amount)`dagi oldindan to'lovlar bilan ham amalga oshiriladi.
-:::
+
+Bu oqim `Fixed amount` oldindan to'lov varianti bilan ham mumkin.
+::::
 
 ::: warning
-Agar mahsulot `Yetkazilgan miqdorlar (Delivered quantities)` bo'yicha hisoblanadigan invoicing policy'ga ega bo'lsa  
-va mahsulot narxi 50% oldindan to'lovdan **yuqori** bo'lsa (ko'pchilik holatda shunday bo'ladi), unda oddiy hisob-faktura yaratiladi.
 
-Ammo mahsulot narxi 50% oldindan to'lovdan **kam** bo'lsa, unda  
-mijozga yakuniy hisob-fakturani yaratishda oldindan to'lov **ayirilmaydi**.
+Agar oldindan to'lov `Delivered quantities` hisob-kitob siyosatiga ega mahsulot bilan ishlatilsa va mahsulot narxi 50% oldindan to'lovdan *oshsa* (ko'pchilik hollarda bo'lgani kabi), oddiy hisob-kitob yaratiladi.
 
-Buning sababi: Odoo hisob-faktura uchun **manfiy** summani yaratishga ruxsat bermaydi,  
-shuning uchun mahsulot(lar) oldin yetkazilishi kerak bo'ladi.
+Biroq, 50% oldindan to'lovdan *kamroq* qimmatga tushadigan mahsulotlar uchun mijozni hisob-kitob qilish vaqti kelganda oldindan to'lovlar **chegirib bo'lmaydi**.
 
-Agar hech qanday yetkazib berish amalga oshirilmagan bo'lsa, `Kredit eslatmasi (Credit Note)` yaratiladi,  
-bu esa avvalgi qoralama hisob-fakturasini bekor qiladi.
+Buning sababi, Odoo hisob-kitoblar uchun salbiy umumiy summalarni ruxsat bermagani uchun mahsulot(lar) yakuniy hisob-kitobni yaratishdan *oldin* yetkazib berilishi kerak.
 
-`Kredit eslatmasi` funksiyasidan foydalanish uchun,  
-*Inventory (Ombor)* moduli o'rnatilgan bo'lishi kerak, yetkazib berishni tasdiqlash uchun.  
-Aks holda, yetkazilgan miqdorni **qo'lda** savdo buyurtmasida kiritish mumkin.
-:::
+Agar hech narsa yetkazib berilmagan bo'lsa, oldindan to'lovdan keyin yaratilgan qoralama hisob-kitobni bekor qiladigan `Credit Note` yaratiladi.
+
+`Credit Note` variantidan foydalanish uchun yetkazib berishni tasdiqlash maqsadida *Inventory* ilovasi o'rnatilgan bo'lishi kerak. Aks holda, yetkazib berilgan miqdorni to'g'ridan-to'g'ri sotish buyurtmasiga qo'lda kiritish mumkin.
+::::
 
 ## Misol: 100% oldindan to'lov so'rash
 
-100% oldindan to'lov so'rash jarayoni `50% oldindan to'lov` bilan bir xil,  
-ammo bosqichlari kamroq.
+100% oldindan to'lov so'rash jarayoni `50% oldindan to'lov` o'rnatish jarayoniga o'xshaydi, lekin kamroq qadamlar bilan.
 
 ::: tip
-100% oldindan to'lov — bu savdo buyurtmasi uchun to'liq to'lov **emas**.
 
-Agar savdo buyurtmasi oddiy hisob-faktura orqali to'liq to'langan bo'lsa,  
-qolgan hisob-fakturalarni yaratish imkoniyati bo'lmaydi va  
-*Savdo buyurtmasida (Sales Order)* `Create Invoice` tugmasi chiqmaydi.
+100% oldindan to'lov sotish buyurtmasining to'liq to'loviga **teng emas**.
 
-Lekin, **ushbu misolda** Odoo hali ham qo'shimcha hisob-faktura kutadi,  
-shuning uchun *Create Invoice* tugmasi ko'rinadi.
-:::
+Oddiy hisob-kitob jarayoni orqali to'langan sotish buyurtmasi qo'shimcha hisob-kitoblar yaratilishiga ruxsat bermaydi va Sotish buyurtmasida *Create Invoice* tugmasini **ko'rsatmaydi**.
 
-Ushbu misolda `Quyosh panellarini o'rnatish (Solar Panel Installation)` mahsuloti ishlatilmoqda.
+Ushbu misolga rioya qilish Sotish buyurtmasida *Create Invoice* tugmasining ko'rsatilishiga **sabab bo'ladi**. Buning sababi, Odoo sotish buyurtmasining to'lovini yakunlash uchun oldindan to'lovdan keyin yana bir hisob-kitob yaratilishini kutadi.
+::::
 
----
+Ushbu misolda *Solar Panel Installation* mahsuloti ishlatilmoqda.
 
-100% oldindan to'lovni sozlash uchun quyidagilarni bajaring:
+100% oldindan to'lovni sozlash uchun `Sales app ‣ New`ga o'tish orqali boshlang va taklifga `Customer` qo'shing.
 
-1. `Sales` ilovasiga o'ting va `Yangi (New)` taklif yarating.
-2. `Customer` maydoniga mijozni tanlang.
-3. `Order Lines` bo'limida `Add a product` tugmasini bosib, `Solar Panel Installation` mahsulotini tanlang.
-4. `Confirm` tugmasini bosing — taklif savdo buyurtmasiga aylanadi.
-5. Endi yuqori chap burchakdagi `Create Invoice` tugmasini bosing.
+Keyin, `Order Lines` bo'limida `Add a product`ni bosing va [Solar Panel Installation] mahsulotini tanlang.
 
-`Create invoices` oynasi ochiladi:
+`Confirm` tugmasini bosgandan so'ng, taklifnoma sotish buyurtmasiga aylanadi. Shu paytda yuqori chap burchakdagi `Create Invoice`ni bosish orqali hisob-kitob yaratish mumkin.
 
-- `Down payment (percentage)` ni tanlang
-- `Down Payment Amount` maydoniga **100** ni yozing
+Paydo bo'ladigan `Create invoices` pop-up oynasida `Down payment (percentage)`ni tanlang va `Down Payment Amount` maydoniga [100] ni kiriting.
 
-![100% oldindan to'lov tanlangan holat.](down_payment/100p-down-payment-percentage.png)
+![100% Down Payment sifatida belgilangan Down payment (percentage) varianti tanlangan.](down_payment/100p-down-payment-percentage.png)
 
-6. `Create Draft Invoice` tugmasini bosing.
+Keyin, hisob-kitob qoralamasini yaratish uchun `Create Draft Invoice`ni bosing. Bu shuningdek, qoralama hisob-kitobni ko'rishga olib keladi, u `Invoice Lines` bo'limida `Down payment`ni `Product` sifatida o'z ichiga oladi.
 
-   Natijada `Down Payment` mahsulot sifatida `Invoice Lines` bo'limida ko'rsatilgan qoralama hisob-faktura paydo bo'ladi.
+Hisob-kitobni endi `Confirm`ni bosish orqali tasdiqlash va e'lon qilish mumkin. Hisob-kitobni tasdiqlash holati `Draft`dan `Posted`ga o'zgaradi. Shuningdek, u sahifaning yuqori qismida yangi tugmalar qatorini ko'rsatadi.
 
-7. Hisob-fakturani `Confirm` tugmasi orqali tasdiqlang.  
-   Holat `Draft`dan `Posted`ga o'tadi va yuqorida yangi tugmalar paydo bo'ladi.
+To'lovni `Register Payment` tugmasini bosish orqali ro'yxatdan o'tkazish mumkin.
 
-8. `Register Payment` tugmasini bosing.
+Shunday qilish kerakli ma'lumotlar bilan avtomatik to'ldirilgan `Register Payment` pop-up formasini ko'rsatadi. Berilgan ma'lumotlar to'g'riligini tasdiqlang va kerakli o'zgarishlarni kiriting. Tayyor bo'lganda, `Create Payment` tugmasini bosing.
 
-   Bu sizga avtomatik to'ldirilgan `Register Payment` oynasini ochadi.  
-   Ma'lumotlarni tekshiring va `Create Payment` tugmasini bosing.
+`Create Payment`ni bosgandan so'ng, Odoo mijoz hisob-kitobini ko'rsatadi, endi yuqori o'ng burchakda yashil `In Payment` banner bilan.
 
-9. To'lovdan so'ng, hisob-fakturani yuqori o'ng burchagida yashil `In Payment` belgilari ko'rsatiladi.
+![Yuqori o'ng burchakda joylashgan yashil In Payment banner bilan mijoz hisob-kitobi.](down_payment/100p-invoice.png)
 
-![Yashil In Payment belgisiga ega hisob-faktura.](down_payment/100p-invoice.png)
+Jarayon endi yakunlandi va 100% oldindan to'lov muvaffaqiyatli qo'llanildi.
 
-✅ 100% oldindan to'lov muvaffaqiyatli amalga oshirildi.
+## Oldindan to'lovlarda daromad hisobini o'zgartirish
 
-## Oldindan to'lovlar uchun daromad hisobini (Income Account) o'zgartirish
+`Down Payment` mahsulot sahifasiga biriktirilgan daromad hisobini o'zgartirish yoki sozlash uchun *Accounting* ilovasi **o'rnatilgan** bo'lishi kerak.
 
-`Down Payment` mahsulot sahifasiga biriktirilgan daromad hisobini o'zgartirish yoki sozlash uchun  
-`Accounting (Buxgalteriya)` moduli o'rnatilgan bo'lishi **shart**.
+`Products` sahifasiga o'ting (`Sales app ‣ Products ‣ Products`), qidiruv panelida [Down Payment] mahsulotini qidiring va mahsulot tafsilot sahifasini ko'rsatish uchun uni tanlang.
 
----
+*Accounting* ilovasi o'rnatilgan holda, mahsulot sahifasida `Accounting` bo'limi mavjud bo'ladi.
 
-### Qadamlar:
+`Accounting` bo'limida `Receivables` bo'limida joylashgan `Income Account` maydonida daromad hisobini o'zgartirish mumkin.
 
-1. `Sales` ilovasiga o'ting:  
-   `Sales app ‣ Products ‣ Products`
-
-2. Qidiruv satriga `Down Payment` mahsulotini yozing va uni tanlang — mahsulot tafsilotlari ochiladi.
-
-3. Agar *Accounting* moduli o'rnatilgan bo'lsa, mahsulot sahifasida `Accounting` (Hisob) yorlig'i chiqadi.
-
-4. `Accounting` yorlig'iga o'ting va `Receivables` (Qarzdorliklar) bo'limida joylashgan `Income Account` maydonidan kerakli hisobni tanlang yoki o'zgartiring.
-
-![Oldindan to'lovlar uchun daromad hisobini sozlash.](down_payment/income-account.png)
+![Oldindan to'lovlarga daromad hisobi havolasini qanday o'zgartirish.](down_payment/income-account.png)
