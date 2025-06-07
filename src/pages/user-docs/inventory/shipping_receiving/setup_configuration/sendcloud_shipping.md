@@ -47,7 +47,7 @@ the `Miscellaneous section`, there is
 a field called `Address Name (optional)`. The Odoo warehouse name should be entered here, and
 the characters should be exactly the same.
 
-::: example
+::: tip
 | **SendClould configuration**
 | `Miscellaneous`
 | `Address Name (optional)`:
@@ -179,7 +179,7 @@ shipping products:
   deliveries and returns.
 - Click `Select`.
 
-::: example
+::: tip
 Sample Sendcloud shipping products configured in Odoo:
 
 | `DELIVERY`

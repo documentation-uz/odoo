@@ -38,7 +38,7 @@ days specified in the `Removal Date`
 field of the product form.
 
 
-::: example
+::: tip
 In the `Inventory` tab of the
 product, [Egg], the following `Dates` are set by the user:
 

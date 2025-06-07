@@ -104,7 +104,7 @@ defined.
 To enable free shipping if the amount of the order exceeds a specified
 amount, check the box `Free if order amount is above` and fill in the amount.
 
-::: example
+::: tip
 To set up [\$20] flat-rate shipping that becomes free if the
 customer spends over [\$100], fill in the following fields:
 
@@ -143,13 +143,13 @@ amount to calculate the `Delivery Cost`.
 Once finished, click either `Save & New` to add another rule, or
 `Save & Close`.
 
-::: example
+::: tip
 To charge customers \$20 in shipping for orders with five or fewer
 products, set the `Condition` to
 [Quantity \`
 for it.
 
-::: example
+::: tip
 Configuring multiple routes per shipping method is helpful for adjusting
 warehouse delivery processes based on:
 

@@ -16,7 +16,7 @@ orders (SOs), or a single order, must be picked across different waves.
 This approach enables flexible scheduling, allowing warehouses to align
 picking activities with shipping deadlines, or resource availability.
 
-::: example
+::: tip
 #\. `SO (sales order)` 1 calls for one
 apple and one orange #. `SO (sales order)` 2 calls for one apple and one banana #.
 `SO (sales order)` 3 calls for one apple,

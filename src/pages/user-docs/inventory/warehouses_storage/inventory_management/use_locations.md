@@ -38,7 +38,7 @@ location form can then be configured as follows:
   page using a *location hierarchy*, to describe how a specific location
   fits within larger areas of the warehouse.
 
-  ::: example
+  ::: tip
   In [WH/Stock/Zone A/Refrigerator 1], \"Refrigerator 1\" is
   the location name, \"Zone A\" is the parent location, and everything
   before it is the path showing where this spot is within the warehouse.
@@ -136,7 +136,7 @@ When scheduled inventory counts are enabled, the `Next Expected
 Inventory` field displays the date of
 the next inventory count.
 
-::: example
+::: tip
 With inventory counts scheduled to occur every [30] days,
 and the `Last Effective
 Inventory` count occurring on July
@@ -167,7 +167,7 @@ and select the desired location.
 Next, click the `Current Stock` smart
 button to get a list of all products at the location.
 
-::: example
+::: tip
 A list of current stock at [Shelf 1] consists of
 [266] cabinets and [39] desks.
 

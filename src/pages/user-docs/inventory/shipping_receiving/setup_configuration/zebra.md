@@ -111,7 +111,7 @@ When customizing lot/serial number labels, look for the
 [\^FO] command, instead of [\^FT].
 ::::
 
-::: example
+::: tip
 The following is an example where the product\'s name gets cut off with
 Odoo\'s default `ZPL (Zebra Programming Language)` formatting. In the **Fixed** tab, the x-coordinate of the
 starting position of the label is changed from [\^FT100,80]
@@ -165,7 +165,7 @@ height. By default, `ZPL (Zebra Programming Language)` code in Odoo uses [\^BY3]
 width to three dots, a typical size that is easy for barcode scanners to
 read.
 
-::: example
+::: tip
 To shrink the barcode to scale, [\^BY3] is reduced to
 [\^BY2].
 :::
@@ -220,7 +220,7 @@ The [\^BC] command\'s first parameter
 - \`I\`: rotate 180 degrees
 - \`B\`: rotate 270 degrees
 
-::: example
+::: tip
 To rotate the barcode, [\^BCN] is changed to
 [\^BCB].
 :::

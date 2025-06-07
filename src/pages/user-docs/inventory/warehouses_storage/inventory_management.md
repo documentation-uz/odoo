@@ -70,7 +70,7 @@ between internal and external locations.
   off-site or in transit without affecting valuation.
 
 ::: 
-> ::: example
+> ::: tip
 > When moving products in warehouses [WH] and
 > [WH2], the items are not in either warehouse, but still
 > belong to the company. While in transit, they are placed in the

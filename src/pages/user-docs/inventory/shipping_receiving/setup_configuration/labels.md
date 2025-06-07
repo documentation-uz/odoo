@@ -31,7 +31,7 @@ page, tick the `Print Label`
 checkbox. Enabling this feature ensures that the third-party shipping
 label is printed upon validating this operation.
 
-::: example
+::: tip
 For
 `two-step delivery `, where products are placed directly in packages during
 picking, companies can print shipping labels during picking instead of

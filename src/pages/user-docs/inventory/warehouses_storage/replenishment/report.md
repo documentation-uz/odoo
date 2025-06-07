@@ -81,7 +81,7 @@ feature is meant to help users plan replenishment in advance, by
 increasing the
 `forecasted date ` on the `replenishment report `.
 
-::: example
+::: tip
 Setting horizon days to [7] ensures all manual reordering
 rules set to trigger within the next seven days appear on the
 replenishment report, allowing users to review and decide which products
@@ -105,7 +105,7 @@ differently:
   minimum within that window --- even if no replenishment is needed
   today.
 
-::: example
+::: tip
 \- Current date: Feb 18 - On hand quantity: 10 - Reordering rule: Min:
 5, Max 10 - Vendor lead time: 1 day
 

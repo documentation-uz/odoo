@@ -98,7 +98,7 @@ To do that, navigate to
 `Inventory app ‣ Configuration ‣ Warehouses`, click `Create`, and follow the
 `preceding instructions ` to configure the physical stock locations.
 
-::: example
+::: tip
 | **Parent Warehouse**
 | `Warehouse`: [Virtual
   Warehouse]
@@ -194,7 +194,7 @@ location, the database must have at least **two** warehouses configured
 --- with at least **one** product, with quantity on-hand in each
 warehouse, respectively.
 
-::: example
+::: tip
 The following product, [Toy soldier], is available at each
 location with the quantities:
 

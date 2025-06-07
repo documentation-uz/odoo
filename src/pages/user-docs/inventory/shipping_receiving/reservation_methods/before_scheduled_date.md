@@ -44,7 +44,7 @@ Changing the `days before when starred` value changes the maximum number of days
 scheduled date that products should be reserved if the transfers are
 starred (favorited).
 
-::: example
+::: tip
 Here, the `days before` value is set
 to [2] days before, and the `days before
 when starred` value is set to

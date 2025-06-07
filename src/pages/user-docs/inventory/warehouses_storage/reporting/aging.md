@@ -173,7 +173,7 @@ accounting.
 
 ![Stock valuation table after switching from standard price to FIFO accounting.](aging/after-val-method-change.png)
 
-::: example
+::: tip
 The `Remaining Value` and
 `Remaining Quantity` fields are
 derived from what occurs at the
@@ -225,7 +225,7 @@ moves shown when selecting a past date will still display the *current
 on-hand quantity and value* of the products.
 ::::
 
-::: example
+::: tip
 A business has 100 sofas in stock on January 1st and sells 20 of those
 sofas on February 1st. The `Remaining Quantity` of the `SVL (stock move layer)` will drop from [100.00] to [80.00]
 on February 1st. If no other stock moves take place, and on February

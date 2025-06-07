@@ -278,7 +278,7 @@ methods of adding properties on a lot number form:
 Name and
 `configure the new field `. Once finished, enter the property value in the new field.
 
-::: example
+::: tip
 The new property, [Wood type], is added. The value is
 recorded as [Cherry wood].
 
@@ -314,7 +314,7 @@ Once the new `Lot/Serial Number` is
 generated, click the blank field next to `Product` to reveal a drop-down menu. From this menu, select the
 product to which this new number will be assigned.
 
-::: example
+::: tip
 The lot number, [000001], is created for the product,
 [Drawer Black].
 
@@ -326,7 +326,7 @@ desired product, the lot number is saved as an existing lot number
 linked to the product, and can be selected when `assigning
 lot numbers to products on a receipt `, or when making an inventory adjustment.
 
-::: example
+::: tip
 After creating the lot number, [000001] appears as an option
 for [Drawer Black] when assigning lot numbers on the
 `Inventory Adjustment` page.

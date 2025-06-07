@@ -48,7 +48,7 @@ can be resupplied by more than one warehouse, make sure to check those
 warehouses\' boxes too. Now, Odoo knows which warehouses can resupply
 this warehouse.
 
-::: example
+::: tip
 The central warehouse that will supply the shops is called [Central
 warehouse]. The `Resupply From` field is set to this warehouse on the shop\'s warehouse
 configuration page.
@@ -87,7 +87,7 @@ With the resupply and `MTO (Make to Order)` routes ticked, jump to the section t
 `Replenish from another
 warehouse `.
 
-::: example
+::: tip
 The product, sold at the warehouse, [Store], is resupplied
 from the central warehouse, named [YourCompany]. To
 replenish the product using `MTO (Make to Order)`, the following routes are selected:
@@ -120,7 +120,7 @@ Click `New`, and set:
   stock transfers when inventory falls below the set threshold.
 
 
-::: example
+::: tip
 A
 `0/0 reordering rule ` to replenish the shop\'s warehouse is created, with the
 `Location` set to
@@ -159,7 +159,7 @@ the main warehouse.
 While in transit, the product is located at [Physical
 Locations/Inter-warehouse transit].
 
-::: example
+::: tip
 A sales order for the product at the shop is created. To replenish the
 product at the shop and ship it from there, Odoo generates a delivery
 order from the central warehouse\'s stock, [WH/Stock] to the

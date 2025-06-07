@@ -149,7 +149,7 @@ deliveries and returns from the drop-down menu. Finally, click
 The chosen delivery service will populate in the
 `Service Name` field.
 
-::: example
+::: tip
 Sample of a Starshipit shipping product configured in Odoo:
 
 | `Sendle: Sendle drop off`

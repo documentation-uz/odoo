@@ -94,7 +94,7 @@ In the `Capacity by Product` tab,
 click `Add a Line` to input items,
 and enter their capacities in the `Quantity` field.
 
-::: example
+::: tip
 Ensure only a maximum of five [Large Cabinets] and two
 [Corner Desk Right Sit] are stored at a single storage
 location, by specifying those amounts in the
@@ -118,7 +118,7 @@ Settings` to show the
 `Capacity by Package` tab.
 ::::
 
-::: example
+::: tip
 Create putaway rules for pallet-stored items, by creating the [High
 Frequency pallets] storage category.
 
@@ -137,7 +137,7 @@ to the location by going to
 `Inventory app ‣ Configuration ‣ Locations`, and select the desired location. Then, select the
 created category in the `Storage Category` field.
 
-::: example
+::: tip
 Assign the [High Frequency pallets] storage category (which
 limits pallets stored at any location to two pallets) to the
 [WH/Stock/pallets/PAL 1] sub-location.
@@ -158,7 +158,7 @@ Click the `Create` button to create
 the putaway rule. In the `Having Category` field of the new putaway rule form, select the storage
 category.
 
-::: example
+::: tip
 Continuing the example from above, the [High Frequency
 Pallets] storage category is assigned to the putaway rule
 directing pallets of lemonade to locations with the [High Frequency

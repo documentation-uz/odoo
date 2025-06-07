@@ -52,7 +52,7 @@ The shipping cost is added to the *sales order line* as the
 `Delivery Product` detailed on the
 shipping method form.
 
-::: example
+::: tip
 [Furniture Delivery], a delivery product with a fixed rate
 of [\$200], is added to sales order [S00088].
 

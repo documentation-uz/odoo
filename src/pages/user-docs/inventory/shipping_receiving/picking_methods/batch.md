@@ -80,7 +80,7 @@ Once the transfer records are selected, click
 `Confirm` to confirm the batch
 picking.
 
-::: example
+::: tip
 A new batch transfer is assigned to the `Responsible`, [Joel Willis], for the [Pick]
 `Operation Type`. The
 `Scheduled Date` is set to [August
@@ -147,7 +147,7 @@ Batches can be automatically created and assigned based on several
 criteria. The *Automatic Batches* option is defined on the *operation
 type* level.
 
-::: example
+::: tip
 In a multi-steps delivery process, the picking operation can be grouped
 by customer, while the shipping operation can be organized by carrier
 and destination country.
@@ -193,7 +193,7 @@ that are currently *not* available in-stock.
 ::::
 
 :::: 
-::: example
+::: tip
 In a batch transfer involving products from pickings,
 [WH/PICK/00001] and [WH/PICK/00002], the
 `Detailed Operations` tab shows that
@@ -217,7 +217,7 @@ required quantity for the order. The `Reserved` column shows the available stock
 Lastly, the `Done` column specifies
 the products that have been picked, and are ready for the next step.
 
-::: example
+::: tip
 The product, [Desk Pad], from the same batch as the
 `example above
 `, is only visible in the `Operations` tab because there are no `Reserved` quantities in stock to fulfill the batch transfer.

@@ -215,7 +215,7 @@ quantity of the product to fall below the `Min` of [0.00], the selected
 `Route` is used to replenish the
 product in one-unit increments, back up to the `Max` of [0.00].
 
-::: example
+::: tip
 An item is configured with a 0/0/1 reordering rule that uses the *Buy*
 route. Zero units are kept on-hand at any given time.
 
@@ -299,7 +299,7 @@ pop-up window that appears.
 Be aware that this also triggers any other scheduled actions.
 ::::
 
-::: example
+::: tip
 The product, [Office Lamp], has an automatic reordering rule
 set to trigger when the forecasted quantity falls below the
 `Min Quantity` of [5.00].
@@ -421,7 +421,7 @@ process, such as
 `manufacturing lead times ` for production. Both automatic and manual reordering rules
 work this way.
 
-::: example
+::: tip
 For a product with a 5-day total lead time and a sales order delivery
 date in 10 days, Odoo waits 5 days to place the order, ensuring it
 arrives just in time for delivery.
@@ -452,7 +452,7 @@ reordering rule. The `Replenishment Information` pop-up window displays the
 `Forecasted Date` and various lead
 times.
 
-::: example
+::: tip
 A manual reordering rule is set up with no minimum or maximum
 quantities.
 
@@ -504,7 +504,7 @@ by clicking the `fa-area-chart`
 `(graph)` icon on the replenishment
 report, as this one represents the **long-term forecasted quantity**.
 
-::: example
+::: tip
 
 
 Continuing the above example, when the sales order's

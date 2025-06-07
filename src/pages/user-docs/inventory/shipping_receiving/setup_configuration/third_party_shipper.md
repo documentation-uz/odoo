@@ -267,7 +267,7 @@ some checks to try when things are not working as expected:
     and verify the prices are the same across Odoo, the shipping
     provider, and in the *debug logs*.
 
-    ::: example
+    ::: tip
     When checking for a price mismatch in the debug logs, if the request
     says the package weighs six kilograms, but the response from FedEx
     says the package weights seven kilograms, it concludes that the

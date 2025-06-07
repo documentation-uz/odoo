@@ -1,199 +1,126 @@
-# Packages
+# Paketlar
 
-A *package* is a physical container holding one or more products.
-Packages can also be used to store items in bulk.
+*Paket* - bu bir yoki bir nechta mahsulotlarni saqlovchi jismoniy konteynerdir.
+Paketlar shuningdek buyumlarni ommaviy tarzda saqlash uchun ham ishlatilishi mumkin.
 
-Packages are commonly used for the following purposes:
+Paketlar odatda quyidagi maqsadlar uchun ishlatiladi:
 
 1.  `Grouping products to move them in bulk `.
-2.  `Shipping to customers `: configure package types to align with shipping
-    carriers\' size and weight requirements, streamlining the packing
-    process, and ensuring compliance with carrier shipping
-    specifications.
-3.  Storing items in bulk.
+2.  `Shipping to customers `: paket turlarini yuk tashuvchi kompaniyalarning o'lcham va og'irlik talablariga moslash, qadoqlash jarayonini soddalashtirish va yuk tashuvchi spetsifikatsiyalariga muvofiqlikni ta'minlash uchun sozlang.
+3. Buyumlarni ommaviy tarzda saqlash.
 
-*Package use* is a field on the package form in Odoo that is only
-visible by enabling the *Batch Transfers* and *Packages* features
-(`Inventory app ‣ Configuration ‣ Settings`).
+*Paket foydalanishi* - bu Odoo'dagi paket formasidagi maydon bo'lib, faqat `Batch Transfers` va `Packages` funksiyalarini yoqish orqali ko'rinadi (`Inventory app ‣ Configuration ‣ Settings`).
 
-By default, the *Package Use* field on a packages form is set to
-*Disposable Box*. Change this field to *Reusable Box* **only** when
-configuring packages for `cluster pickings
-`.
+Odatiy holda, paketlar formasidagi *Paket Foydalanishi* maydoni *Bir marta ishlatiladigan Quti* qilib o'rnatilgan. Bu maydonni *Qayta ishlatiladigan Quti*ga **faqat** `cluster pickings` uchun paketlarni sozlashda o'zgartiring.
 
-*Package type* is an optional feature used for
-`calculating shipping cost
-`, based on real shipping weight. Create package types to
-include the weight of the package itself (e.g. boxes, pallets, other
-shipping containers) in shipping cost calculations.
+*Paket turi* - bu haqiqiy yuk og'irligiga asoslangan `calculating shipping cost` uchun ishlatiladigan ixtiyoriy funksiya. Yuk tashish xarajatlari hisoblarida paketning o'zi og'irligini (masalan, qutilar, palletlar, boshqa yuk konteynerlarini) kiritish uchun paket turlarini yarating.
 
 ::: tip
 
-While packages are commonly used in the `three-step delivery route
-`, they can be used in any workflow involving storable
-products.
+Paketlar odatda `three-step delivery route`da ishlatilsa-da, ular saqlanishi mumkin bo'lgan mahsulotlar bilan bog'liq har qanday ish jarayonida ishlatilishi mumkin.
 ::::
 
-## Configuration 
+## Sozlash 
 
-To use packages, first go to
-`Inventory app ‣ Configuration ‣ Settings`. Under the `Operations` heading, activate the `Packages` feature. Then, click `Save`.
+Paketlardan foydalanish uchun, avval `Inventory app ‣ Configuration ‣ Settings`ga o'ting. `Operations` sarlavhasi ostida `Packages` funksiyasini faollashtiring. Keyin `Save`ni bosing.
 
 ![Activate the \*Packages\* setting in Inventory \> Configuration \> Settings.](package/enable-pack.png)
 
 ::: 
-When moving packages internally, the *Move Entire Packages* feature can
-be enabled on an operation type to update a package\'s contained item\'s
-location upon updating the package\'s location.
+Paketlarni ichki ravishda ko'chirishda, *Move Entire Packages* funksiyasi operatsiya turida yoqilishi mumkin, bu paketning joylashuvini yangilashda paket tarkibidagi buyumlarning joylashuvini yangilash uchun.
 :::
 
-To do that, go to
-`Inventory app ‣ Configuration ‣ Operations Types` and select the desired operation this feature will
-apply to (may have to set it for multiple).
+Buning uchun `Inventory app ‣ Configuration ‣ Operations Types`ga o'ting va ushbu funksiya qo'llaniladigan kerakli operatsiyani tanlang (bir nechtasini o'rnatishga to'g'ri kelishi mumkin).
 
-On the operation type page, in the `Packages` section, tick the `Move Entire
-Packages` checkbox.
+Operatsiya turi sahifasida, `Packages` bo'limida `Move Entire Packages` katakchasi belgilang.
 
-## Pack items 
+## Buyumlarni qadoqlash 
 
-Products can be added to packages in any transfer by:
+Mahsulotlar har qanday transferda paketlarga qo'shilishi mumkin:
 
-1.  Clicking each
-    `Detailed Operations ` icon on the product line.
-2.  Using the
-    `Put in Pack ` button to place everything in the transfer into a
-    package.
+1.  Mahsulot qatoridagi har bir `Detailed Operations ` belgisini bosish orqali.
+2.  Transferdagi hamma narsani paketga joylashtirish uchun `Put in Pack ` tugmasidan foydalanish orqali.
 
-### Detailed operations 
+### Batafsil operatsiyalar 
 
-On any warehouse transfer (e.g. receipt, delivery order), add a product
-to a package by clicking the `⦙≣ (bulleted list)` icon in the `Operations` tab.
+Har qanday ombor transferida (masalan, qabul qilish, yetkazib berish buyrug'i), mahsulotni paketga qo'shish uchun `Operations` bo'limidagi `⦙≣ (bulleted list)` belgisini bosing.
 
 ![Show \"Detailed Operations\" icon in the product line.](package/detailed-operations.png)
 
-Doing so opens the `Detailed Operations` pop-up window for the `Product`.
+Buni qilish `Product` uchun `Detailed Operations` oynasini ochadi.
 
-To put the `Product` in a package,
-click `Add a line`, and assign the
-product to a `Destination Package`.
-Select an existing package, or create a new one by typing the name of
-the new package, then select `Create...`.
+`Product`ni paketga joylashtirish uchun, `Add a line`ni bosing va mahsulotni `Destination Package`ga tayinlang. Mavjud paketni tanlang yoki yangi paket nomini yozib, keyin `Create...`ni tanlab yangi paket yarating.
 
 
 
-Twelve units of Acoustic Bloc
-Screen are placed in PACK0000001.
+O'n ikki dona Acoustic Bloc Screen PACK0000001ga joylashtirildi.
 
 
-Then, specify the quantity of items to go into the package in the
-`Done` column. Repeat the above steps
-to place the `Product` in different
-packages. Once finished, click `Confirm` to close the window.
+Keyin, `Done` ustunida paketga qo'yiladigan buyumlar miqdorini belgilang. `Product`ni turli paketlarga joylashtirish uchun yuqoridagi qadamlarni takrorlang. Tugagach, oynani yopish uchun `Confirm`ni bosing.
 
 
-### Put in pack 
+### Paketga joylashtirish 
 
-Alternatively, click the `Put in Pack` button on **any** warehouse transfer to create a new
-package, and place all the items in the transfer in that newly-created
-package.
+Shu bilan bir qatorda, yangi paket yaratish va transferdagi barcha buyumlarni o'sha yangi yaratilgan paketga joylashtirish uchun **har qanday** ombor transferida `Put in Pack` tugmasini bosing.
 
 ::: warning
 
-The `Put in Pack` button appears on
-receipts, delivery orders, and other transfer forms with the *Packages*
-feature enabled in `Inventory app ‣ Configuration ‣
-Settings`.
+`Put in Pack` tugmasi qabul qilish, yetkazib berish buyruqlari va `Inventory app ‣ Configuration ‣ Settings`da *Packages* funksiyasi yoqilgan boshqa transfer formalarida paydo bo'ladi.
 ::::
 
 
 
-In batch transfer BATCH/00003, the Put in Pack button was clicked to create a new
-package, PACK0000002, and assign all
-items to it in the Destination Package field.
+BATCH/00003 to'plam transferida Put in Pack tugmasi bosildi va yangi paket PACK0000002 yaratildi hamda barcha buyumlar Destination Package maydonida unga tayinlandi.
 
 
-## Package type 
+## Paket turi 
 
-Create package types by navigating to
-`Inventory app ‣ Configuration ‣ Package
-Types`, in order to set custom
-dimensions and weight limits. This feature is mainly used to calculate
-package weights for shipping costs.
+Maxsus o'lchamlar va og'irlik chegaralarini belgilash uchun `Inventory app ‣ Configuration ‣ Package Types`ga o'tib paket turlarini yarating. Bu funksiya asosan yuk tashish xarajatlari uchun paket og'irliklarini hisoblash uchun ishlatiladi.
 
 
-On the `Package Types` list, clicking
-`New` opens a blank package type
-form. The fields of the form are as follows:
+`Package Types` ro'yxatida `New`ni bosish bo'sh paket turi formasini ochadi. Formaning maydonlari quyidagicha:
 
-- `Package Type` (required): define
-  the package type\'s name.
-- `Size`: define the dimensions of
-  the package in millimeters (mm). The fields, from left to right,
-  define the `Length`,
-  `Width`, and
-  `Height`.
-- `Weight`: weight of an empty
-  package (e.g. an empty box, pallet).
+- `Package Type` (majburiy): paket turining nomini belgilang.
+- `Size`: paketning o'lchamlarini millimetr (mm) da belgilang. Maydonlar, chapdan o'ngga, `Length`, `Width` va `Height`ni belgilaydi.
+- `Weight`: bo'sh paketning og'irligi (masalan, bo'sh quti, pallet).
 
 ::: tip
 
-Odoo calculates the package\'s weight by adding the weight of the empty
-package plus the weight of the item(s), which can be found in the
-`Weight` field, in the
-`Inventory` tab, of each product
-form.
+Odoo paketning og'irligini bo'sh paket og'irligi va buyum(lar) og'irligini qo'shish orqali hisoblab chiqadi, bu har bir mahsulot formasining `Inventory` bo'limidagi `Weight` maydonida topilishi mumkin.
 ::::
 
-- `Max Weight`: maximum shipping
-  weight allowed in the package.
-- `Barcode`: define a barcode to
-  identify the package type from a scan.
-- `Company`: specify a company to
-  make the package type available **only** at the selected company.
-  Leave the field blank if it is available at all companies.
-- `Carrier`: specify the intended
-  shipping carrier for this package type.
-- `Carrier Code`: define a code that
-  is linked to the package type.
+- `Max Weight`: paketda ruxsat etilgan maksimal yuk og'irligi.
+- `Barcode`: skanerlash orqali paket turini aniqlash uchun shtrix-kod belgilang.
+- `Company`: paket turini faqat tanlangan kompaniyada mavjud qilish uchun kompaniyani belgilang. Agar barcha kompaniyalarda mavjud bo'lsa, maydonni bo'sh qoldiring.
+- `Carrier`: ushbu paket turi uchun mo'ljallangan yuk tashuvchi kompaniyani belgilang.
+- `Carrier Code`: paket turiga bog'langan kodni belgilang.
 
 ![Package type for FedEx\'s 25 kilogram box.](package/package-type.png)
 
-## Cluster packages 
+## Klaster paketlar 
 
-To use *cluster packages*, first navigate to
-`Inventory app ‣ Configuration ‣
-Settings`, and activate the
-`Batch Transfers` feature, located in
-the `Operations` section. Doing so
-makes the *Package Use* field become visible on a package form.
+*Klaster paketlaridan* foydalanish uchun, avval `Inventory app ‣ Configuration ‣ Settings`ga o'ting va `Operations` bo'limida joylashgan `Batch Transfers` funksiyasini faollashtiring. Buni qilish paket formasida *Package Use* maydonini ko'rinadigan qiladi.
 
 ![Activate the \*Batch Transfers\* feature in Inventory \> Configuration \> Settings.](package/enable-batch.png)
 
-Add new packages by going to
-`Inventory app ‣ Products ‣ Packages`. Then, click `New`, or select an existing package. Doing so opens the
-package form, which contains the following fields:
+Yangi paketlar qo'shish uchun `Inventory app ‣ Products ‣ Packages`ga o'ting. Keyin `New`ni bosing yoki mavjud paketni tanlang. Buni qilish quyidagi maydonlarni o'z ichiga olgan paket formasini ochadi:
 
-- `Package Reference` (required):
-  name of the package.
+- `Package Reference` (majburiy): paketning nomi.
 
-- `Package Type`: used for
-  `configuring shipping boxes to ship to the customer
-  `.
+- `Package Type`: `configuring shipping boxes to ship to the customer` uchun ishlatiladi.
 
   ::: tip
    seealso
 `Using cluster packages `
 :::
 
-## View packages
+## Paketlarni ko'rish
 
-To view all packages go to
-`Inventory app ‣ Products ‣ Packages`. By default, packages are shown in Kanban view, in
-their current storage location.
+Barcha paketlarni ko'rish uchun `Inventory app ‣ Products ‣ Packages`ga o'ting. Odatiy holda, paketlar Kanban ko'rinishida, ularning joriy saqlash joyida ko'rsatiladi.
 
 ::: tip
 
-Drag-and-drop packages to move them between internal locations.
+Paketlarni ichki joylar orasida ko'chirish uchun sudrab-tashlang.
 ::::
 
 ![Packages dashboard.](package/packages-kanban.png)

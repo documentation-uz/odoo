@@ -41,7 +41,7 @@ numbers should be turned on for particular operation types (such as
 shipping or receiving goods). In other words, this setting allows for
 serial number tracking on warehouse receipts and delivery orders.
 
-::: example
+::: tip
 Enabling the *Create New* option for receipts allows new serial numbers
 to be assigned as items are received. However, for delivery orders, it
 is often disabled to prevent workers from accidentally assigning serial
@@ -245,7 +245,7 @@ Finally, click `Generate`.
 
 ![Show import serials pop-up.](serial_numbers/stock-move-import-serials.png)
 
-::: example
+::: tip
 For a receipt with a `Demand` of
 [3.00] products, one product has already been assigned a
 serial number in the `Open: Stock move` pop-up window.

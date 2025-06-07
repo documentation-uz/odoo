@@ -55,7 +55,7 @@ location must be a *sub-location* of the first (e.g.,
 [WH/Stock/Fruits] is a specific, named location inside
 [WH/Stock] to make the products stored here easier to find).
 
-::: example
+::: tip
 In a warehouse location, **WH/Stock**, there are the following
 sub-locations:
 
@@ -82,7 +82,7 @@ highest to lowest) until a match is found:
 4.  Product
 5.  Product category
 
-::: example
+::: tip
 The product [Lemonade can] has the following putaway rules
 configured:
 
