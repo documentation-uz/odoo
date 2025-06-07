@@ -1,97 +1,91 @@
-# Invoice based on delivered or ordered quantities
+# Yetkazib berilgan yoki buyurtma qilingan miqdor asosida hisob-faktura
 
-Different business policies might require different options for
-invoicing:
+Turli biznes siyosatlari har xil hisob-fakturalash variantlarini talab qilishi mumkin:
 
-- The *Invoice what is ordered* rule is used as the default mode in Odoo
-  *Sales*, which means customers are invoiced once the sales order is
-  confirmed.
-- The *Invoice what is delivered* rule invoices customers once the
-  delivery is done. This rule is often used for businesses that sell
-  materials, liquids, or food in large quantities. In these cases, the
-  ordered quantity may differ slightly from the delivered quantity,
-  making it preferable to invoice the quantity actually delivered.
+- **Buyurtma qilingan miqdor asosida hisob-faktura qilish** — bu Odoo *Sales* (Sotuvlar) modulida standart bo‘lib
+  keladi. Ya'ni, mijozlar sotuv buyurtmasi tasdiqlangandan so‘ng hisob-faktura qilinadi.
+- **Yetkazib berilgan miqdor asosida hisob-faktura qilish** — bu usul mijozlar faqat mahsulot yetkazib berilgach
+  hisob-faktura qilinadi. Ushbu usul odatda katta miqdorda materiallar, suyuqliklar yoki oziq-ovqat mahsulotlarini
+  sotuvchi korxonalar tomonidan qo‘llaniladi. Bunday holatlarda buyurtma qilingan miqdor va real yetkazib berilgan
+  miqdor o‘rtasida ozgina farq bo‘lishi mumkin, shuning uchun real yetkazib berilgan miqdorga asoslangan hisob-faktura
+  afzal bo‘ladi.
 
-Being able to have different invoicing options provides more
-flexibility.
+Turli hisob-fakturalash variantlariga ega bo‘lish biznes uchun ko‘proq moslashuvchanlikni ta’minlaydi.
 
-## Invoicing policy features
+## Hisob-fakturalash siyosati funksiyalari
 
-To activate the necessary invoicing policy features, go to
-`Sales app ‣
-Configuration ‣ Settings`, and
-under the `Invoicing` heading, select
-an `Invoicing Policy` rule:
-`Invoice what is ordered` or
-`Invoice what is
-delivered`.
+Zarur hisob-fakturalash siyosatini faollashtirish uchun quyidagi yo‘nalishda harakat qiling:  
+`Sotuvlar ilovasi ‣ Sozlamalar ‣ Konfiguratsiya`,  
+va `Hisob-fakturalash (Invoicing)` sarlavhasi ostida quyidagi qoidalardan birini tanlang:
 
-![Choosing an invoicing policy on Odoo Sales.](invoicing_policy/invoicing-policy-setting.png)
+- `Buyurtma asosida hisob-faktura qilish (Invoice what is ordered)`
+- `Yetkazib berilgan mahsulot asosida hisob-faktura qilish (Invoice what is delivered)`
+
+![Odoo Sales’da hisob-faktura siyosatini tanlash.](invoicing_policy/invoicing-policy-setting.png)
 
 ::: warning
 
-If the `Invoice what is delivered`
-rule is chosen, it is **not** possible to activate the
-`Automatic Invoice` feature, which
-automatically generates invoices when an online payment is confirmed.
-::::
+Agar siz `Yetkazib berilgan mahsulot asosida hisob-faktura qilish` qoidasi tanlansa,  
+`Avtomatik hisob-faktura (Automatic Invoice)` funksiyasini **yoqib bo‘lmaydi**.  
+Bu funksiya onlayn to‘lov tasdiqlanganda avtomatik hisob-faktura yaratadi.
+:::
 
-## Invoicing policy on product form
+## Mahsulot formasida hisob-fakturalash siyosati
 
-On any product page, via the
-`Sales app ‣ Products ‣ Products dashboard`, locate the `Invoicing Policy` option located under the
-`General Information` tab. It can be
-changed manually using the drop-down menu.
+Har qanday mahsulot sahifasida, quyidagicha yo‘l tuting:  
+`Sotuvlar ilovasi ‣ Mahsulotlar ‣ Mahsulotlar boshqaruv paneli`,  
+shu yerda `Umumiy ma'lumotlar (General Information)` tabi ostida  
+`Hisob-fakturalash siyosati (Invoicing Policy)` opsiyasini toping.
 
-![How to change your invoicing policy on a product form on Odoo Sales.](invoicing_policy/invoicing-policy-general-info-tab.png)
+Bu maydon orqali siyosatni qo‘lda, ochiluvchi ro‘yxatdan tanlab o‘zgartirish mumkin.
 
-## Impact on sales flow
+![Odoo Sales’da mahsulot formasida hisob-faktura siyosatini o‘zgartirish.](invoicing_policy/invoicing-policy-general-info-tab.png)
 
-In Odoo *Sales*, the basic sales flow starts with the creation of a
-quotation. Then, that quotation is sent to a customer. Next, it needs to
-be confirmed, which turns the quotation into a sales order. This, in
-turn, creates an invoice.
+## Savdo jarayoniga ta'siri
 
-The following is a breakdown of how invoicing policy rules impact the
-aforementioned sales flow:
+Odoo *Sales* ilovasida asosiy savdo jarayoni kotirovka (quotation) yaratishdan boshlanadi.  
+Keyin bu kotirovka mijozga yuboriladi. So‘ngra, bu kotirovka tasdiqlanishi kerak  
+va tasdiqlangach, savdo buyurtmasiga (sales order) aylanadi.  
+Bu esa o‘z navbatida hisob-faktura (invoice) yaratishga olib keladi.
 
-- `Invoice what is ordered`: No
-  impact on the basic sales flow. An invoice is created as soon as a
-  sale is confirmed.
-- `Invoice what is delivered`: Minor
-  impact on sales flow, because the delivered quantity needs to be
-  manually entered on the sales order. Or, the *Inventory* app can be
-  installed and used to confirm the delivered quantity before creating
-  an invoice with the *Sales* app.
+Quyida hisob-fakturalash siyosatining yuqoridagi savdo jarayoniga qanday ta'sir qilishi ko‘rsatilgan:
+
+- `Buyurtma asosida hisob-faktura (Invoice what is ordered)`:
+  Asosiy savdo jarayoniga hech qanday ta’sir qilmaydi.  
+  Sotuv tasdiqlangandan so‘ng darhol hisob-faktura yaratiladi.
+
+- `Yetkazib berilgan miqdor asosida hisob-faktura (Invoice what is delivered)`:
+  Savdo jarayoniga biroz ta’siri bor, chunki yetkazib berilgan miqdor
+  savdo buyurtmasida qo‘lda kiritilishi kerak.  
+  Yoki, *Ombor (Inventory)* ilovasidan foydalanib,  
+  yetkazilgan miqdorni tasdiqlash orqali hisob-faktura yaratish mumkin.
 
 :::: warning
 
-If a user attempts to create an invoice without validating the delivered
-quantity, the following error message appears:
-`There is no invoiceable line. If a product has a Delivered
-quantities invoicing policy, please make sure that a quantity has been delivered.`
+Agar foydalanuvchi yetkazib berilgan miqdorni tasdiqlamasdan hisob-faktura yaratmoqchi bo‘lsa,  
+quyidagi xato xabari paydo bo‘ladi:
 
-![If Delivered Quantities invoicing policy is chosen, ensure a quantity has been delivered.](invoicing_policy/invoicing-policy-error-message.png)
+`Hisoblanadigan bandlar yo‘q. Agar mahsulotda 'Yetkazib berilgan miqdor asosida' siyosati tanlangan bo‘lsa, iltimos, yetkazilgan miqdorni kiritganingizga ishonch hosil qiling.`
+
+![Agar "Yetkazib berilgan miqdor asosida" siyosati tanlansa, miqdor kiritilishi kerak.](invoicing_policy/invoicing-policy-error-message.png)
 ::::
 
 ::: tip
 
-Once a quotation is confirmed, and the status changes from
-`Quotation sent` to
-`Sales order`, the delivered and
-invoiced quantities are available to view, directly from the sales
-order. This is true for both invoicing policy rule options.
+Kotirovka tasdiqlangandan so‘ng, holati `Kotirovka yuborildi (Quotation sent)`  
+dan `Savdo buyurtmasi (Sales order)` ga o‘zgaradi.  
+Shundan so‘ng, yetkazilgan va hisoblangan miqdorlarni bevosita  
+savdo buyurtmasida ko‘rish mumkin bo‘ladi.  
+Bu ikkala hisob-faktura siyosati uchun ham amal qiladi.
 
-![How to see your delivered and invoiced quantities on Odoo Sales.](invoicing_policy/invoicing-policy-order-lines.png)
+![Odoo Sales’da yetkazilgan va hisoblangan miqdorlarni qanday ko‘rish mumkin.](invoicing_policy/invoicing-policy-order-lines.png)
 
-Odoo automatically adds the quantities to the invoice, both
-`Delivered` and
-`Invoiced`, even if it\'s a partial
-delivery, when the quotation is confirmed.
+Odoo kotirovka tasdiqlangach, hatto qisman yetkazib berilgan bo‘lsa ham,  
+hisob-fakturaga `Yetkazilgan (Delivered)` va `Hisoblangan (Invoiced)` miqdorlarni avtomatik tarzda qo‘shadi.
 ::::
 
-Finally, there are a few different options to create an invoice:
-`Regular invoice`,
-`Down payment (percentage)` or
-`Down payment (fixed amount)`.
+Yakunda, hisob-faktura yaratish uchun bir nechta variantlar mavjud:
 
+- `Oddiy hisob-faktura (Regular invoice)`
+- `Oldindan to‘lov — foizda (Down payment - percentage)`
+- `Oldindan to‘lov — qat'iy summada (Down payment - fixed amount)`

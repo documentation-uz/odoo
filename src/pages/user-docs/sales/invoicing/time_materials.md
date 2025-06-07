@@ -1,437 +1,377 @@
-# Invoicing based on time and materials
+# Vaqt va materiallar asosida hisob-faktura chiqarish
 
-Invoicing based on time and/or materials is typically used when
-accurately estimating the size of a project isn\'t possible, or when the
-requirements of a project may change.
+Vaqt va/yoki materiallar asosida hisob-faktura chiqarish odatda loyihaning hajmini aniq baholab bo‘lmaydigan holatlarda
+yoki loyiha talablari o‘zgarishi mumkin bo‘lgan holatlarda qo‘llaniladi.
 
-This is different from a fixed-price contract, when a customer agrees to
-pay a specified total for the fulfillment of the contract\-\--no matter
-what needs to be paid to the employees, sub-contractors, vendors,
-suppliers, and so on.
+Bu usul **belgilangan narxli shartnoma (fixed-price contract)** dan farq qiladi. Belgilangan narxli shartnomada mijoz
+oldindan aniq belgilangan umumiy summani to‘lashga rozi bo‘ladi — xodimlar, subpudratchilar, yetkazib beruvchilar, va
+boshqa xarajatlar qancha bo‘lishidan qat'i nazar.
 
-The Odoo *Sales* app can invoice for time and various other expenses
-(e.g. transport, lodging), as well as purchases needed to fulfill an
-order.
+Odoo **Sales** ilovasi yordamida vaqt, xizmat safari, turar joy xarajatlari kabi turli xarajatlar uchun va buyurtmani
+bajarish uchun kerakli xaridlar bo‘yicha hisob-faktura chiqarish mumkin.
 
-## App and settings configuration
+## Ilova va sozlamalarni konfiguratsiya qilish
 
-First, in order to accurately keep track of the progress of a project,
-the Odoo *Project* and *Accounting* apps **must** be installed.
+Loyiha jarayonini to‘g‘ri nazorat qilish va kuzatib borish uchun Odoo’da **Project** (Loyihalar) va **Accounting** (
+Buxgalteriya hisobi) ilovalari o‘rnatilgan bo‘lishi **shart**.
 
-To install the *Project* app, navigate to
-`Odoo main dashboard ‣ Apps`.
-Then, on the `Apps` page, locate the
-`Project` app block, and click
-`Activate`. The page automatically
-refreshes and returns to the main Odoo dashboard, where the *Project*
-app is now available to access.
+### Project ilovasini o‘rnatish
 
-Repeat the same process to install the *Accounting* application.
+1. `Odoo bosh sahifasi ‣ Ilovalar (Apps)` bo‘limiga o‘ting.
+2. `Ilovalar` sahifasida `Project` ilovasini toping va `Aktivlashtirish (Activate)` tugmasini bosing.
+3. Sahifa avtomatik ravishda yangilanadi va sizni Odoo bosh sahifasiga qaytaradi. Endi *Project* ilovasi menyuda mavjud
+   bo‘ladi.
 
-After installation, click the `Accounting` app icon from the main Odoo dashboard, and navigate to
-`Configuration ‣ Settings`. On
-the `Settings` page, scroll down to
-the `Analytics` section, and ensure
-the box next to `Analytic
-Accounting` is checked.
+### Accounting ilovasini o‘rnatish
 
-![How it looks to activate the Analytic Accounting setting in Odoo Accounting Setting page.](time_materials/analytic-accounting-setting.png)
+Xuddi shu usul bilan *Accounting* ilovasini ham o‘rnating.
 
-Then, click `Save` to save all
-changes.
+### Analitik hisobni yoqish
 
-Then, navigate to
-`Odoo main dashboard ‣ Project app ‣ Configuration ‣
-Settings`. On the
-`Settings` page, in the
-`Time Management` section, ensure the
-box beside the `Timesheets` feature
-is checked.
+1. Bosh sahifadan `Accounting` ilovasi ikonkasini bosing.
+2. `Configuration ‣ Settings` ga o‘ting.
+3. `Settings` sahifasida `Analytics` bo‘limini toping va `Analytic Accounting` belgisini yoqing.
 
-Then, click `Save` to save all
-changes.
+![Odoo Accounting ilovasida Analytic Accounting sozlamasini yoqish.](time_materials/analytic-accounting-setting.png)
 
-![What the Timesheets feature looks like on the Odoo Project settings page.](time_materials/timesheets-feature.png)
+4. `Save` tugmasini bosib o‘zgarishlarni saqlang.
 
-## Service product configuration 
+### Timesheets funksiyasini yoqish
 
-With the *Timesheets* feature activated in the *Project* app, it is now
-possible to invoice for time spent on a project, but **only** when the
-following product configurations have been made.
+1. `Odoo bosh sahifasi ‣ Project ilovasi ‣ Configuration ‣ Settings` ga o‘ting.
+2. `Time Management` bo‘limida `Timesheets` funksiyasini yoqing.
+
+![Odoo Project sozlamalarida Timesheets funksiyasini yoqish.](time_materials/timesheets-feature.png)
+
+3. `Save` tugmasini bosib o‘zgarishlarni saqlang.
+
+## Xizmat mahsulotini sozlash
+
+*Project* ilovasida *Timesheets* funksiyasi yoqilganidan so‘ng, loyiha ustida sarflangan vaqt uchun hisob-faktura
+chiqarish imkoniyati mavjud bo‘ladi, lekin **faqat** quyidagi mahsulot sozlamalari to‘g‘ri o‘rnatilgan bo‘lsa.
 
 ::: warning
 
-Invoicing for time spent on a project is **only** possible with products
-that have *Service* set as the *Product Type* on their product form.
+Loyihada sarflangan vaqt uchun hisob-faktura chiqarish **faqat** *Mahsulot turi* (Product Type) *Xizmat (Service)* deb
+belgilangan mahsulotlar bilan amalga oshiriladi.
 ::::
 
-To configure a service product, first navigate to
-`Sales app ‣ Products ‣
-Products`. On the
-`Products` page, select the desired
-service product to be configured, or click `New` to create a new product.
+### Xizmat mahsulotini sozlash bosqichlari:
 
-From the product form, in the `General Information` tab, set the `Product Type` to `Service`. Then,
-open the drop-down menu in the `Invoicing Policy` field, and select
-`Based on Timesheets`.
+1. `Savdo (Sales) ilovasi ‣ Mahsulotlar (Products) ‣ Mahsulotlar (Products)` ga o‘ting.
+2. Kerakli xizmat mahsulotini tanlang yoki `Yangi (New)` tugmasini bosib yangi mahsulot yarating.
+3. Mahsulot formasi ochilgach, `Umumiy ma'lumot (General Information)` tabida `Mahsulot turi (Product Type)` maydonini
+   `Xizmat (Service)` deb belgilang.
+4. `Hisob-faktura siyosati (Invoicing Policy)` maydonidan `Timesheets asosida (Based on Timesheets)` variantini tanlang.
+5. `Buyurtma yaratilganda (Create on Order)` menyusidan `Loyiha va vazifa (Project & Task)` variantini tanlang.
 
-Next, from the `Create on Order`
-drop-down menu, select `Project \& Task`. That setting indicates that, when a sales order is
-created with this specific service product, a new project and task is
-created in the *Project* app.
+Bu sozlama mahsulot buyurtma qilinishi bilan avtomatik tarzda *Project* ilovasida yangi loyiha va vazifa yaratilishini
+bildiradi.
 
-![The correct settings for Invoicing Policy and Create on Order fields for service product.](time_materials/service-product-general-settings.png)
+![Xizmat mahsuloti uchun to‘g‘ri Invoicing Policy va Create on Order sozlamalari.](time_materials/service-product-general-settings.png)
 
 ::: tip
 
-The option `Task` can be chosen
-instead from the `Create on Order`
-drop-down menu. If `Task` is chosen,
-select an existing project that the task will appear in from
-`Project` field, which only appears
-if `Task` is chosen in the
-`Create on Order` field.
+Agar faqat `Vazifa (Task)` tanlansa, `Loyiha (Project)` maydoni paydo bo‘ladi. Bu maydon orqali yangi vazifa qaysi
+mavjud loyihaga biriktirilishini tanlashingiz mumkin.
 ::::
 
-## Add time spent to sales order
+## Sarflangan vaqtni savdo buyurtmasiga qo‘shish
 
-After properly configuring a service product with the correct *Invoicing
-Policy* and *Create on Order* options, it is possible to add time spent
-to a sales order.
+Xizmat mahsuloti to‘g‘ri *Hisob-faktura siyosati* (Invoicing Policy) va *Buyurtma bo‘yicha yaratish* (Create on Order)
+variantlari bilan sozlangandan so‘ng, savdo buyurtmasiga sarflangan vaqtni qo‘shish mumkin bo‘ladi.
 
-To see that in action, navigate to `Sales app ‣ New` to open a blank quotation form. Then, proceed to
-add a `Customer`, and in the
-`Order Lines` tab, click
-`Add a product`, and select the
-properly `configured service product
-` from the drop-down menu.
+### Amalda qanday ishlaydi?
 
-Next, click `Confirm` to confirm the
-order.
+1. `Savdo (Sales)` ilovasiga o‘ting va `Yangi (New)` tugmasini bosing.
+2. Bo‘sh kotirovka (quotation) formasi ochiladi. Bu yerda `Mijoz (Customer)` ni kiriting.
+3. `Buyurtma qatorlari (Order Lines)` bo‘limida `Mahsulot qo‘shish (Add a product)` tugmasini bosing va ilgari sozlangan
+   xizmat mahsulotini tanlang.
+4. So‘ng `Tasdiqlash (Confirm)` tugmasini bosing.
 
-After confirming the sales order, two smart buttons appear at the top of
-the order form: `Projects` and
-`Tasks`.
+Savdo buyurtmasi tasdiqlangach, forma yuqori qismida ikkita aqlli tugma (smart button) paydo bo‘ladi:
+`Loyihalar (Projects)` va `Vazifalar (Tasks)`.
 
-![How the Projects and Tasks smart buttons look on a Sales Order in Odoo Sales.](time_materials/projects-tasks-smart-buttons.png)
+![Savdo buyurtmasida Loyihalar va Vazifalar smart tugmalari qanday ko‘rinadi.](time_materials/projects-tasks-smart-buttons.png)
 
-If the `Projects` smart button is
-clicked, it reveals the specific project related to this sales order. If
-the `Tasks` smart button is clicked,
-it reveals the specific project task related to this sales order. Both
-are also accessible in the *Project* app.
+- `Loyihalar (Projects)` tugmasi orqali shu buyurtmaga tegishli loyiha sahifasiga o‘tasiz.
+- `Vazifalar (Tasks)` tugmasi orqali shu buyurtmaga bog‘langan vazifa sahifasi ochiladi.
 
-In order to add time spent on a sales order, click the
-`Tasks` smart button.
+Har ikkala sahifaga *Project* ilovasi orqali ham kirish mumkin.
 
-On the task form, select the `Timesheets` tab. From the `Timesheets` tab, employees can be assigned to work on the project,
-and the time they spend working on the task can be added by the
-employees or by the person who created the sales order.
+### Vaqt qo‘shish
 
-To add an employee, and the time spent working on the task, click
-`Add a line` in the
-`Timesheets` tab. Then, select the
-appropriate `Date` and
-`Employee`. There is also the option
-to add a brief description of the work done during this time in the
-`Description` column, but it\'s not
-required.
+Savdo buyurtmasiga vaqt qo‘shish uchun `Vazifalar (Tasks)` smart tugmasini bosing.
 
-Lastly, enter the amount of time worked on the task in the
-`Hours Spent` column, and click away
-to complete that line in the `Timesheets` tab.
+## Vazifa formasida vaqt qo‘shish
+
+Vazifa formasida `Ish vaqtlari (Timesheets)` yorlig‘ini tanlang. Ushbu bo‘limda xodimlar loyihaga biriktiriladi va ular
+vazifaga sarflagan vaqtni o‘zlari yoki savdo buyurtmasini yaratgan shaxs kiritishi mumkin.
+
+### Xodim va vaqt qo‘shish
+
+1. `Ish vaqtlari (Timesheets)` yorlig‘ida `Qator qo‘shish (Add a line)` tugmasini bosing.
+2. Mos `Sana (Date)` va `Xodim (Employee)` ni tanlang.
+3. `Tavsif (Description)` ustuniga ushbu vaqt davomida bajarilgan ish bo‘yicha qisqacha izoh yozish mumkin, ammo bu
+   majburiy emas.
+4. So‘ngra, `Sarflangan soatlar (Hours Spent)` ustuniga ushbu vazifaga sarflangan vaqtni (soatlarda) yozing.
+
+Kiritish tugagach, boshqa joyni bosing — shu bilan qator yakunlanadi va saqlanadi.
 
 ::: tip
 
-The time entered in the `Hours Spent`
-column is immediately reflected in the
-`Allocated Time` field (located near
-the top of the task form) as a percentage, which reflects how much of
-the total allocated work hours have been done so far.
+`Sarflangan soatlar (Hours Spent)` ustuniga yozilgan vaqt, avtomatik ravishda vazifa formasining yuqori qismidagi
+`Ajratilgan vaqt (Allocated Time)` maydonida foiz ko‘rinishida aks etadi. Bu ko‘rsatkich — umumiy ajratilgan ish
+soatlarining qanchasi bajarilganini bildiradi.
 
-That same information is found as numerical hours in the
-`Hours Spent` and
-`Remaining Hours` fields, located at
-the bottom of the `Timesheets` tab.
+Shuningdek, ushbu ma’lumotlar `Sarflangan soatlar (Hours Spent)` va `Qolgan soatlar (Remaining Hours)` maydonlarida
+raqamli ko‘rinishda ham beriladi — bularni `Ish vaqtlari (Timesheets)` yorlig‘ining pastki qismida topishingiz mumkin.
 
-![How the Timesheets tab appears on a task form in Odoo Sales and Odoo Project.](time_materials/timesheets-tab-on-task.png)
-::::
+![Odoo Sales va Project ilovalaridagi vazifa formasida Timesheets yorlig‘i ko‘rinishi.](time_materials/timesheets-tab-on-task.png)
+:::
 
-Repeat this process for however many employees and hours have been
-worked on the project.
+Loyihada ishtirok etayotgan barcha xodimlar va ularning ishlagan soatlari uchun ushbu jarayonni takrorlang.
 
-## Invoice time spent
+## Sarflangan vaqt asosida hisob-faktura chiqarish
 
-Once all the necessary employees and time spent have been added to the
-project task, return to the sales order to invoice the customer for
-those hours. To do that, either click the `Sales
-Order` smart button at the top of the
-task form, or return to the sales order via the breadcrumb links,
-located in the upper-left of the screen.
+Loyihaviy vazifaga barcha kerakli xodimlar va ularning ishlagan soatlari qo‘shilgach, mijozga ushbu soatlar uchun
+hisob-faktura chiqarish uchun savdo buyurtmasiga qayting. Buni quyidagicha amalga oshiring:
 
-Back on the sales order form, the time that was added to the task is
-reflected in the `Order Lines` tab
-(in the `Delivered` column) and in
-the new `Recorded
-Hours` smart button at the top of the
-sales order.
+- Vazifa formasining yuqori qismida joylashgan `Savdo buyurtmasi (Sales Order)` tugmasini bosing, yoki
+- Ekranning yuqori chap qismidagi **breadcrumb** (yo‘l) havolalari orqali savdo buyurtmasiga qayting.
 
-To invoice the customer for time spent on the project, click
-`Create Invoice`, and select
-`Regular invoice` from the
-`Create invoices` pop-up window.
-Then, click `Create Draft Invoice`.
+### Savdo buyurtmasida vaqt ko‘rinishi
 
-Doing so reveals a `Customer Invoice Draft`, clearly showing all the work that\'s been done in the
-`Invoice Lines` tab.
+Savdo buyurtmasi formasida, vazifaga qo‘shilgan vaqt `Buyurtma qatorlari (Order Lines)` yorlig‘idagi
+`Yetkazilgan (Delivered)` ustunida aks etadi. Shuningdek, yuqorida `Yozilgan soatlar (Recorded Hours)` nomli yangi *
+*aqlli tugma (smart button)** ham paydo bo‘ladi.
+
+### Hisob-faktura chiqarish
+
+Mijozga loyiha uchun sarflangan vaqt asosida hisob-faktura chiqarish uchun:
+
+1. `Hisob-faktura yaratish (Create Invoice)` tugmasini bosing.
+2. Ochilgan `Hisob-faktura yaratish (Create invoices)` oynasida `Oddiy hisob-faktura (Regular invoice)` opsiyasini
+   tanlang.
+3. So‘ng `Qoralama hisob-faktura yaratish (Create Draft Invoice)` tugmasini bosing.
+
+Natijada `Mijoz hisob-fakturasi qoralamasi (Customer Invoice Draft)` ochiladi va undagi
+`Hisob-faktura qatorlari (Invoice Lines)` bo‘limida bajarilgan barcha ishlar ko‘rsatiladi.
 
 ::: tip
 
-Pay attention to the `Analytic Distribution` column in the `Customer
-Invoice`, as that information is
-necessary to ensure other time/material invoicing tasks are completed
-properly and accurately.
+`Hisob-faktura`dagi `Tahliliy taqsimot (Analytic Distribution)` ustuniga e’tibor bering — bu ma’lumotlar boshqa
+vaqt/materialga asoslangan hisob-kitoblarni to‘g‘ri va aniq bajarish uchun muhimdir.
 
-![Invoice draft showing time spent on sales order in Odoo Sales.](time_materials/invoice-lines-time.png)
-::::
+![Odoo Sales'da vaqt asosida yaratilgan hisob-faktura qoralamasi.](time_materials/invoice-lines-time.png)
+:::
 
-Click `Confirm` to confirm the
-invoice and continue with the invoicing process.
+So‘ng, `Tasdiqlash (Confirm)` tugmasini bosib, hisob-fakturani tasdiqlang va keyingi jarayonlarga o'ting.
 
+## Xarajatlarni sozlash
 
-## Expenses configuration
+Savdo buyurtmasiga tegishli xarajatlarni kuzatish va hisob-fakturaga qo‘shish uchun, Odoo tizimida *Xarajatlar (
+Expenses)* ilovasi **majburiy** o‘rnatilishi kerak.
 
-In order to track and invoice expenses related to a sales order, the
-Odoo *Expenses* app **must** be installed.
+### Xarajatlar ilovasini o‘rnatish
 
-To install the *Expenses* app, navigate to
-`Odoo main dashboard ‣ Apps`.
-Then, on the `Apps` page, locate the
-`Expenses` app block, and click
-`Activate`.
+1. `Odoo bosh sahifa ‣ Ilovalar (Apps)` bo‘limiga o‘ting.
+2. `Ilovalar (Apps)` sahifasida `Expenses` ilovasini toping.
+3. Ilova blokida joylashgan `Faollashtirish (Activate)` tugmasini bosing.
 
-The page automatically refreshes and returns to the main Odoo dashboard,
-where the `Expenses` app is now
-available to access.
+Shundan so‘ng sahifa avtomatik tarzda yangilanadi va sizni asosiy boshqaruv paneliga qaytaradi. Endi
+`Xarajatlar (Expenses)` ilovasi foydalanishga tayyor bo‘ladi.
 
-## Add expenses to sales order 
+## Xarajatni savdo buyurtmasiga qo‘shish
 
-To add an expense to a sales order, first navigate to the
-`Expenses` app. Then, from the
-main *Expenses* dashboard, click `New`, which reveals a blank expense form.
+Savdo buyurtmasiga xarajat qo‘shish uchun, avval `Xarajatlar (Expenses)` ilovasiga o‘ting. Bosh sahifada `Yangi (New)`
+tugmasini bosing — bu sizga yangi xarajat shaklini ochadi.
 
-On the expense form, add a `Description` of the expense (e.g. [Hotel Stay], [Plane
-Ticket]). Next, in the `Category` field, select the appropriate option from the drop-down
-menu (e.g. `Meals`,
-`Miles`,
-`Travel \& Accommodation`).
+### Xarajat formasini to‘ldirish
 
-::: tip
+1. `Tavsif (Description)` maydoniga xarajat nomini kiriting (masalan: `[Mehmonxona to‘lovi]`, `[Samolyot chiptasi]`).
+2. `Kategoriya (Category)` maydonidan mos bo‘lgan variantni tanlang (masalan: `Ovqat`, `Masofa`,
+   `Sayohat va joylashish`).
 
-Expense categories can be added and modified by navigating to
-`Expenses app ‣
-Configuration ‣ Expense Categories`.
-::::
+> 💡 **Maslahat**: Yangi xarajat kategoriyalarini `Xarajatlar ilovasi ‣ Sozlamalar ‣ Xarajat Kategoriyalari` orqali
+> yaratish va tahrirlash mumkin.
 
-Then, enter the total amount of the expense in the
-`Total` field, as well as any
-`Included Taxes` that may apply.
-Next, ensure that the correct `Employee` is selected, and designate who paid for the expense in
-the `Paid By` field: the
-`Employee (to reimburse)` or the
-`Company`.
+3. `Umumiy (Total)` maydoniga umumiy xarajat summasini kiriting.
+4. Agar soliqlar mavjud bo‘lsa, `Kiritilgan soliqlar (Included Taxes)` maydonini ham to‘ldiring.
+5. `Xodim (Employee)` kim ekanligini ko‘rsating.
+6. `Kim to‘lagan (Paid By)` maydonida xarajatni `Xodim (qaytariladi)` yoki `Kompaniya` to‘laganini tanlang.
 
-Next, in the `Customer to Reinvoice`
-field, select the appropriate sales order from the drop-down menu. Then,
-select that same sales order information from the `Analytic
-Distribution` field, as well.
+### Xarajatni savdo buyurtmasiga bog‘lash
 
-::: tip
+7. `Mijozga qayta hisoblash (Customer to Reinvoice)` maydonida xarajat bog‘lanadigan savdo buyurtmasini tanlang.
+8. Shu savdo buyurtmasini `Analitik taqsimot (Analytic Distribution)` maydonida ham tanlang.
 
-The `Analytic Distribution` field
-will **only** have the corresponding sales order as an option if the
-sales order contains a service product that is billed based on
-*Timesheets*, *Milestones*, or *Delivered Quantities*.
-::::
+> 💡 **Maslahat**: `Analitik taqsimot` maydonida savdo buyurtmasi **faqat** quyidagi turdagi xizmat mahsulotlari mavjud
+> bo‘lsa chiqadi:
+> - Ish vaqti asosida hisob-faktura qilinadigan mahsulotlar (Timesheets)
+> - Bosqich (Milestone) asosida
+> - Yetkazilgan miqdorga asoslangan mahsulotlar
 
-![How to properly fill out an expense form that\'s attached to a sales order in Odoo.](time_materials/expense-detail-form.png)
+![Xarajat formasining to‘g‘ri to‘ldirilgan ko‘rinishi.](time_materials/expense-detail-form.png)
 
-If there are any receipts that should be uploaded and attached to the
-expense, click the `Attach Receipt`
-button, and upload the necessary documents to the expense. This is
-**not** required, but it may affect whether or not an expense is
-approved.
+### Cheklar va hisobotingizni yakunlash
 
-When all the information has been entered, click
-`Create Report` to create an expense
-report detailing all the expense information that was just entered.
+Agar xarajatga oid chek yoki hujjatlar mavjud bo‘lsa, `Chekni biriktirish (Attach Receipt)` tugmasini bosib, fayllarni
+yuklang. Bu majburiy emas, lekin xarajatni tasdiqlash jarayoniga ta’sir qilishi mumkin.
 
-![How an Expense Report Summary looks in Odoo Expenses.](time_materials/expense-report-summary.png)
+Barcha ma’lumotlar to‘ldirilgach, `Hisobot yaratish (Create Report)` tugmasini bosing. Bu xarajat bo‘yicha hisobotni
+yaratadi.
 
-Then, there\'s the option to `Submit to Manager` for approval. Once approved, the
-`Report in Next Payslip` appears.
+![Xarajatlar hisobotining umumiy ko‘rinishi.](time_materials/expense-report-summary.png)
 
-To showcase a complete flow in this example, select
-`Submit to Manager`. Then, the
-manager would click `Approve` to
-approve this expense, and click `Post Journal Entries` to post this expense to the accounting journal.
+So‘ngra `Rahbar tasdig‘iga yuborish (Submit to Manager)` tugmasi orqali hisobotingizni rahbarga yuboring.
 
-## Invoice expenses
+Rahbar quyidagi amallarni bajaradi:
 
-To invoice a customer for an `expense on a sales order
-`, navigate to the related sales order, either from the
-`Sales` app or from the expense
-report in the `Expenses` app.
-From the expense report, click the `Sales Orders` smart button at the top of the page.
+1. `Tasdiqlash (Approve)` — xarajatni tasdiqlaydi.
+2. `Buxgalter yozuvlarini qayd etish (Post Journal Entries)` — buxgalteriya yozuvlariga kiritadi.
 
-If the expense report was linked to the sales order, the
-newly-configured expense now has its own line in the
-`Order Lines` tab, and can be
-invoiced to the customer.
+Shundan so‘ng, `Keyingi ish haqi hisobotida (Report in Next Payslip)` yozuvi paydo bo‘ladi.
 
-![An expense appearing on Order Lines tab of a Sales Order in Odoo Sales application.](time_materials/invoice-expense-from-sales-order.png)
+## Xarajatlarni hisob-fakturaga kiritish
 
-To invoice the customer for the expense on the sales order, click
-`Create Invoice`, select
-`Regular Invoice` from the
-`Create invoices` pop-up window, then
-click `Create Draft Invoice`.
+Agar savdo buyurtmasiga bog‘langan `xarajat` bo‘lsa, mijozga ushbu xarajat bo‘yicha hisob-faktura yuborish mumkin.
 
-Doing so reveals a `Customer Invoice Draft` for the expense. Then, the invoicing process can be
-completed as usual.
+Buning uchun `Savdo (Sales)` ilovasi yoki `Xarajatlar (Expenses)` ilovasidagi hisobot orqali mos savdo buyurtmasini
+toping.
 
-![Sample customer invoice for an expense generated from a sales order in Odoo Sales.](time_materials/customer-invoice-for-expense.png)
+Agar xarajat hisobotida savdo buyurtmasi bog‘langan bo‘lsa, `Sales Orders` deb nomlangan smart tugmasi sahifaning yuqori
+qismida ko‘rinadi — unga bosing.
 
-## Purchase configuration
+Xarajat savdo buyurtmasiga to‘g‘ri bog‘langan bo‘lsa, u `Buyurtma satrlari (Order Lines)` bo‘limida alohida qatorda
+chiqadi va mijozga hisob-faktura qilish mumkin bo‘ladi.
 
-In order to invoice a customer for purchases made on a sales order, the
-*Purchase* application **must** be installed.
+![Xarajat Order Lines bo‘limida ko‘rinmoqda.](time_materials/invoice-expense-from-sales-order.png)
 
-To install the *Purchase* application, navigate to
-`Odoo main dashboard ‣ Apps`.
-Then, on the `Apps` page, locate the
-`Purchase` app block, and click
-`Activate`. The page automatically
-refreshes and returns to the main Odoo dashboard, where the
-`Purchase` app is now available to
-access.
+### Xarajat bo‘yicha hisob-faktura yaratish
 
-## Add purchase to sales order 
+1. `Hisob-faktura yaratish (Create Invoice)` tugmasini bosing.
+2. Ochilgan `Hisob-faktura yaratish` (Create invoices) oynasidan `Oddiy hisob-faktura (Regular Invoice)` ni tanlang.
+3. `Qoralama hisob-faktura yaratish (Create Draft Invoice)` tugmasini bosing.
 
-To add a purchase to a sales order, a purchase order must first be
-created. To create a purchase order, navigate to
-`Purchase app ‣ New` to reveal
-a blank purchase order form.
+Shunda yangi `Mijoz uchun hisob-faktura qoralamasi (Customer Invoice Draft)` ochiladi, u xarajatga asoslangan bo‘ladi.
+Endi odatdagi hisob-faktura jarayonini davom ettirishingiz mumkin.
 
-First, add a `Vendor` to the purchase
-order. Then, under the `Products`
-tab, click the `extra column options`
-drop-down menu, represented by two horizontal lines with dots on them,
-located to the far-right of the column headers. From that drop-down
-menu, select `Analytic Distribution`.
+![Xarajatga asoslangan mijoz uchun hisob-faktura namunasi.](time_materials/customer-invoice-for-expense.png)
 
-![How to add analytic distribution column on purchase order form in Odoo Purchase.](time_materials/extra-column-analytic-distribution-option.png)
+## Xaridlarni sozlash
 
-After adding the `Analytic Distribution` column to the headers on the
-`Products` tab of the purchase order
-form, proceed to add the product(s) to the purchase order. To do that,
-click `Add a product`, and select the
-desired product from the drop-down menu. Repeat for all the products to
-add.
+Agar savdo buyurtmasi asosida amalga oshirilgan xaridlar uchun mijozga hisob-faktura yuborilmoqchi bo‘lsa, **Xaridlar (
+Purchase)** ilovasini o‘rnatish shart.
+
+Xaridlar ilovasini o‘rnatish uchun quyidagilarni bajaring:
+
+1. `Odoo bosh menyusi (Odoo main dashboard)`ga o‘ting.
+2. `Ilovalar (Apps)` bo‘limini tanlang.
+3. `Purchase` nomli ilovani toping.
+4. `Faollashtirish (Activate)` tugmasini bosing.
+
+Shundan so‘ng sahifa avtomatik yangilanadi va bosh menyuda `Purchase` ilovasi paydo bo‘ladi.
+
+## Xaridni savdo buyurtmasiga qo‘shish
+
+Savdo buyurtmasiga xaridni bog‘lash uchun avvalo xarid buyurtmasi (purchase order) yaratilishi kerak. Xarid buyurtmasini
+yaratish uchun:
+
+1. `Purchase` ilovasiga o‘ting.
+2. `Yangi (New)` tugmasini bosing — yangi xarid buyurtmasi shakli ochiladi.
+
+Dastlab `Yetkazib beruvchi (Vendor)` maydonini to‘ldiring. So‘ngra `Mahsulotlar (Products)` yorlig‘ida ustunlarni
+kengaytirish menyusini oching. Bu menyu sarlavhalarning eng o‘ng tomonida, ikki gorizontal chiziq va nuqtalar bilan
+ko‘rsatilgan.
+
+Ochilgan menyudan `Analitik taqsimot (Analytic Distribution)` ustunini belgilang.
+
+![Odoo Purchase ilovasida xarid shaklida analitik taqsimot ustunini qo‘shish.](time_materials/extra-column-analytic-distribution-option.png)
+
+Shundan so‘ng `Mahsulot qo‘shish (Add a product)` tugmasini bosing va kerakli mahsulot(lar)ni tanlang. Bir nechta
+mahsulot kiritilishi mumkin.
 
 ::: warning
 
-In order for a purchase to be properly invoiced on a sales order, the
-product on the purchase order **must** be marked as
-`Can be Expensed`, have an
-`Invoicing Policy` set to
-`Delivered quantities`, and have the
-`At cost` option selected in the
-`Re-Invoice Expenses` field on its
-product form.
+Xarid savdo buyurtmasiga to‘g‘ri bog‘lanishi va hisob-faktura yaratilishi uchun xarid buyurtmasidagi mahsulotda quyidagi
+sozlamalar bo‘lishi **shart**:
 
-![Product settings for a purchase order to be invoiced on a sales order in Odoo.](time_materials/product-form-settings-invoice-purchase.png)
-::::
+- `Xarajat qilinishi mumkin (Can be Expensed)` belgilangan bo‘lishi kerak.
+- `Hisob-faktura siyosati (Invoicing Policy)` — `Yetkazilgan miqdorlar (Delivered quantities)` deb tanlangan bo‘lishi
+  kerak.
+- `Xarajatlarni qayta hisoblash (Re-Invoice Expenses)` maydonida `Narxi bo‘yicha (At cost)` tanlangan bo‘lishi kerak.
 
-Then, select the appropriate `Analytic Distribution` associated with the sales order to which this purchase
-order is related. To do that, click the empty
-`Analytic Distribution` field to
-reveal an `Analytic` pop-up window.
+![Odoo'da xarid asosida hisob-faktura yaratilishi uchun mahsulot sozlamalari.](time_materials/product-form-settings-invoice-purchase.png)
+:::
 
-Then, from the `Departments`
-drop-down menu, select the analytic distribution associated with the
-desired sales order to be invoiced for the purchase.
+So‘ng, xarid buyurtmasi bog‘lanadigan savdo buyurtmasiga mos `Analitik taqsimot (Analytic Distribution)`ni tanlang.
+Buning uchun:
 
-![How to select the Analytic Distribution department from a purchase order in Odoo.](time_materials/analytic-drop-down-distribution.png)
+1. `Analitik taqsimot` ustunidagi bo‘sh maydonga bosing.
+2. `Analitika (Analytic)` pop-up oynasi ochiladi.
+3. `Bo‘limlar (Departments)` ochiladigan menyusidan kerakli savdo buyurtmasiga tegishli bo‘lgan analitik bo‘limni
+   tanlang.
 
-Once all the information is entered in the `Products` tab of the purchase order, confirm the order by
-clicking `Confirm Order`. Then, click
-`Receive Products` when the products
-have been received. This creates a receipt form.
+![Odoo Purchase ilovasida Analitik taqsimotni tanlash.](time_materials/analytic-drop-down-distribution.png)
+
+Mahsulotlar yorlig‘ida barcha kerakli ma'lumotlar kiritilgach, buyurtmani tasdiqlash uchun
+`Buyurtmani tasdiqlash (Confirm Order)` tugmasini bosing. Mahsulotlar qabul qilingach esa
+`Mahsulotlarni qabul qilish (Receive Products)` tugmasini bosing — bu harakat qabul qilish hujjatini (receipt form)
+yaratadi.
 
 ::: tip
 
-If any serial/lot numbers must be entered before validating the receipt
-of products, then on the receipt form, click the
-`details` icon represented by four
-horizontal lines located to the far-right of the product line.
+Agar mahsulotlar uchun seriya yoki partiya raqamlari (serial/lot numbers) kiritilishi kerak bo‘lsa, qabul qilish
+hujjatida har bir mahsulot qatorining eng o‘ngidagi `Tafsilotlar` tugmasini (to‘rt gorizontal chiziq belgisi) bosing.
 
-This reveals a `Detailed Operations`
-tab, in which the necessary `Lot/Serial
-Number(s)` and
-`Done` quantity can be added. When
-ready, click `Confirm` to confirm the
-data.
-::::
+Bu orqali `Batafsil amallar (Detailed Operations)` yorlig‘i ochiladi. Unda:
 
-Then, click `Validate` to validate
-the purchase order.
+- `Partiya/Seriya raqami (Lot/Serial Number)`ni,
+- va `Bajarilgan miqdor (Done)` ni kiriting.
 
-Next, return to the purchase order, via the breadcrumb links at the top
-of the page, and click `Create Bill`
-to create a vendor bill that can be invoiced to the customer on the
-attached sales order.
+Tayyor bo‘lgach, `Tasdiqlash (Confirm)` tugmasini bosing.
+:::
 
-![Vendor bill draft for a purchase order to be invoiced to a customer in Odoo.](time_materials/vendor-bill-draft.png)
+Keyin `Tasdiqlash (Validate)` tugmasi orqali xarid buyurtmasini yakuniy tasdiqlang.
+
+Keyingi bosqichda sahifaning yuqori qismidagi **breadcrumb** havolalari orqali xarid buyurtmasiga qayting va
+`Hisob-faktura yaratish (Create Bill)` tugmasini bosing. Bu orqali xarid buyurtmasi asosida **yetkazib beruvchidan
+olinadigan hisob-faktura** (Vendor Bill) yaratiladi va bu hujjat tegishli savdo buyurtmasi asosida mijozga hisoblanishi
+mumkin.
+
+![Odoo'da xarid buyurtmasi asosidagi yetkazib beruvchi hisob-fakturasi.](time_materials/vendor-bill-draft.png)
 
 ::: tip
 
-Make sure to enter a `Bill Date` on
-the `Vendor Bill Draft` before
-confirming. If a `Bill Date` is *not*
-entered, an error window appears, requesting that information to be
-entered before confirmation can occur.
-::::
+Hisob-fakturani tasdiqlashdan oldin, `Hisob-faktura sanasi (Bill Date)` maydonini to‘ldirishni unutmang.
 
-Then, click `Confirm` to confirm the
-vendor bill, which is then automatically added to the sales order, where
-it can be invoiced directly to the customer attached to it.
+Agar bu sana kiritilmasa, Odoo sizdan sanani kiritishni talab qiladigan xatolik oynasini ko‘rsatadi va tasdiqlash amalga
+oshmaydi.
+:::
 
-## Invoice purchase
+So‘ng, `Tasdiqlash (Confirm)` tugmasini bosing. Hisob-faktura tasdiqlangach, u avtomatik tarzda **savdo buyurtmasiga
+biriktiriladi**. Endi bu xarajatni mijozga hisob-faktura sifatida yuborish mumkin bo‘ladi.
 
-To invoice a customer for a purchase on a sales order, first
-`add the purchase to the sales
-order `, then navigate to the desired sales order in the
-`Sales` app.
+## Xarid asosida mijozga hisob-faktura yuborish
 
-On the sales order that was attached to the purchase order, the
-purchased product now has its own product line under the
-`Order Lines` tab, and it is ready to
-be invoiced.
+Mijozga **xarid asosida** hisob-faktura yuborish uchun avval
+`savdo buyurtmasiga xaridni qo‘shing`, so‘ng `Savdo` (Sales) modulida kerakli savdo buyurtmasiga o‘ting.
 
-![Purchase order product on sales order to be invoiced to customer via Odoo Sales.](time_materials/purchase-order-on-sales-order.png)
+Xarid buyurtmasi bog‘langan savdo buyurtmasida, xarid qilingan mahsulot endi `Buyurtma satrlari (Order Lines)` bo‘limida
+alohida qatorda ko‘rsatiladi va bu mahsulot hisob-faktura qilishga tayyor bo‘ladi.
 
-To invoice the customer for the purchase, simply click
-`Create Invoice`, select
-`Regular Invoice` from the
-`Create invoices` pop-up window, then
-click `Create Draft Invoice`.
+![Odoo Sales'da mijozga hisob-faktura qilish uchun tayyor mahsulot qatori.](time_materials/purchase-order-on-sales-order.png)
 
-Doing so reveals a `Customer Invoice Draft` with the newly-added purchase order product in the
-`Invoice Lines` tab.
+Mijozga xarid bo‘yicha hisob-faktura yuborish uchun, shunchaki `Hisob-faktura yaratish (Create Invoice)` tugmasini
+bosing, `Hisob-faktura turi (Create Invoice)` maydonidan `Oddiy hisob-faktura (Regular Invoice)`ni tanlang va
+`Qoralama hisob-faktura yaratish (Create Draft Invoice)` tugmasini bosing.
 
-![Customer invoice draft with purchase product attached to sales order in Odoo.](time_materials/draft-invoice-with-purchase-product.png)
+Natijada, yangi qo‘shilgan xarid mahsuloti ko‘rinadigan `Mijoz uchun qoralama hisob-faktura (Customer Invoice Draft)`
+oynasi paydo bo‘ladi.
 
-To complete the invoicing process, click `Confirm` to confirm the invoice, and then click
-`Register Payment` in the
-`Register Payment` pop-up form.
+![Odoo'da savdo buyurtmasiga bog‘langan xarid mahsuloti bilan qoralama hisob-faktura.](time_materials/draft-invoice-with-purchase-product.png)
+
+Hisob-faktura jarayonini yakunlash uchun `Tasdiqlash (Confirm)` tugmasini bosing, so‘ng
+`To‘lovni ro‘yxatga olish (Register Payment)` tugmasini bosib, pop-up shaklida chiqadigan
+`To‘lovni ro‘yxatga olish (Register Payment)` oynasida kerakli ma'lumotlarni tasdiqlang.

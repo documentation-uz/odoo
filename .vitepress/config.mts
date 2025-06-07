@@ -194,27 +194,27 @@ export default defineConfig({
                     items: [
                         {
                             text: 'Invoice based on delivered or ordered quantities',
-                            link: '/user-docs/sales/invoicing-method/invoice-based-on-delivered-or-ordered-quantities'
+                            link: '/user-docs/sales/invoicing/invoicing_policy'
                         },
                         {
                             text: 'Down payments',
-                            link: '/user-docs/sales/invoicing-method/down-payments'
+                            link: '/user-docs/sales/invoicing/down_payment'
                         },
                         {
                             text: 'Pro-forma invoices',
-                            link: '/user-docs/sales/invoicing-method/pro-forma-invoices'
+                            link: '/user-docs/sales/invoicing/proforma'
                         },
                         {
                             text: 'Invoicing based on time and materials',
-                            link: '/user-docs/sales/invoicing-method/invoicing-based-on-time-and-materials'
+                            link: '/user-docs/sales/invoicing/time_materials'
                         },
                         {
                             text: 'Invoice project milestones',
-                            link: '/user-docs/sales/invoicing-method/invoice-project-milestones'
+                            link: '/user-docs/sales/invoicing/milestone'
                         },
                         {
                             text: 'Reinvoice expenses to customers',
-                            link: '/user-docs/sales/invoicing-method/reinvoice-expenses-to-customers'
+                            link: '/user-docs/sales/invoicing/expense'
                         },
                     ]
                 },
