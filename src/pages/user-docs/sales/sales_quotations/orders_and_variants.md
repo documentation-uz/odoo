@@ -1,130 +1,108 @@
-# Product variants on quotations and sales orders
+# Taklifnomalar va savdo buyurtmalarida mahsulot variantlari
 
-Before getting into detail about how to use product variants on
-quotations and sales orders, it\'s recommended to learn about
-`../products_prices/products/variants` in
-Odoo.
+Taklifnomalar va savdo buyurtmalarida mahsulot variantlaridan qanday foydalanishni o‘rganishdan oldin, Odoo’dagi
+`../products_prices/products/variants` bo‘limidagi mahsulot variantlari haqidagi asosiy ma’lumotlar bilan tanishib
+chiqish tavsiya etiladi.
 
-Once familiarized with the basics surrounding product variants, the
-following covers how product variants can be added to quotations and
-sales orders using the *product configurator* or *order grid entry*.
-
-::: tip
-
-It should be noted that the setting is titled, *Variant Grid Entry* on
-the *Sales* app settings page, and titled, *Order Grid Entry* on product
-forms. So, be sure to keep that in mind.
-::::
-
-## Settings
-
-When working with product variants, Odoo uses the product configurator,
-by default. To add the variant grid entry option, that feature **must**
-be enabled in the Odoo *Sales* application. The variant grid entry
-option provides a pop-up window on the quotation/sales order to simplify
-the variant selection process.
-
-To enable that setting, go to
-`Sales app ‣ Configuration ‣ Settings`, and scroll to the
-`Product Catalog` section. Then,
-check the box next to the `Variant Grid
-Entry` option, and click
-`Save`.
-
-![The variant grid entry setting in the Odoo Sales application.](orders_and_variants/order-grid-entry-setting.png)
+Asosiy tushunchalar bilan tanishgandan so‘ng, quyida mahsulot variantlarini taklifnomalar va savdo buyurtmalariga qanday
+qo‘shish mumkinligi ko‘rib chiqiladi — bu *mahsulot konfiguratori* yoki *buyurtma panjarasi kirituvi* (order grid entry)
+orqali amalga oshiriladi.
 
 ::: tip
 
-Of course, the `Variants` feature
-**must** also be activated, in order to use product variants on
-quotations and sales orders.
-::::
+Shuni unutmangki, bu sozlama *Savdo* ilovasi sozlamalarida **Variant Grid Entry** deb ataladi, mahsulot formalarida esa
+**Order Grid Entry** deb nomlanadi.
 
-## Product configuration
+:::
 
-Once the `Variant Grid Entry` setting
-is enabled, both options (*Product Configurator* and *Order Grid Entry*)
-become available on every product form.
+## Sozlamalar
 
-To configure a product form to use either a product configurator or
-variant grid entry, start by navigating to
-`Sales app ‣ Products ‣ Products` to view all the products in the database.
+Odoo mahsulot variantlari bilan ishlashda odatiy holatda *mahsulot konfiguratori*dan foydalanadi. Ammo agar siz *variant
+panjarasi kirituvi* (variant grid entry) funksiyasidan foydalanmoqchi bo‘lsangiz, bu funksiyani alohida yoqish kerak.
 
-Then, select the desired product to configure, or click
-`New`, to create a new product from
-scratch. Once on the product form, click into the
-`Attributes \& Variants` tab, where
-product variants can be viewed, modified, and added.
+Variant panjarasi kirituvi — taklifnoma yoki savdo buyurtmasida variant tanlash jarayonini soddalashtiruvchi pop-up
+oynani taqdim etadi.
 
-At the bottom of the `Attributes \& Variants` tab, there is a `Sales Variant
-Selection` section with two options:
-`Product Configurator` and
-`Order Grid
-Entry`.
+Bu sozlamani yoqish uchun quyidagicha harakat qiling:
+
+`Savdo ilovasi ‣ Konfiguratsiya ‣ Sozlamalar` yo‘liga o‘ting va `Mahsulot katalogi` (`Product Catalog`) bo‘limigacha
+pastga tushing. So‘ng `Variant Grid Entry` opsiyasi yonidagi belgini belgilang va `Saqlash` (`Save`) tugmasini bosing.
+
+![Odoo Sales ilovasidagi variant grid entry sozlamasi.](orders_and_variants/order-grid-entry-setting.png)
 
 ::: tip
 
-It should be noted that these options **only** appear if at least two
-values of an attribute have been added to the record.
-::::
+Albatta, mahsulot variantlaridan foydalanish uchun `Variantlar` (`Variants`) funksiyasi **ham** faollashtirilgan
+bo‘lishi kerak.
 
-![Sales variant selection options on the attributes and variants tab on product form.](orders_and_variants/attributes-variants-tab-selection-options.png)
+:::
 
-These options determine which method is used when adding product
-variants to quotations or sales orders.
+## Mahsulot konfiguratsiyasi
 
-The `Product Configurator` provides a
-pop-up window that neatly displays all the available product variants
-for that particular product when it\'s added to a quotation. However,
-only one variant can be selected/added at a time.
+`Variant Grid Entry` sozlamasi yoqilgandan so‘ng, har bir mahsulot formasida ikkita variant — *Mahsulot konfiguratori* (
+`Product Configurator`) va *Buyurtma panjarasi kirituvi* (`Order Grid Entry`) — mavjud bo‘ladi.
 
-The `Order Grid Entry` provides the
-same information as the `Product
-Configurator` in a table layout,
-allowing the user to select larger numbers of unique product variants,
-and add them to a quotation/sales order, in a single view.
+Mahsulotni ushbu usullardan biri bilan sozlash uchun quyidagicha harakat qiling:
 
-## Product configurator
+`Savdo ilovasi ‣ Mahsulotlar ‣ Mahsulotlar` (`Sales app ‣ Products ‣ Products`) bo‘limiga o‘ting va bazadagi barcha
+mahsulotlarni ko‘ring.
 
-The product configurator feature appears as a
-`Configure` pop-up window, as soon as
-a product with (at least two) variants is added to a quotation or sales
-order, but **only** if the `Product Configurator` option is selected on its product form.
+So‘ng, kerakli mahsulotni tanlang yoki `Yangi` (`New`) tugmasini bosib yangi mahsulot yarating. Mahsulot formasida
+`Xususiyatlar va variantlar` (`Attributes & Variants`) tabiga o‘ting — bu yerda mahsulot variantlarini ko‘rish,
+o‘zgartirish va qo‘shish mumkin.
 
-![The product configurator pop-up window that appears on a quotation or sales order.](orders_and_variants/product-configurator-window.png)
+`Xususiyatlar va variantlar` tabining pastki qismida `Savdo variantini tanlash` (`Sales Variant Selection`) bo‘limi
+mavjud. Bu yerda quyidagi ikkita variantdan birini tanlash mumkin:
+
+- `Mahsulot konfiguratori` (`Product Configurator`)
+- `Buyurtma panjarasi` (`Order Grid Entry`)
 
 ::: tip
 
-This `Configure` pop-up window also
-appears if the `Order Grid Entry`
-setting is **not** activated, as it is the default option Odoo uses when
-dealing with product variants on quotations and/or sales orders.
-::::
+Bu tanlov variantlari **faqat** mahsulotga kamida ikkita xususiyat qiymati (attribute value) qo‘shilgan bo‘lsa
+ko‘rinadi.
 
-The `Product Configurator` option
-lets salespeople choose exactly which product variant to add to the
-quotation or sales order using a format similar to online shopping.
+:::
 
-## Order grid entry
+![Mahsulot formasining “Xususiyatlar va variantlar” tabida savdo variantini tanlash.](orders_and_variants/attributes-variants-tab-selection-options.png)
 
-The order grid entry feature appears as a
-`Choose Product Variants` pop-up
-window, as soon as a product with (at least two) variants is added to a
-quotation or sales order, but **only** if the
-`Order Grid Entry` option is selected
-on its product form.
+Bu variantlar mahsulotni taklifnomalar yoki savdo buyurtmalariga qo‘shishda qaysi usul ishlatilishini belgilaydi.
 
-![The choose product variants pop-up window that appears on a quotation in Odoo.](orders_and_variants/choose-product-variants-popup.png)
+- `Mahsulot konfiguratori` — mahsulot taklifnomaga qo‘shilganda barcha mavjud variantlarni ko‘rsatadigan pop-up oynani
+  ochadi. Biroq, bir vaqtning o‘zida faqat **bitta** variantni tanlash mumkin.
 
-The `Choose Product Variants` pop-up
-window features all the variant options for that particular product.
-From this pop-up window, the salesperson can designate how many of each
-variant they\'d like to add to the quotation/sales order at once.
+- `Buyurtma panjarasi` — shu variantlarni jadval ko‘rinishida taqdim etadi. Bu usul bir vaqtning o‘zida bir nechta
+  mahsulot variantlarini tanlash va taklifnomaga qo‘shish imkonini beradi.
 
-When all the desired quantities and variants have been selected, the
-salesperson simply clicks `Confirm`,
-and those orders are instantly added to the quotation/sales order in the
-`Order Lines` tab.
+## Mahsulot konfiguratori
 
-![Populated order lines tab after order grid entry has been chosen to select products.](orders_and_variants/order-grid-entry-order-lines-tab.png)
+Mahsulot konfiguratori funksiyasi taklifnoma yoki savdo buyurtmasiga kamida ikkita varianti bo‘lgan mahsulot
+qo‘shilganda avtomatik tarzda `Sozlash` (`Configure`) pop-up oynasini ochadi. Biroq bu faqat mahsulot formasida
+`Mahsulot konfiguratori` (`Product Configurator`) opsiyasi tanlangan bo‘lsa yuz beradi.
 
+![Taklifnoma yoki savdo buyurtmasida mahsulot konfiguratori oynasi.](orders_and_variants/product-configurator-window.png)
+
+::: tip
+
+Agar `Buyurtma panjarasi` (`Order Grid Entry`) sozlamasi **faol bo‘lmasa**, ushbu `Sozlash` oynasi avtomatik tarzda
+ochiladi, chunki bu Odoo tomonidan mahsulot variantlari bilan ishlashda **standart (default)** usul sifatida tanlanadi.
+:::
+
+`Mahsulot konfiguratori` opsiyasi savdo vakillariga onlayn do‘konlarga o‘xshash interfeys orqali aynan qaysi mahsulot
+variantini taklifnomaga yoki buyurtmaga qo‘shishni tanlash imkonini beradi.
+
+## Buyurtma panjarasi (Order Grid Entry)
+
+`Buyurtma panjarasi` funksiyasi taklifnoma yoki savdo buyurtmasiga kamida ikkita varianti bo‘lgan mahsulot qo‘shilganda
+avtomatik tarzda `Mahsulot variantlarini tanlang` (`Choose Product Variants`) nomli pop-up oynasini ochadi. Biroq bu
+faqat mahsulot formasida `Buyurtma panjarasi` (`Order Grid Entry`) opsiyasi tanlangan bo‘lsa yuz beradi.
+
+![Odoo’da taklifnomaga mahsulot qo‘shilganda ochiladigan mahsulot variantlari oynasi.](orders_and_variants/choose-product-variants-popup.png)
+
+`Mahsulot variantlarini tanlang` oynasida ushbu mahsulotga tegishli barcha variantlar ko‘rsatiladi. Savdo vakili ushbu
+oynada har bir variantdan nechta miqdorda qo‘shishni xohlayotganini belgilashi mumkin.
+
+Barcha kerakli miqdor va variantlar tanlangach, savdo vakili shunchaki `Tasdiqlash` (`Confirm`) tugmasini bosadi, va shu
+zahoti tanlangan variantlar `Buyurtma qatorlari` (`Order Lines`) yorlig‘iga qo‘shiladi.
+
+![Buyurtma panjarasi orqali mahsulotlar tanlanganidan keyin hosil bo‘lgan buyurtma qatorlari.](orders_and_variants/order-grid-entry-order-lines-tab.png)

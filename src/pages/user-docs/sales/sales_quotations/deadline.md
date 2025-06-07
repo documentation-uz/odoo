@@ -1,56 +1,43 @@
-# Quotation deadlines
+# Taklifnoma muddati
 
-In the Odoo *Sales* application, it is possible to set deadlines on
-sales quotations. Doing so encourages customers to act quickly during
-sales negotiations, for they might fear for missing out on a good deal.
-As well, deadlines also can also act as protection for a company in case
-an order has to be fulfilled at a price that is no longer profitable for
-the business.
+Odoo’ning *Savdo* ilovasida savdo taklifnomalariga amal qilish muddati (deadline) belgilash imkoniyati mavjud. Bu
+mijozlarni tezroq harakat qilishga undaydi, chunki ular yaxshi shartni boy berishdan cho‘chishlari mumkin. Shuningdek,
+muddati tugagan takliflar kompaniyani zararli shartnomalarni bajarish majburiyatidan himoya qiladi.
 
-## Quotation expiration
+## Taklifnoma amal qilish muddati
 
-In Odoo *Sales*, there\'s the option to add an expiration date to a
-quotation.
+Odoo *Savdo* ilovasida har bir taklifnomaga amal qilish (muddati tugash) sanasini belgilash mumkin.
 
-To add an expiration date to a quotation, navigate to
-`Sales app`, and select a
-desired quotation, or create a new one by clicking
-`New`.
+Buning uchun `Savdo ilovasi`ga o‘ting, mavjud taklifnomani tanlang yoki `Yangi` (`New`) tugmasini bosib yangi taklifnoma
+yarating.
 
-On the quotation form, click the `Expiration` field to reveal a pop-up calendar. From this pop-up
-calendar, select the desired month and date as the expiration date for
-the quotation.
+Taklifnoma formasida `Amal qilish muddati` (`Expiration`) maydoniga bosing — shunda kalendar ochiladi. Shu kalendardan
+kerakli oy va sanani tanlang.
 
-![The expiration field on a standard quotation form in Odoo Sales.](deadline/quotation-deadlines-expiration-field.png)
+![Odoo Sales’dagi standart taklifnoma formasida amal qilish muddati maydoni.](deadline/quotation-deadlines-expiration-field.png)
 
 ::: tip
 
-By clicking the `Preview` button on a
-quotation, Odoo clearly displays when that specific offer expires.
+Taklifnomadagi `Ko‘rish` (`Preview`) tugmasini bosganingizda, mijoz taklifnoma qachon muddati tugashini aniq ko‘ra
+oladi.
 
-![How customers will see deadlines on Odoo Sales.](deadline/quotation-deadlines-preview.png)
-::::
+![Odoo Sales’da mijoz taklifnoma muddatini qanday ko‘radi.](deadline/quotation-deadlines-preview.png)
 
-## Quotation template expiration
+:::
 
-The Odoo *Sales* application also makes it possible to add a deadline
-expiration date to quotation templates.
+## Taklifnoma shablonining amal qilish muddati
 
-To add a deadline expiration date to a quotation template, navigate to
-`Sales app ‣
-Configuration ‣ Quotation Templates`, and either select the desired quotation template
-to which a deadline should be added, or click `New` to build a new quotation template from scratch.
+Odoo’ning *Savdo* ilovasi taklifnoma shablonlariga ham amal qilish (muddati tugash) sanasini belgilash imkonini beradi.
 
-On the quotation template form, add a specific number of days to the
-`Quotation expires
-after` field, located beneath the
-quotation template name. The number of days represents how long the
-quotation will be valid for, before it expires.
+Taklifnoma shabloniga amal qilish muddatini qo‘shish uchun quyidagi yo‘ldan o‘ting:  
+`Savdo ilovasi ‣ Konfiguratsiya ‣ Taklifnoma shablonlari`.  
+Shundan so‘ng, kerakli taklifnoma shablonini tanlang yoki `Yangi` (`New`) tugmasini bosib yangi shablon yarating.
 
-![The quotation expires after field on a quotation template form in Odoo Sales.](deadline/quotation-deadlines-expires-after.png)
+Shablon formasida, taklifnoma nomining pastki qismida joylashgan `Taklifnoma amal qiladi (kunlar)` (
+`Quotation expires after`) maydoniga kerakli kunlar sonini kiriting. Bu qiymat taklifnoma mijozga yuborilgandan keyin
+nechta kun davomida amal qilishini belgilaydi.
 
-Then, whenever that specific quotation template is used in a quote, an
-expiration date is automatically calculated, based on the number of days
-designated above. However, this date can be overwritten before sending
-the quotation to the customer.
+![Odoo Sales’dagi taklifnoma shablonidagi “amal qilish muddati” maydoni.](deadline/quotation-deadlines-expires-after.png)
 
+Shundan so‘ng, ushbu shablon asosida taklifnoma yaratilganida, avtomatik ravishda amal qilish muddati yuqorida
+kiritilgan kunlar asosida hisoblab chiqiladi. Biroq, ushbu sanani mijozga yuborishdan oldin qo‘lda o‘zgartirish mumkin.

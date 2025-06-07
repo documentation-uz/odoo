@@ -1,328 +1,249 @@
-# PDF quote builder
+# PDF taklifnoma quruvchisi
 
-The *PDF Quote Builder* in Odoo *Sales* provides the opportunity to send
-customers a fully customized PDF file for quotes, showcasing the company
-and products, with various information and design elements, instead of
-just showing the price and total.
+Odoo *Sales* ilovasidagi *PDF Taklifnoma Quruvchisi* mijozlarga to‘liq moslashtirilgan PDF taklifnoma yuborish
+imkoniyatini beradi. Bu PDF kompaniya va mahsulotlarni turli ma'lumotlar va dizayn elementlari bilan namoyish qiladi —
+faqatgina narx va umumiy qiymat emas.
 
-The PDF Quote Builder groups header pages, product descriptions, the
-price(s), and footer pages to create a detailed quote. It can also
-inject dynamic texts or custom notes in the PDF to personalize the offer
-for the customer.
+**PDF Taklifnoma Quruvchisi** sarlavha sahifalari, mahsulot tavsiflari, narx(lar), va quyi sahifalarni guruhlab,
+batafsil taklifnoma hosil qiladi. Shuningdek, u PDF fayl ichiga dinamik matnlar yoki maxsus eslatmalarni kiritish
+imkonini beradi, bu esa taklifni mijoz uchun shaxsiylashtiradi.
 
-Having a customized PDF in quotes provides a heightened conclusion to
-the shopping experience for customers, and adds an elegant level of
-professionalism to a company.
-
+Taklifnomalarda moslashtirilgan PDF'lar mavjud bo‘lishi xarid qilish tajribasini yanada yuqori darajaga olib chiqadi va
+kompaniyaga jiddiylik va professionallik baxsh etadi.
 
 ::: tip
 
-It is recommended to edit PDF forms with Adobe software. The form fields
-on the header and footer PDF templates are necessary to get dynamic
-values with Odoo.
-::::
+PDF shakllarni tahrirlash uchun Adobe dasturidan foydalanish tavsiya etiladi. Sarlavha va quyi sahifalardagi PDF shablon
+form maydonlari Odoo bilan dinamik qiymatlarni olish uchun zarur hisoblanadi.
+:::
 
-## Configuration
+## Sozlamalar
 
-In order to add custom PDF files for quotes, the
-`PDF Quote builder` feature *must* be
-configured.
+Taklifnomalar uchun maxsus PDF fayllarni qo‘shish uchun, `PDF Taklifnoma Quruvchisi` funksiyasi **yoqilgan bo‘lishi
+kerak**.
 
-To do that, navigate to
-`Sales app ‣ Configuration ‣ Settings`. Then, on the `Settings` page, scroll to the
-`Quotations & Orders` section, and
-locate the `PDF Quote builder`
-feature.
+Buni sozlash uchun quyidagilarni bajaring:
 
-## Add PDF as Header/Footer
+1. `Savdo (Sales)` ilovasiga o‘ting.
+2. `Konfiguratsiya ‣ Sozlamalar` (`Configuration ‣ Settings`) bo‘limini oching.
+3. Sozlamalar sahifasida `Taklifnomalar va Buyurtmalar` (`Quotations & Orders`) bo‘limiga pastga tushing.
+4. U yerdan `PDF Taklifnoma Quruvchisi` (`PDF Quote builder`) funksiyasini toping va uni yoqing.
 
-In Odoo *Sales*, it\'s possible to add a custom PDF that can be used
-either as a header or a footer. When the PDF quote builder is activated
-in a quotation, you can then select as many headers and footers as you
-wish to use, these PDF will then also be inserted in the final PDF.
+## PDF faylini Header/Footer sifatida qo‘shish
 
-To add a custom PDF as header or footer, start by navigating to
-`Sales app ‣
-Configuration ‣ Headers/Footers`. From this page, either click
-`New` or `Upload`.
+Odoo **Sales** ilovasida maxsus PDF faylini sarlavha (header) yoki pastki qism (footer) sifatida qo‘shish mumkin. PDF
+taklifnoma Quruvchisi faollashtirilgandan so‘ng, siz xohlagancha sarlavhalar va footerni tanlashingiz mumkin — ushbu
+PDF fayllar yakuniy taklifnoma PDF hujjatiga qo‘shiladi.
 
-Clicking `Upload` instantly provides
-the opportunity to upload the desired document. Then, the document can
-be further configured on the document card, or by clicking the
-`fa-ellipsis-v`
-`(vertical ellipsis)` icon in the top
-right corner of the document card, and then clicking
-`Edit`.
+Maxsus PDF faylini header yoki footer sifatida qo‘shish uchun quyidagilarni bajaring:
 
-Clicking `New` reveals a blank
-documents form, in which the desired PDF can be uploaded via the
-`Upload your file` button on the
-form, located in the `File Content`
-field.
+1. `Savdo ilovasi (Sales app) ‣ Konfiguratsiya ‣ Header/Footer` bo‘limiga o‘ting.
+2. Bu sahifada `Yangi` (`New`) tugmasini bosing yoki `Yuklash` (`Upload`) tugmasidan foydalaning.
 
-Various information and configurations related to the uploaded document
-can be modified here.
+**Upload** tugmasini bosganingizda darhol hujjat yuklash imkoniyati paydo bo‘ladi. So‘ngra hujjat karta ko‘rinishida
+yoki yuqori o‘ng burchakdagi `⋮` (uch nuqta) tugmasini bosib, `Tahrirlash` (`Edit`) orqali sozlanadi.
 
-The first field on the documents form is for the
-`Name` of the document, and it is
-grayed-out (not clickable) until a document is uploaded. Once a PDF has
-been uploaded, the `Name` field is
-auto-populated with the name of the PDF, and it can then be edited.
+**Yangi** (`New`) tugmasini bosganingizda bo‘sh hujjat shakli ochiladi. Shu yerda siz `Fayl tarkibi` (`File Content`)
+maydonida joylashgan `Faylni yuklang` (`Upload your file`) tugmasi orqali PDF faylni yuklaysiz.
 
-Then, in the `Document Type` field,
-click the drop-down menu, and select either: `Header`, or `Footer` to
-define whether these files would be selectable to be at the beginning or
-at the end of your quote.
+Shuningdek, quyidagi maydonlar mavjud:
 
-Under this, in the `Quotation Templates` section, this PDF can be restricted quotation templates
-only.
+- **Nom (Name)**: PDF yuklangandan so‘ng avtomatik to‘ldiriladi va o‘zgartirish mumkin bo‘ladi.
+- **Hujjat turi (Document Type)**: Tanlovdan `Header` yoki `Footer` ni tanlang. Bu sizning PDF faylingiz taklifnomada
+  boshida yoki oxirida chiqishini belgilaydi.
+- **Taklifnoma shablonlari (Quotation Templates)**: Ushbu PDF faqat ma’lum bir shablonlar uchun cheklanishi mumkin.
 
 ::: tip
-
-Alternatively, you can also navigate to `Sales app ‣ Configuration ‣
-Quotation Templates`, select a
-template and directly `Add` or
-`Upload` a PDF to it in the
-`Quote Builder` tab.
-::::
-
-Lastly, beside the `File Content`
-field, you have the possibility to
-`Configure dynamic fields`.
-
-## Dynamic text in PDFs
-
-While creating custom PDFs for quotes, use *dynamic text* for Odoo to
-auto-fill the PDF content with information related to the quote from the
-Odoo database, like names, prices, etc.
-
-Dynamic text values are form components (text inputs) that can be added
-in a PDF file, and Odoo automatically fills those values in with
-information related to the quote.
-
-### Dynamic text values
-
-Below are common dynamic text values used in custom PDFs that are
-already mapped to the correct fields, and what they represent.
-
-For headers and footers PDF:
-
-- `name`: Sales Order Reference
-- `partner_id__name`: Customer Name
-- `user_id__name`: Salesperson Name
-- `amount_untaxed`: Untaxed Amount
-- `amount_total`: Total Amount
-- `delivery_date`: Delivery Date
-- `validity_date`: Expiration Date
-- `client_order_ref`: Customer
-  Reference
-
-For product PDF:
-
-- `description`: Product Description
-- `quantity`: Quantity
-- `uom`: Unit of Measure (UoM)
-- `price_unit`: Price Unit
-- `discount`: Discount
-- `product_sale_price`: Product List
-  Price
-- `taxes`: Taxes name joined by a
-  comma ([,])
-- `tax_excl_price`: Tax Excluded
-  Price
-- `tax_incl_price`: Tax Included
-  Price
-
-After uploading a PDF, you can then
-`Configure dynamic fields`. This will
-allow you to map any field name found in your PDF to the field you want
-to show by writing down any existing path. Headers and footers starts
-from the current `sale_order` model,
-whereas product document follows their path from their
-`sale_order_line`. Leaving that path
-empty allows you to fill a custom notes, directly from the specific
-quote that requires it.
-
-::: example
-When a PDF is built, it\'s best practice to use common dynamic text
-values (`name` and
-`partner_id_name`). When uploaded
-into the database, Odoo auto-populates those fields with the information
-from their respective fields.
-
-In this case, Odoo would auto-populate the Sales Order Reference in the
-`name` dynamic text field, and the
-Customer Name in the `partner_id_name` field.
-
-![PDF quote being built using common dynamic placeholders.](pdf_quote_builder/pdf-quote-builder-sample.png)
+Bundan tashqari, siz `Sales app ‣ Configuration ‣ Quotation Templates` bo‘limiga o‘tib, shablonni tanlab, bevosita
+`Quote Builder` tabida `Yuklash` yoki `Qo‘shish` orqali PDF qo‘shishingiz mumkin.
 :::
 
-Once the PDF file(s) are complete, save them to the computer\'s hard
-drive, and proceed to upload them to Odoo via
-`Sales app ‣ Configuration ‣ Headers/Footers`.
+Eng so‘ngida, `Fayl tarkibi` (`File Content`) maydoni yonida `Dinamik maydonlarni sozlash` (`Configure dynamic fields`)
+opsiyasi mavjud.
 
-::: example
-When uploading PDF containing the form field
-`invoice_partner_country`, which is
-an information available in the sales order, configure the
-`path` of the
-`Form Field Name` to: -
-`partner_invoice_id.country_id.name`
-for a header or footer document -
-`order_id.partner_invoice_id.country_id.name` for a product document fills the form with the invoice
-partner country\'s name when the PDF is built.
-:::
+## PDF fayllarda dinamik matn
 
-::: example
-When uploading any PDF containing the form field
-`custom_note`, leaving the
-`path` empty allows the seller to
-write down any note where that form field is in that document and shown
-when the PDF is built.
-:::
+Maxsus taklifnoma (quotation) PDF fayllarini yaratishda, *dinamik matn* dan foydalaning. Bu Odoo bazasidagi ma’lumotlar
+asosida PDF fayl tarkibini avtomatik to‘ldirish imkonini beradi — masalan, mijoz nomi, narxlar va boshqa tafsilotlar.
 
-## Add PDF to product
+Dinamik matn qiymatlari — bu PDF faylga qo‘shiladigan forma komponentlari (matn kiritish maydonchalari) bo‘lib, Odoo bu
+maydonlarni taklifnomaga tegishli ma’lumotlar bilan avtomatik to‘ldiradi.
 
-In Odoo *Sales*, it\'s also possible to add a custom PDF to a product
-form. When a PDF is added to a product, and that product is used in a
-quotation, that PDF is also inserted in the final PDF.
+### Dinamik matn qiymatlari
 
-To add a custom PDF to a product, start by navigating to
-`Sales app ‣ Products
-‣ Products`, and select the
-desired product to add a custom PDF to.
+Quyida maxsus PDF fayllarda ishlatiladigan keng tarqalgan dinamik matn qiymatlari berilgan. Bu qiymatlar Odoo’da kerakli
+maydonlarga moslab qo‘yilgan va quyidagilarni ifodalaydi.
+
+#### Header va footer PDF fayllar uchun:
+
+- `name`: Savdo buyurtmasi raqami
+- `partner_id__name`: Mijozning ismi
+- `user_id__name`: Savdo vakilining ismi
+- `amount_untaxed`: Soliqsiz umumiy summa
+- `amount_total`: Jami summa
+- `delivery_date`: Yetkazib berish sanasi
+- `validity_date`: Amal qilish muddati
+- `client_order_ref`: Mijozning buyurtma raqami
+
+#### Mahsulot PDF fayllari uchun:
+
+- `description`: Mahsulot tavsifi
+- `quantity`: Miqdori
+- `uom`: O‘lchov birligi (UoM)
+- `price_unit`: Birlik narxi
+- `discount`: Chegirma
+- `product_sale_price`: Mahsulotning ro‘yxat narxi
+- `taxes`: Soliqlar nomi (vergullar bilan ajratilgan)
+- `tax_excl_price`: Soliqsiz narx
+- `tax_incl_price`: Soliqli narx
+
+PDF yuklangach, `Dinamik maydonlarni sozlash` (Configure dynamic fields) tugmasi orqali, fayldagi istalgan form maydonni
+Odoo modelidagi kerakli maydonga bog‘lash mumkin.
+
+Header/footer fayllari uchun asosiy model — `sale_order`, mahsulot fayllari uchun esa `sale_order_line`.
+
+Agar yo‘l (`path`) bo‘sh qoldirilsa, sotuvchi tomonidan taklifnomada to‘g‘ridan-to‘g‘ri matn yozish imkoniyati paydo
+bo‘ladi.
+
+#### 🧪 Misol:
+
+PDF faylga quyidagi keng tarqalgan dinamik maydonlar qo‘shilgan:
+
+- `name` — Odoo avtomatik ravishda savdo buyurtmasi raqamini kiritadi.
+- `partner_id_name` — Mijoz nomi avtomatik tarzda to‘ldiriladi.
+
+![PDF misol.](pdf_quote_builder/pdf-quote-builder-sample.png)
+
+#### 🧪 Misol:
+
+Agar `invoice_partner_country` form maydoni bo‘lgan PDF yuklansa, uni quyidagicha yo‘llar bilan bog‘lash mumkin:
+
+- **Header/Footer uchun**: `partner_invoice_id.country_id.name`
+- **Mahsulot fayli uchun**: `order_id.partner_invoice_id.country_id.name`
+
+Bu orqali PDF faylga mijozning invoicing (hisob-faktura) mamlakati nomi avtomatik tarzda chiqadi.
+
+#### 🧪 Misol:
+
+Agar PDF faylda `custom_note` degan form maydon bo‘lsa va yo‘l (`path`) bo‘sh qoldirilsa, sotuvchi ushbu joyda istalgan
+maxsus izohni taklifnomaga yozib qo‘yishi mumkin.
+
+## Mahsulotga PDF qo‘shish
+
+Odoo *Sales* modulida mahsulot kartasiga maxsus PDF fayl qo‘shish imkoniyati mavjud. Agar mahsulotga PDF biriktirilgan
+bo‘lsa va bu mahsulot taklifnomaga qo‘shilsa, u PDF ham taklifnoma PDF fayliga avtomatik tarzda kiritiladi.
+
+### Mahsulotga PDF biriktirish
+
+Buning uchun quyidagicha yo‘l tuting:
+
+`Savdo (Sales)` ilovasiga kirib, `Mahsulotlar (Products)` > `Mahsulotlar (Products)` bo‘limiga o‘ting. So‘ng, kerakli
+mahsulotni tanlang.
 
 ::: tip
+Hujjatni mahsulotga emas, balki mahsulot varianti (Product Variant) ga ham biriktirish mumkin. Agar bir vaqtning o‘zida
+mahsulotga va uning variantiga fayllar biriktirilgan bo‘lsa, **faqat mahsulot variantidagi hujjatlar ko‘rsatiladi**.
 
-A document could also be added to a product variant, instead of a
-product. If there are documents on a product *and* on its variant,
-**only** the documents in the variant are shown.
-
-To add a custom document to a product variant, navigate to
-`Sales app ‣
-Products ‣ Product Variants`.
-Select the desired variant, click the `Documents` smart button, and proceed to upload the custom document
-to the specific product variant.
-::::
-
-On the product page, click the `Documents` smart button at the top of the page to navigate to a
-`Documents` page for that product,
-where files related to that product can be uploaded. From this page,
-either click `New` or
-`Upload`.
-
-![The Documents smart button on a product form in Odoo Sales.](pdf_quote_builder/documents-smart-button.png)
-
-Clicking `Upload` opens the
-computer\'s local file directory. An uploaded document can be further
-configured on the document card, or by clicking the
-`fa-ellipsis-v`
-`(vertical ellipsis)` icon in the
-top-right corner of the document card, and then clicking
-`Edit`.
-
-Clicking `New` reveals a blank
-documents form, in which the desired PDF can be uploaded via the
-`Upload your file` button on the
-form, located in the `File Content`
-field.
-
-### PDF form configuration
-
-![A standard document form with various fields for a specific product in Odoo Sales.](pdf_quote_builder/blank-document-form.png)
-
-The first field on the documents form is for the
-`Name` of the document, and it is
-grayed-out (not clickable) until a document is uploaded. Once a PDF has
-been uploaded, the `Name` field is
-auto-populated with the name of the PDF, and it can then be edited.
-
-Prior to uploading a document, there\'s the option to designate whether
-the document is a `File` or
-`URL` from the
-`Type` drop-down field menu.
-
-![A standard document form with an uploaded pdf in Odoo Sales.](pdf_quote_builder/document-form-uploaded-pdf.png)
-
-::: tip
-
-If a PDF is uploaded, the `Type`
-field is auto-populated to `File`,
-and it cannot be modified.
-::::
-
-Then, in the `Sales` section, in the
-`Visible at` field, click the
-drop-down menu, and select either: `On quotation`, `On confirmed order`, or `Inside quote pdf`.
-
-- `Quotation`: the document is sent
-  to (and accessible by) customers at any time.
-- `Confirmed order`: the document is
-  sent to customers upon the confirmation of an order. This is best for
-  user manuals and other supplemental documents.
-- `Inside quote`: the document is
-  included in the PDF of the quotation, between the header pages and the
-  `Pricing` section of the quote.
-
-::: example
-When the `Inside quote` option for
-the `Visible at` field is chosen, and
-the custom PDF file, [Corner Desk.pdf] is uploaded, the PDF
-is visible on the quotation in the *customer portal* under the
-`Documents` field.
-
-![Sample of an uploaded pdf with the on quote option chosen in Odoo Sales.](pdf_quote_builder/pdf-on-quote-sample.png)
+Mahsulot variantiga hujjat qo‘shish uchun:  
+`Sales` ilovasi > `Products` > `Product Variants` bo‘limiga o‘ting. So‘ng, kerakli variantni tanlang va yuqoridagi
+`Hujjatlar (Documents)` tugmasini bosib, fayl yuklang.
 :::
 
-Beside the `File Content` field, you
-have the possibility to `Configure dynamic fields`. When doing so, remember that the starting model is the
-`sale_order_line`, unlike for headers
-and footers that start from the `sale_order`.
+### PDF hujjatni yuklash
 
-Lastly, in the `E-Commerce` section,
-decide whether or not to `Publish on Website` so that the PDF appears on the product page in the
-online store.
+Mahsulot sahifasida yuqorida joylashgan `Hujjatlar (Documents)` smart tugmasini bosing. Bu sizni mahsulotga tegishli
+hujjatlar sahifasiga olib boradi.
 
-::: example
-When the `Publish on Website` option
-is enabled, a link to the uploaded document, [Corner
-Desk.pdf], appears on the product\'s page in the online
-store.
+Bu sahifada quyidagi amallarni bajarish mumkin:
 
-It appears beneath a `Documents`
-heading, with a link showcasing the name of the uploaded document.
+- `Yangi (New)` tugmasi: bo‘sh hujjat shakli ochiladi.
+- `Yuklash (Upload)` tugmasi: kompyuterdan fayl yuklanadi.
 
-> ![Showing a link to an uploaded document on a product page using Odoo Sales.](pdf_quote_builder/show-product-page.png)
-:::
+![Mahsulot kartasidagi Hujjatlar tugmasi.](pdf_quote_builder/documents-smart-button.png)
 
-## PDF quote
+#### Faylni tahrirlash
 
-On a sales order, in the `Quote Builder` tab, select additional documents to be merged into the
-final PDF. If a selected document has custom fields, they appear as
-editable text boxes to be filled in.
+`Upload` tugmasi bosilgach, fayl tanlash oynasi ochiladi. Fayl yuklangach, uni tahrirlash uchun hujjat kartasining
+yuqori o‘ng burchagidagi `⋮ (uch nuqta)` belgisi ustiga bosing va `Tahrirlash (Edit)` ni tanlang.
 
-![Selectable quotation headers and footers under the Quote Builder section in a quotation.](pdf_quote_builder/quote-builder-headers.png)
+Agar `New` tugmasi bosilsa, bo‘sh shakl ochiladi. Bu yerda `Fayl mazmuni (File Content)` qismida
+`Faylingizni yuklang (Upload your file)` tugmasi orqali PDF fayl yuklanadi.
 
-Once a quote with a pre-configured PDF has been confirmed, Odoo provides
-the option to print the confirmed quote to check for errors, or to keep
-for records.
+### PDF shaklini sozlash
 
-To print the PDF quote, navigate to the confirmed quote, and click the
-`⚙️ (gear)` icon to reveal a
-drop-down menu. From this drop-down menu, select
-`Print`, then select
-`PDF Quote`.
+![Odoo Sales'dagi mahsulot uchun hujjat shakli.](pdf_quote_builder/blank-document-form.png)
 
-![Print pdf quote option on drop-down menu located on confirmed sales order in Odoo Sales.](pdf_quote_builder/drop-down-print-pdf.png)
+Hujjat shaklidagi birinchi maydon — bu hujjatning `Nomi (Name)` bo‘lib, fayl yuklanmaguncha u faollashtirilmagan (
+tahrirlab bo‘lmaydi). PDF fayl yuklangach, `Name` maydoni avtomatik to‘ldiriladi va keyinchalik uni o‘zgartirish mumkin
+bo‘ladi.
 
-Doing so instantly downloads the PDF quote. When opened, the PDF quote,
-along with the configured product PDF that was set to be visible inside
-the quote, can be viewed and printed.
+Fayl yuklanishidan oldin, hujjatning turi `File` (Fayl) yoki `URL` (Havola) ekanligini `Type` ochiluvchi menyusidan
+belgilash mumkin.
+
+![Yuklangan PDF bilan hujjat shakli.](pdf_quote_builder/document-form-uploaded-pdf.png)
 
 ::: tip
+Agar PDF fayl yuklansa, `Type` maydoni avtomatik tarzda `File` deb belgilanadi va uni o‘zgartirib bo‘lmaydi.
+:::
 
-Download these `PDF quote builder examples
-` or download `sample quotation
-` for added reference.
-::::
+### Ko‘rinish joyini tanlash
 
+So‘ngra, `Sales` bo‘limidagi `Visible at` maydonidan quyidagi variantlardan birini tanlang:
+
+- `On quotation` – Hujjat har doim mijozlar uchun mavjud bo‘ladi.
+- `On confirmed order` – Hujjat faqat buyurtma tasdiqlangach yuboriladi (foydalanuvchi qo‘llanmalari, ilovalar uchun
+  mos).
+- `Inside quote pdf` – Hujjat taklifnoma PDF fayliga kiritiladi (sarlavha sahifalari va narxlar qismi orasida
+  joylashadi).
+
+::: misol
+Agar `Visible at` maydonida `Inside quote` tanlansa va [Corner Desk.pdf] nomli PDF fayl yuklansa, ushbu fayl mijoz
+portalida taklifnoma tarkibida `Documents` qismida ko‘rinadi.
+
+![Quote fayliga joylangan PDF namunasi.](pdf_quote_builder/pdf-on-quote-sample.png)
+:::
+
+### Dinamik maydonlar
+
+`File Content` maydoni yonidagi `Configure dynamic fields` tugmasi orqali, dinamik maydonlarni sozlash mumkin. Esda
+tuting, mahsulotga biriktirilgan PDF fayllarda model yo‘li `sale_order_line` dan boshlanadi (sarlavha va pastki
+sahifalarda esa `sale_order` dan).
+
+### E-Commerce bo‘limi
+
+`E-Commerce` bo‘limida siz ushbu faylni onlayn do‘kon sahifasida ko‘rsatishni tanlashingiz mumkin (
+`Publish on Website`).
+
+::: misol
+Agar `Publish on Website` belgisi yoqilgan bo‘lsa, mahsulot sahifasida `Documents` sarlavhasi ostida fayl havolasi
+ko‘rinadi (masalan, [Corner Desk.pdf]).
+
+![Saytda mahsulot sahifasida fayl havolasini ko‘rsatish.](pdf_quote_builder/show-product-page.png)
+:::
+
+## PDF taklifnoma
+
+Sotuv buyurtmasida, `Quote Builder` (Taklif quruvchisi) yorlig‘i ostida yakuniy PDF fayliga birlashtiriladigan
+qo‘shimcha hujjatlarni tanlang. Agar tanlangan hujjatda maxsus maydonlar mavjud bo‘lsa, ular matn maydonchalari sifatida
+ko‘rinadi va ularni to‘ldirish mumkin bo‘ladi.
+
+![Quote Builder bo‘limida sarlavha va pastki sahifalarni tanlash.](pdf_quote_builder/quote-builder-headers.png)
+
+Oldindan sozlangan PDF bilan taklif tasdiqlangach, Odoo bu taklifni chop etish imkonini beradi — xatoliklarni tekshirish
+yoki arxiv uchun.
+
+Tasdiqlangan taklifni PDF ko‘rinishida chop etish uchun:
+
+1. Tasdiqlangan taklif sahifasiga o‘ting.
+2. `⚙️ (shesterenka)` belgisi ustiga bosing.
+3. Ochilgan menyudan `Print` (Chop etish) → `PDF Quote` ni tanlang.
+
+![Tasdiqlangan sotuv buyurtmasidan PDF taklifni chop etish.](pdf_quote_builder/drop-down-print-pdf.png)
+
+Shundan so‘ng, taklifnoma PDF shaklida kompyuterga yuklab olinadi. Uni ochganingizda, taklifning o‘zi va unga
+biriktirilgan mahsulot PDF hujjatlari ko‘rinadi va chop etilishi mumkin.
+
+::: tip
+`PDF quote builder` bo‘yicha namunaviy fayllarni [bu yerda](#) yuklab oling yoki `taklif namunasi` faylini yuklab
+oling (foydali ma'lumotlar uchun).
+:::

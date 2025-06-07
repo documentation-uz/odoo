@@ -1,118 +1,96 @@
-# Optional products
+# Ixtiyoriy mahsulotlar
 
-The use of optional products is a marketing strategy that involves the
-cross-selling of products along with a core product. The aim is to offer
-useful and related products to customers, which may result in an
-increased sale.
+Ixtiyoriy mahsulotlardan foydalanish — bu asosiy mahsulot bilan birga bog‘liq mahsulotlarni taklif qilish orqali savdoni
+oshirishga qaratilgan marketing strategiyasidir. Maqsad — mijozga foydali va mos mahsulotlarni taklif etish orqali sotuv
+hajmini oshirishdir.
 
-For instance, if a customer wants to buy a car, they have the choice to
-order massaging seats, as well, or ignore the offer and simply buy the
-car. Presenting the choice to purchase optional products enhances the
-customer experience.
+Masalan, agar mijoz avtomobil sotib olmoqchi bo‘lsa, u massajli o‘rindiqlarni ham buyurtma qilish imkoniyatiga ega
+bo‘ladi yoki bu taklifni rad etib, faqat avtomobilni xarid qilishi mumkin. Ixtiyoriy mahsulotlarni tanlash
+imkoniyatining mavjudligi mijoz tajribasini yanada boyitadi.
 
-## Optional products on quotations
+## Taklifnomalarda ixtiyoriy mahsulotlar
 
-With the Odoo *Sales* application, it is possible to add or modify
-optional products directly on quotations by navigating to the
-`Optional Products` tab on a
-quotation form.
+Odoo’ning *Savdo* ilovasida taklifnoma formasidagi `Ixtiyoriy mahsulotlar` (`Optional Products`) tabiga o‘tish orqali
+to‘g‘ridan-to‘g‘ri ixtiyoriy mahsulotlarni qo‘shish yoki tahrirlash mumkin.
 
-![How to add optional products to your quotations on Odoo Sales.](optional_products/optional-products-tab.png)
+![Odoo Sales’da taklifnomalarga ixtiyoriy mahsulotlarni qo‘shish.](optional_products/optional-products-tab.png)
 
-To add an optional product(s) to a quotation, click
-`Add a product` in the
-`Optional Products` tab of a
-quotation. Doing so reveals a blank field in the
-`Product` column.
+Taklifnomaga ixtiyoriy mahsulot(lar)ni qo‘shish uchun, `Ixtiyoriy mahsulotlar` tabida `Mahsulot qo‘shish` (
+`Add a product`) tugmasini bosing. Bu amal `Mahsulot` ustunida bo‘sh maydonni ochadi.
 
-When clicked, a drop-down menu with products from the database appear.
-Select the desired product from the drop-down menu to add it as an
-optional product to the quotation template.
+Bo‘sh maydonga bosganingizda, ochiluvchi menyuda mavjud mahsulotlar ro‘yxati paydo bo‘ladi. Tanlangan mahsulot
+taklifnomaga ixtiyoriy mahsulot sifatida qo‘shiladi.
 
 ::: tip
 
-If the desired product isn\'t readily visible, type the name of the
-desired product in the field, and the option appears in the drop-down
-menu. Then, select that desired product to add it to the quotation.
-::::
+Agar kerakli mahsulot ro‘yxatda ko‘rinmasa, mahsulot nomini yozing — u ochiluvchi menyuda paydo bo‘ladi. So‘ng uni
+tanlang va taklifnomaga qo‘shing.
+
+:::
 
 ::: tip
 
-When a product is added, the default `Quantity` is [1], but that can be edited at any time.
-::::
+Mahsulot qo‘shilganda, odatiy `Miqdor` qiymati [1] bo‘ladi, ammo uni xohlagan vaqtda o‘zgartirish mumkin.
 
-To delete any line item from the `Optional Products` tab, click the `🗑️ (trash
-can)` icon.
+:::
 
-Click the `Preview` button, located
-in the upper-left corner of the quotation, to reveal a preview of the
-quotation customers would receive, via email, along with the optional
-products they can potentially add to their order, located in the
-`Options` section.
+`Ixtiyoriy mahsulotlar` tabidagi har qanday qatorni o‘chirish uchun, o‘sha qatorning o‘ng tomonidagi `🗑️` (axlat qutisi)
+ikonkasini bosing.
 
-![Preview your quotations on Odoo Sales.](optional_products/optional-products-checkout.png)
+Taklifnoma yuqori chap burchagidagi `Ko‘rish` (`Preview`) tugmasini bosing — bu orqali mijozga email orqali
+yuboriladigan taklifnomaning oldindan ko‘rinishini ko‘rish mumkin. Taklifnoma ostida `Variantlar` (`Options`) bo‘limi
+mavjud bo‘lib, mijoz u yerdan qo‘shimcha mahsulotlarni buyurtmaga qo‘shishi mumkin.
 
-Customers are able to add different optional products to an order by
-clicking the `🛒
-(shopping cart)` icon, located to the
-right of the optional product line.
+![Odoo Sales’da taklifnoma ko‘rinishini oldindan ko‘rish.](optional_products/optional-products-checkout.png)
 
-If a customer selects optional products, these are automatically added
-to the quotation managed by the salesperson.
+Mijoz qo‘shimcha mahsulotni buyurtmaga qo‘shish uchun mahsulot qatorining o‘ng tomonidagi `🛒` (savat) ikonkasini bosadi.
 
-When the customer adds an optional product(s) to an order, the
-salesperson is instantly notified about the change, along with any other
-change the customer makes to an order. This allows salespeople to stay
-up-to-date with everything related to an order in the backend of the
-*Sales* application.
+Agar mijoz ixtiyoriy mahsulot(lar)ni tanlasa, ular avtomatik ravishda savdo vakili tomonidan boshqarilayotgan
+taklifnomaga qo‘shiladi.
 
-## Optional products on quotation templates
+Mijoz buyurtmaga ixtiyoriy mahsulot qo‘shganida yoki boshqa biror o‘zgarish kiritganida, savdo vakiliga bu haqda darhol
+bildirishnoma yuboriladi. Bu orqali savdo vakillari *Savdo* ilovasining administrator panelida buyurtma holatidan doimiy
+xabardor bo‘lib turishadi.
+
+## Taklifnoma shablonlarida ixtiyoriy mahsulotlar
 
 ::: tip
 
-Be sure to review the `quote_template`
-documentation to better understand how quotation templates work before
-reading the following information.
-::::
+Quyidagi ma'lumotlarni o‘qishdan oldin `quote_template` hujjatini ko‘rib chiqib, taklifnoma shablonlari qanday
+ishlashini yaxshiroq tushunib oling.
 
-For quotation templates, just like a typical quotation form, there is
-also an `Optional
-Products` tab, wherein related
-products or services can be added to a quotation template.
+:::
 
-To add optional products to a quotation template, navigate to
-`Sales app ‣
-Configuration ‣ Quotation Templates`. Then, either select an existing quotation
-template to edit, or create a new one by clicking
-`New`.
+Taklifnoma shablonlarida ham, oddiy taklifnoma shaklidagidek, `Ixtiyoriy mahsulotlar` (`Optional Products`) tab mavjud.
+Bu yerda bog‘liq mahsulot yoki xizmatlarni shablonga qo‘shish mumkin.
 
-On the quotation template form, click the
-`Optional Products` tab. Under the
-`Optional Products` tab, click
-`Add a line`, and select the desired
-product to add as an optional product to the quotation template.
+Ixtiyoriy mahsulotlarni taklifnoma shabloniga qo‘shish uchun quyidagi yo‘ldan o‘ting:
 
-![Preview your quotations on Odoo Sales.](optional_products/optional-products-tab-quotation-template.png)
+`Savdo ilovasi ‣ Konfiguratsiya ‣ Taklifnoma shablonlari`.
 
-The products added in the `Optional Products` tab are present in the quotation, by default, whenever
-that particular quotation template is used. These products can be
-removed, and additional products can be added, before the quotation is
-sent to a customer.
+So‘ng, mavjud taklifnoma shablonini tanlang yoki `Yangi` (`New`) tugmasini bosib yangisini yarating.
+
+Taklifnoma shabloni formasida `Ixtiyoriy mahsulotlar` tabini oching. Shu tabda `Qator qo‘shish` (`Add a line`) tugmasini
+bosing va kerakli mahsulotni tanlab, shablonga ixtiyoriy mahsulot sifatida qo‘shing.
+
+![Odoo Sales’da taklifnoma shablonidagi ixtiyoriy mahsulotlar.](optional_products/optional-products-tab-quotation-template.png)
+
+`Ixtiyoriy mahsulotlar` tabida qo‘shilgan mahsulotlar, ushbu taklifnoma shablonidan foydalanilganda taklifnomada
+avtomatik tarzda aks etadi. Shuningdek, bu mahsulotlar mijozga yuborilishdan oldin olib tashlanishi yoki yangilari
+qo‘shilishi mumkin.
 
 ::: tip
 
-It\'s best to offer optional products that would encourage a customer to
-add additional items to their order, or entice them to purchase a more
-expensive version of their initially selected product.
+Ixtiyoriy mahsulot sifatida, mijozni qo‘shimcha mahsulotlar qo‘shishga undaydigan yoki tanlagan mahsulotining qimmatroq
+versiyasini xarid qilishga jalb qiladigan mahsulotlarni taklif qilish eng maqsadga muvofiqdir.
 
-For example, if a customer purchases a wooden chair, some optional
-products could be: a warranty on that chair and/or a wooden chair with
-leather seats.
-::::
+Masalan, agar mijoz yog‘ochdan yasalgan stul xarid qilayotgan bo‘lsa, ixtiyoriy mahsulot sifatida kafolat yoki charm
+o‘rindiqli yog‘och stul taklif qilish mumkin.
+
+:::
 
 ::: tip
 
-There is no limit to how many optional products can be added to a
-quotation template.
-::::
+Taklifnoma shabloniga cheksiz miqdorda ixtiyoriy mahsulotlar qo‘shish mumkin.
 
+:::

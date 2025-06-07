@@ -1,319 +1,244 @@
-# Quotation templates
+# Taklifnoma shablonlari
 
-Reusable quotation templates can be made in Odoo\'s **Sales** app for
-common products or services.
+Odoo’ning **Savdo** ilovasida umumiy mahsulotlar yoki xizmatlar uchun qayta ishlatiladigan *taklifnoma shablonlari*
+yaratish mumkin.
 
-By using these templates, quotations can be tailored and sent to
-customers at a quicker pace, without having to create new quotations
-from scratch every time a sales negotiation occurs.
+Bu shablonlardan foydalanish orqali har safar yangi savdo muzokarasi yuz berganida taklifnomani boshqatdan yaratishga
+hojat qolmaydi. Taklifnomalar tezroq va moslashtirilgan holda mijozlarga yuboriladi.
 
-## Configuration
+## Sozlamalar
 
-To use quotation templates, begin by activating the setting in
-`Sales app ‣
-Configuration ‣ Settings`, and
-scroll to the `Quotations &_Orders`
-heading.
+Taklifnoma shablonlaridan foydalanish uchun quyidagi sozlamani yoqing:
 
-Under the heading, tick the `Quotation Templates` checkbox. Doing so reveals a new
-`Default Template` field, in which a
-default quotation template can be chosen from the drop-down menu.
+`Savdo ilovasi ‣ Konfiguratsiya ‣ Sozlamalar` bo‘limiga o‘ting va `Taklifnomalar va Buyurtmalar` sarlavhasi ostiga
+pastga tushing.
 
-![How to enable quotation templates on Odoo Sales.](quote_template/quotations-templates-setting.png)
+Shu sarlavha ostidan `Taklifnoma shablonlari` (`Quotation Templates`) belgisi (checkbox) ni belgilang. Buni amalga
+oshirgach, yangi `Standart shablon` (`Default Template`) maydoni paydo bo‘ladi. Ushbu maydondan ochiluvchi ro‘yxat
+orqali standart taklifnoma shablonini tanlash mumkin.
 
-Upon activating the `Quotation Template` feature, an internal `fa-arrow-right` `Quotation Templates`
-link appears beneath the `Default Template` field.
+![Odoo Sales ilovasida taklifnoma shablonlarini yoqish.](quote_template/quotations-templates-setting.png)
 
-Clicking this link reveals the `Quotation Templates` page, from which templates can be created, viewed, and
-edited.
+`Taklifnoma shablonlari` funksiyasi faollashtirilgach, `Standart shablon` maydoni ostida ichki `Taklifnoma shablonlari`
+sahifasiga olib boruvchi `→` havola (`Quotation Templates` link) paydo bo‘ladi.
 
-Before leaving the `Settings` page,
-do not forget to click the `Save`
-button to save all changes made during the session.
+Ushbu havolani bosganingizda `Taklifnoma shablonlari` sahifasi ochiladi. Bu sahifada shablonlarni yaratish, ko‘rish va
+tahrirlash mumkin.
 
-## Create quotation templates 
+`Sozlamalar` sahifasidan chiqishdan oldin, sessiya davomida kiritilgan barcha o‘zgarishlarni saqlash uchun `Saqlash` (
+`Save`) tugmasini bosishni unutmang.
 
-To create a quotation template, click the
-`Quotation Templates` link on the
-`Settings` page once
-`Quotation templates` are enabled, or
-navigate to
-`Sales app ‣ Configuration ‣ Quotation Templates`. Both options reveal the
-`Quotation Templates` page, where
-quotation templates can be created, viewed, and edited.
+## Taklifnoma shablonlarini yaratish
 
-![Quotation templates page in the Odoo Sales application.](quote_template/quotation-templates-page.png)
+Taklifnoma shabloni yaratish uchun, `Taklifnoma shablonlari` (`Quotation Templates`) sozlamasi yoqilgach, `Sozlamalar`
+sahifasidagi `Taklifnoma shablonlari` havolasini bosing yoki quyidagi yo‘ldan o‘ting:  
+`Savdo ilovasi ‣ Konfiguratsiya ‣ Taklifnoma shablonlari`.
 
-To create a new quotation template, click the `New` button, located in the upper-left corner. Doing so
-reveals a blank quotation template form that can be customized.
+Har ikkala yo‘l ham sizni `Taklifnoma shablonlari` sahifasiga olib boradi. Bu yerda shablonlarni yaratish, ko‘rish va
+tahrirlash mumkin.
 
-![Create a new quotation template on Odoo Sales.](quote_template/blank-quotation-form.png)
+![Odoo Sales ilovasidagi Taklifnoma shablonlari sahifasi.](quote_template/quotation-templates-page.png)
 
-Start by entering a name for the template in the
-`Quotation Template` field.
+Yangi shablon yaratish uchun yuqori chapdagi `Yangi` (`New`) tugmasini bosing. Bunda sizga sozlanadigan bo‘sh taklifnoma
+shabloni shakli taqdim etiladi.
 
-Then, in the `Quotation Validity`
-field, designate how many days the quotation template will remain valid
-for, or leave the field on the default [0] to keep the
-template valid indefinitely.
+![Odoo Sales’da yangi taklifnoma shablonini yaratish.](quote_template/blank-quotation-form.png)
 
-Next, in the `Confirmation Mail`
-field, click the blank drop-down menu to select a preconfigured email
-template to be sent to customers upon confirmation of an order.
+Avvalo, `Taklifnoma shabloni` (`Quotation Template`) maydoniga shablon nomini kiriting.
+
+So‘ng `Taklifnoma amal qilish muddati` (`Quotation Validity`) maydoniga bu shablon necha kun amal qilishini kiriting.
+Agar bu maydonni [0] holatda qoldirsangiz, shablon doimiy amal qiladi.
+
+Keyingi `Tasdiqlash xati` (`Confirmation Mail`) maydonida ochiluvchi ro‘yxatdan buyurtma tasdiqlangach mijozga
+yuboriladigan oldindan tayyorlangan email shablonini tanlang.
 
 ::: tip
 
-To create a new email template directly from the
-`Confirmation Mail` field, start
-typing the name of the new email template in the field, and select
-either: `Create` or
-`Create and edit...` from the
-drop-down menu that appears.
+Yangi email shablonini bevosita `Tasdiqlash xati` maydonidan yaratish uchun, maydonga yangi shablon nomini yozing va
+ochiluvchi menyudan `Yaratish` (`Create`) yoki `Yaratish va tahrirlash...` (`Create and edit...`) ni tanlang.
 
-Selecting `Create` creates the email
-template, which can be edited later.
+- `Yaratish` — shablonni yaratadi va uni keyinchalik tahrirlash mumkin.
+- `Yaratish va tahrirlash...` — email shablonini yaratadi va darhol ochiladigan `Tasdiqlash xatini yaratish` oynasi
+  orqali sozlash imkonini beradi.
 
-Selecting `Create and edit...`
-creates the email template, and a `Create
-Confirmation Mail` pop-up window
-appears, in which the email template can be customized and configured
-immediately.
+![Odoo Sales’dagi taklifnoma shablonidan tasdiqlash xatini yaratish oynasi.](quote_template/create-confirmation-mail-popup.png)
 
-![Create confirmation mail pop-up window from the quotation template form in Odoo Sales.](quote_template/create-confirmation-mail-popup.png)
-
-When all modifications are complete, click
-`Save & Close` to save the email
-template and return to the quotation form.
-::::
-
-If working in a multi-company environment, use the
-`Company` field to designate to which
-company this quotation template applies.
-
-If a journal is set in the `Invoicing Journal` field, all sales orders with this template will invoice
-in that specified journal. If no journal is set in this field, the sales
-journal with the lowest sequence is used.
-
-If the `Online Signature` and/or
-`Online Payment` features are
-activated in the `Settings`
-(`Sales app ‣ Configuration ‣ Settings`), those options are available on quotation
-template forms.
-
-Check the box beside `Online Signature` to request an online signature from the customer to
-confirm an order.
-
-Check the box beside `Online Payment`
-to request an online payment from the customer to confirm an order. When
-`Online Payment` is checked, a new
-percentage field appears, in which a specific percentage of payment can
-be entered.
-
-Both options, `Online Signature` and
-`Online Payment` can be enabled
-simultaneously, in which case the customer must provide **both** a
-signature **and** a payment to confirm an order.
-
-In the `Recurring Plan` field, choose
-from a variety of pre-configured amounts of time (e.g.
-`Monthly`,
-`Quarterly`, etc.) to designate how
-often this quotation template should occur.
-
-::: tip
-
-The `Recurring Plan` field **only**
-applies to subscription plans. For more information, check out the
-documentation on `../../subscriptions/plans`.
-::::
-
-### Lines tab
-
-In the `Lines` tab, products can be
-added to the quotation template by clicking
-`Add a product`, organized by
-clicking `Add a section` (and
-dragging/dropping section headers), and further explained with
-discretionary information (such as warranty details, terms, etc.) by
-clicking `Add a note`.
-
-To add a product to a quotation template, click
-`Add a product` in the
-`Lines` tab of a quotation template
-form. Doing so reveals a blank field in the `Product` column.
-
-When clicked, a drop-down menu with existing products in the database
-appears. Select the desired product from the drop-down menu to add it to
-the quotation template.
-
-If the desired product is not readily visible, type the name of the
-desired product in the `Product`
-field, and the option appears in the drop-down menu. Products can also
-be found by clicking `Search More...`
-from the drop-down menu.
-
-::: tip
-
-It is possible to add event-related products (booths and registrations)
-to quotation templates. To do so, click the `Product` field, type in [Event], and select the
-desired event-related product from the resulting drop-down menu.
-::::
-
-::: tip
-
-When a product is added to a quotation template, the default
-`Quantity` is [1], but
-that can be edited at any time.
-::::
-
-Then, drag and drop the product to the desired position, via the
-`six squares` icon, located to the
-left of each line item.
-
-To add a *section*, which serves as a header to organize the lines of a
-sales order, click `Add a section` in
-the `Lines` tab. When clicked, a
-blank field appears, in which the desired name of the section can be
-typed. When the name has been entered, click away to secure the section
-name.
-
-Then, drag and drop the section name to the desired position, via the
-`oi-apps`
-`(six squares)` icon, located to the
-left of each line item.
-
-To add a note, which appears as a piece of text for the customer on the
-quotation, click `Add a note` in the
-`Lines` tab. When clicked, a blank
-field appears, in which the desired note can be typed. When the note has
-been entered, click away to secure the note.
-
-Then, drag and drop the note to the desired position, via the
-`oi-apps`
-`(six squares)` icon.
-
-To delete any line item from the `Lines` tab (product, section, and/or note), click the
-`fa-trash`
-`(remove record)` icon on the
-far-right side of the line.
-
-### Optional Products tab
-
-Using *optional products* is a marketing strategy that involves the
-cross-selling of products along with a core product. The aim is to offer
-useful and related products to customers, which may result in an
-increased sale.
-
-::: example
-If a customer wants to buy a car, they have the choice to order
-massaging seats as an additional product that compliments the car, or
-ignore the offer and buy the car alone.
+Tahrir tugagach, `Saqlash va yopish` (`Save & Close`) tugmasini bosing va taklifnoma formasiga qayting.
 :::
 
-Optional products appear as a section on the bottom of sales orders and
-eCommerce pages. Customers can immediately add them to their online
-sales orders themselves, if desired.
+Agar siz ko‘p kompaniyali muhitda ishlayotgan bo‘lsangiz, `Kompaniya` (`Company`) maydoni orqali ushbu shablon qaysi
+kompaniyaga tegishli ekanini ko‘rsating.
 
-![Optional products appearing on a typical sales order with Odoo Sales.](quote_template/optional-products-on-sales-order.png)
+Agar `Hisob jurnal` (`Invoicing Journal`) maydoni to‘ldirilgan bo‘lsa, ushbu shablon asosida yaratilgan barcha savdo
+buyurtmalari shu jurnalga asoslangan holda hisob-faktura chiqaradi. Agar jurnal belgilanmasa, eng past tartibdagi jurnal
+ishlatiladi.
 
-In the `Optional Products` tab,
-`Add a line` for each cross-selling
-product related to the original items in the `Lines` tab, if applicable.
+Agar `Sozlamalar` (`Savdo ilovasi ‣ Konfiguratsiya ‣ Sozlamalar`) bo‘limida *Onlayn imzo* yoki *Onlayn to‘lov*
+funksiyalari yoqilgan bo‘lsa, bu variantlar taklifnoma shabloni formasida ham mavjud bo‘ladi:
 
-Clicking `Add a line` reveals a blank
-field in the `Product` column.
+- `Onlayn imzo` belgisini belgilang — bu mijozdan buyurtmani tasdiqlash uchun imzo so‘rash imkonini beradi.
+- `Onlayn to‘lov` belgisini belgilang — mijozdan oldindan to‘lov so‘raladi. Belgilanganidan so‘ng, foiz maydoni paydo
+  bo‘ladi va to‘lanishi kerak bo‘lgan foizni kiritish mumkin.
 
-When clicked, a drop-down menu with products from the database appear.
-Select the desired product from the drop-down menu to add it as an
-optional product to the quotation template.
+Agar ikkala opsiya birgalikda yoqilgan bo‘lsa, mijoz buyurtmani tasdiqlash uchun **ham imzo**, **ham to‘lov** taqdim
+etishi kerak bo‘ladi.
 
-To delete any line item from the `Optional Products` tab, click the `fa-trash` `(remove record)` icon.
+`Takrorlanuvchi rejalar` (`Recurring Plan`) maydonida oldindan sozlangan davrlarni tanlang (masalan, `Oylik`,
+`Har chorakda`, va h.k.), bu orqali taklifnoma shabloni qanchalik tez-tez takrorlanishini belgilaysiz.
+
+::: tip
+`Takrorlanuvchi rejalar` maydoni **faqat** obuna rejalariga tegishli. Batafsil ma’lumot uchun qarang:
+`../../subscriptions/plans`.
+:::
+
+### Qatorlar tab
+
+`Qatorlar` (`Lines`) tabida mahsulotlarni taklifnoma shabloniga qo‘shish mumkin. Buning uchun `Mahsulot qo‘shish` (
+`Add a product`) tugmasini bosing, `Bo‘lim qo‘shish` (`Add a section`) orqali tartiblang va `Izoh qo‘shish` (
+`Add a note`) orqali qo‘shimcha ma’lumot (masalan, kafolat, shartlar va boshqalar) kiriting.
+
+Mahsulot qo‘shish uchun, `Qatorlar` tabida `Mahsulot qo‘shish` tugmasini bosing. Shunda `Mahsulot` ustunida bo‘sh maydon
+ochiladi.
+
+Bu maydonga bosganingizda, bazadagi mavjud mahsulotlar ro‘yxati chiqadi. Kerakli mahsulotni ro‘yxatdan tanlang.
+
+Agar kerakli mahsulot ro‘yxatda ko‘rinmasa, mahsulot nomini `Mahsulot` maydoniga yozing — kerakli variant ochiluvchi
+menyuda paydo bo‘ladi. Shuningdek, `Ko‘proq izlash...` (`Search More...`) tugmasini bosib mahsulotlarni topish mumkin.
 
 ::: tip
 
-Optional products are **not** required to create a quotation template.
-::::
+Taklifnoma shablonlariga tadbirlarga oid mahsulotlar (masalan, stendlar va ro‘yxatdan o‘tishlar) ham qo‘shilishi mumkin.
+Buning uchun `Mahsulot` maydoniga [Tadbir] (`Event`) deb yozing va kerakli mahsulotni tanlang.
 
-### Terms & Conditions tab
-
-The `Terms & Conditions` tab provides
-the opportunity to add terms and conditions to the quotation template.
-To add terms and conditions, type the desired terms and conditions in
-this tab.
-
+:::
 
 ::: tip
 
-Terms and conditions are **not** required to create a quotation
-template.
-::::
+Taklifnoma shabloniga mahsulot qo‘shilganda, odatiy `Miqdor` (`Quantity`) qiymati [1] bo‘ladi. Uni istalgan vaqtda
+o‘zgartirish mumkin.
 
-## Use quotation templates
+:::
 
-When creating a quotation (`Sales app ‣ New`), choose a preconfigured template in the
-`Quotation Template` field.
+Qo‘shilgan mahsulotni kerakli tartibga joylashtirish uchun, har bir qator chapidagi `olti kvadrat` (`six squares`)
+belgisi yordamida sudrab ko‘chiring.
 
-::: tip
+*Bo‘lim* (section) qo‘shish — bu savdo buyurtmasidagi qatorlarni sarlavhalar bilan tartiblash imkonini beradi.
+`Qatorlar` tabida `Bo‘lim qo‘shish` tugmasini bosing. So‘ng bo‘sh maydonga bo‘lim nomini yozing. Nom yozilgach, bo‘lim
+nomi saqlanadi.
 
-The order of the templates in the `Quotation Template` field is determined by the order of the templates in
-the Quotation Templates form. The order of the quotations in the
-Quotation Templates form does **not** affect anything else.
-::::
+Bo‘lim nomini ham yuqoridagi kabi `olti kvadrat` (`six squares`) belgisi yordamida kerakli o‘ringa sudrab ko‘chiring.
 
-To view what the customer will see, click the
-`Preview` button at the top of the
-page to see how the quotation template appears on the front-end of the
-website through Odoo\'s customer portal.
+*Izoh* qo‘shish — bu taklifnomada mijozga ko‘rinadigan matnli yozuv. `Qatorlar` tabida `Izoh qo‘shish` tugmasini bosing.
+So‘ng bo‘sh maydonga kerakli izohni yozing. Yozilgach, izoh avtomatik saqlanadi.
 
-![Customer preview of a quotation template in Odoo Sales.](quote_template/quotations-templates-preview.png)
+Izohni ham kerakli joyga `olti kvadrat` belgisi orqali sudrab ko‘chiring.
 
-When all blocks and customizations are complete, click the
-`Save` button to save the
-configuration.
+Agar `Qatorlar` tabidagi biror qator (mahsulot, bo‘lim yoki izoh) ni o‘chirmoqchi bo‘lsangiz, qatordagi o‘ng tomondagi
+`axlat qutisi` (`fa-trash`) belgisini bosing.
 
-The blue banner located at the top of the quotation template preview can
-be used to quickly return `fa-arrow-right` `Back to edit mode`.
-When clicked, Odoo returns to the quotation form in the back-end of the
-*Sales* application.
+### Ixtiyoriy mahsulotlar tab
 
-## Mass cancel quotations/sales orders
+*Ixtiyoriy mahsulotlar* (Optional Products) — asosiy mahsulot bilan birga qo‘shimcha mahsulotlarni taklif qilish orqali
+savdoni oshirishga qaratilgan marketing strategiyasidir. Maqsad — mijozga foydali va bog‘liq mahsulotlarni taklif qilish
+orqali sotuv hajmini oshirish.
 
-Cancel multiple quotations (or sales orders) by navigating to the
-`Sales app ‣
-Orders ‣ Quotations`
-dashboard, landing, by default, in the list view. Then, on the left side
-of the table, tick the checkboxes for the quotations to be canceled.
+::: example
+Agar mijoz avtomobil sotib olmoqchi bo‘lsa, unga avtomobil bilan birga massajli o‘rindiqlarni qo‘shimcha mahsulot
+sifatida tanlash imkoniyati beriladi. Mijoz bu taklifni qabul qilishi yoki e’tiborsiz qoldirib, faqat avtomobilni sotib
+olishi mumkin.
+:::
 
-::: tip
+Ixtiyoriy mahsulotlar savdo buyurtmalarining pastki qismida va eCommerce sahifalarida alohida bo‘lim sifatida paydo
+bo‘ladi. Mijozlar ularni onlayn buyurtmaga darhol qo‘shishlari mumkin.
 
-Select all records in the table by selecting the checkbox column header
-at the top-left of the table; the total number of selected items are
-displayed at the top of the page.
-::::
+![Odoo Sales’dagi odatiy savdo buyurtmasida ixtiyoriy mahsulotlar.](quote_template/optional-products-on-sales-order.png)
 
-Then, with the desired quotations (or sales orders) selected from the
-list view on the `Quotations` page,
-click the `fa-cog`
-`Actions` button to reveal a
-drop-down menu.
+`Ixtiyoriy mahsulotlar` (`Optional Products`) tabida, agar mos kelsa, `Qatorlar` (`Lines`) tabidagi asosiy mahsulotlarga
+bog‘liq har bir cross-selling mahsulot uchun `Qator qo‘shish` (`Add a line`) tugmasini bosing.
 
-From this drop-down menu, select `Cancel quotations`.
+`Qator qo‘shish` tugmasi bosilganda, `Mahsulot` ustunida bo‘sh maydon paydo bo‘ladi.
 
-![The Cancel quotations option on the Actions drop-down menu in the Odoo Sales application.](quote_template/cancel-quotations.png)
+Bu maydonga bosganingizda, bazadagi mavjud mahsulotlar ochiluvchi menyuda chiqadi. Istalgan mahsulotni tanlang va u
+taklifnoma shabloniga ixtiyoriy mahsulot sifatida qo‘shiladi.
+
+Agar `Ixtiyoriy mahsulotlar` tabidan biror qatorni o‘chirmoqchi bo‘lsangiz, o‘sha qatordagi o‘ng tomonda joylashgan
+`axlat qutisi` (`fa-trash`) belgisi orqali o‘chiring.
 
 ::: tip
 
-This action can be performed for quotations in *any* stage, even if it
-is confirmed as a sales order.
-::::
+Ixtiyoriy mahsulotlarni taklifnoma shabloni yaratishda kiritish **majburiy emas**.
 
-Upon selecting the `Cancel quotations` option, a `Cancel quotations` confirmation pop-up window appears. To complete the
-cancellation, click the `Cancel
-quotations` button.
+:::
+
+### Shartlar va qoidalar tab
+
+`Shartlar va qoidalar` (`Terms & Conditions`) tabida taklifnoma shabloniga maxsus shartlar va qoidalarni qo‘shish
+imkoniyati mavjud. Bu tabga kerakli matnni yozish orqali shartlar va qoidalarni belgilashingiz mumkin.
 
 ::: tip
 
-An error pop-up message appears when attempting to cancel an order for
-an ongoing subscription that has an invoice.
-::::
+Taklifnoma shabloni yaratishda shartlar va qoidalarni qo‘shish **majburiy emas**.
+
+:::
+
+## Taklifnoma shablonlaridan foydalanish
+
+Yangi taklifnoma yaratishda (`Savdo ilovasi ‣ Yangi`), `Taklifnoma shabloni` (`Quotation Template`) maydonida oldindan
+tayyorlangan shablonni tanlang.
+
+::: tip
+
+`Taklifnoma shabloni` maydonidagi shablonlar tartibi — `Taklifnoma shablonlari` sahifasidagi tartibga bog‘liq. Ammo bu
+tartib boshqa hech qanday joyga ta’sir qilmaydi.
+
+:::
+
+Mijoz sahifasida taklifnoma qanday ko‘rinishini ko‘rish uchun, sahifaning yuqori qismidagi `Ko‘rish` (`Preview`)
+tugmasini bosing. Bu orqali Odoo mijoz portalidagi oldindan ko‘rinishni ochadi.
+
+![Odoo Sales’dagi taklifnoma shablonining mijoz ko‘rinishi.](quote_template/quotations-templates-preview.png)
+
+Barcha bloklar va sozlamalar tugagach, `Saqlash` (`Save`) tugmasini bosib konfiguratsiyani saqlang.
+
+Taklifnoma shabloni oldindan ko‘rinishida sahifaning yuqori qismida joylashgan ko‘k bannerdagi
+`Tahrirlash rejimiga qaytish` (`Back to edit mode`) havolasini bosish orqali tezda orqaga qaytish mumkin. Bu bosilgach,
+Odoo sizni **Savdo** ilovasidagi taklifnoma formasiga qaytaradi.
+
+## Taklifnomalarni yoki savdo buyurtmalarini ommaviy bekor qilish
+
+Bir nechta taklifnomalarni (yoki savdo buyurtmalarini) bir vaqtning o‘zida bekor qilish uchun quyidagi amallarni
+bajaring:
+
+`Savdo ilovasi ‣ Buyurtmalar ‣ Taklifnomalar` yo‘li bo‘ylab o‘ting. Sahifa odatda ro‘yxat ko‘rinishida ochiladi.
+Jadvalning chap tomonidagi belgilash (checkbox) ustunidan bekor qilinadigan taklifnomalarni belgilang.
+
+::: tip
+
+Jadvaldagi barcha yozuvlarni tanlash uchun ustun sarlavhasidagi (chap yuqori burchakdagi) checkbox ni belgilang.
+Tanlangan elementlar soni sahifaning yuqori qismida ko‘rsatiladi.
+
+:::
+
+So‘ng, `Taklifnomalar` sahifasida kerakli yozuvlar belgilanganidan keyin, yuqori qismdagi `Harakatlar` (`Actions`)
+tugmasini bosing (`⚙️` belgisi). Ochilgan menyudan `Taklifnomalarni bekor qilish` (`Cancel quotations`) variantini
+tanlang.
+
+![Odoo Sales ilovasidagi Harakatlar menyusida Taklifnomalarni bekor qilish varianti.](quote_template/cancel-quotations.png)
+
+::: tip
+
+Ushbu amal *istalgan* bosqichdagi taklifnomalarga nisbatan bajarilishi mumkin — hatto ular savdo buyurtmasi sifatida
+tasdiqlangan bo‘lsa ham.
+
+:::
+
+`Taklifnomalarni bekor qilish` opsiyasi tanlangandan so‘ng, tasdiqlash oynasi ochiladi. Bekor qilishni yakunlash uchun
+`Taklifnomalarni bekor qilish` tugmasini bosing.
+
+::: tip
+
+Agar sizda hisob-fakturaga ega faol obunaga ulangan buyurtmani bekor qilishga urinsangiz, xatolik haqida ogohlantiruvchi
+oyna chiqadi.
+
+:::
 

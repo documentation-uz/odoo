@@ -1,85 +1,65 @@
-# Online payment order confirmation
+# Buyurtmalarni onlayn to‘lov bilan tasdiqlash
 
-The Odoo *Sales* application provides customers with the ability to
-confirm orders, via an online payment, directly on a sales order. Once
-the sales order is electronically paid for by the customer, the
-salesperson attached to the sales order is instantly notified that the
-order is confirmed.
+Odoo’ning *Savdo* ilovasi mijozlarga savdo buyurtmalarini to‘g‘ridan-to‘g‘ri onlayn to‘lov orqali tasdiqlash imkonini
+beradi. Mijoz buyurtmani elektron tarzda to‘laganidan so‘ng, bu buyurtmaga biriktirilgan savdo vakili darhol xabardor
+qilinadi.
 
-## Activate online payments
+## Onlayn to‘lovni faollashtirish
 
-In order to have customers confirm orders with an online payment, the
-*Online Payment* setting **must** be activated.
+Mijozlar buyurtmalarni onlayn to‘lov orqali tasdiqlay olishi uchun *Onlayn to‘lov* funksiyasi **albatta**
+faollashtirilgan bo‘lishi kerak.
 
-To activate the *Online Payment* feature, go to
-`Sales app ‣ Configuration ‣
-Settings`, scroll to the
-`Quotations \& Orders` heading, check
-the box next to the `Online Payment`
-feature, and click `Save`.
+Bu funksiyani faollashtirish uchun quyidagi yo‘ldan boring:  
+`Savdo ilovasi ‣ Konfiguratsiya ‣ Sozlamalar`  
+so‘ng `Taklifnomalar va buyurtmalar` (`Quotations & Orders`) bo‘limigacha pastga tushing, `Onlayn to‘lov` (
+`Online Payment`) belgisini belgilang va `Saqlash` (`Save`) tugmasini bosing.
 
-![The online payment setting in the Odoo Sales application.](get_paid_to_validate/online-payment-setting.png)
+![Odoo Sales ilovasida onlayn to‘lov sozlamasi.](get_paid_to_validate/online-payment-setting.png)
 
-Beneath the `Online Payment` option
-on the *Sales* `Settings` page,
-there\'s a `Default Quotation Validity` field. In this field, there\'s the option to add a
-specific number of days for quotations to remain valid by default.
+*Savdo* ilovasining `Sozlamalar` sahifasidagi `Onlayn to‘lov` opsiyasi ostida
+`Taklifnoma amal qilish muddati (kunlarda)` (`Default Quotation Validity`) maydoni mavjud. Bu yerda taklifnomalarning
+standart amal qilish muddatini kunlarda belgilashingiz mumkin.
 
-To enable this feature on a standard quotation, click the checkbox for
-the `Payment` feature option, located
-in the `Online confirmation` field,
-on the `Other Info` tab.
+Agar bu funksiyani oddiy taklifnomada yoqmoqchi bo‘lsangiz, taklifnoma formasining `Boshqa ma’lumotlar` (`Other Info`)
+tabida joylashgan `Onlayn tasdiqlash` (`Online confirmation`) qismidagi `To‘lov` (`Payment`) opsiyasini belgilang.
 
-![The online payment setting on a standard quotation in Odoo Sales.](get_paid_to_validate/online-payment-option-quotation.png)
+![Odoo Sales’dagi oddiy taklifnomadagi onlayn to‘lov opsiyasi.](get_paid_to_validate/online-payment-option-quotation.png)
 
-To enable this feature on a quotation template, click the checkbox for
-the `Payment` feature option, located
-in the `Online confirmation` field of
-the quotation template form.
+Agar bu funksiyani taklifnoma shablonida yoqmoqchi bo‘lsangiz, taklifnoma shabloni formasidagi `Onlayn tasdiqlash` (
+`Online confirmation`) qismida joylashgan `To‘lov` (`Payment`) opsiyasini belgilang.
 
-![The online payment setting on quotation template forms in Odoo Sales.](get_paid_to_validate/online-payment-option-quotation-template.png)
+![Odoo Sales’dagi taklifnoma shabloni formasida onlayn to‘lov sozlamasi.](get_paid_to_validate/online-payment-option-quotation-template.png)
 
-## Payment providers
+## To‘lov provayderlari
 
-After activating the `Online Payment`
-feature, a link to configure `Payment
-Providers` appears beneath it.
+`Onlayn to‘lov` funksiyasi faollashtirilgandan so‘ng, uning tagida `To‘lov provayderlari` (`Payment Providers`)
+sozlamasiga olib boruvchi havola paydo bo‘ladi.
 
-Clicking that link reveals a separate
-`Payment Providers` page, in which a
-large variety of payment providers can be enabled, customized, and
-published.
+Bu havolani bosganingizda alohida `To‘lov provayderlari` sahifasi ochiladi. Bu yerda turli to‘lov provayderlarini
+yoqish, sozlash va e’lon qilish (publish) mumkin.
 
-![Payment providers page in Odoo Sales.](get_paid_to_validate/payment-providers-page.png)
+![Odoo Sales’dagi To‘lov provayderlari sahifasi.](get_paid_to_validate/payment-providers-page.png)
 
+## To‘lovni ro‘yxatga olish
 
-## Register a payment
+Mijozlar o‘z mijoz portalidagi taklifnomani ochganlaridan so‘ng, `Qabul qilish va to‘lash` (`Accept & Pay`) tugmasini
+bosish orqali buyurtmani onlayn to‘lov bilan tasdiqlashlari mumkin.
 
-After opening quotations in their customer portal, customers can click
-`Accept \& Pay` to confirm their
-order with an online payment.
+![Odoo Sales’dagi onlayn taklifnomadagi Qabul qilish va to‘lash tugmasi.](get_paid_to_validate/accept-and-pay-button.png)
 
-![The accept and pay button on an online quotation in Odoo Sales.](get_paid_to_validate/accept-and-pay-button.png)
+`Qabul qilish va to‘lash` tugmasi bosilgach, `Buyurtmani tasdiqlash` (`Validate Order`) oynasi ochiladi. Bu oynada
+`To‘lov usuli` (`Pay with`) bo‘limida turli onlayn to‘lov variantlari ko‘rsatiladi.
 
-After clicking `Accept \& Pay`,
-customers are presented with `Validate Order` pop-up window containing different options for them to
-make online payments, in the `Pay
-with` section.
-
-![How to register a payment on a validate order pop-up window in Odoo Sales.](get_paid_to_validate/validate-order-pay-with.png)
+![Odoo Sales’dagi Buyurtmani tasdiqlash oynasida to‘lovni ro‘yxatga olish.](get_paid_to_validate/validate-order-pay-with.png)
 
 ::: tip
 
-Odoo will **only** offer payment options on the
-`Validate Order` pop-up window that
-have been published and configured on the
-`Payment Providers` page.
-::::
+`Buyurtmani tasdiqlash` oynasida **faqat** `To‘lov provayderlari` sahifasida faollashtirilgan va e’lon qilingan to‘lov
+variantlari ko‘rsatiladi.
 
-Once the customer selects their desired method of payment, they will
-click the `Pay` button on the pop-up
-window to confirm the order. Odoo instantly notifies the assigned
-salesperson upon order confirmation with an online payment.
+:::
 
-![Sample of notification that appears in the chatter when an online payment is made.](get_paid_to_validate/payment-confirmation-notification-chatter.png)
+Mijoz kerakli to‘lov usulini tanlagach, `To‘lash` (`Pay`) tugmasini bosadi va buyurtma tasdiqlanadi. Buyurtma onlayn
+to‘lov bilan tasdiqlangani zahoti, unga biriktirilgan savdo vakiliga xabar yuboriladi.
 
+![Onlayn to‘lov amalga oshirilganda chatda chiqadigan bildirishnoma namunasi.](get_paid_to_validate/payment-confirmation-notification-chatter.png)
