@@ -1,298 +1,162 @@
-# Pricelists
+# Narx ro'yxatlari
 
-A *pricelist* is a method of dynamic pricing that applies a list of
-prices (or price rules) to adjust sales prices. This adjustment can
-apply to specific customers, customer groups, sales orders, time
-periods, etc., and is useful for creating pricing strategies and
-optimizing sales margins.
+*Narx ro'yxati* - bu sotuv narxlarini moslashtirish uchun narxlar ro'yxati (yoki narx qoidalari)ni qo'llaydigan dinamik narxlash usuli. Ushbu moslashtirish muayyan mijozlar, mijozlar guruhlari, sotuv buyurtmalari, vaqt davrlari va boshqalarga qo'llanilishi mumkin va narxlash strategiyalarini yaratish hamda sotuv daromadlarini optimallashtirish uchun foydalidir.
 
-Odoo **Sales** has a useful pricelist feature that can be tailored to
-fit any unique pricing strategy. Pricelists suggest certain prices, but
-they can always be overridden on the sales order.
+Odoo **Sales** ilovasida har qanday noyob narxlash strategiyasiga moslashtirilishi mumkin bo'lgan foydali narx ro'yxati funksiyasi mavjud. Narx ro'yxatlari ma'lum narxlarni taklif qiladi, ammo ularni har doim sotuv buyurtmasida bekor qilish mumkin.
 
-## Configuration
+## Sozlash
 
-To enable pricelists in the Odoo **Sales** app, first navigate to
-`Sales app ‣
-Configuration ‣ Settings`. In
-the `Pricing` section, tick the
-checkbox next to the `Pricelists`
-feature, and click `Save` to save all
-changes.
+Odoo **Sales** ilovasida narx ro'yxatlarini yoqish uchun avval `Sales app ‣ Configuration ‣ Settings` bo'limiga o'ting. `Pricing` bo'limida `Pricelists` funksiyasi yonidagi belgi qo'yish maydonchasi`ni belgilang va barcha o'zgarishlarni saqlash uchun `Save` tugmasini bosing.
 
-![How the pricelist feature setting looks in Odoo Sales.](pricing/pricelist-feature-setting.png)
+![Odoo Sales'da narx ro'yxati funksiyasi sozlamasi qanday ko'rinishi.](pricing/pricelist-feature-setting.png)
 
-After activating and saving the `Pricelists` feature, the `Settings` page reloads. From here, either select the
-`oi-arrow-right`
-`Pricelists` link (beneath the
-`Pricelists` feature on the
-`Settings` page), or navigate to
-`Sales app ‣ Products ‣ Pricelists`.
+`Pricelists` funksiyasini faollashtirish va saqlashdan keyin `Settings` sahifasi qayta yuklanadi. Bu yerdan `Pricelists` havolasini tanlang (`Settings` sahifasidagi `Pricelists` funksiyasi ostida) yoki `Sales app ‣ Products ‣ Pricelists` ga o'ting.
 
-Either option reveals the `Pricelists` page, in which pricelists can be created and/or
-modified at any time.
+Ikkala variant ham `Pricelists` sahifasini ochadi, bu yerda narx ro'yxatlarini istalgan vaqtda yaratish va/yoki o'zgartirish mumkin.
 
-![How the pricelists page looks in Odoo Sales.](pricing/18-sales-pricelist-page.png)
+![Odoo Sales'da narx ro'yxatlari sahifasi qanday ko'rinishi.](pricing/18-sales-pricelist-page.png)
 
 ::: warning
 
-If there is no specific pricelist configured on a sales quotation, the
-`Default` pricelist is applied.
-::::
+Agar sotuv taklifida maxsus narx ro'yxati konfiguratsiya qilinmagan bo'lsa, `Default` narx ro'yxati qo'llaniladi.
+:::
 
 ::: tip
 
-The `Selectable` column is only
-applicable to Odoo **eCommerce**. This option allows website visitors to
-choose a pricelist when shopping in your **eCommerce** website.
-::::
+`Selectable` ustuni faqat Odoo **eCommerce** uchun tegishli. Bu variant veb-sayt tashrif buyuruvchilariga **eCommerce** veb-saytingizda xarid qilishda narx ro'yxatini tanlash imkonini beradi.
+:::
 
 ::: tip
 
-In Odoo 17 (and above), you are *not required* to enter a pricelist in
-the `Pricelist` field on a sales
-quotation form in order to confirm it (i.e. turn it into a sales order).
+Odoo 17 (va undan yuqori)da sotuv taklifi formasidagi `Pricelist` maydoniga narx ro'yxatini kiritish uni tasdiqlash (ya'ni sotuv buyurtmasiga aylantirish) uchun *shart emas*.
 
-The chatter section is available on pricelist forms, which allows you to
-add notes and communications on each pricelist page.
-::::
+Har bir narx ro'yxati sahifasida eslatmalar va muloqotlarni qo'shish imkonini beruvchi chatter bo'limi narx ro'yxati formalarida mavjud.
+:::
 
-### Creating and editing pricelists
+### Narx ro'yxatlarini yaratish va tahrirlash
 
-From the `Pricelists` page, either
-select the pricelist to edit, or click `New` to create a new pricelist, which reveals a blank
-pricelist form that can be configured in a number of different ways.
+`Pricelists` sahifasidan tahrirlash uchun narx ro'yxatini tanlang yoki yangi narx ro'yxati yaratish uchun `New` tugmasini bosing, bu turli xil yo'llar bilan konfiguratsiya qilinishi mumkin bo'lgan bo'sh narx ro'yxati formasini ochadi.
 
-![How the pricelist detail form looks in Odoo Sales.](pricing/18-sales-new-pricelist-form.png)
+![Odoo Sales'da narx ro'yxati batafsil formasi qanday ko'rinishi.](pricing/18-sales-new-pricelist-form.png)
 
-When creating a new pricelist, start by adding a name for the pricelist
-at the blank field at top of the form. Next, select which
-`Currency` should be used.
+Yangi narx ro'yxati yaratishda forma tepasidagi bo'sh maydoniga narx ro'yxati nomini qo'shishdan boshlang. Keyin qaysi `Currency` ishlatilishi kerakligini tanlang.
 
-If working in a multi-company environment, select which company this
-pricelist should apply to in the `Company` field. If this field is left blank, the pricelist is
-automatically applied to all companies in the database.
+Ko'p kompaniyali muhitda ishlayotgan bo'lsangiz, ushbu narx ro'yxati `Company` maydonida qaysi kompaniyaga tegishli ekanligini tanlang. Agar bu maydon bo'sh qoldirilsa, narx ro'yxati ma'lumotlar bazasidagi barcha kompaniyalarga avtomatik ravishda qo'llaniladi.
 
-If working in a multinational company, select the countries where this
-pricelist will apply under the `Country Groups` column.
+Ko'p milliy kompaniyada ishlayotgan bo'lsangiz, `Country Groups` ustunida ushbu narx ro'yxati qo'llaniladigan mamlakatlarni tanlang.
 
-### Price Rules tab 
+### Narx qoidalari belgisi
 
-In the `Price Rules` tab, each line
-creates a new record that will implement customized pricing to the sales
-order where the pricelist is applied. To create a new price rule, click
-on `Add a line`, which opens a new
-pricelist rules form.
+`Price Rules` belgisida har bir qator narx ro'yxati qo'llaniladigan sotuv buyurtmasiga moslashtirilgan narxlashni amalga oshiradigan yangi yozuv yaratadi. Yangi narx qoidasini yaratish uchun `Add a line` tugmasini bosing, bu yangi narx ro'yxati qoidalari formasini ochadi.
 
-Then, select whether to apply this set of rules to a
-`Product` or
-`Category`.
+Keyin bu qoidalar to'plamini `Product` yoki `Category` ga qo'llashni tanlang.
 
-From here, there are several configuration options:
+Bu yerdan bir necha konfiguratsiya variantlari mavjud:
 
-- `Product`: If selected in the
-  `Apply To` field, use this field to
-  choose one or more products to which this pricelist will apply.
-- `Category`: Select one or more
-  product categories to which this pricelist will apply.
-- `Price Type`: Select whether the
-  specialized pricing will fall under `Discount`, `Formula`, or
-  `Fixed Price`. Depending on the
-  price type, there will be additional configurations on how to apply
-  the pricelist.
-  - `Discount`: Enter the percentage
-    to be discounted. A mark-up can be configured by using a negative
-    value in this field.
+- `Product`: Agar `Apply To` maydonida tanlab olingan bo'lsa, ushbu narx ro'yxati qo'llaniladigan bir yoki bir nechta mahsulotlarni tanlash uchun ushbu maydondan foydalaning.
+- `Category`: Ushbu narx ro'yxati qo'llaniladigan bir yoki bir nechta mahsulot toifalarini tanlang.
+- `Price Type`: Maxsus narxlash `Discount`, `Formula` yoki `Fixed Price` ostiga tushishini tanlang. Narx turiga qarab, narx ro'yxatini qanday qo'llash bo'yicha qo'shimcha konfiguratsiyalar bo'ladi.
+  - `Discount`: Chegirma qilinadigan foizni kiriting. Ushbu maydondan manfiy qiymat ishlatib narx oshirishni konfiguratsiya qilish mumkin.
 
     ::: warning
-     example
-To formulate a 100% markup (or two times the price of the product), with
-a \$5 minimum margin, set the `Based price` field to `Sales Price` and the `Discount`
-to [-100]. This is often seen in retail situations.
+     misol
+100% narx oshirish (yoki mahsulot narxining ikki baravar)ni, minimal 5 dollar daromad bilan shaklllantirish uchun `Based price` maydonini `Sales Price` ga va `Discount` ni [-100] ga o'rnating. Bu ko'pincha chakana sotuvda ko'riladi.
 
-![How it looks to formulate a markup cost with 5 dollar minimum margin in Odoo Sales.](pricing/formula-markup-cost-example.png)
+![Odoo Sales'da 5 dollarlik minimal daromad bilan narx oshirish xarajatini shaklllantirish qanday ko'rinishi.](pricing/formula-markup-cost-example.png)
 :::
 
 ::: example
-To apply 20% discounts, with prices rounded up to 9.99, set the
-`Based on` field to
-`Sales Price`, the
-`Discount` field to [20],
-the `Extra Fee` field to
-[-0.01], and the `Rounding Method` field to [10].
+20% chegirmalarni qo'llash uchun, narxlarni 9.99 gacha yumaloqlash bilan, `Based on` maydonini `Sales Price` ga, `Discount` maydonini [20] ga, `Extra Fee` maydonini [-0.01] ga va `Rounding Method` maydonini [10] ga o'rnating.
 
-![Example of a 20% discount with prices rounded to 9.99 in Odoo Sales.](pricing/formula-discount-example.png)
+![Odoo Sales'da narxlari 9.99 gacha yumalaqlangan 20% chegirma misoli.](pricing/formula-discount-example.png)
 :::
 
 ::: tip
 
-To have prices that end in 9.99, set the
-`Rounding Method` to [10]
-and the `Extra Fee` to
-[-0.01].
-::::
+9.99 da tugaydigan narxlar uchun `Rounding Method` ni [10] ga va `Extra Fee` ni [-0.01] ga o'rnating.
+:::
 
-### Recurring Prices tab
+### Takroriy narxlar belgisi
 
-Time-based rules are used specifically with subscription products. Be
-sure to check out the Odoo
-`Subscriptions ` documentation for more information.
+Vaqtga asoslangan qoidalar maxsus obuna mahsulotlari bilan ishlatiladi. Qo'shimcha ma'lumot uchun Odoo `Subscriptions` hujjatlarini ko'rib chiqishni unutmang.
 
-In the `Recurring Prices` tab,
-pricelists are configured with the same options as in the
-`Price Rules` tab, with additional
-columns for `Product Variants` and
-`Recurring Plan`.
+`Recurring Prices` belgisida narx ro'yxatlari `Price Rules` belgisidagi kabi variantlar bilan konfiguratsiya qilinadi, `Product Variants` va `Recurring Plan` uchun qo'shimcha ustunlar bilan.
 
-`Product Variants` are configured
-under products that have one or more values, such as color, size, etc.
-Once a product has been selected under the
-`Products Tab`, if applicable, select
-the desired product variants to be included in the price rule.
+`Product Variants` rang, o'lcham va boshqalar kabi bir yoki bir nechta qiymatlarga ega mahsulotlar ostida konfiguratsiya qilinadi. `Products Tab` ostida mahsulot tanlab olingandan so'ng, agar tegishli bo'lsa, narx qoidasiga kiritilishi kerak bo'lgan kerakli mahsulot variantlarini tanlang.
 
-Then, select the blank field in the `Recurring Plan` column to reveal a drop-down menu of pre-designated
-recurrence periods (e.g. [Monthly], [Quarterly],
-[Weekly], etc.).
+Keyin `Recurring Plan` ustunidagi bo'sh maydonni tanlang, bu oldindan belgilangan takrorlash davrlari ochiladigan menyusini ochadi (masalan, [Oylik], [Choraklik], [Haftalik] va boshqalar).
 
-![The recurring prices tab in a pricelist configuration form.](pricing/sales-pricelist-recurringprices.png)
+![Narx ro'yxati konfiguratsiya formasidagi takroriy narxlar belgisi.](pricing/sales-pricelist-recurringprices.png)
 
-New recurrence periods can also be created from this column. To do so,
-type in the name for the new `Recurring Plan`, then select `Create` from the resulting drop-down menu to create the time
-period, which can be edited later. Alternatively, select `Create and
-edit...` to reveal a
-`Create Recurring Plan` pop-up form.
-From this pop-up form, the new recurrence period can be configured, with
-specific `Details`,
-`Self-Service`, and
-`Pricing` options. When the
-configurations are complete, click the `Save &
-Close` button.
+Ushbu ustundan yangi takrorlash davrlari ham yaratilishi mumkin. Buning uchun yangi `Recurring Plan` nomini yozing, keyin vaqt davrini yaratish uchun natijada paydo bo'lgan ochiladigan menyudan `Create` ni tanlang, uni keyinroq tahrirlash mumkin. Shu bilan bir qatorda, `Create Recurring Plan` pop-up formasini ochish uchun `Create and edit...` ni tanlang. Ushbu pop-up formadan yangi takrorlash davri maxsus `Details`, `Self-Service` va `Pricing` variantlari bilan konfiguratsiya qilinishi mumkin. Konfiguratsiyalar tugagandan so'ng `Save & Close` tugmasini bosing.
 
-![Custom time period pop-up form in Odoo Sales.](pricing/time-period-popup.png)
+![Odoo Sales'da maxsus vaqt davri pop-up formasi.](pricing/time-period-popup.png)
 
-Lastly, add the desired price for this recurring price rule in the
-`Recurring Price` column.
+Nihoyat, `Recurring Price` ustunida ushbu takroriy narx qoidasi uchun kerakli narxni qo'shing.
 
+### Ijara qoidalari belgisi
 
-### Rental rules tab
+`Rental rules` belgisi ostida `rental products` uchun narx qoidalari `Price Rules` va `Recurring Prices` belgilaridagi kabi metodologiya bilan konfiguratsiya qilinishi mumkin.
 
-Price rules can be configured for
-`rental products ` under
-the `Rental rules` tab, using the
-same methodology as the `Price Rules`
-and `Recurring Prices` tabs.
+Ijara qoidasini qo'shish uchun `Add a line` tugmasini bosing va `Products` ustunida kerakli mahsulotni tanlang. Keyin zarur bo'lsa, har qanday maxsus `Variants` ni tanlang.
 
-To add a rental rule, click `Add a line`, and select a desired product in the
-`Products` column. Then, select any
-specific `Variants`, if necessary.
+Keyin ijara qoidasi uchun `Period` vaqtini belgilang (masalan, [Kunlik], [Soatlik] va boshqalar).
 
-Next, designate a `Period` of time
-for the rental rule (e.g. [Daily], [Hourly],
-etc.).
+Nihoyat, tegishli ustunda ijara qoidasi uchun `Price` ni konfiguratsiya qiling.
 
-Lastly, configure a `Price` for the
-rental rule in the respective column.
+![Narx ro'yxati konfiguratsiya formasidagi ijara belgisi.](pricing/sales-pricelist-rental.png)
 
-![The rental tab in a pricelist configuration form.](pricing/sales-pricelist-rental.png)
+### Elektron tijorat belgisi
 
-### Ecommerce Tab
+`Ecommerce` belgisi ostida `Ecommerce website` da sotiladigan mahsulotlar uchun narx qoidalari konfiguratsiya qilinishi mumkin.
 
-Under the `Ecommerce` tab, price
-rules can be configured for products sold on an
-`Ecommerce website `.
+Narx ro'yxatini ko'rinadigan qilish uchun `Website` maydonida maqsadli veb-saytni tanlang.
 
-To enable the pricelist to be visible, select the target website in the
-`Website` field.
+`Selectable` mijozga ushbu narx ro'yxatini tanlash imkonini berish uchun yoqilishi mumkin.
 
-The `Selectable` can be enabled to
-allow the customer to choose this pricelist.
+Nihoyat, `E-commerce Promotional Code` maydoniga reklama va sadoqat kodlari qo'shilishi mumkin.
 
-Finally, promotional and loyalty codes can be added to the
-`E-commerce Promotional Code` field.
+Mijozlar xarid qilishda tanlaydigan variant sifatida ushbu narx ro'yxatini qo'yish uchun `Selectable` belgisini belgilang. Agar `Selectable` maydoni belgilanmagan bo'lsa, mijozlar o'zlari uchun ushbu narx ro'yxatini **tanlay olmaydi**.
 
-Tick the `Selectable` checkbox to
-have this pricelist as a selectable option for customers to choose as
-they shop. If the `Selectable` box is
-left unticked, customers **cannot** select this pricelist for
-themselves.
+Nihoyat, `E-commerce Promotional Code` qo'shish imkoniyati mavjud. Kod qo'shish uchun kerakli reklama kodini yozing, u to'lov jarayonida kiritilganda mijoz avval belgilangan mezonlarga to'g'ri kelmasa ham narx ro'yxatini mijozga qo'llaydi.
 
-Lastly, there is the option to add an
-`E-commerce Promotional Code`. To add
-a code, type in the desired promo code that, when entered during the
-checkout process, applies the pricelist to the customer, even if the
-customer does not fall into the previously-specified criteria.
+## Mijoz narx ro'yxatining qo'llanilishi
 
-## Customer pricelist application
+Har qanday mijozga qo'llaniladigan standart narx ro'yxati `Public Pricelist` bo'lsa-da, Odoo mijozlarga ularning aloqa formasida to'g'ridan-to'g'ri boshqa narx ro'yxatini qo'llash imkoniyatini beradi.
 
-While the default pricelist applied to any customer is the
-`Public Pricelist`, Odoo provides the
-opportunity to directly apply a different pricelist to customers on
-their contact form.
+Buning uchun kerakli mijozning aloqa formasini oching, `Sales app ‣ Orders ‣ Customers` ga o'tib, asosiy `Customers` sahifasidan mijozni tanlash yoki sotuv buyurtmasidagi mijoz nomini bosish orqali.
 
-To do that, open the desired customer\'s contact form, either by
-navigating to `Sales
-app ‣ Orders ‣ Customers`
-and selecting the customer from the main `Customers` page, or by clicking on the customer\'s name on a sales
-order.
+![Odoo Sales'da mijoz batafsil formasi namunasi.](pricing/customer-detail-form.png)
 
-![Sample customer detail form in Odoo Sales.](pricing/customer-detail-form.png)
+Kerakli mijozning aloqa formasida `Sales & Purchase` belgisi ostida `Sales` bo'limida `Pricelist` maydonidagi ochiladigan menyudan ushbu maxsus mijozga qo'llanishi kerak bo'lgan narx ro'yxatini belgilang.
 
-On the desired customer\'s contact form, under the
-`Sales & Purchase` tab, in the
-`Sales` section, designate what
-pricelist should be applied to this specific customer from the drop-down
-menu in the `Pricelist` field.
-
-![The pricelist field in a customer detail form in Odoo Sales.](pricing/customer-form-pricelist-field.png)
+![Odoo Sales'da mijoz batafsil formasidagi narx ro'yxati maydoni.](pricing/customer-form-pricelist-field.png)
 
 ::: tip
 
-When a customer is added to the database, the default pricelist is
-automatically applied to them. There is **no way** to have a blank
-*Pricelist* field on a contact form. Even if that field is left blank,
-the default pricelist appears when that contact form is opened again.
+Mijoz ma'lumotlar bazasiga qo'shilganda, standart narx ro'yxati ularga avtomatik ravishda qo'llaniladi. Aloqa formasida bo'sh *Narx ro'yxati* maydoniga ega bo'lishning **hech qanday yo'li yo'q**. Hatto bu maydon bo'sh qoldirilsa ham, o'sha aloqa formasi qayta ochilganda standart narx ro'yxati paydo bo'ladi.
 
-However, when that contact is added to a quotation, and the *Pricelist*
-field is auto-populated (based on the information from their contact
-form), that predetermined pricelist can be removed from the *Pricelist*
-field, and the quotation can still be confirmed, and subsequently,
-turned into a sales order.
-::::
+Biroq, o'sha aloqa taklifga qo'shilganda va *Narx ro'yxati* maydoni avtomatik to'ldirilganda (ularning aloqa formasidagi ma'lumotlarga asoslanib), o'sha oldindan belgilangan narx ro'yxatini *Narx ro'yxati* maydonidan olib tashlash mumkin va taklif hali ham tasdiqlanishi va keyinchalik sotuv buyurtmasiga aylantirilishi mumkin.
+:::
 
-### Conditions
+### Shartlar
 
-At the bottom of the `Create Pricelist Rules` pop-up form is the `Conditions` section.
+`Create Pricelist Rules` pop-up formasining pastki qismida `Conditions` bo'limi joylashgan.
 
-Here, start by selecting one of the options in the
-`Apply On` field:
+Bu yerda `Apply On` maydonidagi variantlardan birini tanlashdan boshlang:
 
-- `All Products`: the advanced
-  pricelist rule will be applied to all products.
-- `Product Category`: the advanced
-  pricelist rule will be applied to a specific category of products.
-- `Product`: the advanced pricelist
-  rule will be applied to a specific product.
-- `Product Variant`: the advanced
-  pricelist rule will be applied to a specific product variant.
+- `All Products`: ilg'or narx ro'yxati qoidasi barcha mahsulotlarga qo'llaniladi.
+- `Product Category`: ilg'or narx ro'yxati qoidasi mahsulotlarning muayyan toifasiga qo'llaniladi.
+- `Product`: ilg'or narx ro'yxati qoidasi muayyan mahsulotga qo'llaniladi.
+- `Product Variant`: ilg'or narx ro'yxati qoidasi muayyan mahsulot variantiga qo'llaniladi.
 
-If any of those options, apart from `All Products`, are selected, a new option-specific field appears, in
-which the specific `Product Category`, `Product`, or
-`Product Variant` must be chosen.
+Agar `All Products` dan tashqari ushbu variantlardan biri tanlab olinsa, variant-maxsus yangi maydon paydo bo'ladi, unda muayyan `Product Category`, `Product` yoki `Product Variant` tanlanishi kerak.
 
-Then, select a minimum quantity to be applied to the advanced pricelist
-rule in the `Min.
-Quantity` field. Lastly, select a
-range of dates for the pricelist item validation in the
-`Validity` field.
+Keyin `Min. Quantity` maydonida ilg'or narx ro'yxati qoidasiga qo'llaniladigan minimal miqdorni tanlang. Nihoyat, `Validity` maydonida narx ro'yxati elementi tasdiqlash uchun sanalar oralig'ini tanlang.
 
-Once all configurations are complete, either click
-`Save & Close` to save the advanced
-pricelist rule, or click `Save & New`
-to immediately create another advanced pricelist rule on a fresh form.
+Barcha konfiguratsiyalar tugagandan so'ng, ilg'or narx ro'yxati qoidasini saqlash uchun `Save & Close` tugmasini bosing yoki yangi formada darhol boshqa ilg'or narx ro'yxati qoidasini yaratish uchun `Save & New` tugmasini bosing.
 
 ::: tip
 
-If a price rule is set for a particular product, and another one for its
-product category, Odoo takes the rule of the product itself.
-::::
-
+Agar muayyan mahsulot uchun narx qoidasi o'rnatilgan bo'lsa va uning mahsulot toifasi uchun yana biri bo'lsa, Odoo mahsulotning o'zining qoidasini oladi.
+:::

@@ -1,196 +1,127 @@
-# Use eWallets and gift cards
+# eWallet va sovg'a kartalarini ishlatish
 
-With Odoo, customers can use **eWallets** and **gift cards** for online
-and in-store shopping.
+Odoo bilan mijozlar onlayn va do'kon ichida xarid qilish uchun **eWallet** va **sovg'a kartalarini** ishlatishlari
+mumkin.
 
-To enable eWallets and gift cards for eCommerce and Point of Sale (PoS),
-first enable `Discounts, Loyalty & Gift Card` under `Sales app ‣ Configuration ‣
-Settings ‣ Pricing section`.
-Once enabled, go to `Sales app ‣ Products ‣ Gift
-cards & eWallet` and
-`Create` a new eWallet or gift card
-program.
+eCommerce va Point of Sale (PoS) uchun eWallet va sovg'a kartalarini yoqish uchun avval
+`Sales app ‣ Configuration ‣ Settings ‣ Pricing section` ostida `Discounts, Loyalty & Gift Card` ni yoqing. Yoqilgandan
+so'ng, `Sales app ‣ Products ‣ Gift cards & eWallet` ga o'ting va yangi eWallet yoki sovg'a kartalari dasturini `Create`
+qiling.
 
-## eWallets
+## eWallet
 
-eWallets allow customers to save credits on their online account and use
-these credits as a payment method when buying items in an online store
-or a brick-and-mortar store. eWallets can also be used to centralize
-multiple `gift cards `.
+eWallet mijozlarga onlayn hisoblarida kreditlarni saqlash va onlayn do'kon yoki oddiy do'konda buyumlar sotib olishda bu
+kreditlarni to'lov usuli sifatida ishlatish imkonini beradi. eWallet bir nechta `gift cards` ni markazlashtirish uchun
+ham ishlatilishi mumkin.
 
-Before creating an eWallet program, it is necessary to create an eWallet
-**top-up** product. Top-ups are pre-defined digital credit values added
-to an eWallet in exchange for its equivalent in real currency. These
-credits can then be used as a payment method in the eCommerce shop or
-`PoS
-(Point of Sale)`. Top-up values can be of
-different amounts.
+eWallet dasturini yaratishdan oldin eWallet **to'ldirish** mahsulotini yaratish kerak. To'ldirishlar haqiqiy valyutadagi
+ekvivalenti evaziga eWallet ga qo'shiladigan oldindan belgilangan raqamli kredit qiymatlaridir. Keyin bu kreditlar
+eCommerce do'koni yoki `PoS (Point of Sale)` da to'lov usuli sifatida ishlatilishi mumkin. To'ldirish qiymatlari turli
+miqdorlarda bo'lishi mumkin.
 
 ::: example
-A \$50 top-up can be bought for \$50, and adds that same amount of
-credits to the eWallet.
+$50 to'ldirish $50 ga sotib olinishi mumkin va eWallet ga xuddi shu miqdorda kredit qo'shadi.
 :::
 
-To create a top-up product, go to
-`Sales app ‣ Products ‣ Products` and `Create` a
-new product. On the product template, configure the options as follows:
+To'ldirish mahsulotini yaratish uchun `Sales app ‣ Products ‣ Products` ga o'ting va yangi mahsulotni `Create` qiling.
+Mahsulot shablonida quyidagi variantlarni sozlang:
 
-- `Product Name`: enter a name for
-  the top-up product (for example, [\$50 Top-Up])
-- `Can be Sold`: enabled
-- `Product Type`: select
-  `Service`
-- `Invoicing Policy`: select
-  `Prepaid/Fixed Price`
-- `Create on Order`: select
-  `Nothing`
-- `Sales Price`: enter the amount of
-  the top-up
+- `Product Name`: to'ldirish mahsuloti uchun nom kiriting (masalan, [$50 To'ldirish])
+- `Can be Sold`: yoqilgan
+- `Product Type`: `Service` ni tanlang
+- `Invoicing Policy`: `Prepaid/Fixed Price` ni tanlang
+- `Create on Order`: `Nothing` ni tanlang
+- `Sales Price`: to'ldirish miqdorini kiriting
 
 ::: tip
 
-In order to have eWallet top-ups of different amounts, create multiple
-top-up products and modify the `Sales Price` accordingly.
+Turli miqdordagi eWallet to'ldirishlariga ega bo'lish uchun bir nechta to'ldirish mahsulotlarini yarating va
+`Sales Price` ni mos ravishda o'zgartiring.
 ::::
 
-Once the top-up is created, go to
-`Sales app ‣ Products ‣ Gift cards & eWallet` to `Create` an
-eWallet program. The following configuration options are available:
+To'ldirish yaratilgandan so'ng, eWallet dasturini `Create` qilish uchun `Sales app ‣ Products ‣ Gift cards & eWallet` ga
+o'ting. Quyidagi konfiguratsiya variantlari mavjud:
 
-- `Program Name`: enter a name for
-  the eWallet program
-- `Program Type`: select
-  `eWallet`
-- `eWallet Products`: select the
-  eWallet top-up created earlier. Repeat the process if you created
-  top-ups of different amounts.
-- `Email template`: select the email
-  template used for the email sent to the customer. To create a new
-  template, click on the field, select `Search More`, and then click `Create`.
-- `Currency`: select the currency to
-  use for the eWallet program
-- `Company`: select the company for
-  which the program is valid and available
-- `Available On`: select the
-  applications on which the program is valid and available
-- `Website`: select the website on
-  which the program is valid and available. Leave this field empty to
-  include all websites.
-- `Point of Sale`: select the
-  `PoS (Point of Sale)` in which the
-  program is valid and available. Leave this field empty to include all
-  `PoS (Point of Sale)`.
+- `Program Name`: eWallet dasturi uchun nom kiriting
+- `Program Type`: `eWallet` ni tanlang
+- `eWallet Products`: avval yaratilgan eWallet to'ldirishini tanlang. Agar turli miqdordagi to'ldirishlarni yaratgan bo'
+  lsangiz, jarayonni takrorlang.
+- `Email template`: mijozga yuborilgan elektron pochta uchun ishlatilgan elektron pochta shablonini tanlang. Yangi
+  shablon yaratish uchun maydonni bosing, `Search More` ni tanlang, keyin `Create` ni bosing.
+- `Currency`: eWallet dasturi uchun ishlatilishi kerak bo'lgan valyutani tanlang
+- `Company`: dastur haqiqiy va mavjud bo'lgan kompaniyani tanlang
+- `Available On`: dastur haqiqiy va mavjud bo'lgan ilovalarni tanlang
+- `Website`: dastur haqiqiy va mavjud bo'lgan veb-saytni tanlang. Barcha veb-saytlarni qo'shish uchun bu maydonni bo'sh
+  qoldiring.
+- `Point of Sale`: dastur haqiqiy va mavjud bo'lgan `PoS (Point of Sale)` ni tanlang. Barcha `PoS (Point of Sale)` ni
+  qo'shish uchun bu maydonni bo'sh qoldiring.
 
-![eWallet program configuration page](ewallets_giftcards/ewallet-configuration.png)
+![eWallet dasturi konfiguratsiya sahifasi](ewallets_giftcards/ewallet-configuration.png)
 
-Once the program is configured, click the
-`Generate eWallet` button in the
-upper-left corner to generate eWallets. eWallets can be generated based
-on `Customers` and/or
-`Customer Tags`. The quantity is
-automatically adapted according to the `Customers` and `Customer Tags`
-selected. Then, set the `eWallet
-value`. Finally, set the
-`Valid Until` period if applicable.
+Dastur sozlangandan so'ng, eWallet larni yaratish uchun yuqori chap burchakdagi `Generate eWallet` tugmasini bosing.
+eWallet lar `Customers` va/yoki `Customer Tags` asosida yaratilishi mumkin. Miqdor tanlangan `Customers` va
+`Customer Tags` ga muvofiq avtomatik ravishda moslashtiriladi. Keyin `eWallet value` ni belgilang. Nihoyat, agar
+tegishli bo'lsa, `Valid Until` muddatini belgilang.
 
-Generated eWallets can be accessed through the
-`eWallets` smart button in the
-upper-right corner. From there, `Send` or `Share` the
-eWallets via email or a URL link.
+Yaratilgan eWallet larga yuqori o'ng burchakdagi `eWallets` aqlli tugmasi orqali kirish mumkin. U yerdan eWallet larni
+elektron pochta yoki URL havola orqali `Send` yoki `Share` qiling.
 
-![eWallets send and share buttons](ewallets_giftcards/ewallet-share.png)
+![eWallet yuborish va baham ko'rish tugmalari](ewallets_giftcards/ewallet-share.png)
 
-Click on an eWallet to change the `Expiration Date`, `Partner`, or
-`Balance`. The
-`Code` of an eWallet *cannot* be
-changed, deleted, or duplicated.
+`Expiration Date`, `Partner` yoki `Balance` ni o'zgartirish uchun eWallet ni bosing. eWallet ning `Code` i
+*o'zgartirilmaydi*, o'chirilmaydi yoki takrorlanmaydi.
 
-## Gift cards 
+## Sovg'a kartalari
 
-Gift cards can be purchased by customers, and in turn used as a payment
-method upon checkout at an eCommerce shop or
-`PoS (Point of Sale)`.
+Sovg'a kartalari mijozlar tomonidan sotib olinishi mumkin va o'z navbatida eCommerce do'koni yoki `PoS (Point of Sale)`
+da to'lovni amalga oshirishda to'lov usuli sifatida ishlatilishi mumkin.
 
-Before creating a new gift card program, it is necessary to first create
-gift cards as products. To do so, go to
-`Sales app ‣ Products ‣ Products` and `Create` a
-product. On the product template, configure the options as follows:
+Yangi sovg'a kartalari dasturini yaratishdan oldin avval sovg'a kartalarini mahsulot sifatida yaratish kerak. Buning
+uchun `Sales app ‣ Products ‣ Products` ga o'ting va mahsulotni `Create` qiling. Mahsulot shablonida quyidagi
+variantlarni sozlang:
 
-- `Product Name`: enter a name for
-  the gift card product
-- `Can be Sold`: enabled
-- `Product Type`: select
-  `Service`
-- `Invoicing Policy`: select
-  `Prepaid/Fixed Price`
-- `Create on Order`: select
-  `Nothing`
-- `Sales Price`: enter the amount of
-  the gift card
+- `Product Name`: sovg'a kartasi mahsuloti uchun nom kiriting
+- `Can be Sold`: yoqilgan
+- `Product Type`: `Service` ni tanlang
+- `Invoicing Policy`: `Prepaid/Fixed Price` ni tanlang
+- `Create on Order`: `Nothing` ni tanlang
+- `Sales Price`: sovg'a kartasining miqdorini kiriting
 
 ::: tip
 
-In order to have gift cards of different amounts, create multiple gift
-card products and modify the `Sales Price` accordingly.
+Turli miqdordagi sovg'a kartalariga ega bo'lish uchun bir nechta sovg'a kartalari mahsulotlarini yarating va
+`Sales Price` ni mos ravishda o'zgartiring.
 ::::
 
-Once the gift card product is created, go to
-`Sales app ‣ Products ‣ Gift cards
-& eWallet` to
-`Create` a gift card program. The
-following configuration options are available:
+Sovg'a kartasi mahsuloti yaratilgandan so'ng, sovg'a kartalari dasturini `Create` qilish uchun
+`Sales app ‣ Products ‣ Gift cards & eWallet` ga o'ting. Quyidagi konfiguratsiya variantlari mavjud:
 
-- `Program Name`: enter a name for
-  the gift card program
-- `Program Type`: select
-  `Gift Card`
-- `Gift Card Products`: select the
-  gift card product created earlier. Repeat the process if you created
-  gift card products of different amounts.
-- `Email template`: select the
-  default `Gift Card: Gift Card Information` template, or create a new template by clicking on the
-  field, selecting `Search More`, and
-  then clicking `Create`.
-- `Print Report`: select
-  `Gift Card`
-- `Currency`: select the currency to
-  use for the gift card program
-- `Company`: select the company for
-  which the program is valid and available
-- `Available On`: select the
-  applications on which the program is valid and available
-- `Website`: select the website on
-  which the program is valid and available. Leave this field empty to
-  include all websites.
-- `Point of Sale`: select the
-  `PoS (Point of Sale)` in which the
-  program is valid and available. Leave this field empty to include all
-  `PoS (Point of Sale)`.
+- `Program Name`: sovg'a kartalari dasturi uchun nom kiriting
+- `Program Type`: `Gift Card` ni tanlang
+- `Gift Card Products`: avval yaratilgan sovg'a kartasi mahsulotini tanlang. Agar turli miqdordagi sovg'a kartalari
+  mahsulotlarini yaratgan bo'lsangiz, jarayonni takrorlang.
+- `Email template`: `Gift Card: Gift Card Information` standart shablonini tanlang yoki maydonni bosib, `Search More` ni
+  tanlab, keyin `Create` ni bosish orqali yangi shablon yarating.
+- `Print Report`: `Gift Card` ni tanlang
+- `Currency`: sovg'a kartalari dasturi uchun ishlatilishi kerak bo'lgan valyutani tanlang
+- `Company`: dastur haqiqiy va mavjud bo'lgan kompaniyani tanlang
+- `Available On`: dastur haqiqiy va mavjud bo'lgan ilovalarni tanlang
+- `Website`: dastur haqiqiy va mavjud bo'lgan veb-saytni tanlang. Barcha veb-saytlarni qo'shish uchun bu maydonni bo'sh
+  qoldiring.
+- `Point of Sale`: dastur haqiqiy va mavjud bo'lgan `PoS (Point of Sale)` ni tanlang. Barcha `PoS (Point of Sale)` ni
+  qo'shish uchun bu maydonni bo'sh qoldiring.
 
-![Gift card program configuration page](ewallets_giftcards/giftcard-configuration.png)
+![Sovg'a kartalari dasturi konfiguratsiya sahifasi](ewallets_giftcards/giftcard-configuration.png)
 
-Once the program is configured, click the
-`Generate Gift Cards` button in the
-upper-left corner to generate gift cards. Gift cards can be generated
-either for `Anonymous
-Customers` or
-`Selected Customers`. Set the
-`Quantity to generate` for
-`Anonymous Customers`, or select the
-`Customers` and/or `Customer
-Tags` for
-`Selected Customers`. Then, set the
-`Gift Card value`. Finally, set the
-`Valid Until` period if applicable.
+Dastur sozlangandan so'ng, sovg'a kartalarini yaratish uchun yuqori chap burchakdagi `Generate Gift Cards` tugmasini
+bosing. Sovg'a kartalari `Anonymous Customers` yoki `Selected Customers` uchun yaratilishi mumkin. `Anonymous Customers`
+uchun `Quantity to generate` ni belgilang yoki `Selected Customers` uchun `Customers` va/yoki `Customer Tags` ni
+tanlang. Keyin `Gift Card value` ni belgilang. Nihoyat, agar tegishli bo'lsa, `Valid Until` muddatini belgilang.
 
-Generated gift cards can be accessed through the
-`Gift Cards` smart button in the
-upper-right corner. From there, `Send` or `Share` the gift
-cards via email or a URL link.
+Yaratilgan sovg'a kartalariga yuqori o'ng burchakdagi `Gift Cards` aqlli tugmasi orqali kirish mumkin. U yerdan sovg'a
+kartalarini elektron pochta yoki URL havola orqali `Send` yoki `Share` qiling.
 
-![Gift cards send and share buttons](ewallets_giftcards/giftcard-share.png)
+![Sovg'a kartalari yuborish va baham ko'rish tugmalari](ewallets_giftcards/giftcard-share.png)
 
-Click on a gift card to change the `Expiration Date`, `Partner`, or
-`Balance`. The
-`Code` of a gift card *cannot* be
-changed, deleted, or duplicated.
+`Expiration Date`, `Partner` yoki `Balance` ni o'zgartirish uchun sovg'a kartasini bosing. Sovg'a kartasining `Code` i
+*o'zgartirilmaydi*, o'chirilmaydi yoki takrorlanmaydi.

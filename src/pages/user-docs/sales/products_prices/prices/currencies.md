@@ -1,273 +1,155 @@
-# Foreign currencies
+# Xorijiy valyutalar
 
-With Odoo, pricelists can be used to manage prices in a number of
-foreign currencies. Specifically, Odoo has the ability to work with 167
-total currencies.
+Odoo bilan narx ro'yxatlari bir qator xorijiy valyutalarda narxlarni boshqarish uchun ishlatilishi mumkin. Aniq qilib aytganda, Odoo jami 167 ta valyuta bilan ishlash qobiliyatiga ega.
 
 ::: tip
 
-In order to use multiple currencies in Odoo *Sales*, the *Accounting*
-application **must** be installed.
+Odoo *Sales* da bir nechta valyutalarni ishlatish uchun *Accounting* ilovasi **albatta** o'rnatilgan bo'lishi kerak.
 ::::
 
-## Settings
+## Sozlamalar
 
-Once the *Accounting* app has been installed, foreign currencies can be
-added to the database. Navigate to
-`Accounting app ‣ Configuration ‣ Settings`, scroll to the `Currencies` section, and locate the
-`Main Currency` setting.
+*Accounting* ilovasi o'rnatilgandan so'ng, xorijiy valyutalar ma'lumotlar bazasiga qo'shilishi mumkin. `Accounting app ‣ Configuration ‣ Settings`ga o'ting, `Currencies` bo'limigacha pastga suring va `Main Currency` sozlamasini toping.
 
-![How the main currency feature appears on settings page in Odoo Accounting.](currencies/main-currency-setting-page.png)
+![Odoo Accounting da sozlamalar sahifasida asosiy valyuta funksiyasi qanday ko'rinadi.](currencies/main-currency-setting-page.png)
 
-Odoo automatically sets the main currency as the currency of the country
-the company is based in.
+Odoo avtomatik ravishda asosiy valyutani kompaniya joylashgan mamlakat valyutasi sifatida belgilaydi.
 
-To change the main currency of the company, select the drop-down menu in
-the `Currency` field, select the
-desired currency, and be sure to `Save` the changes.
+Kompaniyaning asosiy valyutasini o'zgartirish uchun `Currency` maydonidagi pastga tushuvchi menyuni tanlang, kerakli valyutani tanlang va o'zgarishlarni `Save` qilishni unutmang.
 
 ::: tip
 
-To ensure currency rates are updated automatically, enable the
-*automatic currency rates* feature on the *Accounting* settings page
-(`Accounting app ‣ Configuration ‣ Settings
-‣ Currencies section`).
+Valyuta kurslarining avtomatik yangilanishini ta'minlash uchun *Accounting* sozlamalar sahifasida (*avtomatik valyuta kurslari* funksiyasini yoqing
+(`Accounting app ‣ Configuration ‣ Settings ‣ Currencies section`).
 
-![How the main currency feature appears on settings page in Odoo Accounting.](currencies/automatic-currency-rates.png)
+![Odoo Accounting da sozlamalar sahifasida asosiy valyuta funksiyasi qanday ko'rinadi.](currencies/automatic-currency-rates.png)
 
-Click the checkbox beside the
-`Automatic Currency Rates` feature,
-choose a designated bank to get the currency rates from in the
-`Service` field drop-down menu, and
-select an `Interval` of time for the
-updates to take place. Then determine when the date of the
-`Next Run` should be.
+`Automatic Currency Rates` funksiyasining yonidagi katakchani belgilang, `Service` maydonining pastga tushuvchi menyusidan valyuta kurslarini olish uchun belgilangan bankni tanlang va yangilanishlar sodir bo'lishi uchun `Interval` vaqtini tanlang. Keyin `Next Run` sanasi qachon bo'lishi kerakligini aniqlang.
 
-To instantly update the currency rates, click the
-`🔁 (circular arrows)` icon, located
-to the right of the `Next Run` field.
+Valyuta kurslarini darhol yangilash uchun `Next Run` maydonining o'ng tomonida joylashgan `🔁 (doiraviy o'qlar)` belgisini bosing.
 
-When all configurations are complete, be sure to
-`Save` all changes.
+Barcha konfiguratsiyalar tugallangandan so'ng, barcha o'zgarishlarni `Save` qilishni unutmang.
 ::::
 
 ::: tip
 
-All payment methods **must** be in the same currency as the sales
-journal, or the company currency, if the company currency is not set. If
-it is not the same, a `Validation
-Error` message appears.
+Barcha to'lov usullari savdo jurnali bilan bir xil valyutada **bo'lishi kerak**, yoki kompaniya valyutasi belgilanmagan bo'lsa, kompaniya valyutasi bo'lishi kerak. Agar bir xil bo'lmasa, `Validation Error` xabari paydo bo'ladi.
 ::::
 
-## View, edit, and add currencies
+## Valyutalarni ko'rish, tahrirlash va qo'shish
 
-To view, edit, and add currencies to the database, making them available
-on pricelists and on the `Main Currency` drop-down menu, click the
-`Currencies` link, located beneath
-the `Currency` field on the
-`Accounting app ‣ Settings`
-page.
+Valyutalarni ma'lumotlar bazasiga ko'rish, tahrirlash va qo'shish uchun, ularni narx ro'yxatlarida va `Main Currency` pastga tushuvchi menyusida mavjud qilish uchun, `Accounting app ‣ Settings` sahifasidagi `Currency` maydonining ostida joylashgan `Currencies` havolasini bosing.
 
-When the `Currencies` link is
-clicked, a separate `Currencies` page
-is revealed.
+`Currencies` havolasi bosilganda, alohida `Currencies` sahifasi ochiladi.
 
-![How the main currencies page appears in Odoo Accounting.](currencies/main-currencies-page.png)
+![Odoo Accounting da asosiy valyutalar sahifasi qanday ko'rinadi.](currencies/main-currencies-page.png)
 
-On this page, Odoo provides a master list of 167 global currencies. Each
-row shows the corresponding `Currency`, `Symbol`,
-`Name`, date of the
-`Last Update`, and
-`Current Rate` (compared to the
-default currency of the country in which the company is based).
+Ushbu sahifada Odoo 167 ta global valyutaning asosiy ro'yxatini taqdim etadi. Har bir qator tegishli `Currency`, `Symbol`, `Name`, `Last Update` sanasi va `Current Rate` (kompaniya joylashgan mamlakatning standart valyutasi bilan solishtirilganda) ni ko'rsatadi.
 
-To the far right, there are two columns, which can be toggled on or off:
+Eng o'ng tomonda yoqilishi yoki o'chirilishi mumkin bo'lgan ikkita ustun mavjud:
 
-- `Active`: this currency is
-  activated, which means it can be added to a pricelist, or used as the
-  main currency of the company, if desired (via `Accounting app ‣
-  Configuration ‣ Settings ‣ Currencies section`).
+- `Active`: bu valyuta faollashtirilgan, ya'ni u narx ro'yxatiga qo'shilishi yoki agar kerak bo'lsa, kompaniyaning asosiy valyutasi sifatida ishlatilishi mumkin (`Accounting app ‣ Configuration ‣ Settings ‣ Currencies section` orqali).
 
 ::: tip
 
-By default, all the `Active` currency
-options are at the top of the list.
+Odatiy bo'lib, barcha `Active` valyuta variantlari ro'yxatning yuqori qismida joylashgan.
 ::::
 
 ::: tip
 
-It is recommended that *at least* one pricelist is created per
-`Active` currency. See
-`./pricing` to learn more about pricelist
-configuration.
+Har bir `Active` valyuta uchun *kamida* bitta narx ro'yxati yaratish tavsiya etiladi. Narx ro'yxati konfiguratsiyasi haqida ko'proq bilish uchun `./pricing` ga qarang.
 ::::
 
-To toggle options on/off, click the toggle switch in the row for the
-corresponding column. When *on* the color of the switch is green. When
-*off*, the color of the switch is grey.
+Variantlarni yoqish/o'chirish uchun tegishli ustundagi qator uchun o'tkazgichni bosing. *Yoqilgan* holatda o'tkazgichning rangi yashil bo'ladi. *O'chirilgan* holatda o'tkazgichning rangi kulrang bo'ladi.
 
-### Currency detail form
+### Valyuta tafsilot formasi
 
-To edit any currency on the `Currencies` page, click the desired currency to reveal the detail
-form for that specific currency, and proceed to make any necessary
-changes.
+`Currencies` sahifasidagi har qanday valyutani tahrirlash uchun, o'sha maxsus valyutaning tafsilot formasini ochish uchun kerakli valyutani bosing va kerakli o'zgarishlarni kiriting.
 
-![How a currency detail form looks in Odoo Accounting.](currencies/currency-detail-form.png)
+![Odoo Accounting da valyuta tafsilot formasi qanday ko'rinadi.](currencies/currency-detail-form.png)
 
-On the currency detail form, the relevant currency code appears in the
-`Currency` field. Beneath that, the
-name for the currency is in the `Name` field.
+Valyuta tafsilot formasida tegishli valyuta kodi `Currency` maydonida ko'rinadi. Uning ostida valyutaning nomi `Name` maydonida ko'rsatilgan.
 
-Then, toggle the currency\'s availability with the
-`Active` toggle: *on* is indicated
-with a green switch, and *off* is indicated with a grey switch.
+Keyin valyutaning mavjudligini `Active` o'tkazgichi bilan o'zgartiring: *yoqilgan* holat yashil o'tkazgich bilan, *o'chirilgan* holat esa kulrang o'tkazgich bilan ko'rsatiladi.
 
-On the right of the currency detail form, the appropriate
-`Currency Unit` (e.g.
-[Dollars]) and `Currency Subunit` (e.g. [Cents]) can be found.
+Valyuta tafsilot formasining o'ng tomonida tegishli `Currency Unit` (masalan, [Dollars]) va `Currency Subunit` (masalan, [Cents]) ni topish mumkin.
 
-Next, under the `Rates` tab, the
-various conversion rates can be viewed, added, or deleted. Each row
-shows the `Date` of that specific
-rate, the `Company` to which it is
-connected, followed by the `Unit per...` and `...per Unit`.
+Keyin, `Rates` yorlig'i ostida turli konvertatsiya kurslarini ko'rish, qo'shish yoki o'chirish mumkin. Har bir qator o'sha maxsus kursning `Date`, u bog'langan `Company`, keyin `Unit per...` va `...per Unit` ni ko'rsatadi.
 
 ::: tip
 
-The *\...* in each of the last two columns represents the main currency
-set for the company. For example, if the main currency is set to
-[USD], the columns are titled
-`Unit per USD` and
-`USD per Unit`.
+Oxirgi ikki ustundagi *\...* kompaniya uchun belgilangan asosiy valyutani ifodalaydi. Masalan, agar asosiy valyuta [USD] ga o'rnatilgan bo'lsa, ustunlar `Unit per USD` va `USD per Unit` deb nomlanadi.
 ::::
 
-To add a new rate, click `Add a line`
-in the `Rates` tab, and proceed to
-fill in the necessary information in the aforementioned columns.
+Yangi kurs qo'shish uchun `Rates` yorlig'ida `Add a line` ni bosing va yuqorida aytib o'tilgan ustunlarga kerakli ma'lumotlarni kiriting.
 
-### Main currency detail form
+### Asosiy valyuta tafsilot formasi
 
-If the selected currency is the main currency of the company, a blue
-banner appears at the top of the currency detail form with the message:
-`This is your company's currency.`.
+Agar tanlangan valyuta kompaniyaning asosiy valyutasi bo'lsa, valyuta tafsilot formasining yuqori qismida `This is your company's currency.` xabari bilan ko'k banner paydo bo'ladi.
 
-![How a main currency detail form looks in Odoo Accounting.](currencies/main-currency-detail-form.png)
+![Odoo Accounting da asosiy valyuta tafsilot formasi qanday ko'rinadi.](currencies/main-currency-detail-form.png)
 
-All the fields are the same as a typical currency detail form, but there
-will **not** be a `Rates` tab because
-all other currency rates are based off the main currency of the company.
+Barcha maydonlar oddiy valyuta tafsilot formasi bilan bir xil, lekin `Rates` yorlig'i bo'lmaydi, chunki boshqa barcha valyuta kurslari kompaniyaning asosiy valyutasiga asoslanadi.
 
-## Create new currency
+## Yangi valyuta yaratish
 
-If a desired currency isn\'t on the `Currencies` page, click the `New` button to open a blank currency template form.
+Agar kerakli valyuta `Currencies` sahifasida bo'lmasa, bo'sh valyuta shablon formasini ochish uchun `New` tugmasini bosing.
 
 ::: tip
 
-The same `New` button is located in
-the upper-right corner of any currency detail form.
+Xuddi shu `New` tugmasi har qanday valyuta tafsilot formasining yuqori o'ng burchagida joylashgan.
 ::::
 
-![How a blank currency detail form looks in Odoo Accounting.](currencies/blank-currency-detail-form.png)
+![Odoo Accounting da bo'sh valyuta tafsilot formasi qanday ko'rinadi.](currencies/blank-currency-detail-form.png)
 
-On the blank currency detail form, proceed to enter the desired currency
-code in the `Currency` field. Beneath
-that, enter the name for the currency in the `Name` field.
+Bo'sh valyuta tafsilot formasida `Currency` maydoniga kerakli valyuta kodini kiriting. Uning ostida `Name` maydoniga valyutaning nomini kiriting.
 
-Then, toggle the currency\'s availability with the
-`Active` toggle switch.
+Keyin valyutaning mavjudligini `Active` o'tkazgich tugmasi bilan o'zgartiring.
 
-On the right of the currency detail form, enter the appropriate
-`Currency Unit` (e.g.
-[Dollars]) and appropriate
-`Currency Subunit` (e.g.
-[Cents]).
+Valyuta tafsilot formasining o'ng tomonida tegishli `Currency Unit` (masalan, [Dollars]) va tegishli `Currency Subunit` (masalan, [Cents]) ni kiriting.
 
-Next, under the `Rates` tab, add a
-new rate by clicking `Add a line`.
-Then, proceed to confirm and adjust the `Date`, `Company`,
-`Unit per...`, and
-`...per Unit` fields to ensure all
-the auto-populated information is accurate.
+Keyin, `Rates` yorlig'i ostida `Add a line` ni bosish orqali yangi kurs qo'shing. Keyin `Date`, `Company`, `Unit per...`, va `...per Unit` maydonlarini tasdiqlang va sozlang, barcha avtomatik to'ldirilgan ma'lumotlar to'g'ri ekanligini ta'minlang.
 
 ::: tip
 
-The *\...* in each of the last two columns represents the main currency
-set for the company. For example, if the main currency is set to
-[USD], the columns are titled
-`Unit per USD` and
-`USD per Unit`.
+Oxirgi ikki ustundagi *\...* kompaniya uchun belgilangan asosiy valyutani ifodalaydi. Masalan, agar asosiy valyuta [USD] ga o'rnatilgan bo'lsa, ustunlar `Unit per USD` va `USD per Unit` deb nomlanadi.
 ::::
 
-## Currency-specific pricelists
+## Valyutaga xos narx ro'yxatlari
 
-It is recommended that *at least* one pricelist is created per active
-currency in the database. To create (or assign) a pricelist to a
-specific currency, start by navigating to `Sales
-app ‣ Products ‣ Pricelists`.
+Ma'lumotlar bazasidagi har bir faol valyuta uchun *kamida* bitta narx ro'yxati yaratish tavsiya etiladi. Muayyan valyuta uchun narx ro'yxatini yaratish (yoki tayinlash) uchun `Sales app ‣ Products ‣ Pricelists` ga o'ting.
 
-From the `Pricelists` page, either
-select an existing pricelist to edit, or click `New` to create a new pricelist.
+`Pricelists` sahifasidan tahrirlash uchun mavjud narx ro'yxatini tanlang yoki yangi narx ro'yxatini yaratish uchun `New` ni bosing.
 
-On the pricelist detail form, for either a new or existing pricelist,
-adjust the `Currency` field as
-desired.
+Yangi yoki mavjud narx ro'yxati uchun narx ro'yxati tafsilot formasida `Currency` maydonini kerakli bo'lgancha sozlang.
 
+## Ommaviy narxdan avtomatik konvertatsiya
 
-## Auto-conversion from public price
+Shuni ta'kidlash kerakki, mahsulotlarda ko'rinadigan ommaviy narx bevosita kompaniya belgilagan asosiy valyuta bilan bog'liq bo'lib, u `Accounting app ‣ Configuration ‣ Settings ‣ Currencies section ‣ Main Currency ‣ Currency drop-down menu` ga o'tish orqali sozlanadi.
 
-It should be noted that the public price seen on products is directly
-related to the main currency the company has set, which is configured by
-navigating to `Accounting app ‣
-Configuration ‣ Settings ‣ Currencies section ‣ Main Currency ‣ Currency drop-down menu`.
+Agar narx ro'yxati kompaniyaning asosiy valyutasidan boshqa valyutaga ega bo'lgan boshqa narx ro'yxatiga o'zgartirilsa, savdo narxi avtomatik ravishda yangilanadi. Narxdagi o'zgarish o'sha valyuta uchun yangilangan konvertatsiya kursi bilan bevosita bog'liq.
 
-The sales price automatically updates if the pricelist is changed to a
-different pricelist that has a different currency than the company\'s
-main currency. The change in price is directly related to the updated
-conversion rate for that currency.
+## Mahsulot narxlarini belgilash
 
-## Set product prices
+Valyuta kurslaridagi har qanday o'zgarishlardan qochish uchun mahsulot narxlarini belgilash uchun avval `Sales app ‣ Products ‣ Products` ga o'ting.
 
-In order to have product prices set in place to avoid any changes in
-currency rates, start by navigating to
-`Sales app ‣ Products ‣ Products`.
+`Products` sahifasidan o'zgartirish uchun kerakli mahsulotni tanlang. Yoki `New` tugmasini bosish orqali yangi mahsulot yarating.
 
-From the `Products` page, select the
-desired product to modify. Or, create a new product by clicking the
-`New` button.
+Keyin mahsulot tafsilot formasida yuqori chap burchakda joylashgan `Extra Prices` aqlli tugmasini bosing. Buni qilish o'sha maxsus mahsulotga xos alohida `Price Rules` sahifasini ochadi.
 
-Then, on the product detail form, click the
-`Extra Prices` smart button, located
-in the upper-left corner. Doing so reveals a separate
-`Price Rules` page, specific to that
-particular product.
+![Odoo Sales da xorijiy valyuta narx ro'yxatlariga asoslangan mahsulot narxlarini qanday belgilash.](currencies/price-rules-currencies.png)
 
-![How to set product prices based on foreign currency pricelists in Odoo Sales.](currencies/price-rules-currencies.png)
+`New` ni bosing va `Pricelist` ustunidagi pastga tushuvchi menyudan kerakli narx ro'yxatini tanlang.
 
-Click `New`, and select the desired
-pricelist from the drop-down menu in the `Pricelist` column.
-
-The `Applied On` field is
-auto-populated with the product, so proceed to enter in the desired
-figures in the `Min. Quantity` and
-`Price` fields.
+`Applied On` maydoni mahsulot bilan avtomatik to'ldiriladi, shuning uchun `Min. Quantity` va `Price` maydonlariga kerakli raqamlarni kiriting.
 
 ::: tip
 
-The figure in the `Min. Quantity`
-field means the `Price` being set
-will **only** trigger if at least that amount of product is purchased.
+`Min. Quantity` maydonidagi raqam belgilanayotgan `Price` **faqat** mahsulotdan kamida shu miqdor sotib olingan taqdirdagina faollashishini bildiradi.
 ::::
 
-If necessary, configure a `Start Date` and `End Date` for
-the set prices. Leaving those columns blank ensures the set price will
-remain valid, regardless of the date of sale.
+Agar kerak bo'lsa, belgilangan narxlar uchun `Start Date` va `End Date` ni sozlang. Ushbu ustunlarni bo'sh qoldirish belgilangan narx sotish sanasidan qat'i nazar amal qilishini ta'minlaydi.
 
-If working in a multi-company environment, designate to which company
-this price rule should be applied in the `Company` field. Leaving that field blank ensures the price rule
-applies to all companies in the database.
+Agar ko'p kompaniyali muhitda ishlayotgan bo'lsangiz, `Company` maydonida bu narx qoidasi qaysi kompaniyaga qo'llanilishi kerakligini belgilang. Ushbu maydonni bo'sh qoldirish narx qoidasi ma'lumotlar bazasidagi barcha kompaniyalarga qo'llanilishini ta'minlaydi.
 
-With those configurations complete, regardless of any changes/updates in
-conversion, whenever those designated pricelists are applied to a
-customer trying to purchase this specific product, these pre-determined
-set prices appear.
-
+Ushbu konfiguratsiyalar tugallangandan so'ng, konvertatsiyada har qanday o'zgarishlar/yangilanishlardan qat'i nazar, ushbu belgilangan narx ro'yxatlari ushbu maxsus mahsulotni sotib olishga harakat qilayotgan mijozga qo'llanilganda, bu oldindan belgilangan narxlar paydo bo'ladi.

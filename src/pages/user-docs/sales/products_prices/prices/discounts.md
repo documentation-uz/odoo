@@ -1,88 +1,52 @@
-# Discounts
+# Chegirmalar
 
-The *Discounts* feature allows users to decrease or increase the price
-on item lines in a sales quotation or order. This is calculated as a
-percentage of the products\' sales price.
+*Chegirmalar* funksiyasi foydalanuvchilarga savdo taklifnomasi yoki buyurtmasidagi mahsulot qatorlarining narxini kamaytirish yoki oshirish imkonini beradi. Bu mahsulotlarning savdo narxining foizi sifatida hisoblanadi.
 
-To access discounts in the **Sales** app, navigate to
-`Sales app ‣ Configuration
-‣ Settings`. In the
-`Pricing` section, tick the
-`Discounts` checkbox, then click
-`Save`.
+**Savdo** ilovasida chegirgmalarga kirish uchun `Sales app ‣ Configuration ‣ Settings` ga o'ting. `Pricing` bo'limida `Discounts` katakchani belgilang, so'ngra `Save` tugmasini bosing.
 
-After the setting has been activated, navigate to the desired quotation
-by going to `Sales app ‣ Orders ‣ Quotations` at the top of the page. Once there, click on the
-desired quote from the list.
+Sozlama faollashtirilgandan so'ng, sahifaning yuqori qismida `Sales app ‣ Orders ‣ Quotations` ga o'tib kerakli taklifnomaga o'ting. U yerda ro'yxatdan kerakli taklifni tanlang.
 
-## Discounts on product lines
+## Mahsulot qatorlaridagi chegirmalar
 
-In the `Order Lines` tab of the
-quotation form, a new column heading appears labeled
-`Disc.%`. This column is used to set
-discounts on individual line items. Enter the desired discount for each
-product line and the new price is automatically calculated in the
-`Total` at the bottom of the page.
+Taklifnoma formasining `Order Lines` yorlig'ida `Disc.%` deb nomlangan yangi ustun sarlavhasi paydo bo'ladi. Bu ustun alohida qator elementlariga chegirma belgilash uchun ishlatiladi. Har bir mahsulot qatori uchun kerakli chegirmani kiriting va yangi narx sahifaning pastidagi `Total` da avtomatik ravishda hisoblanadi.
 
 ::: tip
 
-A discount can also be added directly to a sales order in the same way.
-Navigate to `Sales app ‣ Orders ‣ Orders`, click the desired sales order, and add the
-discount to `Disc.%` field as
-described above.
+Chegirma xuddi shu tarzda bevosita savdo buyurtmasiga ham qo'shilishi mumkin. `Sales app ‣ Orders ‣ Orders` ga o'ting, kerakli savdo buyurtmasini tanlang va yuqorida tavsiflangan `Disc.%` maydoniga chegirmani qo'shing.
 ::::
 
-![The Dis.% heading will now appear in Order Lines.](discounts/discount-on-sales-order.png)
+![Endi Dis.% sarlavhasi Order Lines da ko'rinadi.](discounts/discount-on-sales-order.png)
 
 ::: tip
 
-Positive values for `Disc.%` will
-apply a *discount*, while negative values can be used to *increase* the
-price.
+`Disc.%` uchun musbat qiymatlar *chegirma* qo'llaydi, manfiy qiymatlar esa narxni *oshirish* uchun ishlatilishi mumkin.
 ::::
 
 ::: warning
 
-Positive values, or price decreases, will be visible to the customer,
-while negative values, or price increases, will *not* be visible to the
-customer. Instead of a discount column, the negative discount will
-change the product\'s unit price.
+Musbat qiymatlar yoki narx pasayishi mijozga ko'rinadi, manfiy qiymatlar yoki narx oshishi esa mijozga *ko'rinmaydi*. Chegirma ustuni o'rniga, manfiy chegirma mahsulotning birlik narxini o'zgartiradi.
 ::::
 
-## Discount button 
+## Chegirma tugmasi 
 
-With the *Discounts* settings enabled, a `Discount` button appears at the bottom of sales orders.
+*Chegirmalar* sozlamalari yoqilganda, savdo buyurtmalarining pastida `Discount` tugmasi paydo bo'ladi.
 
-![The discount button located at the bottom of a sales order form in the Odoo Sales app.](discounts/discount-button-sales-order.png)
+![Odoo Savdo ilovasidagi savdo buyurtmasi formasining pastida joylashgan chegirma tugmasi.](discounts/discount-button-sales-order.png)
 
-Clicking the `Discount` button on a
-sales order opens a pop-up window, where the
-`Discount` percentage, and options
-are configured:
+Savdo buyurtmasida `Discount` tugmasini bosish qalqib chiquvchi oynani ochadi, bu yerda `Discount` foizi va variantlar sozlanadi:
 
-- `On All Order Lines`: Add the
-  specified discount percentage (configured in the
-  `Discount` field of the pop-up
-  window) on all existing order lines of the sales order.
+- `On All Order Lines`: Savdo buyurtmasining barcha mavjud buyurtma qatorlariga belgilangan chegirma foizini (qalqib chiquvchi oynaning `Discount` maydonida sozlangan) qo'shish.
 
-- `Global Discount`: Add a discount
-  product line to the order, which has the cumulative value equivalent
-  to the specified discount percentage.
+- `Global Discount`: Buyurtmaga belgilangan chegirma foiziga teng yig'ma qiymatga ega chegirma mahsulot qatorini qo'shish.
 
   ::: example
-  A global discount of 10% is added in the last line of a sales order
-  with a subtotal of \$4,200 by adding a discount line with a -\$420
-  value (which is 10% of \$4,200).
+  10% global chegirma jami summasi 4200$ bo'lgan savdo buyurtmasining oxirgi qatoriga -420$ qiymatli chegirma qatori qo'shish orqali qo'shiladi (bu 4200$ ning 10% i).
 
-  ![The sales order with the applied global discount option in the Odoo Sales application.](discounts/global-discount-option.png)
+  ![Odoo Savdo ilovasida qo'llaniladigan global chegirma varianti bilan savdo buyurtmasi.](discounts/global-discount-option.png)
   :::
 
   ::: warning
-  : note
+  : eslatma
 
-It is more beneficial to add a `Fixed Amount` discount after **all** desired products have been added
-to a sales order. If there are changes made to the sales order *after*
-the discount is added, adjust the value on the
-`Discount` line, or remove the line
-and add the discount again, as needed.
+Barcha kerakli mahsulotlar savdo buyurtmasiga qo'shilgandan **keyin** `Fixed Amount` chegirmani qo'shish foydaliroqdir. Agar chegirma qo'shilgandan *keyin* savdo buyurtmasiga o'zgartirishlar kiritilsa, `Discount` qatoridagi qiymatni sozlang yoki qatorni olib tashlang va kerak bo'lganda chegirmani qaytadan qo'shing.
 ::::

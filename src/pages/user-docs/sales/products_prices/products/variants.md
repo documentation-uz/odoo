@@ -1,363 +1,263 @@
-# Product variants
+# Mahsulot variantlari
 
-Product variants are used to give single products a variety of different
-characteristics and options for customers to choose from, such as size,
-style, or color, just to name a few.
+Mahsulot variantlari yagona mahsulotlarga turli xil xususiyatlar va mijozlar tanlashi mumkin bo'lgan imkoniyatlarni
+berish uchun ishlatiladi, masalan o'lcham, uslub yoki rang va boshqalar.
 
-Products variants can be managed via their individual product template,
-or by navigating to either the `Product Variants` or `Attributes`
-page. All of these options are located within the Odoo *Sales*
-application.
+Mahsulot variantlarini ularning individual mahsulot shabloni orqali boshqarish mumkin yoki `Product Variants` yoki
+`Attributes` sahifalariga o'tish orqali. Bu barcha imkoniyatlar Odoo *Sales* dasturi ichida joylashgan.
 
 ::: example
-An apparel company has the following variant breakdown for one their
-best-selling t-shirts:
+Kiyim kompaniyasi o'zining eng ko'p sotiladigan futbolkalari uchun quyidagi variant taqsimotiga ega:
 
-- Unisex Classic Tee
-  - Color: Blue, Red, White, Black
-  - Size: S, M, L, XL, XXL
+- Klassik Futbolka
+    - Rang: Ko'k, Qizil, Oq, Qora
+    - O'lcham: S, M, L, XL, XXL
 
-Here, the **T-shirt** is the product template, and **T-shirt: Blue, S**
-is a specific product variant.
+Bu yerda **Futbolka** mahsulot shabloni, **Futbolka: Ko'k, S** esa aniq mahsulot varianti hisoblanadi.
 
-**Color** and **Size** are *attributes*, and the corresponding options
-(like **Blue** and **S**) are *values*.
+**Rang** va **O'lcham** *atributlar*, va tegishli variantlar (**Ko'k** va **S** kabi) *qiymatlar* hisoblanadi.
 
-In this instance, there is a total of twenty different product variants:
-four **Color** options multiplied by five **Size** options. Each variant
-has its own inventory count, sales totals, and other similar records in
-Odoo.
+Bu holatda jami yigirma xil mahsulot varianti mavjud: to'rtta **Rang** varianti beshta **O'lcham** variantiga
+ko'paytirilgan. Har bir variant Odoo'da o'zining inventar soni, sotuv jami va boshqa o'xshash yozuvlariga ega.
 :::
 
+## Konfiguratsiya
 
-## Configuration
+Mahsulot variantlarini ishlatish uchun Odoo *Sales* dasturida *Variants* sozlamasi **albatta** faollashtirilishi kerak.
 
-To use product variants, the *Variants* setting **must** be activated in
-the Odoo *Sales* application.
+Buning uchun `Sales app ‣ Configuration ‣ Settings` ga o'ting va sahifaning yuqorisidagi `Product Catalog` bo'limini
+toping.
 
-To do that, go to
-`Sales app ‣ Configuration ‣ Settings`, and locate the
-`Product Catalog` section at the top
-of the page.
+Shu bo'limda `Variants` funksiyasini yoqish uchun katagiga belgi qo'ying.
 
-In that section, check the box to enable the
-`Variants` feature.
+![Odoo Sales dasturining Sozlamalar sahifasida mahsulot variantlarini faollashtirish.](variants/activating-variants-setting.png)
 
-![Activating product variants on the Settings page of the Odoo Sales application.](variants/activating-variants-setting.png)
+Keyin `Settings` sahifasining yuqorisidagi `Save` tugmasini bosing.
 
-Then, click `Save` at the top of the
-`Settings` page.
+## Atributlar
 
-## Attributes
-
-Before product variants can be set up, attributes **must** be created.
-To create, manage, and modify attributes, navigate to
-`Sales app ‣ Configuration ‣ Attributes`.
+Mahsulot variantlarini sozlashdan oldin atributlar **albatta** yaratilishi kerak. Atributlarni yaratish, boshqarish va
+o'zgartirish uchun `Sales app ‣ Configuration ‣ Attributes` ga o'ting.
 
 ::: tip
 
-The order of attributes on the `Attributes` page dictates how they appear on the *Product
-Configurator*, *Point of Sale* dashboard, and *eCommerce* pages.
+`Attributes` sahifasidagi atributlar tartibi ularning *Product Configurator*, *Point of Sale* boshqaruv paneli va
+*eCommerce* sahifalarida qanday ko'rinishini belgilaydi.
 ::::
 
-To create a new attribute from the `Attributes` page, click `New`.
-Doing so reveals a blank attributes form that can be customized and
-configured in a number of ways.
+`Attributes` sahifasidan yangi atribut yaratish uchun `New` tugmasini bosing. Bu turli xil usullarda sozlanishi va
+konfiguratsiya qilinishi mumkin bo'lgan bo'sh atributlar formasini ochadi.
 
-![A blank attribute creation form in the Odoo Sales application.](variants/attribute-creation.png)
+![Odoo Sales dasturidagi bo'sh atribut yaratish formasi.](variants/attribute-creation.png)
 
-First, create an `Attribute Name`,
-such as [Color] or [Size].
+Birinchi navbatda [Color] yoki [Size] kabi `Attribute Name` yarating.
 
-Next, select one of the options from the
-`Display Type` field. The `Display
-Type` determines how this product is
-shown on the online store, *Point of Sale* dashboard, and *Product
-Configurator*.
+Keyin `Display Type` maydonidagi variantlardan birini tanlang. `Display Type` bu mahsulotning onlayn do'kon, *Point of
+Sale* boshqaruv paneli va *Product Configurator*da qanday ko'rsatilishini belgilaydi.
 
-The `Display Type` options are:
+`Display Type` variantlari:
 
-- `Pills`: options appear as
-  selectable buttons on the product page of the online store.
-- `Color`: options appear as small,
-  colored squares, which reflect any HTML color codes
-- `Radio`: options appear in a
-  bullet-style list on the product page of the online store.
-- `Select`: options appear in a
-  drop-down menu on the product page of the online store. set, on the
-  product page of the online store.
-- `Multi-checkbox (option)`: options
-  appear as selectable checkboxes on the product page of the online
-  store.
+- `Pills`: variantlar onlayn do'konning mahsulot sahifasida tanlanadigan tugmalar sifatida ko'rinadi.
+- `Color`: variantlar har qanday HTML rang kodlarini aks ettiruvchi kichik, rangli kvadratlar sifatida ko'rinadi
+- `Radio`: variantlar onlayn do'konning mahsulot sahifasida o'q uslubidagi ro'yxat sifatida ko'rinadi.
+- `Select`: variantlar onlayn do'konning mahsulot sahifasida pastga tushuvchi menyu sifatida ko'rinadi.
+- `Multi-checkbox (option)`: variantlar onlayn do'konning mahsulot sahifasida tanlanadigan belgilash katakchasi sifatida
+  ko'rinadi.
 
-![Display Types on Product Configurator on the online store in Odoo.](variants/display-types.png)
+![Odoo'dagi onlayn do'kondagi Product Configurator'da Display Types.](variants/display-types.png)
 
-The `Variant Creation Mode` field
-informs Odoo when to automatically create a new variant once an
-attribute is added to a product.
+`Variant Creation Mode` maydoni Odoo'ga atribut mahsulotga qo'shilganda yangi variantni avtomatik ravishda qachon
+yaratishni bildiradi.
 
 ::: tip
 
-The `Variant Creation Mode` field
-**must** be set to `Never (option)`
-in order for the `Multi-checkbox (option)` to work properly as the `Display
-Type`.
+`Multi-checkbox (option)`ning `Display Type` sifatida to'g'ri ishlashi uchun `Variant Creation Mode` maydoni **albatta**
+`Never (option)` ga o'rnatilishi kerak.
 ::::
 
-- `Instantly`: creates all possible
-  variants as soon as attributes and values are added to a product
-  template.
-- `Dynamically`: creates variants
-  **only** when corresponding attributes and values are added to a sales
-  order.
-- `Never (option)`: never
-  automatically creates variants.
+- `Instantly`: atributlar va qiymatlar mahsulot shabloniga qo'shilishi bilanoq barcha mumkin bo'lgan variantlarni
+  yaratadi.
+- `Dynamically`: **faqat** tegishli atributlar va qiymatlar savdo buyurtmasiga qo'shilgandagina variantlarni yaratadi.
+- `Never (option)`: hech qachon avtomatik ravishda variantlar yaratmaydi.
 
 :::: warning
 
-Once added to a product, an attribute\'s
-`Variants Creation Mode` cannot be
-edited.
+Mahsulotga qo'shilgandan so'ng, atributning `Variants Creation Mode`ni tahrir qilib bo'lmaydi.
 ::::
 
-The `eCommerce Filter Visibility`
-field determines whether or not these attribute options are visible to
-the customer on the front-end, as they shop on the online store.
+`eCommerce Filter Visibility` maydoni mijozlar onlayn do'konda xarid qilishda bu atribut variantlarining old tomondan
+ko'rinadigan yoki ko'rinmasligini belgilaydi.
 
-- `Visible`: the attribute values are
-  visible to customers on the front-end.
-- `Hidden`: the attribute values are
-  hidden from customers on the front-end.
+- `Visible`: atribut qiymatlari mijozlarga old tomondan ko'rinadi.
+- `Hidden`: atribut qiymatlari mijozlardan old tomonda yashirilgan.
 
-Lastly, in the optional `eCommerce Category` field, select a category from a drop-down menu to group
-similar attributes under the same section for added specificity and
-organization.
+Nihoyat, ixtiyoriy `eCommerce Category` maydonida qo'shimcha aniqlik va tashkilot uchun o'xshash atributlarni bir xil
+bo'lim ostida guruhlash uchun pastga tushuvchi menyudan kategoriya tanlang.
 
 ::: tip
 
-To view the details related to the attribute category selected, click
-the internal link `fa-arrow-right`
-`(right arrow)` icon to the far-right
-of the `eCommerce Category` field,
-once an option has been selected. Doing so reveals that attribute
-category\'s detail form.
+Tanlangan atribut kategoriyasi bilan bog'liq tafsilotlarni ko'rish uchun variant tanlanganidan keyin
+`eCommerce Category` maydonining eng o'ng tomonidagi `fa-arrow-right` `(o'ng o'q)` ichki havola belgisini bosing. Bu shu
+atribut kategoriyasining batafsil formasini ochadi.
 
-![A standard attribute category detail page accessible via its internal link arrow icon.](variants/attribute-category-internal-link.png)
+![Ichki havola o'q belgisi orqali kirish mumkin bo'lgan standart atribut kategoriyasi batafsil sahifasi.](variants/attribute-category-internal-link.png)
 
-Here, the `Category Name` and
-`Sequence` is displayed at the top.
-Followed by `Related Attributes`
-associated with the category. These attributes can be
-dragged-and-dropped into a desirable order of priority.
+Bu yerda yuqorida `Category Name` va `Sequence` ko'rsatilgan. Keyin kategoriya bilan bog'langan `Related Attributes`
+ko'rsatilgan. Bu atributlarni istagan tartib bo'yicha sudrab o'tkazish mumkin.
 
-Attributes can be directly added to the category, as well, by clicking
-`Add a line`.
+Atributlarni `Add a line` tugmasini bosish orqali to'g'ridan-to'g'ri kategoriyaga qo'shish ham mumkin.
 ::::
 
 ::: tip
 
-To create an attribute category directly from this field, start typing
-the name of the new category, then select either
-`Create` or
-`Create and edit...` from the
-drop-down menu that appears.
+Atribut kategoriyasini to'g'ridan-to'g'ri shu maydondan yaratish uchun yangi kategoriya nomini yozishni boshlang, keyin
+paydo bo'lgan pastga tushuvchi menyudan `Create` yoki `Create and edit...`ni tanlang.
 
-Clicking `Create` creates the
-category, which can be modified later. Clicking
-`Create and edit...` creates the
-category and reveals a `Create Category` pop-up window, in which the new attribute category can
-be configured and customized.
+`Create` tugmasini bosish kategoriyani yaratadi, uni keyinroq o'zgartirish mumkin. `Create and edit...` tugmasini bosish
+kategoriyani yaratadi va yangi atribut kategoriyasini sozlash va moslashtirishda `Create Category` pop-ap oynasini
+ochadi.
 ::::
 
-### Attribute values
+### Atribut qiymatlari
 
-Attribute values should be added to the
-`Attribute Values` tab. Values can be
-added to an attribute at any time, if needed.
+Atribut qiymatlari `Attribute Values` yorlig'iga qo'shilishi kerak. Kerak bo'lsa, atributga istalgan vaqtda qiymatlar
+qo'shish mumkin.
 
-To add a value, click `Add a line` in
-the `Attribute Values` tab.
+Qiymat qo'shish uchun `Attribute Values` yorlig'ida `Add a line` ni bosing.
 
-Then, enter the name of the value in the `Value` column. Next, check the box in the
-`Is custom value` column, if the
-value is custom (i.e. the customer gets to provide unique specifications
-that are specific to this particular value).
+Keyin `Value` ustuniga qiymat nomini kiriting. Keyin, agar qiymat maxsus bo'lsa (ya'ni mijoz shu aniq qiymatga xos noyob
+spetsifikatsiyalarni taqdim etsa) `Is custom value` ustunidagi katagiga belgi qo'ying.
 
-#### Colors
+#### Ranglar
 
-Next to `Display Type`, select the
-`Color` option. Go to the
-`Attribute Values` tab to modify the
-value settings.
+`Display Type` yonida `Color` variantini tanlang. Qiymat sozlamalarini o'zgartirish uchun `Attribute Values` yorlig'iga
+o'ting.
 
-![Add an image of the pattern to an attribute.](variants/attribute-value-add-image.png)
+![Atributga naqsh tasvirini qo'shish.](variants/attribute-value-add-image.png)
 
-To choose a color, click the blank circle in the
-`Color` column, which reveals an HTML
-color selector pop-up window.
+Rangni tanlash uchun HTML rang tanlagich pop-ap oynasini ochadigan `Color` ustunidagi bo'sh aylanani bosing.
 
-![Selecting a color from the HTML color pop-up window that appears on attribute form.](variants/picking-a-color.png)
+![Atribut formasida paydo bo'ladigan HTML rang pop-ap oynasidan rangni tanlash.](variants/picking-a-color.png)
 
-In this pop-up window, select a specific color by dragging the color
-slider to a particular hue, and clicking on the color portion directly
-on the color gradient window.
+Bu pop-ap oynasida rang slayderni ma'lum bir rangga sudrab va rang gradiyenti oynasida rang qismini to'g'ridan-to'g'ri
+bosish orqali aniq rangni tanlang.
 
-Or, choose a specific color by clicking the *dropper* icon, and
-selecting a desired color that\'s currently clickable on the screen.
+Yoki *tomizgich* belgisini bosib, hozirda ekranda bosiladigan kerakli rangni tanlab aniq rangni tanlang.
 
-If you sell products with specific patterns, you can also add an image
-to display the pattern of the product. To do so, click the
-`fa-camera` `(camera)` icon, then click the `fa-pencil` `(pencil)` icon and
-select an image from your local drive. This pattern will appear as a
-color option on the ecommerce product page.
+Agar siz ma'lum naqshli mahsulotlar sotsangiz, mahsulot naqshini ko'rsatish uchun tasvir ham qo'shishingiz mumkin.
+Buning uchun `fa-camera` `(kamera)` belgisini bosing, keyin `fa-pencil` `(qalam)` belgisini bosib mahalliy diskingizdan
+tasvir tanlang. Bu naqsh elektron tijorat mahsulot sahifasida rang varianti sifatida ko'rinadi.
 
-![Pattern as color option on the ecommerce page.](variants/ecommerce-pattern-option.png)
+![Elektron tijorat sahifasida rang varianti sifatida naqsh.](variants/ecommerce-pattern-option.png)
 
 ::: tip
 
-Attributes can also be created directly from the product template by
-adding a new line and typing the name into the
-`Variants` tab.
+Atributlarni yangi qator qo'shib va nomni `Variants` yorlig'iga yozish orqali to'g'ridan-to'g'ri mahsulot shablonidan
+ham yaratish mumkin.
 ::::
 
-Once an attribute is added to a product, that product is listed and
-accessible, via the attribute\'s `Related Products` smart button. That button lists every product in the
-database currently using that attribute.
+Atribut mahsulotga qo'shilgandan so'ng, bu mahsulot atributning `Related Products` aqlli tugmasi orqali ro'yxatlanadi va
+unga kirish mumkin. Bu tugma hozirda shu atributdan foydalanayotgan ma'lumotlar bazasidagi har bir mahsulotni ro'
+yxatlaydi.
 
-## Product variants
+## Mahsulot variantlari
 
-Once an attribute is created, use the attribute (and its values) to
-create a product variant. To do that, go to
-`Sales app ‣ Products ‣ Products`, and select an existing product to view that
-desired product\'s form. Or, click `Create` to create a new product, to which a product variant can
-be added.
+Atribut yaratilgandan so'ng, mahsulot variantini yaratish uchun atribut (va uning qiymatlarini) ishlatamiz. Buning uchun
+`Sales app ‣ Products ‣ Products` ga o'ting va kerakli mahsulotning formasini ko'rish uchun mavjud mahsulotni tanlang.
+Yoki mahsulot variantini qo'shish mumkin bo'lgan yangi mahsulot yaratish uchun `Create` tugmasini bosing.
 
-On the product form, click the
-`Attributes \& Variants` tab to view,
-manage, and modify attributes and values for the product.
+Mahsulot formasida mahsulot uchun atributlar va qiymatlarni ko'rish, boshqarish va o'zgartirish uchun
+`Attributes \& Variants` yorlig'ini bosing.
 
-![The attributes and values tab on a typical product form in Odoo Sales.](variants/attributes-values-tab.png)
+![Odoo Sales'dagi odatiy mahsulot formasidagi atributlar va qiymatlar yorlig'i.](variants/attributes-values-tab.png)
 
-To add an attribute to a product, and subsequent attribute values, click
-`Add a line` in the
-`Attributes \& Variants` tab. Then,
-choose the desired attribute from the drop-down menu that appears.
+Mahsulotga atribut va keyingi atribut qiymatlarini qo'shish uchun `Attributes \& Variants` yorlig'ida `Add a line` ni
+bosing. Keyin paydo bo'lgan pastga tushuvchi menyudan kerakli atributni tanlang.
 
 ::: tip
 
-Attributes can be created directly from the
-`Attributes \& Variants` tab of a
-product form. To do that, start typing the name of the new attribute in
-the blank field, and select either `Create` or `Create and edit...` from the mini drop-down menu that appears.
+Atributlarni mahsulot formasining `Attributes \& Variants` yorlig'idan to'g'ridan-to'g'ri yaratish mumkin. Buning uchun
+bo'sh maydoniga yangi atribut nomini yozishni boshlang va paydo bo'lgan kichik pastga tushuvchi menyudan `Create` yoki
+`Create and edit...`ni tanlang.
 
-Clicking `Create` creates the
-attribute, which can be customized later. Clicking
-`Create and edit...` creates the
-attribute, and a `Create Attribute`
-pop-up form appears. In the pop-up form, proceed to modify the attribute
-in a number of ways.
+`Create` tugmasini bosish atributni yaratadi, uni keyinroq moslashtirishingiz mumkin. `Create and edit...` tugmasini
+bosish atributni yaratadi va `Create Attribute` pop-ap formasi paydo bo'ladi. Pop-ap formasida atributni turli xil
+usullarda o'zgartirishga o'ting.
 ::::
 
-Once an attribute is selected in the `Attribute` column, proceed to select the specific attribute values
-to apply to the product, via the drop-down menu available in the
-`Values` column.
+`Attribute` ustunida atribut tanlanganidan so'ng, `Values` ustunida mavjud pastga tushuvchi menyu orqali mahsulotga
+qo'llanishi kerak bo'lgan aniq atribut qiymatlarini tanlang.
 
 ::: tip
 
-There is no limit to how many values can be added.
+Qancha qiymat qo'shishda cheklov yo'q.
 ::::
 
 ::: tip
 
-Similar product variant creation processes are accessible through the
-Purchase, Inventory, and eCommerce applications.
+O'xshash mahsulot variant yaratish jarayonlariga Purchase, Inventory va eCommerce dasturlari orqali kirish mumkin.
 ::::
 
-### Configure variants
+### Variantlarni sozlash
 
-To the far-right of the attribute line is a
-`Configure` button. When clicked,
-Odoo reveals a separate page showcasing those specific
-`Product Variant Values`.
+Atribut qatorining eng o'ng tomonida `Configure` tugmasi bor. Bosilganda, Odoo shu aniq `Product Variant Values`ni
+ko'rsatadigan alohida sahifani ochadi.
 
-![The Product Variant Values page accessible via the Configure button on a product form.](variants/product-variant-values.png)
+![Mahsulot formasidagi Configure tugmasi orqali kirish mumkin bo'lgan Product Variant Values sahifasi.](variants/product-variant-values.png)
 
-Here, the specific `Value` name,
-`HTML Color Index` (if applicable),
-and `Value Price Extra` are viewable.
+Bu yerda aniq `Value` nomi, `HTML Color Index` (agar mavjud bo'lsa) va `Value Price Extra` ko'rinadi.
 
 ::: tip
 
-The `Value Price Extra` represents
-the increase in the sales price if the attribute is selected.
+`Value Price Extra` atribut tanlanganda sotuv narxining oshishini ifodalaydi.
 ::::
 
-When a value is clicked on the
-`Product Variant Values` page, Odoo
-reveals a separate page, detailing that value\'s related details.
+`Product Variant Values` sahifasida qiymat bosilganda, Odoo shu qiymatning tegishli tafsilotlarini batafsil
+ko'rsatadigan alohida sahifani ochadi.
 
-![A Product Variant Values page accessible via the Product Variants Values general page.](variants/product-variant-value-page.png)
+![Product Variants Values umumiy sahifasi orqali kirish mumkin bo'lgan Product Variant Values sahifasi.](variants/product-variant-value-page.png)
 
-On the specific product variant detail page, the
-`Value` and
-`Value Price Extra` fields can be
-found, along with an `Exclude for`
-field.
+Aniq mahsulot variant batafsil sahifasida `Value` va `Value Price Extra` maydonlarini, shuningdek `Exclude for`
+maydonini topish mumkin.
 
-In the `Exclude for` field, different
-`Product Templates` and specific
-`Attribute Values` can be added. When
-added, this specific attribute value will be excluded from those
-specific products.
+`Exclude for` maydoniga turli xil `Product Templates` va aniq `Attribute Values` qo'shish mumkin. Qo'shilganda, bu aniq
+atribut qiymati shu aniq mahsulotlardan chiqarib tashlanadi.
 
-### Variants smart button
+### Variants aqlli tugmasi
 
-When a product has attributes and variants configured in its
-`Attributes \& Variants` tab, a
-`Variants` smart button appears at
-the top of the product form. The `Variants` smart button indicates how many variants are currently
-configured for that specific product.
+Mahsulotning `Attributes \& Variants` yorlig'ida atributlar va variantlar sozlanganda, mahsulot formasining yuqorisida
+`Variants` aqlli tugmasi paydo bo'ladi. `Variants` aqlli tugmasi shu aniq mahsulot uchun hozirda nechta variant
+sozlanganligini ko'rsatadi.
 
-![The variants smart button at the top of the product form in Odoo Sales.](variants/variants-smart-button.png)
+![Odoo Sales'dagi mahsulot formasining yuqorisidagi variants aqlli tugmasi.](variants/variants-smart-button.png)
 
-When the `Variants` smart button is
-clicked, Odoo reveals a separate page showcasing all the specific
-product variant combinations configured for that specific product.
+`Variants` aqlli tugmasi bosilganda, Odoo shu aniq mahsulot uchun sozlangan barcha aniq mahsulot variant
+kombinatsiyalarini ko'rsatadigan alohida sahifani ochadi.
 
-![The variants page accessible via the variants smart button on the product form in Odoo.](variants/variants-page.png)
+![Odoo'da mahsulot formasidagi variants aqlli tugmasi orqali kirish mumkin bo'lgan variants sahifasi.](variants/variants-page.png)
 
-## Impact of variants
+## Variantlarning ta'siri
 
-In addition to offering more detailed product options to customers,
-product variants have their own impacts that can be taken advantage of
-throughout the Odoo database.
+Mijozlarga batafsilroq mahsulot variantlarini taklif qilishdan tashqari, mahsulot variantlari Odoo ma'lumotlar bazasi
+bo'ylab foydalanish mumkin bo'lgan o'zlarining ta'siriga ega.
 
-- `Barcode`: barcodes are associated
-  with each variant, instead of the product template. Each individual
-  variant can have its own unique barcode/SKU.
+- `Barcode`: shtrix-kodlar mahsulot shabloni o'rniga har bir variant bilan bog'langan. Har bir individual variant
+  o'zining noyob shtrix-kodi/SKU'ga ega bo'lishi mumkin.
 
-- `Price`: every product variant has
-  its own public price, which is the sum of the product template price
-  *and* any extra charges for particular attributes.
+- `Price`: har bir mahsulot varianti o'zining ommaviy narxiga ega, bu mahsulot shabloni narxi *va* ma'lum atributlar
+  uchun har qanday qo'shimcha to'lovlarning yig'indisi.
 
   ::: example
-  A red shirt\'s sales price is \$23 \-- because the shirt\'s template
-  price is \$20, plus an additional \$3 for the red color variant.
-  Pricelist rules can be configured to apply to the product template, or
-  to the variant.
+  Qizil ko'ylakning sotuv narxi $23 -- chunki ko'ylak shablonining narxi $20, shuningdek qizil rang varianti uchun
+  qo'shimcha $3. Narx ro'yxati qoidalarini mahsulot shabloni yoki variantga qo'llash uchun sozlash mumkin.
   :::
 
-- `Inventory`: inventory is counted
-  for each individual product variant. On the product template form, the
-  inventory reflects the sum of all variants, but the actual inventory
-  is computed by individual variants.
+- `Inventory`: inventar har bir individual mahsulot varianti uchun hisoblanadi. Mahsulot shabloni formasida inventar
+  barcha variantlarning yig'indisini aks ettiradi, lekin haqiqiy inventar individual variantlar bo'yicha hisoblanadi.
 
-- `Picture`: each product variant can
-  have its own specific picture.
+- `Picture`: har bir mahsulot varianti o'zining aniq rasriga ega bo'lishi mumkin.
 
 ::: tip
 
-Changes to the product template automatically apply to every variant of
-that product.
+Mahsulot shablonidagi o'zgarishlar avtomatik ravishda shu mahsulotning har bir variantiga qo'llaniladi.
 ::::
-

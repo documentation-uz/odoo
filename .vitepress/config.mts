@@ -226,15 +226,15 @@ export default defineConfig({
                             items: [
                                 {
                                     text: 'Import products',
-                                    link: '/user-docs/sales/products-prices/manage-your-products/import-products'
+                                    link: '/user-docs/sales/products-prices/manage-your-products/import'
                                 },
                                 {
                                     text: 'Product variants',
-                                    link: '/user-docs/sales/products-prices/manage-your-products/product-variants'
+                                    link: '/user-docs/sales/products-prices/manage-your-products/variants'
                                 },
                                 {
                                     text: 'Product images with Google Images',
-                                    link: '/user-docs/sales/products-prices/manage-your-products/product-images-with-google-images'
+                                    link: '/user-docs/sales/products-prices/manage-your-products/product_images'
                                 },
                             ]
                         },
@@ -243,11 +243,11 @@ export default defineConfig({
                             items: [
                                 {
                                     text: 'Pricelists',
-                                    link: '/user-docs/sales/products-prices/manage-your-pricing/pricelists'
+                                    link: '/user-docs/sales/products-prices/manage-your-pricing/pricing'
                                 },
                                 {
                                     text: 'Foreign currencies',
-                                    link: '/user-docs/sales/products-prices/manage-your-pricing/foreign-currencies'
+                                    link: '/user-docs/sales/products-prices/manage-your-pricing/currencies'
                                 },
                                 {
                                     text: 'Discounts',
@@ -257,15 +257,15 @@ export default defineConfig({
                         },
                         {
                             text: 'Returns and refunds',
-                            link: '/user-docs/sales/products-prices/returns-and-refunds'
+                            link: '/user-docs/sales/products-prices/returns'
                         },
                         {
                             text: 'Use eWallets and gift cards',
-                            link: '/user-docs/sales/products-prices/use-ewallets-and-gift-cards'
+                            link: '/user-docs/sales/products-prices/ewallets_giftcards'
                         },
                         {
                             text: 'Discount and loyalty programs',
-                            link: '/user-docs/sales/products-prices/discount-and-loyalty-programs'
+                            link: '/user-docs/sales/products-prices/loyalty_discount'
                         },
                     ]
                 },

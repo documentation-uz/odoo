@@ -9,3 +9,5 @@ Rasmiy veb sahifa: https://odoo.documentation.uz/
 Github manzil: https://github.com/documentation-uz/odoo/
 
 Dokumentatsiyaning bosh sahifasi: https://github.com/documentation-uz/odoo/tree/main/src/pages/
+
+O'zbek tiliga tarjima qil. `` bilan o'ralgan yozuvlarni tarjima qilma. Tarjimani .md fayl ko'rinishida olaman.

@@ -1,245 +1,134 @@
-# Import products
+# Mahsulotlarni import qilish
 
-Odoo *Sales* provides a template for importing products with categories
-and variants, which can be opened and edited with any spreadsheet
-software (Microsoft Excel, OpenOffice, Google Sheets, etc.).
+Odoo *Sales* moduli mahsulotlarni kategoriyalar va variantlar bilan import qilish uchun shablon taqdim etadi. Bu shablonni istalgan elektron jadval dasturi (Microsoft Excel, OpenOffice, Google Sheets va h.k.) bilan ochish va tahrirlash mumkin.
 
-When this spreadsheet is filled out properly, it can be quickly uploaded
-to the Odoo database. When uploaded, those products are instantly added,
-accessible, and editable in the product catalog.
+Ushbu elektron jadval to'g'ri to'ldirilgandan so'ng, uni tezda Odoo ma'lumotlar bazasiga yuklash mumkin. Yuklangandan so'ng, bu mahsulotlar darhol qo'shiladi, foydalanish mumkin bo'ladi va mahsulot katalogida tahrirlash imkoniyati paydo bo'ladi.
 
-## Import template
+## Import shabloni
 
-In order to import products with categories and variants, the *Import
-Template for Products* **must** be downloaded. Once downloaded, the
-template can be adjusted and customized, and then uploaded back into the
-Odoo database.
+Mahsulotlarni kategoriyalar va variantlar bilan import qilish uchun *`Import Template for Products`* **albatta** yuklab olinishi kerak. Yuklab olingandan so'ng, shablonni sozlash va moslash mumkin, keyin esa uni qaytadan Odoo ma'lumotlar bazasiga yuklash mumkin.
 
-To download the necessary import template, navigate to
-`Sales app ‣ Products ‣
-Products`. On the
-`Products` page, click the
-`⚙️ (gear)` icon in the upper-left
-corner. Doing so reveals a drop-down menu.
+Kerakli import shablonini yuklab olish uchun `Sales app ‣ Products ‣ Products` bo'limiga o'ting. `Products` sahifasida yuqori chap burchakdagi `⚙️ (gear)` belgisini bosing. Bu tugma bosilganda pastga ochiluvchi menyu paydo bo'ladi.
 
-From this drop-down menu, select the `Import records` option.
+Ushbu pastga ochiluvchi menyudan `Import records` variantini tanlang.
 
-![The Import records option selectable from the gear icon on the Products page in Odoo Sales.](import/gear-import-records-option.png)
+![Odoo Sales modulidagi Products sahifasida gear belgisidan tanlanishi mumkin bo'lgan "Import records" varianti.](import/gear-import-records-option.png)
 
-Selecting `Import records` reveals a
-separate page with a link to download the
-`Import Template for Products`. Click
-that link to download the template.
+`Import records` ni tanlash `Import Template for Products` ni yuklab olish havolasi bilan alohida sahifani ochadi. Shablonni yuklab olish uchun ushbu havolani bosing.
 
-![The Import records option selectable from the gear icon on the Products page in Odoo Sales.](import/import-template-products.png)
+![Odoo Sales modulidagi Products sahifasida gear belgisidan tanlanishi mumkin bo'lgan "Import records" varianti.](import/import-template-products.png)
 
-Once the template download is complete, open the spreadsheet file to
-customize it.
+Shablon yuklab olinishi tugagandan so'ng, uni sozlash uchun elektron jadval faylini oching.
 
-## Customize product import template
+## Mahsulot import shablonini sozlash
 
-When the import template has been downloaded and opened, it\'s time to
-modify its contents. However, before any changes are made, there are a
-few elements to keep in mind during the process:
+Import shabloni yuklab olinib ochilgandan so'ng, uning mazmunini o'zgartirish vaqti keldi. Biroq, har qanday o'zgarish kiritishdan oldin, jarayon davomida yodda tutish kerak bo'lgan bir nechta elementlar mavjud:
 
-- Feel free to remove any columns that aren\'t deemed necessary. But, it
-  is *strongly* advised that the `Internal Reference` column remains.
+- Kerak bo'lmagan ustunlarni olib tashlashingiz mumkin. Biroq, `Internal Reference` ustunini saqlab qolish *qat'iy tavsiya etiladi*.
 
-  While it\'s not mandatory, having a unique identifier (e.g.
-  [FURN_001]) in the `Internal
-  Reference` column for each product
-  can be helpful in many cases. This can even be from previous software
-  spreadsheets to ease the transition into Odoo.
+  Majburiy bo'lmasa ham, har bir mahsulot uchun `Internal Reference` ustunida noyob identifikator (masalan, [FURN_001]) bo'lishi ko'p hollarda foydali bo'lishi mumkin. Bu hatto avvalgi dastur elektron jadvallaridan ham bo'lishi mumkin, bu Odoo ga o'tishni osonlashtiradi.
 
-  For example, when updating imported products, the same file can be
-  imported several times without creating duplicates, thus enhancing the
-  efficiency and simplicity of imported product management.
+  Masalan, import qilingan mahsulotlarni yangilashda, bir xil faylni bir necha marta import qilish mumkin, bu esa dublikatlar yaratmasdan import qilingan mahsulotlarni boshqarishning samaradorligi va soddaligini oshiradi.
 
-- Do **not** change the labels of columns that are meant to be imported.
-  Otherwise, Odoo won\'t recognize them, forcing the user to map them on
-  the import screen manually.
+- Import qilinishi kerak bo'lgan ustunlar nomlarini **o'zgartirmang**. Aks holda, Odoo ularni taniy olmaydi va foydalanuvchi ularni import ekranida qo'lda moslashtirishi kerak bo'ladi.
 
-- Feel free to add new columns to the template spreadsheet, if desired.
-  However, to be added, those fields **must** exist in Odoo. If Odoo
-  can\'t match the column name with a field, it can be matched manually
-  during the import process.
+- Agar xohlasangiz, shablon elektron jadvaliga yangi ustunlar qo'shishingiz mumkin. Biroq, qo'shilishi uchun bu maydonlar Odoo da **mavjud bo'lishi kerak**. Agar Odoo ustun nomini maydon bilan moslashtirib bo'lmasa, import jarayoni davomida uni qo'lda moslashtirish mumkin.
 
-  During the import process of the completed template, Odoo reveals a
-  page showcasing all the elements of the newly-configured product
-  template spreadsheet, separated by `File
-  Column`,
-  `Odoo Field`, and
-  `Comments`.
+  Tugallangan shablonni import qilish jarayoni davomida Odoo yangi sozlangan mahsulot shablon elektron jadvalining barcha elementlarini `File Column`, `Odoo Field` va `Comments` bo'yicha ajratilgan holda ko'rsatadigan sahifani ochadi.
 
-  To manually match a column name with a field in Odoo, click the
-  `Odoo Field` drop-down menu next to
-  the `File Column` that needs a
-  manual adjustment, and select the appropriate field from that
-  drop-down menu.
+  Ustun nomini Odoo dagi maydon bilan qo'lda moslashtirish uchun qo'lda sozlash kerak bo'lgan `File Column` yonidagi `Odoo Field` pastga ochiluvchi menyusini bosing va ushbu pastga ochiluvchi menyudan tegishli maydonni tanlang.
 
-  ![The Odoo Field drop-down menu next to a Field Column that needs to be manually adjusted.](import/odoo-field-dropdown-menu.png)
+  ![Qo'lda sozlash kerak bo'lgan Field Column yonidagi Odoo Field pastga ochiluvchi menyusi.](import/odoo-field-dropdown-menu.png)
 
-## Import product template spreadsheet
+## Mahsulot shablon elektron jadvalini import qilish
 
-After customizing the product template spreadsheet, return to the Odoo
-product import page, where the template download link is found, and
-click the `Upload File` button in the
-upper-left corner.
+Mahsulot shablon elektron jadvalini sozlashdan so'ng, shablon yuklab olish havolasi joylashgan Odoo mahsulot import sahifasiga qaytib, yuqori chap burchakdagi `Upload File` tugmasini bosing.
 
-![The upload file button on the import products template download page in Odoo Sales.](import/upload-file-button.png)
+![Odoo Sales modulidagi mahsulotlar shablonini yuklab olish sahifasidagi upload file tugmasi.](import/upload-file-button.png)
 
-Then, a pop-up window appears, in which the completed product template
-spreadsheet file should be selected and uploaded to Odoo.
+Keyin paydo bo'ladigan popup oynasida tugallangan mahsulot shablon elektron jadval fayli tanlanishi va Odoo ga yuklanishi kerak.
 
-After that, Odoo reveals a page showcasing all the elements of the
-newly-configured product template spreadsheet, separated by
-`File Column`,
-`Odoo Field`, and
-`Comments`.
+Shundan so'ng, Odoo yangi sozlangan mahsulot shablon elektron jadvalining barcha elementlarini `File Column`, `Odoo Field` va `Comments` bo'yicha ajratilgan holda ko'rsatadigan sahifani ochadi.
 
-![The import a file page in Odoo Sales after a product template has been uploaded.](import/import-a-file-page.png)
+![Mahsulot shabloni yuklangandan so'ng Odoo Sales modulidagi faylni import qilish sahifasi.](import/import-a-file-page.png)
 
-From here, the `File Column` can be
-manually assigned to an `Odoo Field`,
-if necessary.
+Bu yerdan kerak bo'lsa, `File Column` ni `Odoo Field` ga qo'lda tayinlash mumkin.
 
-To make sure everything is appropriate, and all the columns and fields
-are lined up accurately, click the `Test` button in the upper-left corner.
+Hamma narsa mos va barcha ustunlar va maydonlar to'g'ri joylashganligiga ishonch hosil qilish uchun yuqori chap burchakdagi `Test` tugmasini bosing.
 
-If everything is lined up and applied correctly, Odoo reveals a blue
-banner at the top of the page, informing the user that
-`Everything seems valid`.
+Agar hamma narsa to'g'ri joylashgan va qo'llanilgan bo'lsa, Odoo sahifaning yuqori qismida foydalanuvchiga `Everything seems valid` deb xabar beruvchi ko'k banner ko'rsatadi.
 
-![The everything seems valid message that appears if file columns are entered correctly.](import/everything-seems-valid-message.png)
+![Fayl ustunlari to'g'ri kiritilgan bo'lsa paydo bo'ladigan "Everything seems valid" xabari.](import/everything-seems-valid-message.png)
 
-If there are any errors, Odoo reveals a red banner at the top of the
-page, with instructions of where to locate the specific issues, and how
-to fix them.
+Agar biron-bir xatoliklar bo'lsa, Odoo sahifaning yuqori qismida muayyan muammolarni qayerdan topish va ularni qanday tuzatish haqida ko'rsatmalar bilan qizil banner ko'rsatadi.
 
-![The import error message that appears if file columns don\'t match an Odoo Field.](import/import-error-message.png)
+![Fayl ustunlari Odoo Field iga mos kelmasa paydo bo'ladigan import xatosi xabari.](import/import-error-message.png)
 
-Once those errors are fixed, click `Test` again to ensure all necessary issues have been remedied
-appropriately.
+Ushbu xatoliklar tuzatilgandan so'ng, barcha kerakli muammolar to'g'ri hal qilinganligiga ishonch hosil qilish uchun yana `Test` ni bosing.
 
-If additional product template spreadsheets need to be uploaded, click
-the `Load File` button, select the
-desired product template spreadsheet, and repeat the process.
+Agar qo'shimcha mahsulot shablon elektron jadvallarini yuklash kerak bo'lsa, `Load File` tugmasini bosing, kerakli mahsulot shablon elektron jadvalini tanlang va jarayonni takrorlang.
 
-When everything is ready, click the `Import` button.
+Hamma narsa tayyor bo'lganda, `Import` tugmasini bosing.
 
-When clicked, Odoo instantly imports those products, and reveals the
-main `Products` page, with a pop-up
-message in the upper-right corner. This pop-up message informs the user
-how many products were successfully imported.
+Bosilganda, Odoo bu mahsulotlarni darhol import qiladi va yuqori o'ng burchakda popup xabar bilan asosiy `Products` sahifasini ko'rsatadi. Bu popup xabar foydalanuvchiga nechta mahsulot muvaffaqiyatli import qilinganligini bildiradi.
 
-![The pop-up window that appears after a successful product import process in Odoo Sales.](import/successful-import-popup.png)
+![Odoo Sales modulida mahsulot import jarayoni muvaffaqiyatli bo'lgandan so'ng paydo bo'ladigan popup oyna.](import/successful-import-popup.png)
 
-At this point, all the newly-imported products are accessible and
-editable via the `Products` page.
+Ushbu nuqtada barcha yangi import qilingan mahsulotlarga `Products` sahifasi orqali kirish va tahrirlash mumkin.
 
-## Import relation fields, attributes, and variants
+## Bog'lanish maydonlari, atributlar va variantlarni import qilish
 
-It\'s important to note that an Odoo object is always related to many
-other objects. For example, a product is linked to product categories,
-attributes, vendors, and things of this nature. These links/connections
-are known as relations.
+Shuni ta'kidlash kerakki, Odoo obyekti doimo boshqa ko'plab obyektlar bilan bog'lanadi. Masalan, mahsulot mahsulot kategoriyalari, atributlari, sotuvchilar va shunga o'xshash narsalar bilan bog'langan. Bu bog'lanishlar/ulanishlar munosabatlar deb nomlanadi.
 
 ::: tip
 
-In order to import product relations, the records of the related object
-**must** be imported *first* from their own list menu.
+Mahsulot munosabatlarini import qilish uchun tegishli obyektning yozuvlari **avval** o'zlarining ro'yxat menyusidan import qilinishi **kerak**.
 ::::
 
-### Relation fields
+### Bog'lanish maydonlari
 
-On product forms in Odoo, there are a number of fields that can be
-modified and customized at any time. These fields are found under every
-tab on a product form. While these fields are easily editable directly
-on the product form, they can also be modified via a product import.
+Odoo dagi mahsulot formalarida istalgan vaqtda o'zgartirilishi va sozlanishi mumkin bo'lgan bir qator maydonlar mavjud. Bu maydonlar mahsulot formasidagi har bir tab ostida joylashgan. Bu maydonlar mahsulot formasida bevosita osongina tahrirlanishi mumkin bo'lsa-da, ularni mahsulot import orqali ham o'zgartirish mumkin.
 
-As mentioned, relation fields of this nature can **only** be imported
-for products if they already exist in the database. For example, if a
-user attempts to import a product with a *Product Type*, it can only be
-one of the preconfigured product types existing in the database (e.g.
-*Storable Product*, *Consumable*, etc.).
+Yuqorida aytib o'tilganidek, bunday bog'lanish maydonlari mahsulotlar uchun **faqat** ma'lumotlar bazasida mavjud bo'lsagina import qilinishi mumkin. Masalan, agar foydalanuvchi *`Product Type`* bilan mahsulotni import qilishga harakat qilsa, bu faqat ma'lumotlar bazasida mavjud bo'lgan oldindan sozlangan mahsulot turlaridan biri bo'lishi mumkin (masalan, *`Storable Product`*, *`Consumable`* va h.k.).
 
-To import information for a relation field on a product import template
-spreadsheet, add the name of the field as a column name/title on the
-spreadsheet. Then, on the appropriate product line, add the desired
-relation field option.
+Mahsulot import shablon elektron jadvalida bog'lanish maydoni uchun ma'lumot import qilish uchun maydon nomini elektron jadvaldagi ustun nomi/sarlavhasi sifatida qo'shing. Keyin tegishli mahsulot qatorida kerakli bog'lanish maydoni variantini qo'shing.
 
-When all desired relation field information has been entered, save the
-spreadsheet, and import it to the database, per the process mentioned
-above (`Sales app ‣ Products ‣
-Products ‣ ⚙️ (gear) icon ‣ Import records ‣ Upload File`).
+Barcha kerakli bog'lanish maydoni ma'lumotlari kiritilgandan so'ng, elektron jadvalni saqlang va yuqorida aytib o'tilgan jarayon bo'yicha uni ma'lumotlar bazasiga import qiling (`Sales app ‣ Products ‣ Products ‣ ⚙️ (gear) icon ‣ Import records ‣ Upload File`).
 
-Once the spreadsheet with the newly-configured relation field
-information has been uploaded, click `Import`, and Odoo returns to the `Products` page.
+Yangi sozlangan bog'lanish maydoni ma'lumotlari bilan elektron jadval yuklangandan so'ng, `Import` ni bosing va Odoo `Products` sahifasiga qaytadi.
 
-When the newly-changed/modified products, complete with the new relation
-field information, has been imported and uploaded, that new information
-can be found on the `Products` page.
+Yangi bog'lanish maydoni ma'lumotlari bilan yangi o'zgartirilgan/o'zgartirilgan mahsulotlar import qilinib yuklangandan so'ng, bu yangi ma'lumotlarni `Products` sahifasida topish mumkin.
 
-### Attributes and values
+### Atributlar va qiymatlar
 
-Odoo also allows users to import product attributes and values that can
-be used for products that already exist in the database, and/or with
-imported products.
+Odoo shuningdek foydalanuvchilarga ma'lumotlar bazasida mavjud bo'lgan mahsulotlar uchun va/yoki import qilingan mahsulotlar bilan ishlatilishi mumkin bo'lgan mahsulot atributlari va qiymatlarini import qilish imkonini beradi.
 
-To import attributes and values, a separate spreadsheet or CSV file
-dedicated to attributes and values **must** be imported and uploaded
-before they can be used for other products.
+Atributlar va qiymatlarni import qilish uchun, atributlar va qiymatlarga bag'ishlangan alohida elektron jadval yoki CSV fayl boshqa mahsulotlar uchun ishlatilishidan oldin import qilinishi va yuklanishi **kerak**.
 
-The column names/titles of the attributes and values spreadsheet should
-be as follows: `Attribute`,
-`Display Type`,
-`Variant Creation Mode`, and
-`Values / Value`.
+Atributlar va qiymatlar elektron jadvalining ustun nomlari/sarlavhalari quyidagicha bo'lishi kerak: `Attribute`, `Display Type`, `Variant Creation Mode` va `Values / Value`.
 
-![An attributes and values spreadsheet template for imports.](import/attributes-and-values-spreadsheet.png)
+![Import uchun atributlar va qiymatlar elektron jadval shabloni.](import/attributes-and-values-spreadsheet.png)
 
-- `Attribute`: name of the attribute
-  (e.g. [Size]).
-- `Display Type`: display type used
-  in the product configurator. There are three display type options:
-  - `Radio`: values displayed as
-    radio buttons
-  - `Selection`: values displayed in
-    a selection list
-  - `Color`: values denoted as a
-    color selection
-- `Variant Creation Mode`: how the
-  variants are created when applied to a product. There are three
-  variant creation mode options:
-  - `Instantly`: all possible
-    variants are created as soon as the attribute, and its values, are
-    added to a product
+- `Attribute`: atribut nomi (masalan, [Size]).
+- `Display Type`: mahsulot konfiguratorida ishlatiladigan ko'rsatish turi. Uchta ko'rsatish turi varianti mavjud:
+  - `Radio`: qiymatlar radio tugmalar sifatida ko'rsatiladi
+  - `Selection`: qiymatlar tanlov ro'yxatida ko'rsatiladi
+  - `Color`: qiymatlar rang tanlovi sifatida belgilanadi
+- `Variant Creation Mode`: mahsulotga qo'llanilganda variantlar qanday yaratilishi. Uchta variant yaratish rejimi varianti mavjud:
+  - `Instantly`: atribut va uning qiymatlari mahsulotga qo'shilishi bilanoq barcha mumkin bo'lgan variantlar yaratiladi
 
-  - `Dynamically`: each variant is
-    created **only** when its corresponding attributes and values are
-    added to a sales order
+  - `Dynamically`: har bir variant **faqat** uning tegishli atributlari va qiymatlari savdo buyurtmasiga qo'shilgandagina yaratiladi
 
-  - `Never`: variants are **never**
-    created for the attribute
+  - `Never`: atribut uchun variantlar **hech qachon** yaratilmaydi
 
     ::: tip
     : tip
 
-To import multiple values, separate them by *just* a comma, **not** a
-comma followed by a space, in the product import template spreadsheet
-(e.g. [furniture,couch,home]).
+Bir nechta qiymatlarni import qilish uchun mahsulot import shablon elektron jadvalida ularni *faqat* vergul bilan ajrating, **bo'shliq bilan keyingi vergul emas** (masalan, [furniture,couch,home]).
 ::::
 
-When the desired products and product variants have been entered and
-saved in the spreadsheet, it\'s time to import and upload them into
-Odoo. To do that, navigate to `Sales app ‣
-Products ‣ Products ‣ ⚙️ (gear) icon ‣ Import records ‣ Upload File`.
+Kerakli mahsulotlar va mahsulot variantlari elektron jadvalga kiritilib saqlanganidan so'ng, ularni Odoo ga import qilish va yuklash vaqti keldi. Buning uchun `Sales app ‣ Products ‣ Products ‣ ⚙️ (gear) icon ‣ Import records ‣ Upload File` ga o'ting.
 
-Once the spreadsheet with the newly-configured products and product
-variants has been uploaded, click `Import`, and Odoo returns to the `Products` page. That\'s where the newly-added products can be
-found.
+Yangi sozlangan mahsulotlar va mahsulot variantlari bilan elektron jadval yuklangandan so'ng, `Import` ni bosing va Odoo `Products` sahifasiga qaytadi. Yangi qo'shilgan mahsulotlarni o'sha yerda topish mumkin.
 
-To view and modify the attributes and variants on any products, select
-the desired product from the `Products` page, and click the
-`Attributes \& Variants` tab.
-
+Istalgan mahsulotlardagi atributlar va variantlarni ko'rish va o'zgartirish uchun `Products` sahifasidan kerakli mahsulotni tanlang va `Attributes & Variants` tabini bosing.

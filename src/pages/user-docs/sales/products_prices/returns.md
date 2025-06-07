@@ -1,110 +1,91 @@
-# Returns and refunds
+# Qaytarish va to'lovlarni qaytarish
 
-The Odoo *Sales* app provides two different ways to process returns. The
-method used depends on whether or not an invoice has been sent.
+Odoo *Sales* ilovasi qaytarishni qayta ishlash uchun ikki xil usulni taqdim etadi. Qo'llaniladigan usul schyot-faktura
+yuborilganmi yoki yo'qmi bunga bog'liq.
 
-## Before invoicing
+## Schyot-faktura berishdan oldin
 
-Returns are completed using *Reverse Transfers* when a customer decides
-to return a product **before** an invoice has been sent or validated.
+Mijoz schyot-faktura yuborilishi yoki tasdiqlashdan **oldin** mahsulotni qaytarishga qaror qilganda qaytarish *Teskari
+o'tkazmalar* yordamida amalga oshiriladi.
 
 ::: tip
 
-In order to use *Reverse Transfers*, the *Inventory* app **must** be
-installed.
+*Teskari o'tkazmalar*dan foydalanish uchun *Inventory* ilovasi **albatta** o'rnatilgan bo'lishi kerak.
 ::::
 
-To start a return before invoicing, navigate to the
-`Sales` app, select the desired
-sales order, and click on the `Delivery` smart button to open the associated delivery order.
+Schyot-faktura berishdan oldin qaytarishni boshlash uchun `Sales` ilovasiga o'ting, kerakli savdo buyurtmasini tanlang
+va bog'langan yetkazib berish buyurtmasini ochish uchun `Delivery` aqlli tugmasini bosing.
 
-![A typical sales order with a highlighted delivery smart button in Odoo Sales.](returns/sales-order-delivery-smart-button.png)
+![Odoo Sales dasturida ajratilgan yetkazib berish aqlli tugmasi bo'lgan odatiy savdo buyurtmasi.](returns/sales-order-delivery-smart-button.png)
 
-On the validated delivery order, click `Return`.
+Tasdiqlangan yetkazib berish buyurtmasida `Return` tugmasini bosing.
 
-![A validated delivery order with a highlighted Return button in Odoo Sales.](returns/validated-delivery-order-return-button.png)
+![Odoo Sales dasturida ajratilgan Return tugmasi bo'lgan tasdiqlangan yetkazib berish buyurtmasi.](returns/validated-delivery-order-return-button.png)
 
-This opens a `Reverse Transfer`
-pop-up window.
+Bu `Reverse Transfer` oynasini ochadi.
 
-By default, the `Quantity` matches
-the validated quantities from the delivery order. Update the quantities,
-if necessary. Click on the `🗑️ (trash)` icon next to a line item to remove it from the return.
+Odatiy bo'lib, `Quantity` yetkazib berish buyurtmasidan tasdiqlangan miqdorlarga mos keladi. Agar kerak bo'lsa,
+miqdorlarni yangilang. Uni qaytarishdan olib tashlash uchun satr elementining yonidagi `🗑️ (axlat qutisi)` belgisini
+bosing.
 
-![The \"Reverse Transfer\" pop-up window, to make a return before invoicing the customer.](returns/reverse-transfer-popup.png)
+![Mijozga schyot-faktura berishdan oldin qaytarish qilish uchun "Reverse Transfer" oynasi.](returns/reverse-transfer-popup.png)
 
-Next, click `Return` to confirm the
-return. This generates a new warehouse operation for the incoming
-returned product(s).
+Keyin qaytarishni tasdiqlash uchun `Return` tugmasini bosing. Bu qaytarilgan mahsulot(lar) uchun yangi ombor
+operatsiyasini yaratadi.
 
-![Warehouse operation after a return has been confirmed in Odoo Sales.](returns/warehouse-operation-confirmed-return.png)
+![Odoo Sales dasturida qaytarish tasdiqlangandan keyin ombor operatsiyasi.](returns/warehouse-operation-confirmed-return.png)
 
-Upon receiving the return, the warehouse team validates the warehouse
-operation by clicking `Validate`.
-Then, on the original sales order, the `Delivered` quantity updates to reflect the difference between the
-initial validated quantities and the returned quantities.
+Qaytarishni olgandan so'ng, ombor jamoasi `Validate` tugmasini bosish orqali ombor operatsiyasini tasdiqlaydi. Keyin asl
+savdo buyurtmasida `Delivered` miqdori dastlabki tasdiqlangan miqdorlar va qaytarilgan miqdorlar o'rtasidagi farqni aks
+ettirish uchun yangilanadi.
 
-![The updated \"Delivered\" quantity on the sales order after the reverse transfer.](returns/updated-sales-quantities.png)
+![Teskari o'tkazilgandan keyin savdo buyurtmasidagi yangilangan "Delivered" miqdori.](returns/updated-sales-quantities.png)
 
-When an invoice is created, the customer receives an invoice **only**
-for the products they are keeping, if any.
+Schyot-faktura yaratilganda, mijoz **faqat** o'zi saqlab qolayotgan mahsulotlar uchun schyot-faktura oladi (agar mavjud
+bo'lsa).
 
-## After invoicing
+## Schyot-faktura berishdan keyin
 
-Sometimes, customers return an item after they receive and/or pay for
-their invoice. In these cases, a return using only *Reverse Transfers*
-is insufficient since validated, or sent, invoices cannot be changed.
+Ba'zida mijozlar schyot-fakturani olgandan va/yoki to'lagandan keyin mahsulotni qaytaradilar. Bunday hollarda faqat
+*Teskari o'tkazmalar*dan foydalangan holda qaytarish yetarli emas, chunki tasdiqlangan yoki yuborilgan
+schyot-fakturalarni o'zgartirib bo'lmaydi.
 
-However, *Reverse Transfers* can be used in conjunction with *Credit
-Notes* to complete the customer\'s return.
+Biroq, *Teskari o'tkazmalar* mijozning qaytarishini yakunlash uchun *Kredit Yozuvlari* bilan birgalikda ishlatilishi
+mumkin.
 
-To start a return after invoicing, navigate to the relevant sales order
-in the `Sales` app.
+Schyot-faktura berishdan keyin qaytarishni boshlash uchun `Sales` ilovasidagi tegishli savdo buyurtmasiga o'ting.
 
-If there is a payment registered on the sales order, the payment details
-appear in the chatter, and the invoice (accessible through the
-`Invoices` smart button) has a green
-`In
-Payment` banner.
+Agar savdo buyurtmasida ro'yxatga olingan to'lov mavjud bo'lsa, to'lov tafsilotlari suhbatda ko'rinadi va
+schyot-faktura (`Invoices` aqlli tugmasi orqali kirish mumkin) yashil `In Payment` banneriga ega.
 
-![Sample of a green in payment banner in Odoo Sales.](returns/green-in-payment-banner.png)
+![Odoo Sales dasturida yashil to'lov banneri namunasi.](returns/green-in-payment-banner.png)
 
-From the sales order, click on the `Delivery` smart button to view the validated delivery order.
-Then, click `Return` to open the
-`Reverse Transfer` pop-up window.
+Savdo buyurtmasidan tasdiqlangan yetkazib berish buyurtmasini ko'rish uchun `Delivery` aqlli tugmasini bosing. Keyin
+`Reverse Transfer` oynasini ochish uchun `Return` tugmasini bosing.
 
-Next, edit the `Product` and/or
-`Quantity`, as needed for the return.
-Then, click `Return`. This generates
-a new warehouse operation for the incoming returned product(s), which is
-validated by the warehouse team once the return is received by clicking
-`Validate`.
+Keyin qaytarish uchun kerak bo'lganda `Product` va/yoki `Quantity`ni tahrirlang. Keyin `Return` tugmasini bosing. Bu
+qaytarilgan mahsulot(lar) uchun yangi ombor operatsiyasini yaratadi, bu ombor jamoasi tomonidan qaytarish qabul
+qilingandan keyin `Validate` tugmasini bosish orqali tasdiqlanadi.
 
-Then, on the sales order, the `Delivered` quantity updates to reflect the difference between the
-initial validated quantities and the returned quantities.
+Keyin savdo buyurtmasida `Delivered` miqdori dastlabki tasdiqlangan miqdorlar va qaytarilgan miqdorlar o'rtasidagi
+farqni aks ettirish uchun yangilanadi.
 
-To process a refund, navigate to the relevant invoice (from the sales
-order, click on the `Invoices` smart
-button). Then, click the `Credit Note` button at the top of the validated invoice.
+Pulni qaytarishni qayta ishlash uchun tegishli schyot-fakturaga o'ting (savdo buyurtmasidan `Invoices` aqlli tugmasini
+bosing). Keyin tasdiqlangan schyot-fakturaning yuqori qismidagi `Credit Note` tugmasini bosing.
 
-![A typical customer invoice with a Credit Note button highlighted in Odoo Sales.](returns/credit-note-button.png)
+![Odoo Sales dasturida ajratilgan Credit Note tugmasi bo'lgan odatiy mijoz schyot-fakturasi.](returns/credit-note-button.png)
 
-Doing so reveals a `Credit Note`
-pop-up form.
+Buni qilish `Credit Note` shaklini ochadi.
 
-![Typical credit note pop-up form that appears in Odoo Sales.](returns/credit-note-pop-up-form.png)
+![Odoo Sales dasturida paydo bo'ladigan odatiy kredit yozuvi shakli.](returns/credit-note-pop-up-form.png)
 
-Start by entering a `Reason displayed on Credit Note` and a specific `Journal` to process the credit. Then, select a specific
-`Reversal Date`.
+`Reason displayed on Credit Note` va kreditni qayta ishlash uchun maxsus `Journal`ni kiritishdan boshlang. Keyin maxsus
+`Reversal Date`ni tanlang.
 
-After the information is filled in, click `Reverse` or `Reverse and Create
-Invoice`. Then, edit the draft, if
-needed.
+Ma'lumot to'ldirilgandan so'ng, `Reverse` yoki `Reverse and Create Invoice` tugmasini bosing. Keyin agar kerak bo'lsa,
+qoralamani tahrirlang.
 
-Lastly, click `Confirm` to confirm
-the credit note.
+Nihoyat, kredit yozuvini tasdiqlash uchun `Confirm` tugmasini bosing.
 
-When complete, a blue banner reading:
-`You have outstanding credits for this customer. You
-can allocate them to mark this invoice as paid.` appears at the top of the page.
-
+Yakunlanganda sahifaning yuqori qismida ko'k banner paydo bo'ladi:
+`You have outstanding credits for this customer. You can allocate them to mark this invoice as paid.`

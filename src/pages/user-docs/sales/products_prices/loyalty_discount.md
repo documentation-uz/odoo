@@ -1,247 +1,123 @@
-# Discount and loyalty programs
+# Chegirma va sadoqat dasturlari
 
-The Odoo *Sales*, *eCommerce*, and *Point of Sale* applications allow
-users to create discount and loyalty programs that customers can use for
-online and in-store shopping. These programs offer more varied, public,
-and time-sensitive pricing options than `pricelists
-`.
+Odoo `Sales`, `eCommerce`, va `Point of Sale` ilovalari foydalanuvchilarga mijozlar onlayn va do'konda xarid qilishda foydalanishi mumkin bo'lgan chegirma va sadoqat dasturlarini yaratishga imkon beradi. Ushbu dasturlar `pricelists` ga qaraganda yanada xilma-xil, ommaviy va vaqtga bog'liq narx variantlarini taklif etadi.
 
-## Configure the settings
+## Sozlamalarni sozlash
 
-To begin using discount and loyalty programs, navigate to
-`Sales ‣ Configuration
-‣ Settings`. Under the
-`Pricing` heading, activate the
-`Discounts, Loyalty &
-Gift Card` setting by checking the
-box next to the feature. Finally, click `Save` to save the changes.
+Chegirma va sadoqat dasturlaridan foydalanishni boshlash uchun `Sales ‣ Configuration ‣ Settings` ga o'ting. `Pricing` sarlavhasi ostida, xususiyat yonidagi katakchani belgilash orqali `Discounts, Loyalty & Gift Card` sozlamasini faollashtiring. Nihoyat, o'zgarishlarni saqlash uchun `Save` tugmasini bosing.
 
-## Configure discount and loyalty programs
+## Chegirma va sadoqat dasturlarini sozlash
 
-To create discount and loyalty programs, go to
-`Sales ‣ Products ‣ Discount &
-Loyalty`.
+Chegirma va sadoqat dasturlarini yaratish uchun `Sales ‣ Products ‣ Discount & Loyalty` ga o'ting.
 
-If no discount or loyalty programs have been created yet, Odoo provides
-a choice of templates to help create the first program. Choose one of
-the template cards, or click `New` to
-create a new program from scratch.
+Agar hali hech qanday chegirma yoki sadoqat dasturi yaratilmagan bo'lsa, Odoo birinchi dasturni yaratishga yordam berish uchun shablonlar tanlovini taqdim etadi. Shablon kartalaridan birini tanlang yoki noldan yangi dastur yaratish uchun `New` tugmasini bosing.
 
-Or, if there are already existing programs, select an existing program
-to edit it.
+Yoki, agar allaqachon mavjud dasturlar bo'lsa, uni tahrirlash uchun mavjud dasturni tanlang.
 
-![Discount and loyalty program template cards.](loyalty_discount/price-discount-loyalty.png)
+![Chegirma va sadoqat dasturi shablon kartalari.](loyalty_discount/price-discount-loyalty.png)
 
 ::: tip
 
-Templates **only** appear when no programs have been created, and they
-disappear once the first program is created.
+Shablonlar **faqat** hech qanday dastur yaratilmaganda paydo bo'ladi va birinchi dastur yaratilgandan so'ng yo'qoladi.
 ::::
 
-Creating or editing a program opens the program form.
+Dasturni yaratish yoki tahrirlash dastur formasini ochadi.
 
-![Program options on the loyalty program form.](loyalty_discount/price-programs.png)
+![Sadoqat dasturi formasidagi dastur parametrlari.](loyalty_discount/price-programs.png)
 
-The program form contains the following fields:
+Dastur formasi quyidagi maydonlarni o'z ichiga oladi:
 
-- `Program Name`: Enter the name of
-  the program in this field. The program name is **not** visible to the
-  customer.
-- `Program Type`: Select the desired
-  `program type
-  ` from the drop-down menu.
-- `Currency`: Select the currency
-  used for the program.
-- `Pricelist`: If desired, select a
-  pricelist from the drop-down menu to have this loyalty program applied
-  to a specific pricelist (and customers attached to the pricelist).
-  More than one pricelist can be selected in this field. When a single
-  loyalty program is linked to several pricelists, it makes it viable
-  for different customer segments to have different pricelists, but the
-  *same* loyalty programs. If this field is left blank, the program
-  applies to everyone, regardless of pricelist.
-- `Points Unit`: Enter the name of
-  the points used for the `Loyalty Cards` program (e.g. [Loyalty Points]). The
-  points unit name *is* visible to the customer. This field is **only**
-  available when the `Program Type`
-  is set to `Loyalty Cards`.
-- `Start Date`: Select the date on
-  which the program becomes valid. Leave this field blank if the program
-  should always be valid and not expire.
-- `End Date`: Select the date on
-  which the program stops being valid. Leave this field blank if the
-  program should always be valid and not expire.
-- `Limit Usage`: If desired, tick
-  this checkbox, and enter a number of `usages` to limit the number of times the program can be used
-  during the validity period.
-- `Company`: If working in a
-  multi-company database, choose the one company for which the program
-  is available. If left blank, the program is available to all companies
-  in the database.
-- `Available On`: Select the apps on
-  which the program is available.
-- `Website`: Select a website on
-  which the program is available. Leave this field blank to make it
-  available on all websites.
-- `Point of Sale`: Select the
-  point(s) of sale at which the program is available. Leave this field
-  blank to make it available at all
-  `PoS (Point of Sale)`.
+- `Program Name`: Ushbu maydonga dastur nomini kiriting. Dastur nomi mijozga **ko'rinmaydi**.
+- `Program Type`: Ochiladigan menyudan kerakli `program type` ni tanlang.
+- `Currency`: Dastur uchun ishlatiladigan valyutani tanlang.
+- `Pricelist`: Agar kerak bo'lsa, ushbu sadoqat dasturini muayyan narx ro'yxatiga (va narx ro'yxatiga bog'langan mijozlarga) qo'llash uchun ochiladigan menyudan narx ro'yxatini tanlang. Ushbu maydondan bir nechta narx ro'yxatini tanlash mumkin. Bitta sadoqat dasturi bir nechta narx ro'yxatiga bog'langanda, turli mijoz segmentlari turli narx ro'yxatlariga ega bo'lishi, lekin *bir xil* sadoqat dasturlariga ega bo'lishi mumkin. Agar ushbu maydon bo'sh qoldirilsa, dastur narx ro'yxatidan qat'i nazar hammaga taalluqli.
+- `Points Unit`: `Loyalty Cards` dasturi uchun ishlatiladigan ballar nomini kiriting (masalan, [Sadoqat ballari]). Ball birligi nomi mijozga *ko'rinadi*. Ushbu maydon **faqat** `Program Type` `Loyalty Cards` ga o'rnatilganda mavjud.
+- `Start Date`: Dastur kuchga kirish sanasini tanlang. Agar dastur doimo haqiqiy bo'lishi va muddati tugamasligi kerak bo'lsa, ushbu maydonni bo'sh qoldiring.
+- `End Date`: Dastur kuchini yo'qotish sanasini tanlang. Agar dastur doimo haqiqiy bo'lishi va muddati tugamasligi kerak bo'lsa, ushbu maydonni bo'sh qoldiring.
+- `Limit Usage`: Agar kerak bo'lsa, ushbu katakchani belgilang va dasturni amal qilish muddati davomida foydalanish sonini cheklash uchun `usages` raqamini kiriting.
+- `Company`: Agar ko'p kompaniyali ma'lumotlar bazasida ishlayotgan bo'lsangiz, dastur mavjud bo'lgan bitta kompaniyani tanlang. Agar bo'sh qoldirilsa, dastur ma'lumotlar bazasidagi barcha kompaniyalar uchun mavjud.
+- `Available On`: Dastur mavjud bo'lgan ilovalarni tanlang.
+- `Website`: Dastur mavjud bo'lgan veb-saytni tanlang. Uni barcha veb-saytlarda mavjud qilish uchun ushbu maydonni bo'sh qoldiring.
+- `Point of Sale`: Dastur mavjud bo'lgan sotuv nuqta(lar)ini tanlang. Uni barcha `PoS (Point of Sale)` da mavjud qilish uchun ushbu maydonni bo'sh qoldiring.
 
 ::: tip
 
-The options available on the program form vary depending on the
-`Program Type
-`
-selected.
+Dastur formasida mavjud bo'lgan variantlar tanlangan `Program Type` ga qarab farq qiladi.
 ::::
 
-All of the existing cards, codes, coupons, etc. that have been generated
-for the program are accessible through the smart button located at the
-top of the form.
+Dastur uchun yaratilgan barcha mavjud kartalar, kodlar, kuponlar va boshqalar forma tepasida joylashgan aqlli tugma orqali kirish mumkin.
 
-![Program items smart button on the loyalty program form.](loyalty_discount/price-programs-items.png)
+![Sadoqat dasturi formasidagi dastur elementlari aqlli tugmasi.](loyalty_discount/price-programs-items.png)
 
 ::: tip
 
-In Odoo 17 (and later), when a loyalty card or coupon is associated with
-a contact in the database, a `Loyalty Cards` smart button conditionally appears on the contact form.
+Odoo 17 da (va undan keyingi versiyalarda), sadoqat kartasi yoki kupon ma'lumotlar bazasidagi kontakt bilan bog'langanda, kontakt formasida shartli ravishda `Loyalty Cards` aqlli tugmasi paydo bo'ladi.
 
-![The Loyalty Card smart button as it appears on a contact form in Odoo 17.](loyalty_discount/loyalty-cards-smart-button.png)
+![Odoo 17 da kontakt formasida ko'rinadigan Sadoqat kartasi aqlli tugmasi.](loyalty_discount/loyalty-cards-smart-button.png)
 
-This smart button **only** appears if a loyalty card or coupon is
-associated with the contact.
+Ushbu aqlli tugma **faqat** sadoqat kartasi yoki kupon kontakt bilan bog'langan bo'lsa paydo bo'ladi.
 ::::
 
-### Program types 
+### Dastur turlari
 
-The different `Program Types`
-available on the program form are:
+Dastur formasida mavjud bo'lgan turli `Program Types` lar:
 
-- `Coupons`: Generate and share
-  single-use coupon codes that grant immediate access to rewards.
-- `Loyalty Cards`: When making
-  purchases, the customer accumulates points to exchange for rewards on
-  current and/or future orders.
-- `Promotions`: Set conditional rules
-  for ordering products, which, when fulfilled, grant access to rewards
-  for the customer.
-- `Discount Code`: Set codes which,
-  when entered upon checkout, grant discounts to the customer.
-- `Buy X Get Y`: for every (X) item
-  bought, the customer is granted 1 credit. After accumulating a
-  specified amount of credits, the customer can trade them in to
-  receive (Y) item.
-- `Next Order Coupons`: Generate and
-  share single-use coupon codes that grant access to rewards on the
-  customer\'s next order.
+- `Coupons`: Mukofotlarga darhol kirish huquqini beradigan bir martalik kupon kodlarini yarating va baham ko'ring.
+- `Loyalty Cards`: Xarid qilayotganda, mijoz joriy va/yoki kelajakdagi buyurtmalarda mukofotlarga almashtirish uchun ball to'playdi.
+- `Promotions`: Mahsulotlarni buyurtma qilish uchun shartli qoidalarni belgilang, ular bajarilganda mijozga mukofotlarga kirish huquqini beradi.
+- `Discount Code`: Chiqish paytida kiritilganda mijozga chegirmalar beradigan kodlarni belgilang.
+- `Buy X Get Y`: har (X) sotib olingan mahsulot uchun mijozga 1 kredit beriladi. Belgilangan miqdorda kredit to'plagandan so'ng, mijoz ularni (Y) mahsulotni olish uchun almashtirishi mumkin.
+- `Next Order Coupons`: Mijozning keyingi buyurtmasida mukofotlarga kirish huquqini beradigan bir martalik kupon kodlarini yarating va baham ko'ring.
 
-### Conditional rules
+### Shartli qoidalar
 
-Next, configure the `Conditional rules` that determine when the program applies to a
-customer\'s order.
+Keyin, dastur mijozning buyurtmasiga qachon taalluqli ekanligini aniqlaydigan `Conditional rules` ni sozlang.
 
-In the `Rules & Rewards` tab, click
-`Add` next to
-`Conditional rules` to add
-*conditions* to the program. This reveals a
-`Create Conditional rules` pop-up
-window.
+`Rules & Rewards` yorlig'ida, dasturga *shartlar* qo'shish uchun `Conditional rules` yonidagi `Add` tugmasini bosing. Bu `Create Conditional rules` pop-up oynasini ochadi.
 
-![Rules & Rewards tab of the loyalty program form.](loyalty_discount/price-conditional-rewards.png)
+![Sadoqat dasturi formasining Qoidalar va Mukofotlar yorlig'i.](loyalty_discount/price-conditional-rewards.png)
 
 ::: tip
 
-The options for `Conditional rules`
-vary depending on the selected `Program Type
-`.
+`Conditional rules` uchun variantlar tanlangan `Program Type` ga qarab farq qiladi.
 ::::
 
-The following options are available for configuring conditional rules:
+Shartli qoidalarni sozlash uchun quyidagi variantlar mavjud:
 
-- `Discount Code`: Enter a custom
-  code to be used for the `Discount Code` program, or use the default one generated by Odoo.
-  This field is only available when the `Program Type` is set to `Discount Code`.
-- `Minimum Quantity`: Enter the
-  minimum number of products that must be purchased in order to access
-  the reward. Set the minimum quantity to at least [1] to
-  ensure that the customer must make a purchase in order to access the
-  reward.
-- `Minimum Purchase`: Enter the
-  minimum amount (in currency), with `tax
-  Included` or
-  `tax Excluded`, that must be spent
-  in order to access the reward. If both a minimum quantity *and*
-  minimum purchase amount are entered, then the customer\'s order must
-  meet both conditions.
-- `Products`: Select the specific
-  product(s) for which the program applies. Leave this field blank to
-  apply it to all products.
-- `Categories`: Select the category
-  of products for which the program applies. Choose
-  `All` to apply it to all product
-  categories.
-- `Product Tag:` Select a tag to
-  apply the program to products with that specific tag.
-- `Grant`: Enter the number of points
-  the customer earns `per order`,
-  `per currency spent`, or
-  `per unit paid` (for the
-  `Loyalty Cards` and
-  `Buy X Get Y` programs).
+- `Discount Code`: `Discount Code` dasturi uchun ishlatiladigan maxsus kodni kiriting yoki Odoo tomonidan yaratilgan standart koddan foydalaning. Ushbu maydon faqat `Program Type` `Discount Code` ga o'rnatilganda mavjud.
+- `Minimum Quantity`: Mukofotga kirish uchun sotib olinishi kerak bo'lgan mahsulotlarning minimal sonini kiriting. Mijoz mukofotga kirish uchun xarid qilishi shart bo'lishini ta'minlash uchun minimal miqdorni kamida [1] ga o'rnating.
+- `Minimum Purchase`: Mukofotga kirish uchun sarflanishi kerak bo'lgan minimal miqdorni (valyutada), `tax Included` yoki `tax Excluded` bilan kiriting. Agar minimal miqdor *va* minimal xarid miqdori kiritilsa, mijozning buyurtmasi ikkala shartni ham qondirishi kerak.
+- `Products`: Dastur taalluqli bo'lgan muayyan mahsulot(lar)ni tanlang. Uni barcha mahsulotlarga qo'llash uchun ushbu maydonni bo'sh qoldiring.
+- `Categories`: Dastur taalluqli bo'lgan mahsulotlar kategoriyasini tanlang. Uni barcha mahsulot kategoriyalariga qo'llash uchun `All` ni tanlang.
+- `Product Tag:` Dasturni muayyan teg bilan mahsulotlarga qo'llash uchun tegni tanlang.
+- `Grant`: Mijoz (`Loyalty Cards` va `Buy X Get Y` dasturlari uchun) `per order`, `per currency spent`, yoki `per unit paid` qancha ball olishini kiriting.
 
-![Conditional rules configuration window for a discount or loyalty program.](loyalty_discount/price-conditions.png)
+![Chegirma yoki sadoqat dasturi uchun shartli qoidalar konfiguratsiya oynasi.](loyalty_discount/price-conditions.png)
 
-Click `Save & Close` to save the rule
-and close the pop-up window, or click `Save & New` to save the rule and immediately create a new one.
+Qoidani saqlash va pop-up oynasini yopish uchun `Save & Close` tugmasini bosing yoki qoidani saqlash va darhol yangisini yaratish uchun `Save & New` tugmasini bosing.
 
-### Rewards
+### Mukofotlar
 
-In the `Rules & Rewards` tab of the
-program form, click `Add` next to
-`Rewards` to add *rewards* to the
-program. This reveals a `Create Rewards` pop-up window.
+Dastur formasining `Rules & Rewards` yorlig'ida, dasturga *mukofotlar* qo'shish uchun `Rewards` yonidagi `Add` tugmasini bosing. Bu `Create Rewards` pop-up oynasini ochadi.
 
 ::: tip
 
-The options for `Rewards` vary
-depending on the selected `Program Type
-`.
+`Rewards` uchun variantlar tanlangan `Program Type` ga qarab farq qiladi.
 ::::
 
-The following options are available for configuring rewards:
+Mukofotlarni sozlash uchun quyidagi variantlar mavjud:
 
-- `Reward Type`: Select the reward
-  type among `Free Product`,
-  `Discount`, and
-  `Free Shipping`. The other options
-  for reward configuration depend on the `Reward Type` selected.
+- `Reward Type`: `Free Product`, `Discount`, va `Free Shipping` orasidan mukofot turini tanlang. Mukofot konfiguratsiyasi uchun boshqa variantlar tanlangan `Reward Type` ga bog'liq.
   - `Free Product`:
-    - `Quantity Rewarded`: Select the
-      number of free products rewarded to the customer.
-    - `Product`: Select the product
-      given for free as a reward. Only one product can be selected.
-    - `Product Tag`: Select a tag to
-      further specify the free product eligible for the reward.
+    - `Quantity Rewarded`: Mijozga berilgan bepul mahsulotlar sonini tanlang.
+    - `Product`: Mukofot sifatida bepul berilgan mahsulotni tanlang. Faqat bitta mahsulot tanlanishi mumkin.
+    - `Product Tag`: Mukofot uchun mos bo'lgan bepul mahsulotni yanada aniqlashtirish uchun tegni tanlang.
   - `Discount`:
-    - `Discount`: Enter the
-      discounted amount in either `percentage`, `currency per point`, or `currency per order`. Then, select whether the discount applies to the
-      entire `Order`, only the
-      `Cheapest Product` on the
-      order, or only `Specific Products`.
-    - `Max Discount`: Enter the
-      maximum amount (in currency) that this reward may grant as a
-      discount. Leave this field at [0] for no limit.
+    - `Discount`: Chegirma miqdorini `percentage`, `currency per point`, yoki `currency per order` da kiriting. Keyin chegirma butun `Order` ga, faqat buyurtmadagi `Cheapest Product` ga yoki faqat `Specific Products` ga taalluqli ekanligini tanlang.
+    - `Max Discount`: Ushbu mukofot chegirma sifatida berishi mumkin bo'lgan maksimal miqdorni (valyutada) kiriting. Cheklovsiz uchun ushbu maydonni [0] da qoldiring.
   - `Free Shipping`:
-    - `Max Discount`: Enter the
-      maximum amount (in currency) that this reward may grant as a
-      discount. Leave this field at [0] for no limit.
-- `In exchange of`: Enter the number
-  of points required to exchange for the reward (for the
-  `Loyalty Cards` and
-  `Buy X Get Y` programs).
-- `Description on order`: Enter the
-  description of the reward, which is displayed to the customer upon
-  checkout.
+    - `Max Discount`: Ushbu mukofot chegirma sifatida berishi mumkin bo'lgan maksimal miqdorni (valyutada) kiriting. Cheklovsiz uchun ushbu maydonni [0] da qoldiring.
+- `In exchange of`: Mukofotga almashish uchun zarur bo'lgan ballar sonini kiriting (`Loyalty Cards` va `Buy X Get Y` dasturlari uchun).
+- `Description on order`: Chiqish paytida mijozga ko'rsatiladigan mukofot tavsifini kiriting.
 
-![Rewards configuration window for a discount or loyalty program.](loyalty_discount/price-rewards.png)
+![Chegirma yoki sadoqat dasturi uchun mukofotlar konfiguratsiya oynasi.](loyalty_discount/price-rewards.png)
