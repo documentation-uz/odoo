@@ -19,7 +19,7 @@ ekvivalenti evaziga eWallet ga qo'shiladigan oldindan belgilangan raqamli kredit
 eCommerce do'koni yoki `PoS (Point of Sale)` da to'lov usuli sifatida ishlatilishi mumkin. To'ldirish qiymatlari turli
 miqdorlarda bo'lishi mumkin.
 
-::: example
+::: tip
 $50 to'ldirish $50 ga sotib olinishi mumkin va eWallet ga xuddi shu miqdorda kredit qo'shadi.
 :::
 

@@ -51,7 +51,7 @@ Qo'shimcha rag'batlantirish berish uchun *Maqsadga* asoslangan rejalarga *komiss
 
 Agar 100% dan yuqori darajalar qo'shilmasa, sotuvchilar belgilangan komissiyadan yuqori daromad ololmaydilar.
 
-::: example
+::: tip
 Quyidagi rejada darajalar [0%] dan boshlanib, [300%] gacha davom etadi. Agar sotuvchi kutilgan maqsadning [100%] ini oshirib yuborsa, ularning kutilgan to'lovi [300%] gacha oshishda davom etadi.
 
 ![Komissiya darajalariga misol, 100 foizdan yuqori darajalar bilan.](commissions/commission-levels.png)

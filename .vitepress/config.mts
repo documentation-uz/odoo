@@ -226,15 +226,15 @@ export default defineConfig({
                             items: [
                                 {
                                     text: 'Import products',
-                                    link: '/user-docs/sales/products-prices/manage-your-products/import'
+                                    link: '/user-docs/sales/products_prices/products/import'
                                 },
                                 {
                                     text: 'Product variants',
-                                    link: '/user-docs/sales/products-prices/manage-your-products/variants'
+                                    link: '/user-docs/sales/products_prices/products/variants'
                                 },
                                 {
                                     text: 'Product images with Google Images',
-                                    link: '/user-docs/sales/products-prices/manage-your-products/product_images'
+                                    link: '/user-docs/sales/products_prices/products/product_images'
                                 },
                             ]
                         },
@@ -243,29 +243,29 @@ export default defineConfig({
                             items: [
                                 {
                                     text: 'Pricelists',
-                                    link: '/user-docs/sales/products-prices/manage-your-pricing/pricing'
+                                    link: '/user-docs/sales/products_prices/prices/pricing'
                                 },
                                 {
                                     text: 'Foreign currencies',
-                                    link: '/user-docs/sales/products-prices/manage-your-pricing/currencies'
+                                    link: '/user-docs/sales/products_prices/prices/currencies'
                                 },
                                 {
                                     text: 'Discounts',
-                                    link: '/user-docs/sales/products-prices/manage-your-pricing/discounts'
+                                    link: '/user-docs/sales/products_prices/prices/discounts'
                                 },
                             ]
                         },
                         {
                             text: 'Returns and refunds',
-                            link: '/user-docs/sales/products-prices/returns'
+                            link: '/user-docs/sales/products_prices/returns'
                         },
                         {
                             text: 'Use eWallets and gift cards',
-                            link: '/user-docs/sales/products-prices/ewallets_giftcards'
+                            link: '/user-docs/sales/products_prices/ewallets_giftcards'
                         },
                         {
                             text: 'Discount and loyalty programs',
-                            link: '/user-docs/sales/products-prices/loyalty_discount'
+                            link: '/user-docs/sales/products_prices/loyalty_discount'
                         },
                     ]
                 },

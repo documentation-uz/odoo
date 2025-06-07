@@ -1,282 +1,193 @@
-# Taklifnomalar yaratish
+# Kotirovkalar yaratish
 
-Odoo **Savdo** modulida mijozlarga taklifnomalar yaratish va yuborish mumkin. Taklifnoma tasdiqlangach, u rasmiy
-ravishda *sotuv buyurtmasi*ga aylanadi, undan keyin esa hisob-faktura chiqariladi va to‘lov amalga oshiriladi.
+Odoo **Sales** dasturida kotirovkalar yaratilishi va mijozlarga yuborilishi mumkin. Kotirovka tasdiqlangandan so'ng, u rasman *savdo buyurtmasi*ga aylanadi va keyinchalik hisob-faktura qilish va to'lash mumkin.
 
-## Taklifnoma sozlamalari
+## Kotirovka sozlamalari 
 
-Ushbu sozlamalarga kirish uchun `Savdo ilovasi ‣ Konfiguratsiya ‣ Sozlamalar` yo‘liga o‘ting va
-`Taklifnomalar va Buyurtmalar` bo‘limigacha pastga tushing.
+Ushbu sozlama variantlariga kirish uchun `Sales app ‣ Configuration ‣ Settings` ga o'ting va `Quotations & Orders` bo'limiga siljiting.
 
-![Odoo Sales ilovasining Sozlamalar sahifasidagi Taklifnomalar va Buyurtmalar bo‘limi.](create_quotations/quotations-orders-section.png)
+![The Quotations and Orders section on the Odoo Sales app Settings page.](create_quotations/quotations-orders-section.png)
 
-- `Taklifnoma Shablonlari`: Standart mahsulot takliflarini o‘z ichiga olgan taklifnoma shablonlarini yaratish imkonini
-  yoqing. Ushbu belgi belgilanganda, `Standart Shablon` degan qo‘shimcha maydon va `Taklifnoma Shablonlari` sahifasiga
-  havola paydo bo‘ladi.
-- `Onlayn Imzo`: Buyurtmalarni tasdiqlash uchun onlayn imzo so‘rang.
-- `Onlayn To‘lov`: Mijozlardan buyurtmani tasdiqlash uchun oldindan (to‘liq yoki qisman) onlayn to‘lov talab qiling.
-  Ushbu belgi belgilanganda, `Oldindan to‘lov miqdori (%)` maydoni va `To‘lov Provayderlari` sahifasiga havola paydo
-  bo‘ladi.
-- `Standart Taklifnoma Amal Qilish Muddati`: Taklifnomalar necha kun amal qilishini belgilang.
-- `Standart Qaytalanish`: Yangi taklifnoma uchun qaytalanish davrini tanlang.
-- `Savdo Ogohlantirishlari`: Maxsus mahsulotlar yoki mijozlar bo‘lgan buyurtmalarda ogohlantirish xabarlarini oling.
-- `PDF Taklifnoma Yaratgichi`: Taklifnomalarni sarlavha sahifasi, mahsulot tavsifi, pastki sahifalar va boshqalar bilan
-  sozlang.
-- `Tasdiqlangan Savdolarni Bloklash`: Tasdiqlangan buyurtmalar ustida keyingi tahrirlarni oldini oling.
-- `Pro-Forma Hisob-faktura`: Mijozlarga pro-forma hisob-fakturalarni yuboring.
+- `Quotation Templates`: Standart mahsulot takliflarini o'z ichiga olgan kotirovka shablonlarini yaratish uchun ushbu variantni yoqing, keyin ular kotirovka formalarida tanlanadi. Ushbu katakcha belgilanganda, qo'shimcha `Default Template` maydoni va `Quotation Templates` sahifasiga havola paydo bo'ladi.
+- `Online Signature`: Buyurtmalarni tasdiqlash uchun onlayn imzo so'rang.
+- `Online Payment`: Buyurtmalarni tasdiqlash uchun mijozlardan onlayn oldindan to'lovni so'rang. To'liq yoki qisman to'lovni so'rang (oldindan to'lov orqali). Ushbu katakcha belgilanganda, qo'shimcha `Prepayment amount (%)` maydoni paydo bo'ladi. Shuningdek, `Payment Providers` sahifasiga havola ham mavjud.
+- `Default Quotation Validity`: Kotirovkalar amal qilishi mumkin bo'lgan belgilangan miqdorni (`days`da) aniqlang.
+- `Default Recurrence`: Yangi kotirovka uchun takrorlash davri sifatida foydalanish uchun ochiladigan menyudan standart davrni tanlang.
+- `Sale Warnings`: Muayyan mahsulotlar yoki mijozlarni o'z ichiga olgan buyurtmalar haqida ogohlantirish xabarlarini oling.
+- `PDF Quote builder`: Sarlavha sahifalari, mahsulot tavsiflari, altqism sahifalari va boshqalar bilan kotirovkalarning ko'rinishini sozlang.
+- `Lock Confirmed Sales`: Tasdiqlangan buyurtmalarga boshqa o'zgartirishlarni kiritish mumkin emasligini ta'minlang.
+- `Pro-Forma Invoice`: Mijozlarga pro-forma hisob-fakturalarini yuboring.
 
-Ushbu sozlamalarning istalgan birini faollashtirish uchun mos variant yonidagi belgi (checkbox) ni belgilang. So‘ng
-`Saqlash` tugmasini bosing.
+Ushbu sozlamalarning har qandayini faollashtirish uchun kerakli variant(lar) yonidagi katakchani belgilang. Keyin `Save` tugmasini bosing.
 
-## Taklifnomalar boshqaruv paneli
+## Kotirovkalar boshqaruv paneli
 
-*Taklifnomalar* boshqaruv paneli — bu `Savdo ilovasi` ochilganda ko‘rinadigan sahifa hisoblanadi.
+*Kotirovkalar* boshqaruv paneli - bu `Sales app` ochilganda paydo bo'ladigan sahifa.
 
-Odatiy holatda, `Taklifnomalar` boshqaruv panelida bazadagi foydalanuvchiga tegishli barcha taklifnomalar ko‘rsatiladi.
-Buni izlash panelidagi standart `Mening taklifnomalarim` filtri orqali ko‘rish mumkin.
+Standart bo'yicha, `Quotations` boshqaruv paneli qidiruv panelida mavjud bo'lgan standart `My Quotations` filtri ko'rsatganidek, joriy foydalanuvchi bilan bog'liq ma'lumotlar bazasidagi barcha kotirovkalarni ko'rsatadi.
 
-![Odoo Savdo ilovasidagi Taklifnomalar boshqaruv paneli.](create_quotations/quotations-dashboard.png)
+![The Quotations dashboard present in the Odoo Sales application.](create_quotations/quotations-dashboard.png)
 
 ::: tip
 
-Bazadagi *barcha* taklifnomalarni ko‘rish uchun izlash panelidan `Mening taklifnomalarim` filtrini olib tashlang.
+Ma'lumotlar bazasidagi *barcha* kotirovkalarni ko'rish uchun qidiruv panelidan `My Quotations` filtrini olib tashlang.
+::::
 
-:::
+Ushbu sahifadagi kotirovkalar standart ro'yxat ko'rinishida paydo bo'ladi, ammo ularni `oi-view-kanban` `Kanban` ko'rinishida, `fa-calendar` `Calendar`, `oi-view-pivot` `Pivot` jadvalida, `fa-area-chart` `Graph` yoki `fa-clock-o` `Activity` ko'rinishida ham ko'rish mumkin.
 
-Ushbu sahifadagi taklifnomalar odatda ro‘yxat ko‘rinishida (`List view`) ko‘rsatiladi, lekin quyidagi ko‘rinishlarda ham
-ko‘rish mumkin:
+`Quotations` boshqaruv panelidan har qanday ro'yxatdagi kotirovkani ko'rish va/yoki o'zgartirish uchun ro'yxatdan kerakli kotirovka qatorini bosing va Odoo tanlangan kotirovka uchun maxsus formani ochadi.
 
-- `Kanban`
-- `Kalendar`
-- `Pivot jadvali`
-- `Grafik`
-- `Faollik`
+## Kotirovka yaratish
 
-`Taklifnomalar` boshqaruv panelidagi istalgan taklifnomani ko‘rish yoki tahrirlash uchun ro‘yxatdagi kerakli qatorda
-sichqoncha bilan bosing — Odoo tanlangan taklifnomaga tegishli shaklni ochib beradi.
-
-## Taklifnoma yaratish
-
-Taklifnoma yaratish uchun `Savdo ilovasi`ni oching va `Taklifnomalar` boshqaruv panelining yuqori chap burchagidagi
-`Yangi` tugmasini bosing.
+Kotirovka yaratish uchun `Sales app` ni oching va asosiy `Quotations` boshqaruv panelining yuqori chap burchagida joylashgan `New` tugmasini bosing.
 
 ::: warning
 
-`Yangi` tugmasi **faqat** `Taklifnomalar` boshqaruv paneli ro‘yxat (list) yoki Kanban ko‘rinishida bo‘lsa, ko‘rinadi.
+`New` tugmasi **faqat** `Quotations` boshqaruv paneli ro'yxat yoki Kanban ko'rinishida bo'lgandagina mavjud.
+::::
 
-:::
+`New` tugmasini bosish sozlash uchun turli maydonlar va yorliqlar bilan bo'sh kotirovka formasini ochadi.
 
-`Yangi` tugmasi bosilganda, turli maydonlar va tablar bilan to‘ldiriladigan bo‘sh taklifnoma shakli ochiladi.
+![A typical quotation form in the Odoo Sales application.](create_quotations/quotation-form.png)
 
-![Odoo Savdo ilovasidagi odatiy taklifnoma shakli.](create_quotations/quotation-form.png)
+Formaning yuqori qismidagi `Customer` maydoniga mijozning ismini kiritish bilan boshlang. Bu **majburiy** maydon.
 
-Shaklning yuqori qismidagi `Mijoz` (`Customer`) maydoniga mijoz nomini kiriting. Bu **majburiy** maydon hisoblanadi.
+Agar mijozning ma'lumotlari allaqachon ma'lumotlar bazasida bo'lsa, `Invoice Address` va `Delivery Address` maydonlari o'sha mijozning kontakt yozuvidagi ma'lumotlarga asoslagan holda (**Contacts** dasturida topiladi) ushbu tegishli maydonlar uchun saqlangan ma'lumotlar bilan avtomatik to'ldiriladi.
 
-Agar mijozning ma'lumotlari allaqachon bazada mavjud bo‘lsa, `Hisob-faktura manzili` (`Invoice Address`) va
-`Yetkazib berish manzili` (`Delivery Address`) maydonlari avtomatik tarzda mijozning **Aloqalar** (Contacts) ilovasidagi
-ma’lumotlar asosida to‘ldiriladi.
+Agar mijoz boshqa mijoz yoki kontakt tomonidan tavsiya etilgan bo'lsa, ularning ismini `Referrer` maydoniga kiriting.
 
-Agar mijoz boshqa mijoz yoki kontakt orqali yo‘naltirilgan bo‘lsa, `Yo‘naltiruvchi` (`Referrer`) maydoniga ularning
-ismini kiriting.
+Agar `Referrer` tanlangan bo'lsa, yangi `Commission Plan` maydoni paydo bo'ladi, unda ochiladigan menyudan komissiya tanlanishi mumkin. Ushbu komissiya `Referrer` maydonida tanlangan kontaktga beriladi.
 
-Agar `Yo‘naltiruvchi` tanlansa, `Komissiya Rejasi` (`Commission Plan`) degan yangi maydon paydo bo‘ladi. Bu yerda
-yo‘naltiruvchi kontaktga beriladigan komissiya foizi tanlanadi.
+Keyin, agar ular mijozning ma'lumotlari bilan avtomatik to'ldirilmagan bo'lsa, `Invoice Address` va `Delivery Address` maydonlariga tegishli manzillarni kiriting. Ushbu maydonlarning ikkalasi ham **majburiy**.
 
-Agar `Hisob-faktura manzili` va `Yetkazib berish manzili` avtomatik to‘ldirilmagan bo‘lsa, ularni qo‘lda to‘ldiring.
-Ikkalasi ham **majburiy** maydonlardir.
+Keyin, agar xohlasangiz, ushbu kotirovkaga qo'llash uchun ochiladigan maydondan `Quotation Template` ni tanlang. Shuni ta'kidlash kerakki, tanlangan shablonga qarab, ba'zi qo'shimcha maydonlar paydo bo'lishi mumkin.
 
-So‘ngra, istalgan bo‘lsa, `Taklifnoma Shabloni` (`Quotation Template`) ni tanlang. E’tibor bering, tanlangan shablon
-asosida qo‘shimcha maydonlar paydo bo‘lishi mumkin.
-
-`Amal qilish muddati` (`Expiration`) maydonidagi sana `Savdo ilovasi ‣ Konfiguratsiya ‣ Sozlamalar` bo‘limida
-belgilangan `Taklifnoma amal qilish muddati` asosida avtomatik ko‘rsatiladi.
+`Expiration` maydonida paydo bo'ladigan standart sana `Default Quotation Validity setting` da (`Sales app ‣ Configuration ‣ Settings`da) sozlangan raqamga asoslanadi.
 
 ::: tip
 
-Taklifnoma shabloni ishlatilganda, `Amal qilish muddati` maydonidagi sana shablon formasidagi `Taklifnoma muddati`
-qiymatiga asoslanadi.
+Kotirovka shablonidan foydalanganda, `Expiration` maydonidagi sana shablon formasidagi `Quotation Validity` raqamiga asoslanadi.
+::::
 
-:::
+Agar kotirovka takrorlanadigan mahsulot yoki obuna uchun bo'lsa, o'sha maxsus ochiladigan menyudan kerakli `Recurring Plan` ni tanlang.
 
-Agar taklifnoma takrorlanuvchi mahsulot yoki obuna uchun bo‘lsa, mos `Takrorlanish Rejasi` (`Recurring Plan`) ni
-tanlang.
+Agar xohlasangiz, ushbu kotirovkaga qo'llanishi kerak bo'lgan maxsus `Pricelist` ni tanlang.
 
-Istasangiz, ushbu taklifnomaga qo‘llaniladigan maxsus `Narxlar ro‘yxati` (`Pricelist`) ni tanlang.
+Nihoyat, ushbu kotirovka uchun ishlatiladigan har qanday maxsus `Payment Terms` ni tanlang.
 
-Va nihoyat, bu taklifnoma uchun foydalaniladigan aniq `To‘lov shartlari` (`Payment Terms`) ni tanlang.
+### Order Lines yorlig'i
 
-### Buyurtma Qatorlari tab
+Kotirovka formasidagi birinchi yorliq `Order Lines` yorlig'idir.
 
-Taklifnoma formasidagi birinchi tab — bu `Buyurtma qatorlari` (`Order Lines`) tabidir.
+Ushbu yorliqda mahsulotlarni va ushbu mahsulotlarning miqdorlarini tanlab, ularni kotirovkaga qo'shing.
 
-Ushbu tabda mahsulotlar va ularning miqdorlarini tanlab, taklifnomaga qo‘shish mumkin.
+Ushbu yorliqdan mahsulotlarni kotirovkaga qo'shishning ikki yo'li mavjud.
 
-Bu tab orqali mahsulotlarni taklifnomaga qo‘shishning ikki usuli mavjud:
+`Add a product` ni bosing, `Product` ochiladigan maydonidan kerakli elementni tanlang va kerak bo'lsa, tanlangan mahsulotning miqdorini o'zgartiring.
 
-1. `Mahsulot qo‘shish` (`Add a product`) tugmasini bosing, `Mahsulot` (`Product`) ochiluvchi ro‘yxatidan kerakli
-   mahsulotni tanlang va kerak bo‘lsa, miqdorini o‘zgartiring.
+Yoki, `Catalog` ni bosing, bu `Product Category` va `Attributes` bo'yicha tartibga solinadigan elementlar bilan tashkil etilgan katalog ko'rinishida har bir element (va har bir potentsial mahsulot varianti)ni ko'rsatadigan alohida sahifani ochadi.
 
-2. Yoki `Katalog` (`Catalog`) tugmasini bosing — bu sizga mahsulotlar va ularning variantlari to‘liq ko‘rinadigan
-   alohida sahifani ochadi. Mahsulotlar `Mahsulot kategoriyasi` (`Product Category`) va `Xususiyatlar` (`Attributes`)
-   bo‘yicha saralanadi.
+![A product catalog accessible via a quotation in the Odoo Sales application.](create_quotations/product-catalog.png)
 
-![Odoo Savdo ilovasidagi taklifnoma orqali kiriladigan mahsulot katalogi.](create_quotations/product-catalog.png)
+Bu yerdan shunchaki kerakli elementlarni toping, mahsulot kartasidagi `fa-shopping-cart` `Add` tugmasini bosing va kerak bo'lsa miqdorni sozlang. Tugallangach, kotirovkaga qaytish uchun yuqori chap burchakdagi `Back to Quotation` tugmasini bosing, bu yerda yangi tanlangan katalog elementlarini `Order Lines` yorlig'ida topish mumkin.
 
-Bu sahifadan kerakli mahsulotlarni toping, mahsulot kartasidagi `Qo‘shish` (`Add`) tugmasini bosing va kerak bo‘lsa,
-miqdorini belgilang. Tugatganingizdan so‘ng, yuqori chapdagi `Taklifnomaga qaytish` (`Back to Quotation`) tugmasini
-bosing. Yangi tanlangan mahsulotlar `Buyurtma qatorlari` tabida paydo bo‘ladi.
+Agar bir nechta elementlar kotirovkada yanada tartibli tarzda taqdim etilishi kerak bo'lsa, `Add a section` ni bosing, bo'lim uchun nom kiriting va ushbu bo'lim sarlavhasini `Order Lines` yorlig'idagi elementlar orasidagi kerakli joyga suring. Bo'lim sarlavhasi qalin harflar bilan ko'rinadi.
 
-Agar bir nechta mahsulotlarni yaxshiroq tartib bilan ko‘rsatmoqchi bo‘lsangiz, `Bo‘lim qo‘shish` (`Add a section`)
-tugmasini bosing, bo‘lim nomini yozing va bo‘lim sarlavhasini kerakli joyga suring. Bu bo‘lim sarlavhasi **qalin**
-harflar bilan ko‘rsatiladi.
+Kerak bo'lsa, muayyan mahsulot haqida maxsus eslatma qo'shish uchun muayyan mahsulot qatori ostidagi `Add a note` ni bosing. Eslatma kursiv harflar bilan ko'rinadi. Keyin, kerak bo'lsa, eslatmani kerakli mahsulot qatori ostiga suring.
 
-Agar kerak bo‘lsa, mahsulot qatordagi `Izoh qo‘shish` (`Add a note`) tugmasi orqali maxsus eslatma qo‘shishingiz mumkin.
-Bu izoh *kursiv*da ko‘rsatiladi. Keyin, bu eslatmani kerakli mahsulot qatorining ostiga ko‘chirib qo‘yishingiz mumkin.
+Mahsulot qatorlari ostida quyidagilarning har qandayini qo'llash uchun bosiladigan tugmalar mavjud: `Coupon Code`, `Promotions`, `Discount` va/yoki `Add shipping`.
 
-Mahsulot qatorlarining ostida quyidagi funksiyalarni qo‘llash mumkin bo‘lgan tugmalar mavjud:
+### Optional Products yorlig'i
 
-- `Kupon kodi` (`Coupon Code`)
-- `Aksiyalar` (`Promotions`)
-- `Chegirma` (`Discount`)
-- `Yetkazib berish qo‘shish` (`Add shipping`)
+Mijozga taqdim etilishi mumkin bo'lgan bog'liq mahsulotlarni tanlash uchun `Optional Products` yorlig'ini oching, bu esa savdoning ko'payishiga olib kelishi mumkin.
 
-### Ixtiyoriy mahsulotlar tab
+Masalan, agar mijoz mashina sotib olmoqchi bo'lsa, taklif etilishi mumkin bo'lgan ixtiyoriy mahsulot *Trailer Hitch* dir.
 
-`Ixtiyoriy mahsulotlar` (`Optional Products`) tabini oching va mijozga taklif qilinishi mumkin bo‘lgan, sotuv hajmini
-oshirishi ehtimoli bo‘lgan bog‘liq mahsulotlarni tanlang.
+### Other Info yorlig'i
 
-Masalan, agar mijoz avtomobil xarid qilmoqchi bo‘lsa, unga *Tirkama ilgagich* (Trailer Hitch) kabi qo‘shimcha mahsulot
-taklif qilinishi mumkin.
-
-### Boshqa ma’lumotlar tab
-
-`Boshqa ma’lumotlar` (`Other Info`) tabida taklifnomaga oid bir qancha konfiguratsiyalar mavjud bo‘lib, ular to‘rt xil
-bo‘limga ajratilgan:
-
-- `Savdo` (`Sales`)
-- `Yetkazib berish` (`Delivery`)
-- `Hisob-kitob` (`Invoicing`)
-- `Kuzatuv` (`Tracking`)
+`Other Info` yorlig'ida to'rt xil bo'limga ajratilgan turli kotirovka bilan bog'liq konfiguratsiyalar mavjud: `Sales`, `Delivery`, `Invoicing` va `Tracking`.
 
 ::: tip
 
-Ba’zi maydonlar **faqat** maxsus sozlamalar va parametrlar faollashtirilgan bo‘lsa, ko‘rinadi.
+Ba'zi maydonlar **faqat** maxsus sozlamalar va variantlar sozlangan bo'lsagina paydo bo'ladi.
+::::
 
-:::
+#### Sales bo'limi
 
-#### Savdo bo‘limi
+`Other Info` yorlig'ining `Sales` bo'limida sozlanishi mumkin bo'lgan savdoga xos maydonlar mavjud.
 
-`Boshqa ma’lumotlar` (`Other Info`) tabining `Savdo` (`Sales`) bo‘limida savdoga oid maxsus maydonlarni sozlash mumkin.
+![The Sales section of the Other Info tab of a quotation form in Odoo Sales.](create_quotations/other-info-sales.png)
 
-![Odoo Sales ilovasida taklifnoma shaklining Boshqa ma’lumotlar tabidagi Savdo bo‘limi.](create_quotations/other-info-sales.png)
+- `Salesperson`: Ushbu kotirovka bilan bog'lanishi kerak bo'lgan sotuvchini ochiladigan menyudan tayinlang. Kotirovkani dastlab yaratgan foydalanuvchi standart bo'yicha ushbu maydonva tanlanadi.
+- `Sales Team`: Ushbu kotirovkaga maxsus savdo jamoasini tayinlang. Agar tanlangan `Salesperson` savdo jamoasining a'zosi bo'lsa, o'sha jamoa maydonda avtomatik to'ldiriladi.
+- `Company`: Ushbu kotirovka bog'lanishi kerak bo'lgan kompaniyani ochiladigan menyudan tanlang. Ushbu maydon faqat ko'p kompaniyali muhitda ishlashda paydo bo'ladi.
+- `Online signature`: Buyurtmani tasdiqlash uchun mijozdan onlayn imzo so'rash uchun ushbu katakchani belgilang. Ushbu maydon faqat *Online Signature* sozlamasi yoqilgan bo'lsagina paydo bo'ladi.
+- `Online payment`: Ushbu katakchani belgilang va buyurtmani tasdiqlash uchun mijozdan onlayn to'lovni so'rash uchun qo'shni maydoniga kerakli foizni kiriting (umumiy miqdorning o'sha belgilangan foizi uchun). Ushbu maydon faqat *Online Payment* sozlamasi yoqilgan bo'lsagina paydo bo'ladi.
+- `Customer Reference`: Ushbu mijoz uchun maxsus mos yozuvlar ID sini kiriting. Kiritilgan mos yozuvlar ID si harflar, raqamlar yoki ikkalasining aralashmasini o'z ichiga olishi mumkin.
+- `Tags`: Qo'shimcha tashkilot va Odoo **Sales** dasturida yaxshilangan qidiruv imkoniyati uchun kotirovkaga maxsus teglar qo'shing. Kerak bo'lsa, bir nechta teglar qo'shilishi mumkin.
 
-- `Savdo vakili` (`Salesperson`): Ushbu taklifnomaga biror savdo vakilini tanlang. Odatiy holatda, taklifnomani yaratgan
-  foydalanuvchi shu yerda avtomatik tanlanadi.
-- `Savdo guruhi` (`Sales Team`): Taklifnomaga aniq bir savdo guruhini biriktiring. Agar tanlangan `Savdo vakili` biror
-  savdo guruhiga mansub bo‘lsa, bu maydon avtomatik to‘ldiriladi.
-- `Kompaniya` (`Company`): Taklifnoma qaysi kompaniyaga tegishli bo‘lishini tanlang. Bu maydon faqat ko‘p kompaniyali (
-  multi-company) muhitda ko‘rinadi.
-- `Onlayn imzo` (`Online signature`): Buyurtmani tasdiqlash uchun mijozdan onlayn imzo talab qilish uchun ushbu belgi (
-  checkbox) ni belgilang. Bu maydon faqat *Onlayn Imzo* sozlamasi yoqilgan bo‘lsa ko‘rinadi.
-- `Onlayn to‘lov` (`Online payment`): Mijozdan buyurtmani tasdiqlash uchun onlayn to‘lov talab qilish uchun belgi
-  qo‘ying va yonidagi maydonga foizni kiriting. Bu maydon faqat *Onlayn To‘lov* sozlamasi yoqilgan bo‘lsa ko‘rinadi.
-- `Mijoz havolasi` (`Customer Reference`): Mijoz uchun maxsus havola (ID) kiriting. U harflar, raqamlar yoki
-  ikkalasining aralashmasidan iborat bo‘lishi mumkin.
-- `Teglar` (`Tags`): Taklifnomani tartibga solish va qidiruvda qulaylik yaratish uchun unga teglar qo‘shing. Zarur
-  bo‘lsa, bir nechta teg qo‘shilishi mumkin.
+#### Delivery bo'limi
 
-#### Yetkazib berish bo‘limi
+`Other Info` yorlig'ining `Delivery` bo'limida sozlanishi mumkin bo'lgan yetkazib berishga xos maydonlar mavjud.
 
-`Boshqa ma’lumotlar` (`Other Info`) tabining `Yetkazib berish` (`Delivery`) bo‘limida yetkazib berishga oid maxsus
-maydonlar mavjud.
+![The Delivery section of the Other Info tab of a quotation form in Odoo Sales.](create_quotations/other-info-delivery.png)
 
-![Odoo Sales ilovasida taklifnoma shaklining Boshqa ma’lumotlar tabidagi Yetkazib berish bo‘limi.](create_quotations/other-info-delivery.png)
+- `Shipping Weight`: Yetkazib beriladigan elementlarning og'irligini ko'rsatadi. Ushbu maydon o'zgartirilmaydi. Mahsulot og'irligi alohida mahsulot formalarida sozlanadi.
+- `Incoterm`: Xalqaro tranzaksiyalar uchun oldindan belgilangan tijorat shartlari sifatida foydalanish uchun Incoterm (Xalqaro Tijorat Shartlari)ni tanlang.
+- `Incoterm Location`: Agar Incoterm ishlatilayotgan bo'lsa, ushbu maydoniga xalqaro manzilni kiriting.
+- `Shipping Policy`: Ochiladigan menyudan kerakli yetkazib berish siyosatini tanlang. Agar barcha mahsulotlar bir vaqtda yetkazib berilsa, yetkazib berish buyurtmasi eng katta mahsulot yetkazib berish vaqtiga asoslanib rejalashtiriladi. Aks holda, u eng qisqa yetkazib berish vaqtiga asoslanadi. Mavjud variantlar: `As soon as possible` yoki `When all products are ready`.
+- `Delivery Date`: Kalendar ochilish oynasini ochish uchun bo'sh maydonni bosing, undan mijozning yetkazib berish sanasini tanlash mumkin. Agar maxsus sana kerak bo'lmasa, o'sha maydonning o'ng tomonida ko'rsatilgan `Expected` sanasiga murojaat qiling.
 
-- `Yuk vazni` (`Shipping Weight`): Yetkazilayotgan mahsulotlarning umumiy vaznini ko‘rsatadi. Bu maydon tahrir qilib
-  bo‘lmaydi. Mahsulot vazni har bir mahsulot formasida alohida belgilanadi.
-- `Incoterm`: Xalqaro savdo shartlari (Incoterm) dan birini tanlang. Bu xalqaro bitimlar uchun oldindan belgilangan
-  shartlardir.
-- `Incoterm manzili` (`Incoterm Location`): Agar Incoterm ishlatilayotgan bo‘lsa, bu yerga xalqaro manzilni kiriting.
-- `Yetkazib berish siyosati` (`Shipping Policy`): Ochiluvchi ro‘yxatdan kerakli yetkazib berish siyosatini tanlang. Agar
-  barcha mahsulotlar bir vaqtning o‘zida yetkazilsa, buyurtma eng uzoq yetkazish muddati asosida rejalashtiriladi. Aks
-  holda, eng qisqa muddat asosida rejalashtiriladi. Mavjud variantlar: `Imkon qadar tez` yoki
-  `Barcha mahsulotlar tayyor bo‘lganda`.
-- `Yetkazib berish sanasi` (`Delivery Date`): Bo‘sh maydonga bosganingizda taqvim ochiladi, shu yerdan mijoz uchun
-  yetkazib berish sanasini tanlang. Agar maxsus sana kerak bo‘lmasa, ushbu maydonning o‘ng tomonidagi `Kutilayotgan` (
-  `Expected`) sanasiga e’tibor bering.
+#### Invoicing bo'limi
 
-#### Hisob-kitob bo‘limi
+`Other Info` yorlig'ining `Invoicing` bo'limida sozlanishi mumkin bo'lgan hisob-fakturalashga xos maydonlar mavjud.
 
-`Boshqa ma’lumotlar` (`Other Info`) tabining `Hisob-kitob` (`Invoicing`) bo‘limida hisob-fakturalarga oid maxsus
-maydonlarni sozlash mumkin.
+![The Invoicing section of the Other Info tab of a quotation form in Odoo Sales.](create_quotations/other-info-invoicing.png)
 
-![Odoo Sales ilovasida taklifnoma shaklining Boshqa ma’lumotlar tabidagi Hisob-kitob bo‘limi.](create_quotations/other-info-invoicing.png)
+- `Fiscal Position`: Muayyan mijozlar yoki savdo buyurtmalari/hisob-fakturalar uchun soliqlar va hisoblarni moslash uchun ishlatiladigan fiskal pozitsiyani tanlang. Standart qiymat mijozdan keladi. Agar ushbu maydonva tanlov qilinsa, `fa-refresh` `Update Taxes` bosiladigan havola va belgisi paydo bo'ladi. Bosilganda, ushbu muayyan mijoz va kotirovka uchun soliqlar yangilanadi. Tasdiqlash oynasi ham paydo bo'ladi.
+- `Analytic Account`: Ushbu mijoz/kotirovkaga qo'llash uchun analitik hisobni tanlang.
 
-- `Soliq holati` (`Fiscal Position`): Muayyan mijozlar yoki savdo buyurtmalari/hisob-fakturalari uchun soliqlar va
-  hisoblarni moslashtirish uchun soliq holatini tanlang. Odatiy qiymat mijozdan olinadi. Agar bu maydonda tanlov amalga
-  oshirilsa, `Soliqlarni yangilash` (`Update Taxes`) degan havola va belgisi (`fa-refresh`) paydo bo‘ladi. Uni
-  bosganingizda ushbu mijoz va taklifnoma uchun soliqlar yangilanadi. Shuningdek, tasdiqlash oynasi ham ochiladi.
-- `Tahliliy hisob` (`Analytic Account`): Ushbu mijoz/taklifnomaga qo‘llaniladigan tahliliy hisobni tanlang.
+#### Tracking bo'limi
 
-#### Kuzatuv bo‘limi
+`Other Info` yorlig'ining `Tracking` bo'limida sozlanishi mumkin bo'lgan kuzatuvga xos maydonlar mavjud.
 
-`Boshqa ma’lumotlar` (`Other Info`) tabining `Kuzatuv` (`Tracking`) bo‘limida kuzatuvga oid maxsus maydonlarni sozlash
-mumkin.
+![The Tracking section of the Other Info tab of a quotation form in Odoo Sales.](create_quotations/other-info-tracking.png)
 
-![Odoo Sales ilovasida taklifnoma shaklining Boshqa ma’lumotlar tabidagi Kuzatuv bo‘limi.](create_quotations/other-info-tracking.png)
+- `Source Document`: Agar tegishli bo'lsa, kotirovka/savdo buyurtmasini yaratgan hujjatning ma'lumotnomesini kiriting.
+- `Opportunity`: Agar tegishli bo'lsa, ushbu kotirovka bilan bog'liq maxsus imkoniyatni (**CRM** dasturidan) tanlang.
+- `Campaign`: Agar tegishli bo'lsa, ushbu kotirovka bilan bog'liq marketing kampaniyasini tanlang.
+- `Medium`: Agar tegishli bo'lsa, ushbu kotirovka paydo bo'lgan usulni (masalan, *Email*) tanlang.
+- `Source`: Agar tegishli bo'lsa, ushbu kotirovkani yaratish uchun ishlatilgan havolaning manbasini (masalan, *Facebook*) tanlang.
 
-- `Manba hujjat` (`Source Document`): Agar mavjud bo‘lsa, taklifnoma/savdo buyurtmasini yaratgan hujjatning havolasini
-  kiriting.
-- `Imkoniyat` (`Opportunity`): Agar mavjud bo‘lsa, **CRM** ilovasidagi ushbu taklifnomaga tegishli imkoniyatni tanlang.
-- `Kampaniya` (`Campaign`): Agar mavjud bo‘lsa, taklifnoma bilan bog‘liq bo‘lgan marketing kampaniyasini tanlang.
-- `Vosita` (`Medium`): Agar mavjud bo‘lsa, ushbu taklifnoma qanday vosita orqali kelganini tanlang (masalan, *Email*).
-- `Manba` (`Source`): Agar mavjud bo‘lsa, ushbu taklifnomani yaratgan havola qayerdan kelganini tanlang (masalan,
-  *Facebook*).
+### Notes yorlig'i
 
-### Eslatmalar tab
+Kotirovka formasining `Notes` yorlig'ida, agar xohlasangiz, kotirovka va/yoki mijoz haqida har qanday maxsus ichki eslatmalarni kiriting.
 
-Taklifnoma shaklining `Eslatmalar` (`Notes`) tabida, istalgan bo‘lsa, ushbu taklifnoma yoki mijozga oid ichki
-eslatmalarni yozib qo‘yishingiz mumkin.
+## Kotirovkalarni yuborish va tasdiqlash
 
-## Taklifnomani yuborish va tasdiqlash
+Barcha kerakli maydonlar va yorliqlar sozlangandan so'ng, kotirovkani tasdiqlash uchun mijozga yuborish vaqti keldi. Tasdiqlanganidan so'ng, kotirovka rasmiy savdo buyurtmasiga aylanadi.
 
-Barcha kerakli maydonlar va tablar to‘ldirilgach, taklifnomani mijozga yuborish va uning tasdig‘ini olish vaqti keladi.
-Taklifnoma tasdiqlangach, u rasmiy *savdo buyurtmasi*ga aylanadi.
+Formaning yuqori qismida bir qator tugmalar mavjud:
 
-Shaklning yuqori qismida bir nechta tugmalar mavjud:
+- `Send by Email`: Bosilganda, `Recipients` maydonida mijozning ismi va elektron pochta manzili, `Subject` maydonida kotirovka (va mos yozuvlar ID si) va elektron pochta tanasida o'zgartirish mumkin bo'lgan qisqa standart xabar bilan ochilish oynasi paydo bo'ladi.
 
-- `Email orqali yuborish` (`Send by Email`): Ushbu tugma bosilganda, pop-up oyna ochiladi. Unda `Qabul qiluvchilar` (
-  `Recipients`) maydonida mijozning ismi va elektron pochta manzili, `Mavzu` (`Subject`) maydonida esa taklifnoma va
-  uning identifikatsiya raqami ko‘rsatiladi. Shuningdek, xat tanasida qisqa matn avtomatik paydo bo‘ladi (zarur bo‘lsa,
-  uni o‘zgartirish mumkin).
+  Uning ostida kotirovkaning PDF nusxasi biriktirilgan. Tayyor bo'lganda, kotirovkani elektron pochta orqali mijozga yuborish uchun `Send` tugmasini bosing, shunda ular uni ko'rib chiqishi va tasdiqlashi mumkin.
 
-  Shu oynaning pastida taklifnomaning PDF nusxasi biriktiriladi. Tayyor bo‘lgach, `Yuborish` (`Send`) tugmasini bosib,
-  taklifnomani email orqali mijozga yuborish mumkin — mijoz uni ko‘rib chiqadi va tasdiqlaydi.
+- `Send PRO-FORMA Invoice`: Ushbu tugma **faqat** *Pro-Forma Invoice* sozlamasi yoqilgan bo'lsagina paydo bo'ladi. Bosilganda, `Recipients` maydonida mijozning ismi va elektron pochta manzili, `Subject` maydonida *Proforma* hisob-fakturasi (va mos yozuvlar ID si) va elektron pochta tanasida o'zgartirish mumkin bo'lgan qisqa standart xabar bilan ochilish oynasi paydo bo'ladi.
 
-- `PRO-FORMA hisob-faktura yuborish` (`Send PRO-FORMA Invoice`): Bu tugma **faqat** *Pro-Forma hisob-faktura* sozlamasi
-  yoqilgan bo‘lsa ko‘rinadi. Bosilganda, yuqoridagidek pop-up oyna ochiladi, lekin bu safar *Pro-forma hisob-faktura*
-  bilan.
+  Uning ostida kotirovkaning PDF nusxasi biriktirilgan. Tayyor bo'lganda, kotirovkani elektron pochta orqali mijozga yuborish uchun `Send` tugmasini bosing, shunda ular uni ko'rib chiqishi va tasdiqlashi mumkin.
 
-  Pastki qismida PDF fayl biriktiriladi. Tayyor bo‘lgach, `Yuborish` tugmasini bosing.
+- `Confirm`: Bosilganda, kotirovka tasdiqlanadi va holat `Sales Order` ga o'zgaradi.
 
-- `Tasdiqlash` (`Confirm`): Ushbu tugma bosilganda, taklifnoma tasdiqlanadi va holati `Savdo buyurtmasi` (`Sales Order`)
-  ga o‘zgaradi.
+- `Preview`: Bosilganda, Odoo mijoz o'zlarining mijoz portaliga kirganda ko'radigan kotirovkaning oldindan ko'rishini ochadi. Kotirovka formasiga qaytish uchun ko'k bannerdagi preview sahifasining yuqori qismidagi `fa-arrow-right` `Back to edit mode` havolasini bosing.
 
-- `Ko‘rib chiqish` (`Preview`): Bosilganda, Odoo mijozning portalida ko‘radigan taklifnoma ko‘rinishini ochadi. Ushbu
-  ko‘rinishdan `Tahrirlash rejimiga qaytish` (`Back to edit mode`) havolasini bosish orqali taklifnoma shakliga qaytish
-  mumkin.
-
-- `Bekor qilish` (`Cancel`): Bosilganda, taklifnoma bekor qilinadi.
+- `Cancel`: Bosilganda, kotirovka bekor qilinadi.
 
 ::: tip
 
-Agar *Tasdiqlangan savdolarni bloklash* (`Lock Confirmed Sales`) sozlamasi yoqilgan bo‘lsa, savdo buyurtmasi
-`Bloklangan` (`Locked`) holatga o‘tadi va bu buyurtma shaklida ko‘rsatiladi.
+Agar *Lock Confirmed Sales* sozlamasi yoqilgan bo'lsa, savdo buyurtmasi `Locked` bo'ladi va savdo buyurtmasi formasida shunday ko'rsatiladi.
+::::
 
-:::
+Shu nuqtada kotirovka tasdiqlandi, savdo buyurtmasiga aylandi va endi hisob-faktura qilish va to'lash uchun tayyor.
 
-Shu bosqichda, taklifnoma tasdiqlandi, *savdo buyurtmasi*ga aylandi va endi hisob-faktura chiqarish hamda to‘lov uchun
-tayyor.
-
-Hisob-faktura haqida batafsil ma’lumot olish uchun quyidagiga murojaat qiling:  
-**`Hisob-fakturalar yetkazilgan yoki buyurtma qilingan miqdorga asoslangan bo‘lishi`**
+Hisob-fakturalash haqida batafsil ma'lumot uchun `Invoice based on delivered or ordered quantities` ga murojaat qiling.

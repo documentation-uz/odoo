@@ -1,71 +1,53 @@
-# Yetkazib berish va hisob-fakturani turli manzillarga yuborish
+# Turli manzillarga yetkazib berish va hisob-fakturalar
 
-Odamlar va kompaniyalar ko‘pincha hisob-faktura (billing) va yetkazib berish (shipping) uchun alohida manzillardan
-foydalanadilar. Odoo’ning *Savdo* ilovasi yordamida har bir kontakt uchun hisob-faktura va yetkazib berish manzillarini
-alohida belgilash mumkin.
+Shaxslar va korxonalar ko'pincha hisob-fakturalash (hisob-faktura) va yetkazib berish (yetkazib berish) maqsadlari uchun alohida manzillardan foydalanadilar. Odoo *Sales* dasturi yordamida kontaktlar yetkazib berish va hisob-fakturalash uchun turli belgilangan manzillarga ega bo'lishi mumkin.
 
 ## Sozlamalar
 
-Odoo’da bir nechta manzillardan to‘g‘ri foydalanish uchun quyidagi amallarni bajaring:
+Odoo da bir nechta manzillardan to'g'ri foydalanish uchun `Accounting app ‣ Configuration ‣ Settings` ga o'ting va `Customer Invoices` sarlavhasiga siljiting. Keyin katakchani belgilang.
 
-`Hisob-kitob ilovasi ‣ Konfiguratsiya ‣ Sozlamalar` (`Accounting app ‣ Configuration ‣ Settings`) yo‘liga o‘ting va
-`Mijoz hisob-fakturalari` (`Customer Invoices`) sarlavhasigacha pastga tushing. So‘ng, `Mijoz manzillari` (
-`Customer Addresses`) sozlamasini faollashtirish uchun belgilash katagiga belgi qo‘ying.
+![Activate the Customer Addresses setting.](different_addresses/customer-addresses-setting.png)
 
-![Mijoz manzillari sozlamasini faollashtirish.](different_addresses/customer-addresses-setting.png)
+## Kontakt formasi konfiguratsiyasi 
 
-## Kontakt formasini sozlash
-
-Bitta kontaktga bir nechta manzil qo‘shish uchun quyidagi yo‘ldan boring:  
-`Savdo ilovasi ‣ Buyurtmalar ‣ Mijozlar`.  
-So‘ng qidiruv panelidagi barcha standart filtrlardan tozalang. Kerakli mijozni tanlang va uning kontakt formasini
-oching.
+Kontaktga bir nechta manzil qo'shish uchun `Sales app ‣ Orders ‣ Customers` ga o'ting va qidiruv panelidan har qanday standart filtrlarni olib tashlang. Keyin kontakt formasini ochish uchun kerakli mijozni bosing.
 
 ::: tip
 
-Kontakt formalariga *Kontaktlar* (`Contacts`) ilovasi orqali ham kirish mumkin.
+Kontakt formalariga *Contacts* dasturida ham kirish mumkin.
+::::
 
-:::
+Kontakt formasidan `Edit` tugmasini bosing, so'ngra `Contacts & Addresses` yorlig'i ostida joylashgan `Add` ni tanlang. Bunday qilish qo'shimcha manzillarni sozlash mumkin bo'lgan `Create Contact` ochilish formasini ochadi.
 
-Kontakt formasida `Tahrirlash` (`Edit`) tugmasini bosing, keyin `Kontaktlar va manzillar` (`Contacts & Addresses`)
-tabidagi `Qo‘shish` (`Add`) tugmasini bosing. Shu bilan `Kontakt yaratish` (`Create Contact`) oynasi ochiladi va bu
-yerda qo‘shimcha manzillarni kiritish mumkin.
+![Add a contact/address to the contact form.](different_addresses/contact-form-add-address.png)
 
-![Kontakt formasiga yangi kontakt/manzil qo‘shish.](different_addresses/contact-form-add-address.png)
+`Create Contact` ochilish formasida standart `Other Address` maydonini bosish bilan boshlang, bu manzil bilan bog'liq variantlarning ochiladigan menyusini ochadi.
 
-`Kontakt yaratish` oynasida, avval `Boshqa manzil` (`Other Address`) maydoniga bosing — ochiluvchi menyuda quyidagi
-manzil turlari paydo bo‘ladi:
+Quyidagi variantlardan birini tanlang:
 
-- `Kontakt` — mavjud forma ichiga qo‘shimcha kontakt qo‘shadi.
-- `Hisob-faktura manzili` — alohida hisob-faktura manzilini qo‘shadi.
-- `Yetkazib berish manzili` — alohida yetkazib berish manzilini qo‘shadi.
-- `Boshqa manzil` — alternativa manzilni qo‘shadi.
-- `Shaxsiy manzil` — shaxsiy manzil qo‘shadi.
+- `Contact`: mavjud kontakt formasiga boshqa kontaktni qo'shadi.
+- `Invoice Address`: mavjud kontakt formasiga maxsus hisob-faktura manzilini qo'shadi.
+- `Delivery Address`: mavjud kontakt formasiga maxsus yetkazib berish manzilini qo'shadi.
+- `Other Address`: mavjud kontakt formasiga muqobil manzilni qo'shadi.
+- `Private Address`: mavjud kontakt formasiga shaxsiy manzilni qo'shadi.
 
-Kerakli variant tanlangach, shu manzil turiga tegishli kontakt ma’lumotlarini kiriting.
+Variant tanlangandan so'ng, belgilangan manzil turi uchun ishlatilishi kerak bo'lgan tegishli kontakt ma'lumotlarini kiritishni davom eting.
 
-![Kontakt formasida yangi manzil yaratish.](different_addresses/create-contact-window.png)
+![Create a new contact/address on a contact form.](different_addresses/create-contact-window.png)
 
-So‘ng, manzilni saqlash va oynani yopish uchun `Saqlash va yopish` (`Save & Close`) tugmasini bosing. Yoki, agar yana
-bir manzil kiritmoqchi bo‘lsangiz, `Saqlash va yangi` (`Save & New`) tugmasini bosing.
+Keyin manzilni saqlash va `Create Contact` oynasini yopish uchun `Save & Close` tugmasini bosing. Yoki manzilni saqlash va darhol boshqasini kiritish uchun `Save & New` tugmasini bosing.
 
-## Taklifnomalarga manzil qo‘shish
+## Kotirovkalarga qo'shilgan manzil
 
-Mijoz taklifnomaga qo‘shilganda, `Hisob-faktura manzili` (`Invoice Address`) va `Yetkazib berish manzili` (
-`Delivery Address`) maydonlari avtomatik tarzda mijozning kontakt formasida belgilangan mos manzillar bilan
-to‘ldiriladi.
+Mijoz kotirovkaga qo'shilganda, `Invoice Address` va `Delivery Address` maydonlari mijozning kontakt formasida belgilangan tegishli manzillar bilan avtomatik to'ldiriladi.
 
-![Taklifnomada hisob-faktura va yetkazib berish manzillarining avtomatik to‘ldirilishi.](different_addresses/quotation-address-autopopulate.png)
+![Invoice and Delivery Addresses autopopulate on a quotation.](different_addresses/quotation-address-autopopulate.png)
 
-`Hisob-faktura manzili` va `Yetkazib berish manzili` taklifnoma ichida ham bevosita tahrirlanishi mumkin. Buning uchun
-`Tahrirlash` (`Edit`) tugmasini bosing, so‘ng har bir manzil qatori yonidagi `➡️` (o‘ngga yo‘naltiruvchi) ichki havola
-tugmalarini bosing.
+`Invoice Address` va `Delivery Address` kotirovka formasidan to'g'ridan-to'g'ri tahrirlash ham mumkin, buning uchun `Edit` tugmasini bosing, so'ngra har bir manzil qatori yonidagi `➡️ (right arrow)` ichki havola tugmalarini bosing.
 
-Ushbu manzillar istalgan vaqtda yangilanishi mumkin, bu esa to‘g‘ri hisob-faktura va yetkazib berishni ta’minlaydi.
+Ushbu manzillar to'g'ri hisob-fakturalash va yetkazib berishni ta'minlash uchun istalgan vaqtda yangilanishi mumkin.
 
 ::: tip
 
-Odoo’da har qanday formada (shu jumladan *Kontaktlar* formalarida) o‘zgarish kiritilgan bo‘lsa, o‘zgarishlarni
-ma’lumotlar bazasiga saqlash uchun `Saqlash` (`Save`) tugmasini bosishni unutmang.
-
-:::
+Agar Odoo da biror formada, shu jumladan *Contacts* formalarida biror o'zgarishlar kiritilsa, o'zgarishlarni ma'lumotlar bazasiga saqlash uchun `Save` tugmasini bosishni unutmang.
+::::

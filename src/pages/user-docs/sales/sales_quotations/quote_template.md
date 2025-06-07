@@ -1,244 +1,178 @@
-# Taklifnoma shablonlari
+# Kotirovka shablonlari
 
-Odoo’ning **Savdo** ilovasida umumiy mahsulotlar yoki xizmatlar uchun qayta ishlatiladigan *taklifnoma shablonlari*
-yaratish mumkin.
+Umumiy mahsulotlar yoki xizmatlar uchun Odoo'ning **Sales** ilovasida qayta foydalaniladigan kotirovka shablonlarini yaratish mumkin.
 
-Bu shablonlardan foydalanish orqali har safar yangi savdo muzokarasi yuz berganida taklifnomani boshqatdan yaratishga
-hojat qolmaydi. Taklifnomalar tezroq va moslashtirilgan holda mijozlarga yuboriladi.
+Ushbu shablonlardan foydalanib, kotirovkalarni mijozlarga tezroq moslashtirib yuborish mumkin, har safar savdo muzokaralari paytida yangi kotirovkalarni noldan yaratish shart emas.
 
-## Sozlamalar
+## Sozlash
 
-Taklifnoma shablonlaridan foydalanish uchun quyidagi sozlamani yoqing:
+Kotirovka shablonlaridan foydalanish uchun avval `Sales app ‣
+Configuration ‣ Settings` bo'limida sozlamani faollashtiring va `Quotations &_Orders` sarlavhasigacha pastga suring.
 
-`Savdo ilovasi ‣ Konfiguratsiya ‣ Sozlamalar` bo‘limiga o‘ting va `Taklifnomalar va Buyurtmalar` sarlavhasi ostiga
-pastga tushing.
+Sarlavha ostida `Quotation Templates` katakchani belgilang. Buni qilish yangi `Default Template` maydonini ochadi, bu yerda ochiladigan menyudan standart kotirovka shablonini tanlash mumkin.
 
-Shu sarlavha ostidan `Taklifnoma shablonlari` (`Quotation Templates`) belgisi (checkbox) ni belgilang. Buni amalga
-oshirgach, yangi `Standart shablon` (`Default Template`) maydoni paydo bo‘ladi. Ushbu maydondan ochiluvchi ro‘yxat
-orqali standart taklifnoma shablonini tanlash mumkin.
+![Odoo Sales'da kotirovka shablonlarini yoqish usuli.](quote_template/quotations-templates-setting.png)
 
-![Odoo Sales ilovasida taklifnoma shablonlarini yoqish.](quote_template/quotations-templates-setting.png)
+`Quotation Template` funksiyasini faollashtirganingizdan so'ng, `Default Template` maydoni ostida ichki `fa-arrow-right` `Quotation Templates` havolasi paydo bo'ladi.
 
-`Taklifnoma shablonlari` funksiyasi faollashtirilgach, `Standart shablon` maydoni ostida ichki `Taklifnoma shablonlari`
-sahifasiga olib boruvchi `→` havola (`Quotation Templates` link) paydo bo‘ladi.
+Ushbu havolani bosish `Quotation Templates` sahifasini ochadi, bu yerda shablonlarni yaratish, ko'rish va tahrirlash mumkin.
 
-Ushbu havolani bosganingizda `Taklifnoma shablonlari` sahifasi ochiladi. Bu sahifada shablonlarni yaratish, ko‘rish va
-tahrirlash mumkin.
+`Settings` sahifasini tark etishdan oldin, sessiya davomida qilingan barcha o'zgarishlarni saqlash uchun `Save` tugmasini bosishni unutmang.
 
-`Sozlamalar` sahifasidan chiqishdan oldin, sessiya davomida kiritilgan barcha o‘zgarishlarni saqlash uchun `Saqlash` (
-`Save`) tugmasini bosishni unutmang.
+## Kotirovka shablonlarini yaratish
 
-## Taklifnoma shablonlarini yaratish
+Kotirovka shablonini yaratish uchun `Quotation templates` yoqilgach `Settings` sahifasidagi `Quotation Templates` havolasini bosing yoki `Sales app ‣ Configuration ‣ Quotation Templates`ga o'ting. Ikkala variant ham `Quotation Templates` sahifasini ochadi, bu yerda kotirovka shablonlarini yaratish, ko'rish va tahrirlash mumkin.
 
-Taklifnoma shabloni yaratish uchun, `Taklifnoma shablonlari` (`Quotation Templates`) sozlamasi yoqilgach, `Sozlamalar`
-sahifasidagi `Taklifnoma shablonlari` havolasini bosing yoki quyidagi yo‘ldan o‘ting:  
-`Savdo ilovasi ‣ Konfiguratsiya ‣ Taklifnoma shablonlari`.
+![Odoo Sales ilovasidagi kotirovka shablonlari sahifasi.](quote_template/quotation-templates-page.png)
 
-Har ikkala yo‘l ham sizni `Taklifnoma shablonlari` sahifasiga olib boradi. Bu yerda shablonlarni yaratish, ko‘rish va
-tahrirlash mumkin.
+Yangi kotirovka shablonini yaratish uchun yuqori chap burchakda joylashgan `New` tugmasini bosing. Bu sozlanishi mumkin bo'lgan bo'sh kotirovka shabloni formasini ochadi.
 
-![Odoo Sales ilovasidagi Taklifnoma shablonlari sahifasi.](quote_template/quotation-templates-page.png)
+![Odoo Sales'da yangi kotirovka shablonini yaratish.](quote_template/blank-quotation-form.png)
 
-Yangi shablon yaratish uchun yuqori chapdagi `Yangi` (`New`) tugmasini bosing. Bunda sizga sozlanadigan bo‘sh taklifnoma
-shabloni shakli taqdim etiladi.
+Avval `Quotation Template` maydoniga shablon uchun nom kiriting.
 
-![Odoo Sales’da yangi taklifnoma shablonini yaratish.](quote_template/blank-quotation-form.png)
+Keyin `Quotation Validity` maydonida kotirovka shabloni necha kun amal qilishini ko'rsating yoki shablonni cheksiz muddatga amal qilishi uchun maydonni standart [0] da qoldiring.
 
-Avvalo, `Taklifnoma shabloni` (`Quotation Template`) maydoniga shablon nomini kiriting.
-
-So‘ng `Taklifnoma amal qilish muddati` (`Quotation Validity`) maydoniga bu shablon necha kun amal qilishini kiriting.
-Agar bu maydonni [0] holatda qoldirsangiz, shablon doimiy amal qiladi.
-
-Keyingi `Tasdiqlash xati` (`Confirmation Mail`) maydonida ochiluvchi ro‘yxatdan buyurtma tasdiqlangach mijozga
-yuboriladigan oldindan tayyorlangan email shablonini tanlang.
+Keyingi `Confirmation Mail` maydonida buyurtma tasdiqlanganda mijozlarga yuboriladigan oldindan sozlangan elektron pochta shablonini tanlash uchun bo'sh ochiladigan menyuni bosing.
 
 ::: tip
 
-Yangi email shablonini bevosita `Tasdiqlash xati` maydonidan yaratish uchun, maydonga yangi shablon nomini yozing va
-ochiluvchi menyudan `Yaratish` (`Create`) yoki `Yaratish va tahrirlash...` (`Create and edit...`) ni tanlang.
+`Confirmation Mail` maydonidan to'g'ridan-to'g'ri yangi elektron pochta shablonini yaratish uchun maydonda yangi elektron pochta shablonining nomini yozishni boshlang va paydo bo'ladigan ochiladigan menyudan `Create` yoki `Create and edit...` variantlaridan birini tanlang.
 
-- `Yaratish` — shablonni yaratadi va uni keyinchalik tahrirlash mumkin.
-- `Yaratish va tahrirlash...` — email shablonini yaratadi va darhol ochiladigan `Tasdiqlash xatini yaratish` oynasi
-  orqali sozlash imkonini beradi.
+`Create` ni tanlash elektron pochta shablonini yaratadi, uni keyinroq tahrirlash mumkin.
 
-![Odoo Sales’dagi taklifnoma shablonidan tasdiqlash xatini yaratish oynasi.](quote_template/create-confirmation-mail-popup.png)
+`Create and edit...` ni tanlash elektron pochta shablonini yaratadi va `Create Confirmation Mail` pop-up oynasi paydo bo'ladi, bu yerda elektron pochta shablonini darhol sozlash va konfiguratsiya qilish mumkin.
 
-Tahrir tugagach, `Saqlash va yopish` (`Save & Close`) tugmasini bosing va taklifnoma formasiga qayting.
-:::
+![Odoo Sales'dagi kotirovka shabloni formasidan tasdiqlash pochtasini yaratish pop-up oynasi.](quote_template/create-confirmation-mail-popup.png)
 
-Agar siz ko‘p kompaniyali muhitda ishlayotgan bo‘lsangiz, `Kompaniya` (`Company`) maydoni orqali ushbu shablon qaysi
-kompaniyaga tegishli ekanini ko‘rsating.
+Barcha o'zgarishlar tugallangach, elektron pochta shablonini saqlash va kotirovka formasiga qaytish uchun `Save & Close` ni bosing.
+::::
 
-Agar `Hisob jurnal` (`Invoicing Journal`) maydoni to‘ldirilgan bo‘lsa, ushbu shablon asosida yaratilgan barcha savdo
-buyurtmalari shu jurnalga asoslangan holda hisob-faktura chiqaradi. Agar jurnal belgilanmasa, eng past tartibdagi jurnal
-ishlatiladi.
+Agar ko'p kompaniyali muhitda ishlayotgan bo'lsangiz, ushbu kotirovka shabloni qaysi kompaniyaga tegishli ekanligini ko'rsatish uchun `Company` maydonidan foydalaning.
 
-Agar `Sozlamalar` (`Savdo ilovasi ‣ Konfiguratsiya ‣ Sozlamalar`) bo‘limida *Onlayn imzo* yoki *Onlayn to‘lov*
-funksiyalari yoqilgan bo‘lsa, bu variantlar taklifnoma shabloni formasida ham mavjud bo‘ladi:
+Agar `Invoicing Journal` maydonida jurnal o'rnatilgan bo'lsa, ushbu shablon bilan barcha savdo buyurtmalari o'sha belgilangan jurnalda hisob-faktura beriladi. Agar bu maydon bo'sh bo'lsa, eng past ketma-ketlikka ega savdo jurnali ishlatiladi.
 
-- `Onlayn imzo` belgisini belgilang — bu mijozdan buyurtmani tasdiqlash uchun imzo so‘rash imkonini beradi.
-- `Onlayn to‘lov` belgisini belgilang — mijozdan oldindan to‘lov so‘raladi. Belgilanganidan so‘ng, foiz maydoni paydo
-  bo‘ladi va to‘lanishi kerak bo‘lgan foizni kiritish mumkin.
+Agar `Settings` da (`Sales app ‣ Configuration ‣ Settings`) `Online Signature` va/yoki `Online Payment` funksiyalari faollashtirilgan bo'lsa, bu variantlar kotirovka shabloni formalarida mavjud bo'ladi.
 
-Agar ikkala opsiya birgalikda yoqilgan bo‘lsa, mijoz buyurtmani tasdiqlash uchun **ham imzo**, **ham to‘lov** taqdim
-etishi kerak bo‘ladi.
+Buyurtmani tasdiqlash uchun mijozdan onlayn imzo so'rash uchun `Online Signature` yonidagi katakchani belgilang.
 
-`Takrorlanuvchi rejalar` (`Recurring Plan`) maydonida oldindan sozlangan davrlarni tanlang (masalan, `Oylik`,
-`Har chorakda`, va h.k.), bu orqali taklifnoma shabloni qanchalik tez-tez takrorlanishini belgilaysiz.
+Buyurtmani tasdiqlash uchun mijozdan onlayn to'lov so'rash uchun `Online Payment` yonidagi katakchani belgilang. `Online Payment` belgilanganda yangi foiz maydoni paydo bo'ladi, bu yerda ma'lum bir to'lov foizini kiritish mumkin.
 
-::: tip
-`Takrorlanuvchi rejalar` maydoni **faqat** obuna rejalariga tegishli. Batafsil ma’lumot uchun qarang:
-`../../subscriptions/plans`.
-:::
+Ikkala variant, `Online Signature` va `Online Payment` bir vaqtda yoqilishi mumkin, bu holda mijoz buyurtmani tasdiqlash uchun **ham** imzo **ham** to'lovni taqdim etishi kerak.
 
-### Qatorlar tab
-
-`Qatorlar` (`Lines`) tabida mahsulotlarni taklifnoma shabloniga qo‘shish mumkin. Buning uchun `Mahsulot qo‘shish` (
-`Add a product`) tugmasini bosing, `Bo‘lim qo‘shish` (`Add a section`) orqali tartiblang va `Izoh qo‘shish` (
-`Add a note`) orqali qo‘shimcha ma’lumot (masalan, kafolat, shartlar va boshqalar) kiriting.
-
-Mahsulot qo‘shish uchun, `Qatorlar` tabida `Mahsulot qo‘shish` tugmasini bosing. Shunda `Mahsulot` ustunida bo‘sh maydon
-ochiladi.
-
-Bu maydonga bosganingizda, bazadagi mavjud mahsulotlar ro‘yxati chiqadi. Kerakli mahsulotni ro‘yxatdan tanlang.
-
-Agar kerakli mahsulot ro‘yxatda ko‘rinmasa, mahsulot nomini `Mahsulot` maydoniga yozing — kerakli variant ochiluvchi
-menyuda paydo bo‘ladi. Shuningdek, `Ko‘proq izlash...` (`Search More...`) tugmasini bosib mahsulotlarni topish mumkin.
+`Recurring Plan` maydonida ushbu kotirovka shabloni qanchalik tez-tez takrorlanishini ko'rsatish uchun turli xil oldindan sozlangan vaqt miqdorlaridan (`Monthly`, `Quarterly` va boshqalar) tanlang.
 
 ::: tip
 
-Taklifnoma shablonlariga tadbirlarga oid mahsulotlar (masalan, stendlar va ro‘yxatdan o‘tishlar) ham qo‘shilishi mumkin.
-Buning uchun `Mahsulot` maydoniga [Tadbir] (`Event`) deb yozing va kerakli mahsulotni tanlang.
+`Recurring Plan` maydoni **faqat** obuna rejalariga tegishli. Qo'shimcha ma'lumot uchun `../../subscriptions/plans` bo'yicha hujjatlarni ko'ring.
+::::
 
-:::
+### Lines bo'limi
+
+`Lines` bo'limida `Add a product` ni bosib kotirovka shabloniga mahsulotlar qo'shish, `Add a section` ni bosib tartibga solish (va bo'lim sarlavhalarini sudrab olib tashlash) va `Add a note` ni bosib ixtiyoriy ma'lumotlar (kafolat tafsilotlari, shartlar va boshqalar) bilan qo'shimcha tushuntirish mumkin.
+
+Kotirovka shabloniga mahsulot qo'shish uchun kotirovka shabloni formasining `Lines` bo'limida `Add a product` ni bosing. Bu `Product` ustunida bo'sh maydonni ochadi.
+
+Bosilganda ma'lumotlar bazasidagi mavjud mahsulotlar bilan ochiladigan menyu paydo bo'ladi. Kotirovka shabloniga qo'shish uchun ochiladigan menyudan kerakli mahsulotni tanlang.
+
+Agar kerakli mahsulot darhol ko'rinmasa, `Product` maydoniga kerakli mahsulot nomini yozing va variant ochiladigan menyuda paydo bo'ladi. Mahsulotlarni ochiladigan menyudan `Search More...` ni bosib ham topish mumkin.
 
 ::: tip
 
-Taklifnoma shabloniga mahsulot qo‘shilganda, odatiy `Miqdor` (`Quantity`) qiymati [1] bo‘ladi. Uni istalgan vaqtda
-o‘zgartirish mumkin.
+Kotirovka shablonlariga tadbir bilan bog'liq mahsulotlarni (stendlar va ro'yxatga olishlar) qo'shish mumkin. Buning uchun `Product` maydonini bosing, [Event] ni yozing va kerakli tadbir bilan bog'liq mahsulotni natijada paydo bo'ladigan ochiladigan menyudan tanlang.
+::::
 
-:::
+::: tip
 
-Qo‘shilgan mahsulotni kerakli tartibga joylashtirish uchun, har bir qator chapidagi `olti kvadrat` (`six squares`)
-belgisi yordamida sudrab ko‘chiring.
+Mahsulot kotirovka shabloniga qo'shilganda standart `Quantity` [1] bo'ladi, lekin uni istalgan vaqtda tahrirlash mumkin.
+::::
 
-*Bo‘lim* (section) qo‘shish — bu savdo buyurtmasidagi qatorlarni sarlavhalar bilan tartiblash imkonini beradi.
-`Qatorlar` tabida `Bo‘lim qo‘shish` tugmasini bosing. So‘ng bo‘sh maydonga bo‘lim nomini yozing. Nom yozilgach, bo‘lim
-nomi saqlanadi.
+Keyin mahsulotni har bir qator elementining chap tomonida joylashgan `six squares` belgisi orqali kerakli joyga sudrab olib tashlang.
 
-Bo‘lim nomini ham yuqoridagi kabi `olti kvadrat` (`six squares`) belgisi yordamida kerakli o‘ringa sudrab ko‘chiring.
+Savdo buyurtmasi qatorlarini tartibga solish uchun sarlavha vazifasini bajaradigan *bo'limni* qo'shish uchun `Lines` bo'limida `Add a section` ni bosing. Bosilganda bo'sh maydon paydo bo'ladi, bu yerda bo'limning kerakli nomini yozish mumkin. Nom kiritilgach, bo'lim nomini saqlash uchun boshqa joyni bosing.
 
-*Izoh* qo‘shish — bu taklifnomada mijozga ko‘rinadigan matnli yozuv. `Qatorlar` tabida `Izoh qo‘shish` tugmasini bosing.
-So‘ng bo‘sh maydonga kerakli izohni yozing. Yozilgach, izoh avtomatik saqlanadi.
+Keyin bo'lim nomini har bir qator elementining chap tomonida joylashgan `oi-apps` `(six squares)` belgisi orqali kerakli joyga sudrab olib tashlang.
 
-Izohni ham kerakli joyga `olti kvadrat` belgisi orqali sudrab ko‘chiring.
+Kotirovkada mijoz uchun matn ko'rinishida paydo bo'ladigan eslatmani qo'shish uchun `Lines` bo'limida `Add a note` ni bosing. Bosilganda bo'sh maydon paydo bo'ladi, bu yerda kerakli eslatmani yozish mumkin. Eslatma kiritilgach, eslatmani saqlash uchun boshqa joyni bosing.
 
-Agar `Qatorlar` tabidagi biror qator (mahsulot, bo‘lim yoki izoh) ni o‘chirmoqchi bo‘lsangiz, qatordagi o‘ng tomondagi
-`axlat qutisi` (`fa-trash`) belgisini bosing.
+Keyin eslatmani `oi-apps` `(six squares)` belgisi orqali kerakli joyga sudrab olib tashlang.
 
-### Ixtiyoriy mahsulotlar tab
+`Lines` bo'limidan har qanday qator elementini (mahsulot, bo'lim va/yoki eslatma) o'chirish uchun qatorning o'ng tomonidagi `fa-trash` `(remove record)` belgisini bosing.
 
-*Ixtiyoriy mahsulotlar* (Optional Products) — asosiy mahsulot bilan birga qo‘shimcha mahsulotlarni taklif qilish orqali
-savdoni oshirishga qaratilgan marketing strategiyasidir. Maqsad — mijozga foydali va bog‘liq mahsulotlarni taklif qilish
-orqali sotuv hajmini oshirish.
+### Optional Products bo'limi
+
+*Ixtiyoriy mahsulotlar* dan foydalanish asosiy mahsulot bilan birga mahsulotlarni o'zaro sotishni o'z ichiga olgan marketing strategiyasidir. Maqsad mijozlarga foydali va bog'liq mahsulotlarni taklif qilish bo'lib, bu sotuvni oshirishi mumkin.
 
 ::: example
-Agar mijoz avtomobil sotib olmoqchi bo‘lsa, unga avtomobil bilan birga massajli o‘rindiqlarni qo‘shimcha mahsulot
-sifatida tanlash imkoniyati beriladi. Mijoz bu taklifni qabul qilishi yoki e’tiborsiz qoldirib, faqat avtomobilni sotib
-olishi mumkin.
+Agar mijoz mashina sotib olmoqchi bo'lsa, u mashinani to'ldiruvchi qo'shimcha mahsulot sifatida massaj o'rindiqlari buyurtma qilishni tanlashi yoki taklifni rad etib faqat mashinani sotib olishi mumkin.
 :::
 
-Ixtiyoriy mahsulotlar savdo buyurtmalarining pastki qismida va eCommerce sahifalarida alohida bo‘lim sifatida paydo
-bo‘ladi. Mijozlar ularni onlayn buyurtmaga darhol qo‘shishlari mumkin.
+Ixtiyoriy mahsulotlar savdo buyurtmalarining pastki qismida va elektron tijorat sahifalarida bo'lim sifatida paydo bo'ladi. Mijozlar xohlasa, ularni onlayn savdo buyurtmalariga darhol qo'sha olishadi.
 
-![Odoo Sales’dagi odatiy savdo buyurtmasida ixtiyoriy mahsulotlar.](quote_template/optional-products-on-sales-order.png)
+![Odoo Sales bilan oddiy savdo buyurtmasida paydo bo'ladigan ixtiyoriy mahsulotlar.](quote_template/optional-products-on-sales-order.png)
 
-`Ixtiyoriy mahsulotlar` (`Optional Products`) tabida, agar mos kelsa, `Qatorlar` (`Lines`) tabidagi asosiy mahsulotlarga
-bog‘liq har bir cross-selling mahsulot uchun `Qator qo‘shish` (`Add a line`) tugmasini bosing.
+`Optional Products` bo'limida agar kerak bo'lsa, `Lines` bo'limidagi asl elementlar bilan bog'liq har bir o'zaro sotuv mahsuloti uchun `Add a line` qo'shing.
 
-`Qator qo‘shish` tugmasi bosilganda, `Mahsulot` ustunida bo‘sh maydon paydo bo‘ladi.
+`Add a line` ni bosish `Product` ustunida bo'sh maydonni ochadi.
 
-Bu maydonga bosganingizda, bazadagi mavjud mahsulotlar ochiluvchi menyuda chiqadi. Istalgan mahsulotni tanlang va u
-taklifnoma shabloniga ixtiyoriy mahsulot sifatida qo‘shiladi.
+Bosilganda ma'lumotlar bazasidan mahsulotlar bilan ochiladigan menyu paydo bo'ladi. Kotirovka shabloniga ixtiyoriy mahsulot sifatida qo'shish uchun ochiladigan menyudan kerakli mahsulotni tanlang.
 
-Agar `Ixtiyoriy mahsulotlar` tabidan biror qatorni o‘chirmoqchi bo‘lsangiz, o‘sha qatordagi o‘ng tomonda joylashgan
-`axlat qutisi` (`fa-trash`) belgisi orqali o‘chiring.
+`Optional Products` bo'limidan har qanday qator elementini o'chirish uchun `fa-trash` `(remove record)` belgisini bosing.
 
 ::: tip
 
-Ixtiyoriy mahsulotlarni taklifnoma shabloni yaratishda kiritish **majburiy emas**.
+Kotirovka shablonini yaratish uchun ixtiyoriy mahsulotlar **talab qilinmaydi**.
+::::
 
-:::
+### Terms & Conditions bo'limi
 
-### Shartlar va qoidalar tab
-
-`Shartlar va qoidalar` (`Terms & Conditions`) tabida taklifnoma shabloniga maxsus shartlar va qoidalarni qo‘shish
-imkoniyati mavjud. Bu tabga kerakli matnni yozish orqali shartlar va qoidalarni belgilashingiz mumkin.
+`Terms & Conditions` bo'limi kotirovka shabloniga shart-sharoitlarni qo'shish imkoniyatini beradi. Shart-sharoitlarni qo'shish uchun ushbu bo'limda kerakli shart-sharoitlarni yozing.
 
 ::: tip
 
-Taklifnoma shabloni yaratishda shartlar va qoidalarni qo‘shish **majburiy emas**.
+Kotirovka shablonini yaratish uchun shart-sharoitlar **talab qilinmaydi**.
+::::
 
-:::
+## Kotirovka shablonlaridan foydalanish
 
-## Taklifnoma shablonlaridan foydalanish
-
-Yangi taklifnoma yaratishda (`Savdo ilovasi ‣ Yangi`), `Taklifnoma shabloni` (`Quotation Template`) maydonida oldindan
-tayyorlangan shablonni tanlang.
+Kotirovka yaratayotganda (`Sales app ‣ New`) `Quotation Template` maydonida oldindan sozlangan shablonni tanlang.
 
 ::: tip
 
-`Taklifnoma shabloni` maydonidagi shablonlar tartibi — `Taklifnoma shablonlari` sahifasidagi tartibga bog‘liq. Ammo bu
-tartib boshqa hech qanday joyga ta’sir qilmaydi.
+`Quotation Template` maydonidagi shablonlar tartibi Quotation Templates formasidagi shablonlar tartibiga bog'liq. Quotation Templates formasidagi kotirovkalar tartibi boshqa hech narsaga ta'sir qilmaydi.
+::::
 
-:::
+Mijoz nimani ko'rishini ko'rish uchun sahifaning yuqori qismidagi `Preview` tugmasini bosing va kotirovka shabloni Odoo'ning mijoz portali orqali veb-saytning old qismida qanday ko'rinishini ko'ring.
 
-Mijoz sahifasida taklifnoma qanday ko‘rinishini ko‘rish uchun, sahifaning yuqori qismidagi `Ko‘rish` (`Preview`)
-tugmasini bosing. Bu orqali Odoo mijoz portalidagi oldindan ko‘rinishni ochadi.
+![Odoo Sales'da kotirovka shablonining mijoz ko'rinishi.](quote_template/quotations-templates-preview.png)
 
-![Odoo Sales’dagi taklifnoma shablonining mijoz ko‘rinishi.](quote_template/quotations-templates-preview.png)
+Barcha bloklar va sozlamalar tugallangach, konfiguratsiyani saqlash uchun `Save` tugmasini bosing.
 
-Barcha bloklar va sozlamalar tugagach, `Saqlash` (`Save`) tugmasini bosib konfiguratsiyani saqlang.
+Kotirovka shabloni ko'rinishining yuqori qismida joylashgan ko'k banner tez qaytish uchun `fa-arrow-right` `Back to edit mode` dan foydalanish mumkin. Bosilganda Odoo *Sales* ilovasining orqa qismidagi kotirovka formasiga qaytadi.
 
-Taklifnoma shabloni oldindan ko‘rinishida sahifaning yuqori qismida joylashgan ko‘k bannerdagi
-`Tahrirlash rejimiga qaytish` (`Back to edit mode`) havolasini bosish orqali tezda orqaga qaytish mumkin. Bu bosilgach,
-Odoo sizni **Savdo** ilovasidagi taklifnoma formasiga qaytaradi.
+## Kotirovkalar/savdo buyurtmalarini ommaviy bekor qilish
 
-## Taklifnomalarni yoki savdo buyurtmalarini ommaviy bekor qilish
-
-Bir nechta taklifnomalarni (yoki savdo buyurtmalarini) bir vaqtning o‘zida bekor qilish uchun quyidagi amallarni
-bajaring:
-
-`Savdo ilovasi ‣ Buyurtmalar ‣ Taklifnomalar` yo‘li bo‘ylab o‘ting. Sahifa odatda ro‘yxat ko‘rinishida ochiladi.
-Jadvalning chap tomonidagi belgilash (checkbox) ustunidan bekor qilinadigan taklifnomalarni belgilang.
+`Sales app ‣ Orders ‣ Quotations` panelining ko'rinishiga o'tib, standart ravishda ro'yxat ko'rinishida bir nechta kotirovkalarni (yoki savdo buyurtmalarini) bekor qiling. Keyin jadvalning chap tomonida bekor qilinadigan kotirovkalar uchun katakchalarni belgilang.
 
 ::: tip
 
-Jadvaldagi barcha yozuvlarni tanlash uchun ustun sarlavhasidagi (chap yuqori burchakdagi) checkbox ni belgilang.
-Tanlangan elementlar soni sahifaning yuqori qismida ko‘rsatiladi.
+Jadvalning yuqori chap qismidagi ustun sarlavhasi katakchasini tanlash orqali jadvaldagi barcha yozuvlarni tanlang; tanlangan elementlarning umumiy soni sahifaning yuqori qismida ko'rsatiladi.
+::::
 
-:::
+Keyin `Quotations` sahifasidagi ro'yxat ko'rinishidan kerakli kotirovkalar (yoki savdo buyurtmalari) tanlangan holda, ochiladigan menyuni ochish uchun `fa-cog` `Actions` tugmasini bosing.
 
-So‘ng, `Taklifnomalar` sahifasida kerakli yozuvlar belgilanganidan keyin, yuqori qismdagi `Harakatlar` (`Actions`)
-tugmasini bosing (`⚙️` belgisi). Ochilgan menyudan `Taklifnomalarni bekor qilish` (`Cancel quotations`) variantini
-tanlang.
+Ushbu ochiladigan menyudan `Cancel quotations` ni tanlang.
 
-![Odoo Sales ilovasidagi Harakatlar menyusida Taklifnomalarni bekor qilish varianti.](quote_template/cancel-quotations.png)
+![Odoo Sales ilovasidagi Actions ochiladigan menyusidagi Cancel quotations varianti.](quote_template/cancel-quotations.png)
 
 ::: tip
 
-Ushbu amal *istalgan* bosqichdagi taklifnomalarga nisbatan bajarilishi mumkin — hatto ular savdo buyurtmasi sifatida
-tasdiqlangan bo‘lsa ham.
+Bu amal *har qanday* bosqichdagi kotirovkalar uchun, hatto savdo buyurtmasi sifatida tasdiqlangan bo'lsa ham amalga oshirilishi mumkin.
+::::
 
-:::
-
-`Taklifnomalarni bekor qilish` opsiyasi tanlangandan so‘ng, tasdiqlash oynasi ochiladi. Bekor qilishni yakunlash uchun
-`Taklifnomalarni bekor qilish` tugmasini bosing.
+`Cancel quotations` variantini tanlaganda `Cancel quotations` tasdiqlash pop-up oynasi paydo bo'ladi. Bekor qilishni yakunlash uchun `Cancel quotations` tugmasini bosing.
 
 ::: tip
 
-Agar sizda hisob-fakturaga ega faol obunaga ulangan buyurtmani bekor qilishga urinsangiz, xatolik haqida ogohlantiruvchi
-oyna chiqadi.
-
-:::
-
+Hisob-fakturasi bo'lgan davom etayotgan obuna uchun buyurtmani bekor qilishga urinayotganda xato pop-up xabari paydo bo'ladi.
+::::

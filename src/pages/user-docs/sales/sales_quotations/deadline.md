@@ -1,43 +1,32 @@
-# Taklifnoma muddati
+# Kotirovka muddatlari
 
-Odoo’ning *Savdo* ilovasida savdo taklifnomalariga amal qilish muddati (deadline) belgilash imkoniyati mavjud. Bu
-mijozlarni tezroq harakat qilishga undaydi, chunki ular yaxshi shartni boy berishdan cho‘chishlari mumkin. Shuningdek,
-muddati tugagan takliflar kompaniyani zararli shartnomalarni bajarish majburiyatidan himoya qiladi.
+Odoo *Sales* dasturida savdo kotirovkalariga muddatlar belgilash mumkin. Bunday qilish mijozlarni savdo muzokaralari paytida tezroq harakat qilishga undaydi, chunki ular yaxshi bitimni o'tkazib yuborish qo'rquvini his qilishlari mumkin. Shuningdek, muddatlar buyurtmani biznes uchun endi foydali bo'lmagan narxda bajarish kerak bo'lgan holatda kompaniya uchun himoya vazifasini ham bajarishi mumkin.
 
-## Taklifnoma amal qilish muddati
+## Kotirovka muddati tugashi
 
-Odoo *Savdo* ilovasida har bir taklifnomaga amal qilish (muddati tugash) sanasini belgilash mumkin.
+Odoo *Sales* dasturida kotirovkaga muddati tugash sanasini qo'shish imkoniyati mavjud.
 
-Buning uchun `Savdo ilovasi`ga o‘ting, mavjud taklifnomani tanlang yoki `Yangi` (`New`) tugmasini bosib yangi taklifnoma
-yarating.
+Kotirovkaga muddati tugash sanasini qo'shish uchun `Sales app` ga o'ting va kerakli kotirovkani tanlang yoki `New` tugmasini bosib yangisini yarating.
 
-Taklifnoma formasida `Amal qilish muddati` (`Expiration`) maydoniga bosing — shunda kalendar ochiladi. Shu kalendardan
-kerakli oy va sanani tanlang.
+Kotirovka formasida `Expiration` maydonini bosing, bu ochiluvchi kalendar oynasini ochadi. Ushbu ochiluvchi kalendardan kotirovka uchun muddati tugash sanasi sifatida kerakli oy va sanani tanlang.
 
-![Odoo Sales’dagi standart taklifnoma formasida amal qilish muddati maydoni.](deadline/quotation-deadlines-expiration-field.png)
+![The expiration field on a standard quotation form in Odoo Sales.](deadline/quotation-deadlines-expiration-field.png)
 
 ::: tip
 
-Taklifnomadagi `Ko‘rish` (`Preview`) tugmasini bosganingizda, mijoz taklifnoma qachon muddati tugashini aniq ko‘ra
-oladi.
+Kotirovkadagi `Preview` tugmasini bosish orqali Odoo o'sha muayyan taklifning qachon tugashini aniq ko'rsatadi.
 
-![Odoo Sales’da mijoz taklifnoma muddatini qanday ko‘radi.](deadline/quotation-deadlines-preview.png)
+![How customers will see deadlines on Odoo Sales.](deadline/quotation-deadlines-preview.png)
+::::
 
-:::
+## Kotirovka shabloni muddati tugashi
 
-## Taklifnoma shablonining amal qilish muddati
+Odoo *Sales* dasturi shuningdek kotirovka shablonlariga muddati tugash sanasini qo'shish imkoniyatini beradi.
 
-Odoo’ning *Savdo* ilovasi taklifnoma shablonlariga ham amal qilish (muddati tugash) sanasini belgilash imkonini beradi.
+Kotirovka shabloniga muddati tugash sanasini qo'shish uchun `Sales app ‣ Configuration ‣ Quotation Templates` ga o'ting va muddati qo'shilishi kerak bo'lgan kerakli kotirovka shablonini tanlang yoki noldan yangi kotirovka shabloni yaratish uchun `New` tugmasini bosing.
 
-Taklifnoma shabloniga amal qilish muddatini qo‘shish uchun quyidagi yo‘ldan o‘ting:  
-`Savdo ilovasi ‣ Konfiguratsiya ‣ Taklifnoma shablonlari`.  
-Shundan so‘ng, kerakli taklifnoma shablonini tanlang yoki `Yangi` (`New`) tugmasini bosib yangi shablon yarating.
+Kotirovka shabloni formasida kotirovka shabloni nomi ostida joylashgan `Quotation expires after` maydoniga muayyan kun sonini qo'shing. Kunlar soni kotirovka muddati tugashidan oldin qancha vaqt amal qilishini bildiradi.
 
-Shablon formasida, taklifnoma nomining pastki qismida joylashgan `Taklifnoma amal qiladi (kunlar)` (
-`Quotation expires after`) maydoniga kerakli kunlar sonini kiriting. Bu qiymat taklifnoma mijozga yuborilgandan keyin
-nechta kun davomida amal qilishini belgilaydi.
+![The quotation expires after field on a quotation template form in Odoo Sales.](deadline/quotation-deadlines-expires-after.png)
 
-![Odoo Sales’dagi taklifnoma shablonidagi “amal qilish muddati” maydoni.](deadline/quotation-deadlines-expires-after.png)
-
-Shundan so‘ng, ushbu shablon asosida taklifnoma yaratilganida, avtomatik ravishda amal qilish muddati yuqorida
-kiritilgan kunlar asosida hisoblab chiqiladi. Biroq, ushbu sanani mijozga yuborishdan oldin qo‘lda o‘zgartirish mumkin.
+Keyin, o'sha muayyan kotirovka shabloni kotirovkada ishlatilganda, yuqorida belgilangan kunlar soniga asoslanib muddati tugash sanasi avtomatik ravishda hisoblanadi. Biroq, bu sanani kotirovkani mijozga yuborishdan oldin o'zgartirish mumkin.

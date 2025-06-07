@@ -77,7 +77,7 @@ The webhook form requires several specific configurations:
   send the order updates in Odoo. Copy and paste the Odoo database URL
   with the additional suffix [/gelato/webhook].
 
-  ::: example
+  ::: tip
   [https://stealthywood.odoo.com/gelato/webhook]
   :::
 

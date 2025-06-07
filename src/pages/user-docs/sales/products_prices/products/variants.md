@@ -6,7 +6,7 @@ berish uchun ishlatiladi, masalan o'lcham, uslub yoki rang va boshqalar.
 Mahsulot variantlarini ularning individual mahsulot shabloni orqali boshqarish mumkin yoki `Product Variants` yoki
 `Attributes` sahifalariga o'tish orqali. Bu barcha imkoniyatlar Odoo *Sales* dasturi ichida joylashgan.
 
-::: example
+::: tip
 Kiyim kompaniyasi o'zining eng ko'p sotiladigan futbolkalari uchun quyidagi variant taqsimotiga ega:
 
 - Klassik Futbolka
@@ -247,7 +247,7 @@ bo'ylab foydalanish mumkin bo'lgan o'zlarining ta'siriga ega.
 - `Price`: har bir mahsulot varianti o'zining ommaviy narxiga ega, bu mahsulot shabloni narxi *va* ma'lum atributlar
   uchun har qanday qo'shimcha to'lovlarning yig'indisi.
 
-  ::: example
+  ::: tip
   Qizil ko'ylakning sotuv narxi $23 -- chunki ko'ylak shablonining narxi $20, shuningdek qizil rang varianti uchun
   qo'shimcha $3. Narx ro'yxati qoidalarini mahsulot shabloni yoki variantga qo'llash uchun sozlash mumkin.
   :::

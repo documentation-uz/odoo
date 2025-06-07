@@ -1,59 +1,44 @@
 # Buyurtmalarni tasdiqlash uchun onlayn imzolar
 
-Odoo’ning *Savdo* ilovasi mijozlarga savdo buyurtmalarini to‘g‘ridan-to‘g‘ri buyurtma shaklida onlayn imzo orqali
-tasdiqlash imkonini beradi. Mijoz buyurtmaga elektron imzo qo‘ygach, bu buyurtmaga biriktirilgan savdo vakili darhol
-xabardor qilinadi.
+Odoo *Sales* ilovasi mijozlarga buyurtmalarni bevosita savdo buyurtmasida onlayn imzo orqali tasdiqlash imkoniyatini beradi. Savdo buyurtmasi mijoz tomonidan elektron imzolanganidan so'ng, savdo buyurtmasiga biriktirilgan sotuvchi buyurtma tasdiqlanganligini darhol xabardor qilinadi.
 
-## Onlayn imzoni faollashtirish
+## Onlayn imzolarni faollashtirish
 
-Mijozlar buyurtmalarni onlayn imzo bilan tasdiqlashi uchun *Onlayn imzo* funksiyasi **albatta** faollashtirilgan
-bo‘lishi kerak.
+Mijozlar buyurtmalarni onlayn imzo bilan tasdiqlashi uchun *Online Signature* funksiyasi **majburiy ravishda** faollashtirilishi kerak.
 
-Bu funksiyani faollashtirish uchun quyidagi yo‘ldan boring:  
-`Savdo ilovasi ‣ Konfiguratsiya ‣ Sozlamalar`,  
-so‘ng `Taklifnomalar va buyurtmalar` (`Quotations & Orders`) sarlavhasigacha pastga tushing va `Onlayn imzo` (
-`Online Signature`) opsiyasini belgilang.
+*Online Signature* funksiyasini faollashtirish uchun `Sales app ‣ Configuration ‣ Settings` ga boring, `Quotations \& Orders` sarlavhasiga o'ting va uning yonidagi katakchani belgilash orqali `Online Signature` funksiyasini faollashtiring.
 
-![Odoo Sales ilovasida Onlayn imzo funksiyasini yoqish.](get_signature_to_validate/signature-setting.png)
+![Odoo Sales ilovasining sozlamalarida Online Signature funksiyasi opsiyasi.](get_signature_to_validate/signature-setting.png)
 
-Keyin, yuqori chapdagi `Saqlash` (`Save`) tugmasini bosing.
+Keyin yuqori chap burchakdagi `Save` tugmasini bosing.
 
 ::: tip
 
-Taklifnoma shabloni yaratishda, onlayn imzo funksiyasi `Onlayn tasdiqlash` (`Online confirmation`) maydonidagi `Imzo` (
-`Signature`) opsiyasi orqali yoqiladi.
+Kotirovka shablonini yaratishda onlayn imzo funksiyasi kotirovka shablon formasining `Online confirmation` maydonida joylashgan `Signature` opsiyasidir.
 
-![Odoo’dagi har bir taklifnoma shablonida mavjud bo‘lgan Onlayn tasdiqlash - imzo opsiyasi.](get_signature_to_validate/signature-feature-quotation-template.png)
+![Odoo'dagi har bir kotirovka shablonida topilgan Online confirmation imzo opsiyasi.](get_signature_to_validate/signature-feature-quotation-template.png)
 
-Oddiy taklifnomalarda esa, onlayn imzo funksiyasi `Boshqa ma’lumotlar` (`Other Info`) tabidagi `Imzo` opsiyasi orqali
-yoqiladi.
+Standart kotirovkalarda onlayn imzo funksiyasi kotirovka formasining `Other Info` bo'limida joylashgan `Signature` opsiyasidir.
 
-![Odoo’dagi taklifnoma formasining Boshqa ma’lumotlar tabidagi Onlayn imzo opsiyasi.](get_signature_to_validate/signature-other-info-tab.png)
+![Odoo'da kotirovka formasining Other Info bo'limidagi onlayn imzo funksiyasi opsiyasi.](get_signature_to_validate/signature-other-info-tab.png)
+::::
 
-:::
+## Onlayn imzolar bilan buyurtmalarni tasdiqlash
 
-## Buyurtmalarni onlayn imzo bilan tasdiqlash
+Mijozlar o'zlarining mijoz portalida kotirovkalarga onlayn kirganlarida, kotirovkada bevosita `Sign \& Pay` tugmasi mavjud.
 
-Mijozlar o‘z mijoz portalidagi taklifnomalarni onlayn ko‘rganlarida, taklifnoma ustida `Imzolash va to‘lash` (
-`Sign & Pay`) tugmasi ko‘rinadi.
+![Odoo Sales'da onlayn kotirovkalarda mavjud bo'lgan Sign and Pay tugmasi.](get_signature_to_validate/sign-and-pay-button.png)
 
-![Odoo Sales’dagi onlayn taklifnomalarda ko‘rinadigan Imzolash va to‘lash tugmasi.](get_signature_to_validate/sign-and-pay-button.png)
+Bosilganda `Validate Order` qalqib chiquvchi oynasi paydo bo'ladi. Ushbu qalqib chiquvchi oynada `Full Name` maydoni ma'lumotlar bazasidagi aloqa ma'lumotlariga asoslanib avtomatik to'ldiriladi.
 
-Bu tugma bosilganda, `Buyurtmani tasdiqlash` (`Validate Order`) degan pop-up oynasi ochiladi. Ushbu oynada
-`To‘liq ism` (`Full Name`) maydoni avtomatik tarzda, bazadagi kontakt ma’lumotlari asosida to‘ldiriladi.
+![Odoo Sales'da onlayn imzolar uchun Validate Order qalqib chiquvchi oynasi.](get_signature_to_validate/validate-order-popup.png)
 
-![Odoo Sales’dagi onlayn imzo uchun Buyurtmani tasdiqlash oynasi.](get_signature_to_validate/validate-order-popup.png)
+Keyin mijozlar quyidagi variantlardan birini tanlash orqali onlayn imzo kiritish imkoniyatiga ega: `Auto`, `Draw` yoki `Load`.
 
-Keyin mijoz quyidagi uch usuldan birini tanlab, onlayn imzo kiritishi mumkin:
+`Auto` Odoo'ga `Full Name` maydonidagi ma'lumotlarga asoslanib avtomatik ravishda onlayn imzo yaratishga imkon beradi. `Draw` mijozga kursordan foydalanib qalqib chiquvchi oynadayoq maxsus imzo yaratishga imkon beradi. `Load` esa mijozga kompyuteridan oldindan yaratilgan imzo faylini yuklashga imkon beradi.
 
-- `Avto` (`Auto`) — Odoo `To‘liq ism` maydonidagi ma’lumotga asoslangan holda avtomatik imzo yaratadi.
-- `Chizish` (`Draw`) — Mijoz kursor yordamida oynaning ichida o‘z imzosini chizadi.
-- `Yuklash` (`Load`) — Mijoz kompyuteridan oldindan yaratilgan imzo faylini yuklaydi.
+Mijoz yuqorida qayd etilgan uchta imzo variantidan birini tanlaganidan so'ng (`Auto`, `Draw` yoki `Load`), ular `Accept \& Sign` tugmasini bosadi.
 
-Mijoz yuqoridagi usullardan birini tanlagach, `Qabul qilish va imzolash` (`Accept & Sign`) tugmasini bosadi.
+`Accept \& Sign` bosilganda, turli to'lov usuli variantlari tanlanishi uchun mavjud bo'ladi (agar *onlayn to'lov* opsiyasi bu kotirovkaga tegishli bo'lsa).
 
-`Qabul qilish va imzolash` bosilgach, agar *onlayn to‘lov* funksiyasi bu taklifnomaga tegishli bo‘lsa, turli to‘lov
-usullari mijozga tanlash uchun taqdim etiladi.
-
-Taklifnoma to‘lanib va tasdiqlangach, agar Odoo’ning *Omborxona* (Inventory) ilovasi o‘rnatilgan bo‘lsa, avtomatik
-tarzda yetkazib berish buyurtmasi yaratiladi.
+Keyin kotirovka to'langanda va tasdiqlanganida, yetkazib berish buyurtmasi avtomatik ravishda yaratiladi (agar Odoo *Inventory* ilovasi o'rnatilgan bo'lsa).

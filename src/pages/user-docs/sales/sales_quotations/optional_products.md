@@ -1,96 +1,66 @@
 # Ixtiyoriy mahsulotlar
 
-Ixtiyoriy mahsulotlardan foydalanish — bu asosiy mahsulot bilan birga bog‘liq mahsulotlarni taklif qilish orqali savdoni
-oshirishga qaratilgan marketing strategiyasidir. Maqsad — mijozga foydali va mos mahsulotlarni taklif etish orqali sotuv
-hajmini oshirishdir.
+Ixtiyoriy mahsulotlardan foydalanish asosiy mahsulot bilan birga mahsulotlarni o'zaro sotishni o'z ichiga olgan marketing strategiyasidir. Maqsad mijozlarga foydali va tegishli mahsulotlarni taklif qilish bo'lib, bu sotuv hajmini oshirishga olib kelishi mumkin.
 
-Masalan, agar mijoz avtomobil sotib olmoqchi bo‘lsa, u massajli o‘rindiqlarni ham buyurtma qilish imkoniyatiga ega
-bo‘ladi yoki bu taklifni rad etib, faqat avtomobilni xarid qilishi mumkin. Ixtiyoriy mahsulotlarni tanlash
-imkoniyatining mavjudligi mijoz tajribasini yanada boyitadi.
+Masalan, agar mijoz mashina sotib olmoqchi bo'lsa, ular massaj o'rindiqlari ham buyurtma qilishni tanlashlari yoki taklifni rad etib, oddiy mashina sotib olishlari mumkin. Ixtiyoriy mahsulotlarni sotib olish tanlovini taqdim etish mijozlar tajribasini yaxshilaydi.
 
-## Taklifnomalarda ixtiyoriy mahsulotlar
+## Kotirovkalardagi ixtiyoriy mahsulotlar
 
-Odoo’ning *Savdo* ilovasida taklifnoma formasidagi `Ixtiyoriy mahsulotlar` (`Optional Products`) tabiga o‘tish orqali
-to‘g‘ridan-to‘g‘ri ixtiyoriy mahsulotlarni qo‘shish yoki tahrirlash mumkin.
+Odoo *Sales* ilovasi bilan kotirovka formasidagi `Optional Products` bo'limiga o'tish orqali ixtiyoriy mahsulotlarni bevosita kotirovkalarga qo'shish yoki o'zgartirish mumkin.
 
-![Odoo Sales’da taklifnomalarga ixtiyoriy mahsulotlarni qo‘shish.](optional_products/optional-products-tab.png)
+![Odoo Sales'da kotirovkalaringizga ixtiyoriy mahsulotlarni qanday qo'shish.](optional_products/optional-products-tab.png)
 
-Taklifnomaga ixtiyoriy mahsulot(lar)ni qo‘shish uchun, `Ixtiyoriy mahsulotlar` tabida `Mahsulot qo‘shish` (
-`Add a product`) tugmasini bosing. Bu amal `Mahsulot` ustunida bo‘sh maydonni ochadi.
+Kotirovkaga ixtiyoriy mahsulot(lar)ni qo'shish uchun kotirovkaning `Optional Products` bo'limida `Add a product` tugmasini bosing. Buni amalga oshirish `Product` ustunida bo'sh maydonni ochadi.
 
-Bo‘sh maydonga bosganingizda, ochiluvchi menyuda mavjud mahsulotlar ro‘yxati paydo bo‘ladi. Tanlangan mahsulot
-taklifnomaga ixtiyoriy mahsulot sifatida qo‘shiladi.
+Bosilganda ma'lumotlar bazasidan mahsulotlar bilan ochiluvchi menyu paydo bo'ladi. Kotirovka shabloniga ixtiyoriy mahsulot sifatida qo'shish uchun ochiluvchi menyudan kerakli mahsulotni tanlang.
 
 ::: tip
 
-Agar kerakli mahsulot ro‘yxatda ko‘rinmasa, mahsulot nomini yozing — u ochiluvchi menyuda paydo bo‘ladi. So‘ng uni
-tanlang va taklifnomaga qo‘shing.
-
-:::
+Agar kerakli mahsulot darhol ko'rinmasa, maydondan kerakli mahsulotning nomini yozing va variant ochiluvchi menyuda paydo bo'ladi. Keyin uni kotirovkaga qo'shish uchun o'sha kerakli mahsulotni tanlang.
+::::
 
 ::: tip
 
-Mahsulot qo‘shilganda, odatiy `Miqdor` qiymati [1] bo‘ladi, ammo uni xohlagan vaqtda o‘zgartirish mumkin.
+Mahsulot qo'shilganda standart `Quantity` [1] bo'ladi, lekin uni istalgan vaqtda tahrirlash mumkin.
+::::
 
-:::
+`Optional Products` bo'limidan istalgan qator elementini o'chirish uchun `🗑️ (axlat qutisi)` belgisini bosing.
 
-`Ixtiyoriy mahsulotlar` tabidagi har qanday qatorni o‘chirish uchun, o‘sha qatorning o‘ng tomonidagi `🗑️` (axlat qutisi)
-ikonkasini bosing.
+Kotirovkaning yuqori chap burchagida joylashgan `Preview` tugmasini bosib, mijozlar elektron pochta orqali oladigan kotirovka va ular buyurtmalariga qo'shishlari mumkin bo'lgan ixtiyoriy mahsulotlar ko'rsatilgan `Options` bo'limining oldindan ko'rishini ochish mumkin.
 
-Taklifnoma yuqori chap burchagidagi `Ko‘rish` (`Preview`) tugmasini bosing — bu orqali mijozga email orqali
-yuboriladigan taklifnomaning oldindan ko‘rinishini ko‘rish mumkin. Taklifnoma ostida `Variantlar` (`Options`) bo‘limi
-mavjud bo‘lib, mijoz u yerdan qo‘shimcha mahsulotlarni buyurtmaga qo‘shishi mumkin.
+![Odoo Sales'da kotirovkalaringizni oldindan ko'rish.](optional_products/optional-products-checkout.png)
 
-![Odoo Sales’da taklifnoma ko‘rinishini oldindan ko‘rish.](optional_products/optional-products-checkout.png)
+Mijozlar ixtiyoriy mahsulot qatorining o'ng tomonida joylashgan `🛒 (xarid savati)` belgisini bosish orqali buyurtmaga turli ixtiyoriy mahsulotlarni qo'shishlari mumkin.
 
-Mijoz qo‘shimcha mahsulotni buyurtmaga qo‘shish uchun mahsulot qatorining o‘ng tomonidagi `🛒` (savat) ikonkasini bosadi.
+Agar mijoz ixtiyoriy mahsulotlarni tanlasa, ular sotuvchi tomonidan boshqariladigan kotirovkaga avtomatik ravishda qo'shiladi.
 
-Agar mijoz ixtiyoriy mahsulot(lar)ni tanlasa, ular avtomatik ravishda savdo vakili tomonidan boshqarilayotgan
-taklifnomaga qo‘shiladi.
+Mijoz buyurtmaga ixtiyoriy mahsulot(lar)ni qo'shganda, sotuvchi o'zgarish haqida va mijoz buyurtmaga kiritgan boshqa har qanday o'zgarish haqida darhol xabardor qilinadi. Bu sotuvchilarga *Sales* ilovasining orqa qismida buyurtma bilan bog'liq hamma narsa haqida xabardor bo'lib turishga imkon beradi.
 
-Mijoz buyurtmaga ixtiyoriy mahsulot qo‘shganida yoki boshqa biror o‘zgarish kiritganida, savdo vakiliga bu haqda darhol
-bildirishnoma yuboriladi. Bu orqali savdo vakillari *Savdo* ilovasining administrator panelida buyurtma holatidan doimiy
-xabardor bo‘lib turishadi.
-
-## Taklifnoma shablonlarida ixtiyoriy mahsulotlar
+## Kotirovka shablonlaridagi ixtiyoriy mahsulotlar
 
 ::: tip
 
-Quyidagi ma'lumotlarni o‘qishdan oldin `quote_template` hujjatini ko‘rib chiqib, taklifnoma shablonlari qanday
-ishlashini yaxshiroq tushunib oling.
+Quyidagi ma'lumotlarni o'qishdan oldin kotirovka shablonlari qanday ishlashini yaxshiroq tushunish uchun `quote_template` hujjatlarini ko'rib chiqishni unutmang.
+::::
 
-:::
+Kotirovka shablonlari uchun ham oddiy kotirovka formasiga o'xshab `Optional Products` bo'limi mavjud bo'lib, unda tegishli mahsulotlar yoki xizmatlar kotirovka shabloniga qo'shilishi mumkin.
 
-Taklifnoma shablonlarida ham, oddiy taklifnoma shaklidagidek, `Ixtiyoriy mahsulotlar` (`Optional Products`) tab mavjud.
-Bu yerda bog‘liq mahsulot yoki xizmatlarni shablonga qo‘shish mumkin.
+Kotirovka shabloniga ixtiyoriy mahsulotlarni qo'shish uchun `Sales app ‣ Configuration ‣ Quotation Templates` ga o'ting. Keyin tahrirlash uchun mavjud kotirovka shablonini tanlang yoki `New` tugmasini bosib yangisini yarating.
 
-Ixtiyoriy mahsulotlarni taklifnoma shabloniga qo‘shish uchun quyidagi yo‘ldan o‘ting:
+Kotirovka shablon formasida `Optional Products` bo'limini bosing. `Optional Products` bo'limi ostida `Add a line` tugmasini bosing va kotirovka shabloniga ixtiyoriy mahsulot sifatida qo'shish uchun kerakli mahsulotni tanlang.
 
-`Savdo ilovasi ‣ Konfiguratsiya ‣ Taklifnoma shablonlari`.
+![Odoo Sales'da kotirovkalaringizni oldindan ko'rish.](optional_products/optional-products-tab-quotation-template.png)
 
-So‘ng, mavjud taklifnoma shablonini tanlang yoki `Yangi` (`New`) tugmasini bosib yangisini yarating.
-
-Taklifnoma shabloni formasida `Ixtiyoriy mahsulotlar` tabini oching. Shu tabda `Qator qo‘shish` (`Add a line`) tugmasini
-bosing va kerakli mahsulotni tanlab, shablonga ixtiyoriy mahsulot sifatida qo‘shing.
-
-![Odoo Sales’da taklifnoma shablonidagi ixtiyoriy mahsulotlar.](optional_products/optional-products-tab-quotation-template.png)
-
-`Ixtiyoriy mahsulotlar` tabida qo‘shilgan mahsulotlar, ushbu taklifnoma shablonidan foydalanilganda taklifnomada
-avtomatik tarzda aks etadi. Shuningdek, bu mahsulotlar mijozga yuborilishdan oldin olib tashlanishi yoki yangilari
-qo‘shilishi mumkin.
+`Optional Products` bo'limiga qo'shilgan mahsulotlar o'sha kotirovka shablon ishlatilganda kotirovkada sukut bo'yicha mavjud bo'ladi. Bu mahsulotlar o'chirilishi va kotirovka mijozga yuborilishidan oldin qo'shimcha mahsulotlar qo'shilishi mumkin.
 
 ::: tip
 
-Ixtiyoriy mahsulot sifatida, mijozni qo‘shimcha mahsulotlar qo‘shishga undaydigan yoki tanlagan mahsulotining qimmatroq
-versiyasini xarid qilishga jalb qiladigan mahsulotlarni taklif qilish eng maqsadga muvofiqdir.
+Mijozni buyurtmasiga qo'shimcha narsalar qo'shishga undaydigan yoki dastlab tanlagan mahsulotning qimmatroq versiyasini sotib olishga undaydigan ixtiyoriy mahsulotlarni taklif qilish eng yaxshisidir.
 
-Masalan, agar mijoz yog‘ochdan yasalgan stul xarid qilayotgan bo‘lsa, ixtiyoriy mahsulot sifatida kafolat yoki charm
-o‘rindiqli yog‘och stul taklif qilish mumkin.
-
-:::
+Masalan, agar mijoz yog'och stul sotib olsa, ba'zi ixtiyoriy mahsulotlar quyidagicha bo'lishi mumkin: u stulga kafolat va/yoki teri o'rindiqli yog'och stul.
+::::
 
 ::: tip
 
-Taklifnoma shabloniga cheksiz miqdorda ixtiyoriy mahsulotlar qo‘shish mumkin.
-
-:::
+Kotirovka shabloniga qancha ixtiyoriy mahsulot qo'shish mumkinligi cheklanmagan.
+::::

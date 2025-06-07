@@ -1,245 +1,160 @@
-# Xarajatlarni mijozlarga qayta hisob-faktura qilish
+# Mijozlarga xarajatlarni qayta hisoblash
 
-Mijoz uchun loyiha ustida ishlayotgan vaqtda, xodimlar ko‘pincha turli xarajatlar uchun o‘z cho‘ntaklaridan mablag‘
-sarflashlari mumkin.
+Mijoz uchun loyiha ustida ishlayotganda, xodimlar ko'pincha loyiha bilan bog'liq turli xarajatlar uchun o'z pullarini sarflashlari kerak bo'ladi.
 
-Masalan, xodim mijozga joyida xizmat ko‘rsatish uchun mehmonxonada turishga majbur bo‘lishi mumkin. Bunday holatda,
-kompaniya sifatida ushbu xarajat mijozga qayta hisob-faktura qilinishi lozim. Odoo yordamida bu kabi xarajatlarni
-mijozga tez va oson qayta hisob-faktura qilish mumkin.
+Masalan, xodim mijozga mahalliy xizmat ko'rsatish paytida mehmonxona uchun o'z pulidan to'lashi kerak bo'lishi mumkin. Kompaniya sifatida bu xarajat mijozga qayta hisoblash kerak. Odoo yordamida bunday xarajatlar loyiha bilan bog'liq mijozga tezda qayta hisoblanishi mumkin.
 
-## Expenses (Xarajatlar) ilovasi
+## Xarajatlar ilovasi
 
-Xarajatni mijozga qayta hisob-faktura qilish uchun, avvalo *Expenses* (Xarajatlar) ilovasi o‘rnatilgan bo‘lishi **shart
-**.
+Mijozga xarajatni qayta hisoblash uchun `Expenses` ilovasi **albatta** o'rnatilgan bo'lishi kerak.
 
-*Expenses* ilovasini o‘rnatish uchun quyidagicha harakat qiling:
+`Expenses` ilovasini o'rnatish uchun `asosiy Odoo boshqaruv paneli ‣ Apps` bo'limiga o'ting va `Expenses` ilovasi blokida `Install` tugmasini bosing. Bosilgach, Odoo ilovani o'rnatadi, sahifani yangilaydi va asosiy Odoo boshqaruv paneliga qaytadi.
 
-`Asosiy Odoo boshqaruv paneli ‣ Ilovalar (Apps)` bo‘limiga o‘ting va *Expenses* ilovasi blokidagi `O‘rnatish (Install)`
-tugmasini bosing. Tugmani bosgandan so‘ng, Odoo ilovani o‘rnatadi, sahifani yangilaydi va sizni boshqaruv paneliga
-qaytaradi.
+## Savdo buyurtmalariga xarajatlar qo'shish
 
-## Xarajatlarni savdo buyurtmalariga qo‘shish
+Boshida `Sales` ilovasida qayta hisoblash mumkin bo'lgan xarajat qo'shilishi mumkin bo'lgan tasdiqlangan savdo buyurtmasi bo'lishi kerak. Yoki boshidan yangi savdo buyurtmasi yarating. Buning uchun `Sales app ‣ New` bo'limiga o'ting. Bu bo'sh taklif formasini ochadi.
 
-Boshlash uchun, *Sales* (Savdo) ilovasida tasdiqlangan savdo buyurtmasi mavjud bo‘lishi kerak, unga qayta hisob-faktura
-qilinadigan xarajat qo‘shilishi mumkin. Yoki, yangidan savdo buyurtmasi yarating. Buning uchun:
+Keyin `Customer` qo'shing va `Order Lines` tabiga `Add a product` tugmasini bosib mahsulot qo'shing. Keyin ochiluvchi menyudan mahsulotni tanlang.
 
-`Sales ilovasi ‣ Yangi` (New) ga o‘ting. Bu orqali bo‘sh kotirovka shakli ochiladi.
+Nihoyat, savdo buyurtmasini tasdiqlash uchun `Confirm` tugmasini bosing.
 
-Shundan so‘ng, `Mijoz`ni kiriting va `Buyurtma satrlari` (Order Lines) yorlig‘iga mahsulot qo‘shish uchun
-`Mahsulot qo‘shish` (Add a product) tugmasini bosing. Keyin, ro‘yxatdan kerakli mahsulotni tanlang.
+![Odoo Sales ilovasida tasdiqlangan savdo buyurtmasi qanday ko'rinadi.](expense/confirmed-sales-order.png)
 
-Oxirida, `Tasdiqlash` (Confirm) tugmasini bosib, buyurtmani tasdiqlang.
+Savdo buyurtmasi tasdiqlangach, xarajat yaratish vaqti keldi.
 
-![Odoo Sales ilovasida tasdiqlangan savdo buyurtmasi qanday ko‘rinishda bo‘lishi.](expense/confirmed-sales-order.png)
+Buning uchun `asosiy Odoo boshqaruv paneli ‣ Expenses` orqali `Expenses` ilovasiga o'ting.
 
-Buyurtma tasdiqlangandan so‘ng, xarajatni yaratish vaqti keldi.
+Keyin `Expenses` boshqaruv panelidan bo'sh xarajatlar formasini ochish uchun `New` tugmasini bosing.
 
-Buning uchun, `Asosiy Odoo boshqaruv paneli ‣ Expenses (Xarajatlar)` bo‘limiga o‘ting.
+![Odoo Expenses ilovasidagi bo'sh xarajatlar formasi.](expense/blank-expenses-form.png)
 
-So‘ng, *Expenses* bosh sahifasida `Yangi` (New) tugmasini bosing. Bu orqali bo‘sh xarajat shakli ochiladi.
+Xarajatlar formasida xarajatga oson murojaat qilish uchun `Description` qo'shing.
 
-![Odoo Expenses ilovasidagi bo‘sh xarajat formasi.](expense/blank-expenses-form.png)
+Keyin `Category` maydonida ochiluvchi menyudan quyidagi variantlardan birini tanlang:
 
-Xarajat formasida, xarajatingizni osongina aniqlash uchun `Tavsif` (Description) kiriting.
-
-So‘ngra, `Toifa` (Category) maydonida quyidagi variantlardan birini tanlang:
-
-- `Aloqa (Communication)`: loyiha/buyurtmaga tegishli har qanday aloqa xarajatlari.
-- `Boshqalar (Others)`: boshqa toifalarga mos kelmaydigan xarajatlar.
-- `Ovqatlanish (Meals)`: loyiha/buyurtmaga tegishli har qanday ovqatlanish xarajatlari.
-- `Sovg‘alar (Gifts)`: loyiha/buyurtmaga tegishli sovg‘alar xarajatlari.
-- `Yoqilg‘i (Mileage)`: loyiha/buyurtmaga tegishli yoqilg‘i xarajatlari.
-- `Sayohat va Yashash (Travel & Accommodation)`: loyiha/buyurtmaga tegishli har qanday safar va yashash xarajatlari.
+- `Communication`: loyiha/buyurtma bilan bog'liq har qanday aloqa turi.
+- `Others`: boshqa kategoriyalarga mos kelmaydigan xarajat.
+- `Meals`: loyiha/buyurtma bilan bog'liq har qanday taom xarajatlari.
+- `Gifts`: loyiha/buyurtma bilan bog'liq har qanday sovg'a xarajatlari.
+- `Mileage`: loyiha/buyurtma bilan bog'liq har qanday yo'l (benzin) xarajatlari.
+- `Travel & Accommodation`: loyiha/buyurtma bilan bog'liq har qanday sayohat yoki turar joy xarajatlari.
 
 ::: tip
 
-Yangi xarajat toifalari xarajat formasining o‘zida yaratilishi mumkin. Buning uchun `Toifa` (Category) maydonidagi
-ochiluvchi ro‘yxatdan `Barchasini ko‘rish` (View All) ni tanlang, so‘ng `Search:Category` ochiluvchi oynasida `Yangi` (
-New) tugmasini bosing.
+Yangi xarajat kategoriyalarini xarajat formasidan yaratish mumkin, buning uchun `Category` maydonining ochiluvchi menyusini bosing, `View All` ni tanlang va `Search:Category` oynasidan `New` tugmasini bosing.
 
-![Odoo Expenses ilovasidagi xarajat toifalarini ko‘rish oynasi.](expense/expense-category-pop-up.png)
+![Odoo Expenses'dagi bo'sh xarajatlar formasidan Search:Category xarajatlar oynasi.](expense/expense-category-pop-up.png)
 :::
 
-Ushbu misoliy ish jarayonida, mijozga mehmonxonada qisqa muddatli turar joy xarajati qayta hisob-faktura qilinadi.
-Shuning uchun `Toifa` sifatida `[TRANS & ACC] Sayohat va Yashash` tanlanadi.
+Mijozga qisqa mehmonxona qolishi uchun qayta hisoblash bo'ladigan ushbu namuna ish oqimi uchun, bu misoldagi `Category` `[TRANS & ACC] Travel & Accommodation` dir.
 
 ::: tip
 
-Quyidagi misolni to‘liq bajarish uchun *Sales* (Savdo), *Accounting* (Buxgalteriya) va *Expense* (Xarajatlar) ilovalari
-o‘rnatilgan bo‘lishi zarur. Ushbu jarayonda tilga olingan barcha maydonlarni ko‘rish/sozlash uchun shu dasturlar kerak
-bo‘ladi.
+Quyidagi misol ish oqimi davomida eslatib o'tilgan barcha maydonlarni ko'rish/o'zgartirish uchun `Sales`, `Accounting` va `Expense` ilovalarni talab qiladi.
 :::
 
-`Toifa` maydonining tagida, xarajat qilinadigan summani `Jami` (Total) maydoniga kiriting.
+`Category` maydoni ostida `Total` maydoniga xarajat qilinadigan summani kiriting.
 
-Keyin, `Jami` maydoniga kiritilgan summaga qandaydir `Qo‘shilgan soliqlar` (Included Taxes) tegishli bo‘lsa, ushbu
-maydondan mos soliq turini tanlang. Odoo bu summadan avtomatik tarzda soliq hisob-kitobini amalga oshiradi.
+Keyin `Total` da biror `Included taxes` borligini belgilang. Agar `Included taxes` maydonidan oldindan sozlangan soliq miqdori tanlansa, Odoo `Total` maydoniga kiritilgan miqdor asosida soliq miqdorini avtomatik hisoblaydi.
 
-Shundan so‘ng, xarajatni qilgan `Xodim`ni tanlang va `Kim tomonidan to‘langan` (`To‘lovchi`) maydonidan biri tanlanadi:
+Keyin xarajat uchun qaysi `Employee` mas'ul ekanligini tanlang va `Paid By` maydonida variantni tanlang: `Employee (to reimburse)` yoki `Company`.
 
-- `Xodim (qaytariladi)` (Employee – to reimburse)
-- `Kompaniya` (Company)
+Bizning holatda xodim mehmonxona uchun o'z pulidan to'lagan, shuning uchun `Employee (to reimburse)` varianti tanlangan.
 
-Ushbu holatda, xodim mehmonxona xarajatini o‘z hisobidan qilgan, shuning uchun `Xodim (qaytariladi)` varianti tanlanadi.
-
-Xarajat formasining o‘ng tomonida `Hisob-faktura raqami` (Bill Reference) kiritish imkoniyati mavjud.
-
-Buning ostida avtomatik to‘ldirilgan `Xarajat sanasi` (Expense Date) va `Hisob` (Account) maydonlari mavjud.
+Xarajatlar formasining o'ng tomonida `Bill Reference` qo'shish imkoniyati mavjud. Uning ostida avtomatik to'ldirilgan `Expense Date` va `Account` maydonlari mavjud.
 
 ::: tip
 
-Agar zarurat bo‘lsa, `Xarajat sanasi` (Expense Date) va `Hisob` (Account) maydonlarini tahrirlash mumkin.
+`Expense Date` va `Account` maydonlarini kerak bo'lsa o'zgartirish mumkin.
 :::
 
-Keyin, `Qayta hisob-faktura qilinadigan mijoz` (`Customer to Reinvoice`) maydoniga kiring. Bo‘sh maydonga bosganingizda
-ochiluvchi ro‘yxat paydo bo‘ladi. Shu ro‘yxatdan ushbu xarajat bog‘lanishi kerak bo‘lgan mos `savdo buyrug‘i`ni tanlang.
-Bu maydon **majburiy** bo‘lib, xarajatni mijozga qayta hisob-faktura qilish uchun to‘ldirilishi kerak.
+Keyin `Customer to Reinvoice` maydonida bo'sh maydonni bosib ochiluvchi menyuni ochish kerak. Ushbu ochiluvchi menyudan ushbu xarajat biriktirilishi kerak bo'lgan tegishli savdo buyurtmasini tanlang. Mijozga xarajatni qayta hisoblash uchun ushbu maydon **albatta** to'ldirilishi kerak.
 
-So‘ngra, `Analitik taqsimot` (`Analytic Distribution`) va `Kompaniya` (`Company`) maydonlarini kerak bo‘lsa o‘zgartirish
-mumkin. Bu maydonlar mijozga qayta hisob-faktura qilish uchun *majburiy emas*, lekin kerak bo‘lsa tahrirlanishi mumkin.
+Nihoyat, `Analytic Distribution` va `Company` maydonlarini o'zgartirish imkoniyati mavjud. Bu maydonlar mijozga qayta hisoblangan xarajatni yakunlash uchun *talab qilinmaydi*, lekin kerak bo'lsa o'zgartirish uchun mavjud.
 
-Shuningdek, xarajat formasining pastki qismida `Izohlar...` (`Notes...`) bo‘limi mavjud bo‘lib, bu yerga ushbu xarajatga
-oid har qanday eslatmalarni yozib qo‘yish mumkin.
+Shuningdek, xarajatlar formasining pastki qismida `Notes...` bo'limi mavjud, bu yerda kerak bo'lsa ushbu xarajat bilan bog'liq har qanday eslatmalar qo'shilishi mumkin.
 
-![To‘ldirilgan xarajat formasi – Odoo Expenses ilovasida.](expense/filled-in-expense-form.png)
+![Odoo Expenses ilovasidagi to'ldirilgan xarajatlar formasi.](expense/filled-in-expense-form.png)
 
-Xarajat formasining yuqori qismida quyidagi tugmalar mavjud:
+Xarajatlar formasining yuqori qismida `Attach Receipt`, `Create Report` va `Split Expense` tugmalari mavjud.
 
-- `Chekni biriktirish` (`Attach Receipt`)
-- `Hisobot yaratish` (`Create Report`)
-- `Xarajatni bo‘lish` (`Split Expense`)
+Agar xarajatga biriktirilishi kerak bo'lgan jismoniy yoki raqamli kvitansiya bo'lsa, `Attach Receipt` tugmasini bosing.
 
-Agar xarajatga tegishli raqamli yoki qog‘ozli chek mavjud bo‘lsa, uni yuklash uchun `Chekni biriktirish` tugmasini
-bosing.
+Agar ushbu xarajat narxini bo'lish kerak bo'lsa, `Split Expense` tugmasini bosing. Bu funksiya bir necha sabablarga ko'ra ishlatilishi mumkin (boshqa xodim bilan xarajatni bo'lish, turli soliq stavkalarini qo'llash va h.k.).
 
-Agar xarajat bir nechta bo‘limga bo‘linishi kerak bo‘lsa (masalan, boshqa xodim bilan xarajatni bo‘lishish, turli soliq
-stavkalariga moslashish va hokazo), `Xarajatni bo‘lish` tugmasidan foydalaning.
+Agar ushbu variantlarning hech biri kerak bo'lmasa, hozirgina sozlangan xarajat hisobotini tasdiqlash uchun `Create Report` tugmasini bosing.
 
-Agar bu variantlar kerak bo‘lmasa, `Hisobot yaratish` tugmasini bosing. Bu orqali hozir kiritilgan xarajat asosida
-hisobot yaratiladi.
+Bu yangi xarajat uchun `Expense Report Summary` ni ochadi.
 
-Bu amal bajarilgach, yangi xarajat uchun `Xarajat Hisoboti Yig‘indisi` (`Expense Report Summary`) sahifasi ochiladi.
+![Odoo Expenses ilovasidagi xarajat hisoboti xulosasi.](expense/expense-report-summary-form.png)
 
-![Odoo Expenses ilovasidagi xarajat hisobotining umumiy ko‘rinishi.](expense/expense-report-summary-form.png)
+Bu yerda xarajat bilan bog'liq tafsilotlar tasdiqlangach, `Submit to Manager` tugmasini bosing. Bu xarajat hisobotini tasdiqlovchi menejerga yuboradi, u xarajatni ko'rib chiqadi.
 
-Bu yerda, xarajatga oid barcha tafsilotlar to‘g‘ri kiritilganiga ishonch hosil qilingandan so‘ng,
-`Rahbar tasdig‘iga yuborish` (`Submit to Manager`) tugmasini bosing. Bu amal orqali xarajat hisobotini tasdiqlovchi
-rahbarga yuborasiz.
+Xarajatni ko'rib chiqish va tasdiqlash uchun mas'ul menejer xarajat bilan bog'liq tafsilotlarni tekshiradi va agar muammolar bo'lmasa, ular `Approve` tugmasini bosadi --- bu tugma *faqat* xodim tomonidan menejerga topshirilgan `Expense Report Summary` ning menejer ko'rinishida paydo bo'ladi.
 
-Xarajatni tasdiqlash uchun mas’ul bo‘lgan rahbar barcha tafsilotlarni ko‘zdan kechiradi. Agar muammo bo‘lmasa, u
-`Tasdiqlash` (`Approve`) tugmasini bosadi — bu tugma **faqat** rahbar tomonidan ko‘rinadigan
-`Xarajat Hisoboti Yig‘indisi` sahifasida paydo bo‘ladi.
+![Menejer Approve tugmasi bilan tasdiqlaydigan xarajat hisoboti xulosasi.](expense/expense-report-summary-manager-approve.png)
 
-![Rahbar ko‘rinishida “Approve” tugmasi bilan xarajat hisobotining umumiy ko‘rinishi.](expense/expense-report-summary-manager-approve.png)
+Tasdiqlangach, `Expense Report Summary` ning yuqori qismidagi tugmalar yana o'zgaradi. Ushbu nuqtada `Expense Report Summary` ning yuqori qismidagi tugmalar quyidagilar: `Post Journal Entries`, `Report in Next Payslip`, `Refuse` va `Reset to Draft`.
 
-Tasdiqlangach, `Xarajat Hisoboti Yig‘indisi` sahifasining yuqori qismida tugmalar yangilanadi. Bu bosqichda quyidagi
-tugmalar mavjud bo‘ladi:
+![Formaning yuqori qismida post journal entries tugmasi bo'lgan xarajat hisoboti xulosasi.](expense/expense-report-summary-manager-post-journal.png)
 
-- `Buxgalteriya yozuvlarini kiritish` (`Post Journal Entries`)
-- `Keyingi ish haqiga kiritish` (`Report in Next Payslip`)
-- `Rad etish` (`Refuse`)
-- `Qoralamaga qaytarish` (`Reset to Draft`)
+Menejer `Expense Report Summary` dan qoniqsa, ular `Post Journal Entries` tugmasini bosadi.
 
-![Post Journal Entries tugmasi ko‘rsatilgan xarajat hisobotining ko‘rinishi.](expense/expense-report-summary-manager-post-journal.png)
-
-Agar rahbar xarajat hisobotini to‘liq tasdiqlasa, `Buxgalteriya yozuvlarini kiritish` (`Post Journal Entries`) tugmasini
-bosadi.
-
-Bu tugma bosilgach, u sahifadan yo‘qoladi va `Xarajatlar` tabidagi `Analitik taqsimot` (`Analytic Distribution`)
-ustunida xarajat bog‘langan `Savdo buyurtmasi` (Sales Order) avtomatik ko‘rinadi. Bu savdo buyurtmasi oldin
-`Qayta hisob-faktura qilinadigan mijoz` maydonida tanlangan edi.
+`Post Journal Entries` bosilgach, bu tugma yo'qoladi va `Expense` tabidagi `Analytic Distribution` ustuni `Customer to Reinvoice` maydonida dastlab xarajatga sozlangan savdo buyurtmasi bilan to'ldiriladi.
 
 ::: warning
 
-Standart holatda `Qayta hisob-faktura qilinadigan mijoz` (`Customer to Reinvoice`) maydoni faqat quyidagi xarajat
-toifalari (`Expense Categories`) uchun yoqilgan bo‘ladi:
+Odatiy bo'lib, `Customer to Reinvoice` maydoni `[TRANS & ACC] Travel & Accommodation`, `[COMM] Communication`, `[FOOD] Meals` va `[MIL] Mileage` xarajat kategoriyalari uchun yoqilgan.
 
-- `[TRANS & ACC] Sayohat va yashash` (`Travel & Accommodation`)
-- `[COMM] Aloqa` (`Communication`)
-- `[FOOD] Ovqatlanish` (`Meals`)
-- `[MIL] Yo‘l xarajatlari` (`Mileage`)
+Shuni ta'kidlash kerakki, `Expenses` ilovasi bilan o'rnatilgan **barcha** standart xarajat kategoriyalarida qayta hisoblash siyosati faollashtirilmagan. Sozlama qo'lda faollashtirilishi kerak bo'lishi mumkin.
 
-Biroq, *Expenses* ilovasi bilan birga keladigan barcha standart xarajat toifalarida `Qayta hisob-fakturalash siyosati`
-yoqilmagan bo‘lishi mumkin. Bu sozlamani **qo‘lda yoqish** kerak bo‘lishi mumkin.
+Buning uchun `Expenses app ‣ Configuration ‣ Expenses Categories` ga o'tib ma'lumotlar bazasidagi barcha xarajat kategoriyalari ro'yxatini ko'ring.
 
-Buning uchun `Xarajatlar` ilovasida quyidagi yo‘ldan o‘ting:
-`Xarajatlar ilovasi ‣ Sozlamalar ‣ Xarajat toifalari` (`Expenses app ‣ Configuration ‣ Expense Categories`)
+Har bir xarajat kategoriyasi uchun qanday tanlovlar qilinganini ko'rish uchun `Re-Invoice Expenses` ustuniga qarang.
 
-Ochilgan ro‘yxatda `Qayta hisob-faktura qilish` (`Re-Invoice Expenses`) ustunini tekshirib chiqing va kerakli toifalar
-uchun ushbu sozlamani yoqing.
+![Odoo Expenses ilovasidagi Expense Categories sahifasidagi Re-Invoice Expenses ustuni.](expense/expense-categories-page.png)
+
+Xarajat kategoriyasini o'zgartirish uchun `Category` maydonidagi `fa-arrow-right` `(o'ng o'q)` ni bosib, ushbu aniq xarajat formasini oching.
+
+`Invoicing` bo'limi ostida, `Re-Invoice Expenses` maydonida `At cost` yoki `Sales price` ni tanlang.
+
+![Odoo Expenses ilovasidagi Expense Category formasidagi Re-Invoice Expenses maydoni.](expense/reinvoice-expenses-field.png)
 :::
 
-![Odoo Expenses ilovasida Xarajat Toifalari sahifasida joylashgan “Qayta hisob-faktura qilish” ustuni.](expense/expense-categories-page.png)
+## Xarajatni qayta hisoblash
 
-Xarajat toifasini o‘zgartirish uchun `Category` maydonidagi
-`→` (`fa-arrow-right`, ya’ni o‘ngga qaragan o‘qcha) tugmasini bosing. Bu bilan siz tanlangan xarajat toifasining o‘ziga
-xos formasi (sahifasi)ga o‘tasiz.
+Ushbu qadamlar tugagach, mijozga xarajatni qayta hisoblashni yakunlash uchun savdo buyurtmasiga qaytish vaqti keldi.
 
-U yerda `Hisob-fakturalash` (`Invoicing`) bo‘limi ostida joylashgan
-`Qayta hisob-faktura qilish` (`Re-Invoice Expenses`) maydonini toping va unga quyidagi qiymatlardan birini tanlang:
+Buning uchun `asosiy Odoo boshqaruv paneli ‣ Sales app` ga o'ting va xarajat uchun qayta hisoblanishi kerak bo'lgan tegishli savdo buyurtmasini tanlang.
 
-- `Asl narxda` (`At cost`) — xarajat mijozga aynan sarflangan qiymatda hisob-faktura qilinadi.
-- `Sotuv narxida` (`Sales price`) — xarajat belgilangan sotuv narxida mijozga qayta hisob-faktura qilinadi.
+Savdo formasida yangi sozlangan xarajat endi `Order Lines` tabida, `Delivered` ustuni to'ldirilgan holda va hisob-faktura qilishga tayyor.
 
-![Odoo Expenses ilovasida xarajat toifasi formasidagi “Qayta hisob-faktura qilish” maydoni.](expense/reinvoice-expenses-field.png)
+![Order Lines tabida hisob-faktura qilishga tayyor sozlangan xarajat bilan savdo buyurtmasi.](expense/sales-order-with-expense-order-lines.png)
 
-## Xarajatni qayta hisob-faktura qilish
+Xarajat tafsilotlarini tasdiqlagach, savdo buyurtmasining yuqori qismidagi `Create Invoice` tugmasini bosing. Bosilgach, `Create invoices` oynasi paydo bo'ladi.
 
-Yuqoridagi bosqichlar yakunlangach, mijozga xarajatni qayta hisob-faktura qilish uchun savdo buyurtmasiga qaytish vaqti
-keldi.
+![Create Invoice bosilganda paydo bo'ladigan create invoices oynasi.](expense/create-invoices-popup.png)
 
-Buning uchun quyidagiga o‘ting:  
-`Asosiy Odoo boshqaruv paneli ‣ Savdo ilovasi (Sales app)`,  
-so‘ngra xarajat qayta hisob-faktura qilinadigan mos savdo buyurtmasini tanlang.
+Ushbu oynadan `Create Invoice` maydonini standart `Regular invoice` variantida qoldiring va `Create Draft Invoice` tugmasini bosing.
 
-Savdo formasida, yangi sozlangan xarajat `Buyurtma satrlari` (`Order Lines`) bo‘limida ko‘rinadi.  
-Uning `Yetkazib berilgan` (`Delivered`) ustuni to‘ldirilgan va hisob-fakturaga tayyor holatda turibdi.
+Bu `Invoice Lines` tabida *faqat* xarajat ko'rsatilgan `Customer Invoice Draft` ni ochadi.
 
-![Buyurtma satrlari bo‘limida hisob-fakturaga tayyor xarajat mavjud bo‘lgan savdo buyurtmasi.](expense/sales-order-with-expense-order-lines.png)
+![Formaning Invoice Lines tabida xarajat bilan mijoz hisob-faktura qoralamasi.](expense/customer-invoice-draft-with-expense.png)
 
-Xarajat tafsilotlarini tekshirganingizdan so‘ng, savdo formasining yuqori qismidagi  
-`Hisob-faktura yaratish` (`Create Invoice`) tugmasini bosing.  
-Shunda `Hisob-faktura yaratish` (`Create invoices`) pop-up oynasi ochiladi.
+Agar xarajat bilan bog'liq barcha ma'lumotlar to'g'ri bo'lsa, hisob-fakturani tasdiqlash uchun `Confirm` tugmasini bosing. Bu hisob-faktura holatini `Draft` dan `Posted` ga o'tkazadi.
 
-![Hisob-faktura yaratish uchun ochilgan pop-up oyna.](expense/create-invoices-popup.png)
+Hisob-fakturani mijozga yuborish uchun `Send & Print` tugmasini bosing. Bu xabar tanasida oldindan sozlangan xabar va PDF hisob-faktura bilan `Send` oynasini ochadi. Xabar ko'rib chiqilishi va kerak bo'lsa o'zgartirilishi mumkin.
 
-Bu oynada, `Hisob-faktura turi` (`Create Invoice`) maydonini o‘zgartirmasdan  
-`Oddiy hisob-faktura` (`Regular invoice`) holida qoldiring va  
-`Qoralama hisob-faktura yaratish` (`Create Draft Invoice`) tugmasini bosing.
+Tayyor bo'lgach, hisob-fakturani mijozga yuborish uchun `Send & Print` tugmasini bosing. Bosilgach, oyna yo'qoladi va Odoo xabar/hisob-fakturani mijozga yuboradi. Qo'shimcha ravishda, hisob-fakturaning PDF fayli yozib olish va/yoki chop etish maqsadida avtomatik yuklab olinadi.
 
-Shunda sizga mijoz uchun `Qoralama hisob-faktura` (`Customer Invoice Draft`) ko‘rsatiladi,  
-unda faqat xarajat `Hisob-faktura satrlari` (`Invoice Lines`) bo‘limida aks etadi.
+`Customer Invoice` ga qaytib, mijoz hisoblangan xarajat uchun to'laganda `Register Payment` tugmasini bosing.
 
-![Hisob-faktura satrlari bo‘limida xarajati bor qoralama mijoz hisob-fakturasi.](expense/customer-invoice-draft-with-expense.png)
+![Register payment tugmasi bosilishga tayyor mijoz hisob-fakturasi.](expense/customer-invoice-register-payment.png)
 
-Agar xarajatga oid barcha ma’lumotlar to‘g‘ri bo‘lsa,  
-`Tasdiqlash` (`Confirm`) tugmasini bosing.  
-Bu bilan hisob-faktura holati `Qoralama` (`Draft`) dan `Yuborilgan` (`Posted`) holatiga o‘tadi.
+`Register Payment` bosilgach, `Register Payment` oynasi paydo bo'ladi. Ushbu oynada kerakli maydonlar to'g'ri ma'lumotlar bilan avtomatik to'ldiriladi. Ma'lumotlarni ko'rib chiqqach, `Create Payment` tugmasini bosing.
 
-Hisob-fakturani mijozga yuborish uchun `Yuborish va chop etish` (`Send & Print`) tugmasini bosing.  
-Shunda `Yuborish` (`Send`) oynasi ochiladi, unda tayyorlangan xabar va PDF hisob-faktura mavjud bo‘ladi.  
-Xabarni ko‘rib chiqish va zarurat bo‘lsa o‘zgartirish mumkin.
+![Odoo Sales'dagi mijoz hisob-fakturasidagi register payment oynasi.](expense/register-payment-popup.png)
 
-Tayyor bo‘lgach, `Yuborish va chop etish` tugmasini bosing.  
-Shundan so‘ng pop-up oyna yopiladi, xabar va hisob-faktura mijozga yuboriladi.  
-Shuningdek, hisob-faktura PDF shaklida avtomatik yuklab olinadi.
+`Create Payment` bosilgach, oyna yo'qoladi va hisob-fakturaning yuqori o'ng burchagida yashil `In Payment` belgisi paydo bo'ladi, bu hisob-faktura to'liq to'langanligini bildiradi. Shunday qilib, ish oqimi yakunlanadi.
 
-`Mijoz hisob-fakturasi` sahifasida, mijoz xarajatni to‘laganidan so‘ng,  
-`To‘lovni qayd etish` (`Register Payment`) tugmasini bosing.
-
-![Mijoz hisob-fakturasida to‘lovni qayd etish tugmasi.](expense/customer-invoice-register-payment.png)
-
-`To‘lovni qayd etish` (`Register Payment`) tugmasi bosilganda,  
-`To‘lovni qayd etish` oynasi ochiladi.  
-Ushbu pop-up oynada zarur maydonlar to‘g‘ri ma’lumotlar bilan avtomatik to‘ldirilgan bo‘ladi.  
-Ma’lumotlarni ko‘rib chiqqach, `To‘lovni yaratish` (`Create Payment`) tugmasini bosing.
-
-![Odoo Sales’dagi mijoz hisob-fakturasida ochilgan to‘lovni qayd etish pop-up oynasi.](expense/register-payment-popup.png)
-
-`To‘lovni yaratish` tugmasi bosilgach, pop-up oyna yopiladi va  
-hisob-fakturaning yuqori o‘ng burchagida yashil `To‘landi` (`In Payment`) belgilari paydo bo‘ladi.  
-Bu hisob-faktura to‘liq to‘langanini bildiradi.
-
-Shu bilan butun ish jarayoni yakunlanadi.
-
-![To‘lov amalga oshirilganini bildiruvchi “To‘landi” banneri tushgan hisob-faktura.](expense/expense-invoice-in-payment-banner.png)
+![Odoo Sales'dagi mijoz hisob-fakturasidagi register payment oynasi.](expense/expense-invoice-in-payment-banner.png)

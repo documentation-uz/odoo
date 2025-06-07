@@ -65,7 +65,7 @@ Bu yerdan bir necha konfiguratsiya variantlari mavjud:
 ![Odoo Sales'da 5 dollarlik minimal daromad bilan narx oshirish xarajatini shaklllantirish qanday ko'rinishi.](pricing/formula-markup-cost-example.png)
 :::
 
-::: example
+::: tip
 20% chegirmalarni qo'llash uchun, narxlarni 9.99 gacha yumaloqlash bilan, `Based on` maydonini `Sales Price` ga, `Discount` maydonini [20] ga, `Extra Fee` maydonini [-0.01] ga va `Rounding Method` maydonini [10] ga o'rnating.
 
 ![Odoo Sales'da narxlari 9.99 gacha yumalaqlangan 20% chegirma misoli.](pricing/formula-discount-example.png)

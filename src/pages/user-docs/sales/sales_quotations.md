@@ -1,76 +1,53 @@
-# Savdo taklifnomalari
+# Sotuv kotirovkalari
 
-*Savdo taklifnomasi* yoki quote — bu mijozga yuboriladigan hujjat bo‘lib, unda mahsulot va xizmatlar uchun taxminiy
-narxlar hamda shartlar bayon qilinadi. Agar mijoz taklifnomani qabul qilsa, u *savdo buyurtmasi*ga aylantiriladi. Bu esa
-yetkazib berish va hisob-faktura chiqarishdan oldingi yakuniy kelishuv hisoblanadi.
+*Sotuv kotirovkasi* yoki taklif - bu mijozga yuborilgan hujjat bo'lib, tovarlar va xizmatlar uchun taxminiy xarajatlar va shartlarni belgilaydi. Qabul qilingandan so'ng, kotirovka sotuv buyurtmasiga aylantirilishi mumkin, bu esa yetkazib berish va hisob-faktura berishdan oldin yakuniy kelishuv vazifasini bajaradi.
 
-## Savdo jarayoni sharhi
+## Sotuv jarayoniga umumiy koʻrinish
 
-Taklifnomalar mijoz bilan munosabatlarning turli bosqichlarini — dastlabki qiziqishdan tortib to to‘lovgacha —
-bog‘lovchi kengroq savdo jarayonining bir qismidir.
+Kotirovkalar mijozlar bilan muloqotning dastlabki qiziqishdan to'lovgacha bo'lgan turli bosqichlarini bog'laydigan kengroq sotuv jarayoniga mos keladi.
 
-Odatdagi savdo jarayoni quyidagi bosqichlarni o‘z ichiga oladi:
+Odatiy jarayon quyidagi qadamlarni bajaradi:
 
-1. *Taklifnoma* — Mijozga mahsulot tafsilotlari va narxlari ko‘rsatilgan tijorat taklifi yuboriladi.
-2. *Savdo buyurtmasi* — Mijoz taklifnomani qabul qilgach, sotuv tasdiqlanadi va avtomatik savdo buyurtmasi yaratiladi.
-3. *Yetkazib berish* (agar mavjud bo‘lsa) — Mahsulotlar yuboriladi yoki xizmatlar ko‘rsatiladi.
-4. *Hisob-faktura* — Savdo buyurtmasi yoki yetkazilgan mahsulot/xizmatlar asosida yakuniy hisob-faktura chiqariladi.
-5. *To‘lov* — Mijoz hisob-fakturani to‘laydi va savdo sikli yakunlanadi.
+1. *Kotirovka*: Mijozga mahsulot tafsilotlari va narxlar bilan yuborilgan taklif.
+2. *Sotuv buyurtmasi*: Mijoz kotirovkani qabul qilganda avtomatik ravishda yaratiladi va sotuvni tasdiqlaydi.
+3. *Yetkazib berish* (agar tegishli bo'lsa): Mahsulotlar jo'natiladi yoki xizmatlar ko'rsatiladi.
+4. *Hisob-faktura*: Sotuv buyurtmasi yoki yetkazib berilgan mahsulotlar/xizmatlar asosida yakuniy hisob-faktura beriladi.
+5. *To'lov*: Mijoz hisob-fakturani to'laydi va sotuv tsiklini yakunlaydi.
 
-Ushbu jarayon korxonalarga savdoning butun hayotiy siklini kuzatishda yordam beradi va barcha ilovalarda ma’lumotlarning
-uzluksizligini ta’minlaydi.
+Ushbu jarayon biznesga sotuvning to'liq hayot tsiklini kuzatib borishga yordam beradi va ilovalar bo'ylab ma'lumotlarning izchilligini saqlaydi.
 
-Odoo’da taklifnomalar **Savdo** ilovasida yaratiladi va sozlanadi. Ular quyidagi boshqa ilovalardan ham avtomatik
-yaratilishi mumkin:
+Odoo-da kotirovkalar **Sales** ilovasida sozlashadi. Ular shuningdek, sotuv jarayonining bir qismi sifatida boshqa ilovalardan ham yaratilishi mumkin:
 
-- **CRM**:  
-  Potensial bitimlarni kuzatish uchun `imkoniyatlarni taklifnomaga aylantiring`.
+- **CRM**: Potentsial bitimlarni kuzatib borish uchun `imkoniyatlarni takliflarga aylantiring`.
+- **Helpdesk**: Pullik xizmatlar yoki mahsulotlarni taklif qilishda `chiptalardan takliflar yarating`.
+- **Subscriptions**: Avtomatik hisob-kitob tsiklini boshlashdan oldin `takrorlanuvchi xizmatlarni taklif qiling`.
 
-- **Yordam markazi (Helpdesk)**:  
-  Pullik xizmat yoki mahsulot taklif qilishda `chiptalardan taklifnomalar yarating`.
+## Biznes bitimlaridagi sotuv kotirovkalari
 
-- **Obunalar (Subscriptions)**:  
-  Avtomatik hisob-faktura jarayonini boshlashdan oldin `takrorlanuvchi xizmatlarni taklif qiling`.
+Sotuv kotirovkalari sotuv jarayonining asosiy qadami bo'lib xizmat qiladi, mijozning tovarlar va xizmatlar haqidagi dastlabki so'rovi bilan to'lov va yetkazib berish uchun yakuniy shartnoma kelishuvi o'rtasidagi bo'shliqni to'ldiradi. Kotirovka shuningdek, narxlarda shaffoflikni ta'minlaydi, bu esa har ikki tomonning majburiyat olishdan oldin shartlarni muhokama qilish va yakunlashiga yordam beradi.
 
-## Biznes kelishuvlarida savdo taklifnomalari
+Sotuv kotirovkalari biznes operatsiyalarida hal qiluvchi rol o'ynaydi: oxirgi mijozga nima sotilayotganining doirasi va narxini belgilash; narx, yetkazib berish, soliq va to'lov shartlari bo'yicha aniq kutishlarni o'rnatish; va kelishilishdan oldin biznes bitimini muhokama qilish mumkin bo'lgan hujjatlashtirilgan bosqichni ta'minlash orqali.
 
-Savdo taklifnomalari savdo jarayonida muhim bosqich hisoblanadi. Ular mijozning mahsulot va xizmatlarga bo‘lgan
-dastlabki qiziqishidan boshlab, yakuniy to‘lov va yetkazib berish bo‘yicha kelishuvgacha bo‘lgan oraliqni to‘ldiradi.
-Taklifnomalar narx borasida shaffoflikni ta’minlab, ikki tomon uchun muzokaralar olib borish va kelishuvdan oldin
-shartlarni aniqlashtirish imkonini beradi.
+## Sotuv kotirovkasining asosiy tarkibiy qismlari
 
-Savdo taklifnomalari biznes bitimlarda quyidagi jihatlar bilan muhim rol o‘ynaydi:
+Yaxshi tuzilgan sotuv kotirovkasi quyidagilardan iborat:
 
-- Sotilayotgan mahsulot yoki xizmat doirasini va narxini aniqlab beradi
-- Narx, yetkazib berish, soliq va to‘lov shartlarini oldindan belgilaydi
-- Bitimni rasmiylashtirishdan oldin muzokara olib borish imkonini beruvchi hujjatli bosqichni yaratadi
+- Kotirovka raqami va sanasi: Kuzatish va ma'lumotnoma uchun noyob identifikator, shuningdek `berilish va amal qilish muddati sanalari`. Odoo **Sales** ilovasida kotirovka raqami tasdiqlangandan so'ng standart nomlash konventsiyasi ostida tayinlanadi.
+- Mijoz ma'lumotlari: Mijoz nomi va aloqa ma'lumotlari, shuningdek `hisob-faktura va yetkazib berish manzili`.
+- Mahsulotlar va xizmatlar: Xarid qilinadigan narsalarning batafsil ro'yxati, shu jumladan miqdor, spetsifikatsiyalar (kerak bo'lganda) va birlik narxi.
+- To'lov shartlari va `narx ro'yxatlari`: Ushbu maxsus sotuv kotirovkasining narxlash va to'lovi uchun sozlangan kelishuvlar va qoidalar.
+- Maxsus narxlash: Alohida mahsulot qatorlarini yangilash va/yoki o'zgartirish uchun ixtiyoriy `chegirmalar va reklama narxlari`.
+- Umumiy xarajat va valyuta: Tegishli soliqlar bilan birga mahsulot yoki xizmat va yetkazib berish narxlarining umumiy summasi.
 
-## Savdo taklifnomasining asosiy tarkibiy qismlari
+Odoo-ning **Sales** ilovasida kotirovkalar qo'shimcha tafsilotlar va konfiguratsiyalarni o'z ichiga olishi mumkin, masalan `kotirovka shablonlari`, `obuna rejalari` va `sotuv jamoasi yo'naltiruvchi nomi`.
 
-Yaxshi tuzilgan savdo taklifnomasi quyidagi elementlarni o‘z ichiga oladi:
+![Odoo **Sales** ilovasida tasdiqlanmagan sotuv kotirovkasi.](sales_quotations/sales-quotation.png)
 
-- **Taklifnoma raqami va sanasi**: Taklifnomani kuzatish va havola qilish uchun noyob identifikator. Shuningdek,
-  `berilgan va amal qilish sanalari` ham ko‘rsatiladi. Odoo **Sales** ilovasida taklifnoma raqami tasdiqlangandan so‘ng,
-  belgilangan nomlash tartibi asosida avtomatik belgilanadi.
-
-- **Mijoz ma’lumotlari**: Mijozning ismi, aloqa ma’lumotlari hamda `hisob-faktura va yetkazib berish manzili`.
-
-- **Mahsulot va xizmatlar**: Xarid qilinadigan mahsulotlarning ro‘yxati, miqdori, texnik tavsiflari (zarur bo‘lsa) va
-  birlik narxi bilan birga.
-
-- **To‘lov shartlari va `narxlar ro‘yxati`**: Ushbu savdo taklifnomasiga tegishli to‘lov va narx siyosati bo‘yicha
-  kelishuvlar.
-
-- **Maxsus narxlar**: Ixtiyoriy `chegirmalar va aksiyalar` orqali mahsulot qatorlarini yangilash yoki sozlash mumkin.
-
-- **Umumiy qiymat va valyuta**: Mahsulot/xizmat narxi, yetkazib berish haqi va tegishli soliqlarni o‘z ichiga olgan
-  umumiy qiymat.
-
-Odoo’ning **Sales** ilovasida taklifnomalar quyidagi kabi qo‘shimcha ma’lumot va sozlamalarni ham o‘z ichiga olishi
-mumkin:
-
-- `Taklifnoma shablonlari`
-- `Obuna rejasi`
-- `Savdo guruhining yo‘naltiruvchi ismi`
-
-![Odoo **Sales** ilovasida hali tasdiqlanmagan savdo taklifnomasi.](sales_quotations/sales-quotation.png)
+::: 
+sales_quotations/create_quotations sales_quotations/quote_template
+sales_quotations/optional_products
+sales_quotations/get_signature_to_validate
+sales_quotations/get_paid_to_validate sales_quotations/deadline
+sales_quotations/different_addresses
+sales_quotations/orders_and_variants sales_quotations/pdf_quote_builder
+:::

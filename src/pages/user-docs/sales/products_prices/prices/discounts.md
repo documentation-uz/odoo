@@ -39,7 +39,7 @@ Savdo buyurtmasida `Discount` tugmasini bosish qalqib chiquvchi oynani ochadi, b
 
 - `Global Discount`: Buyurtmaga belgilangan chegirma foiziga teng yig'ma qiymatga ega chegirma mahsulot qatorini qo'shish.
 
-  ::: example
+  ::: tip
   10% global chegirma jami summasi 4200$ bo'lgan savdo buyurtmasining oxirgi qatoriga -420$ qiymatli chegirma qatori qo'shish orqali qo'shiladi (bu 4200$ ning 10% i).
 
   ![Odoo Savdo ilovasida qo'llaniladigan global chegirma varianti bilan savdo buyurtmasi.](discounts/global-discount-option.png)
