@@ -265,6 +265,360 @@ export default defineConfig({
                     link: '/user-docs/sales/commissions'
                 },
             ],
+            '/user-docs/inventory': [
+                {
+                    "text": "Product management",
+                    "link": "/user-docs/inventory/product_management",
+                    "items": [
+                        {
+                            "text": "Configure product",
+                            "link": "/user-docs/inventory/product_management/configure",
+                            "items": [
+                                {
+                                    "text": "Packages",
+                                    "link": "/user-docs/inventory/product_management/configure/package"
+                                },
+                                {
+                                    "text": "Packaging",
+                                    "link": "/user-docs/inventory/product_management/configure/packaging"
+                                },
+                                {
+                                    "text": "Product type",
+                                    "link": "/user-docs/inventory/product_management/configure/type"
+                                },
+                                {
+                                    "text": "Units of measure",
+                                    "link": "/user-docs/inventory/product_management/configure/uom"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Inventory valuation",
+                            "link": "/user-docs/inventory/product_management/inventory_valuation",
+                            "items": [
+                                {
+                                    "text": "Automatic inventory valuation",
+                                    "link": "/user-docs/inventory/product_management/inventory_valuation/inventory_valuation_config"
+                                },
+                                {
+                                    "text": "Landed costs",
+                                    "link": "/user-docs/inventory/product_management/inventory_valuation/landed_costs"
+                                },
+                                {
+                                    "text": "Using inventory valuation",
+                                    "link": "/user-docs/inventory/product_management/inventory_valuation/using_inventory_valuation"
+                                },
+                                {
+                                    "text": "Valuation by lots/serial numbers",
+                                    "link": "/user-docs/inventory/product_management/inventory_valuation/valuation_by_lots"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Product tracking",
+                            "link": "/user-docs/inventory/product_management/product_tracking",
+                            "items": [
+                                {
+                                    "text": "Expiration dates",
+                                    "link": "/user-docs/inventory/product_management/product_tracking/expiration_dates"
+                                },
+                                {
+                                    "text": "Lot numbers",
+                                    "link": "/user-docs/inventory/product_management/product_tracking/lots"
+                                },
+                                {
+                                    "text": "Reassign lot/serial numbers",
+                                    "link": "/user-docs/inventory/product_management/product_tracking/reassign"
+                                },
+                                {
+                                    "text": "Serial numbers",
+                                    "link": "/user-docs/inventory/product_management/product_tracking/serial_numbers"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "text": "Warehouses and storage",
+                    "link": "/user-docs/inventory/warehouses_storage",
+                    "items": [
+                        {
+                            "text": "Inventory management",
+                            "link": "/user-docs/inventory/warehouses_storage/inventory_management",
+                            "items": [
+                                {
+                                    "text": "Inventory adjustments",
+                                    "link": "/user-docs/inventory/warehouses_storage/inventory_management/count_products"
+                                },
+                                {
+                                    "text": "Cycle counts",
+                                    "link": "/user-docs/inventory/warehouses_storage/inventory_management/cycle_counts"
+                                },
+                                {
+                                    "text": "Product catalog",
+                                    "link": "/user-docs/inventory/warehouses_storage/inventory_management/product_catalog"
+                                },
+                                {
+                                    "text": "Scrap inventory",
+                                    "link": "/user-docs/inventory/warehouses_storage/inventory_management/scrap_inventory"
+                                },
+                                {
+                                    "text": "Locations",
+                                    "link": "/user-docs/inventory/warehouses_storage/inventory_management/use_locations"
+                                },
+                                {
+                                    "text": "Warehouses",
+                                    "link": "/user-docs/inventory/warehouses_storage/inventory_management/warehouses"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Replenishment",
+                            "link": "/user-docs/inventory/warehouses_storage/replenishment",
+                            "items": [
+                                {
+                                    "text": "Lead times",
+                                    "link": "/user-docs/inventory/warehouses_storage/replenishment/lead_times"
+                                },
+                                {
+                                    "text": "Replenish on order (MTO)",
+                                    "link": "/user-docs/inventory/warehouses_storage/replenishment/mto"
+                                },
+                                {
+                                    "text": "Reordering rules",
+                                    "link": "/user-docs/inventory/warehouses_storage/replenishment/reordering_rules"
+                                },
+                                {
+                                    "text": "Replenishment report",
+                                    "link": "/user-docs/inventory/warehouses_storage/replenishment/report"
+                                },
+                                {
+                                    "text": "Inter-warehouse replenishment",
+                                    "link": "/user-docs/inventory/warehouses_storage/replenishment/resupply_warehouses"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Reporting",
+                            "link": "/user-docs/inventory/warehouses_storage/reporting",
+                            "items": [
+                                {
+                                    "text": "Stock valuation dashboard",
+                                    "link": "/user-docs/inventory/warehouses_storage/reporting/aging"
+                                },
+                                {
+                                    "text": "Forecasted report",
+                                    "link": "/user-docs/inventory/warehouses_storage/reporting/forecast"
+                                },
+                                {
+                                    "text": "Locations dashboard",
+                                    "link": "/user-docs/inventory/warehouses_storage/reporting/locations"
+                                },
+                                {
+                                    "text": "Moves history dashboard",
+                                    "link": "/user-docs/inventory/warehouses_storage/reporting/moves_history"
+                                },
+                                {
+                                    "text": "Stock report",
+                                    "link": "/user-docs/inventory/warehouses_storage/reporting/stock"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "text": "Shipping and receiving",
+                    "link": "/user-docs/inventory/shipping_receiving",
+                    "items": [
+                        {
+                            "text": "Inbound and outbound flows",
+                            "link": "/user-docs/inventory/shipping_receiving/daily_operations",
+                            "items": [
+                                {
+                                    "text": "Organize a cross-dock in a warehouse",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/cross_dock"
+                                },
+                                {
+                                    "text": "Three-step delivery",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/delivery_three_steps"
+                                },
+                                {
+                                    "text": "Dropshipping",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/dropshipping"
+                                },
+                                {
+                                    "text": "Consignment: buy and sell stock without owning it",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/owned_stock"
+                                },
+                                {
+                                    "text": "Putaway rules",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/putaway"
+                                },
+                                {
+                                    "text": "One-step receipt and delivery",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step"
+                                },
+                                {
+                                    "text": "Two-step receipt and delivery",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/receipts_delivery_two_steps"
+                                },
+                                {
+                                    "text": "Three-step receipt",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/receipts_three_steps"
+                                },
+                                {
+                                    "text": "Sell stock from multiple warehouses using virtual locations",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/stock_warehouses"
+                                },
+                                {
+                                    "text": "Storage categories",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/storage_category"
+                                },
+                                {
+                                    "text": "Routes and push/pull rules",
+                                    "link": "/user-docs/inventory/shipping_receiving/daily_operations/use_routes"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Picking methods",
+                            "link": "/user-docs/inventory/shipping_receiving/picking_methods",
+                            "items": [
+                                {
+                                    "text": "Batch picking",
+                                    "link": "/user-docs/inventory/shipping_receiving/picking_methods/batch"
+                                },
+                                {
+                                    "text": "Cluster picking",
+                                    "link": "/user-docs/inventory/shipping_receiving/picking_methods/cluster"
+                                },
+                                {
+                                    "text": "Wave transfers",
+                                    "link": "/user-docs/inventory/shipping_receiving/picking_methods/wave"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Removal strategies",
+                            "link": "/user-docs/inventory/shipping_receiving/removal_strategies",
+                            "items": [
+                                {
+                                    "text": "Closest location removal",
+                                    "link": "/user-docs/inventory/shipping_receiving/removal_strategies/closest_location"
+                                },
+                                {
+                                    "text": "FEFO removal",
+                                    "link": "/user-docs/inventory/shipping_receiving/removal_strategies/fefo"
+                                },
+                                {
+                                    "text": "FIFO removal",
+                                    "link": "/user-docs/inventory/shipping_receiving/removal_strategies/fifo"
+                                },
+                                {
+                                    "text": "Least packages removal",
+                                    "link": "/user-docs/inventory/shipping_receiving/removal_strategies/least_packages"
+                                },
+                                {
+                                    "text": "LIFO removal",
+                                    "link": "/user-docs/inventory/shipping_receiving/removal_strategies/lifo"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Reservation methods",
+                            "link": "/user-docs/inventory/shipping_receiving/reservation_methods",
+                            "items": [
+                                {
+                                    "text": "At confirmation reservation",
+                                    "link": "/user-docs/inventory/shipping_receiving/reservation_methods/at_confirmation"
+                                },
+                                {
+                                    "text": "Before scheduled date reservation",
+                                    "link": "/user-docs/inventory/shipping_receiving/reservation_methods/before_scheduled_date"
+                                },
+                                {
+                                    "text": "Manual reservation",
+                                    "link": "/user-docs/inventory/shipping_receiving/reservation_methods/manually"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Delivery methods",
+                            "link": "/user-docs/inventory/shipping_receiving/setup_configuration",
+                            "items": [
+                                {
+                                    "text": "Bpost integration",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/bpost"
+                                },
+                                {
+                                    "text": "How to cancel a shipping request to a shipper?",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/cancel"
+                                },
+                                {
+                                    "text": "DHL integration",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/dhl_credentials"
+                                },
+                                {
+                                    "text": "Dispatch management system",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/dispatch"
+                                },
+                                {
+                                    "text": "Envia.com integration",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/envia_shipping"
+                                },
+                                {
+                                    "text": "FedEx integration",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/fedex"
+                                },
+                                {
+                                    "text": "Shipping cost invoicing",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/invoicing"
+                                },
+                                {
+                                    "text": "Change shipping label size",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/label_type"
+                                },
+                                {
+                                    "text": "Print shipping labels",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/labels"
+                                },
+                                {
+                                    "text": "Multi-package shipments",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/multipack"
+                                },
+                                {
+                                    "text": "Add a new delivery method",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/new_delivery_method"
+                                },
+                                {
+                                    "text": "Printable delivery PDFs",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/print_on_validation"
+                                },
+                                {
+                                    "text": "Sendcloud integration",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/sendcloud_shipping"
+                                },
+                                {
+                                    "text": "Starshipit shipping",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/starshipit_shipping"
+                                },
+                                {
+                                    "text": "Third-party shipping carriers",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/third_party_shipper"
+                                },
+                                {
+                                    "text": "UPS integration",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/ups_credentials"
+                                },
+                                {
+                                    "text": "Zebra label configuration",
+                                    "link": "/user-docs/inventory/shipping_receiving/setup_configuration/zebra"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
             '/user-docs/manufacturing/': [
                 {
                     text: 'Get started',

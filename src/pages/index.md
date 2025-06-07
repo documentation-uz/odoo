@@ -22,6 +22,11 @@ features:
     details: From quotations to invoices
     link: /user-docs/sales/sales_quotations
     linkText: Learn more
+  - icon: <img src="https://download.odoocdn.com/icons/stock/static/description/icon.svg"/>
+    title: Inventory
+    details: Manage your stock and logistics activities
+    link: /user-docs/inventory/product_management/configure
+    linkText: Learn more
   - icon: <img src="https://download.odoocdn.com/icons/hr/static/description/icon.svg"/>
     title: Employees
     details: Centralize employee information
