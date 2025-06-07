@@ -1,203 +1,122 @@
-# Packaging
+# Qadoqlash
 
-In Odoo *Inventory*, *packaging* refers to disposable containers holding
-multiple units of a specific product.
+Odoo *Inventory*da *qadoqlash* - bu muayyan mahsulotning bir nechta birliklarini saqlovchi bir marta ishlatiladigan konteynerlarni anglatadi.
 
-For example, different packages for cans of soda, such as a 6-pack, a
-12-pack, or a case of 36, **must** be configured on the individual
-product form. This is because packagings are product specific, not
-generic.
+Masalan, gazlangan ichimlik bankalari uchun turli paketlar, masalan 6 ta o'ram, 12 ta o'ram yoki 36 tali quti kabi, **albatta** alohida mahsulot formasida sozlanishi kerak. Buning sababi shundaki, qadoqlashlar mahsulotga xos bo'lib, umumiy emas.
 
 ::: tip
 
-Packaging can be used in conjunction with Odoo
-`Barcode `. When receiving products from suppliers, scanning the
-packaging barcode automatically adds the number of units in the
-packaging to the internal count of the product.
+Qadoqlashni Odoo `Barcode` bilan birga ishlatish mumkin. Yetkazib beruvchilardan mahsulotlarni qabul qilishda, qadoqlash shtrix-kodini skanerlash avtomatik ravishda qadoqlashdagi birliklar sonini mahsulotning ichki hisobiga qo'shadi.
 ::::
 
-## Configuration
+## Sozlash
 
-To use packagings, navigate to
-`Inventory app ‣ Configuration ‣ Settings`. Then, under the `Products` heading, enable the
-`Product Packagings` feature, and
-click `Save`.
+Qadoqlashlardan foydalanish uchun `Inventory app ‣ Configuration ‣ Settings`ga o'ting. Keyin `Products` sarlavhasi ostida `Product Packagings` funksiyasini yoqing va `Save`ni bosing.
 
 ![Enable packagings by selecting \"Product Packagings\".](packaging/enable-packagings.png)
 
-## Create packaging 
+## Qadoqlash yaratish 
 
-Packagings can be created directly on the product form, or from the
-`Product Packagings` page.
+Qadoqlashlar to'g'ridan-to'g'ri mahsulot formasida yoki `Product Packagings` sahifasidan yaratilishi mumkin.
 
-### From product form
+### Mahsulot formasidan
 
-Create packagings on a product form by going to
-`Inventory app ‣ Products ‣
-Products`, and select the
-desired product.
+Mahsulot formasida qadoqlashlar yaratish uchun `Inventory app ‣ Products ‣ Products`ga o'ting va kerakli mahsulotni tanlang.
 
-Under the `Inventory` tab, scroll
-down to the `Packaging` section, and
-click `Add a line`. In the table,
-fill out the following fields:
+`Inventory` bo'limi ostida `Packaging` bo'limiga qadar pastga aylantiring va `Add a line`ni bosing. Jadvalda quyidagi maydonlarni to'ldiring:
 
-- `Packaging` (required): name of
-  packaging that appears on sales/purchase orders as a packaging option
-  for the product.
-- `Contained quantity` (required):
-  amount of product in the packaging.
-- `Unit of Measure` (required):
-  measurement unit for quantifying the product.
-- `Sales`: check this option for
-  packagings intended for use on sales orders.
-- `Purchase`: check this option for
-  packagings intended for use on purchase orders.
+- `Packaging` (majburiy): mahsulot uchun qadoqlash varianti sifatida savdo/xarid buyurtmalarida paydo bo'ladigan qadoqlash nomi.
+- `Contained quantity` (majburiy): qadoqlashdagi mahsulot miqdori.
+- `Unit of Measure` (majburiy): mahsulotni o'lchash uchun o'lchov birligi.
+- `Sales`: savdo buyurtmalarida foydalanish uchun mo'ljallangan qadoqlashlar uchun ushbu variantni belgilang.
+- `Purchase`: xarid buyurtmalarida foydalanish uchun mo'ljallangan qadoqlashlar uchun ushbu variantni belgilang.
 
 ::: tip
 
-Access additional fields in the `Packaging` table below by clicking the
-`oi-settings-adjust`
-`(additional options)` icon to the
-far-right of the column titles in the `Packaging` section, and selecting the desired options from the
-drop-down menu that appears.
+`Packaging` bo'limidagi ustun sarlavhalarining eng o'ng tomonidagi `oi-settings-adjust` `(additional options)` belgisini bosib va paydo bo'ladigan ochiluvchi menyudan kerakli variantlarni tanlab, quyidagi `Packaging` jadvalidagi qo'shimcha maydonlarga kirish mumkin.
 ::::
 
-- `Barcode`: identifier for tracing
-  packaging in stock moves or pickings, using the
-  `Barcode app `. Leave blank if not in use.
-- `Company`: indicates the packaging
-  is only available at the selected company. Leave blank to make the
-  packaging available across all companies.
+- `Barcode`: `Barcode app` yordamida stok harakatlari yoki tanlab olishlarda qadoqlashni kuzatish uchun identifikator. Agar foydalanilmasa, bo'sh qoldiring.
+- `Company`: qadoqlashning faqat tanlangan kompaniyada mavjudligini bildiradi. Qadoqlashni barcha kompaniyalarda mavjud qilish uchun bo'sh qoldiring.
 
-::: example
-To create a packaging type for six units of the product, [Grape
-Soda], begin by clicking `Add a line`. In the line, name the `Packaging` [6-pack], and set the
-`Contained quantity` to
-[6]. Repeat this process for additional packagings.
+::: tip
+[Grape Soda] mahsulotining olti birligi uchun qadoqlash turini yaratish uchun `Add a line`ni bosishdan boshlang. Qatorda `Packaging`ni [6-pack] deb nomlang va `Contained quantity`ni [6]ga o'rnating. Qo'shimcha qadoqlashlar uchun bu jarayonni takrorlang.
 
 ![Create 6-pack case for product.](packaging/create-product-packaging.png)
 :::
 
-### From product packagings page
+### Mahsulot qadoqlashlari sahifasidan
 
-To view all packagings that have been created, go to
-`Inventory app ‣ Configuration
-‣ Product Packagings`. Doing
-so reveals the `Product Packagings`
-page with a complete list of all packagings that have been created for
-all products. Create new packagings by clicking `New`.
+Yaratilgan barcha qadoqlashlarni ko'rish uchun `Inventory app ‣ Configuration ‣ Product Packagings`ga o'ting. Buni qilish barcha mahsulotlar uchun yaratilgan barcha qadoqlashlarning to'liq ro'yxati bilan `Product Packagings` sahifasini ochadi. `New`ni bosib yangi qadoqlashlar yarating.
 
-::: example
-Two soda products, [Grape Soda] and [Diet Coke],
-have three types of packagings configured. On the
-`Product Packagings` page, each
-product can be sold as a [6-Pack] that contains 6 products,
-as a [12-Pack] of 12 products, or as a [Case] of
-32 products.
+::: tip
+Ikkita gazlangan ichimlik mahsuloti, [Grape Soda] va [Diet Coke], uchta turdagi qadoqlash sozlangan. `Product Packagings` sahifasida har bir mahsulot 6 ta mahsulotni o'z ichiga olgan [6-Pack], 12 ta mahsulotli [12-Pack] yoki 32 ta mahsulotli [Case] sifatida sotilishi mumkin.
 
 ![List of different packagings for products.](packaging/packagings.png)
 :::
 
-### Partial reservation
+### Qisman rezervlash
 
-After
-`completing the packaging setup `, packagings can be reserved in full or partial quantities
-for outgoing shipments. Partial packaging flexibility expedites order
-fulfillment by allowing the immediate shipment of available items, while
-awaiting the rest.
+`completing the packaging setup`dan keyin, qadoqlashlar chiquvchi jo'natmalar uchun to'liq yoki qisman miqdorlarda rezerv qilinishi mumkin. Qisman qadoqlash moslashuvchanligi mavjud buyumlarni darhol jo'natishga imkon berish orqali, qolganini kutishda buyurtmani bajarishni tezlashtiradi.
 
-To configure packaging reservation methods, go to
-`Inventory app ‣ Configuration
-‣ Product Categories`. Then,
-click `New`, or select the desired
-product category.
+Qadoqlash rezervlash usullarini sozlash uchun `Inventory app ‣ Configuration ‣ Product Categories`ga o'ting. Keyin `New`ni bosing yoki kerakli mahsulot toifasini tanlang.
 
-On the product category\'s form, in the `Logistics` section, `Reserve Packagings` can be set to
-`Reserve Only Full Packagings` or
-`Reserve Partial Packagings`.
+Mahsulot toifasining formasida, `Logistics` bo'limida `Reserve Packagings`ni `Reserve Only Full Packagings` yoki `Reserve Partial Packagings`ga o'rnatish mumkin.
 
 ::: warning
 
-To see the `Reserve Packaging` field,
-the `Product Packaging` feature
-**must** be enabled. To enable this feature, go to `Inventory app ‣
-Configuration ‣ Settings`,
-scroll to the `Products` section,
-tick the `Product Packagings`
-checkbox, and click `Save`.
+`Reserve Packaging` maydonini ko'rish uchun `Product Packaging` funksiyasi **albatta** yoqilgan bo'lishi kerak. Bu funksiyani yoqish uchun `Inventory app ‣ Configuration ‣ Settings`ga o'ting, `Products` bo'limiga aylantiring, `Product Packagings` katakchasi belgilang va `Save`ni bosing.
 ::::
 
 ![Show Reserve Packagings field on the product categories page.](packaging/reserve-packaging.png)
 
-::: example
-To better evaluate the options based on business needs, consider the
-following example:
+::: tip
+Biznes ehtiyojlariga asoslangan variantlarni yaxshiroq baholash uchun quyidagi misolni ko'rib chiqing:
 
-- a product is sold in twelve units per packaging.
-- an order demands two packagings.
-- there are only twenty-two units in stock.
+- mahsulot har bir qadoqlashda o'n ikki birlikda sotiladi.
+- buyurtma ikkita qadoqlashni talab qiladi.
+- omborda faqat yigirma ikki birlik mavjud.
 
-When `Reserve Only Full Packagings`
-is selected, only twelve units are reserved for the order.
+`Reserve Only Full Packagings` tanlanganda, buyurtma uchun faqat o'n ikki birlik rezerv qilinadi.
 
-Conversely, when `Reserve Partial Packagings` is selected, twenty-two units are reserved for the
-order.
+Aksincha, `Reserve Partial Packagings` tanlanganda, buyurtma uchun yigirma ikki birlik rezerv qilinadi.
 :::
 
-## Apply packagings
+## Qadoqlashlarni qo'llash
 
-When creating a sales order in the `Sales` app, specify the packagings that should be used
-for the product. The chosen packaging is displayed on the
-`SO (Sales Order)` under the
-`Packaging` field.
+`Sales` ilovasida savdo buyurtmasini yaratishda mahsulot uchun qo'llanilishi kerak bo'lgan qadoqlashlarni belgilang. Tanlangan qadoqlash `SO (Sales Order)`da `Packaging` maydonida ko'rsatiladi.
 
-::: example
-18 cans of the product, [Grape Soda], is packed using three
-6-pack packagings.
+::: tip
+[Grape Soda] mahsulotining 18 ta bankasi uchta 6 ta o'ramli qadoqlash yordamida qadoqlanadi.
 
 ![Assign packagings on the Sales Order Line.](packaging/packagings-sales-order.png)
 :::
 
-## Routes for packaging 
+## Qadoqlash uchun marshrutlar 
 
-When receiving packagings, by default, they follow the warehouse\'s
-`configured reception route
-`. To **optionally** set up a packaging-specific route, go to
-`Inventory app ‣ Configuration ‣ Routes`.
+Qadoqlashlarni qabul qilishda, odatiy ravishda ular omborning `configured reception route`ini kuzatadi. Qadoqlashga xos marshrutni **ixtiyoriy** tarzda o'rnatish uchun `Inventory app ‣ Configuration ‣ Routes`ga o'ting.
 
 ::: warning
 
-The *Product Packagings*, *Storage Locations*, and *Multi-Step Routes*
-features (found by going to
-`Inventory app ‣ Configuration ‣ Settings`) **must** be activated, and saved.
+*Product Packagings*, *Storage Locations* va *Multi-Step Routes* funksiyalari (`Inventory app ‣ Configuration ‣ Settings`ga o'tish orqali topiladi) **albatta** faollashtirilgan va saqlanган bo'lishi kerak.
 ::::
 
 
-### Create route
+### Marshrut yaratish
 
-On the `Routes` page, click
-`New`, or select a route that is
-**not** for a warehouse. Next, in the `Applicable on` section, tick the `Packagings` checkbox.
+`Routes` sahifasida `New`ni bosing yoki ombor uchun **bo'lmagan** marshrutni tanlang. Keyin `Applicable on` bo'limida `Packagings` katakchasini belgilang.
 
 
 
-Route with "Packagings" selected, with "Products" and
-"Warehouses" not selected.
+"Packagings" tanlangan, "Products" va "Warehouses" tanlanmagan marshrut.
 
 
-### Apply route on packaging 
+### Qadoqlashda marshrutni qo'llash 
 
-Then, to apply the route, go to
-`Inventory app ‣ Products ‣ Products`, and select the product that uses packaging.
+Keyin marshrutni qo'llash uchun `Inventory app ‣ Products ‣ Products`ga o'ting va qadoqlash ishlatiladigan mahsulotni tanlang.
 
-In the product form, switch to the `Inventory` tab. In the `Packaging` section that contains
-`configured packagings `, click the `oi-settings-adjust` `(additional options)`
-icon. Tick the `Routes` checkbox to
-make the column visible in the `Packaging` table.
+Mahsulot formasida `Inventory` bo'limiga o'ting. `configured packagings`ni o'z ichiga olgan `Packaging` bo'limida `oi-settings-adjust` `(additional options)` belgisini bosing. `Packaging` jadvalida ustunni ko'rinadigan qilish uchun `Routes` katakchasini belgilang.
 
-In the `Routes` field, select the
-packaging-specific route. Repeat these steps for all packaging intended
-to use the route.
+`Routes` maydonida qadoqlashga xos marshrutni tanlang. Marshrutdan foydalanish mo'ljallangan barcha qadoqlashlar uchun bu qadamlarni takrorlang.
 
 ![Set route on a packaging.](packaging/apply-route.png)

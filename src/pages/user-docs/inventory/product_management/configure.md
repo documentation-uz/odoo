@@ -1,112 +1,68 @@
-# Configure product
+# Mahsulotni konfiguratsiya qilish
 
-A group of products in Odoo can be further defined using:
+Odoo'da mahsulotlar guruhini quyidagilar yordamida aniqroq belgilash mumkin:
 
-- `Units of measure (UoM) `: a standard quantity for specifying product amounts (e.g.,
-  meters, yards, kilograms). Enables automatic conversion between
-  measurement systems in Odoo, such as centimeters to feet.
-  - *Ex: Purchasing fabric measured in meters but receiving it in yards
-    from a vendor.*
-- `configure/package`: A physical
-  container used to group products together, regardless of whether they
-  are the same or different.
-  - *Ex: A box containing assorted items for delivery, or a storage box
-    of two hundred buttons on a shelf.*
-- `configure/packaging`: groups the *same*
-  products together to receive or sell them in specified quantities.
-  - *Ex: Cans of soda sold in packs of six, twelve, or twenty-four.*
+- `Units of measure (UoM)`: mahsulot miqdorlarini belgilash uchun standart miqdor (masalan, metr, yard, kilogram). Odoo'da o'lchov tizimlari o'rtasida avtomatik konvertatsiya qilish imkonini beradi, masalan, santimetrdan futga.
+  - *Misol: Matoni metrda o'lchab sotib olish, lekin sotuvchidan yardda qabul qilish.*
+- `configure/package`: bir xil yoki turli mahsulotlarni bir joyga guruhlash uchun ishlatiladigan jismoniy konteyner.
+  - *Misol: Yetkazib berish uchun turli buyumlarni o'z ichiga olgan quti yoki tokchada ikki yuz tugmani saqlash uchun saqlash qutisi.*
+- `configure/packaging`: *bir xil* mahsulotlarni belgilangan miqdorlarda qabul qilish yoki sotish uchun guruhlaydi.
+  - *Misol: Olti, o'n ikki yoki yigirma to'rtta paketlarda sotiladigan gazli ichimlik bankalari.*
 
-## Comparison
+## Taqqoslash
 
-This table provides a detailed comparison of units of measure, packages,
-and packaging to help businesses evaluate which best suits their
-requirements.
+Ushbu jadval o'lchov birliklari, paketlar va qadoqlashning batafsil taqqoslashini beradi, bu bizneslar o'z talablariga eng mos keladiganini baholashga yordam beradi.
 
-  Feature                      Unit of measure                                                                                                                                                 Packages                                                                                                                                                                     Packaging
+  Xususiyat                    O'lchov birligi                                                                                                                                                 Paketlar                                                                                                                                                                     Qadoqlash
   ---------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------
-  Purpose                      Standardized measurement for product units (e.g., cm, lb, L)                                                                                                    Tracks the specific physical container and its contents                                                                                                                      Groups a fixed number of items together for easier management (e.g., packs of 6, 12 or 24)
-  Product uniformity           Defined per product; saved as one `UoM (Unit of Measure)` in the database                                                        Allows mixed products                                                                                                                                                        Same products only
-  Flexible                     Converts between vendor/customer `UoMs (Units of Measure)` and database `UoM (Unit of Measure)`   Items can be added or removed from the container                                                                                                                             Quantities are fixed (e.g., always packs of 6, 12 or 24)
-  Complexity                   Simplest for unit conversions                                                                                                                                   More complex due to container-level inventory tracking                                                                                                                       Simpler; suitable for uniform product groupings
-  Inventory tracking           Tracks product quantities within the warehouse in the specific `UoM (Unit of Measure)` defined in the product form               Tracks package location and contents within the warehouse                                                                                                                    Tracks grouped quantities but not individual items\' locations
-  Smooth barcode operations    Not available                                                                                                                                                   Requires scanning both the package and individual items for reception. (even if there are 30 items in a package). Can enable the `Move Entire Packages                       Scanning a packaging barcode automatically records all included units. (e.g. 1 pack = 12 units)
-                                                                                                                                                                                               ` feature to update the package\'s contained items\' locations, when moving the package         
-  Product lookup               Not available                                                                                                                                                   Scanning a product\'s barcode identifies its typical storage location in the Odoo database                                                                                   Barcode identifies grouped quantity, not storage location
-  Unique barcodes              Not available                                                                                                                                                   Unique barcodes for individual packages (e.g. Pallet #12)                                                                                                                    Barcodes set at the packaging type level (e.g. for a pack of 6)
-  Reusability                  Not applicable                                                                                                                                                  Can be disposable or reusable, configured via the `Package Use                                                                                                               Disposable only
-                                                                                                                                                                                               ` field                                                                                             
-  Container weight             Not applicable                                                                                                                                                  Weight of the container itself is included in the *Shipping Weight* field of a package (`Inventory app ‣ Products ‣ Packages`)   Weight of the container is defined in the *Package Type* settings
-  Lot/serial number tracking   Requires manual adjustments to track `UoMs (Units of Measure)` via lots (See `use case                                           Applies only to contained products                                                                                                                                           Applies to both contained products and the container
-                               ` for details)                                                                                                                                                                                                                                                          
-  Custom routes                Cannot be set                                                                                                                                                   Cannot be set                                                                                                                                                                Routes can define specific warehouse paths for a particular packaging type
+  Maqsad                       Mahsulot birliklari uchun standartlashtirilgan o'lchov (masalan, sm, funt, L)                                                                                  Muayyan jismoniy konteyner va uning tarkibini kuzatib boradi                                                                                                                Osonroq boshqarish uchun belgilangan miqdordagi elementlarni guruhlaydi (masalan, 6, 12 yoki 24 paket)
+  Mahsulot bir xilligi         Har bir mahsulot uchun belgilanadi; ma'lumotlar bazasida bitta `UoM (Unit of Measure)` sifatida saqlanadi                                                   Aralash mahsulotlarga ruxsat beradi                                                                                                                                         Faqat bir xil mahsulotlar
+  Moslashuvchanlik             Sotuvchi/mijoz `UoMs (Units of Measure)` va ma'lumotlar bazasi `UoM (Unit of Measure)` o'rtasida konvertatsiya qiladi                                       Elementlarni konteynerga qo'shish yoki olib tashlash mumkin                                                                                                                 Miqdorlar belgilangan (masalan, har doim 6, 12 yoki 24 paket)
+  Murakkablik                  Birlik konvertatsiyalari uchun eng oddiy                                                                                                                       Konteyner darajasidagi inventar kuzatuvi tufayli murakkabroq                                                                                                                Oddiyroq; bir xil mahsulot guruhlari uchun mos
+  Inventarni kuzatish          Mahsulot formasida belgilangan aniq `UoM (Unit of Measure)` da ombordagi mahsulot miqdorlarini kuzatib boradi                                              Omborda paket joylashuvi va tarkibini kuzatib boradi                                                                                                                         Guruhlangan miqdorlarni kuzatib boradi, lekin alohida elementlarning joylashuvini emas
+  Barkod operatsiyalarining silliqligii    Mavjud emas                                                                                                                                    Qabul qilish uchun paket va alohida elementlarni skanerlashni talab qiladi (paketda 30 ta element bo'lsa ham). Paketni ko'chirishda paketdagi elementlarning joylashuvini yangilash uchun `Move Entire Packages` xususiyatini yoqish mumkin                       Qadoqlash barkodini skanirlash barcha qo'shilgan birliklarni avtomatik ravishda qayd etadi (masalan, 1 paket = 12 birlik)
+  Mahsulotni qidirish          Mavjud emas                                                                                                                                                   Mahsulot barkodini skanirlash Odoo ma'lumotlar bazasida uning odatiy saqlash joyini aniqlaydi                                                                            Barkod guruhlangan miqdorni aniqlaydi, saqlash joyini emas
+  Noyob barkodlar              Mavjud emas                                                                                                                                                   Alohida paketlar uchun noyob barkodlar (masalan, Pallet #12)                                                                                                               Barkodlar qadoqlash turi darajasida o'rnatiladi (masalan, 6 paket uchun)
+  Qayta ishlatish              Tegishli emas                                                                                                                                                  `Package Use` maydoni orqali konfiguratsiya qilingan holda bir martalik yoki qayta ishlatiladigan bo'lishi mumkin                                                       Faqat bir martalik
+  Konteyner og'irligi          Tegishli emas                                                                                                                                                  Konteynerning o'zi og'irligi paketning *Shipping Weight* maydoniga kiritiladi (`Inventory app ‣ Products ‣ Packages`)                                                  Konteyner og'irligi *Package Type* sozlamalarida belgilanadi
+  Lot/seriya raqami kuzatuvi   Lotlar orqali `UoMs (Units of Measure)` kuzatish uchun qo'lda tuzatishlar talab qiladi (tafsilotlar uchun `use case`ga qarang)                           Faqat tarkibdagi mahsulotlarga taalluqli                                                                                                                                    Tarkibdagi mahsulotlar va konteynerga ham taalluqli
+  Maxsus marshrutlar           O'rnatib bo'lmaydi                                                                                                                                             O'rnatib bo'lmaydi                                                                                                                                                           Marshrutlar muayyan qadoqlash turi uchun aniq ombor yo'llarini belgilashi mumkin
 
-## Use cases
+## Foydalanish holatlari
 
-After comparing the various features, consider how these businesses,
-with various inventory management and logistics workflows, came to their
-decision.
+Turli xil xususiyatlarni taqqoslagandan so'ng, turli inventar boshqaruvi va logistika ish jarayonlariga ega bo'lgan ushbu bizneslar o'z qarorlariga qanday kelganligini ko'rib chiqing.
 
-### Pallets of items using packaging
+### Qadoqlash yordamida elementlar palletlari
 
-A warehouse receives shipments of soap organized on physical pallets,
-each containing 96 bars. These pallets are used for internal transfers
-and are also sold as standalone units. For logistical purposes, the
-pallet\'s weight must be included in the total shipping weight for
-certain deliveries. Additionally, the pallet requires a barcode to
-facilitate tracking, and the number of individual bars of soap must be
-included in the stock count when the pallet is received.
+Ombor har birida 96 ta sovun bo'lgan jismoniy palletlarda tashkil etilgan sovun jo'natmalarini qabul qiladi. Ushbu palletlar ichki o'tkazmalar uchun ishlatiladi va mustaqil birliklar sifatida ham sotiladi. Logistik maqsadlar uchun paletning og'irligi ma'lum yetkazib berishlar uchun umumiy yuk og'irligiga kiritilishi kerak. Qo'shimcha ravishda, palet kuzatuvni osonlashtirish uchun barkodga muhtoj va palet qabul qilinganda alohida sovun miqdori zaxira hisobiga kiritilishi kerak.
 
-After evaluating various options, *product packaging* was the most
-suitable solution. Packaging enables assigning a barcode to a pallet,
-identifying it as a \"pallet type\" containing 96 soap bars. This
-barcode streamlines operations by automatically registering the grouped
-quantity. Key distinctions include:
+Turli variantlarni baholagandan so'ng, *mahsulot qadoqlashi* eng mos yechim bo'ldi. Qadoqlash paletga barkod belgilash imkonini beradi va uni 96 ta sovun bo'lgan "palet turi" sifatida aniqlaydi. Ushbu barkod guruhlangan miqdorni avtomatik ravishda ro'yxatga olish orqali operatsiyalarni soddalashtiradi. Asosiy farqlar:
 
-- **Warehouse tracking limitations**: Odoo tracks only the total
-  quantity, not the number of packagings. For instance, if a pallet with
-  12 and 24 quantities is received, Odoo records 36 quantities, not the
-  pallet details.
-- **Packaging barcodes are type-specific, not unique**: Barcodes
-  represent packaging types (e.g., \"pallet of 96 soap bars\") but do
-  not uniquely identify individual pallets, such as Pallet #1 or Pallet
-  #2.
+- **Ombor kuzatuvi cheklovlari**: Odoo faqat umumiy miqdorni kuzatib boradi, qadoqlash sonini emas. Masalan, 12 va 24 miqdorli palet qabul qilinsa, Odoo palet tafsilotlarini emas, 36 miqdorni qayd etadi.
+- **Qadoqlash barkodlari tur-spetsifik, noyob emas**: Barkodlar qadoqlash turlarini (masalan, "96 ta sovunli palet") ifodalaydi, lekin Pallet #1 yoki Pallet #2 kabi alohida palletlarni noyob aniqlamas.
 
-### Capture product information using barcode
+### Barkod yordamida mahsulot ma'lumotlarini olish
 
-An Odoo user expects the **Barcode** app to display the typical storage
-location of a product by scanning a barcode for a container.
+Odoo foydalanuvchisi **Barcode** ilovasi konteyner uchun barkodni skanerlash orqali mahsulotning odatiy saqlash joyini ko'rsatishini kutadi.
 
-*Packages* was the most suitable. When the
-`appropriate setting is enabled
-`, scanning a package barcode displays its contents in the
-**Barcode** app.
+*Paketlar* eng mos keladi. `appropriate setting is enabled` bo'lganda, paket barkodini skanerlash **Barcode** ilovasida uning tarkibini ko'rsatadi.
 
-Packages represent physical containers, enabling detailed tracking of
-the items they hold. Scanning a package provides visibility into its
-contents and facilitates operations, like inventory moves.
+Paketlar jismoniy konteynerlarni ifodalaydi va ular saqlagan elementlarni batafsil kuzatib borishga imkon beradi. Paketni skanerlash uning tarkibini ko'rish imkonini beradi va inventar harakatlari kabi operatsiyalarni osonlashtiradi.
 
-### Track different units of measure in storage 
+### Saqlashda turli o'lchov birliklarini kuzatish 
 
-A fruit juice distributor tracks multiple
-`UoMs (Units of Measure)` for their
-operations:
+Meva sharbati distribyutori o'z operatsiyalari uchun bir nechta `UoMs (Units of Measure)` kuzatib boradi:
 
-- Fruits are purchased in tons.
-- Juice is produced and stored in kilograms.
-- Small samples are stored in grams for recipe testing.
+- Mevalar tonnalarda sotib olinadi.
+- Sharbat kilogrammda ishlab chiqariladi va saqlanadi.
+- Kichik namunalar retsept sinovlari uchun grammlarda saqlanadi.
 
-*Unit of Measure* was most suitable. Odoo automatically converts tons to
-kilograms during receipts. However, since Odoo tracks only one
-`UoM (Unit of Measure)` per product in
-the database, the company uses lot numbers to differentiate
-`UoMs (Units of Measure)`:
+*O'lchov birligi* eng mos keladi. Odoo qabul qilish paytida tonnalarni kilogrammlarga avtomatik ravishda aylantiradi. Biroq, Odoo ma'lumotlar bazasida har bir mahsulot uchun faqat bitta `UoM (Unit of Measure)` kuzatib borganligi sababli, kompaniya `UoMs (Units of Measure)` farqlash uchun lot raqamlaridan foydalanadi:
 
-- LOT1: Grams (g)
-- LOT2: Kilograms (kg)
+- LOT1: Gramm (g)
+- LOT2: Kilogram (kg)
 
-Manual inventory adjustments are required to convert between lots, such
-as subtracting 1 kg from LOT2 to add 1,000 g to LOT1. While functional,
-this workaround can be time-consuming and prone to errors.
+LOT2 dan 1 kg ni ayirish va LOT1 ga 1000 g qo'shish kabi lotlar o'rtasida konvertatsiya qilish uchun qo'lda inventar tuzatishlari talab qilinadi. Funktsional bo'lsa-da, bu yechim vaqt talab qilishi va xatolarga moyil bo'lishi mumkin.
 
 ::: 
 configure/type configure/uom configure/package configure/packaging

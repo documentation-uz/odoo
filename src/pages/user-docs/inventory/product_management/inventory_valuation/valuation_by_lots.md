@@ -113,7 +113,7 @@ In the new inventory adjustment line that appears, set the
 To view the valuation layer, go to
 `Inventory app ‣ Reporting ‣ Valuation`. The `Total Value` per unit matches the *Cost* on the product form.
 
-::: example
+::: tip
 Continuing the example in the table above, when the product cost is
 [\$15], the valuation for a newly-created [LOT3]
 is also be [\$15].
@@ -127,7 +127,7 @@ When adjusting the quantity of an existing lot/serial number, the value
 is based on the most recent valuation layer for that specific lot/serial
 number.
 
-::: example
+::: tip
 Continuing the example in the table above, the value for [LOT
 1] is [\$10].
 

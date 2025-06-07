@@ -27,7 +27,7 @@ manually created beforehand. As a result, the picking process can lead
 to bottlenecks.
 
 :::: 
-::: example
+::: tip
 #\. `SO (Sales Order)` 1 calls for one
 apple and orange #. `SO (Sales Order)` 2
 calls for one apple and banana #. `SO (Sales Order)` 3 calls for one apple, orange, and banana
@@ -92,7 +92,7 @@ Set the `Package Use` field to
 `Reusable Box`.
 
 
-::: example
+::: tip
 A package intended for cluster picking is named
 [CLUSTER-PACK-3] for easy identification. For this workflow,
 the products are directly packed using their intended shipping boxes, so
@@ -120,7 +120,7 @@ Click the checkbox to the left of the corresponding outgoing operation
 to add them to the batch. With the desired pickings selected, click the
 `fa-cog` `Actions` button, and select the `Add to batch` option from the resulting drop-down menu.
 
-::: example
+::: tip
 To create a cluster batch, as shown in the `example above
 `,
 in a warehouse configured with two-step outgoing shipments, the
@@ -168,7 +168,7 @@ products that are to be picked are grouped by location.
 Set the `Destination Package` to the
 package dedicated to that particular order.
 
-::: example
+::: tip
 Process the cluster batch for the three orders of apples, oranges, and
 bananas `example
 `

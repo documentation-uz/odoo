@@ -265,7 +265,7 @@ On the batch transfer form, fill the following fields out accordingly:
   order exceeds the `vehicle's capacity limits
   `
 
-::: example
+::: tip
 The `Volume` bar is grayed out
 because the capacity has been reached.
 

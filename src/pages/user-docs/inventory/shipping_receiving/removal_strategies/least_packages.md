@@ -14,7 +14,7 @@ the least packages removal strategy is used to pick from a single,
 opened package.
 
 :::: 
-::: example
+::: tip
 A package of [100 kg] of flour is depleted to [54
 kg] after fulfilling some orders. There are other packages
 of [100 kg] in stock.

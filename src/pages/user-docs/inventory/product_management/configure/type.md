@@ -1,262 +1,142 @@
-# Product type
+# Mahsulot turi
 
-In Odoo, goods and services are both set up as *products*. When setting
-up a new product, there are several fields that should be carefully
-chosen, as they determine how to invoice and track a business\' goods or
-services.
+Odoo dasturida tovarlar va xizmatlar ikkalasi ham *mahsulotlar* sifatida sozlanadi. Yangi mahsulot sozlashda, ehtiyotkorlik bilan tanlanishi kerak bo'lgan bir nechta maydonlar mavjud, chunki ular biznesning tovarlar yoki xizmatlarini hisoblash va kuzatish usulini belgilaydi.
 
-To configure an existing product, go to
-`Inventory app ‣ Products ‣ Products`, and select the desired product from the list.
-Alternatively, from the `Products`
-menu, click `New` to create a new
-product.
+Mavjud mahsulotni sozlash uchun `Inventory app ‣ Products ‣ Products` ga o'ting va ro'yxatdan kerakli mahsulotni tanlang. Shu bilan bir qatorda, `Products` menyusidan yangi mahsulot yaratish uchun `New` tugmasini bosing.
 
+## Sotish va sotib olish
 
-## For sale vs. purchase 
-
-Goods and services can be designated as those that can be bought, sold,
-or both. On the product form, tick the `Sales` checkbox if a product can be *sold* to a customer (e.g.
-finished goods). Tick `Purchase` if
-the product can be *purchased* (e.g. raw materials).
-
-::: example
-If a resale clothing shop buys discounted denim jackets and sells them
-at a higher cost to the end consumer, the [Jacket] product
-form might have *both* the `Sales`
-and `Purchase` checkbox ticked.
-
-On the other hand, say the store occasionally sews new jackets using
-denim and thread as raw materials. In the [Denim] and
-[Thread] product forms, only `Purchase` should be ticked, whereas the [Handmade
-Jacket] product form would only tick
-`Sales`.
-:::
-
-## Goods vs. services
-
-When configuring a product, a `Product Type` needs to be selected on the
-`General Information` tab of a
-product form. Each product type impacts different operations in other
-Odoo applications, such as **Sales** and **Purchase**, and should be
-chosen carefully.
-
-- `Goods`: a tangible, material
-  object (e.g. anything from a hamburger to a house)
-- `Service`: an intangible,
-  immaterial offering (e.g., a repair, a haircut, call center
-  assistance)
-- `Combo`: any mix of goods and
-  services (e.g. a new car (*good*) with an oil change included
-  (*service*))
+Tovarlar va xizmatlar sotib olinadigan, sotiladigan yoki ikkalasi ham sifatida belgilanishi mumkin. Mahsulot formasida, agar mahsulot mijozga *sotilishi* mumkin bo'lsa (masalan, tayyor mahsulotlar), `Sales` katakchani belgilang. Agar mahsulot *sotib olinishi* mumkin bo'lsa (masalan, xom ashyo), `Purchase` ni belgilang.
 
 ::: tip
+Agar qayta sotish kiyim do'koni chegirma bilan denim kurtka sotib olib, uni oxirgi iste'molchiga yuqori narxda sotsa, [Jacket] mahsulot formasida `Sales` va `Purchase` katakchalari *ikkalasi ham* belgilanishi mumkin.
 
-Due to their immaterial nature, services are not trackable in Odoo\'s
-**Inventory** application.
-::::
-
-## Configure goods 
-
-Selecting `Goods` as the
-`Product Type` automatically triggers
-the appearance of a few fields and tabs in the product form:
-
-- `Inventory` tab: From here,
-  `purchasing and manufacturing routes ` and product logistics, such as product weight and customer
-  lead time, can be specified.
-
-- `Invoicing Policy ` field: This field determines at what point in the sales
-  process a customer is invoiced.
-
-  ::: warning
-  : tip
-
-Tick the `Track Inventory` checkbox
-if it is necessary to track a product\'s stock at various locations, for
-inventory valuation, with lots and/or serial numbers, or when using
-reordering rules.
-::::
-
-
-### Inventory operations by product type 
-
-`Whether a good is tracked or untracked ` affects common **Inventory** operations, like transfers and
-reordering rules.
-
-The table below summarizes which operations (and smart buttons) are
-enabled for tracked vs. untracked goods. Click highlighted chart items
-to navigate to detailed sections and related documents.
-
-  Inventory operation                                                                                                        Tracked   Untracked
-  -------------------------------------------------------------------------------------------------------------------------- --------- -----------
-  `Show on-hand quantity `                               Yes       No
-  `Show forecasted quantity `                            Yes       No
-  `Use reordering rules `                          Yes       No
-  `Can be included in a purchase order `                      Yes       Yes
-  `Use putaway rules `                                   Yes       No
-  `Can be manufactured, subcontracted, or used in another good's BoM                                                         Yes       Yes
-  `                                                          
-  `Use inventory adjustments `   Yes       No
-  `Use inventory valuation `                 Yes       No
-  `Create transfer `                              Yes       Yes
-  `Use lot/serial number tracking `                                       Yes       No
-  `Can be placed in a kit `        Yes       Yes
-  `Can be placed in a package `                          Yes       Yes
-  `Appears on inventory reports `                         Yes       No
-
-#### Inventory
-
-##### On-hand and forecasted quantities 
-
-A tracked product\'s on-hand and forecasted quantities, based on
-incoming and outgoing orders, are reflected on the product form with two
-smart buttons:
-
-- `fa-cubes`
-  `On-Hand Quantity`: This represents
-  the number of units currently available in inventory. Click the button
-  to view or add stock levels for a tracked product.
-- `fa-area-chart`
-  `Forecasted`: This represents the
-  number of units *expected* to be available in inventory after all
-  orders are taken into account. In other words,
-  $\text = \text + \text - \text$.
-  Click the button to view the `Forecasted Report`.
-
-On the other hand, untracked products are regarded as *always*
-available. Consequently, `On-Hand Quantity` is not tracked, and there is no
-`Forecasted` quantity available.
-
-##### Putaway rules and storage 
-
-Both tracked and untracked goods can optimize storage using:
-
-- `fa-random`
-  `Putaway Rules `: This represents putaway rules that apply to a good, such
-  as where to store it when a new shipment arrives.
-- `fa-cubes`
-  `Storage Capacities `: This represents any storage capacity limitations
-  specified for this good. For example, a warehouse may require that
-  only ten (or less) sofas be stored there at any given time, due to
-  their large size.
-
-##### Replenishment 
-
-###### Reordering rules
-
-Only tracked products can trigger
-`reordering rules ` to generate purchase orders. Untracked goods *cannot* be
-managed using reordering rules.
-
-Reordering rules can be configured directly on the product form via the
-`fa-refresh`
-`(refresh)` icon.
-
-::: tip
-
-If reordering rules already exist on a product, Odoo re-labels this
-button to `Min / Max`, to show the
-minimum and maximum number of units that must be in stock.
-::::
-
-###### Create purchase orders 
-
-Both tracked and untracked products can be included in a request for
-quotation in the **Purchase** app. However, when receiving untracked
-products, their on-hand quantity does not change upon validating the
-receipt ([WH/IN]).
-
-###### Replenish smart button
-
-The `Replenish` smart button allows
-all goods to be restocked directly from the product form, according to
-the *Preferred Route*.
-
-
-#### Manufacturing 
-
-Both tracked and untracked products can be manufactured,
-`subcontracted `, or included in another product\'s
-`bill of materials (BoM) `.
-
-::: 
-On the product form for a tracked or untracked good, there are several
-smart buttons that may appear for manufacturing operations:
+Boshqa tomondan, aytaylik do'kon vaqti-vaqti bilan denim va ip kabi xom ashyolardan foydalanib yangi kurtkalar tikadi. [Denim] va [Thread] mahsulot formalarida faqat `Purchase` belgilanishi kerak, [Handmade Jacket] mahsulot formasida esa faqat `Sales` belgilanadi.
 :::
 
-- `fa-flask`
-  `Bill of Materials`: This shows the
-  BoMs used to make this product.
-- `fa-level-up`
-  `Used In`: This shows other goods
-  that include this product in their BoM.
+## Tovarlar va xizmatlar
 
-#### Transfer goods 
+Mahsulotni sozlashda mahsulot formasining `General Information` tabida `Product Type` tanlanishi kerak. Har bir mahsulot turi **Sales** va **Purchase** kabi boshqa Odoo ilovalarida turli operatsiyalarga ta'sir qiladi va ehtiyotkorlik bilan tanlanishi kerak.
 
-*Transfers* are warehouse operations that involve the movement of goods.
-Examples of transfers include `deliveries and receipts
-`, as well as
-`internal transfers ` between warehouses.
+- `Goods`: moddiy, material ob'ekt (masalan, gamburgerdan tortib uyga qadar hamma narsa)
+- `Service`: nomoddiy, nomaterial taklif (masalan, ta'mirlash, soch kesish, qo'ng'iroq markazi yordami)
+- `Combo`: tovarlar va xizmatlarning har qanday aralashmasi (masalan, yangi avtomobil (*tovar*) bilan moy almashtirish (*xizmat*) qo'shilgan)
 
-When creating a transfer for tracked products in the **Inventory** app,
-transfers modify the on-hand quantity at each location. For example,
-transferring five units from the internal location
-[WH/Stock] to [WH/Packing Zone] decreases the
-recorded quantity at [WH/Stock] and increases it at
-[WH/Packing Zone].
+::: tip
+Ularning nomoddiy tabiatiga ko'ra, xizmatlar Odoo ning **Inventory** ilovasida kuzatilmaydi.
+:::
 
-For untracked products, transfers can be created, but exact quantities
-at each storage location are not tracked.
+## Tovarlarni sozlash
 
-#### Packages 
+`Product Type` sifatida `Goods` ni tanlash mahsulot formasida bir nechta maydon va tablarning avtomatik paydo bo'lishiga olib keladi:
 
-Both tracked and untracked (non-inventory), products can be placed in
-`packages `.
+- `Inventory` tab: Bu yerdan `purchasing and manufacturing routes` va mahsulot logistikasi, masalan mahsulot og'irligi va mijoz etkazish vaqti belgilanishi mumkin.
 
-However, for non-inventory products, the quantity is not tracked, and
-the product is not listed in the package\'s `Contents` (which can be accessed by going to `Inventory app
-‣ Products ‣ Packages`, and
-selecting the desired package).
-
-
-
-An untracked product was placed in the package, but the
-Content section does not list it.
-
-
-Additionally, if the *Move Entire Packages* feature is enabled, moving a
-package updates the location of the contained tracked products but not
-the contained untracked products. To enable this feature, navigate to
-`Inventory app ‣ Configuration ‣ Operations Types`, select any operation, and tick the
-`Move Entire Packages` checkbox.
-
-#### Inventory reports 
-
-**Only** tracked products appear on the following reports.
+- `Invoicing Policy` maydoni: Bu maydon sotish jarayonining qaysi bosqichida mijozga hisob-faktura berilishini belgilaydi.
 
 ::: warning
+Agar mahsulotning turli joylardagi zaxirasini kuzatish, inventar baholash uchun, partiya va/yoki seriya raqamlari bilan yoki qayta buyurtma qoidalaridan foydalanganda zarur bo'lsa, `Track Inventory` katakchani belgilang.
+:::
 
-These reports are only available to users with
-`administrator access `.
-::::
+### Mahsulot turiga ko'ra inventar operatsiyalari
 
-- `Stock report `: This report provides a comprehensive list of all on-hand,
-  unreserved, incoming, and outgoing tracked inventory. To access the
-  report, go to
-  `Inventory app ‣ Reporting ‣ Stock`.
-- `Location report  `: This report shows a breakdown of which tracked products
-  are held at each location (internal, external, or virtual). The report
-  is only available with the *Storage Location* feature activated
-  (`Inventory app ‣ Configuration ‣ Settings`). To access it, go to
-  `Inventory app ‣ Reporting ‣ Locations`.
-- `Moves History report `: This report summarizes where and when this good has moved
-  in/out of stock. To access the report, go to
-  `Inventory app ‣ Reporting ‣ Moves History`. Alternatively, click the
-  `fa-exchange`
-  `In / Out` smart button on a
-  product form to filter the report on that product\'s specific moves
-  history.
-- `Moves Analysis`: This report
-  provides a pivot table view of inventory transfers by operation type.
-- `Stock Valuation report `: A detailed record of the monetary value of all tracked
-  inventory.
+`Whether a good is tracked or untracked` **Inventory** ning umumiy operatsiyalariga, masalan o'tkazmalar va qayta buyurtma qoidalariga ta'sir qiladi.
+
+Quyidagi jadval kuzatiladigan va kuzatilmaydigan tovarlar uchun qaysi operatsiyalar (va aqlli tugmalar) yoqilganligini xulosalaydi. Batafsil bo'limlar va tegishli hujjatlarga o'tish uchun ajratilgan jadval elementlarini bosing.
+
+| Inventar operatsiyasi | Kuzatiladigan | Kuzatilmaydigan |
+|----------------------|---------------|-----------------|
+| `Show on-hand quantity` | Ha | Yo'q |
+| `Show forecasted quantity` | Ha | Yo'q |
+| `Use reordering rules` | Ha | Yo'q |
+| `Can be included in a purchase order` | Ha | Ha |
+| `Use putaway rules` | Ha | Yo'q |
+| `Can be manufactured, subcontracted, or used in another good's BoM` | Ha | Ha |
+| `Use inventory adjustments` | Ha | Yo'q |
+| `Use inventory valuation` | Ha | Yo'q |
+| `Create transfer` | Ha | Ha |
+| `Use lot/serial number tracking` | Ha | Yo'q |
+| `Can be placed in a kit` | Ha | Ha |
+| `Can be placed in a package` | Ha | Ha |
+| `Appears on inventory reports` | Ha | Yo'q |
+
+#### Inventar
+
+##### Qo'ldagi va prognoz qilingan miqdorlar
+
+Kuzatiladigan mahsulotning qo'ldagi va kiruvchi hamda chiquvchi buyurtmalar asosida prognoz qilingan miqdorlari mahsulot formasida ikkita aqlli tugma bilan aks ettiriladi:
+
+- `fa-cubes` `On-Hand Quantity`: Bu hozir inventarda mavjud birliklar sonini ifodalaydi. Kuzatiladigan mahsulot uchun zaxira darajalarini ko'rish yoki qo'shish uchun tugmani bosing.
+- `fa-area-chart` `Forecasted`: Bu barcha buyurtmalar hisobga olingandan keyin inventarda mavjud bo'lishi *kutilayotgan* birliklar sonini ifodalaydi. Boshqacha qilib aytganda, $\text = \text + \text - \text$. `Forecasted Report` ni ko'rish uchun tugmani bosing.
+
+Boshqa tomondan, kuzatilmaydigan mahsulotlar *doimo* mavjud deb hisoblanadi. Natijada, `On-Hand Quantity` kuzatilmaydi va `Forecasted` miqdori mavjud emas.
+
+##### Joylash qoidalari va saqlash
+
+Kuzatiladigan va kuzatilmaydigan tovarlar ikkalasi ham quyidagilardan foydalanib saqlashni optimallashtirishlari mumkin:
+
+- `fa-random` `Putaway Rules`: Bu tovarga qo'llaniladigan joylash qoidalarini ifodalaydi, masalan yangi jo'natma kelganda uni qayerda saqlash kerak.
+- `fa-cubes` `Storage Capacities`: Bu tovar uchun belgilangan har qanday saqlash sig'imi cheklovlarini ifodalaydi. Masalan, ombor ularning katta o'lchami tufayli ma'lum vaqtda o'nta (yoki undan kam) divanni saqlashni talab qilishi mumkin.
+
+##### To'ldirish
+
+###### Qayta buyurtma qoidalari
+
+Faqat kuzatiladigan mahsulotlar sotib olish buyurtmalarini yaratish uchun `reordering rules` ni ishga tushirishlari mumkin. Kuzatilmaydigan tovarlar qayta buyurtma qoidalari yordamida boshqarilishi *mumkin emas*.
+
+Qayta buyurtma qoidalari to'g'ridan-to'g'ri mahsulot formasida `fa-refresh` `(refresh)` belgisi orqali sozlanishi mumkin.
+
+::: tip
+Agar mahsulotda qayta buyurtma qoidalari allaqachon mavjud bo'lsa, Odoo bu tugmani `Min / Max` deb qayta nomlaydi, zaxirada bo'lishi kerak bo'lgan minimum va maksimum birliklar sonini ko'rsatish uchun.
+:::
+
+###### Sotib olish buyurtmalarini yaratish
+
+Kuzatiladigan va kuzatilmaydigan mahsulotlar ikkalasi ham **Purchase** ilovasida kotirovka so'roviga kiritilishi mumkin. Ammo kuzatilmaydigan mahsulotlarni qabul qilishda, qabul qilish ([WH/IN]) ni tasdiqlashda ularning qo'ldagi miqdori o'zgarmaydi.
+
+###### To'ldirish aqlli tugmasi
+
+`Replenish` aqlli tugmasi barcha tovarlarga to'g'ridan-to'g'ri mahsulot formasidan *Afzal qilingan Yo'l* ga muvofiq zaxirani to'ldirishga imkon beradi.
+
+#### Ishlab chiqarish
+
+Kuzatiladigan va kuzatilmaydigan mahsulotlar ikkalasi ham ishlab chiqarilishi, `subcontracted` qilinishi yoki boshqa mahsulotning `bill of materials (BoM)` ga kiritilishi mumkin.
+
+:::
+Kuzatiladigan yoki kuzatilmaydigan tovar uchun mahsulot formasida ishlab chiqarish operatsiyalari uchun paydo bo'lishi mumkin bo'lgan bir nechta aqlli tugmalar mavjud:
+:::
+
+- `fa-flask` `Bill of Materials`: Bu mahsulotni ishlab chiqarish uchun ishlatiladigan BoM larni ko'rsatadi.
+- `fa-level-up` `Used In`: Bu BoM da ushbu mahsulotni o'z ichiga olgan boshqa tovarlarni ko'rsatadi.
+
+#### Tovarlarni o'tkazish
+
+*O'tkazmalar* - bu tovarlar harakatini o'z ichiga olgan ombor operatsiyalari. O'tkazmalar misollariga `deliveries and receipts` hamda omborlar orasidagi `internal transfers` kiradi.
+
+**Inventory** ilovasida kuzatiladigan mahsulotlar uchun o'tkazma yaratishda, o'tkazmalar har bir joydagi qo'ldagi miqdorni o'zgartiradi. Masalan, ichki joy [WH/Stock] dan [WH/Packing Zone] ga besh birlik o'tkazish [WH/Stock] da qayd etilgan miqdorni kamaytiradi va [WH/Packing Zone] da uni oshiradi.
+
+Kuzatilmaydigan mahsulotlar uchun o'tkazmalar yaratilishi mumkin, ammo har bir saqlash joyidagi aniq miqdorlar kuzatilmaydi.
+
+#### Paketlar
+
+Kuzatiladigan va kuzatilmaydigan (inventar bo'lmagan) mahsulotlar ikkalasi ham `packages` ga joylashtirilishi mumkin.
+
+Biroq, inventar bo'lmagan mahsulotlar uchun miqdor kuzatilmaydi va mahsulot paketning `Contents` da ro'yxatlanmaydi (`Inventory app ‣ Products ‣ Packages` ga o'tib, kerakli paketni tanlab ko'rish mumkin).
+
+Kuzatilmaydigan mahsulot paketga joylashtirildi, ammo Content bo'limi uni ro'yxatlamaydi.
+
+Qo'shimcha ravishda, agar *Move Entire Packages* funksiyasi yoqilgan bo'lsa, paketni ko'chirish o'z ichiga olgan kuzatiladigan mahsulotlarning joyini yangilaydi, ammo o'z ichiga olgan kuzatilmaydigan mahsulotlarnikini emas. Ushbu funksiyani yoqish uchun `Inventory app ‣ Configuration ‣ Operations Types` ga o'ting, har qanday operatsiyani tanlang va `Move Entire Packages` katakchani belgilang.
+
+#### Inventar hisobotlari
+
+**Faqat** kuzatiladigan mahsulotlar quyidagi hisobotlarda ko'rinadi.
+
+::: warning
+Bu hisobotlar faqat `administrator access` ga ega foydalanuvchilar uchun mavjud.
+:::
+
+- `Stock report`: Bu hisobot barcha qo'ldagi, zaxiralanmagan, kiruvchi va chiquvchi kuzatiladigan inventarning keng ro'yxatini taqdim etadi. Hisobotga kirish uchun `Inventory app ‣ Reporting ‣ Stock` ga o'ting.
+- `Location report`: Bu hisobot har bir joyda (ichki, tashqi yoki virtual) qaysi kuzatiladigan mahsulotlar saqlanganligining taqsimotini ko'rsatadi. Hisobot faqat *Storage Location* funksiyasi faollashtirilgan holda mavjud (`Inventory app ‣ Configuration ‣ Settings`). Unga kirish uchun `Inventory app ‣ Reporting ‣ Locations` ga o'ting.
+- `Moves History report`: Bu hisobot tovarning qayerda va qachon zaxiraga kirgan/chiqganini xulosalaydi. Hisobotga kirish uchun `Inventory app ‣ Reporting ‣ Moves History` ga o'ting. Shu bilan bir qatorda, mahsulot formasidagi `fa-exchange` `In / Out` aqlli tugmasini bosib, hisobotni shu mahsulotning o'ziga xos harakatlar tarixiga filtrlash mumkin.
+- `Moves Analysis`: Bu hisobot operatsiya turiga ko'ra inventar o'tkazmalarining pivot jadval ko'rinishini taqdim etadi.
+- `Stock Valuation report`: Barcha kuzatiladigan inventarning pul qiymatining batafsil yozuvi.

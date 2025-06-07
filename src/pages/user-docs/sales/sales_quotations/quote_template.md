@@ -103,7 +103,7 @@ Keyin eslatmani `oi-apps` `(six squares)` belgisi orqali kerakli joyga sudrab ol
 
 *Ixtiyoriy mahsulotlar* dan foydalanish asosiy mahsulot bilan birga mahsulotlarni o'zaro sotishni o'z ichiga olgan marketing strategiyasidir. Maqsad mijozlarga foydali va bog'liq mahsulotlarni taklif qilish bo'lib, bu sotuvni oshirishi mumkin.
 
-::: example
+::: tip
 Agar mijoz mashina sotib olmoqchi bo'lsa, u mashinani to'ldiruvchi qo'shimcha mahsulot sifatida massaj o'rindiqlari buyurtma qilishni tanlashi yoki taklifni rad etib faqat mashinani sotib olishi mumkin.
 :::
 

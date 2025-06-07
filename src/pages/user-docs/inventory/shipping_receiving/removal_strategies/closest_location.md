@@ -13,7 +13,7 @@ To understand *location sequence* in the closest removal strategy,
 consider the following example:
 :::
 
-::: example
+::: tip
 A product is stored in the following locations: [Shelf
 A/Pallet], [Shelf A/Rack 1], and [Shelf A/Rack
 2].
@@ -56,7 +56,7 @@ Doing so opens the form for the parent location. In the
 `Removal Strategy` field, select
 `Closest Location`.
 
-::: example
+::: tip
 In a warehouse, the storage location [WH/Stock/Shelf 1] is
 located closest to the packing area, where products retrieved from
 shelves are packed for shipment. The popular product, [iPhone

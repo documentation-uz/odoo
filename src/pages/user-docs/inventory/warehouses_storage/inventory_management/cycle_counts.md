@@ -48,7 +48,7 @@ of counts.
 
 ![Location frequency setting on location.](cycle_counts/cycle-counts-frequency-value.png)
 
-::: example
+::: tip
 A location that needs an inventory count every 30 days should have the
 `Inventory
 Frequency (Days)` value set to

@@ -1,184 +1,85 @@
-# Units of measure
+# O'lchov birliklari
 
-In some cases, handling products in different units of measure is
-necessary. For example, a business can buy products from a country that
-uses the metric system, and then sell those products in a country that
-uses the imperial system. In that case, the business needs to convert
-the units.
+Ba'zi hollarda mahsulotlarni turli o'lchov birliklarida boshqarish zarur bo'ladi. Masalan, biznes metrik tizimidan foydalanadigan mamlakatdan mahsulotlarni sotib olib, keyin bu mahsulotlarni imperial tizimdan foydalanadigan mamlakatda sotishi mumkin. Bunday holda, biznes birliklarni konvertatsiya qilishi kerak.
 
-Another case for unit conversion is when a business buys products in a
-big pack from a supplier, and then sells those products in individual
-units.
+Birlik konvertatsiyasining yana bir holati - biznes yetkazib beruvchidan mahsulotlarni katta paketda sotib olib, keyin bu mahsulotlarni alohida birliklar bilan sotganda yuzaga keladi.
 
-Odoo can be set up to use different *units of measure (UoM)* for one
-product.
+Odoo bitta mahsulot uchun turli *o'lchov birliklari (UoM)* dan foydalanish uchun sozlanishi mumkin.
 
-## Configuration
+## Sozlash
 
-To use different units of measure in Odoo, first go to
-`Inventory app ‣
-Configuration ‣ Settings`, and
-under the `Products` section,
-activate the `Units of Measure`
-setting. Then, click `Save`.
+Odoo da turli o'lchov birliklaridan foydalanish uchun, avval `Inventory app ‣ Configuration ‣ Settings` ga o'ting va `Products` bo'limi ostida `Units of Measure` sozlamasini faollashtiring. Keyin `Save` tugmasini bosing.
 
 ![Enable Units of Measure in the Inventory settings.](uom/uom-enable-setting.png)
 
-## Units of measure categories
+## O'lchov birliklari toifalari
 
-After enabling the *Units of Measure* setting, view the default units of
-measure categories in
-`Inventory app ‣ Configuration ‣ UoM Categories`. The category is important for unit conversion;
-Odoo can convert a product\'s units from one unit to another **only** if
-both units belong to the same category.
+*Units of Measure* sozlamasini yoqqandan keyin, `Inventory app ‣ Configuration ‣ UoM Categories` da standart o'lchov birliklari toifalarini ko'ring. Toifa birlik konvertatsiyasi uchun muhim; Odoo mahsulot birliklarini bir birlikdan ikkinchisiga **faqat** ikkala birlik bir xil toifaga tegishli bo'lsagina konvertatsiya qilishi mumkin.
 
 ![Set units of measure categories.](uom/category.png)
 
-Each units of measure category has a reference unit. The reference unit
-is highlighted in blue in the `Uom`
-column of the `Units of Measure Categories` page. Odoo uses the reference unit as a base for any
-new units.
+Har bir o'lchov birliklari toifasida mos yozuv birligi mavjud. Mos yozuv birligi `Units of Measure Categories` sahifasining `Uom` ustunida ko'k rang bilan ajratilgan. Odoo mos yozuv birligini har qanday yangi birliklar uchun asos sifatida ishlatadi.
 
-To create a new unit, first select the correct category from the
-`Units of Measure
-Categories` page. For example, to
-sell a product in a box of six units, click the `Unit` category line. Then, on the category page that appears,
-click `Add a line` in the
-`Units of Measure` tab. Then, in the
-`Unit of Measure` field, title the
-new unit, such as [Box of 6], then in the
-`Type` field, select the appropriate
-size reference, such as
-`Bigger than the reference Unit of Measure`.
+Yangi birlik yaratish uchun, avval `Units of Measure Categories` sahifasidan to'g'ri toifani tanlang. Masalan, mahsulotni oltita birlikdan iborat qutida sotish uchun `Unit` toifa qatorini bosing. Keyin paydo bo'ladigan toifa sahifasida `Units of Measure` tabidagi `Add a line` tugmasini bosing. Keyin `Unit of Measure` maydonida yangi birlikni nomlang, masalan [Box of 6], so'ngra `Type` maydonida tegishli o'lcham mos yozuvini tanlang, masalan `Bigger than the reference Unit of Measure`.
 
-If applicable, enter a `UNSPSC Category`, which is a globally recognized [code managed by
-GS1](https://www.unspsc.org/), that **must** be purchased in order to
-use.
+Agar kerak bo'lsa, `UNSPSC Category` ni kiriting, bu [GS1 tomonidan boshqariladigan](https://www.unspsc.org/) global darajada tan olingan kod bo'lib, foydalanish uchun **sotib olinishi** shart.
 
-In the `Ratio` field, enter how many
-individual units are in the new
-`UoM (Unit of Measure)`, such as
-[6.00000] when using the example of the [6-Pack]
-(since a box of six is six times *bigger* than the reference unit,
-[1.00000]).
+`Ratio` maydonida yangi `UoM (Unit of Measure)` da nechta alohida birlik borligini kiriting, masalan [6.00000] [6-Pack] misolidan foydalanganda (chunki oltita quti mos yozuv birligi [1.00000] dan olti marta *katta*).
 
 ![Convert products from one unit to another as long as they belong to the same category.](uom/convert-products-by-unit.png)
 
-## Specify a product\'s units of measure
+## Mahsulotning o'lchov birliklarini belgilash
 
-To set units of measure on a product, first go to
-`Inventory app ‣ Products ‣
-Products` and select a product
-to open its product form page.
+Mahsulotda o'lchov birliklarini o'rnatish uchun, avval `Inventory app ‣ Products ‣ Products` ga o'ting va mahsulot forma sahifasini ochish uchun mahsulotni tanlang.
 
-In the `General Information` tab,
-edit the `Unit of Measure` field to
-specify the unit of measure that the product is sold in. The specified
-unit is also the unit used to keep track of the product\'s inventory and
-internal transfers.
+`General Information` tabida mahsulot sotiladigan o'lchov birligini belgilash uchun `Unit of Measure` maydonini tahrirlang. Belgilangan birlik shuningdek mahsulot inventarini va ichki o'tkazmalarni kuzatish uchun ishlatiladigan birlik hisoblanadi.
 
-Edit the `Purchase UoM` field to
-specify the unit of measure that the product is purchased in.
+Mahsulot sotib olinadigan o'lchov birligini belgilash uchun `Purchase UoM` maydonini tahrirlang.
 
-## Unit conversion 
+## Birlik konvertatsiyasi
 
-Odoo automatically converts unit measurements when products have
-different `UoMs (Units of
-Measure)` and purchase
-`UoMs (Units of Measure)`.
+Odoo mahsulotlar turli `UoMs (Units of Measure)` va sotib olish `UoMs (Units of Measure)` ga ega bo'lganda o'lchov birliklarini avtomatik ravishda konvertatsiya qiladi.
 
-This occurs in various scenarios, including:
+Bu turli stsenariylarda sodir bo'ladi, jumladan:
 
-1.  `Vendor orders `: purchase `UoM (Unit of Measure)` on purchase orders (POs) converts to
-    `UoM (Unit of Measure)` on internal
-    warehouse documents
-2.  `Automatic replenishment `: generates `POs (Purchase Orders)` when the stock levels of a product (tracked in
-    `UoM (Unit of Measure)`) dips below a
-    certain level. But, the `POs (Purchase Orders)` are created using the purchase
-    `UoM (Unit of Measure)`
-3.  `Sell products `: if a different
-    `UoM (Unit of Measure)` is used on
-    the sales order (SO), the quantity is converted to the warehouse\'s
-    preferred `UoM (Unit of Measure)` on
-    the delivery order
+1. `Vendor orders`: sotib olish buyurtmalarida (POs) sotib olish `UoM (Unit of Measure)` ichki ombor hujjatlarida `UoM (Unit of Measure)` ga konvertatsiya qilinadi
+2. `Automatic replenishment`: mahsulot zaxira darajasi (`UoM (Unit of Measure)` da kuzatiladi) ma'lum darajadan pastga tushganda `POs (Purchase Orders)` yaratadi. Ammo `POs (Purchase Orders)` sotib olish `UoM (Unit of Measure)` dan foydalanib yaratiladi
+3. `Sell products`: agar sotish buyurtmasida (SO) boshqa `UoM (Unit of Measure)` ishlatilsa, miqdor yetkazib berish buyurtmasida omborning afzal ko'radigan `UoM (Unit of Measure)` ga konvertatsiya qilinadi
 
-### Buy products in the purchase UoM 
+### Sotib olish UoM da mahsulotlarni sotib olish
 
-When creating a new request for quotation (RFQ) in the *Purchase* app,
-Odoo automatically uses the product\'s specified purchase unit of
-measure. If needed, manually edit the `UoM` value on the
-`RFQ (Request for Quotation)`.
+*Purchase* ilovasida yangi kotirovka so'rovi (RFQ) yaratayotganda, Odoo avtomatik ravishda mahsulotning belgilangan sotib olish o'lchov birligini ishlatadi. Agar kerak bo'lsa, `RFQ (Request for Quotation)` da `UoM` qiymatini qo'lda tahrirlang.
 
-After the `RFQ (Request for Quotation)`
-is confirmed into a `PO (Purchase Order)`, click the `Receipt`
-smart button at the top of the `PO (Purchase Order)`.
+`RFQ (Request for Quotation)` `PO (Purchase Order)` ga tasdiqlanganidan keyin, `PO (Purchase Order)` ning yuqori qismidagi `Receipt` aqlli tugmasini bosing.
 
-Odoo automatically converts the purchase unit of measure into the
-product\'s sales/inventory unit of measure, so the
-`Demand` column of the delivery
-receipt shows the converted quantity.
+Odoo sotib olish o'lchov birligini avtomatik ravishda mahsulotning sotish/inventar o'lchov birligiga konvertatsiya qiladi, shuning uchun yetkazib berish kvitansiyasining `Demand` ustuni konvertatsiya qilingan miqdorni ko'rsatadi.
 
-::: example
-When the product\'s purchase `UoM` is
-[Box of 6], and its sales/inventory unit of measure is
-[Units], the `PO (Purchase Order)` shows the quantity in boxes of six, and the receipt (and
-other internal warehouse documents) shows the quantity in units.
+::: tip
+Mahsulotning sotib olish `UoM` [Box of 6] bo'lsa va uning sotish/inventar o'lchov birligi [Units] bo'lsa, `PO (Purchase Order)` miqdorni oltita qutida ko'rsatadi va kvitansiya (va boshqa ichki ombor hujjatlari) miqdorni birliklar bilan ko'rsatadi.
 
+Sotib olish "UoM": Box of 6 dan foydalanib uchta miqdor buyurtmasi beriladi.
 
-
-An order of three quantities is placed using the purchase
-"UoM": Box of 6.
-
-
-
-
-Upon warehouse receipt, the recorded quantities are in the
-internal "Unit of Measure": Units.
-
+Ombor qabul qilishda qayd etilgan miqdorlar ichki "Unit of Measure": Units da bo'ladi.
 :::
 
-### Replenishment 
+### To'ldirish
 
-A request for quotation for a product can also be generated directly
-from the product form using the `Replenish` button.
+Mahsulot uchun kotirovka so'rovi to'g'ridan-to'g'ri mahsulot formasidan `Replenish` tugmasi yordamida ham yaratilishi mumkin.
 
-After clicking `Replenish`, a
-replenish assistant box pops up. The purchase unit of measure can be
-manually edited in the `Quantity`
-field, if needed. Then, click `Confirm` to create the
-`RFQ (Request for Quotation)`.
+`Replenish` tugmasini bosgandan keyin, to'ldirish yordamchi oynasi paydo bo'ladi. Agar kerak bo'lsa, sotib olish o'lchov birligi `Quantity` maydonida qo'lda tahrirlanishi mumkin. Keyin `RFQ (Request for Quotation)` yaratish uchun `Confirm` tugmasini bosing.
 
 ::: warning
-
-A `PO (Purchase Order)` can **only** be
-automatically generated if at least **one** vendor is listed in the
-product form\'s `Purchase` tab.
-::::
+`PO (Purchase Order)` **faqat** mahsulot formasining `Purchase` tabida kamida **bitta** yetkazib beruvchi ro'yxatga olingan bo'lsagina avtomatik ravishda yaratilishi mumkin.
+:::
 
 ![Click Replenish button to manually replenish.](uom/replenish.png)
 
-Navigate to the created `PO (Purchase Order)` by clicking the `Forecasted` smart button on the product form. Scroll down to the
-`Forecasted Inventory` section, and
-in the `Requests
-for quotation` line, click the
-`RFQ (Request for Quotation)` reference
-number to open the draft `RFQ (Request for Quotation)`. If necessary, the purchase
-`UoM (Unit of Measure)` can be edited
-directly on the `PO (Purchase Order)`.
+Yaratilgan `PO (Purchase Order)` ga o'tish uchun mahsulot formasidagi `Forecasted` aqlli tugmasini bosing. `Forecasted Inventory` bo'limigacha pastga aying va `Requests for quotation` qatorida loyiha `RFQ (Request for Quotation)` ni ochish uchun `RFQ (Request for Quotation)` mos yozuv raqamini bosing. Agar kerak bo'lsa, sotib olish `UoM (Unit of Measure)` to'g'ridan-to'g'ri `PO (Purchase Order)` da tahrirlanishi mumkin.
 
-### Sell in a different UoM 
+### Boshqa UoM da sotish
 
-When creating a new quotation in the *Sales* app, Odoo automatically
-uses the product\'s specified unit of measure. If needed, the
-`UoM` can be manually edited on the
-quotation.
+*Sales* ilovasida yangi kotirovka yaratayotganda, Odoo avtomatik ravishda mahsulotning belgilangan o'lchov birligini ishlatadi. Agar kerak bo'lsa, `UoM` kotirovkada qo'lda tahrirlanishi mumkin.
 
-After the quotation is sent to the customer, and confirmed into a sales
-order (SO), click the `Delivery`
-smart button at the top of the `SO (Sales Order)`. Odoo automatically converts the unit of measure into the
-product\'s inventory unit of measure, so the `Demand` column of the delivery shows the converted quantity.
+Kotirovka mijozga yuborilgandan va sotish buyurtmasiga (SO) tasdiqlanganidan keyin, `SO (Sales Order)` ning yuqori qismidagi `Delivery` aqlli tugmasini bosing. Odoo o'lchov birligini avtomatik ravishda mahsulotning inventar o'lchov birligiga konvertatsiya qiladi, shuning uchun yetkazib berishning `Demand` ustuni konvertatsiya qilingan miqdorni ko'rsatadi.
 
-For example, if the product\'s `UoM (Unit of Measure)` on the `SO (Sales Order)`
-was changed to [Box of 6], but its inventory unit of measure
-is [Units], the `SO (Sales Order)` shows the quantity in boxes of six, and the delivery shows
-the quantity in units.
+Masalan, agar `SO (Sales Order)` dagi mahsulotning `UoM (Unit of Measure)` [Box of 6] ga o'zgartirilgan bo'lsa, lekin uning inventar o'lchov birligi [Units] bo'lsa, `SO (Sales Order)` miqdorni oltita qutida ko'rsatadi va yetkazib berish miqdorni birliklar bilan ko'rsatadi.

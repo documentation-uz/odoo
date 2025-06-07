@@ -7,7 +7,7 @@ using `FIFO (First In, First Out)`,
 companies can prevent prolonged stock retention of specific styles.
 
 
-::: example
+::: tip
 Various quantities of the product, [T-shirt], tracked by lot
 numbers, arrive on August 1st and August 25th. For an order made on
 September 1st, the `FIFO (First In, First Out)` removal strategy prioritizes lots that have been in stock
@@ -30,7 +30,7 @@ a list of the product\'s lots or serial numbers that are in stock. The
 On` field shows the lot/serial number
 creation date, which is, essentially, the arrival date.
 
-::: example
+::: tip
 Serial number [00000000500] of the product, [Cabinet with
 Doors], arrived on December 29th, as displayed in the
 `Created On` field.

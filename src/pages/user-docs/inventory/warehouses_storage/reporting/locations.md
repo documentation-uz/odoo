@@ -88,7 +88,7 @@ these steps:
 
 The report now displays a list of products at the transit location.
 
-::: example
+::: tip
 Searching [Input] in `Location` shows a list of products at a *WH/Input* location.
 
 The list shows [500] quantities of [Chicken],

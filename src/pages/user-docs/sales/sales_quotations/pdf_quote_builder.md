@@ -77,7 +77,7 @@ Mahsulot PDF uchun:
 
 PDF yuklangandan so'ng `Configure dynamic fields` ni amalga oshirishingiz mumkin. Bu sizga PDF ingizda topilgan har qanday maydon nomini mavjud yo'lni yozish orqali ko'rsatmoqchi bo'lgan maydonga moslashtirish imkonini beradi. Sarlavha va oxirgi qismlar joriy `sale_order` modelidan boshlanadi, mahsulot hujjati esa o'z yo'lini `sale_order_line` dan kuzatib boradi. Bu yo'lni bo'sh qoldirish sizga uni talab qiladigan muayyan kotirovkadan bevosita maxsus eslatmalarni to'ldirish imkonini beradi.
 
-::: example
+::: tip
 PDF qurilganda umumiy dinamik matn qiymatlaridan (`name` va `partner_id_name`) foydalanish eng yaxshi amaliyotdir. Ma'lumotlar bazasiga yuklanganda Odoo bu maydonlarni tegishli maydonlardan olingan ma'lumotlar bilan avtomatik to'ldiradi.
 
 Bu holda Odoo `name` dinamik matn maydonida Savdo buyurtmasi havolasini va `partner_id_name` maydonida Mijoz nomini avtomatik to'ldiradi.
@@ -87,11 +87,11 @@ Bu holda Odoo `name` dinamik matn maydonida Savdo buyurtmasi havolasini va `part
 
 PDF fayl(lar) tayyor bo'lgandan so'ng ularni kompyuterning qattiq diskiga saqlang va `Sales app ‣ Configuration ‣ Headers/Footers` orqali Odoo ga yuklashni davom eting.
 
-::: example
+::: tip
 Savdo buyurtmasida mavjud ma'lumot bo'lgan `invoice_partner_country` forma maydonini o'z ichiga olgan PDF yuklashda `Form Field Name` ning `path` ini quyidagicha sozlang: - sarlavha yoki oxirgi hujjat uchun `partner_invoice_id.country_id.name` - mahsulot hujjati uchun `order_id.partner_invoice_id.country_id.name` PDF qurilganda formani hisob-faktura hamkor mamlakati nomi bilan to'ldiradi.
 :::
 
-::: example
+::: tip
 `custom_note` forma maydonini o'z ichiga olgan har qanday PDF yuklashda `path` ni bo'sh qoldirish sotuvchiga o'sha hujjatda forma maydoni joylashgan va PDF qurilganda ko'rsatiladigan har qanday eslatma yozish imkonini beradi.
 :::
 
@@ -137,7 +137,7 @@ Keyin `Sales` bo'limida `Visible at` maydonida ochiluvchi menyuni bosing va quyi
 - `Confirmed order`: hujjat buyurtma tasdiqlanganida mijozlarga yuboriladi. Bu foydalanuvchi qo'llanmalari va boshqa qo'shimcha hujjatlar uchun eng yaxshisi.
 - `Inside quote`: hujjat kotirovka PDF iga, sarlavha sahifalari va kotirovkaning `Pricing` bo'limi orasida kiritiladi.
 
-::: example
+::: tip
 `Visible at` maydoni uchun `Inside quote` opsiyasi tanlanganida va maxsus PDF fayl [Corner Desk.pdf] yuklanganda, PDF *mijoz portalida* kotirovkada `Documents` maydoni ostida ko'rinadi.
 
 ![Odoo Sales'da kotirovka opsiyasi tanlangan bilan yuklangan pdf namunasi.](pdf_quote_builder/pdf-on-quote-sample.png)
@@ -147,7 +147,7 @@ Keyin `Sales` bo'limida `Visible at` maydonida ochiluvchi menyuni bosing va quyi
 
 Nihoyat, `E-Commerce` bo'limida PDF onlayn do'konda mahsulot sahifasida paydo bo'lishi uchun `Publish on Website` ni yoqish yoki yoqmaslikni hal qiling.
 
-::: example
+::: tip
 `Publish on Website` opsiyasi yoqilganida yuklangan hujjatga [Corner Desk.pdf] havola onlayn do'kondagi mahsulot sahifasida paydo bo'ladi.
 
 U `Documents` sarlavhasi ostida yuklangan hujjat nomini ko'rsatuvchi havola bilan paydo bo'ladi.

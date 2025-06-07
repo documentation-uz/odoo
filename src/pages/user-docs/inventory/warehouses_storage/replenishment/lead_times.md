@@ -64,7 +64,7 @@ Odoo issues a warning message if the set delivery date is earlier than
 the expected date, as it may not be feasible to fulfill the order by
 that time, which would impact other warehouse operations.
 
-::: example
+::: tip
 A `SO (sales order)` containing a
 [Coconut-scented candle] is confirmed on July 11th. The
 product has a customer lead time of 14 days, and the business uses a
@@ -87,7 +87,7 @@ under the `Customer Lead Time` field,
 fill in the number of calendar days required to fulfill the delivery
 order from start to finish.
 
-::: example
+::: tip
 Set a 14-day customer lead time for the [Coconut-scented
 candle] by navigating to its product form. Then, in the
 `Inventory` tab, type
@@ -111,7 +111,7 @@ Next, enter the desired number of calendar days. This security lead time
 is a buffer notifying the team to prepare for outgoing shipments earlier
 than the scheduled date.
 
-::: example
+::: tip
 Setting the `Security Lead Time for Sales` to [1.00] day, pushes the
 `Scheduled Date` of a delivery order
 (DO) forward by one day. In that case, if a product is initially
@@ -144,7 +144,7 @@ to:
 
 ![Show \*Shipping Policy\* field in the \*Other Info\* tab of a quotation.](lead_times/shipping-policy.png)
 
-::: example
+::: tip
 In a quotation containing 2 products, [Yoga mat] and
 [Resistance band,] the products have a lead time of 8 days
 and 5 days, respectively. Today\'s date is April 2nd.
@@ -191,7 +191,7 @@ change the interval between *Order Deadline* and *Expected Arrival*.
 
 ![Visualization of PO deadline and receipt date used with vendor lead times.](lead_times/vendor-lead-times.png)
 
-::: example
+::: tip
 To tie all the purchase lead times together, consider this:
 
 - Today: April 21
@@ -248,7 +248,7 @@ the *Expected Arrival* date has passed, and appears in the *Late* box on
 the **Purchase** app\'s dashboard.
 ::::
 
-::: example
+::: tip
 On the vendor pricelist of the product form, the
 `Delivery Lead Time` for the selected
 vendor is set to [10 days.]
@@ -336,7 +336,7 @@ capacity* (`the number of operations that can be
 performed at the work center simultaneously`).
 
 
-::: example
+::: tip
 A product\'s scheduled shipment date on the
 `DO (Delivery Order)` is August 15th. The
 product requires 14 days to manufacture. So, the latest date to start
@@ -370,7 +370,7 @@ components listed on the `BoM (Bill of Materials)`.
 to this value.
 ::::
 
-::: example
+::: tip
 A `BoM (Bill of Materials)` has two
 components, one has a manufacturing lead time of two days, and the other
 has a purchase lead time of four days. The
@@ -391,7 +391,7 @@ the manufacturing process. Then, click `Save`.
 
 ![View of the security lead time for manufacturing from the manufacturing app settings.](lead_times/manuf-security.png)
 
-::: example
+::: tip
 A product has a scheduled shipment date on the
 `DO (Delivery Order)` set for August
 15th. The manufacturing lead time is 7 days, and manufacturing security
