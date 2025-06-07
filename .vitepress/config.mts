@@ -139,15 +139,6 @@ export default defineConfig({
             ],
             '/user-docs/sales': [
                 {
-                    text: 'Get Started',
-                    items: [
-                        {
-                            text: 'Introduction',
-                            link: '/user-docs/sales/get-started/introduction'
-                        },
-                    ]
-                },
-                {
                     text: 'Sales Quotations',
                     link: '/user-docs/sales/sales_quotations',
                     items: [
