@@ -137,6 +137,122 @@ export default defineConfig({
                     ]
                 },
             ],
+            '/user-docs/crm': [
+                {
+                    "text": "Acquire leads",
+                    "link": "/user-docs/crm/acquire_leads",
+                    "items": [
+                        {
+                            "text": "Convert leads into opportunities",
+                            "link": "/user-docs/crm/acquire_leads/convert"
+                        },
+                        {
+                            "text": "Create leads (from email or manually)",
+                            "link": "/user-docs/crm/acquire_leads/email_manual"
+                        },
+                        {
+                            "text": "Lead mining",
+                            "link": "/user-docs/crm/acquire_leads/lead_mining"
+                        },
+                        {
+                            "text": "Create opportunities from web contact forms",
+                            "link": "/user-docs/crm/acquire_leads/opportunities_form"
+                        },
+                        {
+                            "text": "Create and send quotations",
+                            "link": "/user-docs/crm/acquire_leads/send_quotes"
+                        }
+                    ]
+                },
+                {
+                    "text": "Optimize your Day-to-Day work",
+                    "link": "/user-docs/crm/optimize",
+                    "items": [
+                        {
+                            "text": "CRM Gamification",
+                            "link": "/user-docs/crm/optimize/gamification"
+                        },
+                        {
+                            "text": "Lead enrichment",
+                            "link": "/user-docs/crm/optimize/lead_enrichment"
+                        },
+                        {
+                            "text": "Enrich contacts with partner autocomplete",
+                            "link": "/user-docs/crm/optimize/partner_autocomplete"
+                        },
+                        {
+                            "text": "Utilize activities for sales teams",
+                            "link": "/user-docs/crm/optimize/utilize_activities"
+                        }
+                    ]
+                },
+                {
+                    "text": "Analyze performance",
+                    "link": "/user-docs/crm/performance",
+                    "items": [
+                        {
+                            "text": "Expected revenue report",
+                            "link": "/user-docs/crm/performance/expected_revenue_report"
+                        },
+                        {
+                            "text": "Forecast report",
+                            "link": "/user-docs/crm/performance/forecast_report"
+                        },
+                        {
+                            "text": "Pipeline Analysis",
+                            "link": "/user-docs/crm/performance/win_loss"
+                        }
+                    ]
+                },
+                {
+                    "text": "Organize the pipeline",
+                    "link": "/user-docs/crm/pipeline",
+                    "items": [
+                        {
+                            "text": "Lost opportunities",
+                            "link": "/user-docs/crm/pipeline/lost_opportunities"
+                        },
+                        {
+                            "text": "Manage sales teams",
+                            "link": "/user-docs/crm/pipeline/manage_sales_teams"
+                        },
+                        {
+                            "text": "Merge similar leads and opportunities",
+                            "link": "/user-docs/crm/pipeline/merge_similar"
+                        }
+                    ]
+                },
+                {
+                    "text": "Assign and track leads",
+                    "link": "/user-docs/crm/track_leads",
+                    "items": [
+                        {
+                            "text": "Lead distribution report",
+                            "link": "/user-docs/crm/track_leads/lead_distribution_report"
+                        },
+                        {
+                            "text": "Assign leads with predictive lead scoring",
+                            "link": "/user-docs/crm/track_leads/lead_scoring"
+                        },
+                        {
+                            "text": "Marketing attribution reports",
+                            "link": "/user-docs/crm/track_leads/marketing_attribution"
+                        },
+                        {
+                            "text": "Quality leads report",
+                            "link": "/user-docs/crm/track_leads/quality_leads_report"
+                        },
+                        {
+                            "text": "Resellers",
+                            "link": "/user-docs/crm/track_leads/resellers"
+                        },
+                        {
+                            "text": "Unattended leads report",
+                            "link": "/user-docs/crm/track_leads/unattended_leads_report"
+                        }
+                    ]
+                }
+            ],
             '/user-docs/sales': [
                 {
                     text: 'Sales Quotations',
