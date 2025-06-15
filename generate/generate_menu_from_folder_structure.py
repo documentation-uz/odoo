@@ -4,8 +4,8 @@ import re
 from pathlib import Path
 
 # Papka manzilini kiriting
-folder_path = "/Users/user/Documents/zedcentury/documentations/odoo/src/pages/user-docs/inventory"
-base_menu = "/user-docs/inventory"
+folder_path = "/Users/user/Documents/zedcentury/documentations/odoo/src/pages/user-docs/crm"
+base_menu = "/user-docs/crm"
 
 
 def extract_header_from_md(file_path):

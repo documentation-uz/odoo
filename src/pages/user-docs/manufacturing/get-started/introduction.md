@@ -1,3 +1,0 @@
-# Introduction
-
-Introduction of Manufacturing
