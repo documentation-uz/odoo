@@ -32,6 +32,11 @@ features:
     details: Manage your stock and logistics activities
     link: /user-docs/inventory/product_management/configure
     linkText: Learn more
+  - icon: <img src="https://download.odoocdn.com/icons/mrp/static/description/icon.svg"/>
+    title: Manufacturing
+    details: Manufacturing Orders & BOMs
+    link: /user-docs/manufacturing/basic_setup/configure_manufacturing_product
+    linkText: Learn more
   - icon: <img src="https://download.odoocdn.com/icons/hr/static/description/icon.svg"/>
     title: Employees
     details: Centralize employee information

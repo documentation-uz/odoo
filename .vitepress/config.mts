@@ -737,141 +737,163 @@ export default defineConfig({
             ],
             '/user-docs/manufacturing/': [
                 {
-                    text: 'Get started',
-                    items: [
-                        {text: 'Introduction', link: '/user-docs/manufacturing/get-started/introduction'},
-                        {text: 'Installation', link: '/user-docs/manufacturing/get-started/installation'}
-                    ],
-                    collapsed: false
-                },
-                {
-                    text: 'Basic Setup',
-                    items: [
+                    "text": "Advanced configuration",
+                    "link": "/user-docs/manufacturing/advanced_configuration",
+                    "items": [
                         {
-                            text: 'Manufacturing product configuration',
-                            link: '/user-docs/manufacturing/basic-setup/manufacturing-product-configuration'
-                        },
-                        {text: 'Bill of materials', link: '/user-docs/manufacturing/basic-setup/bill-of-materials'},
-                        {
-                            text: 'One-step manufacturing',
-                            link: '/user-docs/manufacturing/basic-setup/one-step-manufacturing'
+                            "text": "Kits",
+                            "link": "/user-docs/manufacturing/advanced_configuration/kit_shipping"
                         },
                         {
-                            text: 'Two-step manufacturing',
-                            link: '/user-docs/manufacturing/basic-setup/two-step-manufacturing'
+                            "text": "Managing BoMs for product variants",
+                            "link": "/user-docs/manufacturing/advanced_configuration/product_variants"
                         },
                         {
-                            text: 'Three-step manufacturing',
-                            link: '/user-docs/manufacturing/basic-setup/three-step-manufacturing'
+                            "text": "Multilevel BoMs",
+                            "link": "/user-docs/manufacturing/advanced_configuration/sub_assemblies"
                         },
                         {
-                            text: 'Manufacturing order costs',
-                            link: '/user-docs/manufacturing/basic-setup/manufacturing-order-costs'
+                            "text": "Work centers",
+                            "link": "/user-docs/manufacturing/advanced_configuration/using_work_centers"
                         },
+                        {
+                            "text": "Work order dependencies",
+                            "link": "/user-docs/manufacturing/advanced_configuration/work_order_dependencies"
+                        }
                     ]
                 },
                 {
-                    text: 'Advanced Configuration',
-                    items: [
+                    "text": "Basic setup",
+                    "link": "/user-docs/manufacturing/basic_setup",
+                    "items": [
                         {
-                            text: 'Managing BoMs for product variants',
-                            link: '/user-docs/manufacturing/advanced-configuration/managing-boms-for-product-variants'
-                        },
-                        {text: 'Kits', link: '/user-docs/manufacturing/advanced-configuration/kits'},
-                        {
-                            text: 'Multilevel BoMs',
-                            link: '/user-docs/manufacturing/advanced-configuration/multilevel-boms'
+                            "text": "Bill of materials",
+                            "link": "/user-docs/manufacturing/basic_setup/bill_configuration"
                         },
                         {
-                            text: 'Manage work orders using work center',
-                            link: '/user-docs/manufacturing/advanced-configuration/manage-work-orders-using-work-center'
+                            "text": "Manufacturing product configuration",
+                            "link": "/user-docs/manufacturing/basic_setup/configure_manufacturing_product"
                         },
                         {
-                            text: 'Work order dependencies',
-                            link: '/user-docs/manufacturing/advanced-configuration/work-order-dependencies'
+                            "text": "Manufacturing order costs",
+                            "link": "/user-docs/manufacturing/basic_setup/mo_costs"
                         },
+                        {
+                            "text": "One-step manufacturing",
+                            "link": "/user-docs/manufacturing/basic_setup/one_step_manufacturing"
+                        },
+                        {
+                            "text": "Three-step manufacturing",
+                            "link": "/user-docs/manufacturing/basic_setup/three_step_manufacturing"
+                        },
+                        {
+                            "text": "Two-step manufacturing",
+                            "link": "/user-docs/manufacturing/basic_setup/two_step_manufacturing"
+                        }
                     ]
                 },
                 {
-                    text: 'Workflows',
-                    items: [
+                    "text": "Reporting",
+                    "link": "/user-docs/manufacturing/reporting",
+                    "items": [
                         {
-                            text: 'Master production schedule',
-                            link: '/user-docs/manufacturing/workflows/master-production-schedule'
-                        },
-                        {text: 'Work center time off', link: '/user-docs/manufacturing/workflows/work-center-time-off'},
-                        {
-                            text: 'Scrap during manufacturing',
-                            link: '/user-docs/manufacturing/workflows/scrap-during-manufacturing'
+                            "text": "Allocation reports",
+                            "link": "/user-docs/manufacturing/reporting/allocation"
                         },
                         {
-                            text: 'Manufacturing backorders',
-                            link: '/user-docs/manufacturing/workflows/manufacturing-backorders'
+                            "text": "Overall equipment effectiveness",
+                            "link": "/user-docs/manufacturing/reporting/oee"
                         },
                         {
-                            text: 'Split and merge manufacturing orders',
-                            link: '/user-docs/manufacturing/workflows/split-and-merge-manufacturing-orders'
-                        },
-                        {text: 'Unbuild orders', link: '/user-docs/manufacturing/workflows/unbuild-orders'},
-                        {text: 'By-Products', link: '/user-docs/manufacturing/workflows/by-products'},
-                        {
-                            text: 'Continuous product improvement',
-                            link: '/user-docs/manufacturing/workflows/continuous-product-improvement'
-                        },
-                        {
-                            text: 'Manufacture with lots and serial numbers',
-                            link: '/user-docs/manufacturing/workflows/manufacture-with-lots-and-serial-numbers'
-                        },
+                            "text": "Production analysis",
+                            "link": "/user-docs/manufacturing/reporting/production_analysis"
+                        }
                     ]
                 },
                 {
-                    text: 'Shop Floor',
-                    items: [
-                        {text: 'Shop Floor overview', link: '/user-docs/manufacturing/shop-floor/shop-floor-overview'},
+                    "text": "Shop Floor",
+                    "link": "/user-docs/manufacturing/shop_floor",
+                    "items": [
                         {
-                            text: 'Shop Floor time tracking',
-                            link: '/user-docs/manufacturing/shop-floor/shop-floor-time-tracking'
+                            "text": "Shop Floor overview",
+                            "link": "/user-docs/manufacturing/shop_floor/shop_floor_overview"
                         },
+                        {
+                            "text": "Shop Floor time tracking",
+                            "link": "/user-docs/manufacturing/shop_floor/shop_floor_tracking"
+                        }
                     ]
                 },
                 {
-                    text: 'Subcontracting',
-                    items: [
+                    "text": "Subcontracting",
+                    "link": "/user-docs/manufacturing/subcontracting",
+                    "items": [
                         {
-                            text: 'Basic subcontracting',
-                            link: '/user-docs/manufacturing/subcontracting/basic-subcontracting'
+                            "text": "Basic subcontracting lead times",
+                            "link": "/user-docs/manufacturing/subcontracting/basic_subcontracting_lead_times"
                         },
                         {
-                            text: 'Basic subcontracting lead times',
-                            link: '/user-docs/manufacturing/subcontracting/basic-subcontracting-lead-times'
+                            "text": "Dropship subcontracting lead times",
+                            "link": "/user-docs/manufacturing/subcontracting/dropship_subcontracting_lead_times"
                         },
                         {
-                            text: 'Resupply subcontractor',
-                            link: '/user-docs/manufacturing/subcontracting/resupply-subcontractor'
+                            "text": "Resupply subcontracting lead times",
+                            "link": "/user-docs/manufacturing/subcontracting/resupply_subcontracting_lead_times"
                         },
                         {
-                            text: 'Resupply subcontracting lead times',
-                            link: '/user-docs/manufacturing/subcontracting/resupply-subcontracting-lead-times'
+                            "text": "Basic subcontracting",
+                            "link": "/user-docs/manufacturing/subcontracting/subcontracting_basic"
                         },
                         {
-                            text: 'Dropship to subcontractor',
-                            link: '/user-docs/manufacturing/subcontracting/dropship-to-subcontractor'
+                            "text": "Dropship to subcontractor",
+                            "link": "/user-docs/manufacturing/subcontracting/subcontracting_dropship"
                         },
                         {
-                            text: 'Dropship subcontracting lead times',
-                            link: '/user-docs/manufacturing/subcontracting/dropship-subcontracting-lead-times'
-                        },
+                            "text": "Resupply subcontractor",
+                            "link": "/user-docs/manufacturing/subcontracting/subcontracting_resupply"
+                        }
                     ]
                 },
                 {
-                    text: 'Reporting',
-                    items: [
-                        {text: 'Allocation reports', link: '/user-docs/manufacturing/reporting/allocation-reports'},
+                    "text": "Workflows",
+                    "link": "/user-docs/manufacturing/workflows",
+                    "items": [
                         {
-                            text: 'Overall equipment effectiveness',
-                            link: '/user-docs/manufacturing/reporting/overall-equipment-effectiveness'
+                            "text": "By-Products",
+                            "link": "/user-docs/manufacturing/workflows/byproducts"
                         },
-                        {text: 'Production analysis', link: '/user-docs/manufacturing/reporting/production-analysis'},
+                        {
+                            "text": "Continuous product improvement",
+                            "link": "/user-docs/manufacturing/workflows/continuous_improvement"
+                        },
+                        {
+                            "text": "Manufacture with lots and serial numbers",
+                            "link": "/user-docs/manufacturing/workflows/manufacture_lots_serials"
+                        },
+                        {
+                            "text": "Manufacturing backorders",
+                            "link": "/user-docs/manufacturing/workflows/manufacturing_backorders"
+                        },
+                        {
+                            "text": "Scrap during manufacturing",
+                            "link": "/user-docs/manufacturing/workflows/scrap_manufacturing"
+                        },
+                        {
+                            "text": "Split and merge manufacturing orders",
+                            "link": "/user-docs/manufacturing/workflows/split_merge"
+                        },
+                        {
+                            "text": "Unbuild orders",
+                            "link": "/user-docs/manufacturing/workflows/unbuild_orders"
+                        },
+                        {
+                            "text": "Master production schedule",
+                            "link": "/user-docs/manufacturing/workflows/use_mps"
+                        },
+                        {
+                            "text": "Work center time off",
+                            "link": "/user-docs/manufacturing/workflows/work_center_time_off"
+                        }
                     ]
                 }
             ],
