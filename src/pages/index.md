@@ -27,6 +27,21 @@ features:
     details: From quotations to invoices
     link: /user-docs/sales/sales_quotations
     linkText: Learn more
+  - icon: <img src="https://download.odoocdn.com/icons/point_of_sale/static/description/icon.svg"/>
+    title: Point of Sale
+    details: User-friendly PoS interface for shops and restaurants
+    link: /user-docs/point_of_sale
+    linkText: Learn more
+  - icon: <img src="https://download.odoocdn.com/icons/sale_subscription/static/description/icon.svg"/>
+    title: Subscriptions
+    details: Generate recurring invoices and manage renewals
+    link: /user-docs/subscriptions
+    linkText: Learn more
+  - icon: <img src="https://download.odoocdn.com/icons/sale_renting/static/description/icon.svg"/>
+    title: Rental
+    details: Manage rental contracts, deliveries and returns
+    link: /user-docs/rental
+    linkText: Learn more
   - icon: <img src="https://download.odoocdn.com/icons/stock/static/description/icon.svg"/>
     title: Inventory
     details: Manage your stock and logistics activities

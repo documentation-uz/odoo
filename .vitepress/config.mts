@@ -381,6 +381,54 @@ export default defineConfig({
                     link: '/user-docs/sales/commissions'
                 },
             ],
+            '/user-docs/subscriptions': [
+                {
+                    "text": "Introduction",
+                    "link": "/user-docs/subscriptions"
+                },
+                {
+                    "text": "Automation rules",
+                    "link": "/user-docs/subscriptions/automatic_alerts"
+                },
+                {
+                    "text": "Close subscriptions",
+                    "link": "/user-docs/subscriptions/closing"
+                },
+                {
+                    "text": "Subscriptions in the eCommerce shop",
+                    "link": "/user-docs/subscriptions/ecommerce"
+                },
+                {
+                    "text": "Subscription plans",
+                    "link": "/user-docs/subscriptions/plans"
+                },
+                {
+                    "text": "Renew subscriptions",
+                    "link": "/user-docs/subscriptions/renewals"
+                },
+                {
+                    "text": "Subscription reports",
+                    "link": "/user-docs/subscriptions/reports"
+                },
+                {
+                    "text": "Scheduled actions",
+                    "link": "/user-docs/subscriptions/scheduled_actions"
+                },
+                {
+                    "text": "Upsell subscriptions",
+                    "link": "/user-docs/subscriptions/upselling"
+                }
+            ],
+            '/user-docs/rental': [
+                {
+                    "text": "Rental",
+                    "link": "/user-docs/rental"
+                },
+                {
+                    "text": "Manage deposits",
+                    "link": "/user-docs/rental/manage_deposits"
+                }
+            ],
             '/user-docs/inventory': [
                 {
                     "text": "Product management",

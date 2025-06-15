@@ -1,0 +1,34 @@
+[
+    {
+        "text": "Automation rules",
+        "link": "/user-docs/subscriptions/automatic_alerts"
+    },
+    {
+        "text": "Close subscriptions",
+        "link": "/user-docs/subscriptions/closing"
+    },
+    {
+        "text": "Subscriptions in the eCommerce shop",
+        "link": "/user-docs/subscriptions/ecommerce"
+    },
+    {
+        "text": "Subscription plans",
+        "link": "/user-docs/subscriptions/plans"
+    },
+    {
+        "text": "Renew subscriptions",
+        "link": "/user-docs/subscriptions/renewals"
+    },
+    {
+        "text": "Subscription reports",
+        "link": "/user-docs/subscriptions/reports"
+    },
+    {
+        "text": "Scheduled actions",
+        "link": "/user-docs/subscriptions/scheduled_actions"
+    },
+    {
+        "text": "Upsell subscriptions",
+        "link": "/user-docs/subscriptions/upselling"
+    }
+]
