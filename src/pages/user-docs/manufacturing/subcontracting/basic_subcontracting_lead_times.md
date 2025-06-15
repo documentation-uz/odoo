@@ -1,122 +1,64 @@
-# Basic subcontracting lead times
+# Asosiy subpudratchilik yetkazib berish muddatlari
 
-In Odoo, lead times are used to predict how long it takes to complete a
-certain action. For example, a *delivery lead time* can be set for a
-purchased product, which specifies the number of days it usually takes
-for the product\'s vendor to delivery the product to the purchasing
-company.
+Odoo da yetkazib berish muddatlari muayyan harakatni bajarish uchun qancha vaqt ketishini bashorat qilish uchun ishlatiladi. Masalan, sotib olingan mahsulot uchun *yetkazib berish muddati* o'rnatilishi mumkin, bu odatda sotuvchining mahsulotni sotib oluvchi kompaniyaga yetkazib berishi uchun qancha kun ketishini belgilaydi.
 
-For subcontracted products specifically, delivery lead times can be
-configured to take into account the amount of time required for the
-subcontractor to manufacture a product. Doing so allows the contracting
-company to better predict the delivery dates of subcontracted products.
+Subpudratchilik mahsulotlari uchun, yetkazib berish muddatlari subpudratchi mahsulotni ishlab chiqarish uchun zarur bo'lgan vaqt miqdorini hisobga olish uchun sozlanishi mumkin. Buning amalga oshirilishi pudratchi kompaniyaga subpudratchilik mahsulotlarining yetkazib berish sanalarini yaxshiroq bashorat qilishga imkon beradi.
 
 ::: warning
 
-Like all lead times in Odoo, lead times for subcontracted products are
-only an estimate, and are based on how long actions are *expected* to
-take.
+Odoo dagi barcha yetkazib berish muddatlari kabi, subpudratchilik mahsulotlari uchun yetkazib berish muddatlari faqat taxminiy hisoblanadi va harakatlarning qancha vaqt *kutilayotganiga* asoslanadi.
 
-Unforeseen circumstances can impact the completion of these actions,
-which means that lead times should not be viewed as guarantees.
+Kutilmagan holatlar bu harakatlarning bajarilishiga ta'sir qilishi mumkin, bu esa yetkazib berish muddatlarini kafolat sifatida ko'rmaslik kerakligini anglatadi.
 ::::
 
-## Configuration
+## Sozlash
 
-When using the
-`basic subcontracting ` workflow to manufacture a product, a company is not
-responsible for supplying the subcontractor with the necessary
-components. This means that the only factors affecting the delivery date
-of a product are the amount of time it takes the subcontractor to
-manufacture and deliver it.
+Mahsulotni ishlab chiqarish uchun `basic subcontracting` ish jarayonidan foydalanganda, kompaniya subpudratchini zarur komponentlar bilan ta'minlash uchun javobgar emas. Bu mahsulotning yetkazib berish sanasiga ta'sir qiluvchi yagona omillar subpudratchining uni ishlab chiqarish va yetkazib berish uchun ketgan vaqt miqdori ekanligini anglatadi.
 
-By assigning a product\'s subcontractor a delivery lead time that
-considers both of these factors, the *Expected Arrival* date displayed
-on purchase orders (POs) for the product more accurately reflects the
-amount of time required for both manufacturing and delivery.
+Mahsulot subpudratchisiga ushbu ikkala omilni hisobga olgan yetkazib berish muddatini belgilash orqali, mahsulot uchun sotib olish buyruqlari (PO) da ko'rsatilgan *Expected Arrival* sanasi ishlab chiqarish va yetkazib berish uchun zarur bo'lgan vaqt miqdorini yanada aniqroq aks ettiradi.
 
-### Product delivery lead time
+### Mahsulot yetkazib berish muddati
 
-To set a delivery lead time for a product\'s subcontractor, navigate to
-`Inventory app
-‣ Products ‣ Products`, and
-select a subcontracted product.
+Mahsulot subpudratchisi uchun yetkazib berish muddatini o'rnatish uchun, `Inventory app
+‣ Products ‣ Products` ga o'ting va subpudratchilik mahsulotini tanlang.
 
-Then, select the `Purchase` tab on
-the product\'s page. If the subcontractor has not already been added as
-a vendor, do so now by clicking `Add a line`, and selecting the subcontractor in the
-`Vendor` column.
+Keyin mahsulot sahifasida `Purchase` yorlig'ini tanlang. Agar subpudratchi hali sotuvchi sifatida qo'shilmagan bo'lsa, `Add a line` ni bosish va `Vendor` ustunida subpudratchini tanlash orqali uni hozir qo'shing.
 
-Once the subcontractor has been added, enter the number of days it takes
-them to manufacture and deliver the product, in the
-`Delivery Lead Time` column.
+Subpudratchi qo'shilgandan so'ng, `Delivery Lead Time` ustuniga ular mahsulotni ishlab chiqarish va yetkazib berish uchun ketadigan kunlar sonini kiriting.
 
-![The Delivery Lead Time field for a subcontractor, on the Purchase tab of a product page.](basic_subcontracting_lead_times/delivery-lead-time.png)
+![Mahsulot sahifasining Purchase yorlig'idagi subpudratchi uchun Delivery Lead Time maydoni.](basic_subcontracting_lead_times/delivery-lead-time.png)
 
 ::: tip
 
-Multiple subcontractors can be added to the `Purchase` tab on a product\'s page, and a different
-`Delivery Lead Time` can be set for
-each.
+Mahsulot sahifasidagi `Purchase` yorlig'iga bir nechta subpudratchilar qo'shilishi mumkin va har biri uchun har xil `Delivery Lead Time` o'rnatilishi mumkin.
 ::::
 
-## Lead time workflow
+## Yetkazib berish muddati ish jarayoni
 
-After setting a delivery lead time for a product\'s vendor, create an
-`RfQ (Request for Quotation)` by
-navigating to
-`Purchase app ‣ Orders ‣ Purchase Orders`, and clicking `New`.
+Mahsulot sotuvchisi uchun yetkazib berish muddatini o'rnatgandan so'ng, `Purchase app ‣ Orders ‣ Purchase Orders` ga o'tish va `New` ni bosish orqali `RfQ (Request for Quotation)` yarating.
 
-Specify the subcontractor in the `Vendor` field. Then, add the product in the
-`Products` tab by clicking
-`Add a product`, selecting the
-product in the `Product` column, and
-adding a quantity in the `Quantity`
-column.
+`Vendor` maydonida subpudratchini belgilang. Keyin `Products` yorlig'ida `Add a product` ni bosish, `Product` ustunida mahsulotni tanlash va `Quantity` ustuniga miqdorni qo'shish orqali mahsulotni qo'shing.
 
-Once a product has been added, the `Expected Arrival` field on the
-`RfQ (Request for Quotation)`
-auto-populates with a date that reflects the vendor\'s delivery lead
-time, as specified on the product\'s page.
+Mahsulot qo'shilgandan so'ng, `RfQ (Request for Quotation)` dagi `Expected Arrival` maydoni mahsulot sahifasida belgilangan sotuvchining yetkazib berish muddatini aks ettiradigan sana bilan avtomatik to'ldiriladi.
 
-If the date needs to be adjusted, click on the
-`Expected Arrival` field to open a
-calendar popover, and select the desired date. Make sure not to choose a
-date sooner than the one that was auto-populated, unless the
-subcontractor has confirmed that they are able to deliver the product by
-that date.
+Agar sanani o'zgartirish kerak bo'lsa, kalendar popover-ni ochish uchun `Expected Arrival` maydonini bosing va kerakli sanani tanlang. Subpudratchi mahsulotni o'sha sanaga yetkazib berishga qodir ekanligini tasdiqlamagan bo'lsa, avtomatik to'ldirilgan sanadan ertaroq sanani tanlamaslik kerak.
 
-Finally, click `Confirm Order` on the
-`RfQ (Request for Quotation)` to turn it
-into a `PO (Purchase Order)`. At this
-point, the subcontractor should begin manufacturing the subcontracted
-product, before delivering it to the contracting company.
+Nihoyat, uni `PO (Purchase Order)` ga aylantirish uchun `RfQ (Request for Quotation)` da `Confirm Order` ni bosing. Shu paytda subpudratchi subpudratchilik mahsulotini pudratchi kompaniyaga yetkazib berishdan oldin ishlab chiqarishni boshlashi kerak.
 
 ::: example
-Bike retailer *Mike\'s Bikes* works with a subcontractor --- *Bike
-Friends* --- to produce units of their *Tricycle* product.
+Velosiped chakana sotuvchisi *Mike's Bikes* subpudratchi --- *Bike Friends* --- bilan ularning *Tricycle* mahsuloti birliklarini ishlab chiqarish uchun hamkorlik qiladi.
 
-On average, Bike Friends requires three days to manufacture a tricycle,
-plus an additional two days to deliver it to Mike\'s Bikes.
+O'rtacha Bike Friends uch g'ildirakli velosiped ishlab chiqarish uchun uch kun, qo'shimcha ravishda uni Mike's Bikes ga yetkazib berish uchun yana ikki kun talab qiladi.
 
-As a result, Mike\'s Bikes sets a delivery lead time of five days for
-tricycles manufactured by Bike Friends: three days for manufacturing,
-plus two days for delivery.
+Natijada, Mike's Bikes Bike Friends tomonidan ishlab chiqarilgan uch g'ildirakli velosipedlar uchun besh kunlik yetkazib berish muddatini o'rnatadi: ishlab chiqarish uchun uch kun va yetkazib berish uchun ikki kun.
 
-On May 3rd, Mike\'s Bikes confirms a
-`PO (Purchase Order)` to purchase one
-tricycle from Bike Friends.
+3-may kuni Mike's Bikes Bike Friends dan bitta uch g'ildirakli velosiped sotib olish uchun `PO (Purchase Order)` tasdiqlaydi.
 
-The `Expected Arrival` date listed on
-the `PO (Purchase Order)` is May 8th,
-five days after the `Confirmation Date`.
+`PO (Purchase Order)` da ko'rsatilgan `Expected Arrival` sanasi 8-may, `Confirmation Date` dan besh kun keyin.
 
-![The Expected Arrival date on a PO for a subcontracted product.](basic_subcontracting_lead_times/expected-arrival.png)
+![Subpudratchilik mahsuloti uchun PO dagi Expected Arrival sanasi.](basic_subcontracting_lead_times/expected-arrival.png)
 
-Bike Friends begins manufacturing the tricycle on May 3rd --- the day
-that the `PO (Purchase Order)` is
-confirmed --- and finishes on May 6th, three days later.
+Bike Friends 3-may kuni --- `PO (Purchase Order)` tasdiqlangan kun --- uch g'ildirakli velosiped ishlab chiqarishni boshlaydi va uch kun o'tgach 6-may kuni tugatadi.
 
-The tricycle is then shipped to Mike\'s Bikes the same day, and they
-receive it on May 8th, two days later.
+Uch g'ildirakli velosiped xuddi shu kuni Mike's Bikes ga jo'natiladi va ular uni ikki kun o'tgach 8-may kuni oladilar.
 :::

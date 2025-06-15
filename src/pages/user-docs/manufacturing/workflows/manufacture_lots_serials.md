@@ -1,185 +1,78 @@
-# Manufacture with lots and serial numbers
+# Partiya va seriya raqamlari bilan ishlab chiqarish
 
-In Odoo, *lot numbers* and *serial numbers* are used to identify and
-track products in Odoo. Serial numbers are used to assign unique numbers
-to individual products, while lot numbers are used to assign a single
-number to multiple units of a specific product.
+Odoo dasturida *partiya raqamlari* va *seriya raqamlari* mahsulotlarni Odoo tizimida aniqlash va kuzatish uchun ishlatiladi. Seriya raqamlari individual mahsulotlarga noyob raqamlar berish uchun ishlatiladi, partiya raqamlari esa ma'lum bir mahsulotning bir nechta birligiga bitta raqam berish uchun ishlatiladi.
 
-When manufacturing products tracked using lots or serial numbers, Odoo
-requires the lot or serial number to be assigned to each product before
-manufacturing can be completed. This ensures that each product is
-properly tracked from the moment it enters inventory.
+Partiya yoki seriya raqamlari yordamida kuzatiladigan mahsulotlarni ishlab chiqarishda, Odoo har bir mahsulotga partiya yoki seriya raqami berilishini talab qiladi, bu ishlab chiqarish tugallanishidan oldin amalga oshirilishi kerak. Bu har bir mahsulotning ombordagi paydo bo'lgan vaqtidanoq to'g'ri kuzatilishini ta'minlaydi.
 
-## Configure products for tracking
+## Mahsulotlarni kuzatish uchun sozlash
 
-By default, Odoo tracks the quantity of each product on hand, but does
-not track individual units of a product. Lot or serial number tracking
-must be enabled for each product individually.
+Sukut bo'yicha, Odoo har bir mahsulotning qo'lda mavjud miqdorini kuzatadi, lekin mahsulotning individual birliklarini kuzatmaydi. Partiya yoki seriya raqami kuzatuvi har bir mahsulot uchun alohida yoqilishi kerak.
 
-To track a product using lots or serial numbers, begin by navigating to
-`Inventory
-‣ Configuration ‣ Settings`,
-then scroll down to the `Traceability` section, and tick the
-`Lots & Serial Numbers` checkbox.
-Finally, click `Save` to save the
-change.
+Mahsulotni partiya yoki seriya raqamlari yordamida kuzatish uchun, `Inventory
+‣ Configuration ‣ Settings` bo'limiga o'ting, so'ngra `Traceability` bo'limigacha pastga aylantiring va `Lots & Serial Numbers` katagiga belgi qo'ying. Nihoyat, o'zgarishni saqlash uchun `Save` tugmasini bosing.
 
-Next, click on `Products ‣ Products`, and select a product to track. Make sure the
-`Track Inventory` checkbox is ticked
-in the `General Information` tab.
-Since lot and serial number functionality is enabled, a drop-down menu
-appears next to the ticked checkbox.
+Keyin `Products ‣ Products` bo'limini bosing va kuzatish uchun mahsulotni tanlang. `General Information` bo'limida `Track Inventory` katagiga belgi qo'yilganligiga ishonch hosil qiling. Partiya va seriya raqami funksiyasi yoqilganligi sababli, belgilangan katagi yonida ochiluvchi menyu paydo bo'ladi.
 
-Click on the `Track Inventory`
-drop-down menu. By default, `By Quantity` is selected, which only tracks the quantity on hand.
-Select `By Lots` to track the product
-using lot numbers, or `By Unique Serial Number` to track the product using serial numbers.
+`Track Inventory` ochiluvchi menyusini bosing. Sukut bo'yicha `By Quantity` tanlangan bo'lib, bu faqat qo'ldagi miqdorni kuzatadi. Mahsulotni partiya raqamlari yordamida kuzatish uchun `By Lots` ni yoki seriya raqamlari yordamida kuzatish uchun `By Unique Serial Number` ni tanlang.
 
+## Partiya raqami bilan ishlab chiqarish
 
-## Lot number manufacturing
+Partiya bilan kuzatiladigan mahsulotni ishlab chiqarish uchun, `Manufacturing ‣
+Operations ‣ Manufacturing Orders` bo'limiga o'ting. Yangi ishlab chiqarish buyurtmasini (MO) yaratish uchun `New` tugmasini bosing.
 
-To manufacture a product tracked with lots, begin by navigating to
-`Manufacturing ‣
-Operations ‣ Manufacturing Orders`. Click `New` to
-create a new manufacturing order (MO).
+`Product` maydonida partiya yordamida kuzatiladigan mahsulotni tanlang va kerakli `Quantity` ni kiriting. `MO (Manufacturing Order)` ni tasdiqlash uchun `Confirm` tugmasini bosing.
 
-In the `Product` field, select a
-product tracked using lots, and enter the desired
-`Quantity`. Click
-`Confirm` to confirm the
-`MO (Manufacturing Order)`.
+`MO (Manufacturing Order)` tasdiqlangandan so'ng, `MO (Manufacturing Order)` formasining yuqori qismida `Lot/Serial Number` maydoni paydo bo'ladi. Sukut bo'yicha bu maydon bo'sh.
 
-Once the `MO (Manufacturing Order)` is
-confirmed, a `Lot/Serial Number`
-field appears in the top section of the
-`MO (Manufacturing Order)` form. By
-default, this field is empty.
+`Lot/Serial Number` maydonini partiya raqami bilan to'ldirish uchun, maydonning o'ng tomonidagi `fa-plus-square-o` `(plus)` ikonasini bosing. Buni qilish avtomatik ravishda keyingi mavjud raqamdan foydalanib partiyani yaratadi va uni maydonga kiradi.
 
-To populate the `Lot/Serial Number`
-field with a lot number, click the `fa-plus-square-o` `(plus)` icon to the
-right of the field. Doing so automatically generates a lot, using the
-next available number, and enters it in the field.
+Muqobil ravishda, `Lot/Serial Number` maydonini bosing va mavjud partiya raqamini tanlang yoki qo'lda yangi partiya raqamini kiriting va ochiluvchi menyuda `Create "#"` ni bosing.
 
-Alternatively, click on the `Lot/Serial Number` field and select an existing lot number, or manually
-enter a new lot number and click `Create "#"` in the drop-down menu.
+![MO dagi \"Lot/Serial Number\" maydoni.](manufacture_lots_serials/lot-sn-field.png)
 
-![The \"Lot/Serial Number\" field on an MO.](manufacture_lots_serials/lot-sn-field.png)
+Ushbu usullarning har biri `MO (Manufacturing Order)` dagi mahsulot(lar)ga ishlab chiqarish tugallanishidan oldin partiya raqamini beradi. Shuningdek, partiya raqamini bermasdan ishlab chiqarishni yakunlash va `MO (Manufacturing Order)` ni `Produce All` tugmasini bosish orqali yopish ham mumkin. Buni qilish avtomatik ravishda keyingi mavjud raqamdan foydalanib partiyani yaratadi va beradi.
 
-Either of these methods assign the product(s) in the
-`MO (Manufacturing Order)` a lot number
-before production is finished. It is also possible to complete
-production and close the `MO (Manufacturing Order)` by clicking `Produce All`, without assigning a lot number. Doing so automatically
-generates and assigns a lot, using the next available number.
+## Seriya raqami bilan ishlab chiqarish
 
-## Serial number manufacturing
+Seriya raqamlari bilan kuzatiladigan mahsulotni ishlab chiqarish uchun, `Manufacturing ‣ Operations ‣ Manufacturing Orders` bo'limiga o'ting. Yangi `MO (Manufacturing Order)` yaratish uchun `New` tugmasini bosing.
 
-To manufacture a product tracked with serial numbers, begin by
-navigating to
-`Manufacturing ‣ Operations ‣ Manufacturing Orders`. Click `New` to
-create a new `MO (Manufacturing Order)`.
+`Product` maydonida seriya raqamlari yordamida kuzatiladigan mahsulotni tanlang va kerakli `Quantity` ni kiriting. `MO (Manufacturing Order)` ni tasdiqlash uchun `Confirm` tugmasini bosing.
 
-In the `Product` field, select a
-product tracked using serial numbers, and enter the desired
-`Quantity`. Click
-`Confirm` to confirm the
-`MO (Manufacturing Order)`.
+`MO (Manufacturing Order)` tasdiqlangandan so'ng, `MO (Manufacturing Order)` formasining yuqori qismida `Lot/Serial Number` maydoni paydo bo'ladi. Sukut bo'yicha bu maydon bo'sh.
 
-Once the `MO (Manufacturing Order)` is
-confirmed, a `Lot/Serial Number`
-field appears in the top section of the
-`MO (Manufacturing Order)` form. By
-default, this field is empty.
+Ishlab chiqarish jarayonining qolgan qismi `MO (Manufacturing Order)` da nechta birlik borligiga bog'liq.
 
-The rest of the manufacturing process depends on how many units the
-`MO (Manufacturing Order)` contains.
+### Bitta birlik ishlab chiqarish
 
-### Manufacture single unit
+Agar mahsulotning bitta birligi ishlab chiqarilayotgan bo'lsa, `Produce All` tugmasini bosish `MO (Manufacturing Order)` ni yopadi va avtomatik ravishda keyingi mavjud seriya raqamini yaratadi va beradi, bu `Lot/Serial Number` maydonida ko'rinadi.
 
-If a single unit of the product is being manufactured, clicking
-`Produce All` closes the
-`MO (Manufacturing Order)`, and
-automatically generates and assigns the next available serial number,
-which appears in the `Lot/Serial Number` field.
+`MO (Manufacturing Order)` ni yopmasdan seriya raqamini berish uchun, `Lot/Serial Number` maydoniga qo'lda raqam kiriting va `Create "#"` ni bosing yoki maydonning o'ng tomonidagi `fa-plus-square-o` `(plus)` ikonasini bosib uni keyingi mavjud raqam bilan avtomatik to'ldiring.
 
-To assign a serial number without closing the
-`MO (Manufacturing Order)`, enter a
-number manually in the `Lot/Serial Number` field, and click `Create "#"`, or click the `fa-plus-square-o` `(plus)` icon to the
-right of the field to auto-fill it with the next available number.
+![MO dagi \"Lot/Serial Number\" maydoni.](manufacture_lots_serials/lot-sn-field.png)
 
-![The \"Lot/Serial Number\" field on an MO.](manufacture_lots_serials/lot-sn-field.png)
-
-### Manufacture multiple units
+### Bir nechta birlik ishlab chiqarish
 
 :::: warning
 
-When manufacturing a product tracked using serial numbers, an
-`MO (Manufacturing Order)` can be created
-for multiple units. However, when serial numbers are assigned to each
-unit, either at the end of production or before, the
-`MO (Manufacturing Order)` is split into
-multiple `MOs (Manufacturing Orders)`,
-each containing one unit of the product.
+Seriya raqamlari yordamida kuzatiladigan mahsulotni ishlab chiqarishda, bir nechta birlik uchun `MO (Manufacturing Order)` yaratilishi mumkin. Biroq, har bir birlikka seriya raqamlari berilganda, ishlab chiqarish oxirida yoki oldin, `MO (Manufacturing Order)` bir nechta `MOs (Manufacturing Orders)` ga bo'linadi, har birida mahsulotning bitta birligi bo'ladi.
 
-Each of the split `MOs (Manufacturing Orders)` is identified by a numerical tag added to the end of the
-original `MO (Manufacturing Order)`
-number.
+Bo'lingan `MOs (Manufacturing Orders)` ning har biri asl `MO (Manufacturing Order)` raqamining oxiriga qo'shilgan raqamli teg bilan aniqlanadi.
 
 ::: example
-`MO (Manufacturing Order)`
-[WH/MO/00109] contains two units of a [Chair], a
-product tracked using serial numbers. A serial number is assigned to
-each unit of the chair. This causes the
-`MO (Manufacturing Order)` to be split
-into two `MOs (Manufacturing Orders)`,
-each containing one unit of the chair. The
-`MOs (Manufacturing Orders)` are titled
-[WH/MO/00109-001] and [WH/MO/00109-002].
+`MO (Manufacturing Order)` [WH/MO/00109] da seriya raqamlari yordamida kuzatiladigan mahsulot [Chair] ning ikki birligi mavjud. Stulning har bir birligiga seriya raqami beriladi. Bu `MO (Manufacturing Order)` ni ikki `MOs (Manufacturing Orders)` ga bo'linishiga olib keladi, har birida stulning bitta birligi bo'ladi. `MOs (Manufacturing Orders)` [WH/MO/00109-001] va [WH/MO/00109-002] deb ataladi.
 :::
 :::::
 
-To assign serial numbers to each unit of an
-`MO (Manufacturing Order)`, click
-`Produce All` to open the
-`Batch Production` pop-up window.
+`MO (Manufacturing Order)` ning har bir birligiga seriya raqamlarini berish uchun, `Batch Production` oynasini ochish uchun `Produce All` tugmasini bosing.
 
-The `First Lot/SN` field of the
-pop-up window is auto-filled with the next available serial number. The
-`Number of SN` field defaults to the
-number of units being manufactured. The values of either field can be
-changed manually.
+Oynaning `First Lot/SN` maydoni keyingi mavjud seriya raqami bilan avtomatik to'ldiriladi. `Number of SN` maydoni sukut bo'yicha ishlab chiqarilayotgan birliklar soniga teng. Har ikki maydonning qiymatlari qo'lda o'zgartirilishi mumkin.
 
-Click `Generate` to generate the
-specified number of serial numbers, beginning with the number entered in
-the `First Lot/SN` field. The serial
-numbers are displayed in the text box at the bottom of the pop-up
-window, and can be manually changed after generation.
+`First Lot/SN` maydoniga kiritilgan raqamdan boshlab belgilangan miqdordagi seriya raqamlarini yaratish uchun `Generate` tugmasini bosing. Seriya raqamlari oynaning pastki qismidagi matn maydonida ko'rsatiladi va yaratilgandan keyin qo'lda o'zgartirilishi mumkin.
 
-To assign serial numbers without completing production, click the
-`Prepare MO` button. Doing so splits
-the `MO (Manufacturing Order)` into
-individual `MOs (Manufacturing Orders)`,
-one for each unit in the original
-`MO (Manufacturing Order)`. Each
-`MO (Manufacturing Order)` is left open,
-and can be closed individually.
+Ishlab chiqarishni tugallamasdan seriya raqamlarini berish uchun `Prepare MO` tugmasini bosing. Buni qilish `MO (Manufacturing Order)` ni individual `MOs (Manufacturing Orders)` ga bo'ladi, asl `MO (Manufacturing Order)` dagi har bir birlik uchun bittadan. Har bir `MO (Manufacturing Order)` ochiq qoladi va alohida yopilishi mumkin.
 
-To assign serial numbers and complete production, click the
-`Produce` button. Doing so splits the
-`MO (Manufacturing Order)` into
-individual `MOs (Manufacturing Orders)`,
-one for each unit in the original
-`MO (Manufacturing Order)`. All of the
-`MOs (Manufacturing Orders)` are closed,
-since production is complete.
+Seriya raqamlarini berish va ishlab chiqarishni tugallash uchun `Produce` tugmasini bosing. Buni qilish `MO (Manufacturing Order)` ni individual `MOs (Manufacturing Orders)` ga bo'ladi, asl `MO (Manufacturing Order)` dagi har bir birlik uchun bittadan. Ishlab chiqarish tugallanganligi sababli, barcha `MOs (Manufacturing Orders)` yopiladi.
 
-![The \"Batch Production\" pop-up window, from which serial numbers can be assigned.](manufacture_lots_serials/batch-production.png)
+![Seriya raqamlarini berish mumkin bo'lgan \"Batch Production\" oynasi.](manufacture_lots_serials/batch-production.png)
 
-After clicking `Prepare MO` or
-`Produce`, the
-`Manufacturing` app
-automatically shows the first of the split
-`MOs (Manufacturing Orders)` (ex.
-[WH/MO/00109-001]). To view and access the rest the split
-`MOs (Manufacturing Orders)`, click the
-`Backorders` smart button at the top
-of the screen.
+`Prepare MO` yoki `Produce` tugmasini bosgandan so'ng, `Manufacturing` ilovasi avtomatik ravishda bo'lingan `MOs (Manufacturing Orders)` ning birinchisini ko'rsatadi (masalan, [WH/MO/00109-001]). Qolgan bo'lingan `MOs (Manufacturing Orders)` ni ko'rish va ularga kirish uchun, ekranning yuqori qismidagi `Backorders` aqlli tugmasini bosing.

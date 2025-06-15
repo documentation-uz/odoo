@@ -1,129 +1,129 @@
-# Shop Floor time tracking
+# Ishlab chiqarish zalida vaqtni kuzatish
 
-By signing in to the Odoo *Shop Floor* module as *operators*, employees
-are able to track the amount of time they spend working on each work
-order.
+Odoo *Shop Floor* moduliga `operators` sifatida kirish orqali xodimlar
+har bir ish buyruq ustida qancha vaqt sarflashganini kuzatib borish imkoniga ega bo'ladilar.
 
-Odoo tracks the time it takes to complete each work order, as well as
-the time each operator spends on each work order.
+Odoo har bir ish buyruqni bajarish uchun ketgan vaqtni, shuningdek,
+har bir operator har bir ish buyruq ustida qancha vaqt sarflashganini kuzatib boradi.
 
-## Operator sign in
+## Operator tizimga kirishi
 
-To sign in to the *Shop Floor* module as an operator, sign in to the
-Odoo database, and open the `Shop Floor` module. The employee profile that is signed in to
-the database is automatically signed in as an operator.
+*Shop Floor* moduliga operator sifatida kirish uchun,
+Odoo ma'lumotlar bazasiga kiring va `Shop Floor` modulini oching. Ma'lumotlar bazasiga
+kirgan xodim profili avtomatik ravishda operator sifatida tizimga kiritiladi.
 
-All active operators are listed in the operator panel on the left side
-of the module. The panel can be opened or collapsed by clicking the
-`show/hide panel (white square with black column on
-left side)` button, located in the
-top-left corner of the module.
+Barcha faol operatorlar modulning chap tomonidagi operator panelida ro'yxatlangan.
+Panelni ochish yoki yopish uchun modulning yuqori chap
+burchagida joylashgan `show/hide panel (white square with black column on
+left side)` tugmasini bosing.
 
-![The operator panel in the Shop Floor module, with the show/hide panel button above it.](shop_floor_tracking/operator-panel.png)
+![Shop Floor modulidagi operator paneli va uning ustidagi ko'rsatish/yashirish paneli tugmasi.](shop_floor_tracking/operator-panel.png)
 
-To sign in to *Shop Floor* as a different employee, click the
-`+ Add Operator` button at the bottom
-of the panel. Doing so opens the `Select Employee` pop-up window, which lists every employee that is able
-to sign in to the module.
+*Shop Floor* ga boshqa xodim sifatida kirish uchun,
+panelning pastki qismidagi `+ Add Operator` tugmasini bosing.
+Bu `Select Employee` pop-up oynasini ochadi, unda modulga kirish imkoniyatiga ega bo'lgan
+barcha xodimlar ro'yxatlangan.
 
-Click on a specific employee to sign in using their profile. If no PIN
-code is required to sign in as that employee, the profile will be signed
-in automatically.
+Ularning profili yordamida tizimga kirish uchun muayyan xodimni bosing.
+Agar o'sha xodim sifatida kirish uchun PIN kod talab qilinmasa,
+profil avtomatik ravishda tizimga kiritiladi.
 
-If a PIN code is required, a `Password?` pop-up window appears, showing a number pad, from which
-the code can be entered. Enter the code using the number pad, and click
-`Confirm` to sign in to the *Shop
-Floor* module.
+Agar PIN kod talab qilinsa, `Password?` pop-up oynasi paydo bo'ladi,
+unda raqamlar paneli ko'rsatiladi, undan kod kiritish mumkin.
+Raqamlar paneli yordamida kodni kiriting va *Shop Floor* moduliga
+kirish uchun `Confirm` tugmasini bosing.
 
-![The \"Password?\" pop-up window, which is used to enter an operator PIN code.](shop_floor_tracking/pin-code.png)
+![Operator PIN kodini kiritish uchun ishlatiladigan \"Password?\" pop-up oynasi.](shop_floor_tracking/pin-code.png)
 
 ::: tip
 
-A PIN code can be set for each employee, which must be entered each time
-they sign in to the *Shop Floor* module, check in or out in the *Kiosk
-Mode* of the *Attendances* application, or sign in as a cashier in the
-*Point of Sale* application.
+Har bir xodim uchun PIN kod o'rnatilishi mumkin, ular *Shop Floor* moduliga
+har gal kirishda, *Attendances* ilovasining *Kiosk Mode* da chiqish
+yoki kirishda, yoki *Point of Sale* ilovasida kassir sifatida kirishda
+kiritilishi kerak.
 
-To set an employee PIN, navigate to the `Employees` app, and select a specific employee. At the bottom
-of the employee\'s form, click on the `HR Settings` tab, and enter a numerical code in the
-`PIN Code` field.
+Xodim PIN kodini o'rnatish uchun `Employees` ilovasiga o'ting va
+muayyan xodimni tanlang. Xodim formasining pastki qismida
+`HR Settings` yorlig'ini bosing va `PIN Code` maydoniga
+raqamli kodni kiriting.
 ::::
 
-Once an employee is signed in to the module, their name appears in the
-operator panel, along with every other employee that has signed in.
-While the panel can list multiple employees, only one employee can be
-active at any given time, on a single instance of the *Shop Floor*
-module.
+Xodim modulga kirgandan so'ng, ularning ismi operator panelida,
+kirgan boshqa barcha xodimlar bilan birga paydo bo'ladi.
+Panel bir nechta xodimni ro'yxatlashi mumkin bo'lsa-da,
+*Shop Floor* modulining bitta nusxasida bir vaqtda faqat
+bitta xodim faol bo'lishi mumkin.
 
-Click on an employee\'s name to make their profile active. The active
-employee appears highlighted in blue, while employees that are signed
-in, but not active, have their names faded out.
+Ularning profilini faol qilish uchun xodim ismini bosing.
+Faol xodim ko'k rangda ajratilgan holda ko'rinadi,
+kirgan, lekin faol bo'lmagan xodimlarning ismlari esa
+xiraroq ko'rinadi.
 
-To sign out a specific employee from the module, click the
-`X (remove)` button next to their
-name, in the operator panel.
+Moduldan muayyan xodimni chiqarish uchun operator panelida
+ularning ismi yonidagi `X (remove)` tugmasini bosing.
 
-## Track work order duration
+## Ish buyruq davomiyligini kuzatish
 
-To track time spent working on a work order, begin by selecting the
-employee working on it from the operator panel.
+Ish buyruq ustida sarflangan vaqtni kuzatish uchun,
+avval operator panelidan ustida ishlaydigan xodimni tanlang.
 
-Next, navigate to the page for the work center where the work order is
-scheduled to be carried out. This can be done by selecting the work
-center from the top navigation in the *Shop Floor* module, or by
-clicking the name of the work center on the card for the manufacturing
-order (MO) that the work order is a part of.
+Keyin ish buyruq bajarilishi rejalashtirilgan ish markazining
+sahifasiga o'ting. Buni *Shop Floor* modulining yuqori
+navigatsiyasidan ish markazini tanlash orqali yoki ish buyruq
+qismi bo'lgan ishlab chiqarish buyrug'i (MO) kartasidagi
+ish markazi nomini bosish orqali amalga oshirish mumkin.
 
-On the page for the work center, find the card for the work order. Once
-work begins, click the header of the work order card to start timing the
-duration it takes to complete. This duration is displayed by a timer on
-the header of the work order card, which tracks the collective time
-spent working on the work order, by all employees.
+Ish markazi sahifasida ish buyruq kartasini toping.
+Ish boshlangandan so'ng, uni bajarish uchun ketgan vaqtni
+o'lchashni boshlash uchun ish buyruq kartasining sarlavhasini bosing.
+Bu davomiylik ish buyruq kartasi sarlavhasidagi taymer orqali
+ko'rsatiladi, u barcha xodimlar tomonidan ish buyruq ustida
+sarflangan umumiy vaqtni kuzatib boradi.
 
-![A work order card with an active timer.](shop_floor_tracking/work-order-timer.png)
+![Faol taymer bilan ish buyruq kartasi.](shop_floor_tracking/work-order-timer.png)
 
-In addition, the reference number of the work order appears in the
-operator panel, under the name of the employee working on it, along with
-a second timer, which tracks the amount of time the employee has spent
-on the work order individually. This timer only reflects work done
-during the current session, even if the employee has previously worked
-on the work order.
+Bundan tashqari, ish buyruq reference raqami operator panelida
+ustida ishlaydigan xodim ismi ostida ikkinchi taymer bilan
+birga paydo bo'ladi, bu xodimning ish buyruq ustida alohida
+sarflagan vaqtini kuzatib boradi. Bu taymer faqat joriy
+sessiya davomidagi ishni aks ettiradi, hatto xodim ilgari
+ish buyruq ustida ishlagan bo'lsa ham.
 
-Employees are able to work on multiple work orders simultaneously, and
-track their time for each. The reference number for each work order
-being worked on appears below the employee\'s name, along with a timer.
+Xodimlar bir vaqtning o'zida bir nechta ish buyruq ustida
+ishlashi va har biri uchun vaqtni kuzatib borishi mumkin.
+Ustida ishlayotgan har bir ish buyruq uchun reference raqami
+xodim ismi ostida taymer bilan birga paydo bo'ladi.
 
-![An employee card in the operator panel, showing two work order timers.](shop_floor_tracking/employee-timer.png)
+![Operator panelidagi xodim kartasi, ikkita ish buyruq taymerini ko'rsatmoqda.](shop_floor_tracking/employee-timer.png)
 
-To pause the timer on the work order card, and remove the work order
-from below the employee\'s name on the operator panel, click the header
-a second time.
+Ish buyruq kartasidagi taymerni to'xtatish va ish buyruqni
+operator panelidagi xodim ismi ostidan olib tashlash uchun
+sarlavhani ikkinchi marta bosing.
 
-Once the work order is completed, click the
-`Mark as Done` button at the bottom
-of the work order card, which causes the card to fade away. If the timer
-is still active, it stops once the card disappears completely.
+Ish buyruq tugallangandan so'ng, ish buyruq kartasining
+pastki qismidagi `Mark as Done` tugmasini bosing, bu
+kartaning yo'qolishiga olib keladi. Agar taymer hali ham
+faol bo'lsa, karta to'liq yo'qolgandan so'ng to'xtaydi.
 
-## View work order duration
+## Ish buyruq davomiyligini ko'rish
 
-To view the duration of a work order, navigate to
+Ish buyruq davomiyligini ko'rish uchun
 `Manufacturing app ‣ Operations
-‣ Manufacturing Orders`, and
-select an `MO (Manufacturing Order)`.
+‣ Manufacturing Orders` ga o'ting va
+`MO (Manufacturing Order)` ni tanlang.
 
-To view and select `MOs (Manufacturing Orders)` that have been completed and marked as *Done*, remove the
-`To Do` filter from the
-`Search...` bar, by clicking on the
-`X (close)` button on the right side
-of the filter.
+Tugallangan va *Done* deb belgilangan `MOs (Manufacturing Orders)` ni ko'rish va tanlash uchun,
+filtrning o'ng tomonidagi `X (close)` tugmasini bosish orqali
+`Search...` panelidan `To Do` filtrini olib tashlang.
 
-On the page for the `MO (Manufacturing Order)`, click on the `Work Orders` tab to see a list of all work orders included in the
-`MO (Manufacturing Order)`. The time it
-took to complete each work order is displayed in the
-`Real Duration` column of the tab.
+`MO (Manufacturing Order)` sahifasida
+`MO (Manufacturing Order)` ga kiritilgan
+barcha ish buyruqlar ro'yxatini ko'rish uchun `Work Orders` yorlig'ini bosing.
+Har bir ish buyruqni bajarish uchun ketgan vaqt yorliqning
+`Real Duration` ustunida ko'rsatilgan.
 
-The *Real Duration* represents the total time spent working on the work
-order by all workers who worked on it. It includes time tracked in the
-*Shop Floor* module, as well as time tracked on the
-`Work Orders` tab of the
-`MO (Manufacturing Order)` itself.
+*Real Duration* ustida ishlagan barcha ishchilar tomonidan
+ish buyruq ustida sarflangan umumiy vaqtni ifodalaydi.
+U *Shop Floor* modulida kuzatilgan vaqtni, shuningdek,
+`MO (Manufacturing Order)` ning
+`Work Orders` yorlig'ida kuzatilgan vaqtni o'z ichiga oladi.

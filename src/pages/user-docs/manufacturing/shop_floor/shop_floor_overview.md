@@ -1,325 +1,140 @@
-# Shop Floor overview
+# Shop Floor umumiy ko'rinishi
 
-The *Shop Floor* module is a companion module to the *Manufacturing*
-app. *Shop Floor* provides a visual interface for processing
-manufacturing orders (MOs) and work orders. It also allows manufacturing
-employees to track the amount of time spent working on manufacturing and
-work orders.
+*Shop Floor* moduli *Ishlab chiqarish* ilovasining hamroh modulidir. *Shop Floor* ishlab chiqarish buyurtmalari (MO) va ish buyurtmalarini qayta ishlash uchun vizual interfeys taqdim etadi. Shuningdek, u ishlab chiqarish xodimlarining ishlab chiqarish va ish buyurtmalari ustida ishlash uchun sarflangan vaqt miqdorini kuzatishga imkon beradi.
 
-The *Shop Floor* module is installed alongside the *Manufacturing* app.
-It cannot be installed by itself. To install the *Manufacturing* app,
-navigate to `Apps`, search for
-[manufacturing] in the `Search...` bar, and then click `Install` on the `Manufacturing` app card.
+*Shop Floor* moduli *Ishlab chiqarish* ilovasi bilan birga o'rnatiladi. U o'z-o'zidan o'rnatilishi mumkin emas. *Ishlab chiqarish* ilovasini o'rnatish uchun `Apps` ga o'ting, `Search...` panelida [manufacturing] ni qidiring va keyin `Manufacturing` ilova kartasida `Install` tugmasini bosing.
 
 ::: warning
 
-The *Shop Floor* module replaces the tablet view functionality of the
-*Manufacturing* app, and is only available in Odoo versions 16.4 and
-later.
+*Shop Floor* moduli *Ishlab chiqarish* ilovasining planshet ko'rinishi funksiyasini almashtiradi va faqat Odoo 16.4 va undan keyingi versiyalarida mavjud.
 
-To check the version number of an Odoo database, navigate to
-`Settings` and scroll down to
-the `About` section at the bottom of
-the page. The version number is displayed there.
+Odoo ma'lumotlar bazasining versiya raqamini tekshirish uchun `Settings` ga o'ting va sahifaning pastki qismidagi `About` bo'limiga aylantiring. Versiya raqami u yerda ko'rsatilgan.
 
-To switch to a newer version of Odoo, see the documentation on
-`upgrading a database
-`.
+Odoo'ning yangi versiyasiga o'tish uchun `upgrading a database` bo'yicha hujjatlarni ko'ring.
 ::::
 
-## Navigation
+## Navigatsiya
 
-*Shop Floor* is broken down into three main views, which can be selected
-from the navigation bar at the top of the module:
+*Shop Floor* uchta asosiy ko'rinishga bo'lingan bo'lib, ular modulning yuqori qismidagi navigatsiya panelidan tanlanishi mumkin:
 
-- The `All` page serves as the main
-  dashboard for the module, and displays information cards for
-  `MOs (Manufacturing Orders)`.
-- Each work center also has a dedicated page, which shows information
-  cards for work orders assigned to that work center. Work center pages
-  can be toggled on or off by clicking the `+
-  (plus)` button in the navigation
-  bar, selecting or deselecting them on the pop-up window that appears,
-  and then clicking `Confirm`.
-- The `My` page shows information
-  cards for all work orders assigned to the employee whose profile is
-  currently active in the operator panel on the left side of the module.
-  Other than only showing work orders assigned to the active employee,
-  this page functions the same as the pages for each work center.
+- `All` sahifasi modul uchun asosiy boshqaruv paneli bo'lib xizmat qiladi va `MOs (Manufacturing Orders)` uchun ma'lumot kartalarini ko'rsatadi.
+- Har bir ish markazining ham maxsus sahifasi bor, u ushbu ish markaziga tayinlangan ish buyurtmalari uchun ma'lumot kartalarini ko'rsatadi. Ish markazi sahifalarini navigatsiya panelida `+ (plus)` tugmasini bosib, paydo bo'ladigan qalqib chiquvchi oynada ularni tanlash yoki bekor qilish va keyin `Confirm` tugmasini bosish orqali yoqish yoki o'chirish mumkin.
+- `My` sahifasi modulning chap tomonidagi operator panelida hozirda faol bo'lgan profilli xodimga tayinlangan barcha ish buyurtmalari uchun ma'lumot kartalarini ko'rsatadi. Faqat faol xodimga tayinlangan ish buyurtmalarini ko'rsatishdan tashqari, bu sahifa har bir ish markazi sahifalari bilan bir xil ishlaydi.
 
 ::: tip
 
-To isolate an [\|MO\|](##SUBST##|MO|) or work order, so that no other
-orders appear, simply search the reference number of the
-[\|MO\|](##SUBST##|MO|) in the `Search...` bar at the top of the module. This search filter
-remains active while switching between the different module views.
+[\|MO\|](##SUBST##|MO|) yoki ish buyurtmasini ajratish uchun, boshqa buyurtmalar ko'rinmasligi uchun, shunchaki modulning yuqori qismidagi `Search...` panelida [\|MO\|](##SUBST##|MO|) ning ma'lumotnoma raqamini qidiring. Bu qidiruv filtri turli modul ko'rinishlari o'rtasida almashganda faol bo'lib qoladi.
 ::::
 
-On the left side of the module is the operator panel, which shows all of
-the employees currently signed in to *Shop Floor*, and allows new
-employees to sign in. The operator panel is always available in the
-module, regardless of which view is selected. It can be toggled on or
-off by clicking the `sidebar` button
-at the extreme left of the navigation bar.
+Modulning chap tomonida operator paneli joylashgan bo'lib, u hozirda *Shop Floor* ga kirgan barcha xodimlarni ko'rsatadi va yangi xodimlarning kirishiga imkon beradi. Operator paneli qaysi ko'rinish tanlangan bo'lishidan qat'i nazar, doimo modulda mavjud. Uni navigatsiya panelining eng chap tomonidagi `sidebar` tugmasini bosish orqali yoqish yoki o'chirish mumkin.
 
-![The \"sidebar\" button, which is used to toggle the operator panel on or off.](shop_floor_overview/sidebar-button.png)
+![Operator panelini yoqish yoki o'chirish uchun ishlatiladigan "sidebar" tugmasi.](shop_floor_overview/sidebar-button.png)
 
-### All page
+### All sahifasi
 
-By default, the `All` page shows an
-information card for every [\|MO\|](##SUBST##|MO|) that is *ready to
-start*. An [\|MO\|](##SUBST##|MO|) is considered ready to start once it
-has been confirmed, and all required components are available.
+Odatiy bo'lib, `All` sahifasi *boshlashga tayyor* bo'lgan har bir [\|MO\|](##SUBST##|MO|) uchun ma'lumot kartasini ko'rsatadi. [\|MO\|](##SUBST##|MO|) tasdiqlangandan va barcha kerakli komponentlar mavjud bo'lgandan so'ng boshlashga tayyor deb hisoblanadi.
 
-To view every confirmed [\|MO\|](##SUBST##|MO|) regardless of readiness,
-click the `x` button on the
-`Ready to Start` filter to remove it
-from the `Search...` bar.
+Tayyorgarligidan qat'i nazar, tasdiqlangan har bir [\|MO\|](##SUBST##|MO|) ni ko'rish uchun `Ready to Start` filtrini `Search...` panelidan olib tashlash uchun `x` tugmasini bosing.
 
-#### MO information card
+#### MO ma'lumot kartasi
 
-An [\|MO\|](##SUBST##|MO|) information card on the
-`All` page shows all of the relevant
-details of the associated [\|MO\|](##SUBST##|MO|), and also provides
-employees with options for processing the [\|MO\|](##SUBST##|MO|).
+`All` sahifasidagi [\|MO\|](##SUBST##|MO|) ma'lumot kartasi bog'liq [\|MO\|](##SUBST##|MO|) ning barcha tegishli tafsilotlarini ko'rsatadi va shuningdek xodimlarga [\|MO\|](##SUBST##|MO|) ni qayta ishlash uchun variantlar taqdim etadi.
 
-The header for an [\|MO\|](##SUBST##|MO|) card shows the
-[\|MO\|](##SUBST##|MO|) number, the product and number of units being
-produced, and the status of the [\|MO\|](##SUBST##|MO|). If work has not
-yet begun on the [\|MO\|](##SUBST##|MO|), the status appears as
-`Confirmed`. Once work has begun, the
-status updates to `In Progress`. If
-all work orders for an [\|MO\|](##SUBST##|MO|) have been completed and
-the [\|MO\|](##SUBST##|MO|) is ready to close, the status updates to
-`To Close`.
+[\|MO\|](##SUBST##|MO|) kartasining sarlavhasi [\|MO\|](##SUBST##|MO|) raqamini, ishlab chiqarilayotgan mahsulot va birliklar sonini va [\|MO\|](##SUBST##|MO|) holatini ko'rsatadi. Agar [\|MO\|](##SUBST##|MO|) bo'yicha ish hali boshlanmagan bo'lsa, holat `Confirmed` sifatida ko'rinadi. Ish boshlanganidan so'ng, holat `In Progress` ga yangilanadi. Agar [\|MO\|](##SUBST##|MO|) uchun barcha ish buyurtmalari yakunlangan va [\|MO\|](##SUBST##|MO|) yopishga tayyor bo'lsa, holat `To Close` ga yangilanadi.
 
-The main body of an [\|MO\|](##SUBST##|MO|) card shows a line for each
-completed work order, if any, followed by the current work order that
-needs to be completed. Completed work orders are indicated by a green
-check mark to the right of title of the work order. The current work
-order is indicated by a button that opens the page for the work center
-to which the order is assigned.
+[\|MO\|](##SUBST##|MO|) kartasining asosiy qismi yakunlangan har bir ish buyurtmasi uchun qator ko'rsatadi (agar mavjud bo'lsa), keyin yakunlanishi kerak bo'lgan joriy ish buyurtmasini ko'rsatadi. Yakunlangan ish buyurtmalari ish buyurtmasi sarlavhasining o'ng tomonidagi yashil belgi bilan ko'rsatiladi. Joriy ish buyurtmasi buyurtma tayinlangan ish markazi sahifasini ochadigan tugma bilan ko'rsatiladi.
 
-Below the current work order is a line titled
-`Register Production`, which is used
-to record the number of product units produced. To manually enter the
-number of units produced, click on the
-`Register Production` line, enter a
-value in the `Units` field of the
-resulting pop-up window, then click `Validate`.
+Joriy ish buyurtmasining ostida `Register Production` nomli qator joylashgan bo'lib, u ishlab chiqarilgan mahsulot birliklarining sonini qayd etish uchun ishlatiladi. Ishlab chiqarilgan birliklar sonini qo'lda kiritish uchun `Register Production` qatorini bosing, natijada paydo bo'ladigan qalqib chiquvchi oynaning `Units` maydoniga qiymat kiriting, keyin `Validate` tugmasini bosing.
 
-Alternatively, click the `# Units`
-button on the right side of the line, which automatically records the
-number of units the [\|MO\|](##SUBST##|MO|) was created for as the
-number of units produced. For example, if an [\|MO\|](##SUBST##|MO|) is
-created for 10 units of a dining table, clicking the
-`10 units` button records that 10
-units were produced.
+Shu bilan bir qatorda, qatorning o'ng tomonidagi `# Units` tugmasini bosing, bu avtomatik ravishda [\|MO\|](##SUBST##|MO|) yaratilgan birliklar sonini ishlab chiqarilgan birliklar soni sifatida qayd etadi. Masalan, agar [\|MO\|](##SUBST##|MO|) ovqat stolining 10 birligi uchun yaratilgan bo'lsa, `10 units` tugmasini bosish 10 birlik ishlab chiqarilganligini qayd etadi.
 
-The footer of the [\|MO\|](##SUBST##|MO|) card displays a
-`Close Production` button. This is
-used to close the [\|MO\|](##SUBST##|MO|) once production is completed.
-However, if there are any quality checks required for the
-[\|MO\|](##SUBST##|MO|) as a whole (not the work orders within it), a
-`Quality Checks` button appears
-instead. Clicking `Quality Checks`
-opens a pop-up window, from which any required quality checks can be
-completed.
+[\|MO\|](##SUBST##|MO|) kartasining pastki qismida `Close Production` tugmasi ko'rsatiladi. Bu ishlab chiqarish yakunlangandan so'ng [\|MO\|](##SUBST##|MO|) ni yopish uchun ishlatiladi. Biroq, agar [\|MO\|](##SUBST##|MO|) uchun umuman (undagi ish buyurtmalari uchun emas) zarur sifat tekshiruvlari bo'lsa, o'rniga `Quality Checks` tugmasi paydo bo'ladi. `Quality Checks` tugmasini bosish qalqib chiquvchi oynani ochadi, undan zarur sifat tekshiruvlarini bajarish mumkin.
 
-After clicking `Close Production`,
-the [\|MO\|](##SUBST##|MO|) card begins to fade away, and an
-`Undo` button appears on the footer.
-Clicking `Undo` causes the
-[\|MO\|](##SUBST##|MO|) to remain open. Once the [\|MO\|](##SUBST##|MO|)
-card disappears completely, the work order is closed.
+`Close Production` tugmasini bosgandan so'ng, [\|MO\|](##SUBST##|MO|) kartasi yo'qola boshlaydi va pastki qismda `Undo` tugmasi paydo bo'ladi. `Undo` tugmasini bosish [\|MO\|](##SUBST##|MO|) ochiq qolishiga sabab bo'ladi. [\|MO\|](##SUBST##|MO|) kartasi to'liq yo'qolgandan so'ng, ish buyurtmasi yopiladi.
 
-On the right side of the footer is an `⋮ (options)` button, which opens a pop-up window with additional
-options for the [\|MO\|](##SUBST##|MO|):
+Pastki qismning o'ng tomonida `⋮ (options)` tugmasi joylashgan bo'lib, u [\|MO\|](##SUBST##|MO|) uchun qo'shimcha variantlar bilan qalqib chiquvchi oynani ochadi:
 
-- `Scrap` is used to send components
-  to a scrap location when they are found to be defective.
-- `Add Work Order` is used to add an
-  additional work order to the [\|MO\|](##SUBST##|MO|).
-- `Add Component` is used to add an
-  additional component to the [\|MO\|](##SUBST##|MO|).
-- `Open Backend MO` opens the
-  [\|MO\|](##SUBST##|MO|) in the Manufacturing app.
+- `Scrap` komponentlar nuqsonli deb topilganda ularni chiqindi joyiga yuborish uchun ishlatiladi.
+- `Add Work Order` [\|MO\|](##SUBST##|MO|) ga qo'shimcha ish buyurtmasi qo'shish uchun ishlatiladi.
+- `Add Component` [\|MO\|](##SUBST##|MO|) ga qo'shimcha komponent qo'shish uchun ishlatiladi.
+- `Open Backend MO` [\|MO\|](##SUBST##|MO|) ni Ishlab chiqarish ilovasida ochadi.
 
-![An information card for an MO on the \"All\" page of the Shop Floor module.](shop_floor_overview/mo-card.png)
+![Shop Floor modulining "All" sahifasidagi MO uchun ma'lumot kartasi.](shop_floor_overview/mo-card.png)
 
-### Work center pages
+### Ish markazi sahifalari
 
-By default, the page for each work center shows an information card for
-every work order assigned to it that is *ready to start*. A work order
-is considered ready to start once the [\|MO\|](##SUBST##|MO|) it is a
-part of is ready to start, and any preceding work orders have been
-completed.
+Odatiy bo'lib, har bir ish markazi sahifasi unga tayinlangan *boshlashga tayyor* bo'lgan har bir ish buyurtmasi uchun ma'lumot kartasini ko'rsatadi. Ish buyurtmasi uning qismi bo'lgan [\|MO\|](##SUBST##|MO|) boshlashga tayyor bo'lganda va oldingi ish buyurtmalari yakunlanganda boshlashga tayyor deb hisoblanadi.
 
-To view every confirmed work order assigned to a work center regardless
-of readiness, click the `x` button on
-the `Ready to Start` filter to remove
-it from the `Search...` bar.
+Tayyorligidan qat'i nazar, ish markaziga tayinlangan tasdiqlangan har bir ish buyurtmasini ko'rish uchun `Ready to Start` filtrini `Search...` panelidan olib tashlash uchun `x` tugmasini bosing.
 
-#### Work order information card
+#### Ish buyurtmasi ma'lumot kartasi
 
-A work order information card on a work center\'s page shows all of the
-relevant details of the associated work order, and also provides
-employees with options for processing the work order.
+Ish markazi sahifasidagi ish buyurtmasi ma'lumot kartasi bog'liq ish buyurtmasining barcha tegishli tafsilotlarini ko'rsatadi va shuningdek xodimlarga ish buyurtmasini qayta ishlash uchun variantlar taqdim etadi.
 
-The header for a work order card shows the reference number of the
-[\|MO\|](##SUBST##|MO|) that the work order is a part of, the product
-and number of units being produced, and the status of the work order. If
-work has not yet begun on the work order, the status appears as
-`To Do`. Once work has begun, the
-status updates to display a timer showing the total time the work order
-has been worked on.
+Ish buyurtmasi kartasining sarlavhasi ish buyurtmasi qismi bo'lgan [\|MO\|](##SUBST##|MO|) ning ma'lumotnoma raqamini, ishlab chiqarilayotgan mahsulot va birliklar sonini va ish buyurtmasining holatini ko'rsatadi. Agar ish buyurtmasi bo'yicha ish hali boshlanmagan bo'lsa, holat `To Do` sifatida ko'rinadi. Ish boshlanganidan so'ng, holat ish buyurtmasi ustida ishlangan umumiy vaqtni ko'rsatadigan taymer ko'rinishida yangilanadi.
 
-The main body of a work order card shows a line for each step required
-to complete the work order. Work order steps can be completed by
-clicking on the line, then following the instructions on the pop-up
-window that appears. Alternatively, clicking the checkbox on the right
-side of each line automatically marks the step as completed.
+Ish buyurtmasi kartasining asosiy qismi ish buyurtmasini yakunlash uchun zarur bo'lgan har bir qadam uchun qator ko'rsatadi. Ish buyurtmasi qadamlari qatorni bosib, keyin paydo bo'ladigan qalqib chiquvchi oynada ko'rsatmalarga amal qilish orqali yakunlanishi mumkin. Shu bilan bir qatorda, har bir qatorning o'ng tomonidagi katakchani bosish qadamni avtomatik ravishda yakunlangan deb belgilaydi.
 
-Below the final step of the work order is a line titled
-`Register Production`, which
-functions the same as the `Register Production` line on an [\|MO\|](##SUBST##|MO|) card. Registering
-the number of units produced using the
-`Register Production` line on a work
-order card also completes the step for the associated
-[\|MO\|](##SUBST##|MO|) card.
+Ish buyurtmasining oxirgi qadamining ostida `Register Production` nomli qator joylashgan bo'lib, u [\|MO\|](##SUBST##|MO|) kartasidagi `Register Production` qatori bilan bir xil ishlaydi. Ish buyurtmasi kartasidagi `Register Production` qatori yordamida ishlab chiqarilgan birliklar sonini ro'yxatga olish bog'liq [\|MO\|](##SUBST##|MO|) kartasi uchun qadamni ham yakunlaydi.
 
-If the work order being processed is the final work order for the
-[\|MO\|](##SUBST##|MO|), a `Close
-Production` button appears on the
-footer of the work order card. Clicking `Close
-Production` closes both the work
-order and the [\|MO\|](##SUBST##|MO|), unless a quality check is
-required for the [\|MO\|](##SUBST##|MO|). In this case, the quality
-check must be completed from the [\|MO\|](##SUBST##|MO|) card before the
-[\|MO\|](##SUBST##|MO|) can be closed.
+Agar qayta ishlayotgan ish buyurtmasi [\|MO\|](##SUBST##|MO|) uchun oxirgi ish buyurtmasi bo'lsa, ish buyurtmasi kartasining pastki qismida `Close Production` tugmasi paydo bo'ladi. `Close Production` tugmasini bosish ish buyurtmasi va [\|MO\|](##SUBST##|MO|) ikkalasini ham yopadi, agar [\|MO\|](##SUBST##|MO|) uchun sifat tekshiruvi talab qilinmasa. Bu holda, [\|MO\|](##SUBST##|MO|) yopilishidan oldin [\|MO\|](##SUBST##|MO|) kartasidan sifat tekshiruvi yakunlanishi kerak.
 
-Alternatively, if the [\|MO\|](##SUBST##|MO|) requires the completion of
-additional work orders, a `Mark as
-Done` button appears instead.
-Clicking `Mark as Done` marks the
-current work order as completed, and causes the next work order to
-appear on the page for the work center it is assigned to.
+Shu bilan bir qatorda, agar [\|MO\|](##SUBST##|MO|) qo'shimcha ish buyurtmalarini yakunlashni talab qilsa, o'rniga `Mark as Done` tugmasi paydo bo'ladi. `Mark as Done` tugmasini bosish joriy ish buyurtmasini yakunlangan deb belgilaydi va keyingi ish buyurtmasining tayinlangan ish markazi sahifasida paydo bo'lishiga sabab bo'ladi.
 
-After clicking `Close Production` or
-`Mark as Done`, the work order card
-begins to fade away, and an `Undo`
-button appears on the footer. Clicking `Undo` causes the work order to remain open. Once the work
-order card disappears completely, the work order is marked as
-`Finished` on the
-[\|MO\|](##SUBST##|MO|).
+`Close Production` yoki `Mark as Done` tugmasini bosgandan so'ng, ish buyurtmasi kartasi yo'qola boshlaydi va pastki qismda `Undo` tugmasi paydo bo'ladi. `Undo` tugmasini bosish ish buyurtmasining ochiq qolishiga sabab bo'ladi. Ish buyurtmasi kartasi to'liq yo'qolgandan so'ng, ish buyurtmasi [\|MO\|](##SUBST##|MO|) da `Finished` deb belgilanadi.
 
-On the right side of the footer is an `⋮ (options)` button, which opens a pop-up window with additional
-options for the work order:
+Pastki qismning o'ng tomonida `⋮ (options)` tugmasi joylashgan bo'lib, u ish buyurtmasi uchun qo'shimcha variantlar bilan qalqib chiquvchi oynani ochadi:
 
-- `Scrap` is used to send components
-  to a scrap location when they are found to be defective.
-- `Add Component` is used to add an
-  additional component to the [\|MO\|](##SUBST##|MO|).
-- `Move to work center` is used to
-  transfer the work order to a different work center.
-- `Suggest a Worksheet improvement`
-  allows the user to propose a change to the work order\'s instructions
-  or steps.
-- `Create a Quality Alert` opens a
-  quality alert form that can be filled out to alert a quality team
-  about a potential issue.
+- `Scrap` komponentlar nuqsonli deb topilganda ularni chiqindi joyiga yuborish uchun ishlatiladi.
+- `Add Component` [\|MO\|](##SUBST##|MO|) ga qo'shimcha komponent qo'shish uchun ishlatiladi.
+- `Move to work center` ish buyurtmasini boshqa ish markaziga o'tkazish uchun ishlatiladi.
+- `Suggest a Worksheet improvement` foydalanuvchiga ish buyurtmasining ko'rsatmalari yoki qadamlariga o'zgartirish taklif qilishga imkon beradi.
+- `Create a Quality Alert` sifat jamoasini mumkin bo'lgan muammo haqida ogohlantirish uchun to'ldirilishi mumkin bo'lgan sifat ogohlantirish formasini ochadi.
 
-![An information card for a work order in the Shop Floor module.](shop_floor_overview/wo-card.png)
+![Shop Floor modulidagi ish buyurtmasi uchun ma'lumot kartasi.](shop_floor_overview/wo-card.png)
 
-### Operator panel
+### Operator paneli
 
-The operator panel is used to manage the employees that are signed in to
-the *Shop Floor* module. The panel shows the name and profile picture of
-every employee that is currently signed in across all instances of the
-database.
+Operator paneli *Shop Floor* moduliga kirgan xodimlarni boshqarish uchun ishlatiladi. Panel ma'lumotlar bazasining barcha nusxalarida hozirda tizimga kirgan har bir xodimning ismi va profil rasmini ko'rsatadi.
 
-To interact with *Shop Floor* as a specific employee, click the
-employee\'s name to activate their profile. Profiles that are not active
-appear with their names and profile pictures greyed-out.
+Muayyan xodim sifatida *Shop Floor* bilan ishlash uchun xodimning ismini bosib, ularning profilini faollashtiring. Faol bo'lmagan profillar ularning ismlari va profil rasmlari kulrang holda ko'rinadi.
 
-When an employee is selected in the operator panel, they can begin
-working on a work order by clicking the work order\'s heading. If an
-employee is working on one or more work orders, the work order title(s)
-appear under their name, along with a timer showing how long they\'ve
-been working on each order.
+Operator panelida xodim tanlanganda, ular ish buyurtmasining sarlavhasini bosish orqali ish buyurtmasi ustida ishlay boshlashilari mumkin. Agar xodim bir yoki bir nechta ish buyurtmalari ustida ishlayotgan bo'lsa, ish buyurtmasi sarlavha(lari) ularning ismi ostida, har bir buyurtma ustida qancha vaqt ishlashganini ko'rsatadigan taymer bilan birga paydo bo'ladi.
 
-To add a new employee to the operator panel, click the
-`+ Add Operator` button at the bottom
-of the panel. Then, select an employee from the
-`Select Employee` pop-up window.
+Operator paneliga yangi xodim qo'shish uchun panelning pastki qismidagi `+ Add Operator` tugmasini bosing. Keyin `Select Employee` qalqib chiquvchi oynasidan xodimni tanlang.
 
-To remove an employee from the operator panel, simply click the
-`x` button next to their name in the
-panel.
+Xodimni operator panelidan olib tashlash uchun paneldagi ularning ismi yonidagi `x` tugmasini bosing.
 
-![The operator panel of the Shop Floor module, showing three employees signed in.](shop_floor_overview/operator-panel.png)
+![Uchta xodim kirganligi ko'rsatilgan Shop Floor modulining operator paneli.](shop_floor_overview/operator-panel.png)
 
-## MO/WO prioritization
+## MO/WO ustuvorlik berish
 
-The **Shop Floor** module uses the *scheduled date* entered on
-`MOs (Manufacturing Orders)` to
-prioritize the `MOs (Manufacturing Orders)` and work orders that appear on the module\'s dashboard and
-work center pages. `MOs (Manufacturing Orders)` and work orders scheduled sooner are more highly
-prioritized, and appear before orders which are scheduled further out.
+**Shop Floor** moduli `MOs (Manufacturing Orders)` da kiritilgan *rejalashtirilgan sana*dan foydalanib, modulning boshqaruv paneli va ish markazi sahifalarida paydo bo'ladigan `MOs (Manufacturing Orders)` va ish buyurtmalariga ustuvorlik beradi. Tezroq rejalashtirilgan `MOs (Manufacturing Orders)` va ish buyurtmalari yuqori ustuvorliklarga ega va uzoqroq rejalashtirilgan buyurtmalardan oldin paydo bo'ladi.
 
-To specify the scheduled date on an [\|MO\|](##SUBST##|MO|), begin by
-navigating to `Manufacturing app
-‣ Operations ‣ Manufacturing Orders`, and click `New` to create a new [\|MO\|](##SUBST##|MO|).
+[\|MO\|](##SUBST##|MO|) da rejalashtirilgan sanani belgilash uchun `Manufacturing app ‣ Operations ‣ Manufacturing Orders` ga o'tib, yangi [\|MO\|](##SUBST##|MO|) yaratish uchun `New` tugmasini bosing.
 
-Click on the `Scheduled Date` field
-to open a calendar popover window. By default, the
-`Scheduled Date` field, and its
-corresponding pop-up window, show the current date and time.
+Kalendar qalqib chiquvchi oynasini ochish uchun `Scheduled Date` maydonini bosing. Odatiy bo'lib, `Scheduled Date` maydoni va unga mos keladigan qalqib chiquvchi oyna joriy sana va vaqtni ko'rsatadi.
 
-Use the calendar to select the date on which processing should begin for
-the [\|MO\|](##SUBST##|MO|). In the two fields at the bottom of the
-popover window, enter the hour and minute at which processing should
-begin, using the 24-hour clock format.
+[\|MO\|](##SUBST##|MO|) uchun qayta ishlash boshlanishi kerak bo'lgan sanani tanlash uchun kalendardan foydalaning. Qalqib chiquvchi oynaning pastki qismidagi ikki maydonida 24 soatlik soat formatidan foydalanib, qayta ishlash boshlanishi kerak bo'lgan soat va daqiqani kiriting.
 
-Finally, click `Apply` at the bottom
-of the popover window to set the date and time for the
-`Scheduled Date` field. Then, click
-the `Confirm` button at the top of
-the [\|MO\|](##SUBST##|MO|) to confirm it.
+Nihoyat, `Scheduled Date` maydoni uchun sana va vaqtni o'rnatish uchun qalqib chiquvchi oynaning pastki qismidagi `Apply` tugmasini bosing. Keyin uni tasdiqlash uchun [\|MO\|](##SUBST##|MO|) ning yuqori qismidagi `Confirm` tugmasini bosing.
 
-Once the [\|MO\|](##SUBST##|MO|) is confirmed, it appears in the **Shop
-Floor** module, as long is it has the `Ready` status, which means all components are available.
+[\|MO\|](##SUBST##|MO|) tasdiqlangandan so'ng, u barcha komponentlar mavjudligini bildiruvchi `Ready` holatiga ega bo'lsa, **Shop Floor** modulida paydo bo'ladi.
 
-On the Odoo dashboard, click on the `Shop Floor` module to open it. The
-`All MO #` page of the dashboard
-displays *Ready* `MOs (Manufacturing Orders)`, organized in order of their scheduled dates.
+Odoo boshqaruv panelida `Shop Floor` modulini ochish uchun uni bosing. Boshqaruv panelining `All MO #` sahifasi rejalashtirilgan sanalar tartibida tartibga solingan *Ready* `MOs (Manufacturing Orders)` ni ko'rsatadi.
 
-At the top of the module, select a work center to see the work orders
-assigned to it. The page for each work center organizes work orders,
-based on the scheduled dates of their corresponding
-`MOs (Manufacturing Orders)`.
+Modulning yuqori qismida unga tayinlangan ish buyurtmalarini ko'rish uchun ish markazini tanlang. Har bir ish markazi sahifasi ish buyurtmalarini ularning mos keladigan `MOs (Manufacturing Orders)` ning rejalashtirilgan sanalariga asoslangan holda tartibga soladi.
 
 ::: example
-Three `MOs (Manufacturing Orders)` are
-confirmed for a *Bookcase* product:
+*Kitob javoni* mahsuloti uchun uchta `MOs (Manufacturing Orders)` tasdiqlangan:
 
-- WH/MO/00411 has a `Scheduled Date`
-  of August 16th.
-- WH/MO/00412 has a `Scheduled Date`
-  of August 20th.
-- WH/MO/00413 has a `Scheduled Date`
-  of August 18th.
+- WH/MO/00411 ning `Scheduled Date`si 16-avgust.
+- WH/MO/00412 ning `Scheduled Date`si 20-avgust.
+- WH/MO/00413 ning `Scheduled Date`si 18-avgust.
 
-On the `All MO #` page of the **Shop
-Floor** module, the cards for each [\|MO\|](##SUBST##|MO|) appear in
-this order: WH/MO/00411, WH/MO/00413, WH/MO/00412.
+**Shop Floor** modulining `All MO #` sahifasida har bir [\|MO\|](##SUBST##|MO|) uchun kartalar quyidagi tartibda paydo bo'ladi: WH/MO/00411, WH/MO/00413, WH/MO/00412.
 
-![MOs in the Shop Floor module, ordered by their scheduled date.](shop_floor_overview/mo-order.png)
+![Shop Floor modulida rejalashtirilgan sanaga ko'ra tartiblangan MOlar.](shop_floor_overview/mo-order.png)
 
-Each [\|MO\|](##SUBST##|MO|) requires one work order, carried out at
-`Assembly Station 1`. Clicking on the
-`Assembly Station 1` button at the
-top of the screen opens the page for the work center, which displays one
-card for each work order, appearing in the same order as their
-corresponding `MOs (Manufacturing Orders)`.
+Har bir [\|MO\|](##SUBST##|MO|) `Assembly Station 1` da amalga oshiriladigan bitta ish buyurtmasini talab qiladi. Ekranning yuqori qismidagi `Assembly Station 1` tugmasini bosish ish markazi sahifasini ochadi, u ularning mos keladigan `MOs (Manufacturing Orders)` bilan bir xil tartibda paydo bo'ladigan har bir ish buyurtmasi uchun bitta karta ko'rsatadi.
 :::

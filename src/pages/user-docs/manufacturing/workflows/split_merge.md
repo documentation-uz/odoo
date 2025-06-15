@@ -1,92 +1,48 @@
-# Split and merge manufacturing orders
+# Ishlab chiqarish buyurtmalarini bo'lish va birlashtirish
 
-In Odoo *Manufacturing*, it is possible to create manufacturing orders
-for a single unit of an item, or multiple units of the same item. In
-some cases, it may be necessary to split a manufacturing order that
-contains multiple units into two or more orders, or to merge two or more
-orders into a single order.
+Odoo *Manufacturing* dasturida bir mahsulotning bitta birligi yoki bir xil mahsulotning bir nechta birligi uchun ishlab chiqarish buyurtmalarini yaratish mumkin. Ba'zi hollarda bir nechta birlikni o'z ichiga olgan ishlab chiqarish buyurtmasini ikki yoki undan ortiq buyurtmaga bo'lish yoki ikki yoki undan ortiq buyurtmani bitta buyurtmaga birlashtirish zarur bo'lishi mumkin.
 
 ::: warning
 
-A manufacturing order can only contain one unit of a product, or
-multiple units of a single product that all use the same Bill of
-Materials (BoM). As a result, it is only possible to merge manufacturing
-orders when every order contains the same product being manufactured
-with the same BoM.
+Ishlab chiqarish buyurtmasi faqat bir mahsulotning bitta birligini yoki bir xil Bill of Materials (BoM) dan foydalanadigan bitta mahsulotning bir nechta birligini o'z ichiga olishi mumkin. Natijada, ishlab chiqarish buyurtmalarini faqat har bir buyurtma bir xil BoM bilan ishlab chiqarilayotgan bir xil mahsulotni o'z ichiga olgan taqdirdagina birlashtirish mumkin.
 ::::
 
-## Split manufacturing orders
+## Ishlab chiqarish buyurtmalarini bo'lish
 
-To split a manufacturing order into multiple orders, begin by navigating
-to
-`Manufacturing ‣ Operations ‣ Manufacturing Orders`, then select a manufacturing order. At the top of
-the page, next to the `New` button,
-the manufacturing order\'s reference number appears with a
-`⚙️ (settings)` button next to it.
+Ishlab chiqarish buyurtmasini bir nechta buyurtmaga bo'lish uchun `Manufacturing ‣ Operations ‣ Manufacturing Orders` bo'limiga o'ting va ishlab chiqarish buyurtmasini tanlang. Sahifaning yuqori qismida, `New` tugmasi yonida ishlab chiqarish buyurtmasining havola raqami va uning yonida `⚙️ (settings)` tugmasi ko'rinadi.
 
-Click the `⚙️ (settings)` button to
-open the general settings for the manufacturing order, then select
-`Split`.
+Ishlab chiqarish buyurtmasi uchun umumiy sozlamalarni ochish uchun `⚙️ (settings)` tugmasini bosing, so'ngra `Split` ni tanlang.
 
-![The Settings and Split buttons on a manufacturing order.](split_merge/settings-split.png)
+![Ishlab chiqarish buyurtmasidagi Settings va Split tugmalari.](split_merge/settings-split.png)
 
-After selecting `Split`, a
-`Split production` pop-up window
-appears. In the `Split #` field,
-enter the number of manufacturing orders that the original order should
-be split into, then click outside of the field. A table appears below,
-with a line for each new manufacturing order that will be created by the
-split. In the `Quantity To Produce`
-column, enter the number of units that will be assigned to each new
-manufacturing order. Finally, click `Split` to split the manufacturing order.
+`Split` ni tanlagandan so'ng `Split production` oynasi paydo bo'ladi. `Split #` maydoniga asl buyurtma nechta ishlab chiqarish buyurtmasiga bo'linishi kerakligini kiriting, so'ngra maydondan tashqariga bosing. Pastda bo'linish natijasida yaratilishi kerak bo'lgan har bir yangi ishlab chiqarish buyurtmasi uchun qator bilan jadval paydo bo'ladi. `Quantity To Produce` ustunida har bir yangi ishlab chiqarish buyurtmasiga tayinlanishi kerak bo'lgan birliklar sonini kiriting. Nihoyat, ishlab chiqarish buyurtmasini bo'lish uchun `Split` tugmasini bosing.
 
-![The Split production pop-up window for a manufacturing order.](split_merge/split-production-window.png)
+![Ishlab chiqarish buyurtmasi uchun Split production oynasi.](split_merge/split-production-window.png)
 
-After clicking `Split`, the original
-manufacturing order is split into the number of orders that was
-specified in the `Split #` field. The
-reference numbers for the new manufacturing orders are the reference
-number for the original order with *-###* tags added to the end.
+`Split` tugmasini bosgandan so'ng, asl ishlab chiqarish buyurtmasi `Split #` maydonida ko'rsatilgan buyurtmalar soniga bo'linadi. Yangi ishlab chiqarish buyurtmalari uchun havola raqamlari asl buyurtmaning havola raqami bo'lib, oxiriga *-###* teglari qo'shiladi.
 
 ::: example
-Manufacturing order *WH/MO/00012* is split into three separate orders.
-The reference numbers for the new orders are *WH/MO/00012-001*,
-*WH/MO/00012-002*, and *WH/MO/00012-003*.
+*WH/MO/00012* ishlab chiqarish buyurtmasi uchta alohida buyurtmaga bo'linadi. Yangi buyurtmalar uchun havola raqamlari *WH/MO/00012-001*, *WH/MO/00012-002* va *WH/MO/00012-003* bo'ladi.
 :::
 
-## Merge manufacturing orders
+## Ishlab chiqarish buyurtmalarini birlashtirish
 
-To merge two or more manufacturing orders into a single order, begin by
-navigating to
-`Manufacturing ‣ Operations ‣ Manufacturing Orders`. Select the manufacturing orders that will be
-merged by activating the checkbox to the left of the name of each order.
+Ikki yoki undan ortiq ishlab chiqarish buyurtmasini bitta buyurtmaga birlashtirish uchun `Manufacturing ‣ Operations ‣ Manufacturing Orders` bo'limiga o'ting. Birlashtiriladigan ishlab chiqarish buyurtmalarini har bir buyurtma nomining chap tomonidagi katagini faollashtirish orqali tanlang.
 
-![Select manufacturing orders that will be merged by clicking the checkbox for each.](split_merge/select-orders.png)
+![Har birining katagisini bosish orqali birlashtiriladigan ishlab chiqarish buyurtmalarini tanlang.](split_merge/select-orders.png)
 
-Once all manufacturing orders have been selected, click the
-`Actions` button at the top of the
-page, then select `Merge` from the
-drop-down menu.
+Barcha ishlab chiqarish buyurtmalari tanlangandan so'ng, sahifaning yuqori qismidagi `Actions` tugmasini bosing, so'ngra ochiluvchi menyudan `Merge` ni tanlang.
 
-![The Actions and Merge buttons on the Manufacturing Orders page.](split_merge/actions-merge.png)
+![Manufacturing Orders sahifasidagi Actions va Merge tugmalari.](split_merge/actions-merge.png)
 
-The selected manufacturing orders are merged into a single order. The
-reference number for the new manufacturing order is the next sequential
-number that has *not* already been assigned to an order.
+Tanlangan ishlab chiqarish buyurtmalari bitta buyurtmaga birlashtiriladi. Yangi ishlab chiqarish buyurtmasi uchun havola raqami hali buyurtmaga tayinlanmagan keyingi ketma-ket raqam bo'ladi.
 
 ::: example
-The last reference number used for a manufacturing order was
-*WH/MO/00012*. Two manufacturing orders, *WH/MO/00008* and
-*WH/MO/00009*, are merged into a single order. The reference number for
-the manufacturing order created by the merger is *WH/MO/00013*.
+Ishlab chiqarish buyurtmasi uchun ishlatilgan oxirgi havola raqami *WH/MO/00012* edi. Ikki ishlab chiqarish buyurtmasi *WH/MO/00008* va *WH/MO/00009* bitta buyurtmaga birlashtiriladi. Birlashtirish natijasida yaratilgan ishlab chiqarish buyurtmasi uchun havola raqami *WH/MO/00013* bo'ladi.
 :::
 
-In the `Source` field for the
-manufacturing order created by the merger, the reference numbers of the
-manufacturing orders that were merged are listed.
+Birlashtirish natijasida yaratilgan ishlab chiqarish buyurtmasining `Source` maydonida birlashtirilgan ishlab chiqarish buyurtmalarining havola raqamlari ro'yxatlangan.
 
 ::: example
-Manufacturing orders *WH/MO/00009* and *WH/MO/00010* are merged to
-create *WH/MO/00011*. The source field for *WH/MO/00011* lists both
-*WH/MO/00009* and *WH/MO/00010*.
+*WH/MO/00009* va *WH/MO/00010* ishlab chiqarish buyurtmalari *WH/MO/00011* ni yaratish uchun birlashtiriladi. *WH/MO/00011* uchun manba maydonida *WH/MO/00009* va *WH/MO/00010* ikkalasi ham ro'yxatlangan.
 :::

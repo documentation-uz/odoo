@@ -1,85 +1,72 @@
-# By-Products
+# Qo'shimcha mahsulotlar
 
-When manufacturing certain products, it is common to be left with
-residual materials, in addition to the finished product. These materials
-are known as *by-products*. By specifying the by-products created during
-manufacturing on a product\'s bill of materials (BoM), the quantity of
-by-products on-hand is tracked by Odoo.
+Muayyan mahsulotlarni ishlab chiqarishda, tayyor mahsulotdan tashqari, 
+qoldiq materiallar bilan qolish odatiy holdir. Bu materiallar 
+*qo'shimcha mahsulotlar* deb nomlanadi. Mahsulotning `BoM (bill of materials)`ida 
+ishlab chiqarish jarayonida yaratilgan qo'shimcha mahsulotlarni belgilash orqali, 
+Odoo qo'shimcha mahsulotlarning mavjud miqdorini kuzatib boradi.
 
-::: example
-Manufacturing a *rocking chair* requires ten pieces of wood. During
-production, five pieces of *scrap wood* are created, in addition to the
-rocking chair. By designating the scrap wood as a by-product on the
-rocking chair\'s `BoM (bill of materials)`, Odoo tracks the on-hand count of scrap wood, as well as
-the quantity of rocking chairs produced.
+::: misol
+*Tebranuvchi kreslo* ishlab chiqarish uchun o'nta yog'och bo'lagi kerak. 
+Ishlab chiqarish jarayonida, tebranuvchi kresl bilan birga, beshta *qoldiq yog'och* 
+bo'lagi yaratiladi. Qoldiq yog'ochni tebranuvchi kresloning `BoM (bill of materials)`ida 
+qo'shimcha mahsulot sifatida belgilash orqali, Odoo ishlab chiqarilgan tebranuvchi 
+kresl miqdorini ham, qoldiq yog'ochning mavjud miqdorini ham kuzatib boradi.
 :::
 
-## Configuration
+## Sozlash
 
-To specify by-products on a product\'s
-`BoM (bill of materials)`, the
-*By-Products* setting **must** be enabled. To do so, navigate to
-`Manufacturing app ‣ Configuration ‣ Settings`, and tick the `By-Products` checkbox, located under the
-`Operations` heading. Then, click
-`Save` to apply the change.
+Mahsulotning `BoM (bill of materials)`ida qo'shimcha mahsulotlarni belgilash uchun, 
+*Qo'shimcha mahsulotlar* sozlamasi **albatta** yoqilgan bo'lishi kerak. Buning uchun, 
+`Manufacturing app ‣ Configuration ‣ Settings` bo'limiga o'ting va `Operations` 
+sarlavhasi ostida joylashgan `By-Products` katakchani belgilang. Keyin o'zgarishni 
+qo'llash uchun `Save` tugmasini bosing.
 
-![The By-Products setting on the Manufacturing app settings page.](byproducts/byproducts-setting.png)
+![Manufacturing ilovasi sozlamalari sahifasidagi Qo'shimcha mahsulotlar sozlamasi.](byproducts/byproducts-setting.png)
 
-With the `By-Products` setting
-enabled, a `By-products` tab appears
-on product `BoMs (bills of materials)`.
+`By-Products` sozlamasi yoqilgan holda, mahsulot `BoMs (bills of materials)`ida 
+`By-products` yorlig'i paydo bo'ladi.
 
-## Add byproduct to BoM
+## BoM ga qo'shimcha mahsulot qo'shish
 
-To add by-products to a `BoM (bill of materials)`, navigate to `Manufacturing app ‣ Products ‣ Bills
-of Materials`, and select a
-`BoM (bill of materials)`.
+`BoM (bill of materials)`ga qo'shimcha mahsulotlar qo'shish uchun, 
+`Manufacturing app ‣ Products ‣ Bills of Materials` bo'limiga o'ting va 
+`BoM (bill of materials)`ni tanlang.
 
-On the `BoM (bill of materials)`, select
-the `By-products` tab. Click
-`Add a line`, and select the
-by-product in the `By-product`
-drop-down field. In the `Quantity`
-field, enter the quantity of the by-product produced during
-manufacturing.
+`BoM (bill of materials)`da `By-products` yorlig'ini tanlang. `Add a line` tugmasini 
+bosing va `By-product` pasayuvchi ro'yxat maydonida qo'shimcha mahsulotni tanlang. 
+`Quantity` maydoniga ishlab chiqarish jarayonida ishlab chiqariladigan qo'shimcha 
+mahsulot miqdorini kiriting.
 
-If the by-product is produced during a specific operation of a
-manufacturing order (MO), select the operation in the
-`Produced in Operation` field. For
-example, if a scrap wood by-product is produced during an *Assemble*
-operation, select that operation in the `Produced in
-Operation` field.
+Agar qo'shimcha mahsulot `MO (manufacturing order)`ning muayyan operatsiyasi 
+davomida ishlab chiqarilsa, `Produced in Operation` maydonida operatsiyani tanlang. 
+Masalan, agar qoldiq yog'och qo'shimcha mahsuloti *Yig'ish* operatsiyasi davomida 
+ishlab chiqarilsa, `Produced in Operation` maydonida shu operatsiyani tanlang.
 
-![The By-Products tab on a BoM, configured with a \"Scrap Wood\" by-product.](byproducts/byproducts-tab.png)
+![BoM dagi "Qoldiq yog'och" qo'shimcha mahsuloti bilan sozlangan Qo'shimcha mahsulotlar yorlig'i.](byproducts/byproducts-tab.png)
 
-## Manufacture by-product
+## Qo'shimcha mahsulot ishlab chiqarish
 
-When an `MO (manufacturing order)` is
-completed and marked as *Done*, Odoo registers the quantity of
-by-products created during the manufacturing process. To create a new
-`MO (manufacturing order)`, navigate to
-`Manufacturing
-app ‣ Operations ‣ Manufacturing Orders`, and click `New`.
+`MO (manufacturing order)` tugallanganda va *Bajarildi* deb belgilanganda, Odoo 
+ishlab chiqarish jarayonida yaratilgan qo'shimcha mahsulotlar miqdorini ro'yxatga 
+oladi. Yangi `MO (manufacturing order)` yaratish uchun, 
+`Manufacturing app ‣ Operations ‣ Manufacturing Orders` bo'limiga o'ting va 
+`New` tugmasini bosing.
 
-In the `Bill of Material` field,
-select a `BoM (bill of materials)` on
-which by-products have been specified. After doing so, the
-`Product` field auto-populates with
-the corresponding product. Click `Confirm` to confirm the
-`MO (manufacturing order)`.
+`Bill of Material` maydonida qo'shimcha mahsulotlar belgilangan 
+`BoM (bill of materials)`ni tanlang. Shundan so'ng, `Product` maydoni mos keladigan 
+mahsulot bilan avtomatik to'ldiriladi. `MO (manufacturing order)`ni tasdiqlash uchun 
+`Confirm` tugmasini bosing.
 
-When manufacturing is completed, click the
-`Produce All` button at the top of
-the `MO (manufacturing order)`. After
-doing so, inventory counts update to reflect the quantity of
-by-product(s) produced, as well as the quantity of the product.
+Ishlab chiqarish tugallanganda, `MO (manufacturing order)` yuqori qismidagi 
+`Produce All` tugmasini bosing. Shundan so'ng, inventar hisobi ishlab chiqarilgan 
+qo'shimcha mahsulot(lar) miqdorini ham, mahsulot miqdorini ham aks ettirish uchun 
+yangilanadi.
 
-Click the `Product Moves` smart
-button at the top of the `MO (manufacturing order)` page to see the movements of components and products. Each
-by-product is listed on the resulting
-`Inventory Moves` page, with the
-`From` column displaying the virtual
-production location, and the `To`
-column displaying the location where the by-product is stored.
+Komponentlar va mahsulotlarning harakatlarini ko'rish uchun 
+`MO (manufacturing order)` sahifasining yuqori qismidagi `Product Moves` aqlli 
+tugmasini bosing. Har bir qo'shimcha mahsulot natijada paydo bo'ladigan 
+`Inventory Moves` sahifasida ro'yxatga olinadi, `From` ustuni virtual ishlab 
+chiqarish joyini, `To` ustuni esa qo'shimcha mahsulot saqlanadigan joyni ko'rsatadi.
 
-![The Product Moves page for an MO with by-products.](byproducts/product-moves.png)
+![Qo'shimcha mahsulotlari bo'lgan MO uchun Mahsulot harakatlari sahifasi.](byproducts/product-moves.png)

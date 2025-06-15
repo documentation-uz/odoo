@@ -1,255 +1,115 @@
-# Basic subcontracting
+# Asosiy subpudrat
 
-In manufacturing, subcontracting is the process of a company engaging a
-third-party manufacturer, or subcontractor, to manufacture products that
-are then sold by the contracting company.
+Ishlab chiqarishda subpudrat - bu kompaniyaning uchinchi tomon ishlab chiqaruvchi yoki subpudratchi bilan hamkorlik qilish jarayoni bo'lib, keyinchalik pudratchi kompaniya tomonidan sotiladigan mahsulotlarni ishlab chiqarish uchun amalga oshiriladi.
 
-In basic subcontracting, the subcontractor is responsible for acquiring
-the necessary components. This means that the contracting company only
-has to worry about what happens to subcontracted products once they are
-produced.
+Asosiy subpudratda subpudratchi zarur komponentlarni olish uchun javobgardir. Bu pudratchi kompaniya faqat subpudrat mahsulotlari ishlab chiqarilgandan keyin ularga nima sodir bo'lishi haqida qayg'urishi kerakligini anglatadi.
 
-The workflow for purchasing a product manufactured using basic
-subcontracting is similar to the one used when purchasing a
-non-subcontracted product from a vendor. The main differences are the
-way that subcontracted products are configured, and the fact that
-subcontracted products take longer to be sent from the vendor, since
-they must first be manufactured by them.
+Asosiy subpudrat yordamida ishlab chiqarilgan mahsulotni sotib olish ish jarayoni sotuvchidan subpudrat qilinmagan mahsulotni sotib olishda qo'llaniladigan jarayonga o'xshaydi. Asosiy farqlar subpudrat mahsulotlarining sozlanish usuli va subpudrat mahsulotlarining sotuvchidan jo'natilishi ko'proq vaqt olishi, chunki ular avval ular tomonidan ishlab chiqarilishi kerak.
 
-## Configuration
+## Sozlash
 
-To use subcontracting in Odoo, navigate to
-`Manufacturing app ‣ Configuration ‣
-Settings`, and tick the checkbox
-next to the `Subcontracting` setting,
-under the `Operations` heading. Then,
-click `Save`.
+Odoo da subpudratdan foydalanish uchun `Manufacturing app ‣ Configuration ‣
+Settings` ga o'ting va `Operations` sarlavhasi ostida `Subcontracting` sozlamasi yonidagi katakchani belgilang. Keyin `Save` tugmasini bosing.
 
-Once the `Subcontracting` setting is
-enabled, it is also necessary to properly configure the subcontracted
-product, and the product\'s `BoM (Bill of Materials)`.
+`Subcontracting` sozlamasi yoqilgandan so'ng, subpudrat mahsuloti va mahsulotning `BoM (Bill of Materials)` ni to'g'ri sozlash ham zarur.
 
-### Configure product 
+### Mahsulotni sozlash
 
-To configure a product for basic subcontracting, navigate to
-`Inventory app ‣
-Products ‣ Products`, and
-select a product, or create a new one by clicking
-`New`.
+Asosiy subpudrat uchun mahsulotni sozlash uchun `Inventory app ‣
+Products ‣ Products` ga o'ting va mahsulotni tanlang yoki `New` tugmasini bosish orqali yangisini yarating.
 
-On the product form, select the `Purchase` tab, and add the product\'s subcontractor as a vendor
-by clicking `Add a line`, selecting
-the subcontractor in the `Vendor`
-drop-down menu, and entering a price in the `Price` field.
+Mahsulot formasida `Purchase` yorlig'ini tanlang va `Add a line` tugmasini bosish, `Vendor` ochiladigan menyuda subpudratchi tanlash va `Price` maydoniga narxni kiritish orqali mahsulot subpudratchi sotuvchi sifatida qo'shing.
 
-Then, click on the `Inventory` tab,
-and use the `Routes` field to
-configure a route that determines what happens to the finished product
-once it has been manufactured by the subcontractor.
+Keyin `Inventory` yorlig'ini bosing va subpudratchi tomonidan ishlab chiqarilgandan keyin tayyor mahsulotga nima sodir bo'lishini belgilaydigan marshrutni sozlash uchun `Routes` maydonidan foydalaning.
 
-If the finished product is shipped back to the contracting company, make
-sure the `Buy` route is selected. In
-addition, select the `Replenish on Order (MTO)` route to automatically create a
-`PO (Purchase Order)` for the product
-upon confirmation of a sales order (SO), unless there is enough stock
-on-hand to fulfill the `SO (Sales Order)`.
+Agar tayyor mahsulot pudratchi kompaniyaga qaytarib jo'natilsa, `Buy` marshrutining tanlanganligiga ishonch hosil qiling. Bundan tashqari, `SO (Sales Order)` ni bajarish uchun yetarli zaxira mavjud bo'lmasa, sotuv buyurtmasi (SO) tasdiqlangandan so'ng mahsulot uchun avtomatik ravishda `PO (Purchase Order)` yaratish uchun `Replenish on Order (MTO)` marshrutini tanlang.
 
-If the finished product is shipped directly to the customer by the
-subcontractor, make sure that **only** the `Dropship` route is selected.
+Agar tayyor mahsulot subpudratchi tomonidan to'g'ridan-to'g'ri mijozga jo'natilsa, **faqat** `Dropship` marshrutining tanlanganligiga ishonch hosil qiling.
 
-### Configure BoM
+### BoM ni sozlash
 
-To configure a `BoM (Bill of Materials)`
-for basic subcontracting, click the
-`Bill of Materials` smart button on
-the product form, and select the desired
-`BoM (Bill of Materials)`.
+Asosiy subpudrat uchun `BoM (Bill of Materials)` ni sozlash uchun mahsulot formasidagi `Bill of Materials` smart tugmasini bosing va kerakli `BoM (Bill of Materials)` ni tanlang.
 
-Alternatively, navigate to
-`Manufacturing app ‣ Products ‣ Bills of Materials`, and select the
-`BoM (Bill of Materials)` for the
-subcontracted product.
+Yoki `Manufacturing app ‣ Products ‣ Bills of Materials` ga o'ting va subpudrat mahsuloti uchun `BoM (Bill of Materials)` ni tanlang.
 
+`BoM Type` maydonida `Subcontracting` variantini tanlang. Keyin pastda paydo bo'ladigan `Subcontractors` maydoniga bir yoki bir nechta subpudratchi qo'shing.
 
-In the `BoM Type` field, select the
-`Subcontracting` option. Then, add
-one or more subcontractors in the `Subcontractors` field that appears below.
+![BoM da "BoM Type" maydoni, subpudrat yordamida mahsulot ishlab chiqarish uchun sozlangan.](subcontracting_basic/bom-type.png)
 
-![The \"BoM Type\" field on a BoM, configured to manufacture the product using subcontracting.](subcontracting_basic/bom-type.png)
-
-Finally, click on the `Miscellaneous`
-tab. In the `Manuf. Lead Time` field,
-enter the number of days it takes the subcontractor to manufacture the
-product. This number is factored in when calculating the product\'s
-expected arrival date.
+Nihoyat, `Miscellaneous` yorlig'ini bosing. `Manuf. Lead Time` maydoniga subpudratchi mahsulotni ishlab chiqarish uchun kerak bo'lgan kunlar sonini kiriting. Bu raqam mahsulotning kutilayotgan kelish sanasini hisoblashda hisobga olinadi.
 
 ::: tip
 
-When using basic subcontracting, there is no need to list components in
-the `Components` tab of the
-`BoM (Bill of Materials)`, since the
-components required for manufacturing, and the means by which they are
-acquired, are handled by the subcontractor.
+Asosiy subpudratdan foydalanganda, `BoM (Bill of Materials)` ning `Components` yorlig'ida komponentlarni ro'yxatlash shart emas, chunki ishlab chiqarish uchun zarur komponentlar va ularni olish usullari subpudratchi tomonidan hal qilinadi.
 ::::
 
-## Basic subcontracting workflow
+## Asosiy subpudrat ish jarayoni
 
-The basic subcontracting workflow consists of up to four steps:
+Asosiy subpudrat ish jarayoni to'rttagacha qadamdan iborat:
 
-1.  Create a sales order (SO) for the subcontracted product; doing so
-    creates a `PO (Purchase Order)` to
-    purchase the product from the subcontractor.
-2.  Confirm the `PO (Purchase Order)`
-    created in the previous step, or create a new
-    `PO (Purchase Order)`; doing so
-    creates a receipt order or a dropship order.
-3.  Process the receipt once the subcontractor has finished
-    manufacturing the subcontracted product, and shipped it back to the
-    contracting company, **OR** process the dropship order to ship the
-    product directly to the customer.
-4.  If the workflow was started by creating an
-    `SO (Sales Order)`, and the finished
-    product is not dropshipped to the end customer, process the delivery
-    order once the product is shipped to the customer.
+1.  Subpudrat mahsuloti uchun sotuv buyurtmasi (SO) yarating; buni amalga oshirish subpudratchi dan mahsulotni sotib olish uchun `PO (Purchase Order)` yaratadi.
+2.  Oldingi qadamda yaratilgan `PO (Purchase Order)` ni tasdiqlang yoki yangi `PO (Purchase Order)` yarating; buni amalga oshirish qabul qilish buyurtmasi yoki dropship buyurtmasini yaratadi.
+3.  Subpudratchi subpudrat mahsulotini ishlab chiqarishni tugatib, uni pudratchi kompaniyaga qaytarib jo'natgandan so'ng qabul qilishni qayta ishlang, **YOKI** mahsulotni to'g'ridan-to'g'ri mijozga jo'natish uchun dropship buyurtmasini qayta ishlang.
+4.  Agar ish jarayoni `SO (Sales Order)` yaratish bilan boshlangan bo'lsa va tayyor mahsulot oxirgi mijozga dropship qilinmagan bo'lsa, mahsulot mijozga jo'natilgandan so'ng yetkazish buyurtmasini qayta ishlang.
 
-The specific number of steps depends on the reason that the
-subcontracted product is being purchased from the subcontractor.
+Aniq qadamlar soni subpudratchi dan subpudrat mahsuloti nima uchun sotib olinayotganiga bog'liq.
 
-If the reason is to fulfill a specific customer order, the process
-starts with creating an `SO (Sales Order)`, and ends with delivering the product to the customer, or
-having the subcontractor dropship it to them.
+Agar sabab ma'lum bir mijoz buyurtmasini bajarish bo'lsa, jarayon `SO (Sales Order)` yaratish bilan boshlanadi va mahsulotni mijozga yetkazish yoki subpudratchi uni ularga dropship qilishi bilan tugaydi.
 
-If the reason is to increase the quantity of stock on-hand, the process
-starts with creating a `PO (Purchase Order)`, and ends with receiving the product into inventory.
+Agar sabab qo'ldagi zaxira miqdorini oshirish bo'lsa, jarayon `PO (Purchase Order)` yaratish bilan boshlanadi va mahsulotni inventarga qabul qilish bilan tugaydi.
 
-### Create SO
+### SO yaratish
 
-It is only necessary to complete this step if the product is being
-purchased from the subcontractor to fulfill a customer need. If the
-product is being purchased to increase the quantity of stock on-hand,
-move on to the next step.
+Bu qadamni faqat mahsulot mijoz ehtiyojini qondirish uchun subpudratchi dan sotib olinayotgan bo'lsa bajarish kerak. Agar mahsulot qo'ldagi zaxira miqdorini oshirish uchun sotib olinayotgan bo'lsa, keyingi qadamga o'ting.
 
-To create a new `SO (Sales Order)`,
-navigate to `Sales app ‣ Orders ‣ Orders`, and click `New`.
+Yangi `SO (Sales Order)` yaratish uchun `Sales app ‣ Orders ‣ Orders` ga o'ting va `New` tugmasini bosing.
 
-Select the customer in the `Customer`
-drop-down menu. Then, click `Add a
-product` on the
-`Order Lines` tab, select a
-subcontracted product in the `Product` drop-down menu, and enter a quantity in the
-`Quantity` field.
+`Customer` ochiladigan menyuda mijozni tanlang. Keyin `Order Lines` yorlig'ida `Add a
+product` tugmasini bosing, `Product` ochiladigan menyuda subpudrat mahsulotini tanlang va `Quantity` maydoniga miqdorni kiriting.
 
-Click `Confirm` to confirm the
-`SO (Sales Order)`, at which point a
-`Purchase` smart button appears at
-the top of the page. This opens the
-`PO (Purchase Order)` created to purchase
-the subcontracted product from the subcontractor.
+`SO (Sales Order)` ni tasdiqlash uchun `Confirm` tugmasini bosing, bu vaqtda sahifaning yuqori qismida `Purchase` smart tugmasi paydo bo'ladi. Bu subpudratchi dan subpudrat mahsulotini sotib olish uchun yaratilgan `PO (Purchase Order)` ni ochadi.
 
 ::: tip
 
-An `SO (Sales Order)` for the product
-only creates a `PO (Purchase Order)` if
-the *Replenish on Order (MTO)* route is enabled on the product\'s form,
-**and** there is not enough stock of the product on-hand to fulfill the
-`SO (Sales Order)`.
+Mahsulot uchun `SO (Sales Order)` faqat mahsulot formasida *Replenish on Order (MTO)* marshruti yoqilgan bo'lsa **va** `SO (Sales Order)` ni bajarish uchun mahsulotning qo'ldagi zaxirasi yetarli bo'lmasa `PO (Purchase Order)` yaratadi.
 
-If there is enough stock on-hand, confirming an
-`SO (Sales Order)` for the product
-creates a delivery order instead, because Odoo assumes that the
-`SO (Sales Order)` is fulfilled using the
-stock in the warehouse.
+Agar qo'ldagi zaxira yetarli bo'lsa, mahsulot uchun `SO (Sales Order)` ni tasdiqlash o'rniga yetkazish buyurtmasini yaratadi, chunki Odoo `SO (Sales Order)` ombordagi zaxira yordamida bajariladi deb hisoblaydi.
 
-This is not the case for subcontracted products that are dropshipped to
-the end customer. In that case, a
-`PO (Purchase Order)` is **always**
-created, even if there is enough stock on-hand.
+Bu oxirgi mijozga dropship qilinadigan subpudrat mahsulotlar uchun bunday emas. Bunday holda, qo'ldagi zaxira yetarli bo'lsa ham, `PO (Purchase Order)` **doimo** yaratiladi.
 ::::
 
-### Process PO
+### PO ni qayta ishlash
 
-If a `PO (Purchase Order)` was created in
-the previous step, navigate to it by clicking the
-`Purchase` smart button at the top of
-the `SO (Sales Order)`, or by going to
-`Purchase app ‣ Orders ‣ Purchase
-Orders`, and selecting the
-`PO (Purchase Order)`. Then, click
-`Confirm Order` to confirm it, and
-move on to the next step.
+Agar oldingi qadamda `PO (Purchase Order)` yaratilgan bo'lsa, `SO (Sales Order)` yuqori qismidagi `Purchase` smart tugmasini bosish orqali unga o'ting yoki `Purchase app ‣ Orders ‣ Purchase
+Orders` ga borib `PO (Purchase Order)` ni tanlang. Keyin uni tasdiqlash uchun `Confirm Order` tugmasini bosing va keyingi qadamga o'ting.
 
-If a `PO (Purchase Order)` was not
-created in the previous step, do so now by navigating to `Purchase
-app ‣ Orders ‣ Purchase Orders`, and clicking `New`.
+Agar oldingi qadamda `PO (Purchase Order)` yaratilmagan bo'lsa, `Purchase
+app ‣ Orders ‣ Purchase Orders` ga o'tib `New` tugmasini bosish orqali buni hozir amalga oshiring.
 
-Begin filling out the `PO (Purchase Order)` by selecting a subcontractor from the
-`Vendor` drop-down menu. In the
-`Products` tab, click
-`Add a product` to create a new
-product line. Select a subcontracted product in the
-`Product` field, and enter the
-quantity in the `Quantity` field.
-Finally, click `Confirm Order` to
-confirm the `PO (Purchase Order)`.
+`Vendor` ochiladigan menyudan subpudratchi tanlash orqali `PO (Purchase Order)` to'ldirishni boshlang. `Products` yorlig'ida yangi mahsulot qatori yaratish uchun `Add a product` tugmasini bosing. `Product` maydonida subpudrat mahsulotini tanlang va `Quantity` maydoniga miqdorni kiriting. Nihoyat, `PO (Purchase Order)` ni tasdiqlash uchun `Confirm Order` tugmasini bosing.
 
-When a `PO (Purchase Order)` is confirmed
-for a product manufactured using basic subcontracting, a receipt or
-dropship order is automatically created, and can be accessed from the
-corresponding `Receipt` or
-`Dropship` smart button that appears
-at the top of the `PO (Purchase Order)`.
+Asosiy subpudrat yordamida ishlab chiqarilgan mahsulot uchun `PO (Purchase Order)` tasdiqlanganida, qabul qilish yoki dropship buyurtmasi avtomatik ravishda yaratiladi va `PO (Purchase Order)` yuqori qismida paydo bo'ladigan tegishli `Receipt` yoki `Dropship` smart tugmasidan foydalanish mumkin.
 
+Asosiy subpudrat mahsuloti uchun PO, sahifaning yuqori qismida Receipt smart tugmasi bilan.
 
+### Qabul qilish yoki dropship buyurtmasini qayta ishlash
 
-PO for a basic subcontracting product, with a Receipt smart
-button at the top of the page.
+Subpudratchi mahsulotni ishlab chiqarishni tugatgandan so'ng, ular mahsulotning `configured` qilinish usuliga qarab, uni pudratchi kompaniyaga jo'natadilar yoki oxirgi mijozga dropship qiladilar.
 
+#### Qabul qilishni qayta ishlash
 
-### Process receipt or dropship order
+Agar subpudratchi tayyor mahsulotni pudratchi kompaniyaga jo'natsa, u qabul qilinganidan so'ng, `Purchase app ‣ Orders ‣ Purchase Orders` ga o'ting va `PO (Purchase Order)` ni tanlang.
 
-Once the subcontractor has finished manufacturing the product, they
-either ship it to the contracting company, or dropship it to the end
-customer, depending on how the product was
-`configured `.
+Qabul qilishni ochish uchun `PO (Purchase Order)` yuqori qismidagi `Receive Products` tugmasini yoki sahifaning yuqori qismidagi `Receipt` smart tugmasini bosing. Keyin mahsulotni inventarga kiritish uchun qabul qilish yuqori qismidagi `Validate` tugmasini bosing.
 
-#### Process receipt
+#### Dropship buyurtmasini qayta ishlash
 
-If the subcontractor ships the finished product to the contracting
-company, once it has been received, navigate to
-`Purchase app ‣ Orders ‣ Purchase Orders`, and select the
-`PO (Purchase Order)`.
+Agar subpudratchi mahsulotni dropship qilsa, ular uni jo'natganlaridan so'ng, `Purchase app ‣ Orders ‣ Purchase Orders` ga o'ting va `PO (Purchase Order)` ni tanlang.
 
-Click the `Receive Products` button
-at the top of the `PO (Purchase Order)`,
-or the `Receipt` smart button at the
-top of the page, to open the receipt. Then, click
-`Validate` at the top of the receipt
-to enter the product into inventory.
+Dropship buyurtmasini ochish uchun sahifaning yuqori qismidagi `Dropship` smart tugmasini tanlang va mahsulot mijozga jo'natilganligini tasdiqlash uchun buyurtma yuqori qismidagi `Validate` tugmasini bosing.
 
-#### Process dropship order
+### Yetkazish buyurtmasini qayta ishlash
 
-If the subcontractor dropships the product, once they have sent it,
-navigate to
-`Purchase app ‣ Orders ‣ Purchase Orders`, and select the
-`PO (Purchase Order)`.
+Agar subpudrat ish jarayoni mijoz `SO (Sales Order)` bilan boshlangan bo'lsa va tayyor mahsulot mijozga dropship qilinmagan, balki pudratchi kompaniyaga yetkazilgan bo'lsa, mahsulotni mijozga jo'natish va yetkazish buyurtmasini qayta ishlash kerak.
 
-Select the `Dropship` smart button at
-the top of the page to open the dropship order, and click
-`Validate` at the top of the order to
-confirm that the product has been sent to the customer.
-
-### Process delivery order
-
-If the subcontracting workflow was started by a customer
-`SO (Sales Order)`, and the finished
-product was **not** dropshipped to the customer, but rather delivered to
-the contracting company, it is necessary to ship the product to the
-customer, and process the delivery order.
-
-Once the product has been shipped to the customer, navigate to the
-`Sales` app, and select the
-`SO (Sales Order)`. Select the
-`Delivery` smart button at the top of
-the page to open the delivery order, and click
-`Validate` on the order to confirm
-that the product has been shipped.
+Mahsulot mijozga jo'natilgandan so'ng, `Sales` ilovasiga o'ting va `SO (Sales Order)` ni tanlang. Yetkazish buyurtmasini ochish uchun sahifaning yuqori qismidagi `Delivery` smart tugmasini tanlang va mahsulot jo'natilganligini tasdiqlash uchun buyurtmada `Validate` tugmasini bosing.

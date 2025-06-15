@@ -1,148 +1,81 @@
-# Subcontracting
+# Subkontrakt
 
-In manufacturing, *subcontracting* is the process of a company engaging
-a third-party manufacturer, or subcontractor, to manufacture products
-that are then sold by the contracting company.
+Ishlab chiqarishda *subkontrakt* - bu kompaniyaning uchinchi tomon ishlab chiqaruvchi yoki subpudratchi bilan shartnoma tuzib, mahsulotlarni ishlab chiqarish jarayonidir. Keyinchalik bu mahsulotlar shartnoma tuzuvchi kompaniya tomonidan sotiladi.
 
-Subcontracting provides a variety of benefits for both the contracting
-company and the subcontractor.
+Subkontrakt ham shartnoma tuzuvchi kompaniya, ham subpudratchi uchun turli xil afzalliklarni taqdim etadi.
 
-For the contracting company, subcontracting allows them to sell a wide
-variety of manufactured products, without having to worry about
-investing in and maintaining the equipment and labor required to handle
-the manufacturing themselves.
+Shartnoma tuzuvchi kompaniya uchun subkontrakt ularga ishlab chiqarishni o'zlari amalga oshirish uchun zarur bo'lgan jihozlar va ishchi kuchiga sarmoya kiritish va ularni saqlash haqida qayg'urmasdan, keng turdagi ishlab chiqarilgan mahsulotlarni sotish imkonini beradi.
 
-This helps contracting companies stay flexible throughout economic
-cycles, as they can easily increase or decrease their engagements with
-subcontractors, as necessitated by the current moment. It also means
-they are able to focus on tasks they excel at, while delegating more
-specialized work to subcontractors.
+Bu shartnoma tuzuvchi kompaniyalarga iqtisodiy tsikllar davomida moslashuvchanlikni saqlashga yordam beradi, chunki ular hozirgi vaziyat talab qilganidek, subpudratchilar bilan hamkorlikni osongina oshirishi yoki kamaytirishilari mumkin. Bu shuningdek, ular o'zlari mukammal bajaradigan vazifalar ustida e'tiborni jamlash imkonini beradi, shu bilan birga maxsus ishlarni subpudratchilarga topshiradi.
 
-On the other side of the relationship, subcontracting allows
-subcontractors to specialize in more niche areas of production, which
-might not be as profitable outside the bounds of a subcontracting
-engagement. In certain arrangements, it also provides them with the
-flexibility to choose which projects they accept or decline, and how
-many they work on at any given time.
+Munosabatning boshqa tomonida, subkontrakt subpudratchilarining subkontrakt shartnomasi doirasidan tashqarida unchalik foydali bo'lmasligi mumkin bo'lgan mahsulot ishlab chiqarishning tor sohalariga ixtisoslashtirish imkonini beradi. Muayyan kelishuvlarda, bu ularga qaysi loyihalarni qabul qilish yoki rad etish va ma'lum vaqtda qanchaga ishlash bo'yicha moslashuvchanlikni ham taqdim etadi.
 
-In Odoo, companies can configure their subcontracting workflows based on
-a variety of different factors, including how components are sourced,
-and what happens to finished products once they are manufactured.
+Odoo'da kompaniyalar o'zlarining subkontrakt ish oqimlarini turli omillarga asoslanib sozlashlari mumkin, jumladan komponentlar qanday olinishi va tayyor mahsulotlar ishlab chiqarilgach nima bo'lishi.
 
 :::::: cards
 ::: 
-Basic subcontracting
+Asosiy subkontrakt
 
-Subcontract products without supplying the subcontractor with
-components.
+Subpudratchi kompaniya komponentlar bilan ta'minlamasdan mahsulotlarni subkontrakt qilish.
 :::
 
 ::: 
-Resupply subcontractor
+Subpudratchi ta'minlash
 
-Ship components to a subcontractor each time a PO for a subcontracted
-product is confirmed.
+Subkontrakt qilingan mahsulot uchun PO tasdiqlanganda har safar komponentlarni subpudratchi kompaniyaga yuborish.
 :::
 
 ::: 
-Dropship to subcontractor
+Subpudratchi kompaniyaga to'g'ridan-to'g'ri yetkazib berish
 
-Dropship components to a subcontractor each time a PO for a
-subcontracted product is confirmed.
+Subkontrakt qilingan mahsulot uchun PO tasdiqlanganda har safar komponentlarni subpudratchi kompaniyaga to'g'ridan-to'g'ri yetkazib berish.
 :::
 ::::::
 
-## Configuration
+## Sozlash
 
-To enable subcontracting in Odoo, navigate to
-`Manufacturing app ‣ Configuration
-‣ Settings`, and tick the
-checkbox next to the `Subcontracting`
-setting, under the `Operations`
-heading. Then, click `Save`.
+Odoo'da subkontraktni yoqish uchun `Manufacturing app ‣ Configuration ‣ Settings` bo'limiga o'tib, `Operations` sarlavhasi ostidagi `Subcontracting` sozlamasi yonidagi katakchani belgilang. Keyin `Save` tugmasini bosing.
 
-![The Subcontracting setting in the manufacturing app.](subcontracting/subcontracting-setting.png)
+![Ishlab chiqarish ilovasidagi Subkontrakt sozlamasi.](subcontracting/subcontracting-setting.png)
 
-With subcontracting enabled, a few different features become available
-in Odoo:
+Subkontrakt yoqilgach, Odoo'da bir nechta turli xil funksiyalar mavjud bo'ladi:
 
-- On bills of materials (BoMs), the *BoM Type* field now includes a
-  *Subcontracting* option. Enabling the *Subcontracting*
-  `BoM (Bill of Materials)` type
-  designates the `BoM (Bill of Materials)`\'s product as a subcontracted product, which means Odoo
-  knows that it is produced by a subcontractor, and not by the company
-  that owns the Odoo database.
-- Two subcontracting routes become available in the *Inventory* app, and
-  can be assigned to specific products, on the *Inventory* tab of their
-  product pages:
-  - *Resupply Subcontractor on Order*
-  - *Dropship Subcontractor on Order*
+- Materiallar ro'yxatlarida (BoM), *BoM turi* maydoni endi *Subkontrakt* variantini o'z ichiga oladi. *Subkontrakt* `BoM (Bill of Materials)` turini yoqish `BoM (Bill of Materials)`ning mahsulotini subkontrakt qilingan mahsulot sifatida belgilaydi, ya'ni Odoo uni Odoo ma'lumotlar bazasiga ega bo'lgan kompaniya tomonidan emas, balki subpudratchi tomonidan ishlab chiqarilganini biladi.
+- Ikkita subkontrakt yo'nalishlari *Inventory* ilovasida mavjud bo'ladi va ularning mahsulot sahifalarining *Inventory* bo'limida muayyan mahsulotlarga tayinlanishi mumkin:
+  - *Buyurtma bo'yicha subpudratchi ta'minlash*
+  - *Buyurtma bo'yicha subpudratchi kompaniyaga to'g'ridan-to'g'ri yetkazib berish*
 
-## Subcontracting workflows
+## Subkontrakt ish oqimlari
 
-In Odoo, there are three subcontracting workflows, the main difference
-between them being *how* the subcontractor obtains the necessary
-components:
+Odoo'da uchta subkontrakt ish oqimi mavjud, ular orasidagi asosiy farq subpudratchi zarur komponentlarni *qanday* olishida:
 
-- In the *basic* subcontracting workflow, the subcontractor is fully
-  responsible for obtaining the components. This workflow is outlined in
-  the `subcontracting/subcontracting_basic` documentation.
-- In the *Resupply Subcontractor on Order* workflow, the contracting
-  company sends the components from their warehouse to the
-  subcontractor. This workflow is outlined in the
-  `subcontracting/subcontracting_resupply`
-  documentation.
-- In the *Dropship Subcontractor on Order* workflow, the contracting
-  company purchases the components from a vendor, and has them delivered
-  directly to the subcontractor. This workflow is outlined in the
-  `subcontracting/subcontracting_dropship`
-  documentation.
+- *Asosiy* subkontrakt ish oqimida subpudratchi komponentlarni olish uchun to'liq javobgardir. Bu ish oqimi `subcontracting/subcontracting_basic` hujjatlashtirishda batafsil bayon etilgan.
+- *Buyurtma bo'yicha subpudratchi ta'minlash* ish oqimida shartnoma tuzuvchi kompaniya komponentlarni o'z omboridan subpudratchi kompaniyaga yuboradi. Bu ish oqimi `subcontracting/subcontracting_resupply` hujjatlashtirishda bayon etilgan.
+- *Buyurtma bo'yicha subpudratchi kompaniyaga to'g'ridan-to'g'ri yetkazib berish* ish oqimida shartnoma tuzuvchi kompaniya komponentlarni sotuvchidan sotib oladi va ularni to'g'ridan-to'g'ri subpudratchi kompaniyaga yetkazib beradi. Bu ish oqimi `subcontracting/subcontracting_dropship` hujjatlashtirishda bayon etilgan.
 
-In addition to how a subcontractor obtains components, it is also
-necessary to consider why a product is being subcontracted, as well as
-what happens to products once they are manufactured by the
-subcontractor.
+Subpudratchi komponentlarni qanday olishidan tashqari, mahsulot nima uchun subkontrakt qilinayotgani, shuningdek mahsulotlar subpudratchi tomonidan ishlab chiqarilgandan keyin nima bo'lishini ham hisobga olish zarur.
 
-In terms of why a product is being subcontracted, the two main reasons
-are to fulfill a customer order, or to replenish the quantity of stock
-on-hand.
+Mahsulot nima uchun subkontrakt qilinayotgani nuqtai nazaridan, ikkita asosiy sabab bor: mijozning buyurtmasini bajarish yoki qo'ldagi zaxira miqdorini to'ldirish.
 
-In terms of what happens to products once they are manufactured, they
-can either be shipped to the contracting company, or dropshipped
-directly to an end customer.
+Mahsulotlar ishlab chiqarilgandan keyin nima bo'lishi nuqtai nazaridan, ular yo shartnoma tuzuvchi kompaniyaga yetkazib berilishi yoki to'g'ridan-to'g'ri yakuniy mijozga yetkazib berilishi mumkin.
 
-Each of the three subcontracting workflows described above can be
-configured to facilitate any of these possibilities, and the methods for
-doing so are outlined in their respective documentation.
+Yuqorida tavsiflangan uchta subkontrakt ish oqimining har biri ushbu imkoniyatlarning istalgan birini amalga oshirish uchun sozlanishi mumkin va buning usullari tegishli hujjatlashtirishda bayon etilgan.
 
-## Subcontracted product valuation
+## Subkontrakt qilingan mahsulot baholash
 
-The valuation of a subcontracted product depends upon a few different
-variables:
+Subkontrakt qilingan mahsulotning baholash bir nechta turli o'zgaruvchilardan bog'liq:
 
-- The cost of the required components, if provided by the contracting
-  company; from here on referred to as [C].
-- The price paid to the subcontractor for the service of manufacturing
-  the subcontracted product; from here on referred to as
-  [M].
-- The cost of shipping components to the subcontractor, and having them
-  shipped back to the contracting company; from here on referred to as
-  [S].
-- The cost of dropshipping, if the components are shipped by the
-  subcontractor to the end customer; from here on referred to as
-  [D].
-- Any other associated costs, like import taxes, etc.; from here on
-  referred to as [x].
+- Agar shartnoma tuzuvchi kompaniya tomonidan taqdim etilgan bo'lsa, zarur komponentlar narxi; bundan keyin [C] deb ataladi.
+- Subkontrakt qilingan mahsulotni ishlab chiqarish xizmati uchun subpudratchi kompaniyaga to'lanadigan narx; bundan keyin [M] deb ataladi.
+- Komponentlarni subpudratchi kompaniyaga yuborish va ularni shartnoma tuzuvchi kompaniyaga qaytarib yuborish narxi; bundan keyin [S] deb ataladi.
+- Agar komponentlar subpudratchi tomonidan yakuniy mijozga yuborilsa, to'g'ridan-to'g'ri yetkazib berish narxi; bundan keyin [D] deb ataladi.
+- Import soliqlarini kabi boshqa bog'liq xarajatlar; bundan keyin [x] deb ataladi.
 
-Therefore, the total valuation of a subcontracted product
-([P]) can be represented by the following equation:
+Shuning uchun, subkontrakt qilingan mahsulotning umumiy baholash ([P]) quyidagi tenglama bilan ifodalanishi mumkin:
 
 $$P = C + M + S + D + x$$
 
-It is important to note that not every subcontracted product valuation
-will include all of these variables. For example, if the product is not
-dropshipped to the end customer, then there is no need to factor in the
-cost of dropshipping.
+Shuni ta'kidlash kerakki, har bir subkontrakt qilingan mahsulot baholash ushbu o'zgaruvchilarning barchasini o'z ichiga olmaydi. Masalan, agar mahsulot yakuniy mijozga to'g'ridan-to'g'ri yetkazib berilmasa, to'g'ridan-to'g'ri yetkazib berish narxini hisobga olish shart emas.
 
 ::: toctree
 subcontracting/subcontracting_basic

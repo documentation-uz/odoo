@@ -1,210 +1,98 @@
-# Overall equipment effectiveness
+# Umumiy uskunalar samaradorligi
 
-In Odoo\'s *Manufacturing* app, *overall equipment effectiveness* (OEE)
-represents the amount of time a work center is fully productive.
-`OEE (overall equipment effectiveness)`
-is displayed as a percentage of the total time a work center is active.
+Odoo'ning *Ishlab chiqarish* ilovasida, *umumiy uskunalar samaradorligi* (`OEE (overall equipment effectiveness)`) ish markazining to'liq mahsuldor bo'lgan vaqtini ifodalaydi. `OEE (overall equipment effectiveness)` ish markazining faol bo'lgan umumiy vaqtining foizi sifatida ko'rsatiladi.
 
-Fully productive time is considered to be time when the work center is
-operational **and** processing work orders that have not exceeded their
-*expected duration*.
+To'liq mahsuldor vaqt ish markazining ishlab turgan **va** *kutilgan davomiylik*ni oshirmagan ish buyurtmalarini qayta ishlayotgan vaqti hisoblanadi.
 
-`OEE (overall equipment effectiveness)`
-helps manufacturing teams understand the efficiency of work centers, and
-the causes of manufacturing downtime.
+`OEE (overall equipment effectiveness)` ishlab chiqarish jamoalariga ish markazlarining samaradorligi va ishlab chiqarish to'xtash sabablarini tushunishga yordam beradi.
 
 ::: warning
 
-Since `OEE (overall equipment effectiveness)` tracks work center productivity, using it requires enabling
-the work centers feature in the settings of the Manufacturing app.
+`OEE (overall equipment effectiveness)` ish markazlarining mahsuldorligini kuzatgani uchun, undan foydalanish Ishlab chiqarish ilovasining sozlamalarida ish markazlari funksiyasini yoqishni talab qiladi.
 
-To do so, navigate to
-`Manufacturing app ‣ Configuration ‣ Settings`, and tick the checkbox next to
-`Work Orders`, under the
-`Operations` heading. Then, click
-`Save`.
+Buning uchun `Manufacturing app ‣ Configuration ‣ Settings` ga o'ting va `Operations` sarlavhasi ostidagi `Work Orders` yonidagi katak belgilansin. Keyin `Save` tugmasini bosing.
 ::::
 
-## Efficiency standards
+## Samaradorlik standartlari
 
-For `OEE (overall equipment effectiveness)` to accurately reflect the percentage of fully productive
-time for a work center, the work center **must** be properly configured
-with the correct productivity metrics. These include the work center\'s
-*time efficiency*, *capacity*, and *OEE target*.
+`OEE (overall equipment effectiveness)` ish markazining to'liq mahsuldor vaqtining foizini aniq aks ettirishi uchun, ish markazi to'g'ri mahsuldorlik ko'rsatkichlari bilan to'g'ri sozlangan **bo'lishi kerak**. Bular ish markazining *vaqt samaradorligi*, *quvvati* va *OEE maqsadi*ni o'z ichiga oladi.
 
-### Time efficiency
+### Vaqt samaradorligi
 
-Time efficiency represents the efficiency of a work center when
-processing work orders, and is represented as a percentage. A time
-efficiency value of 100% signifies that the work center processes work
-orders at the speed of the expected duration, as listed on a product\'s
-`BoM (Bill of Materials)`. A value less
-than or greater than 100% signifies that the work center processes work
-orders slower or faster than an operation\'s expected duration,
-respectively.
+Vaqt samaradorligi ish buyurtmalarini qayta ishlashda ish markazining samaradorligini ifodalaydi va foiz sifatida ko'rsatiladi. 100% vaqt samaradorligi qiymati ish markazining mahsulotning `BoM (Bill of Materials)`ida ko'rsatilgan kutilgan davomiylik tezligida ish buyurtmalarini qayta ishlashini bildiradi. 100%dan kam yoki ko'p qiymat ish markazining operatsiyaning kutilgan davomiyligigina nisbatan sekinroq yoki tezroq ish buyurtmalarini qayta ishlashini bildiradi.
 
-To set the time efficiency for a work center, navigate to
-`Manufacturing app ‣
-Configuration ‣ Work Centers`,
-and select a work center. On the `General Information` tab, enter a numerical value in the
-`Time Efficiency` field.
+Ish markazi uchun vaqt samaradorligini o'rnatish uchun `Manufacturing app ‣ Configuration ‣ Work Centers` ga o'ting va ish markazini tanlang. `General Information` tabida `Time Efficiency` maydoniga raqamli qiymat kiriting.
 
 ::: example
-Manufacturing a *chair* product requires two operations: *cut* and
-*assemble*. The product\'s `BoM (Bill of Materials)` lists an expected duration of 30 minutes for each
-operation.
+*Kreslo* mahsulotini ishlab chiqarish ikki operatsiyani talab qiladi: *kesish* va *yig'ish*. Mahsulotning `BoM (Bill of Materials)`i har bir operatsiya uchun 30 daqiqa kutilgan davomiylikni ko'rsatadi.
 
-The cut operation is carried out at the *cut station* work center, which
-has a time efficiency value of 50%. This means it takes twice as long to
-complete the operation, for a total time of one hour.
+Kesish operatsiyasi *kesish stansiyasi* ish markazida amalga oshiriladi, u 50% vaqt samaradorlik qiymatiga ega. Bu operatsiyani yakunlash ikki marta ko'proq vaqt olishini bildiradi, ya'ni jami bir soat.
 
-The assemble operation is carried out at the *assembly line* work
-center, which has a time efficiency value of 200%. This means it takes
-half as long to complete the operation, for a total time of 15 minutes.
+Yig'ish operatsiyasi *yig'ish liniyasi* ish markazida amalga oshiriladi, u 200% vaqt samaradorlik qiymatiga ega. Bu operatsiyani yakunlash yarim vaqt olishini bildiradi, ya'ni jami 15 daqiqa.
 :::
 
-### Capacity
+### Quvvat
 
-Capacity represents how many units of a product can be produced in
-parallel at a work center. The duration of work orders for multiple
-units increases or decreases, based on how many units the work center
-can handle.
+Quvvat ish markazida parallel ravishda nechta mahsulot birligi ishlab chiqarilishi mumkinligini ifodalaydi. Bir nechta birlik uchun ish buyurtmalarining davomiyligi ish markazining nechta birlikni boshqarishi mumkinligiga qarab oshadi yoki kamayadi.
 
-To set the capacity for a work center, navigate to
-`Manufacturing app ‣
-Configuration ‣ Work Centers`,
-and select a work center. On the `General Information` tab, enter a numerical value in the
-`Capacity` field.
+Ish markazi uchun quvvatni o'rnatish uchun `Manufacturing app ‣ Configuration ‣ Work Centers` ga o'ting va ish markazini tanlang. `General Information` tabida `Capacity` maydoniga raqamli qiymat kiriting.
 
 ::: example
-A *drill station* work center has a capacity of one unit. An
-`MO (manufacturing order)` is confirmed
-for 10 units of a *chair*, a product manufactured using the drill
-station.
+*Burg'ulash stansiyasi* ish markazi bir birlik quvvatiga ega. Burg'ulash stansiyasidan foydalanilgan holda ishlab chiqariladigan *kreslo* mahsulotining 10 birligi uchun `MO (manufacturing order)` tasdiqlangan.
 
-Since there are ten times as many units to produce than the work center
-can handle at once, the operation time is ten times the duration listed
-on the product\'s `BoM (Bill of Materials)`.
+Ishlab chiqarish kerak bo'lgan birliklar ish markazining bir vaqtda boshqara oladigan birliklaridan o'n marta ko'p bo'lgani uchun, operatsiya vaqti mahsulotning `BoM (Bill of Materials)`ida ko'rsatilgan davomiylikdan o'n marta ko'p bo'ladi.
 :::
 
-### `OEE (overall equipment effectiveness)` target 
+### `OEE (overall equipment effectiveness)` maqsadi
 
-The `OEE (overall equipment effectiveness)` target is the goal for how much of a work center\'s
-operating time should be fully productive time. It is displayed as a
-percentage, and should only be set as high as [100%].
+`OEE (overall equipment effectiveness)` maqsadi ish markazining ishlay vaqtining qancha qismi to'liq mahsuldor vaqt bo'lishi kerakligi uchun maqsaddir. U foiz sifatida ko'rsatiladi va faqat [100%] gacha baland qilib o'rnatilishi kerak.
 
-To set the `OEE (overall equipment effectiveness)` target for a work center, navigate to
-`Manufacturing app ‣
-Configuration ‣ Settings ‣ Work Centers`, and select a work center. On the `General
-Information` tab, enter a numerical
-value of [100.00] or less in the
-`OEE Target` field.
+Ish markazi uchun `OEE (overall equipment effectiveness)` maqsadini o'rnatish uchun `Manufacturing app ‣ Configuration ‣ Settings ‣ Work Centers` ga o'ting va ish markazini tanlang. `General Information` tabida `OEE Target` maydoniga [100.00] yoki undan kam raqamli qiymat kiriting.
 
-## Calculating `OEE (overall equipment effectiveness)` 
+## `OEE (overall equipment effectiveness)` hisoblash
 
-`OEE (overall equipment effectiveness)`
-is represented as a percentage value between zero and 100. The value
-signifies the amount of time that a work center was fully productive.
-The remainder signifies the amount of time that the work center was
-operating at less than full efficiency. This can occur for a number of
-reasons, including *reduced speed*, *material availability*, and
-*equipment failure*.
+`OEE (overall equipment effectiveness)` nol va 100 orasidagi foiz qiymati sifatida ifodalanadi. Qiymat ish markazining to'liq mahsuldor bo'lgan vaqt miqdorini bildiradi. Qolgan qism ish markazining to'liq samaradorlikdan past ishlab turgan vaqt miqdorini bildiradi. Bu bir qator sabablarga ko'ra sodir bo'lishi mumkin, jumladan *kamaygan tezlik*, *material mavjudligi* va *uskundagi nosozlik*.
 
-### Fully productive time
+### To'liq mahsuldor vaqt
 
-For a work center to be considered fully productive, it must be able to
-receive work orders, have the components necessary to process work
-orders, and be operating within the expected duration of the work order
-it is processing.
+Ish markazining to'liq mahsuldor deb hisoblanishi uchun, u ish buyurtmalarini qabul qila olishi, ish buyurtmalarini qayta ishlash uchun zarur komponentlarga ega bo'lishi va qayta ishlayotgan ish buyurtmasining kutilgan davomiyligi ichida ishlashi kerak.
 
 ::: example
-An *assembly line* work center is not blocked, and receives a work order
-to assemble a *bicycle*. The required components are available, so
-production begins as soon as they are picked and delivered to the work
-center. The work order has an expected duration of 30 minutes, and is
-completed in 27 minutes. All of this time is considered fully productive
-time.
+*Yig'ish liniyasi* ish markazi to'siq qilinmagan va *velosiped*ni yig'ish uchun ish buyurtmasini oladi. Kerakli komponentlar mavjud, shuning uchun ular tanlab olinib ish markaziga yetkazilgandan so'ng darhol ishlab chiqarish boshlanadi. Ish buyurtmasining kutilgan davomiyligi 30 daqiqa va u 27 daqiqada yakunlangan. Bu vaqtning barchasi to'liq mahsuldor vaqt hisoblanadi.
 :::
 
-### Reduced speed
+### Kamaygan tezlik
 
-When a work center is operating at reduced speed, it means that it is
-processing a work order that has exceeded its expected duration. While
-the work center may be operational, this is not considered fully
-productive time.
+Ish markazi kamaygan tezlikda ishlaganda, bu uning kutilgan davomiyligini oshirgan ish buyurtmasini qayta ishlayotganini bildiradi. Ish markazi ishlab turgani bilan, bu to'liq mahsuldor vaqt hisoblanmaydi.
 
 ::: example
-A *cutting station* work center receives a work order to cut boards for
-a *table*. The expected duration of the work order is 15 minutes. The
-work order ends up taking 18 minutes to complete. The work center is
-considered to have been operating at reduced speed during the three
-minutes that exceeded the expected duration.
+*Kesish stansiyasi* ish markazi *stol* uchun taxta kesish ish buyurtmasini oladi. Ish buyurtmasining kutilgan davomiyligi 15 daqiqa. Ish buyurtmasi oxir-oqibat yakunlanishi 18 daqiqa vaqt oladi. Ish markazi kutilgan davomiylikni oshirgan uch daqiqa davomida kamaygan tezlikda ishlaganliigi hisoblanadi.
 :::
 
-### Material availability
+### Material mavjudligi
 
-Material availability refers to situations where a work center is able
-to accept a work order, but the required components are not available.
-This can occur because the components are not in stock, or are reserved
-for a different order.
+Material mavjudligi ish markazi ish buyurtmasini qabul qila olgan, lekin kerakli komponentlar mavjud bo'lmagan holatlarni bildiradi. Bu komponentlar omborda yo'qligi yoki boshqa buyurtma uchun ajratilgani uchun sodir bo'lishi mumkin.
 
 ::: example
-Manufacturing of a *bench* requires 20 units of *wood*. A manufacturing
-order (MO) is confirmed for 10 units of the bench, but there is not
-enough wood in stock to begin manufacturing. The time it takes to
-acquire the wood is recorded as material availability downtime.
+*Skameyka* ishlab chiqarish 20 birlik *yog'och*ni talab qiladi. Skameykaning 10 birligi uchun ishlab chiqarish buyurtmasi (MO) tasdiqlangan, lekin ishlab chiqarishni boshlash uchun omborda yetarli yog'och yo'q. Yog'ochni olish uchun ketgan vaqt material mavjudligi to'xtashi sifatida qayd etiladi.
 :::
 
-### Equipment failure
+### Uskundagi nosozlik
 
-Equipment failure signifies any period of time when a work center is
-unusable due to maintenance issues with its equipment. This can be due
-to equipment breaking down, or when a work center is shut down for
-scheduled maintenance. In these cases, a work center can be blocked
-using a
-`maintenance request `.
+Uskundagi nosozlik ish markazining uning uskunalari bilan bog'liq texnik xizmat ko'rsatish muammolari tufayli foydalanib bo'lmaydigan har qanday vaqt davomini bildiradi. Bu uskunalar buzilganda yoki ish markazi rejali texnik xizmat ko'rsatish uchun yopilganda sodir bo'lishi mumkin. Bunday hollarda ish markazi `maintenance request` yordamida to'siq qilinishi mumkin.
 
 ::: example
-The drill at a *drill station* work center breaks down, causing the work
-center to be unusable. A maintenance request is created to fix the
-drill, and the work center is blocked from receiving work orders. It
-takes two hours to fix the drill, and make the work center available
-again. This two-hour period is recorded as equipment failure downtime.
+*Burg'ulash stansiyasi* ish markazida burg'u buziladi va ish markazini foydalanib bo'lmay qiladi. Burg'uni tuzatish uchun texnik xizmat so'rovi yaratiladi va ish markazi ish buyurtmalarini olishdan to'siladi. Burg'uni tuzatish va ish markazini yana mavjud qilish ikki soat vaqt oladi. Bu ikki soatlik davr uskundagi nosozlik to'xtashi sifatida qayd etiladi.
 :::
 
-## `OEE (overall equipment effectiveness)` reporting 
+## `OEE (overall equipment effectiveness)` hisobot
 
-To view `OEE (overall equipment effectiveness)` reporting metrics for every work center, navigate to
-`Manufacturing app
-‣ Reporting ‣ Overall Equipment Effectiveness`. This page shows the metrics for each work center
-with `OEE (overall equipment effectiveness)` data.
+Har bir ish markazi uchun `OEE (overall equipment effectiveness)` hisobot ko'rsatkichlarini ko'rish uchun `Manufacturing app ‣ Reporting ‣ Overall Equipment Effectiveness` ga o'ting. Bu sahifa `OEE (overall equipment effectiveness)` ma'lumotlari mavjud bo'lgan har bir ish markazi uchun ko'rsatkichlarni ko'rsatadi.
 
-Alternatively, to see
-`OEE (overall equipment effectiveness)`
-reporting metrics for a single work center, navigate to
-`Manufacturing app ‣ Configuration ‣ Work Centers`, and select a work center. At the top of the work
-center\'s form, click the `fa-pie-chart`
-`OEE` smart button.
+Shuningdek, bitta ish markazi uchun `OEE (overall equipment effectiveness)` hisobot ko'rsatkichlarini ko'rish uchun `Manufacturing app ‣ Configuration ‣ Work Centers` ga o'ting va ish markazini tanlang. Ish markazi formasining yuqori qismida `fa-pie-chart` `OEE` aqlli tugmasini bosing.
 
-By default, the main
-`OEE (overall equipment effectiveness)`
-reporting page shows data in a bar chart, while the page for a specific
-work center shows it in a pie chart. To select a different chart type on
-either page, click the `fa-bar-chart`
-`(bar chart)`,
-`fa-line-chart`
-`(line chart)`, or
-`fa-pie-chart`
-`(pie chart)` button above the
-displayed chart.
+Odatiy bo'lib, asosiy `OEE (overall equipment effectiveness)` hisobot sahifasi ma'lumotlarni ustunli diagrammada ko'rsatadi, muayyan ish markazi uchun sahifa esa doira diagrammasida ko'rsatadi. Ikkala sahifada ham boshqa diagramma turini tanlash uchun ko'rsatilgan diagramma ustidagi `fa-bar-chart` `(bar chart)`, `fa-line-chart` `(line chart)`, yoki `fa-pie-chart` `(pie chart)` tugmasini bosing.
 
-It is also possible to see
-`OEE (overall equipment effectiveness)`
-data in a pivot view, or a list displaying each time entry, by clicking
-the `oi-view-pivot`
-`(pivot view)` or
-`oi-view-list` `(list
-view)` buttons at the top-right
-corner of the page.
+Shuningdek, `OEE (overall equipment effectiveness)` ma'lumotlarini pivot ko'rinishida yoki har bir vaqt yozuvini ko'rsatuvchi ro'yxatda ko'rish mumkin, sahifaning yuqori-o'ng burchagidagi `oi-view-pivot` `(pivot view)` yoki `oi-view-list` `(list view)` tugmalarini bosish orqali.
 
-![The dashboard of the OEE report.](oee/oee-report.png)
+![OEE hisobotining boshqaruv paneli.](oee/oee-report.png)

@@ -1,238 +1,109 @@
-# Dropship subcontracting lead times
+# Dropship subpudratchilik yetkazib berish muddatlari
 
-In Odoo, lead times are used to predict how long it takes to complete a
-certain action. For example, a *delivery lead time* can be set for a
-purchased product, which specifies the number of days it usually takes
-for the product\'s vendor to deliver the product to the purchasing
-company.
+Odoo da yetkazib berish muddatlari muayyan harakatni bajarish uchun qancha vaqt ketishini bashorat qilish uchun ishlatiladi. Masalan, sotib olingan mahsulot uchun *yetkazib berish muddati* o'rnatilishi mumkin, bu odatda sotuvchining mahsulotni sotib oluvchi kompaniyaga yetkazib berishi uchun qancha kun ketishini belgilaydi.
 
-For subcontracted products specifically, delivery lead times can be
-configured to take into account the amount of time required for the
-subcontractor to manufacture a product. Doing so allows the contracting
-company to better predict the delivery dates of subcontracted products.
+Subpudratchilik mahsulotlari uchun, yetkazib berish muddatlari subpudratchi mahsulotni ishlab chiqarish uchun zarur bo'lgan vaqt miqdorini hisobga olish uchun sozlanishi mumkin. Buning amalga oshirilishi pudratchi kompaniyaga subpudratchilik mahsulotlarining yetkazib berish sanalarini yaxshiroq bashorat qilishga imkon beradi.
 
-Certain subcontracted products require the contracting company to supply
-the subcontractor with manufacturing components. In this case, a
-*manufacturing lead time* can be used, in addition to the delivery lead
-time, to generate the date on which the subcontractor must receive the
-required components, in order to manufacture the product and deliver it
-on time.
+Ba'zi subpudratchilik mahsulotlari pudratchi kompaniyadan subpudratchiga ishlab chiqarish komponentlarini ta'minlashni talab qiladi. Bunday holda, mahsulotni ishlab chiqarish va vaqtida yetkazib berish uchun subpudratchi kerakli komponentlarni qabul qilishi kerak bo'lgan sanani aniqlash uchun yetkazib berish muddatidan tashqari *ishlab chiqarish muddati* dan ham foydalanish mumkin.
 
-In cases where components are dropshipped to the subcontractor, an
-additional delivery lead time can be set for each component. This should
-be set to the amount of time it takes the vendor to deliver components
-to the subcontractor.
+Komponentlar subpudratchiga dropship qilingan hollarda, har bir komponent uchun qo'shimcha yetkazib berish muddati o'rnatilishi mumkin. Bu sotuvchining komponentlarni subpudratchiga yetkazib berishi uchun ketadigan vaqt miqdoriga o'rnatilishi kerak.
 
-Once a delivery lead time has been set on a component, dropship orders
-for the component display the date by which the order must be confirmed,
-so that it can be dropshipped to the subcontractor by the date on which
-manufacturing must begin.
+Komponentda yetkazib berish muddati o'rnatilgandan so'ng, komponent uchun dropship buyruqlar ishlab chiqarishni boshlash kerak bo'lgan sanaga qadar subpudratchiga dropship qilish uchun buyruqni tasdiqlash kerak bo'lgan sanani ko'rsatadi.
 
 ::: warning
 
-Like all lead times in Odoo, lead times for subcontracted products are
-only an estimate, and are based on how long actions are *expected* to
-take.
+Odoo dagi barcha yetkazib berish muddatlari kabi, subpudratchilik mahsulotlari uchun yetkazib berish muddatlari faqat taxminiy hisoblanadi va harakatlarning qancha vaqt *kutilayotganiga* asoslanadi.
 
-Unforeseen circumstances can impact the completion of these actions,
-which means that lead times should not be viewed as guarantees.
+Kutilmagan holatlar bu harakatlarning bajarilishiga ta'sir qilishi mumkin, bu esa yetkazib berish muddatlarini kafolat sifatida ko'rmaslik kerakligini anglatadi.
 ::::
 
-## Configuration
+## Sozlash
 
-When using the
-`Dropship Subcontractor on Order ` route, a company is responsible for purchasing the necessary
-components from a vendor, and having them dropshipped directly to the
-subcontractor.
+`Dropship Subcontractor on Order` marshrutidan foydalanganda, kompaniya sotuvchidan kerakli komponentlarni sotib olish va ularni to'g'ridan-to'g'ri subpudratchiga dropship qilish uchun javobgardir.
 
-This means that, in addition to the amount of time it takes the
-subcontractor to manufacture and deliver the product, it is also
-necessary to consider how long it takes the component vendor to dropship
-the components to the subcontractor.
+Bu subpudratchining mahsulotni ishlab chiqarish va yetkazib berish uchun ketadigan vaqt miqdoridan tashqari, komponent sotuvchisining komponentlarni subpudratchiga dropship qilishi uchun qancha vaqt ketishini ham hisobga olish zarurligini anglatadi.
 
-By assigning a product\'s subcontractor a *delivery lead time*,
-specifying a *manufacturing lead time* on the product\'s BoM, and
-assigning the vendor of the components an additional *delivery lead
-time*, *Dropship Subcontractor* orders for the product\'s components
-display the deadline for confirming a dropship order to send the
-components to the subcontractor.
+Mahsulot subpudratchisiga *yetkazib berish muddati* ni, mahsulot BoM-ida *ishlab chiqarish muddati* ni belgilash va komponentlar sotuvchisiga qo'shimcha *yetkazib berish muddati* ni tayinlash orqali, mahsulot komponentlari uchun *Dropship Subcontractor* buyruqlari komponentlarni subpudratchiga jo'natish uchun dropship buyruqni tasdiqlash muddatini ko'rsatadi.
 
-### Product delivery lead time
+### Mahsulot yetkazib berish muddati
 
-To set a delivery lead time for a product\'s subcontractor, navigate to
-`Inventory app ‣
-Products ‣ Products`, and select a
-subcontracted product.
+Mahsulot subpudratchisi uchun yetkazib berish muddatini o'rnatish uchun, `Inventory app ‣ Products ‣ Products` ga o'ting va subpudratchilik mahsulotini tanlang.
 
-Then, select the `Purchase` tab on
-the product\'s page. If the subcontractor has not already been added as
-a vendor, do so now by clicking `Add a line`, and selecting the subcontractor in the
-`Vendor` column.
+Keyin mahsulot sahifasida `Purchase` yorlig'ini tanlang. Agar subpudratchi hali sotuvchi sifatida qo'shilmagan bo'lsa, `Add a line` ni bosish va `Vendor` ustunida subpudratchini tanlash orqali uni hozir qo'shing.
 
-Once the subcontractor has been added, enter the number of days it takes
-them to manufacture and deliver the product, in the
-`Delivery Lead Time` column.
+Subpudratchi qo'shilgandan so'ng, `Delivery Lead Time` ustuniga ular mahsulotni ishlab chiqarish va yetkazib berish uchun ketadigan kunlar sonini kiriting.
 
-![The Delivery Lead Time field for a subcontractor, on the Purchase tab of a product page.](dropship_subcontracting_lead_times/delivery-lead-time.png)
+![Mahsulot sahifasining Purchase yorlig'idagi subpudratchi uchun Delivery Lead Time maydoni.](dropship_subcontracting_lead_times/delivery-lead-time.png)
 
-### Product manufacturing lead time
+### Mahsulot ishlab chiqarish muddati
 
-Next, navigate to the product\'s
-`BoM (Bill of Materials)` by clicking the
-`Bill of Materials` smart button at
-the top of the product\'s page. Then, select a BoM from the list.
+Keyin, mahsulot sahifasining yuqori qismidagi `Bill of Materials` aqlli tugmasini bosish orqali mahsulotning `BoM (Bill of Materials)` ga o'ting. Keyin ro'yxatdan BoM ni tanlang.
 
-On the `BoM (Bill of Materials)`, select
-the `Miscellaneous` tab. In the
-`Manuf. Lead Time` field, enter the
-same number of days that was entered in the
-`Delivery Lead Time` field of the
-`BoM (Bill of Materials)`\'s product.
+`BoM (Bill of Materials)` da `Miscellaneous` yorlig'ini tanlang. `Manuf. Lead Time` maydoniga `BoM (Bill of Materials)` mahsulotining `Delivery Lead Time` maydoniga kiritilgan kunlar sonini kiriting.
 
-![The Manuf. Lead Time field on a product\'s BoM.](dropship_subcontracting_lead_times/manufacturing-lead-time.png)
+![Mahsulot BoM-idagi Manuf. Lead Time maydoni.](dropship_subcontracting_lead_times/manufacturing-lead-time.png)
 
-While not all of these days are actually used for manufacturing by the
-subcontractor, setting the same number of days in each field tells Odoo
-that the subcontractor must receive the components and begin production
-by the start of the product\'s delivery lead time. This gives the
-subcontractor enough time to both manufacture and deliver the product.
+Bu kunlarning hammasi aslida subpudratchi tomonidan ishlab chiqarish uchun ishlatilmasa ham, har bir maydonga bir xil kunlar sonini o'rnatish Odoo ga subpudratchi komponentlarni qabul qilishi va mahsulotning yetkazib berish muddati boshlanishi bilan ishlab chiqarishni boshlashi kerakligini bildiradi. Bu subpudratchiga mahsulotni ishlab chiqarish va yetkazib berish uchun etarli vaqt beradi.
 
-### Component delivery lead time
+### Komponent yetkazib berish muddati
 
-From the product\'s BoM, navigate to each component by clicking on the
-component in the `Components` tab,
-and then clicking the `oi-arrow-right`
-`(right arrow)` button to the right
-of the component.
+Mahsulot BoM-idan `Components` yorlig'ida komponentni bosish, keyin komponentning o'ng tomonidagi `oi-arrow-right` `(right arrow)` tugmasini bosish orqali har bir komponentga o'ting.
 
-On the product page for each component, select the
-`Purchase` tab. If the vendor has not
-already been added, do so now by clicking `Add a line`, and selecting the subcontractor in the
-`Vendor` column.
+Har bir komponentning mahsulot sahifasida `Purchase` yorlig'ini tanlang. Agar sotuvchi hali qo'shilmagan bo'lsa, `Add a line` ni bosish va `Vendor` ustunida subpudratchini tanlash orqali uni hozir qo'shing.
 
-Once the vendor has been added, enter the number of days it takes them
-to dropship the product to the subcontractor, in the
-`Delivery Lead Time` column.
+Sotuvchi qo'shilgandan so'ng, `Delivery Lead Time` ustuniga ular mahsulotni subpudratchiga dropship qilish uchun ketadigan kunlar sonini kiriting.
 
-## Dropship subcontracting workflow
+## Dropship subpudratchilik ish jarayoni
 
-Create a request for quotation (RfQ) for the product by navigating to
-`Purchase app
-‣ Orders ‣ Requests for Quotation`, and clicking `New`.
+`Purchase app ‣ Orders ‣ Requests for Quotation` ga o'tish va `New` ni bosish orqali mahsulot uchun taklifnoma so'rovi (RfQ) yarating.
 
-Specify the subcontractor in `Vendor`
-field. Then, add the product in the `Products` tab by clicking `Add a product`, selecting the product in the
-`Product` column, and specifying a
-quantity in the `Quantity` column.
+`Vendor` maydonida subpudratchini belgilang. Keyin `Products` yorlig'ida `Add a product` ni bosish, `Product` ustunida mahsulotni tanlash va `Quantity` ustunida miqdorni belgilash orqali mahsulotni qo'shing.
 
-In the `Expected Arrival` field,
-enter a date that provides enough time for the component vendor to
-dropship the components, and the subcontractor to manufacture and
-deliver the product.
+`Expected Arrival` maydoniga komponent sotuvchisining komponentlarni dropship qilishi va subpudratchining mahsulotni ishlab chiqarish va yetkazib berishi uchun etarli vaqt beradigan sanani kiriting.
 
 ::: warning
 
-When a product is added to an
-`RfQ (Request for Quotation)`, the
-`Expected Arrival` field
-auto-populates with a date that is today\'s date plus the delivery lead
-time of the product. However, this does not consider the time it takes
-to dropship the components to the subcontractor.
+Mahsulot `RfQ (Request for Quotation)` ga qo'shilganda, `Expected Arrival` maydoni bugungi sana va mahsulotning yetkazib berish muddati qo'shilgan sana bilan avtomatik to'ldiriladi. Biroq, bu komponentlarni subpudratchiga dropship qilish uchun ketadigan vaqtni hisobga olmaydi.
 
-When purchasing a product subcontracted using the *Dropship
-Subcontractor on Order* route, it is necessary to adjust this date to
-take into account the extra time needed for the components to be
-delivered to the subcontractor.
+*Dropship Subcontractor on Order* marshrutidan foydalangan holda subpudratchilik qilingan mahsulotni sotib olishda, komponentlarning subpudratchiga yetkazib berilishi uchun zarur bo'lgan qo'shimcha vaqtni hisobga olish uchun bu sanani o'zgartirish zarur.
 
-Since production does not begin until they receive the components,
-leaving the date as is results in the finished product arriving *after*
-the date listed on the `RfQ (Request for Quotation)`.
+Ular komponentlarni qabul qilguncha ishlab chiqarish boshlanmaganligi sababli, sanani o'zgartirishsiz qoldirish tayyor mahsulotning `RfQ (Request for Quotation)` da ko'rsatilgan sanadan *keyin* kelishiga olib keladi.
 ::::
 
-Next, click `Confirm Order` to turn
-the `RfQ (Request for Quotation)` into a
-`PO (Purchase Order)`. Doing so creates a
-second `RfQ (Request for Quotation)` to
-purchase the components from the dropshipper, and have them sent to the
-subcontractor.
+Keyin, `RfQ (Request for Quotation)` ni `PO (Purchase Order)` ga aylantirish uchun `Confirm Order` ni bosing. Bunday qilish komponentlarni dropshipperdan sotib olish va ularni subpudratchiga jo'natish uchun ikkinchi `RfQ (Request for Quotation)` yaratadi.
 
-Navigate to
-`Purchase app ‣ Orders ‣ Requests for Quotation`, and select the
-`RfQ (Request for Quotation)` that lists
-the dropshipper in the `Vendor`
-column.
+`Purchase app ‣ Orders ‣ Requests for Quotation` ga o'ting va `Vendor` ustunida dropshipperni ko'rsatadigan `RfQ (Request for Quotation)` ni tanlang.
 
-On the `RfQ (Request for Quotation)`, the
-`Expected Arrival` field lists the
-date on which the subcontractor must receive the components, in order to
-deliver the finished product by the *Expected Arrival* date listed on
-the subcontractor `PO (Purchase Order)`.
+`RfQ (Request for Quotation)` da `Expected Arrival` maydoni subpudratchi `PO (Purchase Order)` da ko'rsatilgan *Expected Arrival* sanasiga qadar tayyor mahsulotni yetkazib berish uchun subpudratchi komponentlarni qabul qilishi kerak bo'lgan sanani ko'rsatadi.
 
-The `Order Deadline` field lists the
-latest date on which the `RfQ (Request for Quotation)` can be confirmed, in order for the dropshipper to deliver
-the components to the subcontractor by the `Expected
-Arrival` date.
+`Order Deadline` maydoni dropshipperning komponentlarni subpudratchiga `Expected Arrival` sanasiga qadar yetkazib berishi uchun `RfQ (Request for Quotation)` ni tasdiqlash mumkin bo'lgan eng oxirgi sanani ko'rsatadi.
 
-Click `Confirm Order` to turn the
-`RfQ (Request for Quotation)` into a
-`PO (Purchase Order)`, and confirm the
-purchase of the components from the dropshipper. Doing so causes a
-`Dropship` smart button to appear at
-the top of the page.
+`RfQ (Request for Quotation)` ni `PO (Purchase Order)` ga aylantirish va dropshipperdan komponentlarni sotib olishni tasdiqlash uchun `Confirm Order` ni bosing. Bunday qilish sahifaning yuqori qismida `Dropship` aqlli tugmasini paydo qiladi.
 
-Click the `Dropship` smart button to
-open the dropship order. This order can also be accessed from the
-`Resupply` smart button that now
-appears on the subcontractor `PO (Purchase Order)`.
+Dropship buyruqni ochish uchun `Dropship` aqlli tugmasini bosing. Bu buyruqqa subpudratchi `PO (Purchase Order)` da endi paydo bo'lgan `Resupply` aqlli tugmasi orqali ham kirish mumkin.
 
-After the dropshipper has delivered the components to the subcontractor,
-click the `Validate` button at the
-top of the dropship order to confirm that the subcontractor has received
-the components.
+Dropshipper komponentlarni subpudratchiga yetkazib bergandan so'ng, subpudratchi komponentlarni qabul qilganligini tasdiqlash uchun dropship buyruqning yuqori qismidagi `Validate` tugmasini bosing.
 
-Once the subcontractor receives the components, they begin manufacturing
-the component, before delivering it to the contracting company.
+Subpudratchi komponentlarni qabul qilgandan so'ng, ular komponentni ishlab chiqarishni boshlaydilar va keyin uni pudratchi kompaniyaga yetkazib beradilar.
 
 ::: example
-Bike retailer *Mike\'s Bikes* works with a subcontractor --- *Bike
-Friends* --- to produce units of their *Bicycle* product.
+Velosiped chakana sotuvchisi *Mike's Bikes* subpudratchi --- *Bike Friends* --- bilan ularning *Bicycle* mahsuloti birliklarini ishlab chiqarish uchun hamkorlik qiladi.
 
-Mike\'s Bikes must purchase the required components from vendor Bike
-World, and have them dropshipped to Bike Friends.
+Mike's Bikes kerakli komponentlarni Bike World sotuvchisidan sotib olishi va ularni Bike Friends ga dropship qilishi kerak.
 
-On average, Bike Friends takes three days to manufacture each bicycle,
-plus an addition two days to deliver it to Mike\'s Bikes.
+O'rtacha Bike Friends har bir velosipedni ishlab chiqarish uchun uch kun va uni Mike's Bikes ga yetkazib berish uchun qo'shimcha ikki kun oladi.
 
-As a result, Mike\'s Bikes sets a delivery lead time of five days for
-bicycle manufactured by Bike Friends: three days for manufacturing, plus
-two days for delivery.
+Natijada, Mike's Bikes Bike Friends tomonidan ishlab chiqarilgan velosipedlar uchun besh kunlik yetkazib berish muddatini o'rnatadi: ishlab chiqarish uchun uch kun va yetkazib berish uchun ikki kun.
 
-On the bicycle\'s BoM, they enter a manufacturing lead time of five days
-as well, to remind themselves of the date that components must be
-delivered to the subcontractor.
+Velosiped BoM-ida ular komponentlarning subpudratchiga yetkazib berilishi kerak bo'lgan sanani eslatish uchun besh kunlik ishlab chiqarish muddatini kiritadilar.
 
-On the product pages for each of the bicycle\'s components, they assign
-Bike World a delivery lead time of two days. This is the amount of time
-it takes Bike World to dropship each component directly to the
-subcontractor.
+Velosipedning har bir komponenti uchun mahsulot sahifalarida ular Bike World ga ikki kunlik yetkazib berish muddatini tayinlaydilar. Bu Bike World ning har bir komponentni to'g'ridan-to'g'ri subpudratchiga dropship qilish uchun ketadigan vaqt miqdori.
 
-On May 10th, Mike\'s Bikes confirms a
-`PO (Purchase Order)` for one bicycle,
-with an expected delivery date of May 17th.
+10-may kuni Mike's Bikes kutilgan yetkazib berish sanasi 17-may bo'lgan bitta velosiped uchun `PO (Purchase Order)` ni tasdiqlaydi.
 
-The `RfQ (Request for Quotation)` for
-purchasing the components from Bike World and having them dropshipped to
-Bike Friends has an Expected Arrival date of May 12th, and a Deadline of
-May 10th. The `RfQ (Request for Quotation)` must be confirmed by the deadline in order for Bike Friends
-to receive the components by the Expected Arrival date, giving them
-enough time to deliver the finished bicycle to Mike\'s Bikes by May
-17th.
+Komponentlarni Bike World dan sotib olish va ularni Bike Friends ga dropship qilish uchun `RfQ (Request for Quotation)` 12-may sanasida Expected Arrival va 10-may sanasida Deadline ga ega. Bike Friends ga komponentlarni Expected Arrival sanasiga qadar qabul qilishi va tayyor velosipedni 17-may kuni Mike's Bikes ga yetkazib berishi uchun etarli vaqt berish uchun `RfQ (Request for Quotation)` muddatgacha tasdiqlashi kerak.
 
-![The Order Deadline and Expected Arrival dates on a dropship order.](dropship_subcontracting_lead_times/deadline-arrival.png)
+![Dropship buyruqdagi Order Deadline va Expected Arrival sanalari.](dropship_subcontracting_lead_times/deadline-arrival.png)
 
-Mike\'s Bikes confirms the
-`RfQ (Request for Quotation)` on May
-10th, and Bike World delivers the components to Bike Friends on May
-12th. Bike Friends manufactures the bicycle, and delivers it to Mike\'s
-Bikes on May 17th.
+Mike's Bikes 10-may kuni `RfQ (Request for Quotation)` ni tasdiqlaydi va Bike World 12-may kuni komponentlarni Bike Friends ga yetkazib beradi. Bike Friends velosipedni ishlab chiqaradi va 17-may kuni uni Mike's Bikes ga yetkazib beradi.
 :::

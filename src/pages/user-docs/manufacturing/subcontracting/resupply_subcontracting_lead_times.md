@@ -1,194 +1,97 @@
-# Resupply subcontracting lead times
+# Qayta ta'minot subpudrat yetkazish muddatlari
 
-In Odoo, lead times are used to predict how long it takes to complete a
-certain action. For example, a *delivery lead time* can be set for a
-purchased product, which specifies the number of days it usually takes
-for the product\'s vendor to deliver the product to the purchasing
-company.
+Odoo da yetkazish muddatlari ma'lum bir harakatni bajarish uchun qancha vaqt kerakligini bashorat qilish uchun ishlatiladi. Masalan, sotib olingan mahsulot uchun *yetkazish muddati* belgilanishi mumkin, bu mahsulot sotuvchisining mahsulotni sotib oluvchi kompaniyaga yetkazish uchun odatda necha kun kerakligini ko'rsatadi.
 
-For subcontracted products specifically, delivery lead times can be
-configured to take into account the amount of time required for the
-subcontractor to manufacture a product. Doing so allows the contracting
-company to better predict the delivery dates of subcontracted products.
+Subpudrat mahsulotlari uchun maxsus ravishda, yetkazish muddatlari subpudratchi tomonidan mahsulot ishlab chiqarish uchun zarur bo'lgan vaqt miqdorini hisobga olish uchun sozlanishi mumkin. Buni amalga oshirish pudratchi kompaniyaga subpudrat mahsulotlarining yetkazish sanalarini yaxshiroq bashorat qilish imkonini beradi.
 
-Certain subcontracted products require the contracting company to supply
-the subcontractor with manufacturing components. In this case, a
-*manufacturing lead time* can be used, in addition to the delivery lead
-time, to generate the date on which the subcontractor must receive the
-required components, in order to manufacture the product and deliver it
-on time.
+Ba'zi subpudrat mahsulotlari pudratchi kompaniyadan subpudratchi uchun ishlab chiqarish komponentlarini ta'minlashni talab qiladi. Bunday holda, *ishlab chiqarish muddati* yetkazish muddatiga qo'shimcha ravishda mahsulotni ishlab chiqarish va o'z vaqtida yetkazish uchun subpudratchi zarur komponentlarni qabul qilishi kerak bo'lgan sanani yaratish uchun ishlatilishi mumkin.
 
 ::: warning
 
-Like all lead times in Odoo, lead times for subcontracted products are
-only an estimate, and are based on how long actions are *expected* to
-take.
+Odoo dagi barcha yetkazish muddatlari kabi, subpudrat mahsulotlari uchun yetkazish muddatlari faqat taxminiy bo'lib, harakatlar qancha vaqt davom etishi *kutilayotganiga* asoslanadi.
 
-Unforeseen circumstances can impact the completion of these actions,
-which means that lead times should **not** be viewed as guarantees.
+Kutilmagan holatlar bu harakatlarning bajarilishiga ta'sir qilishi mumkin, ya'ni yetkazish muddatlari kafolat sifatida **qaralmasi** kerak.
 ::::
 
-## Configuration
+## Sozlash
 
-When using the
-`Resupply Subcontractor on Order ` route, a company is responsible for supplying the
-subcontractor with the necessary components. As a result, the
-subcontractor cannot begin manufacturing until the components have been
-received.
+`Resupply Subcontractor on Order` yo'nalishidan foydalanganda, kompaniya subpudratchi uchun zarur komponentlarni ta'minlash uchun javobgardir. Natijada, subpudratchi komponentlar qabul qilinmaguncha ishlab chiqarishni boshlay olmaydi.
 
-This means that, in addition to the amount of time it takes the
-subcontractor to manufacture and deliver the product, the date they
-receive the components must also be considered.
+Bu shuni anglatadiki, subpudratchi mahsulotni ishlab chiqarish va yetkazish uchun kerak bo'lgan vaqt miqdoriga qo'shimcha ravishda, ularning komponentlarni qabul qilish sanasi ham hisobga olinishi kerak.
 
-By assigning a product\'s subcontractor a delivery lead time, and
-specifying a manufacturing lead time on the product\'s bill of materials
-(BoM), *Resupply Subcontractor* orders for the product\'s components
-display the deadline by which the subcontractor must receive the
-components.
+Mahsulot subpudratchiiga yetkazish muddatini belgilash va mahsulotning `BoM (Bill of Materials)` da ishlab chiqarish muddatini ko'rsatish orqali, mahsulot komponentlari uchun *Resupply Subcontractor* buyurtiqlari subpudratchi komponentlarni qabul qilishi kerak bo'lgan oxirgi muddatni ko'rsatadi.
 
-### Product delivery lead time
+### Mahsulot yetkazish muddati
 
-To set a delivery lead time for a product\'s subcontractor, navigate to
-`Inventory app
-‣ Products ‣ Products`, and
-select a subcontracted product.
+Mahsulot subpudratchi uchun yetkazish muddatini belgilash uchun `Inventory app
+‣ Products ‣ Products` ga o'ting va subpudrat mahsulotini tanlang.
 
-Then, select the `Purchase` tab on
-the product\'s page. If the subcontractor has not already been added as
-a vendor, do so now by clicking `Add a line`, and selecting the subcontractor in the
-`Vendor` field.
+Keyin mahsulot sahifasida `Purchase` yorlig'ini tanlang. Agar subpudratchi hali sotuvchi sifatida qo'shilmagan bo'lsa, `Add a line` tugmasini bosish va `Vendor` maydonida subpudratchi tanlash orqali buni hozir amalga oshiring.
 
-Once the subcontractor has been added, enter the number of days it takes
-them to manufacture and deliver the product, in the
-`Delivery Lead Time` column.
+Subpudratchi qo'shilgandan so'ng, ularning mahsulotni ishlab chiqarish va yetkazish uchun kerak bo'lgan kunlar sonini `Delivery Lead Time` ustuniga kiriting.
 
-![The Delivery Lead Time field for a subcontractor, on the Purchase tab of a product page.](resupply_subcontracting_lead_times/delivery-lead-time.png)
+![Mahsulot sahifasining Purchase yorlig'idagi subpudratchi uchun Delivery Lead Time maydoni.](resupply_subcontracting_lead_times/delivery-lead-time.png)
 
-### Product manufacturing lead time
+### Mahsulot ishlab chiqarish muddati
 
-Next, navigate to the product\'s
-`BoM (Bill of Materials)` by clicking the
-`Bill of Materials` smart button at
-the top of the product\'s page. Then, select a
-`BoM (Bill of Materials)` from the list.
+Keyin, mahsulot sahifasining yuqori qismidagi `Bill of Materials` smart tugmasini bosish orqali mahsulotning `BoM (Bill of Materials)` ga o'ting. Keyin ro'yxatdan `BoM (Bill of Materials)` ni tanlang.
 
-On the `BoM (Bill of Materials)`, select
-the `Miscellaneous` tab. In the
-`Manuf. Lead Time` field, enter the
-same number of days that was entered in the
-`Delivery Lead Time` field of the
-`BoM (Bill of Materials)`\'s product.
+`BoM (Bill of Materials)` da `Miscellaneous` yorlig'ini tanlang. `Manuf. Lead Time` maydoniga `BoM (Bill of Materials)` mahsulotining `Delivery Lead Time` maydoniga kiritilgan kunlar soni bilan bir xil kunlar sonini kiriting.
 
-![The Manuf. Lead Time field on a product\'s BoM.](resupply_subcontracting_lead_times/manufacturing-lead-time.png)
+![Mahsulotning BoM idagi Manuf. Lead Time maydoni.](resupply_subcontracting_lead_times/manufacturing-lead-time.png)
 
-While not all of these days are actually used for manufacturing by the
-subcontractor, setting the same number of days in each field tells Odoo
-that the subcontractor must receive the components and begin production
-by the start of the product\'s delivery lead time. This gives the
-subcontractor enough time to both manufacture and deliver the product.
+Bu kunlarning hammasi ham subpudratchi tomonidan ishlab chiqarish uchun ishlatilmasa ham, har bir maydoniga bir xil kunlar sonini belgilash Odoo ga subpudratchi komponentlarni qabul qilishi va mahsulotning yetkazish muddati boshlanishida ishlab chiqarishni boshlashi kerakligini bildiradi. Bu subpudratchi uchun mahsulotni ham ishlab chiqarish, ham yetkazish uchun yetarli vaqt beradi.
 
-### Resupply subcontracting workflow
+### Qayta ta'minlash subpudrat ish jarayoni
 
-Create a request for quotation (RfQ) for the product by navigating to
 `Purchase app
-‣ Orders ‣ Requests for Quotation`, and clicking `New`.
+‣ Orders ‣ Requests for Quotation` ga o'tish va `New` tugmasini bosish orqali mahsulot uchun taklif so'rovi (RfQ) yarating.
 
-Specify the subcontractor in `Vendor`
-field. Then, add the product in the `Products` tab by clicking `Add a product`, selecting the product in the
-`Product` column, and specifying a
-quantity in the `Quantity` column.
+`Vendor` maydonida subpudratchi belgilang. Keyin `Products` yorlig'ida `Add a product` tugmasini bosish, `Product` ustunida mahsulotni tanlash va `Quantity` ustunida miqdorni belgilash orqali mahsulotni qo'shing.
 
-In the `Expected Arrival` field,
-enter a date that provides enough time for the subcontractor to receive
-the components, manufacture the product, and deliver it back to the
-subcontracting company.
+`Expected Arrival` maydoniga subpudratchi komponentlarni qabul qilish, mahsulotni ishlab chiqarish va subpudrat kompaniyasiga qaytarib yetkazish uchun yetarli vaqt beradigan sanani kiriting.
 
 ::: warning
 
-When a product is added to an
-`RfQ (Request for Quotation)`, the
-`Expected Arrival` field
-auto-populates with a date that is today\'s date plus the delivery lead
-time of the product. However, this does **not** consider the time it
-takes to ship the components to the subcontractor.
+Mahsulot `RfQ (Request for Quotation)` ga qo'shilganda, `Expected Arrival` maydoni avtomatik ravishda bugungi sana va mahsulotning yetkazish muddati qo'shilgan sana bilan to'ldiriladi. Biroq, bu komponentlarni subpudratchi uchun jo'natish vaqtini hisobga **olmaydi**.
 
-When purchasing a product subcontracted using the Resupply Subcontractor
-on Order route, it is necessary to adjust this date to take into account
-the extra time needed for the components to be shipped to the
-subcontractor.
+Resupply Subcontractor on Order yo'nalishi yordamida subpudrat qilingan mahsulotni sotib olishda, komponentlarni subpudratchi uchun jo'natish uchun kerak bo'lgan qo'shimcha vaqtni hisobga olish uchun bu sanani o'zgartirish zarur.
 
-Since production does not begin until they receive the components,
-leaving the date as is results in the finished product arriving *after*
-the date listed on the `RfQ (Request for Quotation)`.
+Ishlab chiqarish ular komponentlarni qabul qilmaguncha boshlanmaganligi sababli, sanani shunday qoldirish tayyor mahsulotning `RfQ (Request for Quotation)` da ko'rsatilgan sanadan *keyin* kelishiga olib keladi.
 ::::
 
-Next, click `Confirm Order` to turn
-the `RfQ (Request for Quotation)` into a
-`PO (Purchase Order)`. Doing so causes a
-`Resupply` smart button to appear at
-the top of the page.
+Keyin `RfQ (Request for Quotation)` ni `PO (Purchase Order)` ga aylantirish uchun `Confirm Order` tugmasini bosing. Buni amalga oshirish sahifaning yuqori qismida `Resupply` smart tugmasini paydo bo'lishiga sabab bo'ladi.
 
-Click the `Resupply` smart button to
-open the resupply subcontractor order, which is the order created to
-send components to the subcontractor.
+Subpudratchi uchun komponentlarni jo'natish uchun yaratilgan buyurtma bo'lgan qayta ta'minlash subpudratchi buyurtmasini ochish uchun `Resupply` smart tugmasini bosing.
 
-The `Deadline` field on the resupply
-subcontractor order shows the deadline for the subcontractor to receive
-the components, in order for them to have enough time to manufacture and
-deliver the finished product by the Expected Arrival date.
+Qayta ta'minlash subpudratchi buyurtmasidagi `Deadline` maydoni kutilayotgan kelish sanasiga qadar tayyor mahsulotni ishlab chiqarish va yetkazish uchun yetarli vaqt bo'lishi uchun subpudratchi komponentlarni qabul qilishi kerak bo'lgan oxirgi muddatni ko'rsatadi.
 
-The `Scheduled Date` field should
-display the latest date on which components can be shipped, while still
-arriving to the subcontractor by the `Deadline`. However, by default, the date displayed is the same as
-the date in the `Deadline` field, and
-must be updated to take into account the time required for shipping.
+`Scheduled Date` maydoni subpudratchi `Deadline` ga qadar yetib kelish uchun komponentlar jo'natilishi mumkin bo'lgan eng oxirgi sanani ko'rsatishi kerak. Biroq, odatiy ravishda ko'rsatilgan sana `Deadline` maydonidagi sana bilan bir xil bo'lib, jo'natish uchun kerak bo'lgan vaqtni hisobga olish uchun yangilanishi kerak.
 
-Click on the `Scheduled Date` field
-to open a calendar popover from which a date can be selected. Select a
-date that allows for the components to be delivered by the
-`Deadline` on the resupply
-subcontractor order.
+Sana tanlanishi mumkin bo'lgan kalendar popoverini ochish uchun `Scheduled Date` maydonini bosing. Qayta ta'minlash subpudratchi buyurtmasidagi `Deadline` ga qadar komponentlar yetkazilishiga imkon beradigan sanani tanlang.
 
-After the components are shipped, click the `Validate` button at the top of the order to confirm they have
-been sent to the subcontractor.
+Komponentlar jo'natilgandan so'ng, ular subpudratchi uchun jo'natilganligini tasdiqlash uchun buyurtma yuqori qismidagi `Validate` tugmasini bosing.
 
-Once the subcontractor receives the components, they begin manufacturing
-the component, before delivering it to the contracting company.
+Subpudratchi komponentlarni qabul qilgandan so'ng, ular pudratchi kompaniyaga yetkazishdan oldin komponentni ishlab chiqarishni boshlaydilar.
 
 ::: example
-Bike retailer *Mike\'s Bikes* works with a subcontractor --- *Bike
-Friends* --- to produce units of their *Unicycle* product.
+Velosiped chakana sotuvchi *Mike's Bikes* o'zlarining *Unicycle* mahsuloti birliklarini ishlab chiqarish uchun subpudratchi --- *Bike Friends* --- bilan ishlaydi.
 
-Mike\'s Bikes must supply Bike Friends with the necessary components for
-manufacturing the unicycles.
+Mike's Bikes velosipedlarni ishlab chiqarish uchun Bike Friends ga zarur komponentlarni ta'minlashi kerak.
 
-On average, Bike Friends takes three days to manufacture each unicycle,
-plus an additional two days to deliver it to Mike\'s Bikes.
+O'rtacha hisobda, Bike Friends har bir velosipedni ishlab chiqarish uchun uch kun, shuningdek uni Mike's Bikes ga yetkazish uchun qo'shimcha ikki kun vaqt sarflaydi.
 
-As a result, Mike\'s Bikes sets a delivery lead time of five days for
-unicycles manufactured by Bike Friends: three days for manufacturing,
-plus two days for delivery.
+Natijada, Mike's Bikes tomonidan Bike Friends ishlab chiqargan velosipedlar uchun besh kunlik yetkazish muddati belgilaydi: ishlab chiqarish uchun uch kun, yetkazish uchun ikki kun.
 
-On the unicycle\'s `BoM (Bill of Materials)`, they enter a manufacturing lead time of five days, as
-well, to remind themselves of the date that components must be delivered
-to the subcontractor.
+Velosipedning `BoM (Bill of Materials)` da ular ham besh kunlik ishlab chiqarish muddatini kiritadilar, komponentlar subpudratchi uchun yetkazilishi kerak bo'lgan sanani eslatish uchun.
 
-They confirm a `PO (Purchase Order)` for
-one unicycle, with an expected arrival date of May 30th.
+Ular kutilayotgan kelish sanasi 30-may bo'lgan bitta velosiped uchun `PO (Purchase Order)` ni tasdiqlaydilar.
 
-The resupply subcontractor order for shipping the components to the
-subcontractor shows a *Deadline* of May 25th. The subcontractor must
-receive the components by this date, in order to have enough time to
-manufacture the unicycle, and deliver it by May 30th.
+Komponentlarni subpudratchi uchun jo'natish bo'yicha qayta ta'minlash subpudratchi buyurtmasi 25-may *Deadline* ni ko'rsatadi. Subpudratchi velosipedni ishlab chiqarish va 30-may gacha yetkazish uchun yetarli vaqt bo'lishi uchun shu sanaga qadar komponentlarni qabul qilishi kerak.
 
-It takes Mike\'s Bikes two days to deliver the components, so they
-update the *Scheduled Date* field on the resupply subcontractor order to
-May 23rd, two days before the Deadline.
+Mike's Bikes komponentlarni yetkazish uchun ikki kun vaqt kerak bo'lganligi sababli, ular qayta ta'minlash subpudratchi buyurtmasidagi *Scheduled Date* maydonini Deadline dan ikki kun oldin 23-may ga yangilaydilar.
 
-![The Scheduled Date and Deadline fields on a resupply subcontractor order.](resupply_subcontracting_lead_times/scheduled-deadline.png)
+![Qayta ta'minlash subpudratchi buyurtmasidagi Scheduled Date va Deadline maydonlari.](resupply_subcontracting_lead_times/scheduled-deadline.png)
 
-Mike\'s Bikes ships the components to Bike Friends on the scheduled date
-of May 23rd, and they arrive on the deadline of May 25th. This gives
-Bike Friends enough time to manufacture the unicycle, and ship it back
-to Mike\'s Bikes by the expected arrival date of May 30th.
+Mike's Bikes komponentlarni 23-may rejalashtirilgan sanada Bike Friends ga jo'natadi va ular 25-may oxirgi muddatida yetib keladi. Bu Bike Friends ga velosipedni ishlab chiqarish va kutilayotgan kelish sanasi 30-may gacha Mike's Bikes ga qaytarib jo'natish uchun yetarli vaqt beradi.
 :::

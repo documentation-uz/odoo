@@ -1,280 +1,263 @@
-# Continuous product improvement
+# Uzluksiz mahsulot takomillashtirish
 
-*Continuous improvement* is a general philosophy intended to help
-individuals and organizations constantly improve themselves and the work
-they produce.
+*Uzluksiz takomillashtirish* - bu shaxslar va tashkilotlarga o'zlarini va 
+ular ishlab chiqaradigan ishlarni doimiy ravishda yaxshilashga yordam berish 
+maqsadida yaratilgan umumiy falsafa.
 
-There are a variety of different methodologies that fall under the
-umbrella of continuous improvement. These include kaizen, six sigma, and
-lean, among others. While the specific steps of each method differ,
-their goal remains the same: implement a process by which improvement is
-a perpetual goal, rather than a one-time accomplishment.
+Uzluksiz takomillashtirish soyabonida joylashgan turli xil metodologiyalar 
+mavjud. Bularga kaizen, olti sigma va lean kabi metodlar kiradi. Har bir 
+metodning aniq qadamlari farq qilsa-da, ularning maqsadi bir xil qoladi: 
+takomillashtirishni bir martalik yutuq emas, balki doimiy maqsad qilib 
+qo'yadigan jarayonni amalga oshirish.
 
-The sections below contain details about how Odoo can be used to
-implement four general steps common to many of the most popular
-continuous improvement strategies, with links to documentation about
-configuring the necessary features. The final section details how a
-specific company might configure these Odoo implementations within their
-organization.
+Quyidagi bo'limlar Odoo platformasini eng mashhur uzluksiz takomillashtirish 
+strategiyalarida keng tarqalgan to'rtta umumiy qadamni amalga oshirish uchun 
+qanday ishlatish mumkinligi haqida batafsil ma'lumot, shuningdek kerakli 
+funksiyalarni sozlash bo'yicha hujjatlarga havolalar beradi. Yakuniy bo'lim 
+ma'lum bir kompaniya o'z tashkilotida ushbu Odoo dasturlarini qanday sozlashi 
+mumkinligi haqida batafsil ma'lumot beradi.
 
 1.  `manufacturing/workflows/ci-identify`
 2.  `manufacturing/workflows/ci-suggest`
 3.  `manufacturing/workflows/ci-implement`
 4.  `manufacturing/workflows/ci-review`
 
-::: warning
+::: ogohlantirish
 
-Continuous improvement is not a one-size-fits-all methodology. While
-most strategies include between four and six steps, proper
-implementation requires developing a system tailored to the specific
-needs of each company.
+Uzluksiz takomillashtirish hammaga mos keladigan metodologiya emas. Ko'pchilik 
+strategiyalar to'rt-olti qadam o'rtasida bo'lsa-da, to'g'ri amalga oshirish 
+har bir kompaniyaning o'ziga xos ehtiyojlariga moslashtirilgan tizimni 
+ishlab chiqishni talab qiladi.
 
-This is not a limitation, but rather a benefit, as it makes the
-methodology flexible enough to adapt to almost any use case. Odoo, in
-particular, adapts well to this flexibility, as it can be configured to
-meet the needs of almost any workflow.
+Bu cheklov emas, balki foyda, chunki u metodologiyani deyarli har qanday 
+foydalanish holatiga moslashish uchun yetarli darajada moslashuvchan qiladi. 
+Xususan, Odoo bu moslashuvchanlikka yaxshi moslashadi, chunki u deyarli har 
+qanday ish oqimining ehtiyojlarini qondirish uchun sozlanishi mumkin.
 
-As such, it is important to remember the content below only provides
-*examples* of how Odoo *might* be used. They should be viewed as more of
-a starting point, rather than a concrete outline that every organization
-must follow.
-::::
+Shuning uchun, quyidagi kontent faqat Odoo qanday ishlatilishi mumkinligining 
+*misollarini* berganini eslab qolish muhim. Ularni har bir tashkilot amal 
+qilishi kerak bo'lgan aniq rejadan ko'ra, boshlanish nuqtasi sifatida 
+ko'rish kerak.
+:::
 
-## Identify problems 
+## Muammolarni aniqlash
 
-Before improvement can begin, it is necessary to determine where
-improvement is necessary. This is where identifying problems comes into
-play. Two of the best Odoo apps for identifying problems with products
-or processes are *Helpdesk* and *Quality*.
+Takomillashtirish boshlanishidan oldin, takomillashtirish qayerda zarur 
+ekanligini aniqlash kerak. Muammolarni aniqlash aynan shu yerda rol o'ynaydi. 
+Mahsulotlar yoki jarayonlardagi muammolarni aniqlash uchun eng yaxshi Odoo 
+ilovalaridan ikkitasi *Helpdesk* va *Quality* hisoblanadi.
 
 ### Helpdesk
 
-The *Helpdesk* app is useful for receiving feedback from outside of the
-organization, like from clients or customers. This is accomplished by
-implementing one (or more) of the methods for
-`receiving tickets `, including email aliases, live chat conversations, and
-website forms.
+*Helpdesk* ilovasi tashkilotdan tashqaridan, masalan, mijozlar yoki 
+xaridorlardan fikr-mulohaza olish uchun foydali. Bu email manzillari, jonli 
+chat suhbatlari va veb-sayt formalari kabi `receiving tickets ` 
+metodlaridan birini (yoki bir nechtasini) amalga oshirish orqali amalga oshiriladi.
 
-Using these methods, customers can submit feedback about problems, which
-is then reviewed by a member of a
-`helpdesk team `. Depending on the outcome of the review, the team member may
-decide to take further action to ensure the issue is addressed. This can
-include creating a
-`quality alert `.
+Ushbu metodlardan foydalanib, mijozlar muammolar haqida fikr-mulohaza 
+yuborishlari mumkin, keyin esa bu `helpdesk team ` a'zosi tomonidan 
+ko'rib chiqiladi. Ko'rib chiqish natijasiga qarab, jamoa a'zosi masalani 
+hal qilish uchun qo'shimcha choralar ko'rishga qaror qilishi mumkin. 
+Bu `quality alert ` yaratishni o'z ichiga olishi mumkin.
 
 ### Quality
 
-The *Quality* app is useful for receiving feedback from *within* the
-organization, like from employees.
+*Quality* ilovasi tashkilot *ichidagi*, masalan, xodimlardan fikr-mulohaza 
+olish uchun foydali.
 
-One method for accomplishing this is to set up a `quality control point
-` (QCP). A `QCP (Quality Control Point)` is used to automatically create quality checks at regular
-intervals, prompting employees to inspect, and confirm, the quality of a
-product.
+Buni amalga oshirishning bir usuli `quality control point ` (QCP) o'rnatishdir. 
+`QCP (Quality Control Point)` muntazam ravishda sifat tekshiruvlarini avtomatik 
+ravishda yaratish, xodimlarni mahsulot sifatini tekshirish va tasdiqlashga 
+undash uchun ishlatiladi.
 
-If an issue is found, an employee can then create a `quality alert
-` to notify a quality team. Quality alerts can also be created
-independent of a `QCP (Quality Control Point)`, in the event that an employee discovers an issue without
-being prompted to check for one. This is a great way for customer
-support employees to notify a quality team of an issue brought to their
-attention by a customer ticket.
+Agar muammo topilsa, xodim sifat jamoasini xabardor qilish uchun 
+`quality alert ` yaratishi mumkin. Sifat ogohlantirishlari 
+`QCP (Quality Control Point)`dan mustaqil ravishda ham yaratilishi mumkin, 
+agar xodim tekshirishga undalmagan holda muammoni topsa. Bu mijoz chiptasi 
+orqali e'tiborlariga etkazilgan muammo haqida sifat jamoasini xabardor 
+qilish uchun mijozlarni qo'llab-quvvatlash xodimlari uchun ajoyib usul.
 
-## Suggest improvements 
+## Takomillashtirishlarni taklif qilish
 
-Once a problem is identified, the next step is to put forward ideas for
-how to address the problem. As with identifying problems, the *Quality
-app* is also useful for suggesting improvements. In addition, the *PLM*
-(*Product Lifecycle Management*) app can be used for this purpose, as
-well.
+Muammo aniqlangandan so'ng, keyingi qadam muammoni qanday hal qilish 
+bo'yicha g'oyalar ilgari surishdir. Muammolarni aniqlash kabi, *Quality 
+ilovasi* takomillashtirishlarni taklif qilish uchun ham foydali. Bundan 
+tashqari, *PLM* (*Product Lifecycle Management*) ilovasi ham shu maqsad 
+uchun ishlatilishi mumkin.
 
 ### Quality
 
-When creating a
-`quality alert ` to bring an issue to the attention of a quality team, the
-`Corrective Actions` and
-`Preventive Actions` tabs can be used
-to provide feedback about how the issue can be addressed.
+Sifat jamoasining e'tiborini jalb qilish uchun `quality alert ` yaratishda, 
+`Corrective Actions` va `Preventive Actions` yorliqlari muammo qanday 
+hal qilinishi haqida fikr-mulohaza berish uchun ishlatilishi mumkin.
 
-The `Corrective Actions` tab is used
-to suggest a method for fixing items affected by the issue. For example,
-[Screw the bolts on tighter, so the seat stays in place].
+`Corrective Actions` yorlig'i muammoga ta'sir qilgan narsalarni tuzatish 
+usulini taklif qilish uchun ishlatiladi. Masalan, [Boltlarni qattiqroq 
+burab qo'ying, shunda o'rindiq o'z joyida qoladi].
 
-The `Preventive Actions` tab is used
-to suggest a method for preventing the issue from occurring in the
-future. For example, [Do not tighten the screws too much, or they will
-be stripped].
+`Preventive Actions` yorlig'i muammoning kelajakda takrorlanishining 
+oldini olish usulini taklif qilish uchun ishlatiladi. Masalan, 
+[Vintlarni juda qattiq torting, aks holda ular buziladi].
 
-The quality team that reviews the alert sees these suggested actions,
-and can take them into account when deciding how to address the issue.
+Ogohlantirishni ko'rib chiqadigan sifat jamoasi ushbu taklif qilingan 
+harakatlarni ko'radi va muammoni qanday hal qilish haqida qaror 
+qabul qilishda ularni hisobga olishi mumkin.
 
 ### PLM
 
-The `PLM (Product Lifecycle Management)`
-app is used to manage the lifecycle of a product from its introduction
-through each successive version. As such, it is useful for testing ideas
-for product improvements.
+`PLM (Product Lifecycle Management)` ilovasi mahsulotning joriy qilinishidan 
+har bir keyingi versiyasigacha bo'lgan hayot aylanishini boshqarish uchun 
+ishlatiladi. Shuning uchun, u mahsulot takomillashtirishlari g'oyalarini 
+sinash uchun foydali.
 
-Using
-`engineering change orders `, product management teams can create new iterations of
-product `BoMs (Bills of Materials)`,
-adding or removing specific components or operations, as needed. The
-products created using these
-`BoMs (Bills of Materials)` are put
-through a review process to confirm the effectiveness of the changes.
+`engineering change orders ` yordamida mahsulot boshqaruv jamoalari 
+mahsulot `BoMs (Bills of Materials)`ning yangi takrorlanishlarini yaratishi, 
+zarurat bo'yicha muayyan komponentlar yoki operatsiyalarni qo'shishi yoki 
+olib tashlashi mumkin. Ushbu `BoMs (Bills of Materials)` yordamida yaratilgan 
+mahsulotlar o'zgarishlarning samaradorligini tasdiqlash uchun ko'rib chiqish 
+jarayonidan o'tkaziladi.
 
-## Implement strategies 
+## Strategiyalarni amalga oshirish
 
-Implementing strategies involves putting the proposed solutions from the
-suggest improvements step into action. The
-`PLM (Product Lifecycle Management)` app
-continues to be useful during this step, as it can be configured to make
-`BoM (Bill of Materials)` updates. The
-*Field Service* app can also be used by certain companies to make
-improvements to products that have already been sold to customers.
+Strategiyalarni amalga oshirish takomillashtirishlarni taklif qilish bosqichidan 
+taklif qilingan echimlarni amalga tatbiq etishni o'z ichiga oladi. 
+`PLM (Product Lifecycle Management)` ilovasi bu bosqichda ham foydali bo'lib 
+qoladi, chunki u `BoM (Bill of Materials)` yangilanishlarini amalga oshirish 
+uchun sozlanishi mumkin. *Field Service* ilovasi ham ma'lum kompaniyalar 
+tomonidan mijozlarga allaqachon sotilgan mahsulotlarga yaxshilanishlar 
+kiritish uchun ishlatilishi mumkin.
 
 ### PLM
 
-Once `BoM (Bill of Materials)` changes
-have gone through the proper review process, they can be approved, and
-the updated `BoM (Bill of Materials)` put
-into use. This is accomplished by configuring one of the
-`ECO (Engineering Change Order)` review
-stages to `apply the changes ` made to the `BoM (Bill of Materials)`, at which point the updated
-`BoM (Bill of Materials)` becomes
-available for new `MOs (Manufacturing Orders)`.
+`BoM (Bill of Materials)` o'zgarishlari tegishli ko'rib chiqish jarayonidan 
+o'tgandan so'ng, ular tasdiqlanishi va yangilangan `BoM (Bill of Materials)` 
+foydalanishga qo'yilishi mumkin. Bu `ECO (Engineering Change Order)` ko'rib 
+chiqish bosqichlaridan birini `BoM (Bill of Materials)`ga kiritilgan 
+`apply the changes ` uchun sozlash orqali amalga oshiriladi, shundan so'ng 
+yangilangan `BoM (Bill of Materials)` yangi `MOs (Manufacturing Orders)` 
+uchun mavjud bo'ladi.
 
-Product `BoMs (Bills of Materials)` can
-continue to be updated, as needed. The `version control
-` features of the
-`PLM (Product Lifecycle Management)` app
-allow for easy management of all versions of a given
-`BoM (Bill of Materials)`.
+Mahsulot `BoMs (Bills of Materials)` zarurat bo'yicha yangilanishda davom 
+etishi mumkin. `PLM (Product Lifecycle Management)` ilovasining `version control ` 
+funksiyalari berilgan `BoM (Bill of Materials)`ning barcha versiyalarini 
+oson boshqarish imkonini beradi.
 
 ### Field Service
 
-The `PLM (Product Lifecycle Management)`
-app is a great way to make changes to product
-`BoMs (Bills of Materials)`. However,
-these changes only affect products produced using the new
-`BoM (Bill of Materials)`. If a defective
-product has already been sold to a customer, it may be necessary to
-repair (or update) that product.
+`PLM (Product Lifecycle Management)` ilovasi mahsulot `BoMs (Bills of Materials)`ga 
+o'zgarishlar kiritishning ajoyib usuli. Biroq, bu o'zgarishlar faqat yangi 
+`BoM (Bill of Materials)` yordamida ishlab chiqarilgan mahsulotlarga ta'sir qiladi. 
+Agar nuqsonli mahsulot allaqachon mijozga sotilgan bo'lsa, o'sha mahsulotni 
+ta'mirlash (yoki yangilash) zarur bo'lishi mumkin.
 
-In such a case, the *Field Service* app can be used to schedule
-`onsite interventions
-`. These interventions allow service technicians (or other
-employees) to be sent to a customer\'s location to address an issue with
-a product.
+Bunday holatda, *Field Service* ilovasi `onsite interventions ` rejalashtirish 
+uchun ishlatilishi mumkin. Bu aralashuvlar xizmat texniklari (yoki boshqa 
+xodimlar)ni mijoz joylashuviga mahsulot bilan bog'liq muammoni hal qilish 
+uchun yuborish imkonini beradi.
 
-## Review actions 
+## Harakatlarni ko'rib chiqish
 
-Reviewing actions is where the \"continuous\" part of continuous
-improvement comes into play, as it allows an organization to evaluate
-the decisions made in the previous steps. As such, this step is,
-essentially, returning to the beginning of the process, so that
-additional problems can be identified and addressed.
+Harakatlarni ko'rib chiqish uzluksiz takomillashtirishning "uzluksiz" qismi 
+paydo bo'ladigan joy, chunki u tashkilotga oldingi bosqichlarda qabul qilingan 
+qarorlarni baholash imkonini beradi. Shuning uchun, bu bosqich, aslida, 
+jarayonning boshiga qaytish bo'lib, qo'shimcha muammolarni aniqlash va 
+hal qilish mumkin.
 
-This means that the *Helpdesk* and *Quality* apps should be used again
-to receive customer and employee feedback. Another app that may be
-useful at this stage is the *Surveys* app.
+Bu *Helpdesk* va *Quality* ilovalarini mijozlar va xodimlardan fikr-mulohaza 
+olish uchun yana ishlatish kerakligini anglatadi. Bu bosqichda foydali 
+bo'lishi mumkin bo'lgan yana bir ilova *Surveys* ilovasidir.
 
 ### Surveys
 
-After implementing changes to a product or process, it may be wise to
-solicit customers for their feedback directly, rather than waiting to
-hear from them of their own volition. This may bring to light feedback
-that customers may have otherwise neglected to share.
+Mahsulot yoki jarayonga o'zgarishlar kiritgandan so'ng, mijozlarning o'z 
+ixtiyorlari bilan gapirganlarini kutish o'rniga, ulardan to'g'ridan-to'g'ri 
+fikr-mulohaza so'rash oqilona bo'lishi mumkin. Bu mijozlar boshqa holatda 
+baham ko'rishga e'tibor bermasligi mumkin bo'lgan fikr-mulohazalarni 
+yoritishi mumkin.
 
-One of the best ways to accomplish this is through the
-`Surveys `
-app. Creating a survey, and sending it to customers who receive an
-updated product, increases the likelihood of receiving relevant feedback
-about the product.
+Buni amalga oshirishning eng yaxshi usullaridan biri `Surveys ` ilovasi 
+orqali. So'rovnoma yaratish va uni yangilangan mahsulot oladigan mijozlarga 
+yuborish mahsulot haqida tegishli fikr-mulohaza olish ehtimolini oshiradi.
 
 ::: 
-Example workflow: coat rack product improvement
+Misol ish oqimi: palto ilgichi mahsulotini takomillashtirish
 
-*Wood Hut* is a manufacturer of fine wood products. They are committed
-to manufacturing products of the highest-possible quality, and are
-always looking for ways to improve the products they sell, along with
-the processes used to create them.
+*Wood Hut* nozik yog'och mahsulotlari ishlab chiqaruvchisi. Ular 
+eng yuqori sifatli mahsulotlar ishlab chiqarishga sodiq va har doim 
+sotadigan mahsulotlarni, shuningdek ularni yaratish uchun ishlatiladigan 
+jarayonlarni yaxshilash yo'llarini qidirmoqda.
 
-Wood Hut uses the Odoo platform to manage every element of their
-production, fulfillment, and customer satisfaction processes. They have
-developed a custom product improvement workflow that incorporates the
-Helpdesk, Quality, PLM, and Manufacturing apps.
+Wood Hut o'zlarining ishlab chiqarish, bajarish va mijozlar qoniqishi 
+jarayonlarining har bir elementini boshqarish uchun Odoo platformasidan 
+foydalanadi. Ular Helpdesk, Quality, PLM va Manufacturing ilovalarini 
+o'z ichiga olgan maxsus mahsulot takomillashtirish ish oqimini ishlab chiqdilar.
 
-One of Wood Hut\'s most popular products is their *coat rack*. It\'s
-made entirely of oak, and customers describe it as \"sleek and
-elegant.\" However, recent customer feedback about the coat rack has
-brought attention to quality issues that necessitate revising the
-current manufacturing process.
+Wood Hut-ning eng mashhur mahsulotlaridan biri ularning *palto ilgichi*. 
+U butunlay eman yog'ochidan yasalgan va mijozlar uni "zamonaviy va nafis" 
+deb ta'riflaydilar. Biroq, palto ilgichi haqidagi so'nggi mijoz fikr-mulohazalari 
+joriy ishlab chiqarish jarayonini qayta ko'rib chiqishni talab qiladigan 
+sifat muammolariga e'tiborni jalb qildi.
 
-The product revision workflow begins when the customer service team
-receives a ticket in the Helpdesk app from a customer having problems
-with the coat rack she purchased. The customer, Abigail Peterson, has
-found that her coat rack falls over when more than five coats are
-hanging from it. This is a major issue, as the coat rack has enough
-dowels for six coats.
+Mahsulot qayta ko'rib chiqish ish oqimi mijozlarni qo'llab-quvvatlash jamoasi 
+sotib olgan palto ilgichi bilan muammolari bo'lgan mijozdan Helpdesk ilovasida 
+chipta olganda boshlanadi. Mijoz Abigail Peterson o'zining palto ilgichi 
+beshdan ortiq palto osilganda yiqilib tushganini aniqladi. Bu jiddiy muammo, 
+chunki palto ilgichida olti palto uchun yetarli dowel bor.
 
-![A Helpdesk ticket about an issue with the coat rack product.](continuous_improvement/helpdesk-ticket.png)
+![Palto ilgichi mahsuloti bilan muammo haqidagi Helpdesk chiptasi.](continuous_improvement/helpdеsk-ticket.png)
 
-Marc, the customer service employee assigned to the helpdesk ticket,
-opens the Quality app, and creates a new quality alert. He tags the
-*Production Quality Team* and assigns Julie Andreson as the quality
-employee responsible for the alert.
+Helpdesk chiptasiga tayinlangan mijozlarni qo'llab-quvvatlash xodimi Mark 
+Quality ilovasini ochadi va yangi sifat ogohlantirishini yaratadi. U 
+*Ishlab chiqarish sifati jamoasi*ni belgilaydi va Julie Andersonni 
+ogohlantirish uchun mas'ul sifat xodimi sifatida tayinlaydi.
 
-Julie reviews the alert, and consults with her team about the best
-course of action. They decide that it is necessary to revise the
-product\'s `BoM (Bill of Materials)` to
-prevent the issue from occurring in the future, which Julie notes in the
-`Corrective Actions` tab of the
-quality alert.
+Julie ogohlantirishni ko'rib chiqadi va o'z jamoasi bilan eng yaxshi 
+harakat yo'li haqida maslahat oladi. Ular kelajakda muammoning takrorlanishining 
+oldini olish uchun mahsulotning `BoM (Bill of Materials)`ini qayta ko'rib 
+chiqish zarur degan qarorga kelishadi, buni Julie sifat ogohlantirishining 
+`Corrective Actions` yorlig'ida qayd etadi.
 
-![A quality alert created about the issue with the coat rack product.](continuous_improvement/quality-alert.png)
+![Palto ilgichi mahsuloti bilan muammo haqida yaratilgan sifat ogohlantirishisi.](continuous_improvement/quality-alert.png)
 
-Then, Julie messages product engineer, Joe Kazan in the chatter of the
-quality alert to bring it to his attention. Joe opens the
-`PLM (Product Lifecycle Management)` app
-and creates a new `ECO (Engineering Change Order)`, noting the problem with the coat rack, and suggesting that
-a change to the product\'s `BoM (Bill of Materials)` may be necessary.
+Keyin Julie sifat ogohlantirishining chatterida mahsulot muhandisi Joe Kazanga 
+xabar yuboradi va uning e'tiborini jalb qiladi. Joe `PLM (Product Lifecycle Management)` 
+ilovasini ochadi va yangi `ECO (Engineering Change Order)` yaratadi, palto 
+ilgichi bilan muammoni qayd etib, mahsulotning `BoM (Bill of Materials)`ini 
+o'zgartirish zarur bo'lishi mumkinligini taklif qiladi.
 
-![An ECO created to update the coat rack product\'s BoM.](continuous_improvement/eco.png)
+![Palto ilgichi mahsulotining BoM sini yangilash uchun yaratilgan ECO.](continuous_improvement/eco.png)
 
-Joe clicks `Start Revision`, and then
-the `Revision` smart button to open
-version two of the coat rack\'s
-`BoM (Bill of Materials)`. This
-`BoM (Bill of Materials)` was created
-alongside the `ECO (Engineering Change Order)`, and remains archived until it is approved.
+Joe `Start Revision` tugmasini bosadi, so'ngra palto ilgichining ikkinchi 
+versiyasini ochish uchun `Revision` aqlli tugmasini bosadi 
+`BoM (Bill of Materials)`. Bu `BoM (Bill of Materials)` 
+`ECO (Engineering Change Order)` bilan birga yaratilgan va tasdiqlangungacha 
+arxivlangan holda qoladi.
 
-After some testing, Joe discovers that adding a metal *support rod* to
-the coat rack strengthens it, allowing the rack to hold six or more
-coats without falling over. He updates the
-`BoM (Bill of Materials)` to include the
-support rod as one of the components, and adds an extra operation to
-make sure it is installed during the manufacturing process. Finally, he
-leaves a message in the chatter of the
-`ECO (Engineering Change Order)`, letting
-his manager, Jose, know that it is ready for review.
+Ba'zi sinashlardan so'ng, Joe palto ilgichiga metall *qo'llab-quvvatlash tayog'i* 
+qo'shish uni mustahkamlaydi va ilgichga oltita yoki undan ortiq paltoni 
+yiqilmasdan osish imkonini beradi. U qo'llab-quvvatlash tayog'ini komponentlardan 
+biri sifatida kiritish uchun `BoM (Bill of Materials)`ni yangilaydi va ishlab 
+chiqarish jarayonida u o'rnatilganligiga ishonch hosil qilish uchun qo'shimcha 
+operatsiya qo'shadi. Nihoyat, u `ECO (Engineering Change Order)` chatteriga 
+xabar qoldirib, boshlig'i Josega uni ko'rib chiqishga tayyorligini bildiradi.
 
-![The coat rack BoM, updated to add an extra component and operation.](continuous_improvement/bom.png)
+![Qo'shimcha komponent va operatsiya qo'shish uchun yangilangan palto ilgichi BoM si.](continuous_improvement/bom.png)
 
-Jose reviews the changes, and confirms they are an effective method for
-addressing the problem with the coat rack. He moves the
-`ECO (Engineering Change Order)` to the
-*Approved* stage, which makes version two of the coat rack
-`BoM (Bill of Materials)` the current
-version.
+Jose o'zgarishlarni ko'rib chiqadi va ular palto ilgichi bilan muammoni 
+hal qilishning samarali usuli ekanligini tasdiqlaydi. U 
+`ECO (Engineering Change Order)`ni *Tasdiqlangan* bosqichiga o'tkazadi, 
+bu palto ilgichi `BoM (Bill of Materials)`ning ikkinchi versiyasini 
+joriy versiyaga aylantiradi.
 
-Now, each time an `MO (Manufacturing Order)` is created to produce a coat rack, the updated
-`BoM (Bill of Materials)` is
-automatically selected. Wood Hut begins producing the improved coat
-rack, and customer feedback confirms that the new version has addressed
-the problem with its predecessor.
+Endi palto ilgichi ishlab chiqarish uchun `MO (Manufacturing Order)` 
+yaratilgan har safar, yangilangan `BoM (Bill of Materials)` avtomatik 
+ravishda tanlanadi. Wood Hut yaxshilangan palto ilgichini ishlab chiqarishni 
+boshlaydi va mijozlarning fikr-mulohazalari yangi version oldingi 
+versiyaning muammosini hal qilganini tasdiqlaydi.
 
-Using the Odoo platform, Wood Hut has implemented an end-to-end product
-improvement process. Since the essential elements of this process
-(customer feedback, quality control, etc.) are always functioning, it
-can be reused to continuously update products and processes.
+Odoo platformasidan foydalanib, Wood Hut tugal mahsulot takomillashtirish 
+jarayonini amalga oshirdi. Ushbu jarayonning asosiy elementlari (mijozlar 
+fikr-mulohazasi, sifat nazorati va boshqalar) doimo ishlayotganligi 
+sababli, u mahsulotlar va jarayonlarni uzluksiz yangilash uchun 
+qayta ishlatilishi mumkin.
 :::

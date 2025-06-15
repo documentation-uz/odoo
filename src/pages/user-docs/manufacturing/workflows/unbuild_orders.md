@@ -1,104 +1,52 @@
-# Unbuild orders
+# Buzish buyruqlari
 
-In some cases, it is necessary to dismantle manufactured products into
-their individual components. This may be required if too many units of a
-product were built, or if the components of one product must be
-reclaimed to use in the manufacturing of another.
+Ba'zi hollarda ishlab chiqarilgan mahsulotlarni alohida komponentlarga ajratish zarur bo'lishi mumkin. Bu mahsulotdan ortiqcha birliklar ishlab chiqarilgan bo'lsa yoki bir mahsulotning komponentlarini boshqa mahsulot ishlab chiqarishda ishlatish uchun qaytarib olish kerak bo'lganda talab qilinishi mumkin.
 
-In Odoo *Manufacturing*, products can be dismantled, and their
-components returned to inventory, using *unbuild orders*. By using
-unbuild orders to accomplish this task, inventory counts for the
-finished product and its components remain accurate, based on the
-quantity of products dismantled, and the quantity of components
-reclaimed.
+Odoo *Manufacturing* dasturida mahsulotlar ajratilishi va ularning komponentlari *buzish buyruqlari* yordamida inventarga qaytarilishi mumkin. Bu vazifani bajarish uchun buzish buyruqlaridan foydalanish orqali tayyor mahsulot va uning komponentlari uchun inventar hisobi ajratilgan mahsulotlar soni va qaytarib olingan komponentlar soniga asoslangan holda aniq qoladi.
 
-## Create unbuild order
+## Buzish buyrug'ini yaratish
 
-A new unbuild order can be created by navigating to
-`Manufacturing app ‣ Operations
-‣ Unbuild Orders`, and
-clicking `New`.
+Yangi buzish buyrug'ini yaratish uchun `Manufacturing app ‣ Operations ‣ Unbuild Orders` ga o'tib, `New` tugmasini bosish mumkin.
 
-Begin filling out the new unbuild order by selecting a
-`Product` to unbuild. After doing so,
-the `Bill of Material` field
-auto-populates with the corresponding bill of materials (BoM). If a
-different `BoM (Bill of Materials)`
-should be used, click on the `Bill of Material` field, and select it from the drop-down menu.
+Yangi buzish buyrug'ini to'ldirishni buzish uchun `Product` ni tanlashdan boshlang. Buni amalga oshirgandan so'ng, `Bill of Material` maydoni tegishli materiallar ro'yxati (BoM) bilan avtomatik to'ldiriladi. Agar boshqa `BoM (Bill of Materials)` ishlatilishi kerak bo'lsa, `Bill of Material` maydoniga bosing va uni ochiladigan menyudan tanlang.
 
-Alternatively, a specific `BoM (Bill of Materials)` can be selected in the `Bill of Material` field before selecting a product, which causes the
-corresponding product to auto-populate in the
-`Product` field.
+Shu bilan bir qatorda, mahsulotni tanlashdan oldin `Bill of Material` maydonida aniq `BoM (Bill of Materials)` tanlanishi mumkin, bu esa `Product` maydonida tegishli mahsulotning avtomatik to'ldirilishiga olib keladi.
 
-Next, specify the `Quantity` of the
-product that is being unbuilt.
+Keyin, buzilayotgan mahsulotning `Quantity` ni belgilang.
 
-If the product being unbuilt was originally manufactured in a specific
-manufacturing order (MO), select it in the
-`Manufacturing Order` field.
+Agar buzilayotgan mahsulot dastlab ma'lum bir ishlab chiqarish buyrug'ida (MO) ishlab chiqarilgan bo'lsa, uni `Manufacturing Order` maydonida tanlang.
 
-In the `Source Location` field,
-select the location where the product being unbuilt is currently stored.
+`Source Location` maydonida buzilayotgan mahsulot hozirda saqlanayotgan joyni tanlang.
 
-In the `Destination Location` field,
-select the location where the reclaimed components are stored after the
-unbuild order is completed.
+`Destination Location` maydonida buzish buyrug'i bajarilgandan keyin qaytarib olingan komponentlar saqlanadigan joyni tanlang.
 
-If the *Lots & Serial Numbers* feature is enabled in the settings of the
-*Inventory* app, a `Lot/Serial Number` field appears on the unbuild order, which can be used
-to specify the lot(s) or serial number(s) of the product being unbuilt,
-if any are assigned.
+Agar *Inventory* dasturi sozlamalarida *Lots & Serial Numbers* funksiyasi yoqilgan bo'lsa, buzish buyrug'ida `Lot/Serial Number` maydoni paydo bo'ladi, bu buzilayotgan mahsulotning lot(lar) yoki seriya raqam(lar)ini belgilash uchun ishlatilishi mumkin, agar ular tayinlangan bo'lsa.
 
-If the Odoo database has been configured with multiple companies, a
-`Company` field appears on the
-unbuild order, which can be used to specify the company that owns the
-product being unbuilt.
+Agar Odoo ma'lumotlar bazasi bir nechta kompaniya bilan sozlangan bo'lsa, buzish buyrug'ida `Company` maydoni paydo bo'ladi, bu buzilayotgan mahsulotga egalik qiluvchi kompaniyani belgilash uchun ishlatilishi mumkin.
 
-Finally, once the product has been unbuilt, click the
-`Unbuild` button at the top of the
-order to confirm that it has been completed.
+Nihoyat, mahsulot buzilgandan so'ng, uning bajarilganligini tasdiqlash uchun buyruq tepasidagi `Unbuild` tugmasini bosing.
 
-![A filled-out unbuild order.](unbuild_orders/unbuild-order.png)
+![To'ldirilgan buzish buyrug'i.](unbuild_orders/unbuild-order.png)
 
 :::: warning
 
-While it is possible to create unbuild orders for products that have
-zero (or fewer) units on-hand, this is not advised, since it can lead to
-inventory inconsistencies.
+Qo'lda nol (yoki undan kam) birlik mavjud bo'lgan mahsulotlar uchun buzish buyruqlarini yaratish mumkin bo'lsa-da, bu tavsiya etilmaydi, chunki bu inventar nomuvofiqliklariga olib kelishi mumkin.
 
-If an unbuild order is created for a product with zero (or fewer) units
-on-hand, a pop-up window appears, warning the user that there is an
-insufficient quantity to unbuild.
+Agar qo'lda nol (yoki undan kam) birlik mavjud bo'lgan mahsulot uchun buzish buyrug'i yaratilsa, buzish uchun yetarli miqdor yo'qligini ogohlantiruvchi qalqib chiquvchi oyna paydo bo'ladi.
 
-To ignore the warning, and proceed with the unbuild order, click
-`Confirm` at the bottom of the pop-up
-window. To return to the unconfirmed unbuild order, click
-`Discard`, instead.
+Ogohlantirishni e'tiborsiz qoldirish va buzish buyrug'ini davom ettirish uchun qalqib chiquvchi oynaning pastidagi `Confirm` tugmasini bosing. Tasdiqlanmagan buzish buyrug'iga qaytish uchun uning o'rniga `Discard` tugmasini bosing.
 
-![The insufficient quantity pop-up that appears after trying to confirm an unbuild order
-for a product with zero or fewer units on hand.](unbuild_orders/insufficient-quantity.png)
+![Qo'lda nol yoki undan kam birlik mavjud bo'lgan mahsulot uchun buzish buyrug'ini tasdiqlashga urinishdan keyin paydo bo'ladigan yetarli miqdor yo'qligi haqidagi qalqib chiquvchi oyna.](unbuild_orders/insufficient-quantity.png)
 ::::
 
-After completing an unbuild order, inventory counts automatically
-update, based on the quantity of products unbuilt, and the quantity of
-components reclaimed.
+Buzish buyrug'ini bajarib bo'lgandan so'ng, inventar hisobi buzilgan mahsulotlar soni va qaytarib olingan komponentlar soniga asoslangan holda avtomatik yangilanadi.
 
 ::: example
-A [Coat Rack] product is comprised of one [Wooden
-Pole] component and six [Wooden Dowel]
-components.
+[Coat Rack] mahsuloti bitta [Wooden Pole] komponenti va oltita [Wooden Dowel] komponentidan iborat.
 
-An unbuild order is created for one unit of the [Coat Rack].
-Once the order is completed, the on-hand quantity of [Coat
-Racks] decreases by one, while the on-hand quantities of
-[Wooden Poles] and [Wooden Dowels] increase by
-one and six, respectively.
+Bitta [Coat Rack] birligi uchun buzish buyrug'i yaratiladi. Buyruq bajarilgandan so'ng, [Coat Racks] ning qo'ldagi miqdori bittaga kamayadi, [Wooden Poles] va [Wooden Dowels] ning qo'ldagi miqdorlari esa mos ravishda bitta va oltitaga ortadi.
 :::
 
-## Scrap unusable components
+## Yaroqsiz komponentlarni chiqitga chiqarish
 
-In some cases, components may be unusable after the unbuilding process
-is completed. To ensure that inventory counts accurately reflect the
-quantity of usable components on-hand, any component that can no longer
-be used should be removed from inventory using a `scrap order
-`.
+Ba'zi hollarda buzish jarayoni tugagandan so'ng komponentlar yaroqsiz bo'lishi mumkin. Inventar hisobi qo'lda mavjud bo'lgan yaroqli komponentlar sonini aniq aks ettirishini ta'minlash uchun, endi ishlatib bo'lmaydigan har qanday komponent `scrap order` yordamida inventardan olib tashlanishi kerak.

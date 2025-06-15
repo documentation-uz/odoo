@@ -1,106 +1,57 @@
-# Scrap during manufacturing
+# Ishlab chiqarish jarayonida chiqindilar
 
-During the manufacturing process, scrapping components or finished
-products may be necessary when items are damaged, defective, or no
-longer usable.
+Ishlab chiqarish jarayonida mahsulotlar shikastlangan, nuqsonli yoki endi ishlatib bo'lmaydigan holda komponentlar yoki tayyor mahsulotlarni chiqindi sifatida belgilash zarur bo'lishi mumkin.
 
-Tracking scrapped materials helps manufacturers monitor waste, identify
-process issues, and account for production costs.
+Chiqindi materiallarni kuzatish ishlab chiqaruvchilarga chiqindilarni nazorat qilish, jarayon muammolarini aniqlash va ishlab chiqarish xarajatlarini hisobga olishda yordam beradi.
 
-In Odoo, scrapped items are removed from physical inventory and moved to
-a virtual location called *Virtual Locations/Scrap*. This location is
-not a physical space---it is a way to log and track losses without
-affecting real stock levels.
-
+Odoo dasturida chiqindi mahsulotlar jismoniy inventardan olib tashlanadi va *Virtual Locations/Scrap* deb ataladigan virtual joyga ko'chiriladi. Bu joy jismoniy maydon emas - bu haqiqiy zaxira darajalariga ta'sir qilmasdan yo'qotishlarni qayd etish va kuzatish usulidir.
 
 ::: tip
 
-Scrap orders can be viewed by navigating to
-`Inventory ‣ Operations ‣ Scrap`. Each scrap order shows the date and time the
-order was created, along with the product and quantity that was
-scrapped.
+Chiqindi buyurtmalarini `Inventory ‣ Operations ‣ Scrap` bo'limiga o'tish orqali ko'rish mumkin. Har bir chiqindi buyurtmasi buyurtma yaratilgan sana va vaqt, shuningdek chiqindi qilingan mahsulot va miqdorni ko'rsatadi.
 
-To view the total quantity of each item scrapped, navigate to
-`Inventory ‣
-Configuration ‣ Locations`,
-then remove the `Internal` filter
-from the `Search...` bar to display
-all virtual locations. From the list, select the
-`Virtual Locations/Scrap` location.
+Har bir chiqindi qilingan mahsulotning umumiy miqdorini ko'rish uchun `Inventory ‣
+Configuration ‣ Locations` bo'limiga o'ting, so'ngra barcha virtual joylarni ko'rsatish uchun `Search...` satridan `Internal` filtrini olib tashlang. Ro'yxatdan `Virtual Locations/Scrap` joyini tanlang.
 ::::
 
-## Navigate to the scrap window 
+## Chiqindi oynasiga o'tish
 
-Scrapping can be done in either the **Manufacturing** app or the **Shop
-Floor** module, depending on the task.
+Vazifaga qarab, chiqindi qilish **Manufacturing** ilovasida yoki **Shop Floor** modulida amalga oshirilishi mumkin.
 
-**Manufacturing** app allows:
+**Manufacturing** ilovasi quyidagilarni amalga oshirishga imkon beradi:
 
-- Scrapping finished products (only if the
-  `MO (Manufacturing Order)` is in the
-  *Done* stage).
-- Scrapping components (while the
-  `MO (Manufacturing Order)` is in the
-  *Draft* or *Confirmed* stage).
+- Tayyor mahsulotlarni chiqindi qilish (faqat `MO (Manufacturing Order)` *Done* bosqichida bo'lgan taqdirda).
+- Komponentlarni chiqindi qilish (`MO (Manufacturing Order)` *Draft* yoki *Confirmed* bosqichida bo'lganida).
 
-**Shop Floor** allows:
+**Shop Floor** quyidagini amalga oshirishga imkon beradi:
 
-- Scrapping only components.
+- Faqat komponentlarni chiqindi qilish.
 
-### Manufacturing app
+### Manufacturing ilovasi
 
-To scrap a product from the **Manufacturing** app, go to
-`Manufacturing ‣
-Operations ‣ Manufacturing Orders` and select the desired
-`MO (Manufacturing Order)`.
+**Manufacturing** ilovasidan mahsulotni chiqindi qilish uchun `Manufacturing ‣
+Operations ‣ Manufacturing Orders` bo'limiga o'ting va kerakli `MO (Manufacturing Order)` ni tanlang.
 
-On the `MO (Manufacturing Order)`, click
-the `fa-cog`
-`(Actions)` icon, then choose
-`Scrap` from the drop-down menu.
+`MO (Manufacturing Order)` da `fa-cog` `(Actions)` ikonasini bosing, so'ngra ochiluvchi menyudan `Scrap` ni tanlang.
 
-![MO with the cog\'s drop-down menu revealed, to show the Scrap option.](scrap_manufacturing/cog.png)
+![Scrap variantini ko'rsatish uchun tishli g'ildirak ochiluvchi menyusi ko'rsatilgan MO.](scrap_manufacturing/cog.png)
 
 ### Shop Floor
 
-In **Shop Floor**, only components can be scrapped. Navigate to the
-desired `MO (Manufacturing Order)` card,
-and then tap the `fa-cog`
-`(Actions)` icon and in the
-`What do you want to do?` pop-up
-window, select `Scrap`.
+**Shop Floor**da faqat komponentlarni chiqindi qilish mumkin. Kerakli `MO (Manufacturing Order)` kartasiga o'ting va `fa-cog` `(Actions)` ikonasini bosing, `What do you want to do?` oynasida `Scrap` ni tanlang.
 
-![Scrap pop-up window in the Shop Floor app.](scrap_manufacturing/shop-floor.png)
+![Shop Floor ilovasidagi Scrap oynasi.](scrap_manufacturing/shop-floor.png)
 
-## Scrap pop-up window
+## Chiqindi oynasi
 
-After opening the `Scrap Products`
-pop-up window using one of the methods `detailed
-above `, select the component or finished product being scrapped,
-from the `Product` drop-down menu.
+`Scrap Products` oynasini `yuqorida batafsil bayon qilingan` usullardan biri yordamida ochgandan so'ng, `Product` ochiluvchi menyusidan chiqindi qilinayotgan komponent yoki tayyor mahsulotni tanlang.
 
-In the `Quantity` field, enter the
-quantity being scrapped.
+`Quantity` maydoniga chiqindi qilinayotgan miqdorni kiriting.
 
-By default, the `Source Location`
-field is set to the warehouse\'s pre-production location, while the
-`Scrap Location` field is set to the
-`Virtual Locations/Scrap` location.
-If either the source or scrap location should be changed, select a
-different location from their respective drop-down menus.
+Sukut bo'yicha `Source Location` maydoni omborning ishlab chiqarishdan oldingi joyiga o'rnatilgan, `Scrap Location` maydoni esa `Virtual Locations/Scrap` joyiga o'rnatilgan. Agar manba yoki chiqindi joyi o'zgartirilishi kerak bo'lsa, tegishli ochiluvchi menyulardan boshqa joyni tanlang.
 
-Enable the `Replenish Scrapped Quantities` checkbox if a picking order should be created to
-replace the scrapped component upon confirmation of the scrap order.
-This option should only be enabled for warehouses with
-`two-step ` or
-`three-step ` manufacturing enabled, since components are not picked as
-part of the
-`one-step ` manufacturing process.
+Agar chiqindi buyurtmasi tasdiqlanganida chiqindi komponentni almashtirish uchun yig'ish buyurtmasi yaratilishi kerak bo'lsa, `Replenish Scrapped Quantities` katagini yoqing. Bu variant faqat `two-step` yoki `three-step` ishlab chiqarish yoqilgan omborlar uchun yoqilishi kerak, chunki komponentlar `one-step` ishlab chiqarish jarayonining bir qismi sifatida tanlanmaydi.
 
-![The Scrap pop-up window.](scrap_manufacturing/scrap-window.png)
+![Chiqindi oynasi.](scrap_manufacturing/scrap-window.png)
 
-After filling out the `Scrap Products` pop-up window, click the
-`Scrap Products` button. After one or
-more scrap orders have been created, a `Scraps` smart button appears at the top of the screen. Click it
-to view a list of all scrap orders for the
-`MO (Manufacturing Order)`.
+`Scrap Products` oynasini to'ldirgandan so'ng, `Scrap Products` tugmasini bosing. Bir yoki bir nechta chiqindi buyurtmalari yaratilgandan so'ng, ekranning yuqori qismida `Scraps` aqlli tugmasi paydo bo'ladi. `MO (Manufacturing Order)` uchun barcha chiqindi buyurtmalar ro'yxatini ko'rish uchun uni bosing.

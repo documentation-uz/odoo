@@ -1,351 +1,159 @@
-# Resupply subcontractor
+# Subpudratchi ta'minoti
 
-In manufacturing, subcontracting is the process of a company engaging a
-third-party manufacturer, or subcontractor, to manufacture products that
-are then sold by the contracting company.
+Ishlab chiqarishda subpudratchilik - bu kompaniyaning uchinchi tomon ishlab chiqaruvchi yoki subpudratchi bilan shartnoma tuzib, mahsulotlarni ishlab chiqarishga topshirish jarayoni bo'lib, keyinchalik bu mahsulotlar shartnoma tuzuvchi kompaniya tomonidan sotiladi.
 
-In Odoo, the *Resupply Subcontractor on Order* route is used to deliver
-the necessary components for a subcontracted product to the
-subcontractor, each time a purchase order (PO) for that product is
-confirmed.
+Odoo dasturida `Resupply Subcontractor on Order` yo'nalishi subpudratchilik mahsuloti uchun xarid buyurtmasi (PO) har safar tasdiqlanganda subpudratchi tomon zarur komponentlarni yetkazib berish uchun ishlatiladi.
 
-The subcontractor then uses the components to manufacture the desired
-product, before shipping it back to the contracting company, or
-dropshipping it to the end customer.
+Subpudratchi keyin komponentlarni ishlatib kerakli mahsulotni ishlab chiqaradi va uni shartnoma tuzuvchi kompaniyaga qaytarib yuboradi yoki yakuniy mijozga dropship qiladi.
 
 ::: warning
 
-It is necessary to understand the differences between the *Resupply
-Subcontractor on Order* and the *Dropship Subcontractor on Order*
-routes.
+`Resupply Subcontractor on Order` va `Dropship Subcontractor on Order` yo'nalishlari o'rtasidagi farqlarni tushunish zarur.
 
-While both routes are used to supply a subcontractor with the components
-required for manufacturing a product, they differ in how the components
-are sourced.
+Ikki yo'nalish ham subpudratchini mahsulot ishlab chiqarish uchun zarur komponentlar bilan ta'minlash uchun ishlatilsa-da, ular komponentlar qanday ta'minlanishida farqlanadi.
 
-When using *Resupply Subcontractor on Order*, components are shipped
-from the warehouse of the contracting company.
+`Resupply Subcontractor on Order` ishlatilganda komponentlar shartnoma tuzuvchi kompaniyaning omboridan yetkazib beriladi.
 
-When using *Dropship Subcontractor on Order*, components are purchased
-from a vendor and shipped directly to the subcontractor.
+`Dropship Subcontractor on Order` ishlatilganda komponentlar sotuvchidan sotib olinib to'g'ridan-to'g'ri subpudratchi tomon yetkazib beriladi.
 
-The choice of which route to use depends upon the specific requirements
-of the subcontracting company and their subcontractors.
+Qaysi yo'nalishni tanlash subpudratchilik kompaniyasi va ularning subpudratchilarining aniq talablariga bog'liq.
 
-See the `subcontracting_dropship`
-documentation for a full overview of the *Dropship Subcontractor on
-Order* route.
+`Dropship Subcontractor on Order` yo'nalishining to'liq ko'rinishi uchun `subcontracting_dropship` hujjatiga qarang.
 ::::
 
-## Configuration
+## Sozlash
 
-To use the *Resupply Subcontractor on Order* route, navigate to
-`Manufacturing app
-‣ Configuration ‣ Settings`,
-and enable the checkbox next to `Subcontracting`, under the `Operations` heading.
+`Resupply Subcontractor on Order` yo'nalishini ishlatish uchun `Manufacturing app ‣ Configuration ‣ Settings` ga o'ting va `Operations` sarlavhasi ostidagi `Subcontracting` yonidagi katakchani belgilang.
 
-Once the *Subcontracting* setting is enabled, it is also necessary to
-properly configure the subcontracted product, the product\'s bill of
-materials (BoM), and the components listed on the
-`BoM (Bill of Materials)`.
+`Subcontracting` sozlamasi yoqilgandan so'ng, subpudratchilik mahsuloti, mahsulotning materiallar ro'yxati (BoM) va `BoM (Bill of Materials)` da ko'rsatilgan komponentlarni to'g'ri sozlash zarur.
 
-### Configure product 
+### Mahsulotni sozlash
 
-To configure a product for the *Resupply Subcontractor on Order* route,
-navigate to `Inventory app ‣ Products ‣ Products`, and select a product, or create a new one by
-clicking `New`.
+Mahsulotni `Resupply Subcontractor on Order` yo'nalishi uchun sozlash uchun `Inventory app ‣ Products ‣ Products` ga o'ting va mahsulotni tanlang yoki `New` tugmasini bosib yangisini yarating.
 
-Select the `Purchase` tab, and add
-the product\'s subcontractor as a vendor by clicking
-`Add a line`, selecting the
-subcontractor in the `Vendor`
-drop-down menu, and entering a price in the `Price` field.
+`Purchase` yorlig'ini tanlang va mahsulotning subpudratchiini sotuvchi sifatida qo'shish uchun `Add a line` tugmasini bosing, `Vendor` ochiladigan menyusidan subpudratchini tanlang va `Price` maydoniga narxni kiriting.
 
 ::: tip
 
-The value entered in the `Price`
-field on the `Purchase` tab of the of
-the subcontracted product\'s page is the amount paid to the
-subcontractor for the manufacturing of the product.
+Subpudratchilik mahsulot sahifasining `Purchase` yorlig'idagi `Price` maydoniga kiritilgan qiymat subpudratchiga mahsulot ishlab chiqarish uchun to'lanadigan summadir.
 
-This does not represent the total cost of the product, which includes
-other elements, like the cost of the product\'s components.
+Bu mahsulotning umumiy narxini ifodalamaydi, chunki unda boshqa elementlar, masalan, mahsulot komponentlarining narxi ham kiradi.
 ::::
 
-Then, click on the `Inventory` tab to
-configure a route that determines what happens to the finished product,
-once it has been manufactured by the subcontractor.
+Keyin `Inventory` yorlig'ini bosing va subpudratchi tomonidan ishlab chiqarilgandan so'ng tayyor mahsulot bilan nima qilishni belgilaydigan yo'nalishni sozlang.
 
-If the finished product is shipped back to the contracting company, make
-sure that the `Buy` route is
-selected. In addition, select the
-`Replenish on Order (MTO)` route to
-automatically create a `PO (Purchase Order)` for the product upon confirmation of a sales order (SO),
-unless there is enough stock on-hand to fulfill the
-`SO (Sales Order)`.
+Agar tayyor mahsulot shartnoma tuzuvchi kompaniyaga qaytarib yuborilsa, `Buy` yo'nalishi tanlanganligiga ishonch hosil qiling. Bundan tashqari, sotuv buyurtmasi (SO) tasdiqlanishi bilan `SO (Sales Order)` ni bajarish uchun qo'lda etarli zaxira bo'lmagan taqdirda mahsulot uchun avtomatik ravishda `PO (Purchase Order)` yaratish uchun `Replenish on Order (MTO)` yo'nalishini tanlang.
 
-If the finished product is shipped directly to the customer by the
-subcontractor, make sure that only the `Dropship` route is selected.
+Agar tayyor mahsulot subpudratchi tomonidan to'g'ridan-to'g'ri mijozga yetkazib berilsa, faqat `Dropship` yo'nalishi tanlanganligiga ishonch hosil qiling.
 
-### Configure BoM
+### BoM ni sozlash
 
-To configure a `BoM (Bill of Materials)`
-for the *Resupply Subcontractor on Order* route, click the `Bill of
-Materials` smart button on the
-product\'s page, and select the
-`BoM (Bill of Materials)`.
+`Resupply Subcontractor on Order` yo'nalishi uchun `BoM (Bill of Materials)` ni sozlash uchun mahsulot sahifasidagi `Bill of Materials` aqlli tugmasini bosing va `BoM (Bill of Materials)` ni tanlang.
 
-Alternatively, navigate to
-`Manufacturing app ‣ Products ‣ Bills of Materials`, and select the
-`BoM (Bill of Materials)` for the
-subcontracted product.
+Yoki `Manufacturing app ‣ Products ‣ Bills of Materials` ga o'ting va subpudratchilik mahsuloti uchun `BoM (Bill of Materials)` ni tanlang.
 
+`BoM Type` maydonida `Subcontracting` variantini tanlang. Keyin pastda paydo bo'ladigan `Subcontractors` maydoniga bir yoki bir nechta subpudratchilarni qo'shing.
 
-In the `BoM Type` field, select the
-`Subcontracting` option. Then, add
-one or more subcontractors in the `Subcontractors` field that appears below.
+![BoM dagi "BoM Type" maydoni subpudratchilik orqali mahsulot ishlab chiqarish uchun sozlangan.](subcontracting_resupply/bom-type.png)
 
-![The \"BoM Type\" field on a BoM, configured to manufacture the product using subcontracting.](subcontracting_resupply/bom-type.png)
+Nihoyat, `Components` yorlig'ida barcha zarur komponentlar ko'rsatilganligiga ishonch hosil qiling. Yangi komponent qo'shish uchun `Add a line` tugmasini bosing, `Component` ochiladigan menyusidan komponentni tanlang va `Quantity` maydonida kerakli miqdorni belgilang.
 
-Finally, make sure that all necessary components are specified on the
-`Components` tab. To add a new
-component, click `Add a line`, select
-the component in the `Component`
-drop-down menu, and specify the required quantity in the
-`Quantity` field.
+### Komponentlarni sozlash
 
-### Configure components
+Komponentlarni `Resupply Subcontractor on Order` yo'nalishi uchun sozlash uchun `BoM (Bill of Materials)` dan har bir komponentga o'ting, buning uchun `Components` yorlig'ida komponent nomini tanlab, nom o'ng tomonidagi `➡️ (o'ng ko'rsatkich)` tugmasini bosing.
 
-To configure components for the *Resupply Subcontractor on Order* route,
-navigate to each component from the
-`BoM (Bill of Materials)` by selecting
-the component\'s name in the `Components` tab, and clicking the
-`➡️ (right arrow)` button to the
-right of the name.
+Yoki har bir komponentga `Inventory app ‣ Products ‣ Products` ga o'tib, komponentni tanlab kiring.
 
-Alternatively, navigate to each component by going to
-`Inventory app ‣ Products ‣
-Products`, and selecting the
-component.
+Komponent mahsulot formasida `Inventory` yorlig'ini bosing va `Routes` bo'limida `Resupply Subcontractor on Order` yo'nalishini tanlang.
 
-On the component product form, click on the
-`Inventory` tab and select the
-`Resupply Subcontractor on Order`
-route in the `Routes` section.
+Subpudratchi tomon yuborilishi kerak bo'lgan har bir komponent uchun jarayonni takrorlang.
 
-Repeat the process for every component that must be sent to the
-subcontractor.
+## Buyurtma bo'yicha subpudratchi ta'minoti ish jarayoni
 
-## Resupply subcontractor on order workflow
+Buyurtma bo'yicha subpudratchi ta'minoti ish jarayoni beshta qadamdan iborat:
 
-The resupply subcontractor on order workflow consists of up to five
-steps:
+1. Subpudratchilik mahsuloti uchun `SO (Sales Order)` yaratish; bu subpudratchi tomon mahsulotni sotib olish uchun `PO (Purchase Order)` yaratadi.
+2. Oldingi qadamda yaratilgan `PO (Purchase Order)` ni tasdiqlash yoki yangi `PO (Purchase Order)` yaratish; bu *Resupply Subcontractor* buyurtmasi hamda qabul qilish buyurtmasi yoki dropship buyurtmasini yaratadi.
+3. Subpudratchilik mahsuloti uchun komponentlar subpudratchi tomon yuborigandan so'ng *Resupply Subcontractor* buyurtmasini qayta ishlash.
+4. Subpudratchi subpudratchilik mahsulotini ishlab chiqarib, uni shartnoma tuzuvchi kompaniyaga qaytarib yuborgandan so'ng qabul qilishni qayta ishlash **YOKI** mahsulotni to'g'ridan-to'g'ri mijozga yetkazib berish uchun dropship buyurtmasini qayta ishlash.
+5. Agar ish jarayoni `SO (Sales Order)` yaratish bilan boshlangan bo'lsa va tayyor mahsulot yakuniy mijozga dropship qilinmagan bo'lsa, mahsulot mijozga yetkazib berilgandan so'ng yetkazib berish buyurtmasini qayta ishlash.
 
-1.  Create an `SO (Sales Order)` for the
-    subcontracted product; doing so creates a
-    `PO (Purchase Order)` to purchase the
-    product from the subcontractor.
-2.  Confirm the `PO (Purchase Order)`
-    created in the previous step, or create a new
-    `PO (Purchase Order)`; doing so
-    creates a *Resupply Subcontractor* order, as well as a receipt order
-    or a dropship order.
-3.  Process the *Resupply Subcontractor* order once components for the
-    subcontracted product have been sent to the subcontractor.
-4.  Process the receipt once the subcontractor has finished
-    manufacturing the subcontracted product, and shipped it back to the
-    contracting company **OR** process the dropship order to ship the
-    product directly to the customer.
-5.  If the workflow was started by creating an
-    `SO (Sales Order)`, and the finished
-    product is not dropshipped to the end customer, process the delivery
-    order once the product is shipped to the customer.
+Qadamlarning aniq soni subpudratchilik mahsuloti subpudratchi tomon nima uchun sotib olinayotganiga bog'liq.
 
-The specific number of steps depends on the reason that the
-subcontracted product is being purchased from the subcontractor.
+Agar sabab ma'lum bir mijoz buyurtmasini bajarish bo'lsa, jarayon `SO (Sales Order)` yaratish bilan boshlanadi va mahsulotni mijozga yetkazib berish yoki subpudratchi tomonidan ularga dropship qilish bilan tugaydi.
 
-If the reason is to fulfill a specific customer order, the process
-starts with creating an `SO (Sales Order)`, and ends with delivering the product to the customer, or
-having the subcontractor dropship it to them.
-
-If the reason is to increase the quantity of stock on-hand, the process
-starts with creating a `PO (Purchase Order)`, and ends with receiving the product into inventory.
+Agar sabab qo'ldagi zaxira miqdorini oshirish bo'lsa, jarayon `PO (Purchase Order)` yaratish bilan boshlanadi va mahsulotni omborga qabul qilish bilan tugaydi.
 
 ::: warning
 
-While the *Resupply Subcontractor on Order* route can be used to
-automatically resupply a subcontractor upon confirmation of a
-`PO (Purchase Order)`, it is also
-possible to create a resupply order manually. This workflow is useful
-when it is necessary to resupply the subcontractor without creating a
-`PO (Purchase Order)`.
+`Resupply Subcontractor on Order` yo'nalishi `PO (Purchase Order)` tasdiqlanishi bilan subpudratchini avtomatik ta'minlash uchun ishlatilishi mumkin bo'lsa-da, ta'minlash buyurtmasini qo'lda yaratish ham mumkin. Bu ish jarayoni `PO (Purchase Order)` yaratmasdan subpudratchini ta'minlash zarur bo'lganda foydali.
 
-To resupply a subcontractor manually, navigate to the
-`Inventory` app, and click on
-the `Resupply Subcontractor` card.
-Create a new *Resupply Subcontractor* order by clicking
-`New`.
+Subpudratchini qo'lda ta'minlash uchun `Inventory` ilovasiga o'ting va `Resupply Subcontractor` kartasini bosing. `New` tugmasini bosib yangi *Resupply Subcontractor* buyurtmasini yarating.
 
-In the `Delivery Address` field,
-select the subcontractor to whom the components should be sent.
+`Delivery Address` maydonida komponentlar yuborilishi kerak bo'lgan subpudratchini tanlang.
 
-Then, add each component to the `Operations` tab by clicking `Add a line`, selecting the component in the
-`Product` drop-down field, and
-specifying a quantity in the `Demand`
-field.
+Keyin har bir komponentni `Operations` yorlig'iga qo'shing, buning uchun `Add a line` tugmasini bosing, `Product` ochiladigan maydonida komponentni tanlang va `Demand` maydonida miqdorni belgilang.
 
-Finally, click `Mark as Todo` to
-register the order. Once the components have been sent to the
-subcontractor, click `Validate` to
-confirm that the order has been sent.
+Nihoyat, buyurtmani ro'yxatga olish uchun `Mark as Todo` tugmasini bosing. Komponentlar subpudratchi tomon yuborigandan so'ng, buyurtma yuborilganini tasdiqlash uchun `Validate` tugmasini bosing.
 ::::
 
-### Create SO
+### SO yaratish
 
-It is only necessary to complete this step if the product is being
-purchased from the subcontractor to fulfill a customer need. If the
-product is being purchased to increase the quantity of stock on-hand,
-move on to the next step.
+Bu qadamni faqat mahsulot mijoz ehtiyojini qondirish uchun subpudratchi tomon sotib olinayotgan bo'lsa bajarish zarur. Agar mahsulot qo'ldagi zaxira miqdorini oshirish uchun sotib olinayotgan bo'lsa, keyingi qadamga o'ting.
 
-To create a new `SO (Sales Order)`,
-navigate to `Sales app ‣ Orders ‣ Orders`, and click `New`.
+Yangi `SO (Sales Order)` yaratish uchun `Sales app ‣ Orders ‣ Orders` ga o'ting va `New` tugmasini bosing.
 
-Select the customer in the `Customer`
-drop-down menu. Then, click `Add a
-product` on the
-`Order Lines` tab, select a
-subcontracted product in the `Product` drop-down menu, and enter a quantity in the
-`Quantity` field.
+`Customer` ochiladigan menyusidan mijozni tanlang. Keyin `Order Lines` yorlig'ida `Add a product` tugmasini bosing, `Product` ochiladigan menyusidan subpudratchilik mahsulotini tanlang va `Quantity` maydoniga miqdorni kiriting.
 
-Click `Confirm` to confirm the
-`SO (Sales Order)`, at which point a
-`Purchase` smart button appears at
-the top of the page. This opens the
-`PO (Purchase Order)` created to purchase
-the subcontracted product from the subcontractor.
+`SO (Sales Order)` ni tasdiqlash uchun `Confirm` tugmasini bosing, shundan so'ng sahifa tepasida `Purchase` aqlli tugmasi paydo bo'ladi. Bu subpudratchi tomon subpudratchilik mahsulotini sotib olish uchun yaratilgan `PO (Purchase Order)` ni ochadi.
 
 ::: tip
 
-An `SO (Sales Order)` for the product
-only creates a `PO (Purchase Order)` if
-the *Replenish on Order (MTO)* route is enabled on the product\'s page,
-**and** there is not enough stock of the product on-hand to fulfill the
-`SO (Sales Order)`.
+Mahsulot uchun `SO (Sales Order)` faqat mahsulot sahifasida *Replenish on Order (MTO)* yo'nalishi yoqilgan bo'lsa **VA** `SO (Sales Order)` ni bajarish uchun mahsulotdan qo'lda etarli zaxira yo'q bo'lsagina `PO (Purchase Order)` yaratadi.
 
-If there is enough stock on-hand, confirming an
-`SO (Sales Order)` for the product
-instead creates a delivery order, because Odoo assumes that the
-`SO (Sales Order)` is fulfilled using the
-stock in the warehouse.
+Agar qo'lda etarli zaxira mavjud bo'lsa, mahsulot uchun `SO (Sales Order)` ni tasdiqlash o'rniga yetkazib berish buyurtmasini yaratadi, chunki Odoo `SO (Sales Order)` ni ombordagi zaxira yordamida bajariladi deb taxmin qiladi.
 
-This is not the case for subcontracted products that are dropshipped to
-the end customer. In that case, a
-`PO (Purchase Order)` is **always**
-created, even if there is enough stock on-hand.
+Bu yakuniy mijozga dropship qilinadigan subpudratchilik mahsulotlari uchun bunday emas. Bunday holda, qo'lda etarli zaxira mavjud bo'lsa ham, `PO (Purchase Order)` **har doim** yaratiladi.
 ::::
 
-### Process PO
+### PO ni qayta ishlash
 
-If a `PO (Purchase Order)` was created in
-the previous step, navigate to `Purchase app ‣ Orders ‣
-Purchase Orders`, and select the
-`PO (Purchase Order)`. Then, click
-`Confirm Order` to confirm it.
+Agar oldingi qadamda `PO (Purchase Order)` yaratilgan bo'lsa, `Purchase app ‣ Orders ‣ Purchase Orders` ga o'ting va `PO (Purchase Order)` ni tanlang. Keyin uni tasdiqlash uchun `Confirm Order` tugmasini bosing.
 
-If a `PO (Purchase Order)` was not
-created in the previous step, do so now by navigating to `Purchase
-app ‣ Orders ‣ Purchase Orders`, and clicking `New`.
+Agar oldingi qadamda `PO (Purchase Order)` yaratilmagan bo'lsa, `Purchase app ‣ Orders ‣ Purchase Orders` ga o'tib, `New` tugmasini bosib hozir yarating.
 
-Begin filling out the `PO (Purchase Order)` by selecting a subcontractor from the
-`Vendor` drop-down menu. In the
-`Products` tab, click
-`Add a product` to create a new
-product line. Select a subcontracted product in the
-`Product` field, and enter the
-quantity in the `Quantity` field.
-Finally, click `Confirm Order` to
-confirm the `PO (Purchase Order)`.
+`PO (Purchase Order)` ni to'ldirishni `Vendor` ochiladigan menyusidan subpudratchini tanlash bilan boshlang. `Products` yorlig'ida yangi mahsulot qatori yaratish uchun `Add a product` tugmasini bosing. `Product` maydonida subpudratchilik mahsulotini tanlang va `Quantity` maydoniga miqdorni kiriting. Nihoyat, `PO (Purchase Order)` ni tasdiqlash uchun `Confirm Order` tugmasini bosing.
 
-When a `PO (Purchase Order)` is confirmed
-for a product that requires resupplying a subcontractor with components,
-a receipt or dropship order is automatically created, and can be
-accessed from the corresponding `Receipt` or `Dropship` smart
-button that appears at the top of the
-`PO (Purchase Order)`.
+Subpudratchini komponentlar bilan ta'minlashni talab qiladigan mahsulot uchun `PO (Purchase Order)` tasdiqlanganda, qabul qilish yoki dropship buyurtmasi avtomatik ravishda yaratiladi va `PO (Purchase Order)` tepasida paydo bo'ladigan tegishli `Receipt` yoki `Dropship` aqlli tugmasi orqali kirish mumkin.
 
-In addition, a *Resupply Subcontractor* order is created to ship the
-required components to the subcontractor. This order can also be
-accessed from the `PO (Purchase Order)`,
-by clicking the `Resupply` smart
-button at the top of the page.
+Bundan tashqari, subpudratchi tomon zarur komponentlarni yetkazib berish uchun *Resupply Subcontractor* buyurtmasi yaratiladi. Bu buyurtmaga `PO (Purchase Order)` dan sahifa tepasidagi `Resupply` aqlli tugmasini bosish orqali ham kirish mumkin.
 
+### Resupply Subcontractor buyurtmasini qayta ishlash
 
+Subpudratchilik mahsulotining komponentlari subpudratchi tomon yuborigandan so'ng, `Purchase app ‣ Orders ‣ Purchase Orders` ga o'ting va `PO (Purchase Order)` ni tanlang.
 
+*Resupply Subcontractor* buyurtmasini ochish uchun ekran tepasidagi `Resupply` aqlli tugmasini bosing va komponentlar subpudratchi tomon yuborilganini tasdiqlash uchun `Validate` tugmasini bosing.
 
+Yoki `Inventory` ilovasiga o'ting, `Resupply Subcontractor` kartasidagi `# To Process` tugmasini bosing va *Resupply Subcontractor* buyurtmasini tanlang. Keyin komponentlar subpudratchi tomon yuborilganini tasdiqlash uchun `Validate` tugmasini bosing.
 
-### Process Resupply Subcontractor order
+### Qabul qilish yoki dropship buyurtmasini qayta ishlash
 
-Once the subcontracted product\'s components have been sent to the
-subcontractor, navigate to
-`Purchase app ‣ Orders ‣ Purchase Orders`, and select the
-`PO (Purchase Order)`.
+Subpudratchi mahsulotni ishlab chiqarib bo'lgandan so'ng, mahsulot qanday `configured` qilinganiga qarab, uni shartnoma tuzuvchi kompaniyaga yuboradi yoki yakuniy mijozga dropship qiladi.
 
-Click the `Resupply` smart button at
-the top of the screen to open the *Resupply Subcontractor* order, and
-click `Validate` to confirm that the
-components have been sent to the subcontractor.
+#### Qabul qilishni qayta ishlash
 
-Alternatively, navigate to the `Inventory` app, click the `# To Process` button on the
-`Resupply Subcontractor` card, and
-select the *Resupply Subcontractor* order. Then, click
-`Validate` to confirm that the
-components have been sent to the subcontractor.
+Agar subpudratchi tayyor mahsulotni shartnoma tuzuvchi kompaniyaga yuborsa, u qabul qilingandan so'ng `Purchase app ‣ Orders ‣ Purchase Orders` ga o'ting va `PO (Purchase Order)` ni tanlang.
 
-### Process receipt or dropship order
+Qabul qilishni ochish uchun `PO (Purchase Order)` tepasidagi `Receive Products` tugmasini yoki sahifa tepasidagi `Receipt` aqlli tugmasini bosing. Keyin mahsulotni omborga kiritish uchun qabul qilish tepasidagi `Validate` tugmasini bosing.
 
-Once the subcontractor has finished manufacturing the product, they
-either ship it to the contracting company, or dropship it to the end
-customer, depending on how the product was
-`configured `.
+#### Dropship buyurtmasini qayta ishlash
 
-#### Process receipt
+Agar subpudratchi mahsulotni dropship qilsa, ular uni yuborgandan so'ng `Purchase app ‣ Orders ‣ Purchase Orders` ga o'ting va `PO (Purchase Order)` ni tanlang.
 
-If the subcontractor ships the finished product to the contracting
-company, once it has been received, navigate to
-`Purchase app ‣ Orders ‣ Purchase Orders`, and select the
-`PO (Purchase Order)`.
+Dropship buyurtmasini ochish uchun sahifa tepasidagi `Dropship` aqlli tugmasini tanlang va mahsulot mijozga yuborilganini tasdiqlash uchun buyurtma tepasidagi `Validate` tugmasini bosing.
 
-Click the `Receive Products` button
-at the top of the `PO (Purchase Order)`,
-or the `Receipt` smart button at the
-top of the page, to open the receipt. Then, click
-`Validate` at the top of the receipt
-to enter the product into inventory.
+### Yetkazib berish buyurtmasini qayta ishlash
 
-#### Process dropship order
+Agar subpudratchilik ish jarayoni mijoz `SO (Sales Order)` bilan boshlangan bo'lsa va tayyor mahsulot mijozga dropship qilinmagan, balki shartnoma tuzuvchi kompaniyaga yetkazib berilgan bo'lsa, mahsulotni mijozga yetkazib berish va yetkazib berish buyurtmasini qayta ishlash zarur.
 
-If the subcontractor dropships the product, once they have sent it,
-navigate to
-`Purchase app ‣ Orders ‣ Purchase Orders`, and select the
-`PO (Purchase Order)`.
-
-Select the `Dropship` smart button at
-the top of the page to open the dropship order, and click
-`Validate` at the top of the order to
-confirm that the product has been sent to the customer.
-
-### Process delivery order
-
-If the subcontracting workflow was started by a customer
-`SO (Sales Order)`, and the finished
-product was **NOT** dropshipped to the customer, but rather delivered to
-the contracting company, it is necessary to ship the product to the
-customer, and process the delivery order.
-
-Once the product has been shipped to the customer, navigate to the
-`Sales` app, and select the
-`SO (Sales Order)`. Select the
-`Delivery` smart button at the top of
-the page to open the delivery order, and click
-`Validate` on the order to confirm
-that the product has been shipped to the customer.
+Mahsulot mijozga yetkazib berilgandan so'ng, `Sales` ilovasiga o'ting va `SO (Sales Order)` ni tanlang. Yetkazib berish buyurtmasini ochish uchun sahifa tepasidagi `Delivery` aqlli tugmasini tanlang va mahsulot mijozga yetkazib berilganini tasdiqlash uchun buyurtmadagi `Validate` tugmasini bosing.

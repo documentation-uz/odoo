@@ -1,206 +1,97 @@
-# Production analysis
+# Ishlab chiqarish tahlili
 
-The *Production Analysis* report provides statistics about products
-manufactured using Odoo\'s *Manufacturing* app. The report is useful
-when trying to understand production costs, manufacturing durations, and
-other important statistics about manufactured products.
+*Ishlab chiqarish tahlili* hisoboti Odoo'ning *Ishlab chiqarish* ilovasi yordamida ishlab chiqarilgan mahsulotlar haqida statistik ma'lumotlar beradi. Hisobot ishlab chiqarish xarajatlari, ishlab chiqarish davomiyligi va ishlab chiqarilgan mahsulotlar haqidagi boshqa muhim statistikalarni tushunishga harakat qilganda foydalidir.
 
-To open the Production Analysis report, navigate to
-`Manufacturing app ‣ Reporting
-‣ Production Analysis`.
+Ishlab chiqarish tahlili hisobotini ochish uchun `Manufacturing app ‣ Reporting ‣ Production Analysis` ga o'ting.
 
 ::: warning
 
-The `Production Analysis` report is
-one of many reports available across the Odoo app suite. This
-documentation only covers the measures specific to the `Production
-Analysis` report, along with a few
-use case examples.
+`Production Analysis` hisoboti Odoo ilovalar to'plamida mavjud bo'lgan ko'plab hisobotlardan biridir. Ushbu hujjat faqat `Production Analysis` hisobotiga xos o'lchovlarni va bir nechta foydalanish holatlari misollarini qamrab oladi.
 
-For a full overview of the basic features available in most Odoo
-reports, see the documentation on
-`reporting essentials `.
+Ko'pgina Odoo hisobotlarida mavjud bo'lgan asosiy xususiyatlarning to'liq ko'rinishi uchun `reporting essentials` bo'yicha hujjatlarni ko'ring.
 ::::
 
-## Measures
+## O'lchovlar
 
-*Measures* are the datasets that can be selected in the
-`Production Analysis` report. Each
-dataset represents a specific statistic about
-`MOs (manufacturing orders)` in the
-database. Choose a measure by clicking the `Measures` `fa-caret-down` button,
-and selecting one of the options from the drop-down menu:
+*O'lchovlar* `Production Analysis` hisobotida tanlanishi mumkin bo'lgan ma'lumotlar to'plamidir. Har bir ma'lumotlar to'plami ma'lumotlar bazasidagi `MOs (manufacturing orders)` haqida muayyan statistikani ifodalaydi. `Measures` `fa-caret-down` tugmasini bosib va ochiladigan menyudan variantlardan birini tanlab o'lchovni tanlang:
 
-The options displayed in the `Measures` `fa-caret-down`
-drop-down menu, and the order they appear in, differ depending on the
-filters, groupings, and comparisons enabled in the
-`Search...` bar. By default, the
-available measures appear as follows:
+`Measures` `fa-caret-down` ochiladigan menyusida ko'rsatiladigan variantlar va ular paydo bo'ladigan tartib `Search...` panelida yoqilgan filtrlar, guruhlash va taqqoslashlarga qarab farqlanadi. Odatiy bo'lib, mavjud o'lchovlar quyidagicha paydo bo'ladi:
 
-- `Average Employee Cost/Unit`: the
-  average cost paid to employees to produce one unit of the product.
-- `By-Products Total Cost`: the total
-  value of all by-products created by manufacturing the product.
-- `Component Cost/Unit`: the average
-  cost of the components required to produce one unit of the product.
-- `Cost/Unit`: the average cost of
-  producing one unit of the product, including component, employee,
-  operation, and subcontracting costs.
-- `Duration of Operations/Unit`: the
-  average total duration of operations required to produce one unit of
-  the product.
-- `Quantity Demanded`: the total
-  number of units of the product included in
-  `MOs (manufacturing orders)`.
-- `Quantity Produced`: the total
-  number of units of the product that have actually been produced.
-- `Total Component Cost`: the total
-  amount spent on the product\'s components, across every
-  `MO (manufacturing order)` for the
-  product.
-- `Total Cost`: the total amount
-  spent manufacturing every unit of the product produced so far.
-- `Total Duration of Operations`: the
-  cumulative duration of every operation completed while manufacturing
-  the product.
-- `Total Employee Cost`: the
-  cumulative amount paid to employees to manufacture the product.
-- `Total Operation Cost`: the
-  cumulative amount spent on operations required to produce the product.
-- `Total Operation Cost/Unit`: the
-  average cost of the operations required to produce one unit of the
-  product.
-- `Total Subcontracting Cost`: the
-  cumulative amount paid to subcontractors to produce the product.
-- `Total Subcontracting Cost/Unit`:
-  the average cost of engaging a subcontractor to produce one unit of
-  the product.
-- `Yield Percentage (%)`: the total
-  quantity of the product produced versus the total quantity demanded,
-  represented as a percentage.
-- `Count`: the total count of
-  `MOs (manufacturing orders)` created
-  for the product.
+- `Average Employee Cost/Unit`: mahsulotning bir birligini ishlab chiqarish uchun xodimlarga to'lanadigan o'rtacha xarajat.
+- `By-Products Total Cost`: mahsulotni ishlab chiqarish natijasida yaratilgan barcha qo'shimcha mahsulotlarning umumiy qiymati.
+- `Component Cost/Unit`: mahsulotning bir birligini ishlab chiqarish uchun zarur komponentlarning o'rtacha xarajati.
+- `Cost/Unit`: komponent, xodimlar, operatsiya va subpudrat xarajatlarini o'z ichiga olgan holda mahsulotning bir birligini ishlab chiqarishning o'rtacha xarajati.
+- `Duration of Operations/Unit`: mahsulotning bir birligini ishlab chiqarish uchun zarur operatsiyalarning o'rtacha umumiy davomiyligi.
+- `Quantity Demanded`: `MOs (manufacturing orders)`ga kiritilgan mahsulot birliklarining umumiy soni.
+- `Quantity Produced`: haqiqatda ishlab chiqarilgan mahsulot birliklarining umumiy soni.
+- `Total Component Cost`: mahsulot uchun har bir `MO (manufacturing order)` bo'yicha mahsulot komponentlariga sarflangan umumiy summa.
+- `Total Cost`: hozirgacha ishlab chiqarilgan mahsulotning har bir birligini ishlab chiqarishga sarflangan umumiy summa.
+- `Total Duration of Operations`: mahsulotni ishlab chiqarishda bajarilgan har bir operatsiyaning jami davomiyligi.
+- `Total Employee Cost`: mahsulotni ishlab chiqarish uchun xodimlarga to'langan jami summa.
+- `Total Operation Cost`: mahsulotni ishlab chiqarish uchun zarur operatsiyalarga sarflangan jami summa.
+- `Total Operation Cost/Unit`: mahsulotning bir birligini ishlab chiqarish uchun zarur operatsiyalarning o'rtacha xarajati.
+- `Total Subcontracting Cost`: mahsulotni ishlab chiqarish uchun subpudratchilar to'langan jami summa.
+- `Total Subcontracting Cost/Unit`: mahsulotning bir birligini ishlab chiqarish uchun subpudratchi jalb qilishning o'rtacha xarajati.
+- `Yield Percentage (%)`: talab qilingan umumiy miqdorga nisbatan ishlab chiqarilgan mahsulotning umumiy miqdori, foiz sifatida ifodalangan.
+- `Count`: mahsulot uchun yaratilgan `MOs (manufacturing orders)`ning umumiy soni.
 
 ::: tip
 
-Only one measure can be selected at a time when one of the
-`fa-area-chart`
-`(graph view)` options is enabled.
-However, multiple measures, and varying group-by criteria (on the x and
-y axes), can be selected when using the
-`oi-view-pivot`
-`(pivot table)`.
+`fa-area-chart` `(graph view)` variantlaridan biri yoqilganda bir vaqtda faqat bitta o'lchov tanlanishi mumkin. Biroq, `oi-view-pivot` `(pivot table)`dan foydalanilganda bir nechta o'lchovlar va turli guruhlash mezonlari (x va y o'qlarida) tanlanishi mumkin.
 ::::
 
-## Use case: compare products
+## Foydalanish holati: mahsulotlarni taqqoslash
 
-One of the best uses for the `Production Analysis` report is comparing statistics about two or more
-products. This is accomplished by entering the products into the
-`Search...` bar, then selecting the
-necessary measure, filter, and grouping, to see the desired data.
+`Production Analysis` hisobotining eng yaxshi foydalanish usullaridan biri ikki yoki undan ortiq mahsulotlar haqidagi statistikalarni taqqoslashdir. Bu mahsulotlarni `Search...` paneliga kiritish, keyin kerakli ma'lumotlarni ko'rish uchun zarur o'lchov, filtr va guruhlashni tanlash orqali amalga oshiriladi.
 
 ::: example
-Toy manufacturer *Tommy\'s Toys* is trying to reduce their manufacturing
-operation costs. To accomplish this, they have decided to identify
-redundant products and cease manufacturing the ones with higher
-operational costs.
+O'yinchoq ishlab chiqaruvchisi *Tommy's Toys* o'zlarining ishlab chiqarish operatsiya xarajatlarini kamaytirmoqchi. Buni amalga oshirish uchun ular ortiqcha mahsulotlarni aniqlash va operatsiya xarajatlari yuqori bo'lganlarini ishlab chiqarishni to'xtatishga qaror qildilar.
 
-Two of the toys that have been singled out for analysis are the *pogo
-stick* and *moon shoes*. Tommy\'s Toys believes these two toys are so
-similar that they can stop manufacturing one, without significantly
-impacting their product offering.
+Tahlil uchun ajratilgan o'yinchoqlardan ikkitasi *pogo tayoqchasi* va *oy poyabzali*dir. Tommy's Toys bu ikki o'yinchoq shunchalik o'xshashki, ular birini ishlab chiqarishni to'xtatib, mahsulot taklifi sezilarli darajada ta'sir qilmasdan qila olishlariga ishonadi.
 
-To compare operation costs for the toys, business analyst Mike opens the
-`Manufacturing` app, and
-navigates to the `Production Analysis` page. In the `Search...` bar, he enters the names of both products. Then, he
-opens the `Search...` bar drop-down
-menu, and clicks `Product` in the
-`Group
-By` section.
+O'yinchoqlar uchun operatsiya xarajatlarini taqqoslash uchun biznes tahlilchisi Mayk `Manufacturing` ilovasini ochib, `Production Analysis` sahifasiga o'tadi. `Search...` panelida u ikkala mahsulot nomini kiritadi. Keyin u `Search...` paneli ochiladigan menyusini ochib, `Group By` bo'limida `Product`ni bosadi.
 
-Below the `Search...` bar, Mike
-clicks on the `Measures`
-`fa-caret-down` drop-down menu, and
-selects the `Total Operation Cost/Unit` option. Finally, he selects the
-`fa-bar-chart`
-`(bar chart)` graph type.
+`Search...` paneli ostida Mayk `Measures` `fa-caret-down` ochiladigan menyusini bosib, `Total Operation Cost/Unit` variantini tanlaydi. Nihoyat, u `fa-bar-chart` `(bar chart)` grafik turini tanlaydi.
 
-With these options selected, the `Production Analysis` report shows a bar chart for the current year, with one
-bar for each product, signifying the average operation cost for one unit
-of the product.
+Ushbu variantlar tanlanganda, `Production Analysis` hisoboti joriy yil uchun ustunli diagrammani ko'rsatadi, har bir mahsulot uchun bitta ustun bilan, mahsulotning bir birligining o'rtacha operatsiya xarajatini bildiradi.
 
-With this data, Mike is able to see that the average operation cost for
-the moon shoes is almost twice the cost of the pogo stick. Using this
-insight, Tommy\'s Toys decides to cease production of moon shoes, thus
-lowering their average cost of manufacturing operations.
+Ushbu ma'lumotlar bilan Mayk oy poyabzalining o'rtacha operatsiya xarajati pogo tayoqchasining xarajatidan deyarli ikki baravar ko'p ekanligini ko'ra oladi. Ushbu tushunchadan foydalanib, Tommy's Toys oy poyabzalini ishlab chiqarishni to'xtatishga qaror qiladi va shu tariqa ishlab chiqarish operatsiyalarining o'rtacha xarajatini pasaytiradi.
 
-![The bar chart comparing the operation costs of the pogo stick and moon shoes.](production_analysis/use-case.png)
+![Pogo tayoqchasi va oy poyabzalining operatsiya xarajatlarini taqqoslaydigan ustunli diagramma.](production_analysis/use-case.png)
 :::
 
-## Use case: compare time periods
+## Foydalanish holati: vaqt davrlari taqqoslash
 
-The `Production Analysis` report can
-also be used to compare data for two different time periods. This is
-accomplished using the options in the `Comparison` section of the `Search...` bar.
+`Production Analysis` hisoboti ikki xil vaqt davri uchun ma'lumotlarni taqqoslash uchun ham ishlatilishi mumkin. Bu `Search...` panelining `Comparison` bo'limidagi variantlar yordamida amalga oshiriladi.
 
 ::::::: example
-Furniture company *Fanny\'s Furnishings* wants to compare their
-production costs for the first and second quarters of 2024, to see which
-products they spent the most money producing in each quarter.
+Mebel kompaniyasi *Fanny's Furnishings* 2024 yilning birinchi va ikkinchi kvartallaridagi ishlab chiqarish xarajatlarini taqqoslab, har bir kvartalda qaysi mahsulotlarni ishlab chiqarishga eng ko'p pul sarflaganini ko'rmoqchi.
 
-To compare the two time periods, shop floor supervisor Adam opens the
-`Manufacturing` app, and
-navigates to the `Production Analysis` page. He begins by selecting the
-`fa-pie-chart`
-`(pie chart)` graph type option at
-the top of the page.
+Ikki vaqt davrini taqqoslash uchun ish joyi nazoratchisi Adam `Manufacturing` ilovasini ochib, `Production Analysis` sahifasiga o'tadi. U sahifaning yuqori qismida `fa-pie-chart` `(pie chart)` grafik turi variantini tanlashdan boshlaydi.
 
 ::: warning
 
-The `Comparison` feature is meant to
-be used with the `fa-pie-chart`
-`(pie chart)` graph type, or the
-`oi-view-pivot`
-`(pivot)` view.
+`Comparison` funksiyasi `fa-pie-chart` `(pie chart)` grafik turi yoki `oi-view-pivot` `(pivot)` ko'rinishi bilan ishlatilishi mo'ljallangan.
 
-A `Comparison` option can still be
-selected with the other view types enabled, but doing so does not change
-the way data is displayed on the report.
+`Comparison` varianti boshqa ko'rinish turlari yoqilgan holda ham tanlanishi mumkin, lekin buni qilish hisobotda ma'lumotlar ko'rsatilish usulini o'zgartirmaydi.
 ::::
 
-Next, Adam selects the `Total Cost`
-option from the `Measures`
-`fa-caret-down` drop-down menu. This
-option displays the total amount spent producing each product.
+Keyin Adam `Measures` `fa-caret-down` ochiladigan menyusidan `Total Cost` variantini tanlaydi. Bu variant har bir mahsulotni ishlab chiqarishga sarflangan umumiy summani ko'rsatadi.
 
-In the `Search...` bar drop-down
-menu, he leaves the `2024` filter
-enabled in the `End Date` section,
-and enables the `Q2` filter as well.
-With both of these time periods selected, the pie chart shows data for
-the second quarter of 2024.
+`Search...` paneli ochiladigan menyusida u `End Date` bo'limida `2024` filtrini yoqilgan holda qoldiradi va `Q2` filtrini ham yoqadi. Ushbu ikkala vaqt davri tanlanganda, doira diagramma 2024 yilning ikkinchi kvartaliga oid ma'lumotlarni ko'rsatadi.
 
-Finally, Adam selects the `End Date: Previous Period` option in the `Comparison` section of the `Search...` bar. Doing so causes the pie chart to be split into an
-inner circle, and an outer ring.
+Nihoyat, Adam `Search...` panelining `Comparison` bo'limida `End Date: Previous Period` variantini tanlaydi. Buni qilish doira diagrammaning ichki doira va tashqi halqaga bo'linishiga sabab bo'ladi.
 
-The outer ring shows data for the selected time period, quarter two of
-2024. The inner circle shows data for the previous time period, quarter
-one of 2024.
+Tashqi halqa tanlangan vaqt davri, 2024 yilning ikkinchi kvartaliga oid ma'lumotlarni ko'rsatadi. Ichki doira oldingi vaqt davri, 2024 yilning birinchi kvartaliga oid ma'lumotlarni ko'rsatadi.
 
 ::: tip
 
-If `End Date: Previous Year` is
-selected instead of `End Date: Previous
-Period`, the inner circle shows data
-for the selected time period, one *year* previous.
+Agar `End Date: Previous Period` o'rniga `End Date: Previous Year` tanlansa, ichki doira tanlangan vaqt davridan bir *yil* oldingi ma'lumotlarni ko'rsatadi.
 
-In the case of this example, it would show data for quarter two of 2023.
+Ushbu misolda u 2023 yilning ikkinchi kvartaliga oid ma'lumotlarni ko'rsatadi.
 ::::
 
-Using this report, Adam can see that the products with the highest total
-cost for quarter two are the *bicycle* and *tricycle*. On the other
-hand, in quarter one, the *roller skates* had the highest total cost.
+Ushbu hisobotdan foydalanib, Adam ikkinchi kvartal uchun eng yuqori umumiy xarajatga ega mahsulotlar *velosiped* va *uch g'ildirakli velosiped* ekanligini ko'ra oladi. Boshqa tomondan, birinchi kvartalda *rolikli konki* eng yuqori umumiy xarajatga ega edi.
 
-![The pie chart view of the Production Analysis report, with a comparison filter enabled.](production_analysis/comparison.png)
+![Taqqoslash filtri yoqilgan Ishlab chiqarish tahlili hisobotining doira diagramma ko'rinishi.](production_analysis/comparison.png)
 :::::::
