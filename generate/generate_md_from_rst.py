@@ -55,6 +55,6 @@ def convert_directory_updated(source_dir, destination_dir):
 
 
 convert_directory_updated(
-    "/Users/user/Documents/odoo-documentation/content/applications/sales/rental",
-    "/Users/user/Documents/zedcentury/documentations/odoo/src/pages/user-docs/rental"
+    "/Users/user/Documents/documentations/odoo-18/content/applications/finance/accounting",
+    "/Users/user/Documents/zedcentury/documentations/odoo/src/pages/user-docs/account_accountant"
 )

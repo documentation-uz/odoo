@@ -1,0 +1,392 @@
+[
+    {
+        "text": "Bank and cash accounts",
+        "link": "/account_accountant/bank",
+        "items": [
+            {
+                "text": "Bank synchronization",
+                "link": "/account_accountant/bank/bank_synchronization",
+                "items": [
+                    {
+                        "text": "Enable Banking",
+                        "link": "/account_accountant/bank/bank_synchronization/enablebanking"
+                    },
+                    {
+                        "text": "Ponto",
+                        "link": "/account_accountant/bank/bank_synchronization/ponto"
+                    },
+                    {
+                        "text": "Salt Edge",
+                        "link": "/account_accountant/bank/bank_synchronization/saltedge"
+                    }
+                ]
+            },
+            {
+                "text": "Manage a bank account in a foreign currency",
+                "link": "/account_accountant/bank/foreign_currency"
+            },
+            {
+                "text": "Internal transfers",
+                "link": "/account_accountant/bank/internal_transfers"
+            },
+            {
+                "text": "Loans management",
+                "link": "/account_accountant/bank/loans"
+            },
+            {
+                "text": "Bank reconciliation",
+                "link": "/account_accountant/bank/reconciliation"
+            },
+            {
+                "text": "Reconciliation models",
+                "link": "/account_accountant/bank/reconciliation_models"
+            },
+            {
+                "text": "Transactions",
+                "link": "/account_accountant/bank/transactions"
+            }
+        ]
+    },
+    {
+        "text": "Customer invoices",
+        "link": "/account_accountant/customer_invoices",
+        "items": [
+            {
+                "text": "Cash discounts and tax reduction",
+                "link": "/account_accountant/customer_invoices/cash_discounts"
+            },
+            {
+                "text": "Cash rounding",
+                "link": "/account_accountant/customer_invoices/cash_rounding"
+            },
+            {
+                "text": "Credit notes and refunds",
+                "link": "/account_accountant/customer_invoices/credit_notes"
+            },
+            {
+                "text": "Delivery and invoice addresses",
+                "link": "/account_accountant/customer_invoices/customer_addresses"
+            },
+            {
+                "text": "Deferred revenues",
+                "link": "/account_accountant/customer_invoices/deferred_revenues"
+            },
+            {
+                "text": "Electronic invoicing (`EDI (electronic data interchange)`)",
+                "link": "/account_accountant/customer_invoices/electronic_invoicing",
+                "items": [
+                    {
+                        "text": "Odoo electronic invoicing in Argentina",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/argentina"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Austria",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/austria"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in the Basque Country",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/basque_country"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Belgium",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/belgium"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Brazil",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/brazil"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Chile",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/chile"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Colombia",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/colombia"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Croatia",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/croatia"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Ecuador",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/ecuador"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Estonia",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/estonia"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Finland",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/finland"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Guatemala",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/guatemala"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Hungary",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/hungary"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Ireland",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/ireland"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Italy",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/italy"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Latvia",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/latvia"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Lithuania",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/lithuania"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Luxembourg",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/luxembourg"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Mexico",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/mexico"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in the Netherlands",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/netherlands"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Norway",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/norway"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Peru",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/peru"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Romania",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/romania"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Spain",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/spain"
+                    },
+                    {
+                        "text": "Odoo electronic invoicing in Uruguay",
+                        "link": "/account_accountant/customer_invoices/electronic_invoicing/uruguay"
+                    }
+                ]
+            },
+            {
+                "text": "EPC QR codes",
+                "link": "/account_accountant/customer_invoices/epc_qr_code"
+            },
+            {
+                "text": "Incoterms",
+                "link": "/account_accountant/customer_invoices/incoterms"
+            },
+            {
+                "text": "Invoicing processes",
+                "link": "/account_accountant/customer_invoices/overview"
+            },
+            {
+                "text": "Payment terms and installment plans",
+                "link": "/account_accountant/customer_invoices/payment_terms"
+            },
+            {
+                "text": "Invoice sequence",
+                "link": "/account_accountant/customer_invoices/sequence"
+            },
+            {
+                "text": "Snailmail",
+                "link": "/account_accountant/customer_invoices/snailmail"
+            },
+            {
+                "text": "Default terms and conditions (T&C)",
+                "link": "/account_accountant/customer_invoices/terms_conditions"
+            }
+        ]
+    },
+    {
+        "text": "Get started",
+        "link": "/account_accountant/get_started",
+        "items": [
+            {
+                "text": "Average price on returned goods",
+                "link": "/account_accountant/get_started/avg_price_valuation"
+            },
+            {
+                "text": "Chart of accounts",
+                "link": "/account_accountant/get_started/chart_of_accounts"
+            },
+            {
+                "text": "Accounting cheat sheet",
+                "link": "/account_accountant/get_started/cheat_sheet"
+            },
+            {
+                "text": "Consolidation",
+                "link": "/account_accountant/get_started/consolidation"
+            },
+            {
+                "text": "Multi-currency system",
+                "link": "/account_accountant/get_started/multi_currency"
+            },
+            {
+                "text": "Tax units",
+                "link": "/account_accountant/get_started/tax_units"
+            }
+        ]
+    },
+    {
+        "text": "Payments",
+        "link": "/account_accountant/payments",
+        "items": [
+            {
+                "text": "Batch payments",
+                "link": "/account_accountant/payments/batch"
+            },
+            {
+                "text": "SEPA Direct Debit (SDD) customer payments",
+                "link": "/account_accountant/payments/batch_sdd"
+            },
+            {
+                "text": "Follow-up on invoices",
+                "link": "/account_accountant/payments/follow_up"
+            },
+            {
+                "text": "Forecast future bills to pay",
+                "link": "/account_accountant/payments/forecast"
+            },
+            {
+                "text": "Online payments",
+                "link": "/account_accountant/payments/online",
+                "items": [
+                    {
+                        "text": "Install the patch to disable online invoice payment",
+                        "link": "/account_accountant/payments/online/install_portal_patch"
+                    }
+                ]
+            },
+            {
+                "text": "Pay by checks",
+                "link": "/account_accountant/payments/pay_checks"
+            },
+            {
+                "text": "Pay with SEPA",
+                "link": "/account_accountant/payments/pay_sepa"
+            },
+            {
+                "text": "Trusted accounts (send money)",
+                "link": "/account_accountant/payments/trusted_accounts"
+            }
+        ]
+    },
+    {
+        "text": "Reporting",
+        "link": "/account_accountant/reporting",
+        "items": [
+            {
+                "text": "Analytic accounting",
+                "link": "/account_accountant/reporting/analytic_accounting"
+            },
+            {
+                "text": "Budgets",
+                "link": "/account_accountant/reporting/budget"
+            },
+            {
+                "text": "Custom reports",
+                "link": "/account_accountant/reporting/customize"
+            },
+            {
+                "text": "Data inalterability check report",
+                "link": "/account_accountant/reporting/data_inalterability"
+            },
+            {
+                "text": "Intrastat",
+                "link": "/account_accountant/reporting/intrastat"
+            },
+            {
+                "text": "Silverfin integration",
+                "link": "/account_accountant/reporting/silverfin"
+            },
+            {
+                "text": "Tax carryover",
+                "link": "/account_accountant/reporting/tax_carryover"
+            },
+            {
+                "text": "Tax return (VAT declaration)",
+                "link": "/account_accountant/reporting/tax_returns"
+            },
+            {
+                "text": "Year-end closing",
+                "link": "/account_accountant/reporting/year_end"
+            }
+        ]
+    },
+    {
+        "text": "Taxes",
+        "link": "/account_accountant/taxes",
+        "items": [
+            {
+                "text": "B2B (tax excluded) and B2C (tax included) pricing",
+                "link": "/account_accountant/taxes/B2B_B2C"
+            },
+            {
+                "text": "AvaTax integration",
+                "link": "/account_accountant/taxes/avatax",
+                "items": [
+                    {
+                        "text": "Avalara (Avatax) portal",
+                        "link": "/account_accountant/taxes/avatax/avalara_portal"
+                    },
+                    {
+                        "text": "AvaTax use",
+                        "link": "/account_accountant/taxes/avatax/avatax_use"
+                    }
+                ]
+            },
+            {
+                "text": "Cash basis taxes",
+                "link": "/account_accountant/taxes/cash_basis"
+            },
+            {
+                "text": "EU intra-community distance selling",
+                "link": "/account_accountant/taxes/eu_distance_selling"
+            },
+            {
+                "text": "Fiscal positions (tax and account mapping)",
+                "link": "/account_accountant/taxes/fiscal_positions"
+            },
+            {
+                "text": "Withholding taxes",
+                "link": "/account_accountant/taxes/retention"
+            },
+            {
+                "text": "VAT numbers verification (VIES)",
+                "link": "/account_accountant/taxes/vat_verification"
+            }
+        ]
+    },
+    {
+        "text": "Vendor bills",
+        "link": "/account_accountant/vendor_bills",
+        "items": [
+            {
+                "text": "Non-current assets and fixed assets",
+                "link": "/account_accountant/vendor_bills/assets"
+            },
+            {
+                "text": "Deferred expenses",
+                "link": "/account_accountant/vendor_bills/deferred_expenses"
+            },
+            {
+                "text": "AI-powered document digitization",
+                "link": "/account_accountant/vendor_bills/invoice_digitization"
+            },
+            {
+                "text": "Vendor bill sequence",
+                "link": "/account_accountant/vendor_bills/sequence"
+            }
+        ]
+    }
+]

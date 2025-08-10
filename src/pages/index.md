@@ -17,6 +17,11 @@ hero:
       link: /api-examples
 
 features:
+  - icon: <img src="https://download.odoocdn.com/icons/account_accountant/static/description/icon.svg"/>
+    title: Accounting and Invoicing
+    details: Manage financial and analytic accounting
+    link: /user-docs/account_accountant/introduction
+    linkText: Learn more
   - icon: <img src="https://download.odoocdn.com/icons/crm/static/description/icon.svg"/>
     title: CRM
     details: Track leads and close opportunities

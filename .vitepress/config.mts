@@ -81,7 +81,10 @@ export default defineConfig({
                     },
                 ]
             },
-            {text: 'Developer', link: '/developer/table-of-contents'},
+            {
+                text: 'Developer',
+                link: '/developer'
+            },
             {text: 'API Reference', link: '/api-reference/print'},
             {
                 text: 'Versions',
@@ -136,6 +139,924 @@ export default defineConfig({
                         {text: 'Create models', link: '/examples/todo-app/create-models'}
                     ]
                 },
+            ],
+            '/developer/': [
+                {
+                    "text": "Glossary",
+                    "link": "/developer/glossary"
+                },
+                {
+                    "text": "How-to guides",
+                    "link": "/developer/howtos",
+                    "items": [
+                        {
+                            "text": "Multi-company Guidelines",
+                            "link": "/developer/howtos/company"
+                        },
+                        {
+                            "text": "Connect with a device",
+                            "link": "/developer/howtos/connect_device"
+                        },
+                        {
+                            "text": "Create customized reports",
+                            "link": "/developer/howtos/create_reports"
+                        },
+                        {
+                            "text": "Use Owl components on the portal and website",
+                            "link": "/developer/howtos/frontend_owl_components"
+                        },
+                        {
+                            "text": "Create a client action",
+                            "link": "/developer/howtos/javascript_client_action"
+                        },
+                        {
+                            "text": "Customize a field",
+                            "link": "/developer/howtos/javascript_field"
+                        },
+                        {
+                            "text": "Customize a view type",
+                            "link": "/developer/howtos/javascript_view"
+                        },
+                        {
+                            "text": "Write lean easy-to-maintain CSS",
+                            "link": "/developer/howtos/scss_tips"
+                        },
+                        {
+                            "text": "Create a standalone Owl application",
+                            "link": "/developer/howtos/standalone_owl_application"
+                        },
+                        {
+                            "text": "Translating Modules",
+                            "link": "/developer/howtos/translations"
+                        },
+                        {
+                            "text": "Upgrade a customized database",
+                            "link": "/developer/howtos/upgrade_custom_db"
+                        },
+                        {
+                            "text": "Web Services",
+                            "link": "/developer/howtos/web_services"
+                        },
+                        {
+                            "text": "Website themes",
+                            "link": "/developer/howtos/website_themes",
+                            "items": [
+                                {
+                                    "text": "Animations",
+                                    "link": "/developer/howtos/website_themes/animations"
+                                },
+                                {
+                                    "text": "Building blocks",
+                                    "link": "/developer/howtos/website_themes/building_blocks"
+                                },
+                                {
+                                    "text": "Forms",
+                                    "link": "/developer/howtos/website_themes/forms"
+                                },
+                                {
+                                    "text": "Going live",
+                                    "link": "/developer/howtos/website_themes/going_live"
+                                },
+                                {
+                                    "text": "Gradients",
+                                    "link": "/developer/howtos/website_themes/gradients"
+                                },
+                                {
+                                    "text": "Layout",
+                                    "link": "/developer/howtos/website_themes/layout"
+                                },
+                                {
+                                    "text": "Media",
+                                    "link": "/developer/howtos/website_themes/media"
+                                },
+                                {
+                                    "text": "Navigation",
+                                    "link": "/developer/howtos/website_themes/navigation"
+                                },
+                                {
+                                    "text": "Pages",
+                                    "link": "/developer/howtos/website_themes/pages"
+                                },
+                                {
+                                    "text": "Setup",
+                                    "link": "/developer/howtos/website_themes/setup"
+                                },
+                                {
+                                    "text": "Shapes",
+                                    "link": "/developer/howtos/website_themes/shapes"
+                                },
+                                {
+                                    "text": "Theming",
+                                    "link": "/developer/howtos/website_themes/theming"
+                                },
+                                {
+                                    "text": "Translations",
+                                    "link": "/developer/howtos/website_themes/translations"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "text": "Developer",
+                    "link": "/developer/index"
+                },
+                {
+                    "text": "Reference",
+                    "link": "/developer/reference",
+                    "items": [
+                        {
+                            "text": "Server framework",
+                            "link": "/developer/reference/backend",
+                            "items": [
+                                {
+                                    "text": "Actions",
+                                    "link": "/developer/reference/backend/actions"
+                                },
+                                {
+                                    "text": "Web Controllers",
+                                    "link": "/developer/reference/backend/http"
+                                },
+                                {
+                                    "text": "Mixins and Useful Classes",
+                                    "link": "/developer/reference/backend/mixins"
+                                },
+                                {
+                                    "text": "Module Manifests",
+                                    "link": "/developer/reference/backend/module"
+                                },
+                                {
+                                    "text": "ORM API",
+                                    "link": "/developer/reference/backend/orm",
+                                    "items": [
+                                        {
+                                            "text": "Changelog",
+                                            "link": "/developer/reference/backend/orm/changelog"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "text": "Performance",
+                                    "link": "/developer/reference/backend/performance"
+                                },
+                                {
+                                    "text": "QWeb Reports[]",
+                                    "link": "/developer/reference/backend/reports"
+                                },
+                                {
+                                    "text": "Security in Odoo",
+                                    "link": "/developer/reference/backend/security"
+                                },
+                                {
+                                    "text": "Testing Odoo",
+                                    "link": "/developer/reference/backend/testing"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Command-line interface (CLI)",
+                            "link": "/developer/reference/cli"
+                        },
+                        {
+                            "text": "External API",
+                            "link": "/developer/reference/external_api"
+                        },
+                        {
+                            "text": "Extract API",
+                            "link": "/developer/reference/extract_api"
+                        },
+                        {
+                            "text": "Web framework",
+                            "link": "/developer/reference/frontend",
+                            "items": [
+                                {
+                                    "text": "Assets",
+                                    "link": "/developer/reference/frontend/assets"
+                                },
+                                {
+                                    "text": "Error handling",
+                                    "link": "/developer/reference/frontend/error_handling"
+                                },
+                                {
+                                    "text": "Framework Overview",
+                                    "link": "/developer/reference/frontend/framework_overview"
+                                },
+                                {
+                                    "text": "Hooks",
+                                    "link": "/developer/reference/frontend/hooks"
+                                },
+                                {
+                                    "text": "Javascript Modules",
+                                    "link": "/developer/reference/frontend/javascript_modules"
+                                },
+                                {
+                                    "text": "Javascript Reference",
+                                    "link": "/developer/reference/frontend/javascript_reference"
+                                },
+                                {
+                                    "text": "Mobile JavaScript",
+                                    "link": "/developer/reference/frontend/mobile"
+                                },
+                                {
+                                    "text": "Odoo Editor",
+                                    "link": "/developer/reference/frontend/odoo_editor"
+                                },
+                                {
+                                    "text": "Owl components",
+                                    "link": "/developer/reference/frontend/owl_components"
+                                },
+                                {
+                                    "text": "Patching code",
+                                    "link": "/developer/reference/frontend/patching_code"
+                                },
+                                {
+                                    "text": "QWeb Templates",
+                                    "link": "/developer/reference/frontend/qweb"
+                                },
+                                {
+                                    "text": "Registries",
+                                    "link": "/developer/reference/frontend/registries"
+                                },
+                                {
+                                    "text": "Services",
+                                    "link": "/developer/reference/frontend/services"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Standard modules",
+                            "link": "/developer/reference/standard_modules",
+                            "items": [
+                                {
+                                    "text": "Accounting",
+                                    "link": "/developer/reference/standard_modules/account",
+                                    "items": [
+                                        {
+                                            "text": "Account",
+                                            "link": "/developer/reference/standard_modules/account/account_account"
+                                        },
+                                        {
+                                            "text": "Account Tag",
+                                            "link": "/developer/reference/standard_modules/account/account_account_tag"
+                                        },
+                                        {
+                                            "text": "Fiscal Position",
+                                            "link": "/developer/reference/standard_modules/account/account_fiscal_position"
+                                        },
+                                        {
+                                            "text": "Account Group",
+                                            "link": "/developer/reference/standard_modules/account/account_group"
+                                        },
+                                        {
+                                            "text": "Report",
+                                            "link": "/developer/reference/standard_modules/account/account_report"
+                                        },
+                                        {
+                                            "text": "Report Line",
+                                            "link": "/developer/reference/standard_modules/account/account_report_line"
+                                        },
+                                        {
+                                            "text": "Taxes",
+                                            "link": "/developer/reference/standard_modules/account/account_tax"
+                                        },
+                                        {
+                                            "text": "Tax Repartitions",
+                                            "link": "/developer/reference/standard_modules/account/account_tax_repartition"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "text": "Payment",
+                                    "link": "/developer/reference/standard_modules/payment",
+                                    "items": [
+                                        {
+                                            "text": "Payment Method",
+                                            "link": "/developer/reference/standard_modules/payment/payment_method"
+                                        },
+                                        {
+                                            "text": "Payment Provider",
+                                            "link": "/developer/reference/standard_modules/payment/payment_provider"
+                                        },
+                                        {
+                                            "text": "Payment Token",
+                                            "link": "/developer/reference/standard_modules/payment/payment_token"
+                                        },
+                                        {
+                                            "text": "Payment Transaction",
+                                            "link": "/developer/reference/standard_modules/payment/payment_transaction"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Upgrades",
+                            "link": "/developer/reference/upgrades",
+                            "items": [
+                                {
+                                    "text": "Upgrade scripts",
+                                    "link": "/developer/reference/upgrades/upgrade_scripts"
+                                },
+                                {
+                                    "text": "Upgrade utils",
+                                    "link": "/developer/reference/upgrades/upgrade_utils"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "User interface",
+                            "link": "/developer/reference/user_interface",
+                            "items": [
+                                {
+                                    "text": "UI icons",
+                                    "link": "/developer/reference/user_interface/icons"
+                                },
+                                {
+                                    "text": "SCSS inheritance",
+                                    "link": "/developer/reference/user_interface/scss_inheritance"
+                                },
+                                {
+                                    "text": "View architectures",
+                                    "link": "/developer/reference/user_interface/view_architectures"
+                                },
+                                {
+                                    "text": "View records",
+                                    "link": "/developer/reference/user_interface/view_records"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "text": "Tutorials",
+                    "link": "/developer/tutorials",
+                    "items": [
+                        {
+                            "text": "Building a Module[]",
+                            "link": "/developer/tutorials/backend"
+                        },
+                        {
+                            "text": "Define module data",
+                            "link": "/developer/tutorials/define_module_data"
+                        },
+                        {
+                            "text": "Discover the web framework",
+                            "link": "/developer/tutorials/discover_js_framework",
+                            "items": [
+                                {
+                                    "text": "Chapter 1: Owl components",
+                                    "link": "/developer/tutorials/discover_js_framework/01_owl_components"
+                                },
+                                {
+                                    "text": "Chapter 2: Build a dashboard",
+                                    "link": "/developer/tutorials/discover_js_framework/02_build_a_dashboard"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Write importable modules",
+                            "link": "/developer/tutorials/importable_modules"
+                        },
+                        {
+                            "text": "Master the web framework",
+                            "link": "/developer/tutorials/master_odoo_web_framework",
+                            "items": [
+                                {
+                                    "text": "Chapter 1: Build a Clicker game",
+                                    "link": "/developer/tutorials/master_odoo_web_framework/01_build_clicker_game"
+                                },
+                                {
+                                    "text": "Chapter 2: Create a Gallery View",
+                                    "link": "/developer/tutorials/master_odoo_web_framework/02_create_gallery_view"
+                                },
+                                {
+                                    "text": "Chapter 3: Customize a kanban view",
+                                    "link": "/developer/tutorials/master_odoo_web_framework/03_customize_kanban_view"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Reuse code with mixins",
+                            "link": "/developer/tutorials/mixins"
+                        },
+                        {
+                            "text": "Build PDF Reports",
+                            "link": "/developer/tutorials/pdf_reports"
+                        },
+                        {
+                            "text": "Restrict access to data",
+                            "link": "/developer/tutorials/restrict_data_access"
+                        },
+                        {
+                            "text": "Server framework 101",
+                            "link": "/developer/tutorials/server_framework_101",
+                            "items": [
+                                {
+                                    "text": "Chapter 1: Architecture Overview",
+                                    "link": "/developer/tutorials/server_framework_101/01_architecture"
+                                },
+                                {
+                                    "text": "Chapter 2: A New Application",
+                                    "link": "/developer/tutorials/server_framework_101/02_newapp"
+                                },
+                                {
+                                    "text": "Chapter 3: Models And Basic Fields",
+                                    "link": "/developer/tutorials/server_framework_101/03_basicmodel"
+                                },
+                                {
+                                    "text": "Chapter 4: Security - A Brief Introduction",
+                                    "link": "/developer/tutorials/server_framework_101/04_securityintro"
+                                },
+                                {
+                                    "text": "Chapter 5: Finally, Some UI To Play With",
+                                    "link": "/developer/tutorials/server_framework_101/05_firstui"
+                                },
+                                {
+                                    "text": "Chapter 6: Basic Views",
+                                    "link": "/developer/tutorials/server_framework_101/06_basicviews"
+                                },
+                                {
+                                    "text": "Chapter 7: Relations Between Models",
+                                    "link": "/developer/tutorials/server_framework_101/07_relations"
+                                },
+                                {
+                                    "text": "Chapter 8: Computed Fields And Onchanges",
+                                    "link": "/developer/tutorials/server_framework_101/08_compute_onchange"
+                                },
+                                {
+                                    "text": "Chapter 9: Ready For Some Action?",
+                                    "link": "/developer/tutorials/server_framework_101/09_actions"
+                                },
+                                {
+                                    "text": "Chapter 10: Constraints",
+                                    "link": "/developer/tutorials/server_framework_101/10_constraints"
+                                },
+                                {
+                                    "text": "Chapter 11: Add The Sprinkles",
+                                    "link": "/developer/tutorials/server_framework_101/11_sprinkles"
+                                },
+                                {
+                                    "text": "Chapter 12: Inheritance",
+                                    "link": "/developer/tutorials/server_framework_101/12_inheritance"
+                                },
+                                {
+                                    "text": "Chapter 13: Interact With Other Modules",
+                                    "link": "/developer/tutorials/server_framework_101/13_other_module"
+                                },
+                                {
+                                    "text": "Chapter 14: A Brief History Of QWeb",
+                                    "link": "/developer/tutorials/server_framework_101/14_qwebintro"
+                                },
+                                {
+                                    "text": "Chapter 15: The final word",
+                                    "link": "/developer/tutorials/server_framework_101/15_final_word"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Setup guide",
+                            "link": "/developer/tutorials/setup_guide"
+                        },
+                        {
+                            "text": "Safeguard your code with unit tests",
+                            "link": "/developer/tutorials/unit_tests"
+                        },
+                        {
+                            "text": "Customizing the web client",
+                            "link": "/developer/tutorials/web"
+                        },
+                        {
+                            "text": "Build a website theme",
+                            "link": "/developer/tutorials/website_theme",
+                            "items": [
+                                {
+                                    "text": "Chapter 1 - Theming",
+                                    "link": "/developer/tutorials/website_theme/01_theming"
+                                },
+                                {
+                                    "text": "Chapter 2 - Build your website",
+                                    "link": "/developer/tutorials/website_theme/02_build_website"
+                                },
+                                {
+                                    "text": "Chapter 3 - Customisation, Part I",
+                                    "link": "/developer/tutorials/website_theme/03_customisation_part1"
+                                },
+                                {
+                                    "text": "Chapter 4 - Customisation, Part II",
+                                    "link": "/developer/tutorials/website_theme/04_customisation_part2"
+                                },
+                                {
+                                    "text": "Chapter 5 - Dynamic templates",
+                                    "link": "/developer/tutorials/website_theme/05_dynamic_templates"
+                                },
+                                {
+                                    "text": "Chapter 6 - Going live",
+                                    "link": "/developer/tutorials/website_theme/06_going_live"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            '/user-docs/account_accountant': [
+                {
+                    "text": "Introduction",
+                    "link": "/user-docs/account_accountant/introduction"
+                },
+                {
+                    "text": "Get started",
+                    "link": "/user-docs/account_accountant/get_started",
+                    "items": [
+                        {
+                            "text": "Introduction",
+                            "link": "/user-docs/account_accountant/get_started/introduction"
+                        },
+                        {
+                            "text": "Accounting cheat sheet",
+                            "link": "/user-docs/account_accountant/get_started/cheat_sheet"
+                        },
+                        {
+                            "text": "Chart of accounts",
+                            "link": "/user-docs/account_accountant/get_started/chart_of_accounts"
+                        },
+                        {
+                            "text": "Consolidation",
+                            "link": "/user-docs/account_accountant/get_started/consolidation"
+                        },
+                        {
+                            "text": "Multi-currency system",
+                            "link": "/user-docs/account_accountant/get_started/multi_currency"
+                        },
+                        {
+                            "text": "Average price on returned goods",
+                            "link": "/user-docs/account_accountant/get_started/avg_price_valuation"
+                        },
+                        {
+                            "text": "Tax units",
+                            "link": "/user-docs/account_accountant/get_started/tax_units"
+                        }
+                    ]
+                },
+                {
+                    "text": "Taxes",
+                    "link": "/user-docs/account_accountant/taxes",
+                    "items": [
+                        {
+                            "text": "B2B (tax excluded) and B2C (tax included) pricing",
+                            "link": "/user-docs/account_accountant/taxes/B2B_B2C"
+                        },
+                        {
+                            "text": "AvaTax integration",
+                            "link": "/user-docs/account_accountant/taxes/avatax",
+                            "items": [
+                                {
+                                    "text": "Avalara (Avatax) portal",
+                                    "link": "/user-docs/account_accountant/taxes/avatax/avalara_portal"
+                                },
+                                {
+                                    "text": "AvaTax use",
+                                    "link": "/user-docs/account_accountant/taxes/avatax/avatax_use"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Cash basis taxes",
+                            "link": "/user-docs/account_accountant/taxes/cash_basis"
+                        },
+                        {
+                            "text": "EU intra-community distance selling",
+                            "link": "/user-docs/account_accountant/taxes/eu_distance_selling"
+                        },
+                        {
+                            "text": "Fiscal positions (tax and account mapping)",
+                            "link": "/user-docs/account_accountant/taxes/fiscal_positions"
+                        },
+                        {
+                            "text": "Withholding taxes",
+                            "link": "/user-docs/account_accountant/taxes/retention"
+                        },
+                        {
+                            "text": "VAT numbers verification (VIES)",
+                            "link": "/user-docs/account_accountant/taxes/vat_verification"
+                        }
+                    ]
+                },
+                {
+                    "text": "Customer invoices",
+                    "link": "/user-docs/account_accountant/customer_invoices",
+                    "items": [
+                        {
+                            "text": "Cash discounts and tax reduction",
+                            "link": "/user-docs/account_accountant/customer_invoices/cash_discounts"
+                        },
+                        {
+                            "text": "Cash rounding",
+                            "link": "/user-docs/account_accountant/customer_invoices/cash_rounding"
+                        },
+                        {
+                            "text": "Credit notes and refunds",
+                            "link": "/user-docs/account_accountant/customer_invoices/credit_notes"
+                        },
+                        {
+                            "text": "Delivery and invoice addresses",
+                            "link": "/user-docs/account_accountant/customer_invoices/customer_addresses"
+                        },
+                        {
+                            "text": "Deferred revenues",
+                            "link": "/user-docs/account_accountant/customer_invoices/deferred_revenues"
+                        },
+                        {
+                            "text": "Electronic invoicing (`EDI (electronic data interchange)`)",
+                            "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing",
+                            "items": [
+                                {
+                                    "text": "Odoo electronic invoicing in Argentina",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/argentina"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Austria",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/austria"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in the Basque Country",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/basque_country"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Belgium",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/belgium"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Brazil",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/brazil"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Chile",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/chile"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Colombia",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/colombia"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Croatia",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/croatia"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Ecuador",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/ecuador"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Estonia",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/estonia"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Finland",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/finland"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Guatemala",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/guatemala"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Hungary",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/hungary"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Ireland",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/ireland"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Italy",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/italy"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Latvia",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/latvia"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Lithuania",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/lithuania"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Luxembourg",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/luxembourg"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Mexico",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/mexico"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in the Netherlands",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/netherlands"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Norway",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/norway"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Peru",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/peru"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Romania",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/romania"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Spain",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/spain"
+                                },
+                                {
+                                    "text": "Odoo electronic invoicing in Uruguay",
+                                    "link": "/user-docs/account_accountant/customer_invoices/electronic_invoicing/uruguay"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "EPC QR codes",
+                            "link": "/user-docs/account_accountant/customer_invoices/epc_qr_code"
+                        },
+                        {
+                            "text": "Incoterms",
+                            "link": "/user-docs/account_accountant/customer_invoices/incoterms"
+                        },
+                        {
+                            "text": "Invoicing processes",
+                            "link": "/user-docs/account_accountant/customer_invoices/overview"
+                        },
+                        {
+                            "text": "Payment terms and installment plans",
+                            "link": "/user-docs/account_accountant/customer_invoices/payment_terms"
+                        },
+                        {
+                            "text": "Invoice sequence",
+                            "link": "/user-docs/account_accountant/customer_invoices/sequence"
+                        },
+                        {
+                            "text": "Snailmail",
+                            "link": "/user-docs/account_accountant/customer_invoices/snailmail"
+                        },
+                        {
+                            "text": "Default terms and conditions (T&C)",
+                            "link": "/user-docs/account_accountant/customer_invoices/terms_conditions"
+                        }
+                    ]
+                },
+                {
+                    "text": "Vendor bills",
+                    "link": "/user-docs/account_accountant/vendor_bills",
+                    "items": [
+                        {
+                            "text": "Non-current assets and fixed assets",
+                            "link": "/user-docs/account_accountant/vendor_bills/assets"
+                        },
+                        {
+                            "text": "Deferred expenses",
+                            "link": "/user-docs/account_accountant/vendor_bills/deferred_expenses"
+                        },
+                        {
+                            "text": "AI-powered document digitization",
+                            "link": "/user-docs/account_accountant/vendor_bills/invoice_digitization"
+                        },
+                        {
+                            "text": "Vendor bill sequence",
+                            "link": "/user-docs/account_accountant/vendor_bills/sequence"
+                        }
+                    ]
+                },
+                {
+                    "text": "Payments",
+                    "link": "/user-docs/account_accountant/payments",
+                    "items": [
+                        {
+                            "text": "Batch payments",
+                            "link": "/user-docs/account_accountant/payments/batch"
+                        },
+                        {
+                            "text": "SEPA Direct Debit (SDD) customer payments",
+                            "link": "/user-docs/account_accountant/payments/batch_sdd"
+                        },
+                        {
+                            "text": "Follow-up on invoices",
+                            "link": "/user-docs/account_accountant/payments/follow_up"
+                        },
+                        {
+                            "text": "Forecast future bills to pay",
+                            "link": "/user-docs/account_accountant/payments/forecast"
+                        },
+                        {
+                            "text": "Online payments",
+                            "link": "/user-docs/account_accountant/payments/online",
+                            "items": [
+                                {
+                                    "text": "Install the patch to disable online invoice payment",
+                                    "link": "/user-docs/account_accountant/payments/online/install_portal_patch"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Pay by checks",
+                            "link": "/user-docs/account_accountant/payments/pay_checks"
+                        },
+                        {
+                            "text": "Pay with SEPA",
+                            "link": "/user-docs/account_accountant/payments/pay_sepa"
+                        },
+                        {
+                            "text": "Trusted accounts (send money)",
+                            "link": "/user-docs/account_accountant/payments/trusted_accounts"
+                        }
+                    ]
+                },
+                {
+                    "text": "Bank and cash accounts",
+                    "link": "/user-docs/account_accountant/bank",
+                    "items": [
+                        {
+                            "text": "Bank synchronization",
+                            "link": "/user-docs/account_accountant/bank/bank_synchronization",
+                            "items": [
+                                {
+                                    "text": "Enable Banking",
+                                    "link": "/user-docs/account_accountant/bank/bank_synchronization/enablebanking"
+                                },
+                                {
+                                    "text": "Ponto",
+                                    "link": "/user-docs/account_accountant/bank/bank_synchronization/ponto"
+                                },
+                                {
+                                    "text": "Salt Edge",
+                                    "link": "/user-docs/account_accountant/bank/bank_synchronization/saltedge"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Manage a bank account in a foreign currency",
+                            "link": "/user-docs/account_accountant/bank/foreign_currency"
+                        },
+                        {
+                            "text": "Internal transfers",
+                            "link": "/user-docs/account_accountant/bank/internal_transfers"
+                        },
+                        {
+                            "text": "Loans management",
+                            "link": "/user-docs/account_accountant/bank/loans"
+                        },
+                        {
+                            "text": "Bank reconciliation",
+                            "link": "/user-docs/account_accountant/bank/reconciliation"
+                        },
+                        {
+                            "text": "Reconciliation models",
+                            "link": "/user-docs/account_accountant/bank/reconciliation_models"
+                        },
+                        {
+                            "text": "Transactions",
+                            "link": "/user-docs/account_accountant/bank/transactions"
+                        }
+                    ]
+                },
+                {
+                    "text": "Reporting",
+                    "link": "/user-docs/account_accountant/reporting",
+                    "items": [
+                        {
+                            "text": "Analytic accounting",
+                            "link": "/user-docs/account_accountant/reporting/analytic_accounting"
+                        },
+                        {
+                            "text": "Budgets",
+                            "link": "/user-docs/account_accountant/reporting/budget"
+                        },
+                        {
+                            "text": "Custom reports",
+                            "link": "/user-docs/account_accountant/reporting/customize"
+                        },
+                        {
+                            "text": "Data inalterability check report",
+                            "link": "/user-docs/account_accountant/reporting/data_inalterability"
+                        },
+                        {
+                            "text": "Intrastat",
+                            "link": "/user-docs/account_accountant/reporting/intrastat"
+                        },
+                        {
+                            "text": "Silverfin integration",
+                            "link": "/user-docs/account_accountant/reporting/silverfin"
+                        },
+                        {
+                            "text": "Tax carryover",
+                            "link": "/user-docs/account_accountant/reporting/tax_carryover"
+                        },
+                        {
+                            "text": "Tax return (VAT declaration)",
+                            "link": "/user-docs/account_accountant/reporting/tax_returns"
+                        },
+                        {
+                            "text": "Year-end closing",
+                            "link": "/user-docs/account_accountant/reporting/year_end"
+                        }
+                    ]
+                }
             ],
             '/user-docs/crm': [
                 {
